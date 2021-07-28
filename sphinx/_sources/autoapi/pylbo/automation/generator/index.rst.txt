@@ -1,5 +1,5 @@
-:mod:`pylbo.automation.generator`
-=================================
+:py:mod:`pylbo.automation.generator`
+====================================
 
 .. py:module:: pylbo.automation.generator
 
@@ -26,7 +26,7 @@ Functions
 
 
 
-.. function:: _validate_basename(basename)
+.. py:function:: _validate_basename(basename)
 
    Validates the basename for a given parfile.
 
@@ -54,7 +54,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: _validate_output_dir(output_dir)
+.. py:function:: _validate_output_dir(output_dir)
 
    Validates and returns the output directory for the parfiles.
 
@@ -85,8 +85,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None)
-
+.. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None)
 
    Handles parfile generation.
 
@@ -119,7 +118,7 @@ Functions
    ..
        !! processed by numpydoc !!
 
-   .. method:: _get_and_check_item(self, namelist, name, allowed_dtypes)
+   .. py:method:: _get_and_check_item(self, namelist, name, allowed_dtypes)
 
       Does typechecking on the various dictionary keys supplied to the parfile
       generator. Pops the key from the dictionary.
@@ -155,7 +154,7 @@ Functions
           !! processed by numpydoc !!
 
 
-   .. method:: create_namelist_from_dict(self)
+   .. py:method:: create_namelist_from_dict(self)
 
       Creates one major namelist from the given dictionary.
 
@@ -180,7 +179,7 @@ Functions
           !! processed by numpydoc !!
 
 
-   .. method:: generate_parfiles(self)
+   .. py:method:: generate_parfiles(self)
 
       Creates separate parfiles from the main namelist container and writes
       the individual parfiles to disk.

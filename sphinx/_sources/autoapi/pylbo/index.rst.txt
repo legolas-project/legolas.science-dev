@@ -1,5 +1,5 @@
-:mod:`pylbo`
-============
+:py:mod:`pylbo`
+===============
 
 .. py:module:: pylbo
 
@@ -55,7 +55,7 @@ Functions
 
 
 
-.. function:: set_loglevel(level)
+.. py:function:: set_loglevel(level)
 
    Sets the logging level.
 
@@ -82,7 +82,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: disable_logging()
+.. py:function:: disable_logging()
 
    Completely disables logging.
 
@@ -105,7 +105,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: load(datfile)
+.. py:function:: load(datfile)
 
    Loads a single Legolas datfile.
 
@@ -135,7 +135,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: load_series(datfiles)
+.. py:function:: load_series(datfiles)
 
    Loads multiple Legolas datfiles.
 
@@ -166,7 +166,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: load_logfile(logfile, sort=False)
+.. py:function:: load_logfile(logfile, sort=False)
 
    Reads a Legolas log file.
 
@@ -197,7 +197,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: plot_spectrum(data, figsize=None, custom_figure=None, **kwargs)
+.. py:function:: plot_spectrum(data, figsize=None, custom_figure=None, **kwargs)
 
    Plots the spectrum of a single dataset.
 
@@ -232,7 +232,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: plot_spectrum_multi(data, xdata, use_squared_omega=False, use_real_parts=True, figsize=None, custom_figure=None, **kwargs)
+.. py:function:: plot_spectrum_multi(data, xdata, use_squared_omega=False, use_real_parts=True, figsize=None, custom_figure=None, **kwargs)
 
    Plots the spectrum of a dataset series.
 
@@ -277,7 +277,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: plot_merged_spectrum(data, figsize=None, custom_figure=None, interactive=True, legend=True, **kwargs)
+.. py:function:: plot_merged_spectrum(data, figsize=None, custom_figure=None, interactive=True, legend=True, **kwargs)
 
    Creates a merged spectrum from various datasets, useful in plotting multiple
    results from the shift-invert solver, for example. This draws every dataset
@@ -318,7 +318,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: plot_spectrum_comparison(ds1, ds2, figsize=None, custom_figure=None, lock_zoom=False, **kwargs)
+.. py:function:: plot_spectrum_comparison(ds1, ds2, figsize=None, custom_figure=None, lock_zoom=False, **kwargs)
 
    Compares two spectra.
 
@@ -356,7 +356,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: plot_equilibrium(data, figsize=None, interactive=True, **kwargs)
+.. py:function:: plot_equilibrium(data, figsize=None, interactive=True, **kwargs)
 
    Plots the equilibrium profiles.
 
@@ -388,7 +388,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: plot_equilibrium_balance(data, figsize=None, **kwargs)
+.. py:function:: plot_equilibrium_balance(data, figsize=None, **kwargs)
 
    Creates a plot of the force balance equation and non-adiabatic equilibrium
    equation. These should be as close to zero as possible over the entire grid.
@@ -420,7 +420,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: plot_continua(data, figsize=None, interactive=True, **kwargs)
+.. py:function:: plot_continua(data, figsize=None, interactive=True, **kwargs)
 
    Plots the continua profiles.
 
@@ -452,7 +452,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: plot_matrices(data, figsize=None, **kwargs)
+.. py:function:: plot_matrices(data, figsize=None, **kwargs)
 
    Plots the continua profiles.
 
@@ -482,7 +482,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: generate_parfiles(parfile_dict, basename=None, output_dir=None)
+.. py:function:: generate_parfiles(parfile_dict, basename=None, output_dir=None)
 
    Generates parfiles based on a given configuration dictionary.
    The separate namelists do not have to be taken into account, and a normal
@@ -568,7 +568,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: run_legolas(parfiles, remove_parfiles=False, nb_cpus=1, executable=None)
+.. py:function:: run_legolas(parfiles, remove_parfiles=False, nb_cpus=1, executable=None)
 
    Runs the legolas executable for a given list of parfiles. If more than one parfile
    is passed, the runs can be performed in parallel using the multiprocessing module.

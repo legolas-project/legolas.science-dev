@@ -1,5 +1,5 @@
-:mod:`pylbo.utilities.datfile_utils`
-====================================
+:py:mod:`pylbo.utilities.datfile_utils`
+=======================================
 
 .. py:module:: pylbo.utilities.datfile_utils
 
@@ -38,37 +38,37 @@ Attributes
    pylbo.utilities.datfile_utils.ALIGN
 
 
-.. data:: SIZE_CHAR
+.. py:data:: SIZE_CHAR
    
 
    
 
-.. data:: SIZE_INT
+.. py:data:: SIZE_INT
    
 
    
 
-.. data:: SIZE_BOOL
+.. py:data:: SIZE_BOOL
    
 
    
 
-.. data:: SIZE_DOUBLE
+.. py:data:: SIZE_DOUBLE
    
 
    
 
-.. data:: SIZE_COMPLEX
+.. py:data:: SIZE_COMPLEX
    
 
    
 
-.. data:: ALIGN
+.. py:data:: ALIGN
    :annotation: = =
 
    
 
-.. function:: get_header(istream)
+.. py:function:: get_header(istream)
 
    Retrieves the header from a given datfile.
 
@@ -96,7 +96,7 @@ Attributes
        !! processed by numpydoc !!
 
 
-.. function:: read_grid(istream, header)
+.. py:function:: read_grid(istream, header)
 
    Retrieves the base grid from the datfile.
 
@@ -126,7 +126,7 @@ Attributes
        !! processed by numpydoc !!
 
 
-.. function:: read_grid_gauss(istream, header)
+.. py:function:: read_grid_gauss(istream, header)
 
    Retrieves the Gaussian grid from the datfile.
 
@@ -156,7 +156,7 @@ Attributes
        !! processed by numpydoc !!
 
 
-.. function:: read_ef_grid(istream, header)
+.. py:function:: read_ef_grid(istream, header)
 
    Retrieves the eigenfunction grid from the datfile.
 
@@ -186,7 +186,7 @@ Attributes
        !! processed by numpydoc !!
 
 
-.. function:: read_eigenvalues(istream, header, omit_large_evs=True)
+.. py:function:: read_eigenvalues(istream, header, omit_large_evs=True)
 
    Reads the eigenvalues from the datfile, and optionally omits
    the large (larger than `1e15`) values.
@@ -219,7 +219,7 @@ Attributes
        !! processed by numpydoc !!
 
 
-.. function:: read_equilibrium_arrays(istream, header)
+.. py:function:: read_equilibrium_arrays(istream, header)
 
    Reads the equilibrium arrays from the datfile.
 
@@ -250,7 +250,7 @@ Attributes
        !! processed by numpydoc !!
 
 
-.. function:: read_eigenfunction(istream, header, ef_index)
+.. py:function:: read_eigenfunction(istream, header, ef_index)
 
    Reads a single eigenfunction from the datfile.
    Eigenfunctions are read in on-the-fly, to prevent having to load the
@@ -289,7 +289,7 @@ Attributes
        !! processed by numpydoc !!
 
 
-.. function:: read_matrix_B(istream, header)
+.. py:function:: read_matrix_B(istream, header)
 
    Reads the B-matrix from the datfile.
 
@@ -321,7 +321,7 @@ Attributes
        !! processed by numpydoc !!
 
 
-.. function:: read_matrix_A(istream, header)
+.. py:function:: read_matrix_A(istream, header)
 
    Reads the A-matrix from the datfile.
 

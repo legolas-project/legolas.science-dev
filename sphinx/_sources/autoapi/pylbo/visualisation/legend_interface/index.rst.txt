@@ -1,5 +1,5 @@
-:mod:`pylbo.visualisation.legend_interface`
-===========================================
+:py:mod:`pylbo.visualisation.legend_interface`
+==============================================
 
 .. py:module:: pylbo.visualisation.legend_interface
 
@@ -17,8 +17,7 @@ Classes
 
 
 
-.. class:: LegendHandler(interactive)
-
+.. py:class:: LegendHandler(interactive)
 
    Main handler for legend stuff.
 
@@ -105,7 +104,7 @@ Classes
    ..
        !! processed by numpydoc !!
 
-   .. method:: on_legend_pick(self, event)
+   .. py:method:: on_legend_pick(self, event)
 
       Determines what happens when the legend gets picked.
 
@@ -130,7 +129,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: make_legend_pickable(self)
+   .. py:method:: make_legend_pickable(self)
 
       Makes the legend pickable, only used if interactive.
 
@@ -153,7 +152,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: add(self, item)
+   .. py:method:: add(self, item)
 
       Adds an item to the list of drawn items on the canvas.
 
@@ -179,7 +178,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: _check_autoscaling(self)
+   .. py:method:: _check_autoscaling(self)
 
       Checks if autoscaling is needed and if so, rescales the y-axis to the min-max
       value of the currently visible legend items.

@@ -1,5 +1,5 @@
-:mod:`pylbo.data_containers`
-============================
+:py:mod:`pylbo.data_containers`
+===============================
 
 .. py:module:: pylbo.data_containers
 
@@ -19,7 +19,7 @@ Classes
 
 
 
-.. class:: LegolasDataContainer
+.. py:class:: LegolasDataContainer
 
    Bases: :py:obj:`abc.ABC`
 
@@ -43,7 +43,7 @@ Classes
    ..
        !! processed by numpydoc !!
 
-   .. method:: continua(self)
+   .. py:method:: continua(self)
       :property:
 
       Retrieves the continua based on the type of subclass, returns a dictionary
@@ -74,7 +74,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: parameters(self)
+   .. py:method:: parameters(self)
       :property:
 
       Retrieves the parameters based on the type of subclass, returns a dictionary
@@ -104,45 +104,44 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: efs_written(self)
+   .. py:method:: efs_written(self)
       :abstractmethod:
 
 
-   .. method:: ef_grid(self)
+   .. py:method:: ef_grid(self)
       :abstractmethod:
 
 
-   .. method:: ef_names(self)
+   .. py:method:: ef_names(self)
       :abstractmethod:
 
 
-   .. method:: get_sound_speed(self, which_values=None)
+   .. py:method:: get_sound_speed(self, which_values=None)
       :abstractmethod:
 
 
-   .. method:: get_alfven_speed(self, which_values=None)
+   .. py:method:: get_alfven_speed(self, which_values=None)
       :abstractmethod:
 
 
-   .. method:: get_tube_speed(self, which_values=None)
+   .. py:method:: get_tube_speed(self, which_values=None)
       :abstractmethod:
 
 
-   .. method:: get_reynolds_nb(self, which_values=None)
+   .. py:method:: get_reynolds_nb(self, which_values=None)
       :abstractmethod:
 
 
-   .. method:: get_magnetic_reynolds_nb(self, which_values=None)
+   .. py:method:: get_magnetic_reynolds_nb(self, which_values=None)
       :abstractmethod:
 
 
-   .. method:: get_k0_squared(self)
+   .. py:method:: get_k0_squared(self)
       :abstractmethod:
 
 
 
-.. class:: LegolasDataSet(datfile)
-
+.. py:class:: LegolasDataSet(datfile)
 
    Bases: :py:obj:`LegolasDataContainer`
 
@@ -282,7 +281,7 @@ Classes
    ..
        !! processed by numpydoc !!
 
-   .. method:: efs_written(self)
+   .. py:method:: efs_written(self)
       :property:
 
       Checks if eigenfunctions are present.
@@ -308,7 +307,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: ef_names(self)
+   .. py:method:: ef_names(self)
       :property:
 
       Retrieves the eigenfunction names.
@@ -335,7 +334,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: ef_grid(self)
+   .. py:method:: ef_grid(self)
       :property:
 
       Retrieves the eigenfunction grid.
@@ -361,7 +360,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: _get_values(array, which_values)
+   .. py:method:: _get_values(array, which_values)
       :staticmethod:
 
       Determines which values to retrieve from an array.
@@ -399,7 +398,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_sound_speed(self, which_values=None)
+   .. py:method:: get_sound_speed(self, which_values=None)
 
       Calculates the sound speed based on the equilibrium arrays,
       given by :math:`c_s = \sqrt{\frac{\gamma p_0}{\rho_0}}`.
@@ -434,7 +433,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_alfven_speed(self, which_values=None)
+   .. py:method:: get_alfven_speed(self, which_values=None)
 
       Calculates the Alfvén speed based on the equilibrium arrays,
       given by :math:`c_A = \sqrt{\frac{B_0^2}{\rho_0}}`.
@@ -469,7 +468,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_tube_speed(self, which_values=None)
+   .. py:method:: get_tube_speed(self, which_values=None)
 
       Calculates the tube speed for a cylinder, given by
       :math:`c_t = \frac{c_s c_A}{\sqrt{c_s^2 + c_A^2}}`.
@@ -505,7 +504,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_reynolds_nb(self, which_values=None)
+   .. py:method:: get_reynolds_nb(self, which_values=None)
 
       Calculates the Reynolds number, defined as
       :math:`R_e = \frac{ac_s}{\eta}` where the slabsize is given by
@@ -542,7 +541,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_magnetic_reynolds_nb(self, which_values=None)
+   .. py:method:: get_magnetic_reynolds_nb(self, which_values=None)
 
       Calculates the magnetic Reynolds number, defined as
       :math:`R_m = \frac{ac_A}{\eta}` where the slabsize is given by
@@ -579,7 +578,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_k0_squared(self)
+   .. py:method:: get_k0_squared(self)
 
       Calculates the squared wave number, defined as
       :math:`k_0^2 = k_2^2 + k_3^2`.
@@ -605,7 +604,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_matrix_B(self)
+   .. py:method:: get_matrix_B(self)
 
       Retrieves the matrix B from the datfile.
 
@@ -633,7 +632,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_matrix_A(self)
+   .. py:method:: get_matrix_A(self)
 
       Retrieves the matrix A from the datfile.
 
@@ -661,7 +660,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_eigenfunctions(self, ev_guesses=None, ev_idxs=None)
+   .. py:method:: get_eigenfunctions(self, ev_guesses=None, ev_idxs=None)
 
       Returns the eigenfunctions based on given eigenvalue guesses or their
       indices. An array will be returned where every item is a dictionary, containing
@@ -697,7 +696,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_nearest_eigenvalues(self, ev_guesses)
+   .. py:method:: get_nearest_eigenvalues(self, ev_guesses)
 
       Calculates the eigenvalues nearest to a given guess. This calculates
       the nearest eigenvalue based on the distance between two points.
@@ -729,8 +728,7 @@ Classes
 
 
 
-.. class:: LegolasDataSeries(datfiles)
-
+.. py:class:: LegolasDataSeries(datfiles)
 
    Bases: :py:obj:`LegolasDataContainer`
 
@@ -754,7 +752,7 @@ Classes
    ..
        !! processed by numpydoc !!
 
-   .. method:: efs_written(self)
+   .. py:method:: efs_written(self)
       :property:
 
       Checks if the eigenfunctions are written.
@@ -781,7 +779,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: ef_names(self)
+   .. py:method:: ef_names(self)
       :property:
 
       Returns the eigenfunction names.
@@ -807,7 +805,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: ef_grid(self)
+   .. py:method:: ef_grid(self)
       :property:
 
       Retrieves the eigenfunction grid.
@@ -833,7 +831,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_sound_speed(self, which_values=None)
+   .. py:method:: get_sound_speed(self, which_values=None)
 
       Calculates the sound speed for the various datasets.
 
@@ -871,7 +869,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_alfven_speed(self, which_values=None)
+   .. py:method:: get_alfven_speed(self, which_values=None)
 
       Calculates the Alfvén speed for the various datasets.
 
@@ -909,7 +907,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_tube_speed(self, which_values=None)
+   .. py:method:: get_tube_speed(self, which_values=None)
 
       Calculates the tube speed for the various datasets.
 
@@ -948,7 +946,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_reynolds_nb(self, which_values=None)
+   .. py:method:: get_reynolds_nb(self, which_values=None)
 
       Calculates the Reynolds number for the various datasets.
 
@@ -987,7 +985,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_magnetic_reynolds_nb(self, which_values=None)
+   .. py:method:: get_magnetic_reynolds_nb(self, which_values=None)
 
       Calculates the magnetic Reynolds number for the various datasets.
 
@@ -1026,7 +1024,7 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. method:: get_k0_squared(self)
+   .. py:method:: get_k0_squared(self)
 
       Calculates the squared wave number for the various datasets.
 

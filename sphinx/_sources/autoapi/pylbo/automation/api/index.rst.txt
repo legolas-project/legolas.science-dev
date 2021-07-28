@@ -1,5 +1,5 @@
-:mod:`pylbo.automation.api`
-===========================
+:py:mod:`pylbo.automation.api`
+==============================
 
 .. py:module:: pylbo.automation.api
 
@@ -18,7 +18,7 @@ Functions
 
 
 
-.. function:: generate_parfiles(parfile_dict, basename=None, output_dir=None)
+.. py:function:: generate_parfiles(parfile_dict, basename=None, output_dir=None)
 
    Generates parfiles based on a given configuration dictionary.
    The separate namelists do not have to be taken into account, and a normal
@@ -104,7 +104,7 @@ Functions
        !! processed by numpydoc !!
 
 
-.. function:: run_legolas(parfiles, remove_parfiles=False, nb_cpus=1, executable=None)
+.. py:function:: run_legolas(parfiles, remove_parfiles=False, nb_cpus=1, executable=None)
 
    Runs the legolas executable for a given list of parfiles. If more than one parfile
    is passed, the runs can be performed in parallel using the multiprocessing module.

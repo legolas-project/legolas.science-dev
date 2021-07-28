@@ -1,5 +1,5 @@
-:mod:`pylbo.visualisation.continua`
-===================================
+:py:mod:`pylbo.visualisation.continua`
+======================================
 
 .. py:module:: pylbo.visualisation.continua
 
@@ -34,17 +34,17 @@ Attributes
    pylbo.visualisation.continua.CONTINUA_COLORS
 
 
-.. data:: CONTINUA_NAMES
+.. py:data:: CONTINUA_NAMES
    :annotation: = ['slow-', 'slow+', 'alfven-', 'alfven+', 'thermal', 'doppler']
 
    
 
-.. data:: CONTINUA_COLORS
+.. py:data:: CONTINUA_COLORS
    :annotation: = ['red', 'red', 'cyan', 'cyan', 'green', 'grey']
 
    
 
-.. function:: calculate_continua(ds)
+.. py:function:: calculate_continua(ds)
 
    Calculates the different continua for a given dataset.
 
@@ -72,8 +72,7 @@ Attributes
        !! processed by numpydoc !!
 
 
-.. class:: ContinuaHandler(interactive)
-
+.. py:class:: ContinuaHandler(interactive)
 
    Bases: :py:obj:`pylbo.visualisation.legend_interface.LegendHandler`
 
@@ -105,7 +104,7 @@ Attributes
    ..
        !! processed by numpydoc !!
 
-   .. method:: continua_colors(self)
+   .. py:method:: continua_colors(self)
       :property:
 
       Returns the list of continua colors.
@@ -131,7 +130,7 @@ Attributes
           !! processed by numpydoc !!
 
 
-   .. method:: check_if_collapsed(continuum)
+   .. py:method:: check_if_collapsed(continuum)
       :staticmethod:
 
       Checks if a given continuum is "collapsed" to a single point.
@@ -160,7 +159,7 @@ Attributes
           !! processed by numpydoc !!
 
 
-   .. method:: check_if_all_zero(continuum)
+   .. py:method:: check_if_all_zero(continuum)
       :staticmethod:
 
       Checks if a given continuum is pure zero.
