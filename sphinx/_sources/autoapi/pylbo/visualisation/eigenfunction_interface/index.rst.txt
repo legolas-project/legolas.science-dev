@@ -1,0 +1,454 @@
+:py:mod:`pylbo.visualisation.eigenfunction_interface`
+=====================================================
+
+.. py:module:: pylbo.visualisation.eigenfunction_interface
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface
+
+
+
+
+.. py:class:: EigenfunctionInterface(data, axis)
+
+   .. py:method:: _check_data_is_present(self)
+
+      Checks if the required data is present to draw for example
+      eigenfunctions, is overloaded in subclasses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _artist_has_valid_attributes(self, event)
+
+      Checks if a given event has valid attributes, this prevents triggering the
+      interface when clicking on legend items, for example.
+
+      :param event: The pick event.
+      :type event: ~matplotlib.backend_bases.PickEvent
+
+      :returns: `True` if all conditions are met and callbacks can be connected, `False`
+                otherwise.
+      :rtype: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _clear_figure_and_selection(self)
+
+      Clears the current figure, clears the dictionary of selected eigenvalues.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _switch_real_and_imaginary_part(self)
+
+      Switches between the real and imaginary part of a given function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _select_next_function(self)
+
+      Increments the index of the currently selected function by 1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _select_previous_function(self)
+
+      Decrements the index of the currently selected function by 1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _retransform_functions(self)
+
+      Toggles a retransform of a function, for example an eigenfunction
+      :math:`v_r \leftrightarrow rv_r`"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _print_selected_eigenvalues(self)
+
+      Prints all selected eigenvalues to the console as an array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _get_label(self, ds, ev_idx, w)
+
+      Returns the label used in the legend. In case of a data series, the datfile
+      name is prepended.
+
+      :param ds: The current dataset
+      :type ds: ~pylbo.data_containers.LegolasDataSet
+      :param ev_idx: The index of the current eigenvalue in the corresponding array
+      :type ev_idx: int
+      :param w: The eigenvalue to use in the label
+      :type w: float, complex
+
+      :returns: The label to use in the legend.
+      :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _get_title(self)
+      :abstractmethod:
+
+      Creates the title of a given plot, has to be overridden in a subclass.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: update_plot(self)
+      :abstractmethod:
+
+      Updates the plot when an event is triggered, clears and then redraws
+      the functions. Rescaling of the axes is done automatically.
+      Has to be overridden in a subclass.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: on_point_pick(self, event)
+
+      Determines what happens when an eigenvalue is clicked.
+
+      :param event: The pick event.
+      :type event: ~matplotlib.backend_bases.PickEvent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: on_key_press(self, event)
+
+      Determines what happens when a key is pressed.
+
+      :param event: The key event.
+      :type event: ~matplotlib.backend_bases.KeyEvent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: on_left_click(self, event)
+
+      Determines what happens when left-clicking an eigenvalue.
+
+      :param event: The pick event.
+      :type event: ~matplotlib.backend_bases.PickEvent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: on_right_click(self, event)
+
+      Determines what happens when right-clicking an eigenvalue.
+
+      :param event: The pick event.
+      :type event: ~matplotlib.backend_bases.PickEvent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _get_clicked_point_data(self, event)
+
+      Retrieves the index (in the eigenvalue array), x data coordinate and y data
+      coordinate of the eigenvalue nearest to the clicked point.
+
+      :param event: The pick event.
+      :type event: ~matplotlib.backend_bases.PickEvent
+
+      :returns: * **idx** (*integer*) -- The index of the selected point in the eigenvalue array
+                * **xdata** (*float*) -- The x data coordinate of the selected eigenvalue
+                * **ydata** (*float*) -- The y data coordinate of the selected eigenvalue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _mark_points_without_data_written(self)
+
+      For dataseries, it is possible that not all datasets in the series
+      have eigenfunctions associated with them. This routine will toggle a change
+      in the opacity value for datapoints with no functions, so they are
+      clearly distinguishable from those who do have them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+

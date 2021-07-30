@@ -116,6 +116,14 @@ Classes
       :abstractmethod:
 
 
+   .. py:method:: pp_written(self)
+      :abstractmethod:
+
+
+   .. py:method:: pp_names(self)
+      :abstractmethod:
+
+
    .. py:method:: get_sound_speed(self, which_values=None)
       :abstractmethod:
 
@@ -340,6 +348,59 @@ Classes
       Retrieves the eigenfunction grid.
 
       :returns: **ef_grid** -- The eigenfunction grid. Returns None if eigenfunctions are not present.
+      :rtype: numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: pp_written(self)
+      :property:
+
+      Checks if post-processed quantities are present.
+
+      :returns: **pp_written** -- If `True`, post-processed quantities are present in the datfile.
+      :rtype: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: pp_names(self)
+      :property:
+
+      Retrieves the post-processed quantity names.
+
+      :returns: **pp_names** -- Array containing the names of the post-processed quantities as strings.
+                None if no post-processed quantities are present.
       :rtype: numpy.ndarray
 
 
@@ -696,6 +757,43 @@ Classes
           !! processed by numpydoc !!
 
 
+   .. py:method:: get_postprocessed(self, ev_guesses=None, ev_idxs=None)
+
+      Returns the post-processed quantities based on given eigenvalue guesses or their
+      indices. An array will be returned where every item is a dictionary, containing
+      both the eigenvalue and its quantities. Either eigenvalue guesses or
+      indices can be supplied, but not both.
+
+      :param ev_guesses: Eigenvalue guesses.
+      :type ev_guesses: (list of) int, float, complex
+      :param ev_idxs: Indices corresponding to the eigenvalues that need to be retrieved.
+      :type ev_idxs: (list of) int
+
+      :returns: **postprocessed** -- Array containing the post-processed quantities and eigenvalues
+                corresponding to the supplied indices. Every index in this array
+                contains a dictionary with the post-processed quantities and
+                corresponding eigenvalue. The keys of each dictionary are the
+                post-processed quantity names.
+      :rtype: numpy.ndarray(dtype=dict, ndim=1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
    .. py:method:: get_nearest_eigenvalues(self, ev_guesses)
 
       Calculates the eigenvalues nearest to a given guess. This calculates
@@ -811,6 +909,59 @@ Classes
       Retrieves the eigenfunction grid.
 
       :returns: **ef_grid** -- An array with arrays, containing the eigenfunction grids for each dataset.
+      :rtype: numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: pp_written(self)
+      :property:
+
+      Checks if the post-processed quantities are written.
+
+      :returns: **pp_written** -- An array of bools corresponding to the various datasets, `True` if a
+                dataset has post-processed quantities present.
+      :rtype: numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: pp_names(self)
+      :property:
+
+      Returns the post-processed quantity names.
+
+      :returns: **pp_names** -- An array with the post-processed quantity names as strings.
       :rtype: numpy.ndarray
 
 

@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.1.0 - develop
+                1.1.2 - develop
               </div>
             
           
@@ -226,6 +226,8 @@
         <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;matrices present in datfile&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenfuncs_written&quot;</span><span class="p">]:</span>
         <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;eigenfunctions present in datfile&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;postprocessed_written&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;post-processed quantities present in datfile&quot;</span><span class="p">)</span>
     <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">75</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ds</span></div>
 
@@ -308,6 +310,21 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">efs_present</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
             <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;eigenfunctions present in all datfiles&quot;</span><span class="p">)</span>
+
+    <span class="c1"># check presence of post-processed quantities</span>
+    <span class="n">pp_present</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;postprocessed_written&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pp_present</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;no post-processed quantities present&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">pp_present</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;post-processed quantities present in some datfiles, but not all&quot;</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pp_present</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;post-processed quantities present in all datfiles&quot;</span><span class="p">)</span>
+
     <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">75</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">series</span></div>

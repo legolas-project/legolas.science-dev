@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                1.1.0 - develop
+                1.1.2 - develop
               </div>
             
           
@@ -264,6 +264,16 @@ with the parameter names as keys.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataContainer.ef_names">
 <em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">ef_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer.ef_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer.ef_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataContainer.pp_written">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">pp_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer.pp_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer.pp_written" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataContainer.pp_names">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">pp_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer.pp_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer.pp_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -561,6 +571,35 @@ None if no eigenfunctions are present.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.pp_written">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">pp_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.pp_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.pp_written" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if post-processed quantities are present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>pp_written</strong> – If <cite>True</cite>, post-processed quantities are present in the datfile.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.pp_names">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">pp_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.pp_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.pp_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the post-processed quantity names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>pp_names</strong> – Array containing the names of the post-processed quantities as strings.
+None if no post-processed quantities are present.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet._get_values">
 <em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_get_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which_values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet._get_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet._get_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines which values to retrieve from an array.</p>
@@ -812,6 +851,33 @@ The keys of each dictionary are the eigenfunction names.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_postprocessed">
+<span class="sig-name descname"><span class="pre">get_postprocessed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_guesses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.get_postprocessed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_postprocessed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the post-processed quantities based on given eigenvalue guesses or their
+indices. An array will be returned where every item is a dictionary, containing
+both the eigenvalue and its quantities. Either eigenvalue guesses or
+indices can be supplied, but not both.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ev_guesses</strong> (<em>(</em><em>list of</em><em>) </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.9)"><em>complex</em></a>) – Eigenvalue guesses.</p></li>
+<li><p><strong>ev_idxs</strong> (<em>(</em><em>list of</em><em>) </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – Indices corresponding to the eigenvalues that need to be retrieved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>postprocessed</strong> – Array containing the post-processed quantities and eigenvalues
+corresponding to the supplied indices. Every index in this array
+contains a dictionary with the post-processed quantities and
+corresponding eigenvalue. The keys of each dictionary are the
+post-processed quantity names.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a>(dtype=dict, ndim=1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_nearest_eigenvalues">
 <span class="sig-name descname"><span class="pre">get_nearest_eigenvalues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_guesses</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.get_nearest_eigenvalues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_nearest_eigenvalues" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the eigenvalues nearest to a given guess. This calculates
@@ -875,6 +941,35 @@ dataset has eigenfunctions present.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><strong>ef_grid</strong> – An array with arrays, containing the eigenfunction grids for each dataset.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.pp_written">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">pp_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.pp_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.pp_written" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the post-processed quantities are written.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>pp_written</strong> – An array of bools corresponding to the various datasets, <cite>True</cite> if a
+dataset has post-processed quantities present.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.pp_names">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">pp_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.pp_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.pp_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the post-processed quantity names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>pp_names</strong> – An array with the post-processed quantity names as strings.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a></p>

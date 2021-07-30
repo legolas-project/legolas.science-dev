@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                1.1.0 - develop
+                1.1.2 - develop
               </div>
             
           
@@ -101,10 +101,12 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../continua/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.continua</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eigenfunction_interface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunction_interface</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../eigenfunctions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../figure_manager/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.figure_manager</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../legend_interface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.legend_interface</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../matrices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.matrices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../postprocessed/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.postprocessed</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../profiles/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.profiles</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.spectra</span></code></a></li>
 </ul>
@@ -228,7 +230,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.draw">
 <span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.draw" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draws everything, checks for continua/eigenfunctions. Overridden by subclasses.</p>
+<dd><p>Called on plot refreshing, the super call clears the figure and then redraws
+everything.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -263,8 +266,31 @@ markersize, alpha, etc.)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.add_eigenfunctions">
 <span class="sig-name descname"><span class="pre">add_eigenfunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.add_eigenfunctions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.add_eigenfunctions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to add eigenfunctions, should be partially overridden by subclass and
-then called through <cite>super()</cite> to connect the figure events.</p>
+<dd><p>Adds eigenfunctions to the spectrum, overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.add_postprocessed">
+<span class="sig-name descname"><span class="pre">add_postprocessed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.add_postprocessed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.add_postprocessed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds postprocessed quantities to the spectrum, overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.c_handler">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">c_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.c_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.c_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property, returns the continua handler.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.ef_handler">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ef_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.ef_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.ef_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property, returns the eigenfunction handler.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.ef_ax">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ef_ax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.ef_ax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.ef_ax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property, returns the eigenfunction axes.</p>
 </dd></dl>
 
 </dd></dl>
@@ -379,21 +405,15 @@ then called through <cite>super()</cite> to connect the figure events.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SingleSpectrumPlot.add_postprocessed">
+<span class="sig-name descname"><span class="pre">add_postprocessed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SingleSpectrumPlot.add_postprocessed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SingleSpectrumPlot.add_postprocessed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the post-processed quantities to the plot, sets the post-processed handler.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.spectra.SingleSpectrumPlot._ensure_smooth_continuum">
 <span class="sig-name descname"><span class="pre">_ensure_smooth_continuum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SingleSpectrumPlot._ensure_smooth_continuum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SingleSpectrumPlot._ensure_smooth_continuum" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SingleSpectrumPlot.ef_ax">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ef_ax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SingleSpectrumPlot.ef_ax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SingleSpectrumPlot.ef_ax" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property, returns the eigenfunction axes.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SingleSpectrumPlot.ef_handler">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ef_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SingleSpectrumPlot.ef_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SingleSpectrumPlot.ef_handler" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property, returns the eigenfunction handler.</p>
-</dd></dl>
 
 </dd></dl>
 
@@ -501,6 +521,12 @@ the elements themselves may be of different length.</p>
 <dd><p>Adds the eigenfunctions to the current figure.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.MultiSpectrumPlot.add_postprocessed">
+<span class="sig-name descname"><span class="pre">add_postprocessed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#MultiSpectrumPlot.add_postprocessed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.MultiSpectrumPlot.add_postprocessed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the post-processed quantities to the current figure.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -551,6 +577,12 @@ the elements themselves may be of different length.</p>
 <dt class="sig sig-object py" id="pylbo.visualisation.spectra.MergedSpectrumPlot.add_eigenfunctions">
 <span class="sig-name descname"><span class="pre">add_eigenfunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#MergedSpectrumPlot.add_eigenfunctions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.MergedSpectrumPlot.add_eigenfunctions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds the eigenfunctions to the current figure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.MergedSpectrumPlot.add_postprocessed">
+<span class="sig-name descname"><span class="pre">add_postprocessed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#MergedSpectrumPlot.add_postprocessed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.MergedSpectrumPlot.add_postprocessed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the post-processed quantities to the current figure.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -647,6 +679,13 @@ the elements themselves may be of different length.</p>
 <dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumComparisonPlot.add_eigenfunctions">
 <span class="sig-name descname"><span class="pre">add_eigenfunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumComparisonPlot.add_eigenfunctions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumComparisonPlot.add_eigenfunctions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds the eigenfunctions for both datasets and merges the mpl callbacks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumComparisonPlot.add_postprocessed">
+<span class="sig-name descname"><span class="pre">add_postprocessed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumComparisonPlot.add_postprocessed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumComparisonPlot.add_postprocessed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the post-processed quantities for both datasets and merges the mpl
+callbacks.</p>
 </dd></dl>
 
 <dl class="py method">

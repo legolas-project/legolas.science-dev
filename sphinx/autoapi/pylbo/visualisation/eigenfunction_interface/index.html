@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pylbo.visualisation.eigenfunction_interface &mdash; Pylbo develop documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="pylbo.visualisation.eigenfunctions" href="../eigenfunctions/index.html" />
+    <link rel="prev" title="pylbo.visualisation.continua" href="../continua/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Pylbo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.2 - develop
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Package structure:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../automation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.automation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../utilities/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities</span></code></a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.api</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../continua/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.continua</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunction_interface</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eigenfunctions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../figure_manager/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.figure_manager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../legend_interface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.legend_interface</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../matrices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.matrices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../postprocessed/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.postprocessed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../profiles/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.profiles</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../spectra/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.spectra</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../_version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo._version</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../data_containers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.data_containers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../file_handler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.file_handler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../testing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.testing</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Pylbo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">API Reference</a> &raquo;</li>
+        
+          <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo</span></code></a> &raquo;</li>
+        
+          <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a> &raquo;</li>
+        
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunction_interface</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/autoapi/pylbo/visualisation/eigenfunction_interface/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pylbo.visualisation.eigenfunction_interface">
+<span id="pylbo-visualisation-eigenfunction-interface"></span><h1><a class="reference internal" href="#module-pylbo.visualisation.eigenfunction_interface" title="pylbo.visualisation.eigenfunction_interface"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunction_interface</span></code></a><a class="headerlink" href="#module-pylbo.visualisation.eigenfunction_interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface" title="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EigenfunctionInterface</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.eigenfunction_interface.</span></span><span class="sig-name descname"><span class="pre">EigenfunctionInterface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._check_data_is_present">
+<span class="sig-name descname"><span class="pre">_check_data_is_present</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._check_data_is_present"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._check_data_is_present" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the required data is present to draw for example
+eigenfunctions, is overloaded in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._artist_has_valid_attributes">
+<span class="sig-name descname"><span class="pre">_artist_has_valid_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._artist_has_valid_attributes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._artist_has_valid_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a given event has valid attributes, this prevents triggering the
+interface when clicking on legend items, for example.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.4.1)"><em>PickEvent</em></a>) – The pick event.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>True</cite> if all conditions are met and callbacks can be connected, <cite>False</cite>
+otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._clear_figure_and_selection">
+<span class="sig-name descname"><span class="pre">_clear_figure_and_selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._clear_figure_and_selection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._clear_figure_and_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the current figure, clears the dictionary of selected eigenvalues.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._switch_real_and_imaginary_part">
+<span class="sig-name descname"><span class="pre">_switch_real_and_imaginary_part</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._switch_real_and_imaginary_part"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._switch_real_and_imaginary_part" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switches between the real and imaginary part of a given function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._select_next_function">
+<span class="sig-name descname"><span class="pre">_select_next_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._select_next_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._select_next_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increments the index of the currently selected function by 1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._select_previous_function">
+<span class="sig-name descname"><span class="pre">_select_previous_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._select_previous_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._select_previous_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrements the index of the currently selected function by 1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._retransform_functions">
+<span class="sig-name descname"><span class="pre">_retransform_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._retransform_functions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._retransform_functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggles a retransform of a function, for example an eigenfunction
+<span class="math notranslate nohighlight">\(v_r \leftrightarrow rv_r\)</span>”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._print_selected_eigenvalues">
+<span class="sig-name descname"><span class="pre">_print_selected_eigenvalues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._print_selected_eigenvalues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._print_selected_eigenvalues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints all selected eigenvalues to the console as an array.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._get_label">
+<span class="sig-name descname"><span class="pre">_get_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._get_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._get_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the label used in the legend. In case of a data series, the datfile
+name is prepended.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The current dataset</p></li>
+<li><p><strong>ev_idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The index of the current eigenvalue in the corresponding array</p></li>
+<li><p><strong>w</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.9)"><em>complex</em></a>) – The eigenvalue to use in the label</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The label to use in the legend.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._get_title">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">_get_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._get_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the title of a given plot, has to be overridden in a subclass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.update_plot">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">update_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface.update_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.update_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the plot when an event is triggered, clears and then redraws
+the functions. Rescaling of the axes is done automatically.
+Has to be overridden in a subclass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.on_point_pick">
+<span class="sig-name descname"><span class="pre">on_point_pick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface.on_point_pick"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.on_point_pick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines what happens when an eigenvalue is clicked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.4.1)"><em>PickEvent</em></a>) – The pick event.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.on_key_press">
+<span class="sig-name descname"><span class="pre">on_key_press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface.on_key_press"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.on_key_press" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines what happens when a key is pressed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/api/backend_bases_api.html#matplotlib.backend_bases.KeyEvent" title="(in Matplotlib v3.4.1)"><em>KeyEvent</em></a>) – The key event.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.on_left_click">
+<span class="sig-name descname"><span class="pre">on_left_click</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface.on_left_click"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.on_left_click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines what happens when left-clicking an eigenvalue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.4.1)"><em>PickEvent</em></a>) – The pick event.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.on_right_click">
+<span class="sig-name descname"><span class="pre">on_right_click</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface.on_right_click"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface.on_right_click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines what happens when right-clicking an eigenvalue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.4.1)"><em>PickEvent</em></a>) – The pick event.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._get_clicked_point_data">
+<span class="sig-name descname"><span class="pre">_get_clicked_point_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._get_clicked_point_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._get_clicked_point_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the index (in the eigenvalue array), x data coordinate and y data
+coordinate of the eigenvalue nearest to the clicked point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.4.1)"><em>PickEvent</em></a>) – The pick event.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>idx</strong> (<em>integer</em>) – The index of the selected point in the eigenvalue array</p></li>
+<li><p><strong>xdata</strong> (<em>float</em>) – The x data coordinate of the selected eigenvalue</p></li>
+<li><p><strong>ydata</strong> (<em>float</em>) – The y data coordinate of the selected eigenvalue</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._mark_points_without_data_written">
+<span class="sig-name descname"><span class="pre">_mark_points_without_data_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunction_interface.html#EigenfunctionInterface._mark_points_without_data_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._mark_points_without_data_written" title="Permalink to this definition">¶</a></dt>
+<dd><p>For dataseries, it is possible that not all datasets in the series
+have eigenfunctions associated with them. This routine will toggle a change
+in the opacity value for datapoints with no functions, so they are
+clearly distinguishable from those who do have them.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../eigenfunctions/index.html" class="btn btn-neutral float-right" title="pylbo.visualisation.eigenfunctions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../continua/index.html" class="btn btn-neutral float-left" title="pylbo.visualisation.continua" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Niels Claes, Jordi De Jonghe and Rony Keppens (2020).
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

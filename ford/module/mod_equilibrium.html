@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_equilibrium &ndash; Legolas v. 1.1.2 - develop</title>
+    <title>mod_equilibrium &ndash; Legolas v. 1.1.3 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.2 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.3 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.2% of total for modules and submodules.">250 statements</a>
+    title=" 2.9% of total for modules and submodules.">242 statements</a>
      </li> 
      
      
@@ -259,8 +259,6 @@
       
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-suydam_cluster_eq">suydam_cluster_eq</a>
       
-      <a class="list-group-item" href="../module/mod_equilibrium.html#interface-viscoresistive_tube_eq">viscoresistive_tube_eq</a>
-      
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-couette_flow_eq">couette_flow_eq</a>
       
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-taylor_couette_eq">taylor_couette_eq</a>
@@ -268,8 +266,6 @@
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-harris_sheet_eq">harris_sheet_eq</a>
       
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-tc_pinch_eq">tc_pinch_eq</a>
-      
-      <a class="list-group-item" href="../module/mod_equilibrium.html#interface-tc_hmri_eq">tc_hmri_eq</a>
       
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-user_defined_eq">user_defined_eq</a>
       
@@ -336,19 +332,19 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_types.html'>mod_types</a></li>
     
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
     <li><a href='../module/mod_units.html'>mod_units</a></li>
     
     <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
     
-    <li><a href='../module/mod_types.html'>mod_types</a></li>
-    
     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     
   </ul>
       </li>
@@ -427,11 +423,7 @@
       
       <li><a href='../module/smod_equil_taylor_couette.html'>smod_equil_taylor_couette</a></li>
       
-      <li><a href='../module/smod_equil_tc_hmri.html'>smod_equil_tc_hmri</a></li>
-      
       <li><a href='../module/smod_equil_tc_pinch.html'>smod_equil_tc_pinch</a></li>
-      
-      <li><a href='../module/smod_equil_viscoresistive_tube.html'>smod_equil_viscoresistive_tube</a></li>
       
       <li><a href='../module/smod_user_defined.html'>smod_user_defined</a></li>
       
@@ -544,8 +536,6 @@
       
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-suydam_cluster_eq">suydam_cluster_eq</a>
       
-      <a class="list-group-item" href="../module/mod_equilibrium.html#interface-viscoresistive_tube_eq">viscoresistive_tube_eq</a>
-      
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-couette_flow_eq">couette_flow_eq</a>
       
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-taylor_couette_eq">taylor_couette_eq</a>
@@ -553,8 +543,6 @@
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-harris_sheet_eq">harris_sheet_eq</a>
       
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-tc_pinch_eq">tc_pinch_eq</a>
-      
-      <a class="list-group-item" href="../module/mod_equilibrium.html#interface-tc_hmri_eq">tc_hmri_eq</a>
       
       <a class="list-group-item" href="../module/mod_equilibrium.html#interface-user_defined_eq">user_defined_eq</a>
       
@@ -1718,44 +1706,6 @@ private module subroutine suydam_cluster_eq()
     
      
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-viscoresistive_tube_eq"></span><h3>interface 
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-    <p>interface to the different equilibrium submodules</p>
-  </div>
-  
-  <ul class="list-group">
-  
-    <li class="list-group-item">
-    
-    
-    <h3>
-private module subroutine viscoresistive_tube_eq()
-    
-    
-   
-   <a href='../proc/viscoresistive_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-    
-</h3>
-    
-    
-    <h4>Arguments</h4>
-    
-      <em>None</em>
-    
-    
-
-    </li>
-  
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="interface-couette_flow_eq"></span><h3>interface 
     
   </h3></div>
@@ -1890,44 +1840,6 @@ private module subroutine tc_pinch_eq()
     
    
    <a href='../proc/tc_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-    
-</h3>
-    
-    
-    <h4>Arguments</h4>
-    
-      <em>None</em>
-    
-    
-
-    </li>
-  
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-tc_hmri_eq"></span><h3>interface 
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-    <p>interface to the different equilibrium submodules</p>
-  </div>
-  
-  <ul class="list-group">
-  
-    <li class="list-group-item">
-    
-    
-    <h3>
-private module subroutine tc_hmri_eq()
-    
-    
-   
-   <a href='../proc/tc_hmri_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
     
 </h3>
     
@@ -2229,7 +2141,7 @@ public subroutine <a href='../proc/equilibrium_clean.html'>equilibrium_clean</a>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.2 - develop was developed by <br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.3 - develop was developed by <br>&copy; 2021 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

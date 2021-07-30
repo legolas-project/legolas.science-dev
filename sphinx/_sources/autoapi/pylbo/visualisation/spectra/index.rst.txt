@@ -47,7 +47,8 @@ Classes
 
    .. py:method:: draw(self)
 
-      Draws everything, checks for continua/eigenfunctions. Overridden by subclasses.
+      Called on plot refreshing, the super call clears the figure and then redraws
+      everything.
 
 
 
@@ -144,8 +145,102 @@ Classes
 
    .. py:method:: add_eigenfunctions(self)
 
-      Method to add eigenfunctions, should be partially overridden by subclass and
-      then called through `super()` to connect the figure events.
+      Adds eigenfunctions to the spectrum, overridden in subclasses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: add_postprocessed(self)
+
+      Adds postprocessed quantities to the spectrum, overridden in subclasses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: c_handler(self)
+      :property:
+
+      Property, returns the continua handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: ef_handler(self)
+      :property:
+
+      Property, returns the eigenfunction handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: ef_ax(self)
+      :property:
+
+      Property, returns the eigenfunction axes.
 
 
 
@@ -307,55 +402,30 @@ Classes
           !! processed by numpydoc !!
 
 
+   .. py:method:: add_postprocessed(self)
+
+      Adds the post-processed quantities to the plot, sets the post-processed handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
    .. py:method:: _ensure_smooth_continuum(self, continuum)
-
-
-   .. py:method:: ef_ax(self)
-      :property:
-
-      Property, returns the eigenfunction axes.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-
-   .. py:method:: ef_handler(self)
-      :property:
-
-      Property, returns the eigenfunction handler.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
 
 
@@ -580,6 +650,29 @@ Classes
           !! processed by numpydoc !!
 
 
+   .. py:method:: add_postprocessed(self)
+
+      Adds the post-processed quantities to the current figure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
 
 .. py:class:: MergedSpectrumPlot(data, figsize, custom_figure, interactive, legend, **kwargs)
 
@@ -653,6 +746,29 @@ Classes
    .. py:method:: add_eigenfunctions(self)
 
       Adds the eigenfunctions to the current figure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: add_postprocessed(self)
+
+      Adds the post-processed quantities to the current figure.
 
 
 
@@ -828,6 +944,30 @@ Classes
    .. py:method:: add_eigenfunctions(self)
 
       Adds the eigenfunctions for both datasets and merges the mpl callbacks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: add_postprocessed(self)
+
+      Adds the post-processed quantities for both datasets and merges the mpl
+      callbacks.
 
 
 

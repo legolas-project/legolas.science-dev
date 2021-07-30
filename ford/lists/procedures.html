@@ -11,7 +11,7 @@
     <link rel="icon" href="../favicon.png">
 
     <title>
-All Procedures &ndash; Legolas v. 1.1.2 - develop
+All Procedures &ndash; Legolas v. 1.1.3 - develop
 </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.2 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.3 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -179,6 +179,8 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
  based on the right eigenvectors. The eigenfunctions are transformed
  back to their 'actual' values</p></td></tr>
 			 
+			   <tr><td><a href='../proc/calculate_postprocessed.html'>calculate_postprocessed</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Calculates the postprocessed quantities for every eigenvalue.</p><a href="../proc/calculate_postprocessed.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
 			   <tr><td><a href='../proc/check_if_normalisations_set.html'>check_if_normalisations_set</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Subroutine</td><td><p>Checks if normalisations are set.
  If normalisations are not set, set them to default values.
  These are 1 MK as unit temperature, 10 Gauss as unit magnetic field and
@@ -255,6 +257,8 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
 			 
 			   <tr><td><a href='../proc/cubic_factors_deriv.html'>cubic_factors_deriv</a></td><td><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></td><td>Subroutine</td><td><p>@brief Calculates the derivatives of the cubic basis functions.</p></td></tr>
 			 
+			   <tr><td><a href='../proc/cubic_factors_deriv2.html'>cubic_factors_deriv2</a></td><td><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></td><td>Subroutine</td><td><p>@brief Calculates the second derivatives of the cubic basis functions.</p></td></tr>
+			 
 			   <tr><td><a href='../proc/deallocate_bfield_type.html'>deallocate_bfield_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Deallocates all attributes contained in the magnetic field type.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/deallocate_conduction_type.html'>deallocate_conduction_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Deallocates all attributes contained in the thermal conduction type.</p></td></tr>
@@ -324,6 +328,12 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
  Returns all physical constants used to calculate the Spitzer resistivity,
  either in cgs (default) or SI depending on the unit system chosen.</p></td></tr>
 			 
+			   <tr><td><a href='../proc/get_curl_magnetic.html'>get_curl_magnetic</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Calculates the curl of the perturbed magnetic field B1
+ In parallel/perpendicular components</p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_curl_velocity.html'>get_curl_velocity</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Calculates the curl of the perturbed velocity v1
+ In parallel/perpendicular components</p></td></tr>
+			 
 			   <tr><td><a href='../proc/get_deta.html'>get_deta</a></td><td><a href='../module/smod_resistive_matrix.html'>smod_resistive_matrix</a></td><td>Function</td><td><p>Calculates the total derivative of <script type="math/tex; mode=display">\eta</script>, given as
  <script type="math/tex; mode=display"> \eta_0(r, T)' = \frac{d\eta_0}{dr} + \frac{dT_0}{dr}\frac{d\eta_0}{dT} </script>
 </p></td></tr>
@@ -344,10 +354,20 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
  </script>
 </p></td></tr>
 			 
+			   <tr><td><a href='../proc/get_div_magnetic.html'>get_div_magnetic</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Calculates the divergence of the perturbed magnetic field B1</p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_div_velocity.html'>get_div_velocity</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Calculates the divergence of the perturbed velocity v1</p></td></tr>
+			 
 			   <tr><td><a href='../proc/get_eigenfunction.html'>get_eigenfunction</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td><p>Calculates a single eigenfunction based on an eigenvector.
  Assembles the eigenfunction corresponding to <tt>ef_idx</tt> and the
  given eigenvector. The eigenvector supplied is the one
  corresponding to one particular eigenvalue.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_eigenfunction_deriv.html'>get_eigenfunction_deriv</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Calculates the derivative of a single eigenfunction based on an eigenvector.
+ The eigenvector supplied is the one corresponding to one particular
+ eigenvalue.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_entropy.html'>get_entropy</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Calculates the perturbed magnetic field B1</p></td></tr>
 			 
 			   <tr><td><a href='../proc/get_eta.html'>get_eta</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Calculates the resistivity. Returns either the full Spitzer resistivity
  based on the equilibrium parameters, or a fixed resistivity value if
@@ -401,6 +421,9 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
  \right)
  $$</p></td></tr>
 			 
+			   <tr><td><a href='../proc/get_magnetic_field.html'>get_magnetic_field</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Calculates the perturbed magnetic field B1
+ In parallel/perpendicular components</p></td></tr>
+			 
 			   <tr><td><a href='../proc/get_numerical_derivative.html'>get_numerical_derivative</a></td><td><a href='../module/mod_interpolation.html'>mod_interpolation</a></td><td>Subroutine</td><td><p>Calculates the numerical derivative of a given array.
  A sixth-order accurate central difference stencil is used to calculate the
  derivative. Near the edges a sixth-order accurate forward and backward
@@ -426,6 +449,12 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
 			   <tr><td><a href='../proc/get_spline.html'>get_spline</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td><p>Retrieves the spline for a particular variable by
  calling the correct finite element basis function depending on the
  variable passed.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_spline_deriv.html'>get_spline_deriv</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Retrieves the spline or one of its derivatives for a particular variable by
+ calling the correct finite element basis function depending on the
+ variable passed.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_v_paraperp.html'>get_v_paraperp</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>In parallel/perpendicular components</p></td></tr>
 			 
 			   <tr><td><a href='../proc/get_viscosity_terms.html'>get_viscosity_terms</a></td><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td>Subroutine</td><td></td></tr>
 			 
@@ -517,6 +546,12 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
 			 
 			   <tr><td><a href='../proc/initialise_hall_type.html'>initialise_hall_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Allocates the Hall type and initialises all values to zero.</p></td></tr>
 			 
+			   <tr><td><a href='../proc/initialise_postprocessing.html'>initialise_postprocessing</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Main initialisations of this module.
+ Allocates and initialises the types and names.
+ Passing the optional argument <tt>nb_evs</tt> sets the number of eigenvalues
+ that are calculated and limits the size of the eigenfunction arrays accordingly.
+ This routine is only called if <tt>write_postprocessed = .true.</tt>.</p></td></tr>
+			 
 			   <tr><td><a href='../proc/initialise_radiative_cooling.html'>initialise_radiative_cooling</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Subroutine</td><td><p>Initialises the radiative cooling variables.
  This routine first selects and allocates the correct cooling
  tables, depending on the desired curve. These tables are used
@@ -548,6 +583,8 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
 			   <tr><td><a href='../interface/interchange_modes_eq.html'>interchange_modes_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 
 			   <tr><td><a href='../interface/internal_kink_eq.html'>internal_kink_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
+			 
+			   <tr><td><a href='../proc/interpolate_equilibrium.html'>interpolate_equilibrium</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/interpolate_table.html'>interpolate_table</a></td><td><a href='../module/mod_interpolation.html'>mod_interpolation</a></td><td>Subroutine</td><td><p>Interpolates a given set of tables (x, y(x)) into a smooth curve.
  Assumes that x_table is an array with a monotone increase in values.
@@ -644,6 +681,8 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
  and non-adiabatic equilibrium force balance.</p></td></tr>
 			 
 			   <tr><td><a href='../interface/photospheric_flux_tube_eq.html'>photospheric_flux_tube_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
+			 
+			   <tr><td><a href='../proc/postprocessing_clean.html'>postprocessing_clean</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td><p>Cleaning routine, deallocates the postprocessing arrays.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/print_console_info.html'>print_console_info</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td><p>Prints various console messages showing geometry, grid parameters,
  equilibrium parameters etc. Only for logging level "info" or above.</p></td></tr>
@@ -746,6 +785,8 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
  then $\mathscr{L}_0 = 0$. If one (or more) of these effects are present, then
  $\mathscr{L}_0 = 0$ is no longer true.
   The <tt>rc_field % heat_loss</tt> attribute is modified on exit.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/set_eps.html'>set_eps</a></td><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/set_equilibrium.html'>set_equilibrium</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Subroutine</td><td><p>Calls the routine to set the equilibrium pointer, then calls the correct
  submodule. Performs some sanity checks (negative values, NaNs etc.) when
@@ -912,8 +953,6 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
 			 
 			   <tr><td><a href='../interface/taylor_couette_eq.html'>taylor_couette_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 
-			   <tr><td><a href='../interface/tc_hmri_eq.html'>tc_hmri_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
-			 
 			   <tr><td><a href='../interface/tc_pinch_eq.html'>tc_pinch_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 
 			   <tr><td><a href='../proc/tear_down.html'>tear_down</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Cleanup routine, deallocates type attributes.</p></td></tr>
@@ -925,8 +964,6 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
  </p><a href="../proc/transform_eigenfunction.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../interface/user_defined_eq.html'>user_defined_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
-			 
-			   <tr><td><a href='../interface/viscoresistive_tube_eq.html'>viscoresistive_tube_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 
 			   <tr><td><a href='../proc/viscosity_boundaries.html'>viscosity_boundaries</a></td><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td>Subroutine</td><td><p>Creates a quadblock for the A matrix containing the natural boundary
  conditions coming from the viscosity terms, depending on the supplied edge.</p></td></tr>
@@ -941,7 +978,7 @@ All Procedures &ndash; Legolas v. 1.1.2 - develop
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.2 - develop was developed by <br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.3 - develop was developed by <br>&copy; 2021 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

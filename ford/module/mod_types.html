@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_types &ndash; Legolas v. 1.1.2 - develop</title>
+    <title>mod_types &ndash; Legolas v. 1.1.3 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.2 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.3 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.5% of total for modules and submodules.">275 statements</a>
+    title=" 3.4% of total for modules and submodules.">281 statements</a>
      </li> 
      
      
@@ -212,6 +212,8 @@
       <a class="list-group-item" href="../module/mod_types.html#type-conduction_type">conduction_type</a>
       
       <a class="list-group-item" href="../module/mod_types.html#type-ef_type">ef_type</a>
+      
+      <a class="list-group-item" href="../module/mod_types.html#type-pp_type">pp_type</a>
       
       <a class="list-group-item" href="../module/mod_types.html#type-hall_type">hall_type</a>
       
@@ -365,6 +367,8 @@
       <a class="list-group-item" href="../module/mod_types.html#type-conduction_type">conduction_type</a>
       
       <a class="list-group-item" href="../module/mod_types.html#type-ef_type">ef_type</a>
+      
+      <a class="list-group-item" href="../module/mod_types.html#type-pp_type">pp_type</a>
       
       <a class="list-group-item" href="../module/mod_types.html#type-hall_type">hall_type</a>
       
@@ -2374,6 +2378,81 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
      
      
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-pp_type"></span><h3>type, public :: <a href='../type/pp_type.html'>pp_type</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+    
+    <p>type containing all postprocessing related quantities</p>
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-index~2"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>index</strong></td><td></td><td></td><td><p>index of the variable in the state vector</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-name~2"></span>character(len=str_len_arr),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>name</strong></td><td></td><td></td><td><p>name of the quantity (div v1, B1, B2, B3, etc.)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-quantities"></span>complex(kind=dp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>quantities</strong>(:,:)</td><td></td><td></td><td><p>array containing all quantities for this index</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+  </div>
+</div>
+
+     
+     
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="type-hall_type"></span><h3>type, public :: <a href='../type/hall_type.html'>hall_type</a>
     
   </h3></div>
@@ -3520,7 +3599,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.2 - develop was developed by <br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.3 - develop was developed by <br>&copy; 2021 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

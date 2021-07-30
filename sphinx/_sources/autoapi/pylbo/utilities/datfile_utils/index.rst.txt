@@ -20,6 +20,7 @@ Functions
    pylbo.utilities.datfile_utils.read_eigenvalues
    pylbo.utilities.datfile_utils.read_equilibrium_arrays
    pylbo.utilities.datfile_utils.read_eigenfunction
+   pylbo.utilities.datfile_utils.read_postprocessed
    pylbo.utilities.datfile_utils.read_matrix_B
    pylbo.utilities.datfile_utils.read_matrix_A
 
@@ -269,6 +270,45 @@ Attributes
              by the names of `header['ef_names']`.
              The eigenfunctions correspond to a specific
              eigenvalue, associated with the same `ef_index`.
+   :rtype: dict
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:function:: read_postprocessed(istream, header, pp_index)
+
+   Reads a single post-processed quantity from the datfile.
+   Quantities are read in on-the-fly, to prevent having to load the
+   entire array into memory (which can quickly be a few 100 Mb for larger datasets).
+
+   :param istream: Datfile opened in binary mode.
+   :type istream: ~io.BufferedReader
+   :param header: Dictionary containing the datfile header, output from :func:`get_header`.
+   :type header: dict
+   :param pp_index: The index of the post-processed quantity in the matrix. This value
+                    corresponds to the index of the accompanying eigenvalue in the
+                    :class:`~pylbo.data_containers.LegolasDataSet` eigenvalues attribute.
+   :type pp_index: int
+
+   :returns: **eigenfunctions** -- A dictionary containing the post-processed quantities for all variables
+             with keys given by the names of `header['pp_names']`.
+             The post-processed quantities correspond to a specific
+             eigenvalue, associated with the same `pp_index`.
    :rtype: dict
 
 

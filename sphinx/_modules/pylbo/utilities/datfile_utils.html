@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.1.0 - develop
+                1.1.2 - develop
               </div>
             
           
@@ -248,6 +248,15 @@
     <span class="n">h</span><span class="p">[</span><span class="s2">&quot;eigenfuncs_written&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span>
         <span class="o">*</span><span class="n">hdr</span>
     <span class="p">)</span>  <span class="c1"># bool casts 0 to False, everything else to True</span>
+    <span class="k">if</span> <span class="n">legolas_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;1.1.3&quot;</span><span class="p">:</span>
+        <span class="c1"># read post-processed boolean</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="s2">&quot;i&quot;</span>  <span class="c1"># a fortran logical is a 4 byte integer</span>
+        <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span>
+            <span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">))</span>
+        <span class="p">)</span>  <span class="c1"># this is either (0,) or (1,) (F or T)</span>
+        <span class="n">h</span><span class="p">[</span><span class="s2">&quot;postprocessed_written&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span>
+            <span class="o">*</span><span class="n">hdr</span>
+        <span class="p">)</span>  <span class="c1"># bool casts 0 to False, everything else to True</span>
     <span class="c1"># read matrices boolean</span>
     <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="s2">&quot;i&quot;</span>
     <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
@@ -384,6 +393,24 @@
         <span class="n">byte_size</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;ef_gridpts&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">nb_eigenvals</span> <span class="o">*</span> <span class="n">nb_eigenfuncs</span> <span class="o">*</span> <span class="n">SIZE_COMPLEX</span>
         <span class="n">offsets</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;ef_arrays&quot;</span><span class="p">:</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()})</span>
         <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">byte_size</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">legolas_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;1.1.3&quot;</span><span class="p">:</span>
+        <span class="c1"># if post-processed quantities are written, read names and include offsets</span>
+        <span class="k">if</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;postprocessed_written&quot;</span><span class="p">]:</span>
+            <span class="c1"># read post-processed quantity names</span>
+            <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="s2">&quot;i&quot;</span>
+            <span class="p">(</span><span class="n">nb_pp</span><span class="p">,)</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
+            <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="n">nb_pp</span> <span class="o">*</span> <span class="n">str_len_arr</span> <span class="o">*</span> <span class="s2">&quot;c&quot;</span>
+            <span class="n">pp_names</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
+            <span class="n">pp_names</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pp_names</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="n">str_len_arr</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pp_names</span><span class="p">),</span> <span class="n">str_len_arr</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="n">h</span><span class="p">[</span><span class="s2">&quot;pp_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pp_names</span>
+            <span class="c1"># post-processed quantity offsets</span>
+            <span class="n">byte_size</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;ef_gridpts&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">nb_eigenvals</span> <span class="o">*</span> <span class="n">nb_pp</span> <span class="o">*</span> <span class="n">SIZE_COMPLEX</span>
+            <span class="n">offsets</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;pp_arrays&quot;</span><span class="p">:</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()})</span>
+            <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">byte_size</span><span class="p">)</span>
 
     <span class="c1"># if matrices are written, include amount of nonzero elements and offsets</span>
     <span class="k">if</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;matrices_written&quot;</span><span class="p">]:</span>
@@ -573,6 +600,58 @@
         <span class="n">ef_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">reals</span><span class="p">,</span> <span class="n">imags</span><span class="p">)])</span>
         <span class="n">eigenfunctions</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">name</span><span class="p">:</span> <span class="n">ef_values</span><span class="p">})</span>
     <span class="k">return</span> <span class="n">eigenfunctions</span></div>
+
+
+<div class="viewcode-block" id="read_postprocessed"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/datfile_utils/index.html#pylbo.utilities.datfile_utils.read_postprocessed">[docs]</a><span class="k">def</span> <span class="nf">read_postprocessed</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">pp_index</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads a single post-processed quantity from the datfile.</span>
+<span class="sd">    Quantities are read in on-the-fly, to prevent having to load the</span>
+<span class="sd">    entire array into memory (which can quickly be a few 100 Mb for larger datasets).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    istream : ~io.BufferedReader</span>
+<span class="sd">        Datfile opened in binary mode.</span>
+<span class="sd">    header : dict</span>
+<span class="sd">        Dictionary containing the datfile header, output from :func:`get_header`.</span>
+<span class="sd">    pp_index : int</span>
+<span class="sd">        The index of the post-processed quantity in the matrix. This value</span>
+<span class="sd">        corresponds to the index of the accompanying eigenvalue in the</span>
+<span class="sd">        :class:`~pylbo.data_containers.LegolasDataSet` eigenvalues attribute.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    eigenfunctions : dict</span>
+<span class="sd">        A dictionary containing the post-processed quantities for all variables</span>
+<span class="sd">        with keys given by the names of `header[&#39;pp_names&#39;]`.</span>
+<span class="sd">        The post-processed quantities correspond to a specific</span>
+<span class="sd">        eigenvalue, associated with the same `pp_index`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pp_offset</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">][</span><span class="s2">&quot;pp_arrays&quot;</span><span class="p">]</span>
+    <span class="n">pp_gridpts</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;ef_gridpts&quot;</span><span class="p">]</span>
+    <span class="n">nb_evs</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;nb_eigenvals&quot;</span><span class="p">]</span>
+    <span class="n">postprocessed</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Fortran writes in column-major order, meaning column per column.</span>
+    <span class="c1"># This makes it quite convenient to extract a single post-processed quantity</span>
+    <span class="c1"># from the datfile</span>
+    <span class="n">matrix_bytesize</span> <span class="o">=</span> <span class="n">pp_gridpts</span> <span class="o">*</span> <span class="n">nb_evs</span> <span class="o">*</span> <span class="n">SIZE_COMPLEX</span>
+    <span class="n">pp_bytesize</span> <span class="o">=</span> <span class="n">pp_gridpts</span> <span class="o">*</span> <span class="n">SIZE_COMPLEX</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;pp_names&quot;</span><span class="p">]:</span>
+        <span class="n">name_idx</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;pp_names&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="c1"># move pointer to correct place of current name matrix in datfile</span>
+        <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">pp_offset</span> <span class="o">+</span> <span class="n">name_idx</span> <span class="o">*</span> <span class="n">matrix_bytesize</span><span class="p">)</span>
+        <span class="c1"># move pointer to requested post-processed quantity</span>
+        <span class="c1"># &#39;pp_index&#39; here is the index of the corresponding eigenvalue in its array</span>
+        <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">pp_index</span> <span class="o">*</span> <span class="n">pp_bytesize</span><span class="p">)</span>
+        <span class="c1"># read in single post-processed quantity</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="n">pp_gridpts</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="s2">&quot;d&quot;</span>
+        <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
+        <span class="n">reals</span> <span class="o">=</span> <span class="n">hdr</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">imags</span> <span class="o">=</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">pp_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">reals</span><span class="p">,</span> <span class="n">imags</span><span class="p">)])</span>
+        <span class="n">postprocessed</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">name</span><span class="p">:</span> <span class="n">pp_values</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">postprocessed</span></div>
 
 
 <div class="viewcode-block" id="read_matrix_B"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/datfile_utils/index.html#pylbo.utilities.datfile_utils.read_matrix_B">[docs]</a><span class="k">def</span> <span class="nf">read_matrix_B</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">header</span><span class="p">):</span>

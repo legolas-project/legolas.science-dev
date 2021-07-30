@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pylbo.visualisation.postprocessed &mdash; Pylbo develop documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Pylbo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.2 - develop
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Package structure:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Pylbo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pylbo.visualisation.postprocessed</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pylbo.visualisation.postprocessed</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">transform_to_numpy</span>
+<span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSet</span>
+<span class="kn">from</span> <span class="nn">pylbo.exceptions</span> <span class="kn">import</span> <span class="n">PostprocessedNotPresent</span>
+<span class="kn">from</span> <span class="nn">pylbo.visualisation.eigenfunction_interface</span> <span class="kn">import</span> <span class="n">EigenfunctionInterface</span>
+
+
+<div class="viewcode-block" id="PostprocessedHandler"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/postprocessed/index.html#pylbo.visualisation.postprocessed.PostprocessedHandler">[docs]</a><span class="k">class</span> <span class="nc">PostprocessedHandler</span><span class="p">(</span><span class="n">EigenfunctionInterface</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Main handler for post-processed quantities.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">pp_ax</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pp_ax</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pp_names</span>
+
+<div class="viewcode-block" id="PostprocessedHandler._check_data_is_present"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/postprocessed/index.html#pylbo.visualisation.postprocessed.PostprocessedHandler._check_data_is_present">[docs]</a>    <span class="k">def</span> <span class="nf">_check_data_is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">transform_to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pp_written</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="n">PostprocessedNotPresent</span><span class="p">(</span>
+                <span class="s2">&quot;None of the given datfiles has post-processed quantities &quot;</span></div>
+                <span class="s2">&quot;written to it.&quot;</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="PostprocessedHandler.update_plot"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/postprocessed/index.html#pylbo.visualisation.postprocessed.PostprocessedHandler.update_plot">[docs]</a>    <span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">pp_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">ds</span><span class="p">,</span> <span class="n">idxs_dict</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">idxs_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()])</span>
+            <span class="n">pp_container</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_postprocessed</span><span class="p">(</span><span class="n">ev_idxs</span><span class="o">=</span><span class="n">idxs</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">ppqs</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="n">pp_container</span><span class="p">):</span>
+                <span class="n">pp</span> <span class="o">=</span> <span class="n">ppqs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pp_name</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span><span class="p">:</span>
+                    <span class="n">pp</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">real</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">pp</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">imag</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_get_label</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">ppqs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eigenvalue&quot;</span><span class="p">))</span>
+                <span class="c1"># get color of selected point</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ev_idx</span><span class="p">))</span><span class="o">.</span><span class="n">get_color</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">ef_grid</span><span class="p">,</span> <span class="n">pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">LegolasDataSet</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">x_start</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_title</span><span class="p">(</span><span class="n">pp_name</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PostprocessedHandler._get_title"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/postprocessed/index.html#pylbo.visualisation.postprocessed.PostprocessedHandler._get_title">[docs]</a>    <span class="k">def</span> <span class="nf">_get_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pp_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates the title of the post-processed quantity plot.</span>
+<span class="sd">        LaTeX formatting is used and numbers are replaced with the</span>
+<span class="sd">        corresponding suffix: :math:`(1, 2, 3)`</span>
+<span class="sd">        becomes :math:`(x, y, z)` or :math:`(r, \\theta, z)`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pp_name : str</span>
+<span class="sd">            The name of the post-processed quantity as present in the datfile.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            The &#39;new&#39; name for the post-processed quantity, used as title.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">part</span> <span class="o">=</span> <span class="s2">&quot;Re&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span><span class="p">:</span>
+            <span class="n">part</span> <span class="o">=</span> <span class="s2">&quot;Im&quot;</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_x&quot;</span><span class="p">,</span> <span class="s2">&quot;_y&quot;</span><span class="p">,</span> <span class="s2">&quot;_z&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">geometry</span> <span class="o">==</span> <span class="s2">&quot;cylindrical&quot;</span><span class="p">:</span>
+            <span class="n">suffix</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_r&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;_\theta&quot;</span><span class="p">,</span> <span class="s2">&quot;_z&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">):</span>
+            <span class="n">pp_name</span> <span class="o">=</span> <span class="n">pp_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">suffix</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">pp_name</span> <span class="o">=</span> <span class="n">pp_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">nabla</span><span class="se">\\</span><span class="s2">cdot&quot;</span><span class="p">)</span>
+        <span class="n">pp_name</span> <span class="o">=</span> <span class="n">pp_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;curl&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">nabla</span><span class="se">\\</span><span class="s2">times&quot;</span><span class="p">)</span>
+        <span class="n">pp_name</span> <span class="o">=</span> <span class="n">pp_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;para&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">parallel&quot;</span><span class="p">)</span>
+        <span class="n">pp_name</span> <span class="o">=</span> <span class="n">pp_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;perp&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">perp&quot;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="sa">fr</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">part</span><span class="si">}</span><span class="s2">($</span><span class="si">{</span><span class="n">pp_name</span><span class="si">}</span><span class="s2">$)&quot;</span>
+        <span class="k">return</span> <span class="n">name</span></div>
+
+<div class="viewcode-block" id="PostprocessedHandler._mark_points_without_data_written"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/postprocessed/index.html#pylbo.visualisation.postprocessed.PostprocessedHandler._mark_points_without_data_written">[docs]</a>    <span class="k">def</span> <span class="nf">_mark_points_without_data_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span> <span class="o">=</span> <span class="s2">&quot;pp_written&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_mark_points_without_data_written</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Niels Claes, Jordi De Jonghe and Rony Keppens (2020).
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

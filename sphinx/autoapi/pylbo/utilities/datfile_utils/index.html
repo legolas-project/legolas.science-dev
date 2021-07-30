@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                1.1.0 - develop
+                1.1.2 - develop
               </div>
             
           
@@ -220,10 +220,13 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.datfile_utils.read_eigenfunction" title="pylbo.utilities.datfile_utils.read_eigenfunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_eigenfunction</span></code></a>(istream, header, ef_index)</p></td>
 <td><p>Reads a single eigenfunction from the datfile.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.datfile_utils.read_matrix_B" title="pylbo.utilities.datfile_utils.read_matrix_B"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_matrix_B</span></code></a>(istream, header)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.datfile_utils.read_postprocessed" title="pylbo.utilities.datfile_utils.read_postprocessed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_postprocessed</span></code></a>(istream, header, pp_index)</p></td>
+<td><p>Reads a single post-processed quantity from the datfile.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.datfile_utils.read_matrix_B" title="pylbo.utilities.datfile_utils.read_matrix_B"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_matrix_B</span></code></a>(istream, header)</p></td>
 <td><p>Reads the B-matrix from the datfile.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.datfile_utils.read_matrix_A" title="pylbo.utilities.datfile_utils.read_matrix_A"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_matrix_A</span></code></a>(istream, header)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.datfile_utils.read_matrix_A" title="pylbo.utilities.datfile_utils.read_matrix_A"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_matrix_A</span></code></a>(istream, header)</p></td>
 <td><p>Reads the A-matrix from the datfile.</p></td>
 </tr>
 </tbody>
@@ -428,6 +431,34 @@ index of the accompanying eigenvalue in the
 by the names of <cite>header[‘ef_names’]</cite>.
 The eigenfunctions correspond to a specific
 eigenvalue, associated with the same <cite>ef_index</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.utilities.datfile_utils.read_postprocessed">
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfile_utils.</span></span><span class="sig-name descname"><span class="pre">read_postprocessed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">istream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pp_index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/utilities/datfile_utils.html#read_postprocessed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.datfile_utils.read_postprocessed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a single post-processed quantity from the datfile.
+Quantities are read in on-the-fly, to prevent having to load the
+entire array into memory (which can quickly be a few 100 Mb for larger datasets).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>istream</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedReader" title="(in Python v3.9)"><em>BufferedReader</em></a>) – Datfile opened in binary mode.</p></li>
+<li><p><strong>header</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a>) – Dictionary containing the datfile header, output from <a class="reference internal" href="#pylbo.utilities.datfile_utils.get_header" title="pylbo.utilities.datfile_utils.get_header"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_header()</span></code></a>.</p></li>
+<li><p><strong>pp_index</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The index of the post-processed quantity in the matrix. This value
+corresponds to the index of the accompanying eigenvalue in the
+<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">LegolasDataSet</span></code></a> eigenvalues attribute.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>eigenfunctions</strong> – A dictionary containing the post-processed quantities for all variables
+with keys given by the names of <cite>header[‘pp_names’]</cite>.
+The post-processed quantities correspond to a specific
+eigenvalue, associated with the same <cite>pp_index</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a></p>
