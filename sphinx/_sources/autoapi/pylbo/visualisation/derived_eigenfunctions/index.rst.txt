@@ -1,0 +1,156 @@
+:py:mod:`pylbo.visualisation.derived_eigenfunctions`
+====================================================
+
+.. py:module:: pylbo.visualisation.derived_eigenfunctions
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.derived_eigenfunctions.DerivedEigenfunctionHandler
+
+
+
+
+.. py:class:: DerivedEigenfunctionHandler(data, def_ax, spec_ax)
+
+   Bases: :py:obj:`pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface`
+
+   
+   Main handler for derived eigenfunctions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: _check_data_is_present(self)
+
+      
+      Checks if the required data is present to draw for example
+      eigenfunctions, is overloaded in subclasses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: update_plot(self)
+
+      
+      Updates the plot when an event is triggered, clears and then redraws
+      the functions. Rescaling of the axes is done automatically.
+      Has to be overridden in a subclass.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _get_title(self, ef_name)
+
+      
+      Creates the title of the derived eigenfunction plot.
+      LaTeX formatting is used and numbers are replaced with the
+      corresponding suffix: :math:`(1, 2, 3)`
+      becomes :math:`(x, y, z)` or :math:`(r, \theta, z)`.
+
+      :param ef_name: The name of the derived eigenfunction as present in the datfile.
+      :type ef_name: str
+
+      :returns: **name** -- The 'new' name for the derived eigenfunction, used as title.
+      :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _mark_points_without_data_written(self)
+
+      
+      For dataseries, it is possible that not all datasets in the series
+      have eigenfunctions associated with them. This routine will toggle a change
+      in the opacity value for datapoints with no functions, so they are
+      clearly distinguishable from those who do have them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

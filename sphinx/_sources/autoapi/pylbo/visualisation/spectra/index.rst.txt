@@ -3,6 +3,12 @@
 
 .. py:module:: pylbo.visualisation.spectra
 
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
 
 Module Contents
 ---------------
@@ -25,6 +31,7 @@ Classes
 
    Bases: :py:obj:`pylbo.visualisation.figure_manager.FigureWindow`
 
+   
    Superclass of both single and multispectra.
 
 
@@ -44,9 +51,9 @@ Classes
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: draw(self)
 
+      
       Called on plot refreshing, the super call clears the figure and then redraws
       everything.
 
@@ -68,9 +75,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: _set_plot_properties(self, properties)
 
+      
       Sets all relevant plot properties.
 
       :param properties: Dictionary containing the usual matplotlib properties (marker, color,
@@ -94,9 +101,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: _add_spectrum(self)
 
+      
       Adds the spectrum, is overridden in subclasses.
 
 
@@ -117,9 +124,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_continua(self, interactive)
 
+      
       Adds the continua to the plot, overridden by subclasses.
 
       :param interactive: If `True`, makes the legend interactive.
@@ -142,9 +149,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_eigenfunctions(self)
 
+      
       Adds eigenfunctions to the spectrum, overridden in subclasses.
 
 
@@ -165,10 +172,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
+   .. py:method:: add_derived_eigenfunctions(self)
 
-   .. py:method:: add_postprocessed(self)
-
-      Adds postprocessed quantities to the spectrum, overridden in subclasses.
+      
+      Adds derived eigenfunctions to the spectrum, overridden in subclasses.
 
 
 
@@ -188,10 +195,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: c_handler(self)
       :property:
 
+      
       Property, returns the continua handler.
 
 
@@ -212,10 +219,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: ef_handler(self)
       :property:
 
+      
       Property, returns the eigenfunction handler.
 
 
@@ -236,10 +243,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: ef_ax(self)
       :property:
 
+      
       Property, returns the eigenfunction axes.
 
 
@@ -261,11 +268,11 @@ Classes
           !! processed by numpydoc !!
 
 
-
 .. py:class:: SingleSpectrumPlot(dataset, figsize, custom_figure, **kwargs)
 
    Bases: :py:obj:`SpectrumFigure`
 
+   
    Creates a plot of a single spectrum based on a given dataset.
 
    :param dataset: The dataset used to create the spectrum.
@@ -327,9 +334,9 @@ Classes
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: _add_spectrum(self)
 
+      
       Adds the spectrum to the plot, makes the points pickable.
 
 
@@ -350,9 +357,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_continua(self, interactive=True)
 
+      
       Adds the continua to the spectrum.
 
       :param interactive: If `True`, makes the legend pickable.
@@ -378,9 +385,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_eigenfunctions(self)
 
+      
       Adds the eigenfunctions to the plot, sets the eigenfunction handler.
 
 
@@ -401,10 +408,32 @@ Classes
       ..
           !! processed by numpydoc !!
 
+   .. py:method:: add_derived_eigenfunctions(self)
 
-   .. py:method:: add_postprocessed(self)
+      
+      Adds the derived eigenfunctions to the plot, sets the eigenfunction handler.
 
-      Adds the post-processed quantities to the plot, sets the post-processed handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _ensure_smooth_continuum(self, continuum)
+
+      
 
 
 
@@ -425,14 +454,11 @@ Classes
           !! processed by numpydoc !!
 
 
-   .. py:method:: _ensure_smooth_continuum(self, continuum)
-
-
-
 .. py:class:: MultiSpectrumPlot(dataseries, xdata, use_squared_omega, use_real_parts, figsize, custom_figure, **kwargs)
 
    Bases: :py:obj:`SpectrumFigure`
 
+   
    Subclass that draws the multispectra.
 
    :param dataseries: The dataseries that should be used.
@@ -470,9 +496,9 @@ Classes
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: _validate_xdata(self, xdata)
 
+      
       Validates the xdata passed, does typechecking and necessary casting.
       If a string is passed, this will request the proper values based on the
       parameters.
@@ -500,9 +526,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: _get_ydata(self)
 
+      
       Gets the y data based on the value of :attr:`use_squared_omega`.
 
       :returns: **ydata** -- The y data values, either the real or imaginary parts based on
@@ -528,9 +554,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: set_x_scaling(self, x_scaling)
 
+      
       Sets the x scaling, properly adjusted to the dataseries length.
 
       :param x_scaling: Values to use for the x-scaling.
@@ -553,9 +579,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: set_y_scaling(self, y_scaling)
 
+      
       Sets the y scaling, properly adjusted to the dataseries length.
 
       :param y_scaling: Values to use for the y-scaling.
@@ -578,9 +604,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: _add_spectrum(self)
 
+      
       Draw method, creates the spectrum.
 
 
@@ -601,9 +627,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_continua(self, interactive=True)
 
+      
       Adds the continua to the plot, either interactive or not.
 
       :param interactive: If `True`, makes the legend interactive.
@@ -626,9 +652,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_eigenfunctions(self)
 
+      
       Adds the eigenfunctions to the current figure.
 
 
@@ -649,10 +675,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
+   .. py:method:: add_derived_eigenfunctions(self)
 
-   .. py:method:: add_postprocessed(self)
-
-      Adds the post-processed quantities to the current figure.
+      
+      Adds the derived eigenfunctions to the current figure.
 
 
 
@@ -673,11 +699,11 @@ Classes
           !! processed by numpydoc !!
 
 
-
 .. py:class:: MergedSpectrumPlot(data, figsize, custom_figure, interactive, legend, **kwargs)
 
    Bases: :py:obj:`SpectrumFigure`
 
+   
    Merges the datasets from a given series into a single plot.
 
    :param data: The dataseries which will be merged.
@@ -719,9 +745,9 @@ Classes
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: _add_spectrum(self)
 
+      
       Adds the spectrum to the plot, makes the points pickable.
 
 
@@ -742,9 +768,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_eigenfunctions(self)
 
+      
       Adds the eigenfunctions to the current figure.
 
 
@@ -765,10 +791,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
+   .. py:method:: add_derived_eigenfunctions(self)
 
-   .. py:method:: add_postprocessed(self)
-
-      Adds the post-processed quantities to the current figure.
+      
+      Adds the derived eigenfunctions to the current figure.
 
 
 
@@ -788,10 +814,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_continua(self, interactive=True)
       :abstractmethod:
 
+      
       Adds the continua to the plot, overridden by subclasses.
 
       :param interactive: If `True`, makes the legend interactive.
@@ -815,11 +841,11 @@ Classes
           !! processed by numpydoc !!
 
 
-
 .. py:class:: SpectrumComparisonPlot(ds1, ds2, figsize, custom_figure, lock_zoom, **kwargs)
 
    Bases: :py:obj:`SpectrumFigure`
 
+   
    Subclass to compare two spectra.
 
    :param ds1: First dataset, will be placed on the left side.
@@ -867,9 +893,9 @@ Classes
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: set_x_scaling(self, x_scaling)
 
+      
       Overloads parent method, calls x scaling setter for each panel.
 
       :param x_scaling: The scaling to apply to the x-axis
@@ -892,9 +918,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: set_y_scaling(self, y_scaling)
 
+      
       Overloads parent method, calls y scaling setter for each panel.
 
       :param y_scaling: The scaling to apply to the y-axis
@@ -917,9 +943,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: _use_custom_axes(self)
 
+      
       Splits the original 1x2 plot into a 2x2 plot.
 
 
@@ -940,9 +966,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_eigenfunctions(self)
 
+      
       Adds the eigenfunctions for both datasets and merges the mpl callbacks.
 
 
@@ -963,10 +989,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
+   .. py:method:: add_derived_eigenfunctions(self)
 
-   .. py:method:: add_postprocessed(self)
-
-      Adds the post-processed quantities for both datasets and merges the mpl
+      
+      Adds the derived eigenfunctions for both datasets and merges the mpl
       callbacks.
 
 
@@ -987,9 +1013,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add_continua(self, interactive=True)
 
+      
       Adds the continua for both datasets and merges the mpl callbacks.
 
 
@@ -1009,6 +1035,5 @@ Classes
 
       ..
           !! processed by numpydoc !!
-
 
 

@@ -3,6 +3,12 @@
 
 .. py:module:: pylbo.visualisation.legend_interface
 
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
 
 Module Contents
 ---------------
@@ -19,6 +25,7 @@ Classes
 
 .. py:class:: LegendHandler(interactive)
 
+   
    Main handler for legend stuff.
 
    .. attribute:: legend
@@ -103,9 +110,9 @@ Classes
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: on_legend_pick(self, event)
 
+      
       Determines what happens when the legend gets picked.
 
       :param event: The matplotlib pick event.
@@ -128,9 +135,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: make_legend_pickable(self)
 
+      
       Makes the legend pickable, only used if interactive.
 
 
@@ -151,9 +158,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: add(self, item)
 
+      
       Adds an item to the list of drawn items on the canvas.
 
       :param item: A single object, usually a return from the matplotlib plot or scatter
@@ -177,9 +184,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: _check_autoscaling(self)
 
+      
       Checks if autoscaling is needed and if so, rescales the y-axis to the min-max
       value of the currently visible legend items.
 
@@ -200,6 +207,5 @@ Classes
 
       ..
           !! processed by numpydoc !!
-
 
 

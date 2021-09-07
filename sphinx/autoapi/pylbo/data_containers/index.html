@@ -267,13 +267,13 @@ with the parameter names as keys.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataContainer.pp_written">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">pp_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer.pp_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer.pp_written" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataContainer.derived_efs_written">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">derived_efs_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer.derived_efs_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer.derived_efs_written" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataContainer.pp_names">
-<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">pp_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer.pp_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer.pp_names" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataContainer.derived_ef_names">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">derived_ef_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer.derived_ef_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer.derived_ef_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -571,12 +571,12 @@ None if no eigenfunctions are present.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.pp_written">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">pp_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.pp_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.pp_written" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if post-processed quantities are present.</p>
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.ef_subset">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ef_subset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.ef_subset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.ef_subset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if dataset contains a subset of the eigenfunctions</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>pp_written</strong> – If <cite>True</cite>, post-processed quantities are present in the datfile.</p>
+<dd class="field-odd"><p><cite>True</cite> if subset present, <cite>False</cite> otherwise</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
@@ -585,13 +585,27 @@ None if no eigenfunctions are present.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.pp_names">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">pp_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.pp_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.pp_names" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the post-processed quantity names.</p>
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.derived_efs_written">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">derived_efs_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.derived_efs_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.derived_efs_written" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if derived eigenfunctions are present.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>pp_names</strong> – Array containing the names of the post-processed quantities as strings.
-None if no post-processed quantities are present.</p>
+<dd class="field-odd"><p>If <cite>True</cite>, derived eigenfunctions are present in the datfile.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.derived_ef_names">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">derived_ef_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.derived_ef_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.derived_ef_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the derived eigenfunction names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Array containing the names of the derived eigenfunctions as strings.
+None if no derived eigenfunctions are present.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a></p>
@@ -851,9 +865,9 @@ The keys of each dictionary are the eigenfunction names.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_postprocessed">
-<span class="sig-name descname"><span class="pre">get_postprocessed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_guesses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.get_postprocessed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_postprocessed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the post-processed quantities based on given eigenvalue guesses or their
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_derived_eigenfunctions">
+<span class="sig-name descname"><span class="pre">get_derived_eigenfunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_guesses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.get_derived_eigenfunctions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_derived_eigenfunctions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the derived eigenfunctions based on given eigenvalue guesses or their
 indices. An array will be returned where every item is a dictionary, containing
 both the eigenvalue and its quantities. Either eigenvalue guesses or
 indices can be supplied, but not both.</p>
@@ -865,11 +879,11 @@ indices can be supplied, but not both.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>postprocessed</strong> – Array containing the post-processed quantities and eigenvalues
+<dd class="field-even"><p>Array containing the derived eigenfunctions and eigenvalues
 corresponding to the supplied indices. Every index in this array
-contains a dictionary with the post-processed quantities and
+contains a dictionary with the derived eigenfunctions and
 corresponding eigenvalue. The keys of each dictionary are the
-post-processed quantity names.</p>
+corresponding eigenfunction names.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a>(dtype=dict, ndim=1)</p>
@@ -949,30 +963,30 @@ dataset has eigenfunctions present.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.pp_written">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">pp_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.pp_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.pp_written" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the post-processed quantities are written.</p>
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.derived_efs_written">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">derived_efs_written</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.derived_efs_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.derived_efs_written" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the derived eigenfunctions are written.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>pp_written</strong> – An array of bools corresponding to the various datasets, <cite>True</cite> if a
-dataset has post-processed quantities present.</p>
+<dd class="field-odd"><p>An array of bools corresponding to the various datasets, <cite>True</cite> if a
+dataset has derived eigenfunctions present.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a>(dtype=bool)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.pp_names">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">pp_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.pp_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.pp_names" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the post-processed quantity names.</p>
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.derived_ef_names">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">derived_ef_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.derived_ef_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.derived_ef_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the derived eigenfunction names.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>pp_names</strong> – An array with the post-processed quantity names as strings.</p>
+<dd class="field-odd"><p>An array with the derived eigenfunction names as strings.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a>(dtype=str)</p>
 </dd>
 </dl>
 </dd></dl>

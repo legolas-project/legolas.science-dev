@@ -1,242 +1,292 @@
 ! =============================================================================
-!> This module composes the eigenfunctions based on the eigenvectors
-!! coming out of the solver routines. Assembling the eigenfunctions is needed
-!! because of the finite element matrix representation.
-!! In every interval of the base grid \((i, i+1)\) eigenfunctions are saved at the
-!! left and right edges, as well as in the centre of the interval.
-!! This results in eigenfunction arrays with a size \(2*gridpts - 1\).
+!> Main module responsible for eigenfunction management. Contains routines
+!! and interfaces to initialise and calculate the eigenfunctions and
+!! derived quantities.
 module mod_eigenfunctions
-  use mod_global_variables, only: dp, matrix_gridpts, ef_gridpts, nb_eqs, str_len_arr
+  use mod_global_variables, only: dp, str_len_arr, ef_gridpts
   use mod_types, only: ef_type
   implicit none
 
   private
 
-  !> grid to which the eigenfunction is assembled
-  real(dp), allocatable         :: ef_grid(:)
-  !> array containing the eigenfunction names as strings
-  character(str_len_arr)        :: ef_names(nb_eqs)
-  !> type containig all eigenfunctions
-  type (ef_type)                :: ef_array(nb_eqs)
+  !> logical to check whether eigenfunctions are initialised
+  logical, save, protected :: efs_initialised = .false.
+  !> logical to check whether derived eigenfunctions are initialised
+  logical, save, protected :: derived_efs_initialised = .false.
+  !> grid on which the eigenfunctions are assembled
+  real(dp), protected, allocatable :: ef_grid(:)
+  !> scale factor dedicated for eigenfunctions (eigenfunction grid != gauss grid)
+  real(dp), protected, allocatable :: ef_eps(:)
+  !> derivative of scale factor
+  real(dp), protected :: ef_deps
+  !> array with the names of the basis eigenfunctions
+  character(str_len_arr), protected, allocatable :: ef_names(:)
+  !> array with the names of the derived eigenfunctions
+  character(str_len_arr), protected, allocatable :: derived_ef_names(:)
+  !> logical array containing flags for written eigenfunctions
+  logical, protected, allocatable  :: ef_written_flags(:)
+  !> integer array containing indices for written eigenfunctions
+  integer, protected, allocatable  :: ef_written_idxs(:)
 
-  public :: ef_grid, ef_names, ef_array
+  !> array with base eigenfunctions
+  type(ef_type), allocatable :: base_eigenfunctions(:)
+  !> array with derived eigenfunctions
+  type(ef_type), allocatable :: derived_eigenfunctions(:)
+
+  interface
+    module subroutine initialise_base_eigenfunctions(nb_eigenfuncs)
+      integer, intent(in) :: nb_eigenfuncs
+    end subroutine initialise_base_eigenfunctions
+
+    module subroutine initialise_derived_eigenfunctions(nb_eigenfuncs)
+      integer, intent(in) :: nb_eigenfuncs
+    end subroutine initialise_derived_eigenfunctions
+
+    module subroutine calculate_base_eigenfunctions(right_eigenvectors)
+      complex(dp), intent(in) :: right_eigenvectors(:, :)
+    end subroutine calculate_base_eigenfunctions
+
+    module subroutine calculate_derived_eigenfunctions(right_eigenvectors)
+      complex(dp), intent(in) :: right_eigenvectors(:, :)
+    end subroutine calculate_derived_eigenfunctions
+  end interface
+
+  interface
+    module function assemble_eigenfunction( &
+      base_ef, eigenvector, derivative_order &
+    ) result(assembled_ef)
+      !> the base eigenfunction at the current position in the eigenfunction array
+      type(ef_type), intent(in) :: base_ef
+      !> the eigenvector for the eigenvalue under consideration
+      complex(dp), intent(in) :: eigenvector(:)
+      !> derivative order of the eigenfunction, defaults to 0
+      integer, intent(in), optional :: derivative_order
+      !> the assembled eigenfunction (not yet transformed to "actual" values)
+      complex(dp) :: assembled_ef(ef_gridpts)
+    end function assemble_eigenfunction
+
+    module subroutine retransform_eigenfunction(name, eigenfunction)
+      !> name of the current eigenfunction
+      character(len=*), intent(in)  :: name
+      !> the current eigenfunction, transformed on exit if applicable
+      complex(dp), intent(inout)  :: eigenfunction(:)
+    end subroutine retransform_eigenfunction
+  end interface
+
+  interface
+    module subroutine clean_derived_eigenfunctions(); end subroutine
+  end interface
+
+  public :: ef_grid
+  public :: ef_names, derived_ef_names
+  public :: ef_written_flags, ef_written_idxs
+  public :: base_eigenfunctions
+  public :: derived_eigenfunctions
   public :: initialise_eigenfunctions
   public :: calculate_eigenfunctions
+  public :: find_name_loc_in_array
+  public :: retrieve_eigenfunctions
+  public :: retrieve_eigenfunction_from_index
   public :: eigenfunctions_clean
 
 contains
 
+  !> Initialises the eigenfunctions based on an array of eigenvalues.
+  !! Before initialising all arrays we check which subset of eigenvalues, if any,
+  !! needs its eigenfunctions saved.
+  subroutine initialise_eigenfunctions(omega)
+    use mod_global_variables, only: write_derived_eigenfunctions
 
-  !> Main initialisations of this module.
-  !! Allocates and initialises the eigenfunction grid, types and names.
-  !! Passing the optional argument <tt>nb_evs</tt> sets the number of eigenvalues
-  !! that are calculated and limits the size of the eigenfunction arrays accordingly.
-  !! This routine is only called if <tt>write_eigenfunctions = .true.</tt>.
-  subroutine initialise_eigenfunctions(nb_evs)
-    !> the number of eigenvalues that are calculated, defaults to all (matrix dim)
-    integer, intent(in), optional :: nb_evs
+    !> the array of calculated eigenvalues
+    complex(dp), intent(in) :: omega(:)
 
-    integer    :: i, nev
+    call select_eigenfunctions_to_save(omega)
 
-    if (present(nb_evs)) then
-      nev = nb_evs
-    else
-      nev = matrix_gridpts
+    call assemble_eigenfunction_grid()
+    call initialise_base_eigenfunctions(size(ef_written_idxs))
+    if (write_derived_eigenfunctions) then
+      call initialise_derived_eigenfunctions(size(ef_written_idxs))
     end if
-
-    allocate(ef_grid(ef_gridpts))
-    ef_grid = 0.0d0
-    do i = 1, nb_eqs
-      allocate(ef_array(i) % eigenfunctions(ef_gridpts, nev))
-    end do
-
-    ef_names = [ &
-      character(len=str_len_arr) :: 'rho', 'v1', 'v2', 'v3', 'T', 'a1', 'a2', 'a3' &
-    ]
   end subroutine initialise_eigenfunctions
 
 
-  !> Calculates the eigenfunctions for every eigenvalue and variable,
-  !! based on the right eigenvectors. The eigenfunctions are transformed
-  !! back to their 'actual' values
-  subroutine calculate_eigenfunctions(vr)
-    !> the matrix of right eigenvectors
-    complex(dp), intent(in) :: vr(:, :)
-    !> eigenfunctio values
-    complex(dp)             :: ef_values(ef_gridpts)
-    integer                 :: i, j
+  !> Calculates both the base eigenfunctions and the derived quantities thereof
+  !! based on a 2D array of right eigenvectors.
+  subroutine calculate_eigenfunctions(right_eigenvectors)
+    complex(dp), intent(in) :: right_eigenvectors(:, :)
 
-    do j = 1, nb_eqs
-      ! eigenfunction index
-      ef_array(j) % index = j
-      ! eigenfunction name corresponding to the index
-      ef_array(j) % name = ef_names(j)
-
-      do i = 1, size(vr, dim=2)
-        ! the eigenfunction for each eigenvalue is stored in the column of
-        ! 'eigenfunctions' with the same index as omega,
-        ! so column indices correspond to the eigenvalue at that index.
-        call get_eigenfunction(ef_array(j) % index, vr(:, i), ef_values)
-        ! undo variable transformation for 'actual' eigenfunction
-        call transform_eigenfunction(ef_array(j) % index, ef_values)
-        ef_array(j) % eigenfunctions(:, i) = ef_values
-      end do
-    end do
+    call calculate_base_eigenfunctions(right_eigenvectors)
+    if (derived_efs_initialised) then
+      call calculate_derived_eigenfunctions(right_eigenvectors)
+    end if
   end subroutine calculate_eigenfunctions
 
 
-  !> Calculates a single eigenfunction based on an eigenvector.
-  !! Assembles the eigenfunction corresponding to <tt>ef_idx</tt> and the
-  !! given eigenvector. The eigenvector supplied is the one
-  !! corresponding to one particular eigenvalue.
-  subroutine get_eigenfunction(ef_idx, eigenvector, Y)
-    use mod_global_variables, only: dim_subblock, gridpts
-    use mod_grid, only: grid
-    use mod_logging, only: log_message
+  !> Function to locate the index of a given name in a character array.
+  !! Iterates over the elements and returns on the first hit, if no match
+  !! was found zero is returned.
+  function find_name_loc_in_array(name, array) result(match_idx)
+    !> the name to search for
+    character(len=*), intent(in)  :: name
+    !> array with the names to search in
+    character(len=*), intent(in)  :: array(:)
+    !> index of first match
+    integer :: match_idx
+    integer :: i
 
-    !> the index of the variable in the state vector
-    integer, intent(in)           :: ef_idx
-    !> the eigenvector for this particular eigenvalue
-    complex(dp), intent(in)       :: eigenvector(matrix_gridpts)
-    !> the assembled eigenfunction
-    complex(dp), intent(out)      :: Y(ef_gridpts)
-
-    integer                       :: idx1, idx2, grid_idx, i
-    real(dp)                      :: r, r_lo, r_hi
-    real(dp)                      :: spline(4)
-
-    ! initialise eigenfunction to zero
-    Y = (0.0d0, 0.0d0)
-    ! map ef_idx to actual subblock index. So 1 -> 1, 2 -> 3, 3 -> 5 etc.
-    idx1 = 2 * ef_idx - 1
-    idx2 = idx1 + 1
-
-    ! Contribution from first gridpoint, left edge
-    r_lo = grid(1)
-    r_hi = grid(2)
-    r    = grid(1)
-    grid_idx = 1
-    ef_grid(grid_idx) = r
-    call get_spline(ef_idx, r, r_lo, r_hi, spline)
-    Y(grid_idx) = Y(grid_idx) + eigenvector(idx1) * spline(2) &
-                              + eigenvector(idx2) * spline(4) &
-                              + eigenvector(idx1 + dim_subblock) * spline(1) &
-                              + eigenvector(idx2 + dim_subblock) * spline(3)
-
-    ! Contribution from other gridpoints
-    do i = 1, gridpts-1
-      ! Contribution from centre
-      r_lo = grid(i)
-      r_hi = grid(i + 1)
-      r    = 0.5 * (r_lo + r_hi)
-      ! save gridpoint
-      grid_idx = grid_idx + 1
-      ef_grid(grid_idx) = r
-
-      call get_spline(ef_idx, r, r_lo, r_hi, spline)
-      Y(grid_idx) = Y(grid_idx) + eigenvector(idx1) * spline(2) &
-                                + eigenvector(idx2) * spline(4) &
-                                + eigenvector(idx1 + dim_subblock) * spline(1) &
-                                + eigenvector(idx2 + dim_subblock) * spline(3)
-
-      ! Contribution from end point
-      r = r_hi
-      grid_idx = grid_idx + 1
-      ef_grid(grid_idx) = r
-      call get_spline(ef_idx, r, r_lo, r_hi, spline)
-      Y(grid_idx) = Y(grid_idx) + eigenvector(idx1) * spline(2) &
-                                + eigenvector(idx2) * spline(4) &
-                                + eigenvector(idx1 + dim_subblock) * spline(1) &
-                                + eigenvector(idx2 + dim_subblock) * spline(3)
-
-      ! Increment indices of eigenvector elements
-      idx1 = idx1 + dim_subblock
-      idx2 = idx2 + dim_subblock
+    match_idx = 0
+    do i = 1, size(array)
+      if (array(i) == name) then
+        match_idx = i
+        exit
+      end if
     end do
-  end subroutine get_eigenfunction
+  end function find_name_loc_in_array
 
 
-  !> Retrieves the spline for a particular variable by
-  !! calling the correct finite element basis function depending on the
-  !! variable passed.
-  subroutine get_spline(ef_idx, r, r_lo, r_hi, spline)
-    use mod_spline_functions, only: cubic_factors, quadratic_factors
-
-    !> the index of the variable in the state vector
-    integer, intent(in)             :: ef_idx
-    !> the current position in the grid
-    real(dp), intent(in)            :: r
-    !> left edge of the current grid interval
-    real(dp), intent(in)            :: r_lo
-    !> right edge of the current grid interval
-    real(dp), intent(in)            :: r_hi
-    !> the finite element basis functions for this grid position
-    real(dp), intent(out)           :: spline(4)
-
-    if (ef_idx == 2 .or. ef_idx == 7 .or. ef_idx == 8) then
-      call cubic_factors(r, r_lo, r_hi, spline)
-    else
-      call quadratic_factors(r, r_lo, r_hi, spline)
-    end if
-  end subroutine get_spline
-
-
-  !> Re-transformation of the eigenfunction.
-  !! Transforms the eigenfunction back to its 'actual' value.
-  !! For example, \(\rho\) is defined as \(\varepsilon\rho\) in the equations,
-  !! in this case the eigenfunction is divided by the scale factor.
-  !! @warning Throws an error if an unknown <tt>ef_idx</tt> is supplied.
-  subroutine transform_eigenfunction(ef_idx, ef_values)
-    use mod_global_variables, only: ic, geometry
+  !> Returns the full set of eigenfunctions corresponding to the given eigenfunction
+  !! name.
+  function retrieve_eigenfunctions(name) result(eigenfunctions)
     use mod_logging, only: log_message
 
-    !> index of the variable in the state vector
-    integer, intent(in)         :: ef_idx
-    !> eigenfunction values, transformed on exit
-    complex(dp), intent(inout)  :: ef_values(ef_gridpts)
-    real(dp)     :: ef_eps(ef_gridpts)
+    !> name of the eigenfunction to retrieve
+    character(len=*), intent(in)  :: name
+    !> the eigenfunctions corresponding to the given name
+    type(ef_type) :: eigenfunctions
+    integer :: name_idx
 
-    ! we can't use eps_grid here from mod_grid, since the eigenfunctions
-    ! were interpolated between gridpoints as well
-    if (geometry == 'Cartesian') then
+    ! check if we want a regular eigenfunction
+    name_idx = find_name_loc_in_array(name, ef_names)
+    if (name_idx > 0) then
+      ! found, retrieve and return
+      eigenfunctions = base_eigenfunctions(name_idx)
+      return
+    end if
+    ! not found (= 0), try a derived quantity
+    if (derived_efs_initialised) then
+      name_idx = find_name_loc_in_array(name, derived_ef_names)
+      if (name_idx > 0) then
+        eigenfunctions = derived_eigenfunctions(name_idx)
+        return
+      end if
+    end if
+    ! if still not found then something went wrong
+    call log_message( &
+      "could not retrieve eigenfunction with name " // name, level="error" &
+    )
+  end function retrieve_eigenfunctions
+
+
+  !> Retrieves a single eigenfunction based on its index in the attribute
+  !! of the main array. For example, if name equals "rho" and ef_idx equals 2
+  !! then this routine returns the quantities attribute evaluated at index 2
+  !! for the "rho" eigenfunctions.
+  !! @note: this routine is needed apart from <tt>retrieve_eigenfunctions</tt>
+  !!        because Fortran does not allow access to a derived type's attribute
+  !!        directly through the result of a function call. @endnote
+  function retrieve_eigenfunction_from_index(name, ef_index) result(eigenfunction)
+    !> name of the eigenfunction to retrieve
+    character(len=*), intent(in)  :: name
+    !> index of the eigenfunction to retrieve
+    integer, intent(in) :: ef_index
+    !> the eigenfunction corresponding to the given name and index
+    complex(dp) :: eigenfunction(size(ef_grid))
+    !> all eigenfunctions corresponding to the given name
+    type(ef_type) :: eigenfunctions
+
+    eigenfunctions = retrieve_eigenfunctions(name=name)
+    eigenfunction = eigenfunctions%quantities(:, ef_index)
+  end function retrieve_eigenfunction_from_index
+
+
+  !> Allocates and assembles the eigenfunction grid, checks the corresponding
+  !! scale factor as well.
+  subroutine assemble_eigenfunction_grid()
+    use mod_global_variables, only: gridpts, ef_gridpts, geometry
+    use mod_grid, only: grid
+
+    integer :: grid_idx
+
+    allocate(ef_grid(ef_gridpts))
+    ef_grid = 0.0d0
+
+    ! first gridpoint, left edge
+    ef_grid(1) = grid(1)
+    ! other gridpoints
+    do grid_idx = 1, gridpts - 1
+      ! position of center point in grid interval
+      ef_grid(2 * grid_idx) = 0.5d0 * (grid(grid_idx) + grid(grid_idx + 1))
+      ! position of end point in grid interval
+      ef_grid(2 * grid_idx + 1) = grid(grid_idx + 1)
+    end do
+
+    allocate(ef_eps(size(ef_grid)))
+    if (geometry == "Cartesian") then
       ef_eps = 1.0d0
+      ef_deps = 0.0d0
     else
       ef_eps = ef_grid
+      ef_deps = 1.0d0
     end if
-
-    select case(ef_idx)
-    case(1) ! rho -> eps*rho
-      ef_values = ef_values / ef_eps
-    case(2) ! v1 -> i*eps*v1
-      ef_values = ef_values / (ef_eps * ic)
-    case(3) ! v2 -> v2
-      ! do nothing
-    case(4) ! v3 -> eps*v3
-      ef_values = ef_values / ef_eps
-    case(5) ! T1 -> eps*T1
-      ef_values = ef_values / ef_eps
-    case(6) ! a1 -> i*a1
-      ef_values = ef_values / ic
-    case(7) ! a2 -> eps*a2
-      ef_values = ef_values / ef_eps
-    case(8) ! a3 -> a3
-      ! do nothing
-    case default
-      call log_message('wrong eigenfunction index in transform_eigenfunction()', level='error')
-    end select
-  end subroutine transform_eigenfunction
+  end subroutine assemble_eigenfunction_grid
 
 
-  !> Cleaning routine, deallocates the eigenfunction arrays.
+  !> Selects a subset of eigenfunctions to be saved.
+  subroutine select_eigenfunctions_to_save(omega)
+    use mod_global_variables, only: write_eigenfunction_subset
+
+    !> the array of calculated eigenvalues
+    complex(dp), intent(in) :: omega(:)
+    integer :: i
+
+    ! check which eigenvalues are inside the given radius
+    allocate(ef_written_flags(size(omega)))
+    if (write_eigenfunction_subset) then
+      ef_written_flags = eigenvalue_is_inside_subset_radius(eigenvalue=omega)
+    else
+      ef_written_flags = .true.
+    end if
+    ! extract indices of those eigenvalues
+    allocate(ef_written_idxs(count(ef_written_flags)))
+    ef_written_idxs = pack([(i, i=1, size(omega))], ef_written_flags)
+  end subroutine select_eigenfunctions_to_save
+
+
+  !> Checks if a specific eigenvalue is within the provided subset radius.
+  elemental logical function eigenvalue_is_inside_subset_radius(eigenvalue)
+    use mod_global_variables, only: eigenfunction_subset_center, &
+      eigenfunction_subset_radius
+
+    !> complex value/array to check
+    complex(dp), intent(in) :: eigenvalue
+    real(dp)  :: distance_from_subset_center
+
+    distance_from_subset_center = sqrt( &
+      (aimag(eigenvalue) - aimag(eigenfunction_subset_center)) ** 2 &
+      + (real(eigenvalue) - real(eigenfunction_subset_center)) ** 2 &
+    )
+    eigenvalue_is_inside_subset_radius = ( &
+      distance_from_subset_center <= eigenfunction_subset_radius &
+    )
+  end function eigenvalue_is_inside_subset_radius
+
+
+  !> Cleaning routine.
   subroutine eigenfunctions_clean()
-    integer   :: i
-
-    if (allocated(ef_grid)) then
+    if (efs_initialised) then
+      deallocate(base_eigenfunctions)
       deallocate(ef_grid)
-      do i = 1, nb_eqs
-        deallocate(ef_array(i) % eigenfunctions)
-      end do
+      deallocate(ef_eps)
+      deallocate(ef_written_flags)
+      deallocate(ef_written_idxs)
+      deallocate(ef_names)
+      if (derived_efs_initialised) then
+        call clean_derived_eigenfunctions()
+        deallocate(derived_eigenfunctions)
+        deallocate(derived_ef_names)
+      end if
     end if
+    efs_initialised = .false.
+    derived_efs_initialised = .false.
   end subroutine eigenfunctions_clean
-
 end module mod_eigenfunctions

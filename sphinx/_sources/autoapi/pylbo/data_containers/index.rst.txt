@@ -3,6 +3,12 @@
 
 .. py:module:: pylbo.data_containers
 
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
 
 Module Contents
 ---------------
@@ -23,6 +29,7 @@ Classes
 
    Bases: :py:obj:`abc.ABC`
 
+   
    Baseclass for a Legolas data container.
 
 
@@ -42,10 +49,10 @@ Classes
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: continua(self)
       :property:
 
+      
       Retrieves the continua based on the type of subclass, returns a dictionary
       with the names of the continua as keys.
 
@@ -73,10 +80,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: parameters(self)
       :property:
 
+      
       Retrieves the parameters based on the type of subclass, returns a dictionary
       with the parameter names as keys.
 
@@ -103,56 +110,265 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: efs_written(self)
       :abstractmethod:
 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: ef_grid(self)
       :abstractmethod:
 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: ef_names(self)
       :abstractmethod:
 
+      
 
-   .. py:method:: pp_written(self)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: derived_efs_written(self)
       :abstractmethod:
 
+      
 
-   .. py:method:: pp_names(self)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: derived_ef_names(self)
       :abstractmethod:
 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: get_sound_speed(self, which_values=None)
       :abstractmethod:
 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: get_alfven_speed(self, which_values=None)
       :abstractmethod:
 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: get_tube_speed(self, which_values=None)
       :abstractmethod:
 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: get_reynolds_nb(self, which_values=None)
       :abstractmethod:
 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: get_magnetic_reynolds_nb(self, which_values=None)
       :abstractmethod:
 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: get_k0_squared(self)
       :abstractmethod:
 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
 
 .. py:class:: LegolasDataSet(datfile)
 
    Bases: :py:obj:`LegolasDataContainer`
 
+   
    Main container for a single Legolas dataset.
 
    :param datfile: Path to the datfile.
@@ -288,10 +504,10 @@ Classes
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: efs_written(self)
       :property:
 
+      
       Checks if eigenfunctions are present.
 
       :returns: **efs_written** -- If `True`, eigenfunctions are present in the datfile.
@@ -314,10 +530,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: ef_names(self)
       :property:
 
+      
       Retrieves the eigenfunction names.
 
       :returns: **ef_names** -- Array containing the names of the eigenfunctions as strings.
@@ -341,10 +557,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: ef_grid(self)
       :property:
 
+      
       Retrieves the eigenfunction grid.
 
       :returns: **ef_grid** -- The eigenfunction grid. Returns None if eigenfunctions are not present.
@@ -367,13 +583,13 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
-   .. py:method:: pp_written(self)
+   .. py:method:: ef_subset(self)
       :property:
 
-      Checks if post-processed quantities are present.
+      
+      Checks if dataset contains a subset of the eigenfunctions
 
-      :returns: **pp_written** -- If `True`, post-processed quantities are present in the datfile.
+      :returns: `True` if subset present, `False` otherwise
       :rtype: bool
 
 
@@ -393,14 +609,40 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
-   .. py:method:: pp_names(self)
+   .. py:method:: derived_efs_written(self)
       :property:
 
-      Retrieves the post-processed quantity names.
+      
+      Checks if derived eigenfunctions are present.
 
-      :returns: **pp_names** -- Array containing the names of the post-processed quantities as strings.
-                None if no post-processed quantities are present.
+      :returns: If `True`, derived eigenfunctions are present in the datfile.
+      :rtype: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: derived_ef_names(self)
+      :property:
+
+      
+      Retrieves the derived eigenfunction names.
+
+      :returns: Array containing the names of the derived eigenfunctions as strings.
+                None if no derived eigenfunctions are present.
       :rtype: numpy.ndarray
 
 
@@ -420,10 +662,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: _get_values(array, which_values)
       :staticmethod:
 
+      
       Determines which values to retrieve from an array.
 
       :param array: The array with values.
@@ -458,9 +700,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_sound_speed(self, which_values=None)
 
+      
       Calculates the sound speed based on the equilibrium arrays,
       given by :math:`c_s = \sqrt{\frac{\gamma p_0}{\rho_0}}`.
 
@@ -493,9 +735,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_alfven_speed(self, which_values=None)
 
+      
       Calculates the Alfvén speed based on the equilibrium arrays,
       given by :math:`c_A = \sqrt{\frac{B_0^2}{\rho_0}}`.
 
@@ -528,9 +770,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_tube_speed(self, which_values=None)
 
+      
       Calculates the tube speed for a cylinder, given by
       :math:`c_t = \frac{c_s c_A}{\sqrt{c_s^2 + c_A^2}}`.
 
@@ -564,9 +806,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_reynolds_nb(self, which_values=None)
 
+      
       Calculates the Reynolds number, defined as
       :math:`R_e = \frac{ac_s}{\eta}` where the slabsize is given by
       :math:`a = x_{end} - x_{start}`.
@@ -601,9 +843,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_magnetic_reynolds_nb(self, which_values=None)
 
+      
       Calculates the magnetic Reynolds number, defined as
       :math:`R_m = \frac{ac_A}{\eta}` where the slabsize is given by
       :math:`a = x_{end} - x_{start}`.
@@ -638,9 +880,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_k0_squared(self)
 
+      
       Calculates the squared wave number, defined as
       :math:`k_0^2 = k_2^2 + k_3^2`.
 
@@ -664,9 +906,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_matrix_B(self)
 
+      
       Retrieves the matrix B from the datfile.
 
       :returns: Tuple containing the rows, columns and values of the non-zero B-matrix
@@ -692,9 +934,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_matrix_A(self)
 
+      
       Retrieves the matrix A from the datfile.
 
       :returns: Tuple containing the rows, columns and values of the non-zero A-matrix
@@ -720,9 +962,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_eigenfunctions(self, ev_guesses=None, ev_idxs=None)
 
+      
       Returns the eigenfunctions based on given eigenvalue guesses or their
       indices. An array will be returned where every item is a dictionary, containing
       both the eigenvalue and its eigenfunctions. Either eigenvalue guesses or
@@ -756,10 +998,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
+   .. py:method:: get_derived_eigenfunctions(self, ev_guesses=None, ev_idxs=None)
 
-   .. py:method:: get_postprocessed(self, ev_guesses=None, ev_idxs=None)
-
-      Returns the post-processed quantities based on given eigenvalue guesses or their
+      
+      Returns the derived eigenfunctions based on given eigenvalue guesses or their
       indices. An array will be returned where every item is a dictionary, containing
       both the eigenvalue and its quantities. Either eigenvalue guesses or
       indices can be supplied, but not both.
@@ -769,11 +1011,11 @@ Classes
       :param ev_idxs: Indices corresponding to the eigenvalues that need to be retrieved.
       :type ev_idxs: (list of) int
 
-      :returns: **postprocessed** -- Array containing the post-processed quantities and eigenvalues
+      :returns: Array containing the derived eigenfunctions and eigenvalues
                 corresponding to the supplied indices. Every index in this array
-                contains a dictionary with the post-processed quantities and
+                contains a dictionary with the derived eigenfunctions and
                 corresponding eigenvalue. The keys of each dictionary are the
-                post-processed quantity names.
+                corresponding eigenfunction names.
       :rtype: numpy.ndarray(dtype=dict, ndim=1)
 
 
@@ -793,9 +1035,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_nearest_eigenvalues(self, ev_guesses)
 
+      
       Calculates the eigenvalues nearest to a given guess. This calculates
       the nearest eigenvalue based on the distance between two points.
 
@@ -825,11 +1067,11 @@ Classes
           !! processed by numpydoc !!
 
 
-
 .. py:class:: LegolasDataSeries(datfiles)
 
    Bases: :py:obj:`LegolasDataContainer`
 
+   
    Baseclass for a Legolas data container.
 
 
@@ -849,10 +1091,10 @@ Classes
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: efs_written(self)
       :property:
 
+      
       Checks if the eigenfunctions are written.
 
       :returns: **efs_written** -- An array of bools corresponding to the various datasets, `True` if a
@@ -876,10 +1118,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: ef_names(self)
       :property:
 
+      
       Returns the eigenfunction names.
 
       :returns: **ef_names** -- An array with the eigenfunction names as strings.
@@ -902,10 +1144,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: ef_grid(self)
       :property:
 
+      
       Retrieves the eigenfunction grid.
 
       :returns: **ef_grid** -- An array with arrays, containing the eigenfunction grids for each dataset.
@@ -928,15 +1170,15 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
-   .. py:method:: pp_written(self)
+   .. py:method:: derived_efs_written(self)
       :property:
 
-      Checks if the post-processed quantities are written.
+      
+      Checks if the derived eigenfunctions are written.
 
-      :returns: **pp_written** -- An array of bools corresponding to the various datasets, `True` if a
-                dataset has post-processed quantities present.
-      :rtype: numpy.ndarray
+      :returns: An array of bools corresponding to the various datasets, `True` if a
+                dataset has derived eigenfunctions present.
+      :rtype: numpy.ndarray(dtype=bool)
 
 
 
@@ -955,14 +1197,14 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
-   .. py:method:: pp_names(self)
+   .. py:method:: derived_ef_names(self)
       :property:
 
-      Returns the post-processed quantity names.
+      
+      Returns the derived eigenfunction names.
 
-      :returns: **pp_names** -- An array with the post-processed quantity names as strings.
-      :rtype: numpy.ndarray
+      :returns: An array with the derived eigenfunction names as strings.
+      :rtype: numpy.ndarray(dtype=str)
 
 
 
@@ -980,10 +1222,10 @@ Classes
 
       ..
           !! processed by numpydoc !!
-
 
    .. py:method:: get_sound_speed(self, which_values=None)
 
+      
       Calculates the sound speed for the various datasets.
 
       :param which_values:
@@ -1019,9 +1261,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_alfven_speed(self, which_values=None)
 
+      
       Calculates the Alfvén speed for the various datasets.
 
       :param which_values:
@@ -1057,9 +1299,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_tube_speed(self, which_values=None)
 
+      
       Calculates the tube speed for the various datasets.
 
       :param which_values:
@@ -1096,9 +1338,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_reynolds_nb(self, which_values=None)
 
+      
       Calculates the Reynolds number for the various datasets.
 
       :param which_values:
@@ -1135,9 +1377,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_magnetic_reynolds_nb(self, which_values=None)
 
+      
       Calculates the magnetic Reynolds number for the various datasets.
 
       :param which_values:
@@ -1174,9 +1416,9 @@ Classes
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: get_k0_squared(self)
 
+      
       Calculates the squared wave number for the various datasets.
 
       :returns: **k0_sq** -- A Numpy array of same length as the number of datasets, containing the
@@ -1199,6 +1441,5 @@ Classes
 
       ..
           !! processed by numpydoc !!
-
 
 

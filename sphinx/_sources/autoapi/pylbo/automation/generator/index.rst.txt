@@ -3,6 +3,12 @@
 
 .. py:module:: pylbo.automation.generator
 
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
 
 Module Contents
 ---------------
@@ -28,6 +34,7 @@ Functions
 
 .. py:function:: _validate_basename(basename)
 
+   
    Validates the basename for a given parfile.
 
    :param basename: The basename for a parfile. If not given, defaults to "parfile".
@@ -53,9 +60,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: _validate_output_dir(output_dir)
 
+   
    Validates and returns the output directory for the parfiles.
 
    :param output_dir: The output directory to store the parfiles in. If not given, defaults to
@@ -84,9 +91,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None)
 
+   
    Handles parfile generation.
 
    :param parfile_dict: Dictionary containing the keys to be placed in the parfile.
@@ -117,9 +124,9 @@ Functions
 
    ..
        !! processed by numpydoc !!
-
    .. py:method:: _get_and_check_item(self, namelist, name, allowed_dtypes)
 
+      
       Does typechecking on the various dictionary keys supplied to the parfile
       generator. Pops the key from the dictionary.
 
@@ -153,9 +160,9 @@ Functions
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: create_namelist_from_dict(self)
 
+      
       Creates one major namelist from the given dictionary.
 
       :raises ParfileGenerationError: - If the original dictionary is not empty after everything should be popped
@@ -178,9 +185,9 @@ Functions
       ..
           !! processed by numpydoc !!
 
-
    .. py:method:: generate_parfiles(self)
 
+      
       Creates separate parfiles from the main namelist container and writes
       the individual parfiles to disk.
 
@@ -204,6 +211,5 @@ Functions
 
       ..
           !! processed by numpydoc !!
-
 
 

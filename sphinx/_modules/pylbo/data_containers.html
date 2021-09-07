@@ -172,7 +172,7 @@
     <span class="n">read_matrix_A</span><span class="p">,</span>
     <span class="n">read_ef_grid</span><span class="p">,</span>
     <span class="n">read_eigenfunction</span><span class="p">,</span>
-    <span class="n">read_postprocessed</span><span class="p">,</span>
+    <span class="n">read_derived_eigenfunction</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
 <span class="kn">from</span> <span class="nn">pylbo.exceptions</span> <span class="kn">import</span> <span class="n">MatricesNotPresent</span>
@@ -251,11 +251,11 @@
         <span class="k">pass</span></div>
 
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.pp_written"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.pp_written">[docs]</a>    <span class="k">def</span> <span class="nf">pp_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.derived_efs_written"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.derived_efs_written">[docs]</a>    <span class="k">def</span> <span class="nf">derived_efs_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.pp_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.pp_names">[docs]</a>    <span class="k">def</span> <span class="nf">pp_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.derived_ef_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.derived_ef_names">[docs]</a>    <span class="k">def</span> <span class="nf">derived_ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
     <span class="nd">@abstractmethod</span>
@@ -415,29 +415,41 @@
             <span class="k">return</span> <span class="kc">None</span></div>
 
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.pp_written"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.pp_written">[docs]</a>    <span class="k">def</span> <span class="nf">pp_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataSet.ef_subset"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.ef_subset">[docs]</a>    <span class="k">def</span> <span class="nf">ef_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Checks if post-processed quantities are present.</span>
+<span class="sd">        Checks if dataset contains a subset of the eigenfunctions</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        pp_written : bool</span>
-<span class="sd">            If `True`, post-processed quantities are present in the datfile.</span>
+<span class="sd">        bool</span>
+<span class="sd">            `True` if subset present, `False` otherwise</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;postprocessed_written&quot;</span><span class="p">]</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenfunction_subset_used&quot;</span><span class="p">]</span></div>
 
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.pp_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.pp_names">[docs]</a>    <span class="k">def</span> <span class="nf">pp_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataSet.derived_efs_written"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.derived_efs_written">[docs]</a>    <span class="k">def</span> <span class="nf">derived_efs_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Retrieves the post-processed quantity names.</span>
+<span class="sd">        Checks if derived eigenfunctions are present.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        pp_names : numpy.ndarray</span>
-<span class="sd">            Array containing the names of the post-processed quantities as strings.</span>
-<span class="sd">            None if no post-processed quantities are present.</span>
+<span class="sd">        bool</span>
+<span class="sd">            If `True`, derived eigenfunctions are present in the datfile.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pp_names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;derived_eigenfuncs_written&quot;</span><span class="p">]</span></div>
+
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="LegolasDataSet.derived_ef_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.derived_ef_names">[docs]</a>    <span class="k">def</span> <span class="nf">derived_ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves the derived eigenfunction names.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        numpy.ndarray</span>
+<span class="sd">            Array containing the names of the derived eigenfunctions as strings.</span>
+<span class="sd">            None if no derived eigenfunctions are present.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;derived_ef_names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
 <div class="viewcode-block" id="LegolasDataSet._get_values"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet._get_values">[docs]</a>    <span class="k">def</span> <span class="nf">_get_values</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">which_values</span><span class="p">):</span>
@@ -715,13 +727,14 @@
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">dict_idx</span><span class="p">,</span> <span class="n">ef_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">idxs</span><span class="p">):</span>
                 <span class="n">efs</span> <span class="o">=</span> <span class="n">read_eigenfunction</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="n">ef_idx</span><span class="p">)</span>
-                <span class="n">efs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;eigenvalue&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">ef_idx</span><span class="p">]})</span>
+                <span class="k">if</span> <span class="n">efs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">efs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;eigenvalue&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">ef_idx</span><span class="p">]})</span>
                 <span class="n">eigenfuncs</span><span class="p">[</span><span class="n">dict_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">efs</span>
         <span class="k">return</span> <span class="n">eigenfuncs</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_postprocessed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_postprocessed">[docs]</a>    <span class="k">def</span> <span class="nf">get_postprocessed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ev_idxs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataSet.get_derived_eigenfunctions"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_derived_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">get_derived_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ev_idxs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Returns the post-processed quantities based on given eigenvalue guesses or their</span>
+<span class="sd">        Returns the derived eigenfunctions based on given eigenvalue guesses or their</span>
 <span class="sd">        indices. An array will be returned where every item is a dictionary, containing</span>
 <span class="sd">        both the eigenvalue and its quantities. Either eigenvalue guesses or</span>
 <span class="sd">        indices can be supplied, but not both.</span>
@@ -735,31 +748,30 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        postprocessed : numpy.ndarray(dtype=dict, ndim=1)</span>
-<span class="sd">            Array containing the post-processed quantities and eigenvalues</span>
+<span class="sd">        numpy.ndarray(dtype=dict, ndim=1)</span>
+<span class="sd">            Array containing the derived eigenfunctions and eigenvalues</span>
 <span class="sd">            corresponding to the supplied indices. Every index in this array</span>
-<span class="sd">            contains a dictionary with the post-processed quantities and</span>
+<span class="sd">            contains a dictionary with the derived eigenfunctions and</span>
 <span class="sd">            corresponding eigenvalue. The keys of each dictionary are the</span>
-<span class="sd">            post-processed quantity names.</span>
+<span class="sd">            corresponding eigenfunction names.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">ev_guesses</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ev_idxs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;get_postprocessed: either provide guesses or indices but not both&quot;</span>
-            <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;either provide guesses or indices but not both&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ev_guesses</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">idxs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_nearest_eigenvalues</span><span class="p">(</span><span class="n">ev_guesses</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">idxs</span> <span class="o">=</span> <span class="n">transform_to_numpy</span><span class="p">(</span><span class="n">ev_idxs</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">idxs</span><span class="p">:</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)):</span>
-                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;get_postprocessed: ev_idxs should be integers&quot;</span><span class="p">)</span>
-        <span class="n">postprocessed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([{}]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxs</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;ev_idxs should be integers&quot;</span><span class="p">)</span>
+        <span class="n">derived_efs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([{}]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxs</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">dict_idx</span><span class="p">,</span> <span class="n">pp_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">idxs</span><span class="p">):</span>
-                <span class="n">ppq</span> <span class="o">=</span> <span class="n">read_postprocessed</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="n">pp_idx</span><span class="p">)</span>
-                <span class="n">ppq</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;eigenvalue&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">pp_idx</span><span class="p">]})</span>
-                <span class="n">postprocessed</span><span class="p">[</span><span class="n">dict_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">ppq</span>
-        <span class="k">return</span> <span class="n">postprocessed</span></div>
+            <span class="k">for</span> <span class="n">dict_idx</span><span class="p">,</span> <span class="n">ef_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">idxs</span><span class="p">):</span>
+                <span class="n">defs</span> <span class="o">=</span> <span class="n">read_derived_eigenfunction</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="n">ef_idx</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">defs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">defs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;eigenvalue&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">ef_idx</span><span class="p">]})</span>
+                <span class="n">derived_efs</span><span class="p">[</span><span class="n">dict_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">defs</span>
+        <span class="k">return</span> <span class="n">derived_efs</span></div>
 
 <div class="viewcode-block" id="LegolasDataSet.get_nearest_eigenvalues"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_nearest_eigenvalues">[docs]</a>    <span class="k">def</span> <span class="nf">get_nearest_eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -862,29 +874,29 @@
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">ef_grid</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.pp_written"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.pp_written">[docs]</a>    <span class="k">def</span> <span class="nf">pp_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataSeries.derived_efs_written"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.derived_efs_written">[docs]</a>    <span class="k">def</span> <span class="nf">derived_efs_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Checks if the post-processed quantities are written.</span>
+<span class="sd">        Checks if the derived eigenfunctions are written.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        pp_written : numpy.ndarray</span>
+<span class="sd">        numpy.ndarray(dtype=bool)</span>
 <span class="sd">            An array of bools corresponding to the various datasets, `True` if a</span>
-<span class="sd">            dataset has post-processed quantities present.</span>
+<span class="sd">            dataset has derived eigenfunctions present.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">pp_written</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">derived_efs_written</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div>
 
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.pp_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.pp_names">[docs]</a>    <span class="k">def</span> <span class="nf">pp_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataSeries.derived_ef_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.derived_ef_names">[docs]</a>    <span class="k">def</span> <span class="nf">derived_ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Returns the post-processed quantity names.</span>
+<span class="sd">        Returns the derived eigenfunction names.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        pp_names : numpy.ndarray</span>
-<span class="sd">            An array with the post-processed quantity names as strings.</span>
+<span class="sd">        numpy.ndarray(dtype=str)</span>
+<span class="sd">            An array with the derived eigenfunction names as strings.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">pp_names</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">derived_ef_names</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">continue</span>

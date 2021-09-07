@@ -3,6 +3,12 @@
 
 .. py:module:: pylbo.automation.api
 
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
 
 Module Contents
 ---------------
@@ -20,6 +26,7 @@ Functions
 
 .. py:function:: generate_parfiles(parfile_dict, basename=None, output_dir=None)
 
+   
    Generates parfiles based on a given configuration dictionary.
    The separate namelists do not have to be taken into account, and a normal
    dictionary should be supplied where the keys correspond to the namelist
@@ -103,9 +110,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: run_legolas(parfiles, remove_parfiles=False, nb_cpus=1, executable=None)
 
+   
    Runs the legolas executable for a given list of parfiles. If more than one parfile
    is passed, the runs can be performed in parallel using the multiprocessing module.
    Parallelisation can be enabled by setting the `nb_cpus` kwarg to a number greater
@@ -161,5 +168,4 @@ Functions
 
    ..
        !! processed by numpydoc !!
-
 

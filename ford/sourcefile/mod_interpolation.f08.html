@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_interpolation.f08 &ndash; Legolas v. 1.1.3 - develop</title>
+    <title>mod_interpolation.f08 &ndash; Legolas v. 1.1.4 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.3 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.4 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.6% of total for source files.">135 statements</a>
+    title=" 1.8% of total for source files.">150 statements</a>
      </li> 
      
      
@@ -481,56 +481,75 @@
 <a id="ln-215" name="ln-215"></a>
 <a id="ln-216" name="ln-216"></a>  <span class="c">!&gt; Function for fast table-lookup, returns the corresponding y-value</span>
 <a id="ln-217" name="ln-217"></a>  <span class="c">!! in &lt;tt&gt;y_values&lt;/tt&gt; based on a given based on a given \(x0\).</span>
-<a id="ln-218" name="ln-218"></a>  <span class="c">!! Uses simple linear interpolation.</span>
-<a id="ln-219" name="ln-219"></a>  <span class="k">function </span><span class="n">lookup_table_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_values</span><span class="p">,</span> <span class="n">y_values</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">y_found</span><span class="p">)</span>
-<a id="ln-220" name="ln-220"></a>    <span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">NaN</span>
-<a id="ln-221" name="ln-221"></a>
-<a id="ln-222" name="ln-222"></a>    <span class="c">!&gt; value to look up</span>
-<a id="ln-223" name="ln-223"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">x</span>
-<a id="ln-224" name="ln-224"></a>    <span class="c">!&gt; array of x-values</span>
-<a id="ln-225" name="ln-225"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">x_values</span><span class="p">(:)</span>
-<a id="ln-226" name="ln-226"></a>    <span class="c">!&gt; array of y-values, assuming \(y(x)\) relation</span>
-<a id="ln-227" name="ln-227"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">y_values</span><span class="p">(:)</span>
-<a id="ln-228" name="ln-228"></a>
-<a id="ln-229" name="ln-229"></a>    <span class="kt">integer</span>   <span class="kd">::</span> <span class="n">idx</span><span class="p">,</span> <span class="n">nvals</span>
-<a id="ln-230" name="ln-230"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span>
-<a id="ln-231" name="ln-231"></a>    <span class="c">!&gt; interpolated y-value based on \(x0\)</span>
-<a id="ln-232" name="ln-232"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">y_found</span>
-<a id="ln-233" name="ln-233"></a>
-<a id="ln-234" name="ln-234"></a>    <span class="n">nvals</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">x_values</span><span class="p">)</span>
-<a id="ln-235" name="ln-235"></a>
-<a id="ln-236" name="ln-236"></a>    <span class="c">! check if we are outside of the table</span>
-<a id="ln-237" name="ln-237"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_values</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">then</span>
-<a id="ln-238" name="ln-238"></a><span class="k">      call </span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;lookup_value: x outside x_values (too small)&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
-<a id="ln-239" name="ln-239"></a>      <span class="n">y_found</span> <span class="o">=</span> <span class="n">NaN</span>
-<a id="ln-240" name="ln-240"></a>      <span class="k">return</span>
-<a id="ln-241" name="ln-241"></a><span class="k">    else if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">x_values</span><span class="p">(</span><span class="n">nvals</span><span class="p">))</span> <span class="k">then</span>
-<a id="ln-242" name="ln-242"></a><span class="k">      call </span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;lookup_value: x outside x_values (too large)&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
-<a id="ln-243" name="ln-243"></a>      <span class="n">y_found</span> <span class="o">=</span> <span class="n">NaN</span>
-<a id="ln-244" name="ln-244"></a>      <span class="k">return</span>
-<a id="ln-245" name="ln-245"></a><span class="k">    end if</span>
-<a id="ln-246" name="ln-246"></a>
-<a id="ln-247" name="ln-247"></a>    <span class="c">! index of nearest value to x (dim=1 to return a scalar)</span>
-<a id="ln-248" name="ln-248"></a>    <span class="n">idx</span> <span class="o">=</span> <span class="nb">minloc</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x_values</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="nb">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<a id="ln-249" name="ln-249"></a>
-<a id="ln-250" name="ln-250"></a>    <span class="c">! check if we are on left or right side of nearest point, or on-edge</span>
-<a id="ln-251" name="ln-251"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">idx</span> <span class="o">==</span> <span class="n">nvals</span><span class="p">)</span> <span class="k">then</span>
-<a id="ln-252" name="ln-252"></a><span class="k">      </span><span class="n">x0</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<a id="ln-253" name="ln-253"></a>      <span class="n">x1</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-<a id="ln-254" name="ln-254"></a>      <span class="n">y0</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<a id="ln-255" name="ln-255"></a>      <span class="n">y1</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-<a id="ln-256" name="ln-256"></a>    <span class="k">else</span>
-<a id="ln-257" name="ln-257"></a><span class="k">      </span><span class="n">x0</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-<a id="ln-258" name="ln-258"></a>      <span class="n">x1</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<a id="ln-259" name="ln-259"></a>      <span class="n">y0</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-<a id="ln-260" name="ln-260"></a>      <span class="n">y1</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<a id="ln-261" name="ln-261"></a>    <span class="k">end if</span>
-<a id="ln-262" name="ln-262"></a>
-<a id="ln-263" name="ln-263"></a>    <span class="c">! do linear interpolation</span>
-<a id="ln-264" name="ln-264"></a>    <span class="n">y_found</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span>
-<a id="ln-265" name="ln-265"></a>  <span class="k">end function </span><span class="n">lookup_table_value</span>
-<a id="ln-266" name="ln-266"></a>
-<a id="ln-267" name="ln-267"></a><span class="k">end module </span><span class="n">mod_interpolation</span>
+<a id="ln-218" name="ln-218"></a>  <span class="c">!! If the &lt;tt&gt;allow_outside&lt;/tt&gt; flag is given as &lt;tt&gt;.true.&lt;/tt&gt; then values</span>
+<a id="ln-219" name="ln-219"></a>  <span class="c">!! on the edge of the table are returned when the lookup value is outside the array.</span>
+<a id="ln-220" name="ln-220"></a>  <span class="c">!! Uses simple linear interpolation.</span>
+<a id="ln-221" name="ln-221"></a>  <span class="k">function </span><span class="n">lookup_table_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x_values</span><span class="p">,</span> <span class="n">y_values</span><span class="p">,</span> <span class="n">allow_outside</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">y_found</span><span class="p">)</span>
+<a id="ln-222" name="ln-222"></a>    <span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">NaN</span>
+<a id="ln-223" name="ln-223"></a>
+<a id="ln-224" name="ln-224"></a>    <span class="c">!&gt; value to look up</span>
+<a id="ln-225" name="ln-225"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">x</span>
+<a id="ln-226" name="ln-226"></a>    <span class="c">!&gt; array of x-values</span>
+<a id="ln-227" name="ln-227"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">x_values</span><span class="p">(:)</span>
+<a id="ln-228" name="ln-228"></a>    <span class="c">!&gt; array of y-values, assuming \(y(x)\) relation</span>
+<a id="ln-229" name="ln-229"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">y_values</span><span class="p">(:)</span>
+<a id="ln-230" name="ln-230"></a>    <span class="c">!&gt; flag to allow for lookups outside of the array</span>
+<a id="ln-231" name="ln-231"></a>    <span class="kt">logical</span><span class="p">,</span> <span class="k">optional</span> <span class="kd">::</span> <span class="n">allow_outside</span>
+<a id="ln-232" name="ln-232"></a>    <span class="c">!&gt; interpolated y-value based on \(x0\)</span>
+<a id="ln-233" name="ln-233"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">y_found</span>
+<a id="ln-234" name="ln-234"></a>
+<a id="ln-235" name="ln-235"></a>    <span class="kt">integer</span>   <span class="kd">::</span> <span class="n">idx</span><span class="p">,</span> <span class="n">nvals</span>
+<a id="ln-236" name="ln-236"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span>
+<a id="ln-237" name="ln-237"></a>    <span class="kt">logical</span>   <span class="kd">::</span> <span class="n">return_edge_value_if_outside</span>
+<a id="ln-238" name="ln-238"></a>
+<a id="ln-239" name="ln-239"></a>    <span class="n">nvals</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">x_values</span><span class="p">)</span>
+<a id="ln-240" name="ln-240"></a>    <span class="n">return_edge_value_if_outside</span> <span class="o">=</span> <span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<a id="ln-241" name="ln-241"></a>    <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">allow_outside</span><span class="p">))</span> <span class="k">then</span>
+<a id="ln-242" name="ln-242"></a><span class="k">      </span><span class="n">return_edge_value_if_outside</span> <span class="o">=</span> <span class="n">allow_outside</span>
+<a id="ln-243" name="ln-243"></a>    <span class="k">end if</span>
+<a id="ln-244" name="ln-244"></a>
+<a id="ln-245" name="ln-245"></a><span class="k">    if</span> <span class="p">(</span><span class="n">return_edge_value_if_outside</span><span class="p">)</span> <span class="k">then</span>
+<a id="ln-246" name="ln-246"></a><span class="k">      if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_values</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">then</span>
+<a id="ln-247" name="ln-247"></a><span class="k">        </span><span class="n">y_found</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="ln-248" name="ln-248"></a>        <span class="k">return</span>
+<a id="ln-249" name="ln-249"></a><span class="k">      else if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">x_values</span><span class="p">(</span><span class="n">nvals</span><span class="p">))</span> <span class="k">then</span>
+<a id="ln-250" name="ln-250"></a><span class="k">        </span><span class="n">y_found</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="n">nvals</span><span class="p">)</span>
+<a id="ln-251" name="ln-251"></a>        <span class="k">return</span>
+<a id="ln-252" name="ln-252"></a><span class="k">      end if</span>
+<a id="ln-253" name="ln-253"></a><span class="k">    end if</span>
+<a id="ln-254" name="ln-254"></a>
+<a id="ln-255" name="ln-255"></a>    <span class="c">! check if we are outside of the table</span>
+<a id="ln-256" name="ln-256"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_values</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="k">then</span>
+<a id="ln-257" name="ln-257"></a><span class="k">      call </span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;lookup_value: x outside x_values (too small)&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
+<a id="ln-258" name="ln-258"></a>      <span class="n">y_found</span> <span class="o">=</span> <span class="n">NaN</span>
+<a id="ln-259" name="ln-259"></a>      <span class="k">return</span>
+<a id="ln-260" name="ln-260"></a><span class="k">    else if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">x_values</span><span class="p">(</span><span class="n">nvals</span><span class="p">))</span> <span class="k">then</span>
+<a id="ln-261" name="ln-261"></a><span class="k">      call </span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;lookup_value: x outside x_values (too large)&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
+<a id="ln-262" name="ln-262"></a>      <span class="n">y_found</span> <span class="o">=</span> <span class="n">NaN</span>
+<a id="ln-263" name="ln-263"></a>      <span class="k">return</span>
+<a id="ln-264" name="ln-264"></a><span class="k">    end if</span>
+<a id="ln-265" name="ln-265"></a>
+<a id="ln-266" name="ln-266"></a>    <span class="c">! index of nearest value to x (dim=1 to return a scalar)</span>
+<a id="ln-267" name="ln-267"></a>    <span class="n">idx</span> <span class="o">=</span> <span class="nb">minloc</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x_values</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="nb">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="ln-268" name="ln-268"></a>
+<a id="ln-269" name="ln-269"></a>    <span class="c">! check if we are on left or right side of nearest point, or on-edge</span>
+<a id="ln-270" name="ln-270"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">idx</span> <span class="o">==</span> <span class="n">nvals</span><span class="p">)</span> <span class="k">then</span>
+<a id="ln-271" name="ln-271"></a><span class="k">      </span><span class="n">x0</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<a id="ln-272" name="ln-272"></a>      <span class="n">x1</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<a id="ln-273" name="ln-273"></a>      <span class="n">y0</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<a id="ln-274" name="ln-274"></a>      <span class="n">y1</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<a id="ln-275" name="ln-275"></a>    <span class="k">else</span>
+<a id="ln-276" name="ln-276"></a><span class="k">      </span><span class="n">x0</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<a id="ln-277" name="ln-277"></a>      <span class="n">x1</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<a id="ln-278" name="ln-278"></a>      <span class="n">y0</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<a id="ln-279" name="ln-279"></a>      <span class="n">y1</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<a id="ln-280" name="ln-280"></a>    <span class="k">end if</span>
+<a id="ln-281" name="ln-281"></a>
+<a id="ln-282" name="ln-282"></a>    <span class="c">! do linear interpolation</span>
+<a id="ln-283" name="ln-283"></a>    <span class="n">y_found</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span>
+<a id="ln-284" name="ln-284"></a>  <span class="k">end function </span><span class="n">lookup_table_value</span>
+<a id="ln-285" name="ln-285"></a>
+<a id="ln-286" name="ln-286"></a><span class="k">end module </span><span class="n">mod_interpolation</span>
 </pre></div>
 
     </section>
@@ -543,7 +562,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.3 - develop was developed by <br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.4 - develop was developed by <br>&copy; 2021 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

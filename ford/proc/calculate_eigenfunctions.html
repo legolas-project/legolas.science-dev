@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>calculate_eigenfunctions &ndash; Legolas v. 1.1.3 - develop</title>
+    <title>calculate_eigenfunctions &ndash; Legolas v. 1.1.4 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.3 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.4 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">14 statements</a>
+    title=" 0.1% of total for procedures.">7 statements</a>
      </li> 
      
      
@@ -196,7 +196,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine calculate_eigenfunctions(vr)
+public subroutine calculate_eigenfunctions(right_eigenvectors)
     
     
    
@@ -206,9 +206,8 @@ public subroutine calculate_eigenfunctions(vr)
 
 
     
-    <p>Calculates the eigenfunctions for every eigenvalue and variable,
- based on the right eigenvectors. The eigenfunctions are transformed
- back to their 'actual' values</p>
+    <p>Calculates both the base eigenfunctions and the derived quantities thereof
+ based on a 2D array of right eigenvectors.</p>
     
 
     <h3>Arguments</h3>
@@ -229,12 +228,12 @@ public subroutine calculate_eigenfunctions(vr)
   
 <tr>
   
-  <td><span class="anchor" id="variable-vr"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-right_eigenvectors"></span>complex(kind=dp),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>vr</strong>(:,:)</td><td><p>the matrix of right eigenvectors</p></td>
+  <td><strong>right_eigenvectors</strong>(:,:)</td><td></td>
   
 </tr>
 
@@ -307,7 +306,7 @@ public subroutine calculate_eigenfunctions(vr)
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.3 - develop was developed by <br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.4 - develop was developed by <br>&copy; 2021 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

@@ -11,7 +11,7 @@
     <link rel="icon" href="../favicon.png">
 
     <title>
-All Modules &ndash; Legolas v. 1.1.3 - develop
+All Modules &ndash; Legolas v. 1.1.4 - develop
 </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@ All Modules &ndash; Legolas v. 1.1.3 - develop
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.3 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.4 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -191,12 +191,45 @@ All Modules &ndash; Legolas v. 1.1.3 - develop
                
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td><a href='../sourcefile/mod_eigenfunctions.f08.html'>mod_eigenfunctions.f08</a></td><td><p>This module composes the eigenfunctions based on the eigenvectors
- coming out of the solver routines. Assembling the eigenfunctions is needed
- because of the finite element matrix representation.
- In every interval of the base grid <script type="math/tex">(i, i+1)</script> eigenfunctions are saved at the
- left and right edges, as well as in the centre of the interval.
- This results in eigenfunction arrays with a size <script type="math/tex">2*gridpts - 1</script>.</p></td></tr>
+			   <tr class="active"><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td><a href='../sourcefile/mod_eigenfunctions.f08.html'>mod_eigenfunctions.f08</a></td><td><p>Main module responsible for eigenfunction management. Contains routines
+ and interfaces to initialise and calculate the eigenfunctions and
+ derived quantities.</p></td></tr>
+               
+                  
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_base_efs.html'>smod_base_efs</a></td><td><a href='../sourcefile/smod_base_efs.f08.html'>smod_base_efs.f08</a></td><td><p>This submodule initialises and calculates the base eigenfunctions, i.e. the ones
+ corresponding to the basic state vector variables (rho, v1, v2, etc.)</p></td></tr>
+               
+               
+			 
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_ef_operations.html'>smod_ef_operations</a></td><td><a href='../sourcefile/smod_ef_operations.f08.html'>smod_ef_operations.f08</a></td><td><p>This submodule contains procedures and functions to be used when we are
+ either assembling eigenfunctions based on the eigenvectors, or retransforming
+ them.</p></td></tr>
+               
+               
+			 
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_derived_efs.html'>smod_derived_efs</a></td><td><a href='../sourcefile/smod_derived_efs.f08.html'>smod_derived_efs.f08</a></td><td><p>This submodule calculates various quantities derived from the base eigenfunctions:
+  - entropy S
+  - <script type="math/tex">\nabla \cdot \mathbf{v}_1</script>
+  - all 3 components of <script type="math/tex">\nabla \times \mathbf{v}_1</script>
+  - <script type="math/tex">\nabla \cdot \mathbf{B}_1</script>
+  - all 3 components of <script type="math/tex">\mathbf{B}_1</script>
+  - all 3 components of <script type="math/tex">\nabla \times \mathbf{B}_1</script>
+</p><a href="../module/smod_derived_efs.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+               
+                  
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='../module/smod_derived_pp_efs.html'>smod_derived_pp_efs</a></td><td><a href='../sourcefile/smod_derived_pp_efs.f08.html'>smod_derived_pp_efs.f08</a></td><td><p>This submodule calculates quantities derived from the base eigenfunctions that are
+ parallel or perpendicular to the background magnetic field:
+  - parallel and perpendicular components of <script type="math/tex">\mathbf{B}_1</script>
+  - parallel and perpendicular components of <script type="math/tex">\nabla \times \mathbf{B}_1</script>
+  - parallel and perpendicular components of <script type="math/tex">\mathbf{v}_1</script>
+  - parallel and perpendicular components of <script type="math/tex">\nabla \times \mathbf{v}_1</script>
+</p></td></tr>
+               
+               
+			 
+               
+               
+			 
                
                <!--active-->
 			 
@@ -567,48 +600,31 @@ All Modules &ndash; Legolas v. 1.1.3 - develop
                
                <!--active-->
 			 
-			   <tr class=""><td><a href='../module/mod_postprocessing.html'>mod_postprocessing</a></td><td><a href='../sourcefile/mod_postprocessing.f08.html'>mod_postprocessing.f08</a></td><td><p>This module composes perturbed quantities of interest based on the
- eigenfunctions and eigenvectors. As a result, all quantities are defined on
- the same grid as the eigenfunctions, ef_grid.
- The computed quantities are
-    - div v1
-    - all 3 components of curl v1
-    - all 3 components of B1
-    - div B1
-    - all 3 components of curl B1
-    - 3 components of v1, parallel/perpendicular to B0
-    - 2 components of curl v1, parallel and perpendicular to B0
- It is assumed that B0 has no B01 component, such that the 1-direction is
- already perpendicular to B0, and the parallel/perpendicular directions are
- taken in the 23-plane. The right-handed triad is e1, B0/|B0|, (e1 x B0) / |B0|.</p></td></tr>
-               
-               <!---->
-			 
-			   <tr class="active"><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td><a href='../sourcefile/mod_radiative_cooling.f08.html'>mod_radiative_cooling.f08</a></td><td><p>Module containing radiative cooling-related routines.
+			   <tr class=""><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td><a href='../sourcefile/mod_radiative_cooling.f08.html'>mod_radiative_cooling.f08</a></td><td><p>Module containing radiative cooling-related routines.
  This module is responsible for initialising the radiative cooling
  variables and a correct handling of the cooling curves.
  If an interpolated cooling curve is selected this module calls the
  interpolation module to create one.</p></td></tr>
                
-               <!--active-->
-			 
-			   <tr class=""><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td><a href='../sourcefile/mod_resistivity.f08.html'>mod_resistivity.f08</a></td><td><p>Module containing resistivity-related routines, calculates
- and sets the resistivity values based on the equilibrium configuration.</p></td></tr>
-               
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td><a href='../sourcefile/mod_solar_atmosphere.f08.html'>mod_solar_atmosphere.f08</a></td><td><p>Module to set a realistic solar atmosphere, using tabulated density and
+			   <tr class="active"><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td><a href='../sourcefile/mod_resistivity.f08.html'>mod_resistivity.f08</a></td><td><p>Module containing resistivity-related routines, calculates
+ and sets the resistivity values based on the equilibrium configuration.</p></td></tr>
+               
+               <!--active-->
+			 
+			   <tr class=""><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td><a href='../sourcefile/mod_solar_atmosphere.f08.html'>mod_solar_atmosphere.f08</a></td><td><p>Module to set a realistic solar atmosphere, using tabulated density and
  temperature profiles (see <tt>mod_atmosphere_curves</tt>), in Cartesian
  geometries only.</p></td></tr>
                
-               <!--active-->
+               <!---->
 			 
-			   <tr class=""><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td><a href='../sourcefile/mod_solvers.f08.html'>mod_solvers.f08</a></td><td><p>Parent module for everything solver-related. Interfaces to the different
+			   <tr class="active"><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td><a href='../sourcefile/mod_solvers.f08.html'>mod_solvers.f08</a></td><td><p>Parent module for everything solver-related. Interfaces to the different
  submodules are defined here, and the <tt>solve_evp</tt> routine calls the
  correct solver based on parfile settings.</p></td></tr>
                
                   
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_arnoldi.html'>smod_arnoldi</a></td><td><a href='../sourcefile/smod_arnoldi.f08.html'>smod_arnoldi.f08</a></td><td><p>Submodule containing the implementation of the various ARPACK solvers.
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_arnoldi.html'>smod_arnoldi</a></td><td><a href='../sourcefile/smod_arnoldi.f08.html'>smod_arnoldi.f08</a></td><td><p>Submodule containing the implementation of the various ARPACK solvers.
  Preprocessor directives are used here, if ARPACK was not found during compilation
  most of this submodule will not be compiled to avoid unknown calls to methods.
  We first cycle through the possible modes, set up the relevant matrix operators and
@@ -621,7 +637,7 @@ All Modules &ndash; Legolas v. 1.1.3 - develop
                
                
 			 
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_qr_invert.html'>smod_qr_invert</a></td><td><a href='../sourcefile/smod_qr_invert.f08.html'>smod_qr_invert.f08</a></td><td><p>Submodule containing the implementation of the QR-invert algorithm.
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_qr_invert.html'>smod_qr_invert</a></td><td><a href='../sourcefile/smod_qr_invert.f08.html'>smod_qr_invert.f08</a></td><td><p>Submodule containing the implementation of the QR-invert algorithm.
  The original problem is written as a standard eigenvalue problem through
  <script type="math/tex; mode=display"> \mathcal{B}^{-1}\mathcal{A}\textbf{X} = \omega\textbf{X}\ </script>
  where <script type="math/tex">\mathcal{B}</script> is always properly conditioned.
@@ -632,7 +648,7 @@ All Modules &ndash; Legolas v. 1.1.3 - develop
                
                
 			 
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_qz_direct.html'>smod_qz_direct</a></td><td><a href='../sourcefile/smod_qz_direct.f08.html'>smod_qz_direct.f08</a></td><td><p>Submodule containing the implementation of the QZ-direct algorithm.
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_qz_direct.html'>smod_qz_direct</a></td><td><a href='../sourcefile/smod_qz_direct.f08.html'>smod_qz_direct.f08</a></td><td><p>Submodule containing the implementation of the QZ-direct algorithm.
  We keep the general form of the eigenvalue problem
  <script type="math/tex; mode=display"> \mathcal{A}\textbf{X} = \omega\mathcal{B}\textbf{X}\ </script>
  and solve this directly by calling LAPACK's <tt>zggev</tt> routine.
@@ -641,29 +657,29 @@ All Modules &ndash; Legolas v. 1.1.3 - develop
                
 			 
                
-               <!---->
+               <!--active-->
 			 
-			   <tr class="active"><td><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></td><td><a href='../sourcefile/mod_spline_functions.f08.html'>mod_spline_functions.f08</a></td><td><p>Module that calculates the finite element basis functions.
+			   <tr class=""><td><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></td><td><a href='../sourcefile/mod_spline_functions.f08.html'>mod_spline_functions.f08</a></td><td><p>Module that calculates the finite element basis functions.
  The different basis functions and their derivatives
  used throughout the code are calculated here. All routines defined in
  this module simply return the basis functions for a specific point <tt>r</tt>
  in the interval <tt>(rj_lo, rj_hi)</tt>.</p></td></tr>
                
-               <!--active-->
-			 
-			   <tr class=""><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td><a href='../sourcefile/mod_thermal_conduction.f08.html'>mod_thermal_conduction.f08</a></td><td><p>This module is responsible for calculating and setting the
- thermal conduction values based on the equilibrium configuration.</p></td></tr>
-               
                <!---->
 			 
-			   <tr class="active"><td><a href='../module/mod_types.html'>mod_types</a></td><td><a href='../sourcefile/mod_types.f08.html'>mod_types.f08</a></td><td><p>Module containing the different types used in the code.
+			   <tr class="active"><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td><a href='../sourcefile/mod_thermal_conduction.f08.html'>mod_thermal_conduction.f08</a></td><td><p>This module is responsible for calculating and setting the
+ thermal conduction values based on the equilibrium configuration.</p></td></tr>
+               
+               <!--active-->
+			 
+			   <tr class=""><td><a href='../module/mod_types.html'>mod_types</a></td><td><a href='../sourcefile/mod_types.f08.html'>mod_types.f08</a></td><td><p>Module containing the different types used in the code.
  All types are defined here, this includes all types where the
  equilibrium arrays are set as attributes, as well as a type
  to handle eigenfunctions.</p></td></tr>
                
-               <!--active-->
+               <!---->
 			 
-			   <tr class=""><td><a href='../module/mod_units.html'>mod_units</a></td><td><a href='../sourcefile/mod_units.f08.html'>mod_units.f08</a></td><td><p>This module handles checking and setting all unit normalisations.
+			   <tr class="active"><td><a href='../module/mod_units.html'>mod_units</a></td><td><a href='../sourcefile/mod_units.f08.html'>mod_units.f08</a></td><td><p>This module handles checking and setting all unit normalisations.
  When setting the normalisations, one should always specify a unit length
  and a unit magneticfield. The normalisations use a reference value of 2 for plasma beta
  as is common practice, such that we can write <script type="math/tex">\beta/2 = \mu * p / B^2 = 1 </script>.
@@ -681,9 +697,9 @@ All Modules &ndash; Legolas v. 1.1.3 - develop
  Where the latter two denote the luminosity and thermal conduction normalisations.
  </p><a href="../module/mod_units.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
                
-               <!---->
+               <!--active-->
 			 
-			   <tr class="active"><td><a href='../module/mod_version.html'>mod_version</a></td><td><a href='../sourcefile/mod_version.f08.html'>mod_version.f08</a></td><td><p>Simple module, containing only version-related stuff. Versioning is done in a
+			   <tr class=""><td><a href='../module/mod_version.html'>mod_version</a></td><td><a href='../sourcefile/mod_version.f08.html'>mod_version.f08</a></td><td><p>Simple module, containing only version-related stuff. Versioning is done in a
  separate module to avoid cluttering the commit history of for example
  <tt>mod_global_variables</tt> or <tt>mod_output</tt> every time an update
  to the code is done.
@@ -691,12 +707,12 @@ All Modules &ndash; Legolas v. 1.1.3 - develop
  common MAJOR.MINOR.PATCH formatting.
  This means:</p><a href="../module/mod_version.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
                
-               <!--active-->
+               <!---->
 			 
-			   <tr class=""><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td><a href='../sourcefile/mod_viscosity.f08.html'>mod_viscosity.f08</a></td><td><p>This module is responsible for calculating the viscosity contributions
+			   <tr class="active"><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td><a href='../sourcefile/mod_viscosity.f08.html'>mod_viscosity.f08</a></td><td><p>This module is responsible for calculating the viscosity contributions
  to the A-matrix based on the equilibrium configuration.</p></td></tr>
                
-               <!---->
+               <!--active-->
 			 
 			 </tbody></table>
              
@@ -708,7 +724,7 @@ All Modules &ndash; Legolas v. 1.1.3 - develop
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.3 - develop was developed by <br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.4 - develop was developed by <br>&copy; 2021 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

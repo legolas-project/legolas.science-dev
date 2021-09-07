@@ -161,17 +161,20 @@
   <h1>Source code for pylbo.visualisation.eigenfunction_interface</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">abc</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">PathCollection</span>
-<span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSeries</span>
+<span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSet</span><span class="p">,</span> <span class="n">LegolasDataSeries</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">add_pickradius_to_item</span>
+<span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
 
 
 <div class="viewcode-block" id="EigenfunctionInterface"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/eigenfunction_interface/index.html#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface">[docs]</a><span class="k">class</span> <span class="nc">EigenfunctionInterface</span><span class="p">:</span>
     <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">spec_axis</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="n">axis</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span> <span class="o">=</span> <span class="n">spec_axis</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_data_is_present</span><span class="p">()</span>
         <span class="c1"># holds the points that are currently selected in the form of a &quot;double&quot; dict:</span>
         <span class="c1"># {&quot;ds instance&quot; : {&quot;index&quot; : line2D instance}}</span>
@@ -184,6 +187,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_transparent_data</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ef_subset_artists</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="EigenfunctionInterface._check_data_is_present"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/eigenfunction_interface/index.html#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._check_data_is_present">[docs]</a>    <span class="k">def</span> <span class="nf">_check_data_is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -208,10 +213,8 @@
 <span class="sd">            `True` if all conditions are met and callbacks can be connected, `False`</span>
 <span class="sd">            otherwise.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># this attr has been set in case of multiple axes, prevents double event trigger</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;associated_ds_ax&quot;</span><span class="p">):</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">event</span><span class="o">.</span><span class="n">mouseevent</span><span class="o">.</span><span class="n">inaxes</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">associated_ds_ax</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">event</span><span class="o">.</span><span class="n">mouseevent</span><span class="o">.</span><span class="n">inaxes</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
         <span class="n">artist</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">artist</span>
         <span class="c1"># this attr has been set when adding the legend, return for legend items</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="s2">&quot;is_legend_item&quot;</span><span class="p">):</span>
@@ -348,6 +351,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_clear_figure_and_selection</span><span class="p">()</span>
         <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;i&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_switch_real_and_imaginary_part</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_toggle_eigenfunction_subset_radius</span><span class="p">()</span>
         <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;up&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_select_next_function</span><span class="p">()</span>
         <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;down&quot;</span><span class="p">:</span>
@@ -373,6 +378,9 @@
         <span class="n">associated_ds</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">artist</span><span class="o">.</span><span class="n">dataset</span>
         <span class="c1"># skip if point index is already in list</span>
         <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">return</span>
+        <span class="c1"># skip if point has no eigenfunction due to e.g. subset</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_point_has_eigenfunctions</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
             <span class="k">return</span>
         <span class="p">(</span><span class="n">marked_point</span><span class="p">,)</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">artist</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
             <span class="n">xdata</span><span class="p">,</span>
@@ -447,6 +455,60 @@
             <span class="n">distances</span> <span class="o">=</span> <span class="p">(</span><span class="n">mouse_x</span> <span class="o">-</span> <span class="n">xdata</span><span class="p">[</span><span class="n">idxs</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">mouse_y</span> <span class="o">-</span> <span class="n">ydata</span><span class="p">[</span><span class="n">idxs</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
             <span class="n">idx</span> <span class="o">=</span> <span class="n">idxs</span><span class="p">[</span><span class="n">distances</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
         <span class="k">return</span> <span class="n">idx</span><span class="p">,</span> <span class="n">xdata</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">ydata</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface._selected_point_has_eigenfunctions"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/eigenfunction_interface/index.html#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._selected_point_has_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">_selected_point_has_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks if the selected index has eigenfunctions associated with it, in the</span>
+<span class="sd">        case of for example eigenfunction subsets this is not guaranteed.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        ds : ~pylbo.data_containers.LegolasDataSet</span>
+<span class="sd">            The dataset associated with the given eigenvalue index</span>
+<span class="sd">        idx : int</span>
+<span class="sd">            The index of the selected eigenvalue</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            Returns `True` if `idx` corresponds to an eigenvalue with eigenfunctions,</span>
+<span class="sd">            `False` otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">point_has_efs</span> <span class="o">=</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ef_written_idxs&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">point_has_efs</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;eigenvalue </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2"> has no eigenfunctions!&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">point_has_efs</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface._toggle_eigenfunction_subset_radius"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/eigenfunction_interface/index.html#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._toggle_eigenfunction_subset_radius">[docs]</a>    <span class="k">def</span> <span class="nf">_toggle_eigenfunction_subset_radius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">LegolasDataSet</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ef_written_flags&quot;</span><span class="p">]):</span>
+            <span class="k">return</span>
+        <span class="n">xlim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+        <span class="n">ylim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">get_ylim</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_subset_artists</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenfunction_subset_center&quot;</span><span class="p">]</span>
+            <span class="p">(</span><span class="n">subset_center</span><span class="p">,)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">center</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">center</span><span class="p">),</span> <span class="s2">&quot;.r&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span>
+            <span class="p">)</span>
+            <span class="n">subset_center</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">radius</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenfunction_subset_radius&quot;</span><span class="p">]</span>
+            <span class="n">circle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">center</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">center</span><span class="p">)),</span>
+                <span class="n">radius</span><span class="p">,</span>
+                <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+                <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+                <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">circle</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ef_subset_artists</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;center&quot;</span><span class="p">:</span> <span class="n">subset_center</span><span class="p">,</span> <span class="s2">&quot;circle&quot;</span><span class="p">:</span> <span class="n">circle</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_subset_artists</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">artist</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="ow">not</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_visible</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="EigenfunctionInterface._mark_points_without_data_written"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/eigenfunction_interface/index.html#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._mark_points_without_data_written">[docs]</a>    <span class="k">def</span> <span class="nf">_mark_points_without_data_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>

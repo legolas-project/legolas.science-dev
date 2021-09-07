@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>initialise_eigenfunctions &ndash; Legolas v. 1.1.3 - develop</title>
+    <title>initialise_eigenfunctions &ndash; Legolas v. 1.1.4 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.3 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.1.4 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">15 statements</a>
+    title=" 0.1% of total for procedures.">10 statements</a>
      </li> 
      
      
@@ -196,21 +196,38 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine initialise_eigenfunctions(nb_evs)
+public subroutine initialise_eigenfunctions(omega)
     
     
    
 </h2>
     
   
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      </ul>
+    </div>
+    
 
 
     
-    <p>Main initialisations of this module.
- Allocates and initialises the eigenfunction grid, types and names.
- Passing the optional argument <tt>nb_evs</tt> sets the number of eigenvalues
- that are calculated and limits the size of the eigenfunction arrays accordingly.
- This routine is only called if <tt>write_eigenfunctions = .true.</tt>.</p>
+    <p>Initialises the eigenfunctions based on an array of eigenvalues.
+ Before initialising all arrays we check which subset of eigenvalues, if any,
+ needs its eigenfunctions saved.</p>
     
 
     <h3>Arguments</h3>
@@ -231,12 +248,12 @@ public subroutine initialise_eigenfunctions(nb_evs)
   
 <tr>
   
-  <td><span class="anchor" id="variable-nb_evs"></span>integer,</td>
-  <td>intent(in),</td>
-  <td>optional</td>
+  <td><span class="anchor" id="variable-omega~5"></span>complex(kind=dp),</td>
+  <td>intent(in)</td>
+  <td></td>
   
   <td></td><td>::</td>
-  <td><strong>nb_evs</strong></td><td><p>the number of eigenvalues that are calculated, defaults to all (matrix dim)</p></td>
+  <td><strong>omega</strong>(:)</td><td><p>the array of calculated eigenvalues</p></td>
   
 </tr>
 
@@ -309,7 +326,7 @@ public subroutine initialise_eigenfunctions(nb_evs)
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.3 - develop was developed by <br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.1.4 - develop was developed by <br>&copy; 2021 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

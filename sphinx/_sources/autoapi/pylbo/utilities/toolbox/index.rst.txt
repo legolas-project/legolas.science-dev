@@ -3,6 +3,12 @@
 
 .. py:module:: pylbo.utilities.toolbox
 
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
 
 Module Contents
 ---------------
@@ -23,6 +29,7 @@ Functions
 
 .. py:function:: add_pickradius_to_item(item, pickradius)
 
+   
    Makes a matplotlib artist pickable and adds a pickradius.
    We have to handle this separately, because for line2D items the method
    :meth:`~matplotlib.axes.Axes.set_picker` is deprecated from version 3.3 onwards.
@@ -49,9 +56,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: custom_enumerate(iterable, start=0, step=1)
 
+   
    Does a custom enumeration with a given stepsize.
 
    :param iterable: The iterable to iterate over.
@@ -81,9 +88,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: transform_to_list(obj: any) -> list
 
+   
    Transforms a given input argument `obj` to a list. If `obj`
    is a Numpy-array or tuple, a cast to `list()` is invoked.
 
@@ -110,9 +117,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: transform_to_numpy(obj: any) -> numpy.ndarray
 
+   
    Transforms a given input argument `obj` to a numpy array.
 
    :param obj: The object to transform.
@@ -138,9 +145,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: solve_cubic_exact(a, b, c, d)
 
+   
    Solves a given cubic polynomial of the form
    :math:`ax^3 + bx^2 + cx + d = 0` using the analytical cubic root formula
    instead of the general `numpy.roots` routine.
@@ -175,5 +182,4 @@ Functions
 
    ..
        !! processed by numpydoc !!
-
 

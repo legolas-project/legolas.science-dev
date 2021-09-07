@@ -3,6 +3,28 @@
 
 .. py:module:: pylbo
 
+.. autoapi-nested-parse::
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
 
 Subpackages
 -----------
@@ -57,6 +79,7 @@ Functions
 
 .. py:function:: set_loglevel(level)
 
+   
    Sets the logging level.
 
    :param level: The level for logging. See :class:`~logging.Logger`, or the
@@ -81,9 +104,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: disable_logging()
 
+   
    Completely disables logging.
 
 
@@ -104,9 +127,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: load(datfile)
 
+   
    Loads a single Legolas datfile.
 
    :param datfile: Path to the datfile.
@@ -134,9 +157,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: load_series(datfiles)
 
+   
    Loads multiple Legolas datfiles.
 
    :param datfiles: Paths to the datfiles that should be loaded, in list/array form. Every element
@@ -165,9 +188,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: load_logfile(logfile, sort=False)
 
+   
    Reads a Legolas log file.
 
    :param logfile: The path to the logfile.
@@ -196,9 +219,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: plot_spectrum(data, figsize=None, custom_figure=None, **kwargs)
 
+   
    Plots the spectrum of a single dataset.
 
    :param data: The dataset that should be used.
@@ -231,9 +254,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: plot_spectrum_multi(data, xdata, use_squared_omega=False, use_real_parts=True, figsize=None, custom_figure=None, **kwargs)
 
+   
    Plots the spectrum of a dataset series.
 
    :param data: The dataseries that should be used.
@@ -276,9 +299,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: plot_merged_spectrum(data, figsize=None, custom_figure=None, interactive=True, legend=True, **kwargs)
 
+   
    Creates a merged spectrum from various datasets, useful in plotting multiple
    results from the shift-invert solver, for example. This draws every dataset
    in a different color by default, and creates a corresponding legend. Supply the
@@ -317,9 +340,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: plot_spectrum_comparison(ds1, ds2, figsize=None, custom_figure=None, lock_zoom=False, **kwargs)
 
+   
    Compares two spectra.
 
    :param ds1: The first dataset, this one is put on the left panel.
@@ -355,9 +378,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: plot_equilibrium(data, figsize=None, interactive=True, **kwargs)
 
+   
    Plots the equilibrium profiles.
 
    :param data: The dataset or series that should be used.
@@ -387,9 +410,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: plot_equilibrium_balance(data, figsize=None, **kwargs)
 
+   
    Creates a plot of the force balance equation and non-adiabatic equilibrium
    equation. These should be as close to zero as possible over the entire grid.
    All values smaller than 1e-16 are set to zero.
@@ -419,9 +442,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: plot_continua(data, figsize=None, interactive=True, **kwargs)
 
+   
    Plots the continua profiles.
 
    :param data: The dataset or series that should be used.
@@ -451,9 +474,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: plot_matrices(data, figsize=None, **kwargs)
 
+   
    Plots the continua profiles.
 
    :param data: The dataset that should be used.
@@ -481,9 +504,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: generate_parfiles(parfile_dict, basename=None, output_dir=None)
 
+   
    Generates parfiles based on a given configuration dictionary.
    The separate namelists do not have to be taken into account, and a normal
    dictionary should be supplied where the keys correspond to the namelist
@@ -567,9 +590,9 @@ Functions
    ..
        !! processed by numpydoc !!
 
-
 .. py:function:: run_legolas(parfiles, remove_parfiles=False, nb_cpus=1, executable=None)
 
+   
    Runs the legolas executable for a given list of parfiles. If more than one parfile
    is passed, the runs can be performed in parallel using the multiprocessing module.
    Parallelisation can be enabled by setting the `nb_cpus` kwarg to a number greater
@@ -625,5 +648,4 @@ Functions
 
    ..
        !! processed by numpydoc !!
-
 
