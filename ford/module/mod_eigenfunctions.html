@@ -286,8 +286,8 @@
     
     <div class="col-md-9" id='text'>
     <p>Main module responsible for eigenfunction management. Contains routines
- and interfaces to initialise and calculate the eigenfunctions and
- derived quantities.</p>
+and interfaces to initialise and calculate the eigenfunctions and
+derived quantities.</p>
       <br>
     
   
@@ -300,9 +300,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_types.html'>mod_types</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -555,7 +555,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-ef_names"></span>character(len=str_len_arr),</td>
+  <td><span class="anchor" id="variable-ef_names"></span>character,</td>
   
   <td>public,</td>
   <td>allocatable</td><td>::</td>
@@ -569,7 +569,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-derived_ef_names"></span>character(len=str_len_arr),</td>
+  <td><span class="anchor" id="variable-derived_ef_names"></span>character,</td>
   
   <td>public,</td>
   <td>allocatable</td><td>::</td>
@@ -658,7 +658,7 @@
     
     
     <h3>
-private module subroutine initialise_base_eigenfunctions(nb_eigenfuncs)
+private module module subroutine initialise_base_eigenfunctions(nb_eigenfuncs)
     
     
    
@@ -720,7 +720,7 @@ private module subroutine initialise_base_eigenfunctions(nb_eigenfuncs)
     
     
     <h3>
-private module subroutine initialise_derived_eigenfunctions(nb_eigenfuncs)
+private module module subroutine initialise_derived_eigenfunctions(nb_eigenfuncs)
     
     
    
@@ -782,7 +782,7 @@ private module subroutine initialise_derived_eigenfunctions(nb_eigenfuncs)
     
     
     <h3>
-private module subroutine calculate_base_eigenfunctions(right_eigenvectors)
+private module module subroutine calculate_base_eigenfunctions(right_eigenvectors)
     
     
    
@@ -844,7 +844,7 @@ private module subroutine calculate_base_eigenfunctions(right_eigenvectors)
     
     
     <h3>
-private module subroutine calculate_derived_eigenfunctions(right_eigenvectors)
+private module module subroutine calculate_derived_eigenfunctions(right_eigenvectors)
     
     
    
@@ -906,7 +906,7 @@ private module subroutine calculate_derived_eigenfunctions(right_eigenvectors)
     
     
     <h3>
-private module function assemble_eigenfunction(base_ef, eigenvector, derivative_order) result(assembled_ef)
+private module module function assemble_eigenfunction(base_ef, eigenvector, derivative_order) result(assembled_ef)
     
     
    
@@ -1007,7 +1007,7 @@ private module function assemble_eigenfunction(base_ef, eigenvector, derivative_
     
     
     <h3>
-private module subroutine retransform_eigenfunction(name, eigenfunction)
+private module module subroutine retransform_eigenfunction(name, eigenfunction)
     
     
    
@@ -1084,7 +1084,7 @@ private module subroutine retransform_eigenfunction(name, eigenfunction)
     
     
     <h3>
-private module subroutine clean_derived_eigenfunctions()
+private module module subroutine clean_derived_eigenfunctions()
     
     
    
@@ -1136,8 +1136,8 @@ public function <a href='../proc/find_name_loc_in_array.html'>find_name_loc_in_a
 
 
 <p>Function to locate the index of a given name in a character array.
- Iterates over the elements and returns on the first hit, if no match
- was found zero is returned.</p>
+Iterates over the elements and returns on the first hit, if no match
+was found zero is returned.</p>
     
     <h4>Arguments</h4>
     
@@ -1221,7 +1221,7 @@ public function <a href='../proc/retrieve_eigenfunctions.html'>retrieve_eigenfun
 
 
 <p>Returns the full set of eigenfunctions corresponding to the given eigenfunction
- name.</p>
+name.</p>
     
     <h4>Arguments</h4>
     
@@ -1290,10 +1290,10 @@ public function <a href='../proc/retrieve_eigenfunction_from_index.html'>retriev
 
 
 <p>Retrieves a single eigenfunction based on its index in the attribute
- of the main array. For example, if name equals "rho" and ef_idx equals 2
- then this routine returns the quantities attribute evaluated at index 2
- for the "rho" eigenfunctions.
- </p><a href="../proc/retrieve_eigenfunction_from_index.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+of the main array. For example, if name equals "rho" and ef_idx equals 2
+then this routine returns the quantities attribute evaluated at index 2
+for the "rho" eigenfunctions.
+</p><a href="../proc/retrieve_eigenfunction_from_index.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -1453,8 +1453,8 @@ public subroutine <a href='../proc/initialise_eigenfunctions.html'>initialise_ei
 
 
 <p>Initialises the eigenfunctions based on an array of eigenvalues.
- Before initialising all arrays we check which subset of eigenvalues, if any,
- needs its eigenfunctions saved.</p>
+Before initialising all arrays we check which subset of eigenvalues, if any,
+needs its eigenfunctions saved.</p>
     
     <h4>Arguments</h4>
     
@@ -1514,7 +1514,7 @@ public subroutine <a href='../proc/calculate_eigenfunctions.html'>calculate_eige
 
 
 <p>Calculates both the base eigenfunctions and the derived quantities thereof
- based on a 2D array of right eigenvectors.</p>
+based on a 2D array of right eigenvectors.</p>
     
     <h4>Arguments</h4>
     
@@ -1574,7 +1574,7 @@ private subroutine <a href='../proc/assemble_eigenfunction_grid.html'>assemble_e
 
 
 <p>Allocates and assembles the eigenfunction grid, checks the corresponding
- scale factor as well.</p>
+scale factor as well.</p>
     
     <h4>Arguments</h4>
     

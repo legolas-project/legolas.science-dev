@@ -226,15 +226,15 @@ public subroutine initialise_grid(custom_grid)
 
     
     <p>General grid initialisations.
- Initialises both the regular grid and the Gaussian grid.
- Does calls to the mesh accumulation routines if needed,
- and sets the scale factor and its derivative.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>In order to avoid spurious eigenvalues in cylindrical geometry,
-        the default start is set at <tt> r = 0.025 </tt> instead of
-        <tt> r = 0 </tt>. The latter can be explicitly enforced by
-        setting <tt>force_r0</tt> to <tt>True</tt> in the parfile. </p></div>
+Initialises both the regular grid and the Gaussian grid.
+Does calls to the mesh accumulation routines if needed,
+and sets the scale factor and its derivative.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>In order to avoid spurious eigenvalues in cylindrical geometry,
+       the default start is set at <tt> r = 0.025 </tt> instead of
+       <tt> r = 0 </tt>. The latter can be explicitly enforced by
+       setting <tt>force_r0</tt> to <tt>True</tt> in the parfile. </p></div>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Explicitly forcing zero on-axis can give rise to spurious eigenvalues and
-            all kinds of other issues (huge values, division by zero, etc). </p></div>
+           all kinds of other issues (huge values, division by zero, etc). </p></div>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if the geometry is not set. </p></div>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws a warning if <tt>r = 0</tt> is forced in cylindrical geometry.</p></div>
     

@@ -218,10 +218,10 @@
     
     <div class="col-md-9" id='text'>
     <p>Module responsible for table interpolations and array lookups.
- Contains subroutines for table interpolations, numerical derivatives
- of arrays and lookup functions.
- Subroutines are loosely based on routines implemented in the
- <a href="amrvac.org">MPI-AMRVAC</a> code.</p>
+Contains subroutines for table interpolations, numerical derivatives
+of arrays and lookup functions.
+Subroutines are loosely based on routines implemented in the
+<a href="amrvac.org">MPI-AMRVAC</a> code.</p>
       <br>
     
   
@@ -234,9 +234,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -342,10 +342,10 @@ public function <a href='../proc/lookup_table_value.html'>lookup_table_value</a>
 
 
 <p>Function for fast table-lookup, returns the corresponding y-value
- in <tt>y_values</tt> based on a given based on a given <script type="math/tex">x0</script>.
- If the <tt>allow_outside</tt> flag is given as <tt>.true.</tt> then values
- on the edge of the table are returned when the lookup value is outside the array.
- Uses simple linear interpolation.</p>
+in <tt>y_values</tt> based on a given based on a given <script type="math/tex">x0</script>.
+If the <tt>allow_outside</tt> flag is given as <tt>.true.</tt> then values
+on the edge of the table are returned when the lookup value is outside the array.
+Uses simple linear interpolation.</p>
     
     <h4>Arguments</h4>
     
@@ -468,10 +468,10 @@ public subroutine <a href='../proc/interpolate_table.html'>interpolate_table</a>
 
 
 <p>Interpolates a given set of tables (x, y(x)) into a smooth curve.
- Assumes that x_table is an array with a monotone increase in values.
- Interpolation is done using <tt>n_interp</tt> points, in general a second
- order polynomial approximation is used except near sharp jumps.
- </p><a href="../proc/interpolate_table.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+Assumes that x_table is an array with a monotone increase in values.
+Interpolation is done using <tt>n_interp</tt> points, in general a second
+order polynomial approximation is used except near sharp jumps.
+</p><a href="../proc/interpolate_table.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -591,12 +591,12 @@ public subroutine <a href='../proc/get_numerical_derivative.html'>get_numerical_
 
 
 <p>Calculates the numerical derivative of a given array.
- A sixth-order accurate central difference stencil is used to calculate the
- derivative. Near the edges a sixth-order accurate forward and backward
- difference stencil is used for the left and right boundary, respectively.
- It is assumed that the x values are all equally spaced. If this is not the case,
- a polynomial interpolation on a uniform grid can be done and that one can be
- differentiated instead. The stencils are as follows:</p><a href="../proc/get_numerical_derivative.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+A sixth-order accurate central difference stencil is used to calculate the
+derivative. Near the edges a sixth-order accurate forward and backward
+difference stencil is used for the left and right boundary, respectively.
+It is assumed that the x values are all equally spaced. If this is not the case,
+a polynomial interpolation on a uniform grid can be done and that one can be
+differentiated instead. The stencils are as follows:</p><a href="../proc/get_numerical_derivative.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     

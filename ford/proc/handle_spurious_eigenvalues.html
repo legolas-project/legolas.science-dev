@@ -226,17 +226,17 @@ public subroutine handle_spurious_eigenvalues(eigenvalues)
 
     
     <p>Handles spurious eigenvalue through removal.
- If requested, this can remove spurious eigenvalues on the edges
- of the spectrum. This usually only occurs in cylindrical geometries
- with forced on-axis conditions. The amount of eigenvalues to handle on every side
- of the imaginary axis is specified in the parfile.
- Example: <tt>nb_spurious_eigenvalues = 1</tt> removes the outermost
- eigenvalue on each side of the imaginary axis (so two in total).
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>We don't actually <em>remove</em> the spurious eigenvalues, but replace their value
-       with a large number so they can be filtered out during post-processing. </p></div>
+If requested, this can remove spurious eigenvalues on the edges
+of the spectrum. This usually only occurs in cylindrical geometries
+with forced on-axis conditions. The amount of eigenvalues to handle on every side
+of the imaginary axis is specified in the parfile.
+Example: <tt>nb_spurious_eigenvalues = 1</tt> removes the outermost
+eigenvalue on each side of the imaginary axis (so two in total).
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>We don't actually <em>remove</em> the spurious eigenvalues, but replace their value
+      with a large number so they can be filtered out during post-processing. </p></div>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>This routine should <strong>ONLY</strong> be used if <strong>ABSOLUTELY</strong> necessary. A better
-          on-axis treatment (e.g. <tt>r = 0.025</tt> instead of <tt>r = 0</tt>)
-          usually does a better job. A warning will be thrown if eigenvalues are removed.</p></div>
+         on-axis treatment (e.g. <tt>r = 0.025</tt> instead of <tt>r = 0</tt>)
+         usually does a better job. A warning will be thrown if eigenvalues are removed.</p></div>
     
 
     <h3>Arguments</h3>

@@ -230,7 +230,7 @@
     
     <div class="col-md-9" id='text'>
     <p>This module is responsible for calculating and setting the
- thermal conduction values based on the equilibrium configuration.</p>
+thermal conduction values based on the equilibrium configuration.</p>
       <br>
     
   
@@ -243,13 +243,13 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     
     <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
     
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    
     <li><a href='../module/mod_units.html'>mod_units</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -415,8 +415,8 @@ public subroutine <a href='../proc/set_conduction_values.html'>set_conduction_va
 
 
 <p>This routines sets all thermal conduction values in <tt>kappa_field</tt>,
- and calls all other relevant subroutines defined in this module.
- </p><a href="../proc/set_conduction_values.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+and calls all other relevant subroutines defined in this module.
+</p><a href="../proc/set_conduction_values.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -521,10 +521,10 @@ private subroutine <a href='../proc/set_kappa_para.html'>set_kappa_para</a>(T0_e
 
 
 <p>Calculates the parallel thermal conduction.
- Returns either the full parallel thermal conduction based on
- the equilibrium parameters, or a fixed value if specified
- in the global variables module.
- </p><a href="../proc/set_kappa_para.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+Returns either the full parallel thermal conduction based on
+the equilibrium parameters, or a fixed value if specified
+in the global variables module.
+</p><a href="../proc/set_kappa_para.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -599,10 +599,10 @@ private subroutine <a href='../proc/set_kappa_perp.html'>set_kappa_perp</a>(T0_e
 
 
 <p>Calculates the perpendicular thermal conduction.
- Returns either the full perpendicular thermal conduction based on
- the equilibrium parameters, or a fixed value if specified
- in the global variables module.
- </p><a href="../proc/set_kappa_perp.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+Returns either the full perpendicular thermal conduction based on
+the equilibrium parameters, or a fixed value if specified
+in the global variables module.
+</p><a href="../proc/set_kappa_perp.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -707,7 +707,7 @@ private subroutine <a href='../proc/set_kappa_para_derivatives.html'>set_kappa_p
 
 
 <p>Calculates the temperature derivative of the parallel thermal conduction component.
- </p><a href="../proc/set_kappa_para_derivatives.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+</p><a href="../proc/set_kappa_para_derivatives.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -782,9 +782,9 @@ private subroutine <a href='../proc/set_kappa_perp_derivatives.html'>set_kappa_p
 
 
 <p>Calculates the thermal conduction derivatives.
- Returns the derivative of the perpendicular thermal conduction with respect to
- density, magnetic field squared and temperature.
- </p><a href="../proc/set_kappa_perp_derivatives.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+Returns the derivative of the perpendicular thermal conduction with respect to
+density, magnetic field squared and temperature.
+</p><a href="../proc/set_kappa_perp_derivatives.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -919,12 +919,12 @@ private subroutine <a href='../proc/set_kappa_perp_radial_derivative.html'>set_k
 
 
 <p>Sets the radial derivative of the perpendicular thermal conduction coefficient.
- This is defined as
- <script type="math/tex; mode=display">
- kappa_{\perp, 0}' = \frac{d\kappa_{\perp, 0}}{d\rho} \rho_0'
-  + \frac{d\kappa_{\perp, 0}}{dT} T_0'
-  + \frac{d\kappa_{\perp, 0}}{d(B^2)}2B_0 B_0'
- </script>
+This is defined as
+<script type="math/tex; mode=display">
+kappa_{\perp, 0}' = \frac{d\kappa_{\perp, 0}}{d\rho} \rho_0'
+ + \frac{d\kappa_{\perp, 0}}{dT} T_0'
+ + \frac{d\kappa_{\perp, 0}}{d(B^2)}2B_0 B_0'
+</script>
 </p>
     
     <h4>Arguments</h4>
@@ -1030,13 +1030,13 @@ private subroutine <a href='../proc/set_conduction_prefactor.html'>set_conductio
 
 
 <p>Sets the thermal conduction prefactor, given by
- <script type="math/tex; mode=display"> \frac{\kappa_{\parallel, 0} - \kappa_{\perp, 0}}{B_0^2} </script>.
- The radial derivative of the prefactor is also set, given by
- <script type="math/tex; mode=display"> \frac{1}{B_0^3}\left[
-  -2\left(\kappa_{\parallel, 0} - \kappa_{\perp, 0}\right)B_0'
-  +\left(\kappa_{\parallel, 0}' - \kappa_{\perp, 0}'\right)B_0
- \right]
- </script>
+<script type="math/tex; mode=display"> \frac{\kappa_{\parallel, 0} - \kappa_{\perp, 0}}{B_0^2} </script>.
+The radial derivative of the prefactor is also set, given by
+<script type="math/tex; mode=display"> \frac{1}{B_0^3}\left[
+ -2\left(\kappa_{\parallel, 0} - \kappa_{\perp, 0}\right)B_0'
+ +\left(\kappa_{\parallel, 0}' - \kappa_{\perp, 0}'\right)B_0
+\right]
+</script>
 </p>
     
     <h4>Arguments</h4>

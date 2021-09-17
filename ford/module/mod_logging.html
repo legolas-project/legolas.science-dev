@@ -260,17 +260,17 @@
     
     <div class="col-md-9" id='text'>
     <p>Main handler for console print statements. The level of information
- printed to the console depends on the corresponding global variable
- called <tt>logging_level</tt> defined in the parfile.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Values for <tt>logging_level</tt> can be set to</p>
+printed to the console depends on the corresponding global variable
+called <tt>logging_level</tt> defined in the parfile.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Values for <tt>logging_level</tt> can be set to</p>
 <ul>
 <li>If <tt>logging_level = 0</tt>: only critical errors are printed, everything else
-                                  is suppressed.</li>
+                                 is suppressed.</li>
 <li>If <tt>logging_level = 1</tt>: only errors and warnings are printed.</li>
 <li>If <tt>logging_level = 2</tt>: errors, warnings and info messages are printed.
-                                  This is the default value.</li>
+                                 This is the default value.</li>
 <li>If <tt>logging_level = 3+</tt>: prints all of the above,
-                                   including debug messages. </p></div>
+                                  including debug messages. </p></div>
 <p></li>
 </ul>
       <br>
@@ -285,9 +285,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_painting.html'>mod_painting</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -586,7 +586,7 @@ private function <a href='../proc/int_tostr.html'>int_tostr</a>(value, fmt) resu
   
   
   
-     <h4>Return Value <small>character(len=:),
+     <h4>Return Value <small>character,
   allocatable</small></h4>
   <p>return string, made allocatable so it has same length as input</p>
     
@@ -666,7 +666,7 @@ private function <a href='../proc/float_tostr.html'>float_tostr</a>(value, fmt) 
   
   
   
-     <h4>Return Value <small>character(len=:),
+     <h4>Return Value <small>character,
   allocatable</small></h4>
   <p>return string, made allocatable so it has same length as input</p>
     
@@ -691,7 +691,7 @@ private function <a href='../proc/complex_tostr.html'>complex_tostr</a>(value, f
 
 
 <p>Converts a given complex number to a string, the default format is "f20.8".
- This will be printed in the form xxxx + xxxxi.</p>
+This will be printed in the form xxxx + xxxxi.</p>
     
     <h4>Arguments</h4>
     
@@ -747,7 +747,7 @@ private function <a href='../proc/complex_tostr.html'>complex_tostr</a>(value, f
   
   
   
-     <h4>Return Value <small>character(len=:),
+     <h4>Return Value <small>character,
   allocatable</small></h4>
   <p>return string, made allocatable so it has same length as input</p>
     
@@ -845,7 +845,7 @@ private function <a href='../proc/int_tostr.html'>int_tostr</a>(value, fmt) resu
   
   
   
-     <h4>Return Value <small>character(len=:),
+     <h4>Return Value <small>character,
   allocatable</small></h4>
   <p>return string, made allocatable so it has same length as input</p>
     
@@ -928,7 +928,7 @@ private function <a href='../proc/float_tostr.html'>float_tostr</a>(value, fmt) 
   
   
   
-     <h4>Return Value <small>character(len=:),
+     <h4>Return Value <small>character,
   allocatable</small></h4>
   <p>return string, made allocatable so it has same length as input</p>
     
@@ -956,7 +956,7 @@ private function <a href='../proc/complex_tostr.html'>complex_tostr</a>(value, f
 
 
 <p>Converts a given complex number to a string, the default format is "f20.8".
- This will be printed in the form xxxx + xxxxi.</p>
+This will be printed in the form xxxx + xxxxi.</p>
     
     <h4>Arguments</h4>
     
@@ -1012,7 +1012,7 @@ private function <a href='../proc/complex_tostr.html'>complex_tostr</a>(value, f
   
   
   
-     <h4>Return Value <small>character(len=:),
+     <h4>Return Value <small>character,
   allocatable</small></h4>
   <p>return string, made allocatable so it has same length as input</p>
     
@@ -1048,9 +1048,9 @@ public subroutine <a href='../proc/log_message.html'>log_message</a>(msg, level,
 
 
 <p>Logs messages to the console. Every message will be prepended by
- [  LEVEL  ] to indicate its type. If this is not desired, set
- <tt>use_prefix = .false.</tt>.
- </p><a href="../proc/log_message.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+[  LEVEL  ] to indicate its type. If this is not desired, set
+<tt>use_prefix = .false.</tt>.
+</p><a href="../proc/log_message.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -1140,8 +1140,8 @@ public subroutine <a href='../proc/print_logo.html'>print_logo</a>()
 
 
 <p>Prints the Legolas logo to the console.
- The logo is wrapped in 1 whitespace at the top and
- two at the bottom. Only for logging level 'warning' (1) and above</p>
+The logo is wrapped in 1 whitespace at the top and
+two at the bottom. Only for logging level 'warning' (1) and above</p>
     
     <h4>Arguments</h4>
     
@@ -1172,7 +1172,7 @@ public subroutine <a href='../proc/print_console_info.html'>print_console_info</
 
 
 <p>Prints various console messages showing geometry, grid parameters,
- equilibrium parameters etc. Only for logging level "info" or above.</p>
+equilibrium parameters etc. Only for logging level "info" or above.</p>
     
     <h4>Arguments</h4>
     
@@ -1277,7 +1277,7 @@ public subroutine <a href='../proc/print_whitespace.html'>print_whitespace</a>(l
 
 
 <p>Prints an empty line to the console.
- Only if logging level is 'warning' or above.</p>
+Only if logging level is 'warning' or above.</p>
     
     <h4>Arguments</h4>
     

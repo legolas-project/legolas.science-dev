@@ -228,14 +228,14 @@
     
     <div class="col-md-9" id='text'>
     <p>Module containing all grid-related things.
- Contains subroutines to create the base grid, Gaussian grid and
- scale factors. Also handles mesh accumulation.
- An integral of <script type="math/tex">f(x)</script> in <script type="math/tex">[a, b]</script> can be approximated with
- <script type="math/tex; mode=display"> f(x) \approx 0.5(b-a)\sum_{i=1}^n\bigl[w_i f\bigl(0.5(b-a)x_i + 0.5(a+b)\bigr)\bigr] </script>
- where <script type="math/tex">w_i</script> and <script type="math/tex">x_i</script> are the weights and nodes of the Gaussian quadrature.
- The Gaussian grid is hence set up in every interval <script type="math/tex">[a, b]</script> across the
- four nodes <script type="math/tex">j</script> as
- <script type="math/tex; mode=display"> x_i(j) = 0.5 * dx * w_i(j) + 0.5(a + b) </script>
+Contains subroutines to create the base grid, Gaussian grid and
+scale factors. Also handles mesh accumulation.
+An integral of <script type="math/tex">f(x)</script> in <script type="math/tex">[a, b]</script> can be approximated with
+<script type="math/tex; mode=display"> f(x) \approx 0.5(b-a)\sum_{i=1}^n\bigl[w_i f\bigl(0.5(b-a)x_i + 0.5(a+b)\bigr)\bigr] </script>
+where <script type="math/tex">w_i</script> and <script type="math/tex">x_i</script> are the weights and nodes of the Gaussian quadrature.
+The Gaussian grid is hence set up in every interval <script type="math/tex">[a, b]</script> across the
+four nodes <script type="math/tex">j</script> as
+<script type="math/tex; mode=display"> x_i(j) = 0.5 * dx * w_i(j) + 0.5(a + b) </script>
 </p>
       <br>
     
@@ -249,9 +249,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -443,10 +443,10 @@ public subroutine <a href='../proc/initialise_grid.html'>initialise_grid</a>(cus
 
 
 <p>General grid initialisations.
- Initialises both the regular grid and the Gaussian grid.
- Does calls to the mesh accumulation routines if needed,
- and sets the scale factor and its derivative.
- </p><a href="../proc/initialise_grid.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+Initialises both the regular grid and the Gaussian grid.
+Does calls to the mesh accumulation routines if needed,
+and sets the scale factor and its derivative.
+</p><a href="../proc/initialise_grid.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -506,8 +506,8 @@ public subroutine <a href='../proc/set_grid_gauss.html'>set_grid_gauss</a>()
 
 
 <p>Sets up grid_gauss, that is, the grid evaluated in the four
- Gaussian points. This is done by evaluating the weights
- at the four Gaussian nodes.</p>
+Gaussian points. This is done by evaluating the weights
+at the four Gaussian nodes.</p>
     
     <h4>Arguments</h4>
     
@@ -538,10 +538,10 @@ private subroutine <a href='../proc/set_scale_factor.html'>set_scale_factor</a>(
 
 
 <p>The scale factor to switch between Cartesian and cylindrical geometries
- is set here, along with its derivative. For cylindrical the scale factor
- is simply equal to the Gaussian grid, and its derivative is unity.
- For Cartesian the scale factor is unity and its derivative is zero.
- </p><a href="../proc/set_scale_factor.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+is set here, along with its derivative. For cylindrical the scale factor
+is simply equal to the Gaussian grid, and its derivative is unity.
+For Cartesian the scale factor is unity and its derivative is zero.
+</p><a href="../proc/set_scale_factor.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     

@@ -226,25 +226,25 @@ public subroutine subblock(quadblock, factors, positions, curr_weight, spline1, 
 
     
     <p>Builds the quadblock.
- The four subblocks are calculated based on the specified
- factors, positions in the block, weights and basis functions.
- These four subblocks are then added to the quadblock that is
- passed along, and the filled quadblock is returned.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>For a 2x2 block at index (i, j) in the top-left subblock we have
-        <tt> (2i, 2j) </tt> as index of the bottom-right corner of the 2x2 block.
-        This is referred to as the "main index" of the 2x2 block.
-        The other three corners are then filled by subtracting one from an index.
-        We hence use the following main indices for the four different corners
-        of the quadblock:</p>
+The four subblocks are calculated based on the specified
+factors, positions in the block, weights and basis functions.
+These four subblocks are then added to the quadblock that is
+passed along, and the filled quadblock is returned.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>For a 2x2 block at index (i, j) in the top-left subblock we have
+       <tt> (2i, 2j) </tt> as index of the bottom-right corner of the 2x2 block.
+       This is referred to as the "main index" of the 2x2 block.
+       The other three corners are then filled by subtracting one from an index.
+       We hence use the following main indices for the four different corners
+       of the quadblock:</p>
 <ul>
 <li>top-left:  <tt>(2i, 2j)</tt></li>
 <li>top-right: <tt>(2i, 2j + dim_subblock)</tt></li>
 <li>bot-left:  <tt>(2i + dim_subblock, 2j)</tt></li>
 <li>bot-right: <tt>(2i + dim_subblock, 2j + dim_subblock)</tt> </p></div>
 <p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>The <tt>positions</tt> array contains the actual positions of the block to fill.
-        For example, the first index could be <tt>positions(1, :)=(1, 2)</tt>
-        which means that the quantity in <tt>factors(1)</tt> goes into
-        the 2x2 block at <tt>(1, 2)</tt>. </p></div>
+       For example, the first index could be <tt>positions(1, :)=(1, 2)</tt>
+       which means that the quantity in <tt>factors(1)</tt> goes into
+       the 2x2 block at <tt>(1, 2)</tt>. </p></div>
 <p></li>
 </ul>
     

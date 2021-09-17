@@ -196,7 +196,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-module procedure qz_direct <small>module subroutine qz_direct(matrix_A, matrix_B, omega, vr)</small>
+module procedure qz_direct <small>module module subroutine qz_direct(matrix_A, matrix_B, omega, vr)</small>
     
     
    <a href='../interface/qz_direct.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
@@ -209,12 +209,12 @@ module procedure qz_direct <small>module subroutine qz_direct(matrix_A, matrix_B
 
     
     <p>Solves the eigenvalue problem directly.
- </p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>The LAPACK routine <tt>zggev</tt> returns the <em>generalised</em>
- eigenvectors, which are different from the ordinary ones returned
- by the QR algorithm <tt>zgeev</tt>.
- For the moment we don't calculate eigenvectors with the direct solver until
- we get consistent results between QZ and QR. In the meantime,
- use <tt>solver = "QR-invert"</tt> if eigenvectors are needed. </p></div>
+</p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>The LAPACK routine <tt>zggev</tt> returns the <em>generalised</em>
+eigenvectors, which are different from the ordinary ones returned
+by the QR algorithm <tt>zgeev</tt>.
+For the moment we don't calculate eigenvectors with the direct solver until
+we get consistent results between QZ and QR. In the meantime,
+use <tt>solver = "QR-invert"</tt> if eigenvectors are needed. </p></div>
 <p>
     
 
@@ -236,7 +236,7 @@ module procedure qz_direct <small>module subroutine qz_direct(matrix_A, matrix_B
   
 <tr>
   
-  <td><span class="anchor" id="variable-matrix_a~6"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-matrix_a~5"></span>complex(kind=dp),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -251,7 +251,7 @@ module procedure qz_direct <small>module subroutine qz_direct(matrix_A, matrix_B
   
 <tr>
   
-  <td><span class="anchor" id="variable-matrix_b~6"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-matrix_b~5"></span>real(kind=dp),</td>
   <td>intent(in)</td>
   <td></td>
   

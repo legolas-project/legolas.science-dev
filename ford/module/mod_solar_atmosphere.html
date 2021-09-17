@@ -276,8 +276,8 @@
     
     <div class="col-md-9" id='text'>
     <p>Module to set a realistic solar atmosphere, using tabulated density and
- temperature profiles (see <tt>mod_atmosphere_curves</tt>), in Cartesian
- geometries only.</p>
+temperature profiles (see <tt>mod_atmosphere_curves</tt>), in Cartesian
+geometries only.</p>
       <br>
     
   
@@ -290,9 +290,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -987,7 +987,7 @@ private function <a href='../proc/default_gravity_profile.html'>default_gravity_
 
 
 <p>Sets the default profile for the gravitational field, taken to be
- <script type="math/tex; mode=display"> g(x) = g_\odot \left(\frac{R_\odot}{(R_\odot + x)}\right)^2 </script>
+<script type="math/tex; mode=display"> g(x) = g_\odot \left(\frac{R_\odot}{(R_\odot + x)}\right)^2 </script>
 </p>
     
     <h4>Arguments</h4>
@@ -1065,18 +1065,18 @@ public subroutine <a href='../proc/set_solar_atmosphere.html'>set_solar_atmosphe
 
 
 <p>Sets the density, temperature, gravity and magnetic field attributes of
- the respective fields to a realistic solar atmosphere profile.
- This routine first interpolates the temperature and numberdensity table at
- <tt>n_interp</tt> resolution, then solves the following ODE for the density:
- <script type="math/tex; mode=display"> \rho'(x) = -\frac{T'(x) + g(x)}{T(x)}\rho(x) -
-               \frac{B_{02}(x)B'_{02}(x) + B_{03}(x)B'_{03}(x)}{T(x)} </script>
- using a fifth order Runge-Kutta method.
- If the optional argument <tt>save_to</tt> is provided then the density profiles
- are saved to that file, which can be loaded back in on subsequent runs through
- the optional argument <tt>load_from</tt>. The integration is done over the entire
- table, the curve is sampled on the Gaussian grid, meaning that grid variations
- can all use the same result.
- </p><a href="../proc/set_solar_atmosphere.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+the respective fields to a realistic solar atmosphere profile.
+This routine first interpolates the temperature and numberdensity table at
+<tt>n_interp</tt> resolution, then solves the following ODE for the density:
+<script type="math/tex; mode=display"> \rho'(x) = -\frac{T'(x) + g(x)}{T(x)}\rho(x) -
+              \frac{B_{02}(x)B'_{02}(x) + B_{03}(x)B'_{03}(x)}{T(x)} </script>
+using a fifth order Runge-Kutta method.
+If the optional argument <tt>save_to</tt> is provided then the density profiles
+are saved to that file, which can be loaded back in on subsequent runs through
+the optional argument <tt>load_from</tt>. The integration is done over the entire
+table, the curve is sampled on the Gaussian grid, meaning that grid variations
+can all use the same result.
+</p><a href="../proc/set_solar_atmosphere.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -1241,7 +1241,7 @@ private subroutine <a href='../proc/create_atmosphere_curves.html'>create_atmosp
 
 
 <p>Interpolates the atmospheric tables to the desired resolution. The temperature
- derivative is obtained numerically.</p>
+derivative is obtained numerically.</p>
     
     <h4>Arguments</h4>
     
@@ -1272,7 +1272,7 @@ private subroutine <a href='../proc/save_profile_to_file.html'>save_profile_to_f
 
 
 <p>Saves the density and density derivatives to the given filename. These can be
- used later on to set the values instead of solving the differential equation.</p>
+used later on to set the values instead of solving the differential equation.</p>
     
     <h4>Arguments</h4>
     
@@ -1332,7 +1332,7 @@ private subroutine <a href='../proc/load_profile_from_file.html'>load_profile_fr
 
 
 <p>Loads a previously calculated profile and uses that to set the resolution,
- density and density derivatives.</p>
+density and density derivatives.</p>
     
     <h4>Arguments</h4>
     

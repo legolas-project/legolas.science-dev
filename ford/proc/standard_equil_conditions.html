@@ -228,14 +228,14 @@ private subroutine standard_equil_conditions(rho_field, T_field, B_field, v_fiel
 
     
     <p>Checks the standard force-balance equation for the equilibrium state. This
- results in three expressions,
- <script type="math/tex; mode=display"> \Bigl(p_0 + \frac{1}{2}B_0^2\Bigr)' + \rho_0 g + \rho_0 v_{01} v_{01}'
-    - \frac{\varepsilon'}{\varepsilon}\bigl(\rho_0 v_{02}^2 - B_{02}^2\bigr) = 0, </script>
+results in three expressions,
+<script type="math/tex; mode=display"> \Bigl(p_0 + \frac{1}{2}B_0^2\Bigr)' + \rho_0 g + \rho_0 v_{01} v_{01}'
+   - \frac{\varepsilon'}{\varepsilon}\bigl(\rho_0 v_{02}^2 - B_{02}^2\bigr) = 0, </script>
 <script type="math/tex; mode=display"> \rho_0 v_{01} \bigl( v_{02}' + \frac{\varepsilon'}{\varepsilon} v_{02} \bigr)
-    - \frac{B_{01}}{\varepsilon} (\varepsilon B_{02})' = 0, </script>
+   - \frac{B_{01}}{\varepsilon} (\varepsilon B_{02})' = 0, </script>
 <script type="math/tex; mode=display"> \rho_0 v_{01} v_{03}' - B_{01} B_{03}' = 0, </script>
- and they should all be fulfilled.
- </p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws a warning if force-balance is not satisfied.</p></div>
+and they should all be fulfilled.
+</p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws a warning if force-balance is not satisfied.</p></div>
     
 
     <h3>Arguments</h3>

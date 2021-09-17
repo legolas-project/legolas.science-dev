@@ -212,9 +212,9 @@ public subroutine integrate_ode_rk(xvalues, axvalues, bxvalues, nbpoints, yinit,
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
-    
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    
+    <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
     
   </ul>
       </li>
@@ -228,15 +228,15 @@ public subroutine integrate_ode_rk(xvalues, axvalues, bxvalues, nbpoints, yinit,
 
     
     <p>Integrates a first order differential equation of the form
- <script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta
- method. The argument <tt>nbpoints</tt> determines the stepsize through
- <script type="math/tex; mode=display"> dh = \frac{xvalues(N) - xvalues(1)}{nbpoints} </script>
- If the arrays <script type="math/tex">A(x), B(x)</script> are not of size <tt>nbpoints</tt>, then these are
- interpolated to that resolution. The differential equation is then integrated,
- the solution will also be of size <tt>nbpoints</tt> and can be downsampled using
- the appropriate subroutine.
- If desired the optional argument <tt>dyvalues</tt> can be provided,
- which contains the (numerical) derivative of y.</p>
+<script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta
+method. The argument <tt>nbpoints</tt> determines the stepsize through
+<script type="math/tex; mode=display"> dh = \frac{xvalues(N) - xvalues(1)}{nbpoints} </script>
+If the arrays <script type="math/tex">A(x), B(x)</script> are not of size <tt>nbpoints</tt>, then these are
+interpolated to that resolution. The differential equation is then integrated,
+the solution will also be of size <tt>nbpoints</tt> and can be downsampled using
+the appropriate subroutine.
+If desired the optional argument <tt>dyvalues</tt> can be provided,
+which contains the (numerical) derivative of y.</p>
     
 
     <h3>Arguments</h3>
@@ -340,7 +340,7 @@ public subroutine integrate_ode_rk(xvalues, axvalues, bxvalues, nbpoints, yinit,
   
   <td>allocatable</td><td>::</td>
   <td><strong>yvalues</strong>(:)</td><td><p>array of y-values, size will be <tt>nbpoints</tt> if <tt>adaptive=.false.</tt>,
- size will vary if <tt>adaptive=.true.</tt></p></td>
+size will vary if <tt>adaptive=.true.</tt></p></td>
   
 </tr>
 

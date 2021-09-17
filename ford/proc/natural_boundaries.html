@@ -212,13 +212,13 @@ private subroutine natural_boundaries(quadblock, edge)
       <li class="list-group-item">
   <ul class="list-inline">
     
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    
     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
     <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     
     <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
     
@@ -234,13 +234,13 @@ private subroutine natural_boundaries(quadblock, edge)
 
     
     <p>Imposes the natural boundary conditions, that is, the ones originating
- from the weak formulation. This is only applicable for the A-matrix.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>For now only the terms of a solid wall boundary are implemented, hence
-          we only have additional resistive and conductive terms in the energy equation.
-          If perpendicular thermal conduction is included we have <script type="math/tex">T1 = 0</script>, such that
-          then there are no surface terms to be added and we simply return.
-          If free boundary conditions are considered (e.g. vacuum-wall) additional terms
-          have to be added. </p></div>
+from the weak formulation. This is only applicable for the A-matrix.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>For now only the terms of a solid wall boundary are implemented, hence
+         we only have additional resistive and conductive terms in the energy equation.
+         If perpendicular thermal conduction is included we have <script type="math/tex">T1 = 0</script>, such that
+         then there are no surface terms to be added and we simply return.
+         If free boundary conditions are considered (e.g. vacuum-wall) additional terms
+         have to be added. </p></div>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if <tt>edge</tt> is unknown.</p></div>
     
 

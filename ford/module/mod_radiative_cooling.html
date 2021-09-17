@@ -228,10 +228,10 @@
     
     <div class="col-md-9" id='text'>
     <p>Module containing radiative cooling-related routines.
- This module is responsible for initialising the radiative cooling
- variables and a correct handling of the cooling curves.
- If an interpolated cooling curve is selected this module calls the
- interpolation module to create one.</p>
+This module is responsible for initialising the radiative cooling
+variables and a correct handling of the cooling curves.
+If an interpolated cooling curve is selected this module calls the
+interpolation module to create one.</p>
       <br>
     
   
@@ -244,9 +244,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -438,10 +438,10 @@ public subroutine <a href='../proc/initialise_radiative_cooling.html'>initialise
 
 
 <p>Initialises the radiative cooling variables.
- This routine first selects and allocates the correct cooling
- tables, depending on the desired curve. These tables are used
- to interpolate the final cooling curve using \p ncool points.
- </p><a href="../proc/initialise_radiative_cooling.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+This routine first selects and allocates the correct cooling
+tables, depending on the desired curve. These tables are used
+to interpolate the final cooling curve using \p ncool points.
+</p><a href="../proc/initialise_radiative_cooling.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -472,8 +472,8 @@ public subroutine <a href='../proc/set_radiative_cooling_values.html'>set_radiat
 
 
 <p>Sets the radiative cooling attributes of the corresponding types.
- This is called <em>after</em> the equilibrium is initialised in the submodule.
- </p><a href="../proc/set_radiative_cooling_values.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+This is called <em>after</em> the equilibrium is initialised in the submodule.
+</p><a href="../proc/set_radiative_cooling_values.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -563,9 +563,9 @@ private subroutine <a href='../proc/create_cooling_curve.html'>create_cooling_cu
 
 
 <p>Creates an interpolated cooling curve based on the chosen table.
- Calls a second-order polynomial interpolation routine and takes
- care of normalisations.
- </p><a href="../proc/create_cooling_curve.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+Calls a second-order polynomial interpolation routine and takes
+care of normalisations.
+</p><a href="../proc/create_cooling_curve.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     

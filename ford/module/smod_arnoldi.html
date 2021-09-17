@@ -204,15 +204,15 @@
     
     <div class="col-md-9" id='text'>
     <p>Submodule containing the implementation of the various ARPACK solvers.
- Preprocessor directives are used here, if ARPACK was not found during compilation
- most of this submodule will not be compiled to avoid unknown calls to methods.
- We first cycle through the possible modes, set up the relevant matrix operators and
- call the corresponding methods. Then the reverse communication interface
- <tt>znaupd</tt> is called, which will keep iterating until either
- everything is converged or the maximum number of iterations <tt>maxiter</tt>
- is reached. Then eigenvalues are extracted using <tt>zneupd</tt>, eigenvectors
- are calculated and the residual of each eigenvalue is computed
- which should be small for converged values.</p>
+Preprocessor directives are used here, if ARPACK was not found during compilation
+most of this submodule will not be compiled to avoid unknown calls to methods.
+We first cycle through the possible modes, set up the relevant matrix operators and
+call the corresponding methods. Then the reverse communication interface
+<tt>znaupd</tt> is called, which will keep iterating until either
+everything is converged or the maximum number of iterations <tt>maxiter</tt>
+is reached. Then eigenvalues are extracted using <tt>zneupd</tt>, eigenvectors
+are calculated and the residual of each eigenvalue is computed
+which should be small for converged values.</p>
       <br>
     
   
@@ -225,11 +225,11 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></li>
     
     <li><a href='../module/mod_matrix_operations.html'>mod_matrix_operations</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -325,7 +325,7 @@
         
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-arnoldi"></span><h3>
-module procedure <a href='../proc/arnoldi.html'>arnoldi</a> <small>module subroutine arnoldi(matrix_A, matrix_B, omega, vr)</small>
+module procedure <a href='../proc/arnoldi.html'>arnoldi</a> <small>module module subroutine arnoldi(matrix_A, matrix_B, omega, vr)</small>
     
     
    <a href='../interface/arnoldi.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>

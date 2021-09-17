@@ -204,13 +204,13 @@
     
     <div class="col-md-9" id='text'>
     <p>Submodule containing the implementation of the QR-invert algorithm.
- The original problem is written as a standard eigenvalue problem through
- <script type="math/tex; mode=display"> \mathcal{B}^{-1}\mathcal{A}\textbf{X} = \omega\textbf{X}\ </script>
- where <script type="math/tex">\mathcal{B}</script> is always properly conditioned.
- Various calls to <tt>mod_matrix_operations</tt> are done to invert the
- B-matrix and to do matrix multiplications.
- Eventually a call to LAPACK's <tt>zgeev</tt> routine is done to obtain
- all eigenvalues and eigenvectors.</p>
+The original problem is written as a standard eigenvalue problem through
+<script type="math/tex; mode=display"> \mathcal{B}^{-1}\mathcal{A}\textbf{X} = \omega\textbf{X}\ </script>
+where <script type="math/tex">\mathcal{B}</script> is always properly conditioned.
+Various calls to <tt>mod_matrix_operations</tt> are done to invert the
+B-matrix and to do matrix multiplications.
+Eventually a call to LAPACK's <tt>zgeev</tt> routine is done to obtain
+all eigenvalues and eigenvectors.</p>
       <br>
     
   
@@ -319,7 +319,7 @@
         
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-qr_invert"></span><h3>
-module procedure <a href='../proc/qr_invert.html'>qr_invert</a> <small>module subroutine qr_invert(matrix_A, matrix_B, omega, vr)</small>
+module procedure <a href='../proc/qr_invert.html'>qr_invert</a> <small>module module subroutine qr_invert(matrix_A, matrix_B, omega, vr)</small>
     
     
    <a href='../interface/qr_invert.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
@@ -337,8 +337,8 @@ module procedure <a href='../proc/qr_invert.html'>qr_invert</a> <small>module su
 
 
 <p>Solves the eigenvalue problem by rewriting it to a standard form
- through inversion of the B-matrix.
- </p><a href="../proc/qr_invert.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+through inversion of the B-matrix.
+</p><a href="../proc/qr_invert.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     

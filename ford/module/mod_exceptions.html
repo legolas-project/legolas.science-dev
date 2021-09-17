@@ -236,10 +236,10 @@
     
     <div class="col-md-9" id='text'>
     <p>Module to explicitly handle exceptions. Depending on the application at hand
- we override what happens when an exception is raised, which is useful for
- testing purposes (no error stop if we <em>expect</em> something to fail).
- Loosely based on an example given in
- https://github.com/Goddard-Fortran-Ecosystem/pFUnit_demos/blob/main/Basic/src/throw.F90</p>
+we override what happens when an exception is raised, which is useful for
+testing purposes (no error stop if we <em>expect</em> something to fail).
+Loosely based on an example given in
+https://github.com/Goddard-Fortran-Ecosystem/pFUnit_demos/blob/main/Basic/src/throw.F90</p>
       
     
   
@@ -469,7 +469,7 @@ private subroutine <a href='../proc/initialise_exceptions.html'>initialise_excep
 
 
 <p>Private subroutine, sets the pointer to the default
- method to be used when raising exceptions.</p>
+method to be used when raising exceptions.</p>
     
     <h4>Arguments</h4>
     
@@ -500,8 +500,8 @@ public subroutine <a href='../proc/set_raise_method.html'>set_raise_method</a>(m
 
 
 <p>Subroutine meant to be publicly called, sets the
- routine to be used when raising exceptions.
- Calls the initialisation routine if not already done.</p>
+routine to be used when raising exceptions.
+Calls the initialisation routine if not already done.</p>
     
     <h4>Arguments</h4>
     
@@ -561,8 +561,8 @@ public subroutine <a href='../proc/raise_exception.html'>raise_exception</a>(msg
 
 
 <p>Raises an exception with a given message.
- By default, exceptions terminate program execution.
- Calls the initialisation routine if not already done.</p>
+By default, exceptions terminate program execution.
+Calls the initialisation routine if not already done.</p>
     
     <h4>Arguments</h4>
     
@@ -622,9 +622,9 @@ private subroutine <a href='../proc/on_exception_raised.html'>on_exception_raise
 
 
 <p>Workflow that is executed by default when
- an exception is raised. The argument <tt>message</tt>
- is printed to the console and program execution
- is terminated.</p>
+an exception is raised. The argument <tt>message</tt>
+is printed to the console and program execution
+is terminated.</p>
     
     <h4>Arguments</h4>
     

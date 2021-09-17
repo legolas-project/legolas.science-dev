@@ -214,15 +214,15 @@ public subroutine create_matrices(matrix_B, matrix_A)
     
     <li><a href='../module/mod_boundary_conditions.html'>mod_boundary_conditions</a></li>
     
-    <li><a href='../module/mod_viscosity.html'>mod_viscosity</a></li>
+    <li><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></li>
     
     <li><a href='../module/mod_hallmhd.html'>mod_hallmhd</a></li>
+    
+    <li><a href='../module/mod_viscosity.html'>mod_viscosity</a></li>
     
     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
-    <li><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></li>
     
     <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
     
@@ -238,10 +238,10 @@ public subroutine create_matrices(matrix_B, matrix_A)
 
     
     <p>Main subroutine to assemble the matrices A and B, which are
- already allocated when entering this subroutine but not yet initialised.
- The quadblock is calculated for every grid interval and used to assemble
- both matrices. On exit, both matrices are fully assembled and
- boundary conditions are imposed.</p>
+already allocated when entering this subroutine but not yet initialised.
+The quadblock is calculated for every grid interval and used to assemble
+both matrices. On exit, both matrices are fully assembled and
+boundary conditions are imposed.</p>
     
 
     <h3>Arguments</h3>
@@ -262,7 +262,7 @@ public subroutine create_matrices(matrix_B, matrix_A)
   
 <tr>
   
-  <td><span class="anchor" id="variable-matrix_b~2"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-matrix_b"></span>real(kind=dp),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -277,7 +277,7 @@ public subroutine create_matrices(matrix_B, matrix_A)
   
 <tr>
   
-  <td><span class="anchor" id="variable-matrix_a~2"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-matrix_a"></span>complex(kind=dp),</td>
   <td>intent(inout)</td>
   <td></td>
   

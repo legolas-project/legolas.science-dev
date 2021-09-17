@@ -204,13 +204,13 @@
     
     <div class="col-md-9" id='text'>
     <p>Submodule containing the implementation of the QZ-direct algorithm.
- We keep the general form of the eigenvalue problem
- <script type="math/tex; mode=display"> \mathcal{A}\textbf{X} = \omega\mathcal{B}\textbf{X}\ </script>
- and solve this directly by calling LAPACK's <tt>zggev</tt> routine.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Because the eigenvalue problem remains in general form, this
-        routine returns the generalised eigenvectors instead of the ordinary ones.
-        If you want eigenvectors as well, either use the QR-invert solvers
-        or one of the ARPACK methods.</p></div>
+We keep the general form of the eigenvalue problem
+<script type="math/tex; mode=display"> \mathcal{A}\textbf{X} = \omega\mathcal{B}\textbf{X}\ </script>
+and solve this directly by calling LAPACK's <tt>zggev</tt> routine.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Because the eigenvalue problem remains in general form, this
+       routine returns the generalised eigenvectors instead of the ordinary ones.
+       If you want eigenvectors as well, either use the QR-invert solvers
+       or one of the ARPACK methods.</p></div>
       <br>
     
   
@@ -311,7 +311,7 @@
         
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-qz_direct"></span><h3>
-module procedure <a href='../proc/qz_direct.html'>qz_direct</a> <small>module subroutine qz_direct(matrix_A, matrix_B, omega, vr)</small>
+module procedure <a href='../proc/qz_direct.html'>qz_direct</a> <small>module module subroutine qz_direct(matrix_A, matrix_B, omega, vr)</small>
     
     
    <a href='../interface/qz_direct.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
@@ -329,7 +329,7 @@ module procedure <a href='../proc/qz_direct.html'>qz_direct</a> <small>module su
 
 
 <p>Solves the eigenvalue problem directly.
- </p><a href="../proc/qz_direct.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+</p><a href="../proc/qz_direct.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     

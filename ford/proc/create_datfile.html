@@ -212,21 +212,21 @@ public subroutine create_datfile(eigenvalues, matrix_A, matrix_B)
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_version.html'>mod_version</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     
     <li><a href='../module/mod_units.html'>mod_units</a></li>
     
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
+    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
     
-    <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
+    <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
+    
     <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
     
-    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
-    
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_version.html'>mod_version</a></li>
     
     <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
     
@@ -242,15 +242,15 @@ public subroutine create_datfile(eigenvalues, matrix_A, matrix_B)
 
     
     <p>Writes the datfile, where eigenfunctions and matrices are optionally
- included. First a header is written containing default information
- on the configuration, then the actual data.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Eigenfunctions are only written if this is enabled in the
-          global variables. </p></div>
+included. First a header is written containing default information
+on the configuration, then the actual data.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Eigenfunctions are only written if this is enabled in the
+         global variables. </p></div>
 <p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Matrices are only written if this is enabled in the global variables.
-          The matrices are not written entirely to save diskspace: a
-          first pass is performed locating the non-zero values, and then the
-          values are saved to file in the format
-          <tt>(row_idx, column_idx, value)</tt>. </p></div>
+         The matrices are not written entirely to save diskspace: a
+         first pass is performed locating the non-zero values, and then the
+         values are saved to file in the format
+         <tt>(row_idx, column_idx, value)</tt>. </p></div>
 <p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>The extension <tt>".dat"</tt> is appended to the filename. </p></div>
 <p>
     

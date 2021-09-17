@@ -312,14 +312,14 @@
     
     <div class="col-md-9" id='text'>
     <p>Parent module governing all equilibrium types and submodules.
- This module contains all equilibrium types and the initial
- declarations of the module subroutines. Every equilibrium submodule
- extends this module, implementing one of the module subroutines declared here.
- All "main" equilibrium configurations are set in the submodules. The ones that
- depend on "main" arrays, like radiative cooling, are set here through calls to their
- respective modules.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>All use statements specified here at the main module scope
-          are automatically accessible in every submodule that extends this one.</p></div>
+This module contains all equilibrium types and the initial
+declarations of the module subroutines. Every equilibrium submodule
+extends this module, implementing one of the module subroutines declared here.
+All "main" equilibrium configurations are set in the submodules. The ones that
+depend on "main" arrays, like radiative cooling, are set here through calls to their
+respective modules.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>All use statements specified here at the main module scope
+         are automatically accessible in every submodule that extends this one.</p></div>
       <br>
     
   
@@ -332,19 +332,19 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
-    
     <li><a href='../module/mod_units.html'>mod_units</a></li>
+    
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    
+    <li><a href='../module/mod_types.html'>mod_types</a></li>
     
     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
-    <li><a href='../module/mod_types.html'>mod_types</a></li>
-    
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
     
   </ul>
       </li>
@@ -771,7 +771,7 @@
     
     
     <h3>
-private module subroutine adiabatic_homo_eq()
+private module module subroutine adiabatic_homo_eq()
     
     
    
@@ -809,7 +809,7 @@ private module subroutine adiabatic_homo_eq()
     
     
     <h3>
-private module subroutine constant_current_eq()
+private module module subroutine constant_current_eq()
     
     
    
@@ -847,7 +847,7 @@ private module subroutine constant_current_eq()
     
     
     <h3>
-private module subroutine coronal_flux_tube_eq()
+private module module subroutine coronal_flux_tube_eq()
     
     
    
@@ -885,7 +885,7 @@ private module subroutine coronal_flux_tube_eq()
     
     
     <h3>
-private module subroutine discrete_alfven_eq()
+private module module subroutine discrete_alfven_eq()
     
     
    
@@ -923,7 +923,7 @@ private module subroutine discrete_alfven_eq()
     
     
     <h3>
-private module subroutine flow_driven_instabilities_eq()
+private module module subroutine flow_driven_instabilities_eq()
     
     
    
@@ -961,7 +961,7 @@ private module subroutine flow_driven_instabilities_eq()
     
     
     <h3>
-private module subroutine gold_hoyle_eq()
+private module module subroutine gold_hoyle_eq()
     
     
    
@@ -999,7 +999,7 @@ private module subroutine gold_hoyle_eq()
     
     
     <h3>
-private module subroutine gravito_acoustic_eq()
+private module module subroutine gravito_acoustic_eq()
     
     
    
@@ -1037,7 +1037,7 @@ private module subroutine gravito_acoustic_eq()
     
     
     <h3>
-private module subroutine gravito_mhd_eq()
+private module module subroutine gravito_mhd_eq()
     
     
    
@@ -1075,7 +1075,7 @@ private module subroutine gravito_mhd_eq()
     
     
     <h3>
-private module subroutine interchange_modes_eq()
+private module module subroutine interchange_modes_eq()
     
     
    
@@ -1113,7 +1113,7 @@ private module subroutine interchange_modes_eq()
     
     
     <h3>
-private module subroutine internal_kink_eq()
+private module module subroutine internal_kink_eq()
     
     
    
@@ -1151,7 +1151,7 @@ private module subroutine internal_kink_eq()
     
     
     <h3>
-private module subroutine isothermal_atmosphere_eq()
+private module module subroutine isothermal_atmosphere_eq()
     
     
    
@@ -1189,7 +1189,7 @@ private module subroutine isothermal_atmosphere_eq()
     
     
     <h3>
-private module subroutine KHI_eq()
+private module module subroutine KHI_eq()
     
     
    
@@ -1227,7 +1227,7 @@ private module subroutine KHI_eq()
     
     
     <h3>
-private module subroutine kh_cd_instability_eq()
+private module module subroutine kh_cd_instability_eq()
     
     
    
@@ -1265,7 +1265,7 @@ private module subroutine kh_cd_instability_eq()
     
     
     <h3>
-private module subroutine magnetothermal_instability_eq()
+private module module subroutine magnetothermal_instability_eq()
     
     
    
@@ -1303,7 +1303,7 @@ private module subroutine magnetothermal_instability_eq()
     
     
     <h3>
-private module subroutine MRI_accretion_eq()
+private module module subroutine MRI_accretion_eq()
     
     
    
@@ -1341,7 +1341,7 @@ private module subroutine MRI_accretion_eq()
     
     
     <h3>
-private module subroutine photospheric_flux_tube_eq()
+private module module subroutine photospheric_flux_tube_eq()
     
     
    
@@ -1379,7 +1379,7 @@ private module subroutine photospheric_flux_tube_eq()
     
     
     <h3>
-private module subroutine resistive_homo_eq()
+private module module subroutine resistive_homo_eq()
     
     
    
@@ -1417,7 +1417,7 @@ private module subroutine resistive_homo_eq()
     
     
     <h3>
-private module subroutine resistive_tearing_modes_eq()
+private module module subroutine resistive_tearing_modes_eq()
     
     
    
@@ -1455,7 +1455,7 @@ private module subroutine resistive_tearing_modes_eq()
     
     
     <h3>
-private module subroutine resistive_tearing_modes_flow_eq()
+private module module subroutine resistive_tearing_modes_flow_eq()
     
     
    
@@ -1493,7 +1493,7 @@ private module subroutine resistive_tearing_modes_flow_eq()
     
     
     <h3>
-private module subroutine resonant_absorption_eq()
+private module module subroutine resonant_absorption_eq()
     
     
    
@@ -1531,7 +1531,7 @@ private module subroutine resonant_absorption_eq()
     
     
     <h3>
-private module subroutine rotating_plasma_cyl_eq()
+private module module subroutine rotating_plasma_cyl_eq()
     
     
    
@@ -1569,7 +1569,7 @@ private module subroutine rotating_plasma_cyl_eq()
     
     
     <h3>
-private module subroutine RTI_eq()
+private module module subroutine RTI_eq()
     
     
    
@@ -1607,7 +1607,7 @@ private module subroutine RTI_eq()
     
     
     <h3>
-private module subroutine RTI_KHI_eq()
+private module module subroutine RTI_KHI_eq()
     
     
    
@@ -1645,7 +1645,7 @@ private module subroutine RTI_KHI_eq()
     
     
     <h3>
-private module subroutine RTI_theta_pinch_eq()
+private module module subroutine RTI_theta_pinch_eq()
     
     
    
@@ -1683,7 +1683,7 @@ private module subroutine RTI_theta_pinch_eq()
     
     
     <h3>
-private module subroutine suydam_cluster_eq()
+private module module subroutine suydam_cluster_eq()
     
     
    
@@ -1721,7 +1721,7 @@ private module subroutine suydam_cluster_eq()
     
     
     <h3>
-private module subroutine couette_flow_eq()
+private module module subroutine couette_flow_eq()
     
     
    
@@ -1759,7 +1759,7 @@ private module subroutine couette_flow_eq()
     
     
     <h3>
-private module subroutine taylor_couette_eq()
+private module module subroutine taylor_couette_eq()
     
     
    
@@ -1797,7 +1797,7 @@ private module subroutine taylor_couette_eq()
     
     
     <h3>
-private module subroutine harris_sheet_eq()
+private module module subroutine harris_sheet_eq()
     
     
    
@@ -1835,7 +1835,7 @@ private module subroutine harris_sheet_eq()
     
     
     <h3>
-private module subroutine tc_pinch_eq()
+private module module subroutine tc_pinch_eq()
     
     
    
@@ -1873,7 +1873,7 @@ private module subroutine tc_pinch_eq()
     
     
     <h3>
-private module subroutine user_defined_eq()
+private module module subroutine user_defined_eq()
     
     
    
@@ -1927,7 +1927,7 @@ public subroutine <a href='../proc/initialise_equilibrium.html'>initialise_equil
 
 
 <p>Initialises the equilibrium types by calling the corresponding
- subroutine, which allocates all necessary attributes.</p>
+subroutine, which allocates all necessary attributes.</p>
     
     <h4>Arguments</h4>
     
@@ -1958,9 +1958,9 @@ public subroutine <a href='../proc/set_equilibrium.html'>set_equilibrium</a>()
 
 
 <p>Calls the routine to set the equilibrium pointer, then calls the correct
- submodule. Performs some sanity checks (negative values, NaNs etc.) when
- the equilibrium is set, then calls additional physics modules if needed.
- </p><a href="../proc/set_equilibrium.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+submodule. Performs some sanity checks (negative values, NaNs etc.) when
+the equilibrium is set, then calls additional physics modules if needed.
+</p><a href="../proc/set_equilibrium.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -1991,8 +1991,8 @@ private subroutine <a href='../proc/set_equilibrium_pointer.html'>set_equilibriu
 
 
 <p>Selects the submodule based on the specified equilibrium
- in the parfile. Works on a case-select basis.
- </p><a href="../proc/set_equilibrium_pointer.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+in the parfile. Works on a case-select basis.
+</p><a href="../proc/set_equilibrium_pointer.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -2023,10 +2023,10 @@ public subroutine <a href='../proc/allow_geometry_override.html'>allow_geometry_
 
 
 <p>Allows overriding geometry and grid-related parameters.
- Sets default values for the geometry and grid start/end. If this subroutine is
- used to set geometry/grid values in the submodule it becomes possible to override
- them through the parfile. Warnings will always be printed if this happens.
- </p><a href="../proc/allow_geometry_override.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+Sets default values for the geometry and grid start/end. If this subroutine is
+used to set geometry/grid values in the submodule it becomes possible to override
+them through the parfile. Warnings will always be printed if this happens.
+</p><a href="../proc/allow_geometry_override.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -2047,7 +2047,7 @@ public subroutine <a href='../proc/allow_geometry_override.html'>allow_geometry_
   
 <tr>
   
-  <td><span class="anchor" ></span>character(len=*),</td>
+  <td><span class="anchor" ></span>character,</td>
   <td>intent(in),</td>
   <td>optional</td>
   

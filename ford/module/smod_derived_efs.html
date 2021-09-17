@@ -282,16 +282,16 @@
     
     <div class="col-md-9" id='text'>
     <p>This submodule calculates various quantities derived from the base eigenfunctions:
-  - entropy S
-  - <script type="math/tex">\nabla \cdot \mathbf{v}_1</script>
-  - all 3 components of <script type="math/tex">\nabla \times \mathbf{v}_1</script>
-  - <script type="math/tex">\nabla \cdot \mathbf{B}_1</script>
-  - all 3 components of <script type="math/tex">\mathbf{B}_1</script>
-  - all 3 components of <script type="math/tex">\nabla \times \mathbf{B}_1</script>
+ - entropy S
+ - <script type="math/tex">\nabla \cdot \mathbf{v}_1</script>
+ - all 3 components of <script type="math/tex">\nabla \times \mathbf{v}_1</script>
+ - <script type="math/tex">\nabla \cdot \mathbf{B}_1</script>
+ - all 3 components of <script type="math/tex">\mathbf{B}_1</script>
+ - all 3 components of <script type="math/tex">\nabla \times \mathbf{B}_1</script>
 </p>
 <p>It is assumed that B0 has no B01 component, such that the 1-direction is
- already perpendicular to B0, and the parallel/perpendicular directions are
- taken in the 23-plane. The right-handed triad is e1, B0/|B0|, (e1 x B0) / |B0|.</p>
+already perpendicular to B0, and the parallel/perpendicular directions are
+taken in the 23-plane. The right-handed triad is e1, B0/|B0|, (e1 x B0) / |B0|.</p>
       <br>
     
   
@@ -304,9 +304,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -692,7 +692,7 @@
     
     
     <h3>
-module subroutine set_pp_quantities(locB, locCurlB, locV, locCurlV, ef_index)
+module module subroutine set_pp_quantities(locB, locCurlB, locV, locCurlV, ef_index)
     
     
    
@@ -835,8 +835,8 @@ subroutine <a href='../proc/check_if_pp_quantities_can_be_calculated.html'>check
 
 
 <p>Determines if parallel/perpendicular quantities can be calculated and
- sets the corresponding module flag. This flag will be false if there is a
- non-zero B01 component present, or no magnetic field.</p>
+sets the corresponding module flag. This flag will be false if there is a
+non-zero B01 component present, or no magnetic field.</p>
     
     <h4>Arguments</h4>
     
@@ -867,10 +867,10 @@ subroutine <a href='../proc/set_equilibrium_on_eigenfunction_grid.html'>set_equi
 
 
 <p>Sets the B02, B03, rho0 and T0 equilibrium components on the eigenfunction grid
- instead of on the Gaussian grid, these are used for calculating the derived
- eigenfunction quantities. No interpolation needed since the Gaussian grid is
- always finer than the eigenfunction grid, so we can get away by simply
- looking up the nearest values for every point in the eigenfunction grid.</p>
+instead of on the Gaussian grid, these are used for calculating the derived
+eigenfunction quantities. No interpolation needed since the Gaussian grid is
+always finer than the eigenfunction grid, so we can get away by simply
+looking up the nearest values for every point in the eigenfunction grid.</p>
     
     <h4>Arguments</h4>
     
@@ -1388,7 +1388,7 @@ subroutine <a href='../proc/set_magnetic_field_curl.html'>set_magnetic_field_cur
         
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_derived_eigenfunctions"></span><h3>
-module procedure <a href='../proc/initialise_derived_eigenfunctions.html'>initialise_derived_eigenfunctions</a> <small>module subroutine initialise_derived_eigenfunctions(nb_eigenfuncs)</small>
+module procedure <a href='../proc/initialise_derived_eigenfunctions.html'>initialise_derived_eigenfunctions</a> <small>module module subroutine initialise_derived_eigenfunctions(nb_eigenfuncs)</small>
     
     
    <a href='../interface/initialise_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
@@ -1406,7 +1406,7 @@ module procedure <a href='../proc/initialise_derived_eigenfunctions.html'>initia
 
 
 <p>Initialised the derived eigenfunction array, sets the corresponding names and
- vector indices, allocates the (subset of) derived eigenfunctions</p>
+vector indices, allocates the (subset of) derived eigenfunctions</p>
     
     <h4>Arguments</h4>
     
@@ -1450,7 +1450,7 @@ module procedure <a href='../proc/initialise_derived_eigenfunctions.html'>initia
         
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-calculate_derived_eigenfunctions"></span><h3>
-module procedure <a href='../proc/calculate_derived_eigenfunctions.html'>calculate_derived_eigenfunctions</a> <small>module subroutine calculate_derived_eigenfunctions(right_eigenvectors)</small>
+module procedure <a href='../proc/calculate_derived_eigenfunctions.html'>calculate_derived_eigenfunctions</a> <small>module module subroutine calculate_derived_eigenfunctions(right_eigenvectors)</small>
     
     
    <a href='../interface/calculate_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
@@ -1468,7 +1468,7 @@ module procedure <a href='../proc/calculate_derived_eigenfunctions.html'>calcula
 
 
 <p>Calculates the derived eigenfunction quantities corresponding to the requested
- eigenvalues and sets them as attributes for the corresponding types.</p>
+eigenvalues and sets them as attributes for the corresponding types.</p>
     
     <h4>Arguments</h4>
     
@@ -1512,7 +1512,7 @@ module procedure <a href='../proc/calculate_derived_eigenfunctions.html'>calcula
         
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-clean_derived_eigenfunctions"></span><h3>
-module procedure <a href='../proc/clean_derived_eigenfunctions.html'>clean_derived_eigenfunctions</a> <small>module subroutine clean_derived_eigenfunctions()</small>
+module procedure <a href='../proc/clean_derived_eigenfunctions.html'>clean_derived_eigenfunctions</a> <small>module module subroutine clean_derived_eigenfunctions()</small>
     
     
    <a href='../interface/clean_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>

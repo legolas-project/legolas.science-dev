@@ -212,9 +212,9 @@ public subroutine get_numerical_derivative(x, y, dy, dxtol)
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
-    
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    
+    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
     
   </ul>
       </li>
@@ -228,28 +228,28 @@ public subroutine get_numerical_derivative(x, y, dy, dxtol)
 
     
     <p>Calculates the numerical derivative of a given array.
- A sixth-order accurate central difference stencil is used to calculate the
- derivative. Near the edges a sixth-order accurate forward and backward
- difference stencil is used for the left and right boundary, respectively.
- It is assumed that the x values are all equally spaced. If this is not the case,
- a polynomial interpolation on a uniform grid can be done and that one can be
- differentiated instead. The stencils are as follows:</p>
+A sixth-order accurate central difference stencil is used to calculate the
+derivative. Near the edges a sixth-order accurate forward and backward
+difference stencil is used for the left and right boundary, respectively.
+It is assumed that the x values are all equally spaced. If this is not the case,
+a polynomial interpolation on a uniform grid can be done and that one can be
+differentiated instead. The stencils are as follows:</p>
 <ul>
 <li>6th order central differences:
-   <script type="math/tex; mode=display"> dy_i = \frac{-y_{i-3} + 9y_{i-2} - 45y_{i-1} + 45y_{i+1}
-                - 9y_{i+2} + y_{i+3}}{60dx} </script>
+  <script type="math/tex; mode=display"> dy_i = \frac{-y_{i-3} + 9y_{i-2} - 45y_{i-1} + 45y_{i+1}
+               - 9y_{i+2} + y_{i+3}}{60dx} </script>
 </li>
 <li>6th order forward differences:
-   <script type="math/tex; mode=display"> dy_i = \frac{-147y_i + 360y_{i+1} - 450y_{i+2} + 400y_{i+3}
-                - 225y_{i+4} + 72y_{i+5} - 10y_{i+6}}{60dx} </script>
+  <script type="math/tex; mode=display"> dy_i = \frac{-147y_i + 360y_{i+1} - 450y_{i+2} + 400y_{i+3}
+               - 225y_{i+4} + 72y_{i+5} - 10y_{i+6}}{60dx} </script>
 </li>
 <li>6th order backward differences:
-   <script type="math/tex; mode=display"> dy_i = \frac{10y_{i-6} - 72y_{i-5} + 225y_{i-4} - 400y_{i-3}
-                + 450y_{i-2} - 360y_{i-1} + 147y_i}{60dx} </script>
+  <script type="math/tex; mode=display"> dy_i = \frac{10y_{i-6} - 72y_{i-5} + 225y_{i-4} - 400y_{i-3}
+               + 450y_{i-2} - 360y_{i-1} + 147y_i}{60dx} </script>
 </li>
 </ul>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if <tt>x_values</tt> and <tt>y_values</tt> differ
-          in size. </p></div>
+         in size. </p></div>
 <p>
     
 

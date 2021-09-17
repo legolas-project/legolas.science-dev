@@ -228,11 +228,11 @@ public subroutine allow_geometry_override(default_geometry, default_x_start, def
 
     
     <p>Allows overriding geometry and grid-related parameters.
- Sets default values for the geometry and grid start/end. If this subroutine is
- used to set geometry/grid values in the submodule it becomes possible to override
- them through the parfile. Warnings will always be printed if this happens.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>If values specified in the parfile are equal to the default values,
-        nothing happens. </p></div>
+Sets default values for the geometry and grid start/end. If this subroutine is
+used to set geometry/grid values in the submodule it becomes possible to override
+them through the parfile. Warnings will always be printed if this happens.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>If values specified in the parfile are equal to the default values,
+       nothing happens. </p></div>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>A warning is thrown if:</p>
 <ul>
 <li>the geometry specified in the submodule is overridden.</li>
@@ -260,7 +260,7 @@ public subroutine allow_geometry_override(default_geometry, default_x_start, def
   
 <tr>
   
-  <td><span class="anchor" id="variable-default_geometry"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-default_geometry"></span>character,</td>
   <td>intent(in),</td>
   <td>optional</td>
   

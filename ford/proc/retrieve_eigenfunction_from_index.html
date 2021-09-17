@@ -207,12 +207,12 @@ public function retrieve_eigenfunction_from_index(name, ef_index) result(eigenfu
 
     
     <p>Retrieves a single eigenfunction based on its index in the attribute
- of the main array. For example, if name equals "rho" and ef_idx equals 2
- then this routine returns the quantities attribute evaluated at index 2
- for the "rho" eigenfunctions.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>: this routine is needed apart from <tt>retrieve_eigenfunctions</tt>
-        because Fortran does not allow access to a derived type's attribute
-        directly through the result of a function call. </p></div>
+of the main array. For example, if name equals "rho" and ef_idx equals 2
+then this routine returns the quantities attribute evaluated at index 2
+for the "rho" eigenfunctions.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>: this routine is needed apart from <tt>retrieve_eigenfunctions</tt>
+       because Fortran does not allow access to a derived type's attribute
+       directly through the result of a function call. </p></div>
 <p>
     
 
@@ -234,7 +234,7 @@ public function retrieve_eigenfunction_from_index(name, ef_index) result(eigenfu
   
 <tr>
   
-  <td><span class="anchor" id="variable-name~5"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-name~4"></span>character(len=*),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -249,7 +249,7 @@ public function retrieve_eigenfunction_from_index(name, ef_index) result(eigenfu
   
 <tr>
   
-  <td><span class="anchor" id="variable-ef_index~12"></span>integer,</td>
+  <td><span class="anchor" id="variable-ef_index"></span>integer,</td>
   <td>intent(in)</td>
   <td></td>
   

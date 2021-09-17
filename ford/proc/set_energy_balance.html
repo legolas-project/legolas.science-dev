@@ -228,20 +228,20 @@ private subroutine set_energy_balance(rho_field, T_field, B_field, v_field, rc_f
 
     
     <p>Enforces the non-adiabatic force-balance equation for the equilibrium state.
- This is given by
- <script type="math/tex; mode=display">
- T_0 \rho_0 \frac{\left(\varepsilon v_{01}\right)'}{\varepsilon}
- + \rho_0 \mathscr{L}_0
- - B_{01}^2\left[\frac{\kappa_{\parallel,0} - \kappa_{\perp,0}}{B_0^2} T_0'\right]'
- - \frac{1}{\varepsilon}\left(\varepsilon \kappa_{\perp, 0} T_0'\right)'
- + \frac{1}{(\gamma - 1)}T_0'\rho_0 v_{01} = 0
- </script>
- This subroutine essentially sets $\mathscr{L}<em 01>0$ in such a way that this equation
- is satisfied. If the heating is assumed to only depend on the equilibrium,
- and if there is no $B</em>$, $v_{01}$ or perpendicular thermal conduction,
- then $\mathscr{L}_0 = 0$. If one (or more) of these effects are present, then
- $\mathscr{L}_0 = 0$ is no longer true.
-  The <tt>rc_field % heat_loss</tt> attribute is modified on exit.</p>
+This is given by
+<script type="math/tex; mode=display">
+T_0 \rho_0 \frac{\left(\varepsilon v_{01}\right)'}{\varepsilon}
++ \rho_0 \mathscr{L}_0
+- B_{01}^2\left[\frac{\kappa_{\parallel,0} - \kappa_{\perp,0}}{B_0^2} T_0'\right]'
+- \frac{1}{\varepsilon}\left(\varepsilon \kappa_{\perp, 0} T_0'\right)'
++ \frac{1}{(\gamma - 1)}T_0'\rho_0 v_{01} = 0
+</script>
+This subroutine essentially sets $\mathscr{L}<em 01>0$ in such a way that this equation
+is satisfied. If the heating is assumed to only depend on the equilibrium,
+and if there is no $B</em>$, $v_{01}$ or perpendicular thermal conduction,
+then $\mathscr{L}_0 = 0$. If one (or more) of these effects are present, then
+$\mathscr{L}_0 = 0$ is no longer true.
+ The <tt>rc_field % heat_loss</tt> attribute is modified on exit.</p>
     
 
     <h3>Arguments</h3>

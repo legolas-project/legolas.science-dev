@@ -226,16 +226,16 @@ public subroutine read_parfile(parfile)
 
     
     <p>Reads in the supplied parfile and sets the equilibrium parameters and
- global variables to their specified values.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>The order of the different namelists in the parfile does not matter, this
-          is automatically handled. </p></div>
+global variables to their specified values.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>The order of the different namelists in the parfile does not matter, this
+         is automatically handled. </p></div>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if:</p>
 <ul>
 <li>both a density and temperature unit are present in the parfile.</li>
 <li>a <tt>unit_density</tt> is supplied, but no length or magnetic field unit.</li>
 <li>a <tt>unit_temprature</tt> is supplied, but no length or magnetic field unit. </p></div>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>If <tt>dry_run</tt> is <tt>True</tt>, this automatically sets eigenfunction
-          and matrix saving to <tt>False</tt>, independent of the settings in the parfile! </p></div>
+         and matrix saving to <tt>False</tt>, independent of the settings in the parfile! </p></div>
 <p>Start reading namelists, rewind so they can appear out of order</li>
 </ul>
     

@@ -212,7 +212,7 @@
     
     <div class="col-md-9" id='text'>
     <p>Module containing resistivity-related routines, calculates
- and sets the resistivity values based on the equilibrium configuration.</p>
+and sets the resistivity values based on the equilibrium configuration.</p>
       <br>
     
   
@@ -225,9 +225,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -329,7 +329,7 @@ public subroutine <a href='../proc/set_resistivity_values.html'>set_resistivity_
 
 
 <p>This routines sets all resistivity values in \p eta_field,
- and calls all other relevant subroutines defined in this module.</p>
+and calls all other relevant subroutines defined in this module.</p>
     
     <h4>Arguments</h4>
     
@@ -404,11 +404,11 @@ private subroutine <a href='../proc/get_eta.html'>get_eta</a>(T0_eq, eta)
 
 
 <p>Calculates the resistivity. Returns either the full Spitzer resistivity
- based on the equilibrium parameters, or a fixed resistivity value if
- specified in the global variables module. The unit resistivity is also set in this routine.
- If a fixed resistivity is used, eta is assumed to be normalised and
- the unit resistivity remains unity.
- </p><a href="../proc/get_eta.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+based on the equilibrium parameters, or a fixed resistivity value if
+specified in the global variables module. The unit resistivity is also set in this routine.
+If a fixed resistivity is used, eta is assumed to be normalised and
+the unit resistivity remains unity.
+</p><a href="../proc/get_eta.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -483,10 +483,10 @@ private subroutine <a href='../proc/get_deta_dt.html'>get_deta_dT</a>(T0_eq, det
 
 
 <p>Calculates the derivative of the resistivity.
- Returns the derivative of the full Spitzer resistivity with respect
- to the equilibrium temperature, if a fixed resistivity was set instead
- this routine returns zero.
- </p><a href="../proc/get_deta_dt.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+Returns the derivative of the full Spitzer resistivity with respect
+to the equilibrium temperature, if a fixed resistivity was set instead
+this routine returns zero.
+</p><a href="../proc/get_deta_dt.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -561,9 +561,9 @@ private subroutine <a href='../proc/set_eta_dropoff.html'>set_eta_dropoff</a>(et
 
 
 <p>Sets a hyperbolic tangent profile for the resistivity so it goes smoothly to zero
- near the edges. The location and width of the dropoff profile can be controlled
- through <tt>dropoff_edge_dist</tt> and <tt>dropoff_width</tt>.
- </p><a href="../proc/set_eta_dropoff.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+near the edges. The location and width of the dropoff profile can be controlled
+through <tt>dropoff_edge_dist</tt> and <tt>dropoff_width</tt>.
+</p><a href="../proc/set_eta_dropoff.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -623,8 +623,8 @@ private subroutine <a href='../proc/get_constants~2.html'>get_constants</a>(ec, 
 
 
 <p>Retrieves resistivity constants.
- Returns all physical constants used to calculate the Spitzer resistivity,
- either in cgs (default) or SI depending on the unit system chosen.</p>
+Returns all physical constants used to calculate the Spitzer resistivity,
+either in cgs (default) or SI depending on the unit system chosen.</p>
     
     <h4>Arguments</h4>
     

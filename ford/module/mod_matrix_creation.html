@@ -226,11 +226,11 @@
     
     <div class="col-md-9" id='text'>
     <p>Assembly of the finite element matrices <script type="math/tex">\mathcal{A}</script> and <script type="math/tex">\mathcal{B}</script> in the matrix
- eigenvalue problem <script type="math/tex">\mathcal{A}\textbf{X} = \omega\mathcal{B}\textbf{X}</script>.
- Matrix creation proceeds by first assembling a quadblock at every grid interval
- using the integrals and finite element basis functions, after which this quadblock
- is shifted along the main diagonal.
- </p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Boundary conditions are imposed after matrix assembly is completed.</p></div>
+eigenvalue problem <script type="math/tex">\mathcal{A}\textbf{X} = \omega\mathcal{B}\textbf{X}</script>.
+Matrix creation proceeds by first assembling a quadblock at every grid interval
+using the integrals and finite element basis functions, after which this quadblock
+is shifted along the main diagonal.
+</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Boundary conditions are imposed after matrix assembly is completed.</p></div>
       <br>
     
   
@@ -433,10 +433,10 @@ public subroutine <a href='../proc/create_matrices.html'>create_matrices</a>(mat
 
 
 <p>Main subroutine to assemble the matrices A and B, which are
- already allocated when entering this subroutine but not yet initialised.
- The quadblock is calculated for every grid interval and used to assemble
- both matrices. On exit, both matrices are fully assembled and
- boundary conditions are imposed.</p>
+already allocated when entering this subroutine but not yet initialised.
+The quadblock is calculated for every grid interval and used to assemble
+both matrices. On exit, both matrices are fully assembled and
+boundary conditions are imposed.</p>
     
     <h4>Arguments</h4>
     
@@ -511,9 +511,9 @@ private subroutine <a href='../proc/get_b_elements.html'>get_B_elements</a>(gaus
 
 
 <p>Retrieves the B-matrix elements for a given quadblock corresponding
- to a particular point in the grid and a particular Gaussian weight.
- This routine is called <tt>n_gauss</tt> times for every grid interval.
- </p><a href="../proc/get_b_elements.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+to a particular point in the grid and a particular Gaussian weight.
+This routine is called <tt>n_gauss</tt> times for every grid interval.
+</p><a href="../proc/get_b_elements.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -618,9 +618,9 @@ private subroutine <a href='../proc/get_a_elements.html'>get_A_elements</a>(gaus
 
 
 <p>Retrieves the A-matrix elements for a given quadblock corresponding
- to a particular point in the grid and a particular Gaussian weight.
- This routine is called <tt>n_gauss</tt> times for every grid interval.
- </p><a href="../proc/get_a_elements.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+to a particular point in the grid and a particular Gaussian weight.
+This routine is called <tt>n_gauss</tt> times for every grid interval.
+</p><a href="../proc/get_a_elements.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     

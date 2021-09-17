@@ -282,9 +282,9 @@
     
     <div class="col-md-9" id='text'>
     <p>Module containing the different types used in the code.
- All types are defined here, this includes all types where the
- equilibrium arrays are set as attributes, as well as a type
- to handle eigenfunctions.</p>
+All types are defined here, this includes all types where the
+equilibrium arrays are set as attributes, as well as a type
+to handle eigenfunctions.</p>
       <br>
     
   
@@ -755,7 +755,7 @@ private subroutine <a href='../proc/initialise_resistivity_type.html'>initialise
 
 
 <p>Allocates the resistivity type and initialises all values to zero.
- </p><a href="../proc/initialise_resistivity_type.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+</p><a href="../proc/initialise_resistivity_type.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -1531,7 +1531,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-rho0"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>rho0</strong>(:)</td><td></td><td></td><td><p>equilibrium density</p></td>
   
@@ -1545,7 +1545,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_rho0_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_rho0_dr</strong>(:)</td><td></td><td></td><td><p>derivative of the equilibrium density</p></td>
   
@@ -1592,7 +1592,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-t0"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>T0</strong>(:)</td><td></td><td></td><td><p>equilibrium temperature</p></td>
   
@@ -1606,7 +1606,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_t0_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_T0_dr</strong>(:)</td><td></td><td></td><td><p>derivative of the equilibrium temperature</p></td>
   
@@ -1620,7 +1620,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-dd_t0_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>dd_T0_dr</strong>(:)</td><td></td><td></td><td><p>second derivative of the equilibrium temperature</p></td>
   
@@ -1667,7 +1667,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-b01"></span>real(kind=dp),</td>
   
-  <td>public</td>
+  <td>private</td>
   <td></td><td>::</td>
   <td><strong>B01</strong></td><td></td><td></td><td><p>constant equilibrium magnetic field in x or r direction</p></td>
   
@@ -1681,7 +1681,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-b02"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>B02</strong>(:)</td><td></td><td></td><td><p>equilibrium magnetic field in y or theta direction</p></td>
   
@@ -1695,7 +1695,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-b03"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>B03</strong>(:)</td><td></td><td></td><td><p>equilibrium magnetic field in z direction</p></td>
   
@@ -1709,7 +1709,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-b0"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>B0</strong>(:)</td><td></td><td></td><td><p>equilibrium magnetic field (total)</p></td>
   
@@ -1723,7 +1723,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_b02_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_B02_dr</strong>(:)</td><td></td><td></td><td><p>derivative of equilibrium B02</p></td>
   
@@ -1737,7 +1737,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_b03_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_B03_dr</strong>(:)</td><td></td><td></td><td><p>derivative of equilibrium B03</p></td>
   
@@ -1784,7 +1784,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-v01"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>v01</strong>(:)</td><td></td><td></td><td><p>equilibrium velocity in the x or r direction</p></td>
   
@@ -1798,7 +1798,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_v01_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_v01_dr</strong>(:)</td><td></td><td></td><td><p>derivative of equilibrium v01</p></td>
   
@@ -1812,7 +1812,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-dd_v01_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>dd_v01_dr</strong>(:)</td><td></td><td></td><td><p>second derivative of equilibrium v01</p></td>
   
@@ -1826,7 +1826,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-v02"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>v02</strong>(:)</td><td></td><td></td><td><p>equilibrium velocity in the y or theta-direction</p></td>
   
@@ -1840,7 +1840,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_v02_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_v02_dr</strong>(:)</td><td></td><td></td><td><p>derivative of equilibrium v02</p></td>
   
@@ -1854,7 +1854,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-dd_v02_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>dd_v02_dr</strong>(:)</td><td></td><td></td><td><p>second derivative of equilibrium v02</p></td>
   
@@ -1868,7 +1868,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-v03"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>v03</strong>(:)</td><td></td><td></td><td><p>equilibrium velocity in the z direction</p></td>
   
@@ -1882,7 +1882,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_v03_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_v03_dr</strong>(:)</td><td></td><td></td><td><p>derivative of equilibrium v03</p></td>
   
@@ -1896,7 +1896,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-dd_v03_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>dd_v03_dr</strong>(:)</td><td></td><td></td><td><p>second derivative of equilibrium v03</p></td>
   
@@ -1943,7 +1943,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-grav"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>grav</strong>(:)</td><td></td><td></td><td><p>equilibrium gravity</p></td>
   
@@ -1990,7 +1990,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-eta"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>eta</strong>(:)</td><td></td><td></td><td><p>equilibrium resistivity</p></td>
   
@@ -2004,7 +2004,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_eta_dt"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_eta_dT</strong>(:)</td><td></td><td></td><td><p>derivative of eta with respect to temperature</p></td>
   
@@ -2018,7 +2018,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_eta_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_eta_dr</strong>(:)</td><td></td><td></td><td><p>derivative of eta with respect to radius</p></td>
   
@@ -2032,7 +2032,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-dd_b02_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>dd_B02_dr</strong>(:)</td><td></td><td></td><td><p>second derivative equilibrium B02</p></td>
   
@@ -2046,7 +2046,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-dd_b03_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>dd_B03_dr</strong>(:)</td><td></td><td></td><td><p>second derivative equilibrium B03</p></td>
   
@@ -2093,7 +2093,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-heat_loss"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>heat_loss</strong>(:)</td><td></td><td></td><td><p>equilibrium heat-loss function L0 (losses - gains)</p></td>
   
@@ -2107,7 +2107,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_l_dt"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_L_dT</strong>(:)</td><td></td><td></td><td><p>derivative dL/dT</p></td>
   
@@ -2121,7 +2121,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_l_drho"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_L_drho</strong>(:)</td><td></td><td></td><td><p>derivative dL/drho</p></td>
   
@@ -2168,7 +2168,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-kappa_para"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>kappa_para</strong>(:)</td><td></td><td></td><td><p>equilibrium parallel thermal conduction</p></td>
   
@@ -2182,7 +2182,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_kappa_para_dt"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_kappa_para_dT</strong>(:)</td><td></td><td></td><td><p>derivative d(kappa_para)/dT</p></td>
   
@@ -2196,7 +2196,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-kappa_perp"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>kappa_perp</strong>(:)</td><td></td><td></td><td><p>equilibrium perpendicular thermal conduction</p></td>
   
@@ -2210,7 +2210,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_kappa_perp_drho"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_kappa_perp_drho</strong>(:)</td><td></td><td></td><td><p>derivative d(kappa_perp)/drho</p></td>
   
@@ -2224,7 +2224,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_kappa_perp_dt"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_kappa_perp_dT</strong>(:)</td><td></td><td></td><td><p>derivative d(kappa_perp)/dT</p></td>
   
@@ -2238,7 +2238,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_kappa_perp_db2"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_kappa_perp_dB2</strong>(:)</td><td></td><td></td><td><p>derivative d(kappa_perp)/d(B**2)</p></td>
   
@@ -2252,7 +2252,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_kappa_perp_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_kappa_perp_dr</strong>(:)</td><td></td><td></td><td><p>derivative d(kappa_perp)/dr</p></td>
   
@@ -2266,7 +2266,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-prefactor"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>prefactor</strong>(:)</td><td></td><td></td><td><p>conduction prefactor (kappa_para - kappa_perp) / B**2</p></td>
   
@@ -2280,7 +2280,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-d_prefactor_dr"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>d_prefactor_dr</strong>(:)</td><td></td><td></td><td><p>derivative conduction prefactor with respect to r</p></td>
   
@@ -2327,7 +2327,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-state_vector_index"></span>integer,</td>
   
-  <td>public</td>
+  <td>private</td>
   <td></td><td>::</td>
   <td><strong>state_vector_index</strong></td><td></td><td></td><td><p>index of the eigenfunction variable in the state vector</p></td>
   
@@ -2339,9 +2339,9 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
 <tr>
   
-  <td><span class="anchor" id="variable-name"></span>character(len=str_len_arr),</td>
+  <td><span class="anchor" id="variable-name"></span>character,</td>
   
-  <td>public</td>
+  <td>private</td>
   <td></td><td>::</td>
   <td><strong>name</strong></td><td></td><td></td><td><p>name of the eigenfunction</p></td>
   
@@ -2355,7 +2355,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-quantities"></span>complex(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>quantities</strong>(:,:)</td><td></td><td></td><td><p>array with eigenfunctions</p></td>
   
@@ -2402,7 +2402,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-hallfactor"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>hallfactor</strong>(:)</td><td></td><td></td><td><p>Hall parameter</p></td>
   
@@ -2416,7 +2416,7 @@ private subroutine <a href='../proc/deallocate_hall_type.html'>deallocate_hall_t
   
   <td><span class="anchor" id="variable-inertiafactor"></span>real(kind=dp),</td>
   
-  <td>public,</td>
+  <td>private,</td>
   <td>allocatable</td><td>::</td>
   <td><strong>inertiafactor</strong>(:)</td><td></td><td></td><td><p>electron inertia parameter</p></td>
   
@@ -2757,7 +2757,7 @@ private subroutine <a href='../proc/initialise_resistivity_type.html'>initialise
 
 
 <p>Allocates the resistivity type and initialises all values to zero.
- </p><a href="../proc/initialise_resistivity_type.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+</p><a href="../proc/initialise_resistivity_type.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     

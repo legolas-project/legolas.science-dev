@@ -218,11 +218,11 @@
     
     <div class="col-md-9" id='text'>
     <p>Module responsible for integration of differential equations, useful
- when setting equilibria or integrating the equilibrium equation.
- Contains subroutines to numerically solve the following systems
- of differential equations:
- <script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script>
- These are solved using a fifth-order Runge-Kutta method.</p>
+when setting equilibria or integrating the equilibrium equation.
+Contains subroutines to numerically solve the following systems
+of differential equations:
+<script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script>
+These are solved using a fifth-order Runge-Kutta method.</p>
       <br>
     
   
@@ -447,15 +447,15 @@ public subroutine <a href='../proc/integrate_ode_rk.html'>integrate_ode_rk</a>(x
 
 
 <p>Integrates a first order differential equation of the form
- <script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta
- method. The argument <tt>nbpoints</tt> determines the stepsize through
- <script type="math/tex; mode=display"> dh = \frac{xvalues(N) - xvalues(1)}{nbpoints} </script>
- If the arrays <script type="math/tex">A(x), B(x)</script> are not of size <tt>nbpoints</tt>, then these are
- interpolated to that resolution. The differential equation is then integrated,
- the solution will also be of size <tt>nbpoints</tt> and can be downsampled using
- the appropriate subroutine.
- If desired the optional argument <tt>dyvalues</tt> can be provided,
- which contains the (numerical) derivative of y.</p>
+<script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta
+method. The argument <tt>nbpoints</tt> determines the stepsize through
+<script type="math/tex; mode=display"> dh = \frac{xvalues(N) - xvalues(1)}{nbpoints} </script>
+If the arrays <script type="math/tex">A(x), B(x)</script> are not of size <tt>nbpoints</tt>, then these are
+interpolated to that resolution. The differential equation is then integrated,
+the solution will also be of size <tt>nbpoints</tt> and can be downsampled using
+the appropriate subroutine.
+If desired the optional argument <tt>dyvalues</tt> can be provided,
+which contains the (numerical) derivative of y.</p>
     
     <h4>Arguments</h4>
     
@@ -559,7 +559,7 @@ public subroutine <a href='../proc/integrate_ode_rk.html'>integrate_ode_rk</a>(x
   
   <td>allocatable</td><td>::</td>
   <td><strong>yvalues</strong>(:)</td><td><p>array of y-values, size will be <tt>nbpoints</tt> if <tt>adaptive=.false.</tt>,
- size will vary if <tt>adaptive=.true.</tt></p></td>
+size will vary if <tt>adaptive=.true.</tt></p></td>
   
 </tr>
 
@@ -698,7 +698,7 @@ private subroutine <a href='../proc/rk45.html'>rk45</a>(xi, dh, xarray, axarray,
 
 
 <p>Calculates the Runge-Kutta coefficients and calculates the fourth and fifth
- order solutions for step i+1 based on the values at step i.</p>
+order solutions for step i+1 based on the values at step i.</p>
     
     <h4>Arguments</h4>
     

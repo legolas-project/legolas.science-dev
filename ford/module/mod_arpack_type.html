@@ -232,8 +232,8 @@
     
     <div class="col-md-9" id='text'>
     <p>Module containing a dedicated type for the ARPACK solvers.
- All needed variables are defined and allocated here, along with sanity
- checks when setting certain values.</p>
+All needed variables are defined and allocated here, along with sanity
+checks when setting certain values.</p>
       <br>
     
   
@@ -246,9 +246,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -776,9 +776,9 @@ private subroutine <a href='../proc/initialise.html'>initialise</a>(this, evpdim
 
 
 <p>Initialises the derived type based on the given dimension
- of the eigenvalue problem. Everything is allocated and the variables
- (<tt>nev, which, maxiter, iparam, ido</tt> etc.)
- are prepared for their calls in the ARPACK routines.</p>
+of the eigenvalue problem. Everything is allocated and the variables
+(<tt>nev, which, maxiter, iparam, ido</tt> etc.)
+are prepared for their calls in the ARPACK routines.</p>
     
     <h4>Arguments</h4>
     
@@ -853,8 +853,8 @@ private subroutine <a href='../proc/set_mode.html'>set_mode</a>(this, mode)
 
 
 <p>Sets the mode for the ARPACK solver and passes this on
- to the <tt>iparam</tt> array.
- </p><a href="../proc/set_mode.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+to the <tt>iparam</tt> array.
+</p><a href="../proc/set_mode.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -929,9 +929,9 @@ private subroutine <a href='../proc/set_sigma.html'>set_sigma</a>(this, sigma)
 
 
 <p>Sets the sigma value for the shift-invert mode of ARPACK.
- Sigma can't be zero since the A-matrix can have zero rows, and then
- we run into troubles.
- </p><a href="../proc/set_sigma.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+Sigma can't be zero since the A-matrix can have zero rows, and then
+we run into troubles.
+</p><a href="../proc/set_sigma.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -1006,9 +1006,9 @@ private subroutine <a href='../proc/parse_znaupd_info.html'>parse_znaupd_info</a
 
 
 <p>Parses the info parameter that comes out of ARPACK's <tt>znaupd</tt> method.
- If info = 0, everything behaved nicely the reverse communication subroutines
- exited properly. If info is any other value something went wrong and
- we handle it accordingly.</p>
+If info = 0, everything behaved nicely the reverse communication subroutines
+exited properly. If info is any other value something went wrong and
+we handle it accordingly.</p>
     
     <h4>Arguments</h4>
     
@@ -1083,8 +1083,8 @@ private subroutine <a href='../proc/parse_zneupd_info.html'>parse_zneupd_info</a
 
 
 <p>Parses the info parameter that comes out of ARPACK's <tt>zneupd</tt> method.
- If info = 0, the eigenvalues extraction routines exited properly, if info
- is any other value something went wrong and we handle it accordingly.</p>
+If info = 0, the eigenvalues extraction routines exited properly, if info
+is any other value something went wrong and we handle it accordingly.</p>
     
     <h4>Arguments</h4>
     
@@ -1144,8 +1144,8 @@ private subroutine <a href='../proc/set_nev.html'>set_nev</a>(this)
 
 
 <p>Setter for the number of eigenvalues that should be calculated.
- The requested number of eigenvalues should be positive and smaller than
- the dimension of the eigenvalue problem.</p>
+The requested number of eigenvalues should be positive and smaller than
+the dimension of the eigenvalue problem.</p>
     
     <h4>Arguments</h4>
     
@@ -1205,7 +1205,7 @@ private subroutine <a href='../proc/set_which.html'>set_which</a>(this)
 
 
 <p>Setter for the 'which' argument of ARPACK routines.
- Should be one of the following: "LM", "SM", "LR", "SR", "LI" or "SI".</p>
+Should be one of the following: "LM", "SM", "LR", "SR", "LI" or "SI".</p>
     
     <h4>Arguments</h4>
     
@@ -1265,8 +1265,8 @@ private subroutine <a href='../proc/set_maxiter.html'>set_maxiter</a>(this)
 
 
 <p>Setter for the maximum number of iterations that ARPACK can take,
- defaults to 10N with N the dimension of the eigenvalue problem.
- </p><a href="../proc/set_maxiter.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+defaults to 10N with N the dimension of the eigenvalue problem.
+</p><a href="../proc/set_maxiter.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     

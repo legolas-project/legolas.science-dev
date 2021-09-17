@@ -214,9 +214,9 @@ public subroutine set_solar_atmosphere(f_b02, f_db02, f_b03, f_db03, f_g, n_inte
     
     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     
-    <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
-    
     <li><a href='../module/mod_integration.html'>mod_integration</a></li>
+    
+    <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
     
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
@@ -234,18 +234,18 @@ public subroutine set_solar_atmosphere(f_b02, f_db02, f_b03, f_db03, f_g, n_inte
 
     
     <p>Sets the density, temperature, gravity and magnetic field attributes of
- the respective fields to a realistic solar atmosphere profile.
- This routine first interpolates the temperature and numberdensity table at
- <tt>n_interp</tt> resolution, then solves the following ODE for the density:
- <script type="math/tex; mode=display"> \rho'(x) = -\frac{T'(x) + g(x)}{T(x)}\rho(x) -
-               \frac{B_{02}(x)B'_{02}(x) + B_{03}(x)B'_{03}(x)}{T(x)} </script>
- using a fifth order Runge-Kutta method.
- If the optional argument <tt>save_to</tt> is provided then the density profiles
- are saved to that file, which can be loaded back in on subsequent runs through
- the optional argument <tt>load_from</tt>. The integration is done over the entire
- table, the curve is sampled on the Gaussian grid, meaning that grid variations
- can all use the same result.
- </p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if the geometry is not Cartesian. </p></div>
+the respective fields to a realistic solar atmosphere profile.
+This routine first interpolates the temperature and numberdensity table at
+<tt>n_interp</tt> resolution, then solves the following ODE for the density:
+<script type="math/tex; mode=display"> \rho'(x) = -\frac{T'(x) + g(x)}{T(x)}\rho(x) -
+              \frac{B_{02}(x)B'_{02}(x) + B_{03}(x)B'_{03}(x)}{T(x)} </script>
+using a fifth order Runge-Kutta method.
+If the optional argument <tt>save_to</tt> is provided then the density profiles
+are saved to that file, which can be loaded back in on subsequent runs through
+the optional argument <tt>load_from</tt>. The integration is done over the entire
+table, the curve is sampled on the Gaussian grid, meaning that grid variations
+can all use the same result.
+</p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if the geometry is not Cartesian. </p></div>
 <p>
     
 
