@@ -324,12 +324,6 @@ Functions
 
       :type: int, float, complex, np.ndarray
 
-   .. attribute:: enabled
-
-      If `False` (default), the current figure will not be plotted at plt.show().
-
-      :type: bool
-
 
 
 
@@ -494,13 +488,14 @@ Functions
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _add_subplot_axes(self, ax, loc='right', share=None)
+   .. py:method:: _add_subplot_axes(self, ax, loc='right', share=None, apply_tight_layout=True)
 
       
-      Adds a new subplot to the given axes object, depending on the loc argument.
-      On return, `tight_layout()` is called to update the figure's gridspec.
-      This is meant to split a single axis, and should not be used for multiple
-      subplots.
+      Adds a new subplot to a given matplotlib subplot, essentially "splitting" the
+      axis into two. Position and placement depend on the loc argument.
+      When called on a more complex subplot layout the overall gridspec remains
+      untouched, only the `ax` object has its gridspec modified.
+      On return, `tight_layout()` is called by default to prevent overlapping labels.
 
       :param ax: The axes object, this will be "split" and a new axes will be added
                  to the figure.
@@ -511,11 +506,12 @@ Functions
       :type loc: str
       :param share: Can be "x", "y" or "all". This locks axes zooming between both subplots.
       :type share: str
+      :param apply_tight_layout: If `True` applies `tight_layout()` to the figure on return.
+      :type apply_tight_layout: bool
 
-      :raises ValueError: - If the subplot is not a single axis
-          - If the loc argument is invalid.
+      :raises ValueError: If the loc argument is invalid.
 
-      :returns: **new_ax** -- The axes instance that was added.
+      :returns: The axes instance that was added.
       :rtype: ~matplotlib.axes.Axes
 
 

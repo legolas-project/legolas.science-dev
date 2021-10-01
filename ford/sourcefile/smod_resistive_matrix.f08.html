@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.5% of total for source files.">122 statements</a>
+    title=" 1.5% of total for source files.">124 statements</a>
      </li> 
      
      
@@ -429,47 +429,50 @@
 <a id="ln-163" name="ln-163"></a>  <span class="c">!!      \left(\frac{\varepsilon&#39;}{\varepsilon}\eta_0&#39; \pm \eta_0\right)</span>
 <a id="ln-164" name="ln-164"></a>  <span class="c">!! $$</span>
 <a id="ln-165" name="ln-165"></a>  <span class="k">function </span><span class="n">get_R_operator</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">,</span> <span class="n">which</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">Roperator</span><span class="p">)</span>
-<a id="ln-166" name="ln-166"></a>    <span class="c">!&gt; current index in the Gaussian grid</span>
-<a id="ln-167" name="ln-167"></a>    <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gauss_idx</span>
-<a id="ln-168" name="ln-168"></a>    <span class="c">!&gt; which operator to calculate, &lt;tt&gt;&quot;plus&quot;&lt;/tt&gt; or &lt;tt&gt;&quot;minus&quot;&lt;/tt&gt;</span>
-<a id="ln-169" name="ln-169"></a>    <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">which</span>
-<a id="ln-170" name="ln-170"></a>    <span class="c">!&gt; the R operator on return</span>
-<a id="ln-171" name="ln-171"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">Roperator</span>
-<a id="ln-172" name="ln-172"></a>
-<a id="ln-173" name="ln-173"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">eps</span><span class="p">,</span> <span class="n">deps</span>
-<a id="ln-174" name="ln-174"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">eta</span><span class="p">,</span> <span class="n">deta</span>
-<a id="ln-175" name="ln-175"></a>
-<a id="ln-176" name="ln-176"></a>    <span class="n">eps</span> <span class="o">=</span> <span class="n">eps_grid</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>
-<a id="ln-177" name="ln-177"></a>    <span class="n">deps</span> <span class="o">=</span> <span class="n">d_eps_grid_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>
-<a id="ln-178" name="ln-178"></a>    <span class="n">eta</span> <span class="o">=</span> <span class="n">eta_field</span> <span class="p">%</span> <span class="n">eta</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>
-<a id="ln-179" name="ln-179"></a>    <span class="n">deta</span> <span class="o">=</span> <span class="n">get_deta</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>
-<a id="ln-180" name="ln-180"></a>
-<a id="ln-181" name="ln-181"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;plus&quot;</span><span class="p">)</span> <span class="k">then</span>
-<a id="ln-182" name="ln-182"></a><span class="k">      </span><span class="n">Roperator</span> <span class="o">=</span> <span class="p">(</span><span class="n">deps</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">/</span> <span class="n">eps</span> <span class="o">+</span> <span class="n">deta</span><span class="p">)</span>
-<a id="ln-183" name="ln-183"></a>    <span class="k">else if</span> <span class="p">(</span><span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;minus&quot;</span><span class="p">)</span> <span class="k">then</span>
-<a id="ln-184" name="ln-184"></a><span class="k">      </span><span class="n">Roperator</span> <span class="o">=</span> <span class="p">(</span><span class="n">deps</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">/</span> <span class="n">eps</span> <span class="o">-</span> <span class="n">deta</span><span class="p">)</span>
-<a id="ln-185" name="ln-185"></a>    <span class="k">else</span>
-<a id="ln-186" name="ln-186"></a><span class="k">      call </span><span class="n">log_message</span><span class="p">(</span> <span class="p">&amp;</span>
-<a id="ln-187" name="ln-187"></a>        <span class="s2">&quot;requesting invalid R-operator sign: &quot;</span> <span class="o">//</span> <span class="nb">trim</span><span class="p">(</span><span class="n">which</span><span class="p">),</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span> <span class="p">&amp;</span>
-<a id="ln-188" name="ln-188"></a>      <span class="p">)</span>
-<a id="ln-189" name="ln-189"></a>    <span class="k">end if</span>
-<a id="ln-190" name="ln-190"></a><span class="k">  end function </span><span class="n">get_R_operator</span>
-<a id="ln-191" name="ln-191"></a>
-<a id="ln-192" name="ln-192"></a>
-<a id="ln-193" name="ln-193"></a>  <span class="c">!&gt; Calculates the total derivative of $$\eta$$, given as</span>
-<a id="ln-194" name="ln-194"></a>  <span class="c">!! $$ \eta_0(r, T)&#39; = \frac{d\eta_0}{dr} + \frac{dT_0}{dr}\frac{d\eta_0}{dT} $$</span>
-<a id="ln-195" name="ln-195"></a>  <span class="k">function </span><span class="n">get_deta</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>  <span class="k">result</span><span class="p">(</span><span class="n">deta</span><span class="p">)</span>
-<a id="ln-196" name="ln-196"></a>    <span class="c">!&gt; current intex in the Gaussian grid</span>
-<a id="ln-197" name="ln-197"></a>    <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gauss_idx</span>
-<a id="ln-198" name="ln-198"></a>    <span class="c">!&gt; full eta derivative on return</span>
-<a id="ln-199" name="ln-199"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">deta</span>
-<a id="ln-200" name="ln-200"></a>
-<a id="ln-201" name="ln-201"></a>    <span class="n">deta</span> <span class="o">=</span> <span class="n">eta_field</span> <span class="p">%</span> <span class="n">d_eta_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="p">&amp;</span>
-<a id="ln-202" name="ln-202"></a>      <span class="n">T_field</span> <span class="p">%</span> <span class="n">d_T0_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span> <span class="o">*</span> <span class="n">eta_field</span> <span class="p">%</span> <span class="n">d_eta_dT</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span> <span class="p">&amp;</span>
-<a id="ln-203" name="ln-203"></a>    <span class="p">)</span>
-<a id="ln-204" name="ln-204"></a>  <span class="k">end function </span><span class="n">get_deta</span>
-<a id="ln-205" name="ln-205"></a>
-<a id="ln-206" name="ln-206"></a><span class="k">end submodule </span><span class="n">smod_resistive_matrix</span>
+<a id="ln-166" name="ln-166"></a>    <span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">NaN</span>
+<a id="ln-167" name="ln-167"></a>
+<a id="ln-168" name="ln-168"></a>    <span class="c">!&gt; current index in the Gaussian grid</span>
+<a id="ln-169" name="ln-169"></a>    <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gauss_idx</span>
+<a id="ln-170" name="ln-170"></a>    <span class="c">!&gt; which operator to calculate, &lt;tt&gt;&quot;plus&quot;&lt;/tt&gt; or &lt;tt&gt;&quot;minus&quot;&lt;/tt&gt;</span>
+<a id="ln-171" name="ln-171"></a>    <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">which</span>
+<a id="ln-172" name="ln-172"></a>    <span class="c">!&gt; the R operator on return</span>
+<a id="ln-173" name="ln-173"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">Roperator</span>
+<a id="ln-174" name="ln-174"></a>
+<a id="ln-175" name="ln-175"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">eps</span><span class="p">,</span> <span class="n">deps</span>
+<a id="ln-176" name="ln-176"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">eta</span><span class="p">,</span> <span class="n">deta</span>
+<a id="ln-177" name="ln-177"></a>
+<a id="ln-178" name="ln-178"></a>    <span class="n">eps</span> <span class="o">=</span> <span class="n">eps_grid</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>
+<a id="ln-179" name="ln-179"></a>    <span class="n">deps</span> <span class="o">=</span> <span class="n">d_eps_grid_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>
+<a id="ln-180" name="ln-180"></a>    <span class="n">eta</span> <span class="o">=</span> <span class="n">eta_field</span> <span class="p">%</span> <span class="n">eta</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>
+<a id="ln-181" name="ln-181"></a>    <span class="n">deta</span> <span class="o">=</span> <span class="n">get_deta</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>
+<a id="ln-182" name="ln-182"></a>
+<a id="ln-183" name="ln-183"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;plus&quot;</span><span class="p">)</span> <span class="k">then</span>
+<a id="ln-184" name="ln-184"></a><span class="k">      </span><span class="n">Roperator</span> <span class="o">=</span> <span class="p">(</span><span class="n">deps</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">/</span> <span class="n">eps</span> <span class="o">+</span> <span class="n">deta</span><span class="p">)</span>
+<a id="ln-185" name="ln-185"></a>    <span class="k">else if</span> <span class="p">(</span><span class="n">which</span> <span class="o">==</span> <span class="s2">&quot;minus&quot;</span><span class="p">)</span> <span class="k">then</span>
+<a id="ln-186" name="ln-186"></a><span class="k">      </span><span class="n">Roperator</span> <span class="o">=</span> <span class="p">(</span><span class="n">deps</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">/</span> <span class="n">eps</span> <span class="o">-</span> <span class="n">deta</span><span class="p">)</span>
+<a id="ln-187" name="ln-187"></a>    <span class="k">else</span>
+<a id="ln-188" name="ln-188"></a><span class="k">      </span><span class="n">Roperator</span> <span class="o">=</span> <span class="n">NaN</span>
+<a id="ln-189" name="ln-189"></a>      <span class="k">call </span><span class="n">log_message</span><span class="p">(</span> <span class="p">&amp;</span>
+<a id="ln-190" name="ln-190"></a>        <span class="s2">&quot;requesting invalid R-operator sign: &quot;</span> <span class="o">//</span> <span class="nb">trim</span><span class="p">(</span><span class="n">which</span><span class="p">),</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span> <span class="p">&amp;</span>
+<a id="ln-191" name="ln-191"></a>      <span class="p">)</span>
+<a id="ln-192" name="ln-192"></a>    <span class="k">end if</span>
+<a id="ln-193" name="ln-193"></a><span class="k">  end function </span><span class="n">get_R_operator</span>
+<a id="ln-194" name="ln-194"></a>
+<a id="ln-195" name="ln-195"></a>
+<a id="ln-196" name="ln-196"></a>  <span class="c">!&gt; Calculates the total derivative of $$\eta$$, given as</span>
+<a id="ln-197" name="ln-197"></a>  <span class="c">!! $$ \eta_0(r, T)&#39; = \frac{d\eta_0}{dr} + \frac{dT_0}{dr}\frac{d\eta_0}{dT} $$</span>
+<a id="ln-198" name="ln-198"></a>  <span class="k">function </span><span class="n">get_deta</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span>  <span class="k">result</span><span class="p">(</span><span class="n">deta</span><span class="p">)</span>
+<a id="ln-199" name="ln-199"></a>    <span class="c">!&gt; current intex in the Gaussian grid</span>
+<a id="ln-200" name="ln-200"></a>    <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">gauss_idx</span>
+<a id="ln-201" name="ln-201"></a>    <span class="c">!&gt; full eta derivative on return</span>
+<a id="ln-202" name="ln-202"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">deta</span>
+<a id="ln-203" name="ln-203"></a>
+<a id="ln-204" name="ln-204"></a>    <span class="n">deta</span> <span class="o">=</span> <span class="n">eta_field</span> <span class="p">%</span> <span class="n">d_eta_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="p">&amp;</span>
+<a id="ln-205" name="ln-205"></a>      <span class="n">T_field</span> <span class="p">%</span> <span class="n">d_T0_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span> <span class="o">*</span> <span class="n">eta_field</span> <span class="p">%</span> <span class="n">d_eta_dT</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span> <span class="p">&amp;</span>
+<a id="ln-206" name="ln-206"></a>    <span class="p">)</span>
+<a id="ln-207" name="ln-207"></a>  <span class="k">end function </span><span class="n">get_deta</span>
+<a id="ln-208" name="ln-208"></a>
+<a id="ln-209" name="ln-209"></a><span class="k">end submodule </span><span class="n">smod_resistive_matrix</span>
 </pre></div>
 
     </section>

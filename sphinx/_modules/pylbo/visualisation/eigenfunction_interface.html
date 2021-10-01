@@ -28,7 +28,7 @@
             <a href="../../../index.html" class="icon icon-home"> Pylbo
           </a>
               <div class="version">
-                1.1.2 - develop
+                1.1.3 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -71,6 +71,7 @@
 <span></span><span class="kn">import</span> <span class="nn">abc</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
 <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">PathCollection</span>
 <span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSet</span><span class="p">,</span> <span class="n">LegolasDataSeries</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">add_pickradius_to_item</span>
@@ -98,6 +99,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_ef_subset_artists</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_display_tooltip</span><span class="p">()</span>
 
 <div class="viewcode-block" id="EigenfunctionInterface._check_data_is_present"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/eigenfunction_interface/index.html#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._check_data_is_present">[docs]</a>    <span class="k">def</span> <span class="nf">_check_data_is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -140,7 +142,8 @@
             <span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">ds_artist_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
                 <span class="n">artist</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_display_tooltip</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="EigenfunctionInterface._switch_real_and_imaginary_part"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/eigenfunction_interface/index.html#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._switch_real_and_imaginary_part">[docs]</a>    <span class="k">def</span> <span class="nf">_switch_real_and_imaginary_part</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -440,7 +443,49 @@
                     <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span><span class="p">):</span>
                         <span class="n">child</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="n">child</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span><span class="p">)</span></div></div>
+                        <span class="n">child</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface._display_tooltip"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/eigenfunction_interface/index.html#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface._display_tooltip">[docs]</a>    <span class="k">def</span> <span class="nf">_display_tooltip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tooltip_values</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf{L~click}$&quot;</span><span class="p">,</span> <span class="s2">&quot;select spectrum point&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf{R~click}$&quot;</span><span class="p">,</span> <span class="s2">&quot;remove spectrum point&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf{\hookleftarrow}$&quot;</span><span class="p">,</span> <span class="s2">&quot;update plot&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf{\uparrow}$&quot;</span><span class="p">,</span> <span class="s2">&quot;cycle to next eigenfunction&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf{\downarrow}$&quot;</span><span class="p">,</span> <span class="s2">&quot;cycle to previous eigenfunction&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf</span><span class="si">{i}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;switch real $\leftrightarrow$ imaginary&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf</span><span class="si">{d}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="s2">&quot;clear selection&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf</span><span class="si">{t}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;cylindrical: toggle $v_r \leftrightarrow r v_r$&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf</span><span class="si">{w}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;print selected $\omega$ to console&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf</span><span class="si">{e}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;subset: toggle center and radius&quot;</span><span class="p">],</span>
+        <span class="p">]</span>
+        <span class="n">bbox</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">])</span>
+        <span class="n">rectangle</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span>
+            <span class="n">xy</span><span class="o">=</span><span class="mf">0.95</span> <span class="o">*</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span>
+            <span class="n">width</span><span class="o">=</span><span class="mf">1.05</span> <span class="o">*</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+            <span class="n">height</span><span class="o">=</span><span class="mf">1.05</span> <span class="o">*</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+            <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rectangle</span><span class="p">)</span>
+
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+            <span class="n">cellText</span><span class="o">=</span><span class="n">tooltip_values</span><span class="p">,</span>
+            <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
+            <span class="n">cellLoc</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+            <span class="n">edges</span><span class="o">=</span><span class="s2">&quot;open&quot;</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">auto_set_column_width</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tooltip_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]))))</span>
+        <span class="c1"># table title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+            <span class="mf">0.5</span><span class="p">,</span>
+            <span class="mf">1.05</span> <span class="o">*</span> <span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span>
+            <span class="s2">&quot;Interactive eigenfunction plotting&quot;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+            <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+            <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span></div></div>
+        <span class="p">)</span>
 </pre></div>
 
            </div>

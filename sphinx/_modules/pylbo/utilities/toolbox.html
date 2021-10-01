@@ -28,7 +28,7 @@
             <a href="../../../index.html" class="icon icon-home"> Pylbo
           </a>
               <div class="version">
-                1.1.2 - develop
+                1.1.3 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -69,8 +69,50 @@
              
   <h1>Source code for pylbo.utilities.toolbox</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">matplotlib.lines</span> <span class="k">as</span> <span class="nn">mpl_lines</span>
 <span class="kn">from</span> <span class="nn">pylbo._version</span> <span class="kn">import</span> <span class="n">_mpl_version</span>
+<span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
+
+
+<div class="viewcode-block" id="timethis"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.timethis">[docs]</a><span class="k">def</span> <span class="nf">timethis</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_time_method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> took </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="si">}</span><span class="s2"> seconds to execute&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_time_method</span></div>
+
+
+<div class="viewcode-block" id="get_axis_geometry"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.get_axis_geometry">[docs]</a><span class="k">def</span> <span class="nf">get_axis_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieves the geometry of a given matplotlib axis.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax : ~matplotlib.axes.Axes</span>
+<span class="sd">        The axis to retrieve the geometry from.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        The geometry of the given matplotlib axis.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">_mpl_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;3.4&quot;</span><span class="p">:</span>
+        <span class="n">axis_geometry</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_subplotspec</span><span class="p">()</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># this is 1-based indexing by default, use 0-based here for consistency</span>
+        <span class="c1"># with subplotspec in matplotlib 3.4+</span>
+        <span class="n">axis_geometry</span> <span class="o">=</span> <span class="n">transform_to_numpy</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_geometry</span><span class="p">())</span>
+        <span class="n">axis_geometry</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">axis_geometry</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">axis_geometry</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">axis_geometry</span></div>
 
 
 <div class="viewcode-block" id="add_pickradius_to_item"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.add_pickradius_to_item">[docs]</a><span class="k">def</span> <span class="nf">add_pickradius_to_item</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">pickradius</span><span class="p">):</span>

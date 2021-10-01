@@ -178,6 +178,8 @@ and then handles the natural and essential boundary conditions.
 			   <tr><td><a href='../proc/assemble_eigenfunction_grid.html'>assemble_eigenfunction_grid</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td><p>Allocates and assembles the eigenfunction grid, checks the corresponding
 scale factor as well.</p></td></tr>
 			 
+			   <tr><td><a href='../proc/assert.html'>assert</a></td><td><a href='../module/mod_assert.html'>mod_assert</a></td><td>Subroutine</td><td><p>Utility function used by <a href="../sourcefile/assert.fpp.html">assert.fpp</a>'s <code>assert</code> macro.</p><a href="../proc/assert.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
 			   <tr><td><a href='../proc/build_matrices.html'>build_matrices</a></td><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td>Subroutine</td><td><p></p><a href="../proc/build_matrices.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../interface/calculate_base_eigenfunctions.html'>calculate_base_eigenfunctions</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Interface</td><td></td></tr>
@@ -246,6 +248,10 @@ This will be printed in the form xxxx + xxxxi.</p></td></tr>
 			   <tr><td><a href='../interface/coronal_flux_tube_eq.html'>coronal_flux_tube_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 
 			   <tr><td><a href='../interface/couette_flow_eq.html'>couette_flow_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
+			 
+			   <tr><td><a href='../proc/cputic.html'>cputic</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to start a CPU timer.</p><a href="../proc/cputic.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/cputoc.html'>cputoc</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to end a CPU timer.</p><a href="../proc/cputoc.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../proc/create_atmosphere_curves.html'>create_atmosphere_curves</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Subroutine</td><td><p>Interpolates the atmospheric tables to the desired resolution. The temperature
 derivative is obtained numerically.</p></td></tr>
@@ -618,7 +624,7 @@ density and density derivatives.</p></td></tr>
 <tt>use_prefix = .false.</tt>.
 </p><a href="../proc/log_message.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
-			   <tr><td><a href='../proc/logical_tostring.html'>logical_tostring</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td><p>Converts a given Fortran logical to a string "true" or "false".</p></td></tr>
+			   <tr><td><a href='../proc/logical_tostr.html'>logical_tostr</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Function</td><td><p>Converts a given logical to a string "True" or "False".</p></td></tr>
 			 
 			   <tr><td><a href='../proc/lookup_table_value.html'>lookup_table_value</a></td><td><a href='../module/mod_interpolation.html'>mod_interpolation</a></td><td>Function</td><td><p>Function for fast table-lookup, returns the corresponding y-value
 in <tt>y_values</tt> based on a given based on a given <script type="math/tex">x0</script>.
@@ -993,6 +999,10 @@ passed along, and the filled quadblock is returned.
 			   <tr><td><a href='../interface/tc_pinch_eq.html'>tc_pinch_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 
 			   <tr><td><a href='../proc/tear_down.html'>tear_down</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Cleanup routine, deallocates type attributes.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/tic.html'>tic</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to start a wall clock timer.</p><a href="../proc/tic.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/toc.html'>toc</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to end a wall clock timer.</p><a href="../proc/toc.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../interface/user_defined_eq.html'>user_defined_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 

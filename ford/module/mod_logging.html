@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.8% of total for modules and submodules.">234 statements</a>
+    title=" 2.9% of total for modules and submodules.">239 statements</a>
      </li> 
      
      
@@ -178,9 +178,7 @@
       
       <a class="list-group-item" href="../module/mod_logging.html#variable-int_fmt">int_fmt</a>
       
-      <a class="list-group-item" href="../module/mod_logging.html#variable-char_log">char_log</a>
-      
-      <a class="list-group-item" href="../module/mod_logging.html#variable-char_log2">char_log2</a>
+      <a class="list-group-item" href="../module/mod_logging.html#variable-override_prefix_to_false">override_prefix_to_false</a>
       
     </div>
   </div>
@@ -214,6 +212,8 @@
   <div id="funcs-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../module/mod_logging.html#proc-logical_tostr">logical_tostr</a>
+      
       <a class="list-group-item" href="../module/mod_logging.html#proc-int_tostr">int_tostr</a>
       
       <a class="list-group-item" href="../module/mod_logging.html#proc-float_tostr">float_tostr</a>
@@ -236,8 +236,6 @@
       <a class="list-group-item" href="../module/mod_logging.html#proc-print_logo">print_logo</a>
       
       <a class="list-group-item" href="../module/mod_logging.html#proc-print_console_info">print_console_info</a>
-      
-      <a class="list-group-item" href="../module/mod_logging.html#proc-logical_tostring">logical_tostring</a>
       
       <a class="list-group-item" href="../module/mod_logging.html#proc-print_whitespace">print_whitespace</a>
       
@@ -285,9 +283,9 @@ called <tt>logging_level</tt> defined in the parfile.
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_painting.html'>mod_painting</a></li>
-    
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    
+    <li><a href='../module/mod_painting.html'>mod_painting</a></li>
     
   </ul>
       </li>
@@ -321,9 +319,7 @@ called <tt>logging_level</tt> defined in the parfile.
       
       <a class="list-group-item" href="../module/mod_logging.html#variable-int_fmt">int_fmt</a>
       
-      <a class="list-group-item" href="../module/mod_logging.html#variable-char_log">char_log</a>
-      
-      <a class="list-group-item" href="../module/mod_logging.html#variable-char_log2">char_log2</a>
+      <a class="list-group-item" href="../module/mod_logging.html#variable-override_prefix_to_false">override_prefix_to_false</a>
       
     </div>
   </div>
@@ -357,6 +353,8 @@ called <tt>logging_level</tt> defined in the parfile.
   <div id="funcs-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../module/mod_logging.html#proc-logical_tostr">logical_tostr</a>
+      
       <a class="list-group-item" href="../module/mod_logging.html#proc-int_tostr">int_tostr</a>
       
       <a class="list-group-item" href="../module/mod_logging.html#proc-float_tostr">float_tostr</a>
@@ -379,8 +377,6 @@ called <tt>logging_level</tt> defined in the parfile.
       <a class="list-group-item" href="../module/mod_logging.html#proc-print_logo">print_logo</a>
       
       <a class="list-group-item" href="../module/mod_logging.html#proc-print_console_info">print_console_info</a>
-      
-      <a class="list-group-item" href="../module/mod_logging.html#proc-logical_tostring">logical_tostring</a>
       
       <a class="list-group-item" href="../module/mod_logging.html#proc-print_whitespace">print_whitespace</a>
       
@@ -463,25 +459,11 @@ called <tt>logging_level</tt> defined in the parfile.
   
 <tr>
   
-  <td><span class="anchor" id="variable-char_log"></span>character(len=20),</td>
+  <td><span class="anchor" id="variable-override_prefix_to_false"></span>logical,</td>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>char_log</strong></td><td></td><td></td><td><p>character used as variable to log non-strings</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-char_log2"></span>character(len=20),</td>
-  
-  <td>public</td>
-  <td></td><td>::</td>
-  <td><strong>char_log2</strong></td><td></td><td></td><td><p>character used as variable to log non-strings</p></td>
+  <td><strong>override_prefix_to_false</strong></td><td> =</td><td>.false.</td><td><p>logical used to (locally) force a prefix override</p></td>
   
 </tr>
 
@@ -512,6 +494,71 @@ called <tt>logging_level</tt> defined in the parfile.
   <ul class="list-group">
   
   
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function <a href='../proc/logical_tostr.html'>logical_tostr</a>(boolean) result(result_str)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Converts a given logical to a string "True" or "False".</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>boolean</strong></td><td><p>logical to convert</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character,
+  allocatable</small></h4>
+  <p>return string, made allocatable so it has same length as input</p>
+    
+
+    </li>
   
     <li class="list-group-item">
     
@@ -770,6 +817,74 @@ This will be printed in the form xxxx + xxxxi.</p>
      
     <section>
     <h2>Functions</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-logical_tostr"></span><h3>
+private function <a href='../proc/logical_tostr.html'>logical_tostr</a>(boolean) result(result_str)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Converts a given logical to a string "True" or "False".</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>boolean</strong></td><td><p>logical to convert</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character,
+  allocatable</small></h4>
+  <p>return string, made allocatable so it has same length as input</p>
+    
+
+  </div>
+  </div>
+
     
     
   <div class="panel panel-default">
@@ -1087,11 +1202,11 @@ public subroutine <a href='../proc/log_message.html'>log_message</a>(msg, level,
 <tr>
   
   <td><span class="anchor" ></span>character(len=*),</td>
-  <td>intent(in)</td>
-  <td></td>
+  <td>intent(in),</td>
+  <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>level</strong></td><td><p>the level (severity) of the message</p></td>
+  <td><strong>level</strong></td><td><p>the level (severity) of the message, default is <tt>"info"</tt></p></td>
   
 </tr>
 
@@ -1177,80 +1292,6 @@ equilibrium parameters etc. Only for logging level "info" or above.</p>
     <h4>Arguments</h4>
     
       <em>None</em>
-    
-    
-
-  </div>
-  </div>
-
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-logical_tostring"></span><h3>
-private subroutine <a href='../proc/logical_tostring.html'>logical_tostring</a>(boolean, boolean_string)
-    
-    
-   
-</h3></div>
-  <div class="panel-body">
-       
-    
-
-
-
-
-
-
-
-<p>Converts a given Fortran logical to a string "true" or "false".</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>logical,</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>boolean</strong></td><td><p>logical to convert</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>character(len=20),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>boolean_string</strong></td><td><p><tt>True</tt> if boolean == True, <tt>False</tt> otherwise</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
     
     
 

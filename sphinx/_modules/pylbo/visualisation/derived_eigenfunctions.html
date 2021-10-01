@@ -28,7 +28,7 @@
             <a href="../../../index.html" class="icon icon-home"> Pylbo
           </a>
               <div class="version">
-                1.1.2 - develop
+                1.1.3 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -83,6 +83,9 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">def_ax</span><span class="p">,</span> <span class="n">spec_ax</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">def_ax</span><span class="p">,</span> <span class="n">spec_ax</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">derived_ef_names</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span><span class="si">}</span><span class="s2"> -- derived eigenfunctions&quot;</span>
+        <span class="p">)</span>
 
 <div class="viewcode-block" id="DerivedEigenfunctionHandler._check_data_is_present"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/derived_eigenfunctions/index.html#pylbo.visualisation.derived_eigenfunctions.DerivedEigenfunctionHandler._check_data_is_present">[docs]</a>    <span class="k">def</span> <span class="nf">_check_data_is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">transform_to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">derived_efs_written</span><span class="p">)):</span>
@@ -94,6 +97,7 @@
 <div class="viewcode-block" id="DerivedEigenfunctionHandler.update_plot"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/derived_eigenfunctions/index.html#pylbo.visualisation.derived_eigenfunctions.DerivedEigenfunctionHandler.update_plot">[docs]</a>    <span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_display_tooltip</span><span class="p">()</span>
             <span class="k">return</span>
         <span class="n">ef_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">ds</span><span class="p">,</span> <span class="n">idxs_dict</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>

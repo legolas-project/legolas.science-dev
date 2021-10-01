@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>logical_tostring &ndash; Legolas v. 1.1.4 - develop</title>
+    <title>cputoc &ndash; Legolas v. 1.1.4 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -110,7 +110,7 @@
     
   
   <div class="row">
-    <h1>logical_tostring
+    <h1>cputoc
       <small>Subroutine</small>
     
     </h1>
@@ -129,24 +129,24 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">9 statements</a>
+    title=" 0.2% of total for procedures.">14 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/mod_logging.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_timing.f08"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/mod_logging.f08.html'>mod_logging.f08</a></li>
+     <li><a href='../sourcefile/mod_timing.f08.html'>mod_timing.f08</a></li>
     
-     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+     <li><a href='../module/mod_timing.html'>mod_timing</a></li>
     
   
-     <li class="active">logical_tostring</li>
+     <li class="active">cputoc</li>
   </ol>
 </div>
 </div>
@@ -196,7 +196,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine logical_tostring(boolean, boolean_string)
+public subroutine cputoc(message, start_time)
     
     
    
@@ -206,7 +206,17 @@ private subroutine logical_tostring(boolean, boolean_string)
 
 
     
-    <p>Converts a given Fortran logical to a string "true" or "false".</p>
+    <p>Subroutine to end a CPU timer.</p>
+<p><code>cputoc(message)</code> logs the elapsed CPU time in seconds since the most recent
+call to <code>cputic()</code> along with <strong>message</strong> as a debug message.</p>
+<p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>As <code>cputic()</code> and <code>cputoc(message)</code> rely on a module variable, they
+are not thread safe. </p></div>
+<p>
+<p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>If <code>cputoc(message)</code> is called without first calling <code>cputic()</code> the
+result will be meaningless. </p></div>
+<p>
+<p><code>cputoc(message, start_time)</code> logs the elapsed CPU time in seconds since the
+call of <code>cputic(start_time)</code>, along with <strong>message</strong>.</p>
     
 
     <h3>Arguments</h3>
@@ -227,12 +237,12 @@ private subroutine logical_tostring(boolean, boolean_string)
   
 <tr>
   
-  <td><span class="anchor" id="variable-boolean"></span>logical,</td>
+  <td><span class="anchor" id="variable-message~3"></span>character,</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>boolean</strong></td><td><p>logical to convert</p></td>
+  <td><strong>message</strong></td><td><p>Message to log along elapsed time.</p></td>
   
 </tr>
 
@@ -242,12 +252,13 @@ private subroutine logical_tostring(boolean, boolean_string)
   
 <tr>
   
-  <td><span class="anchor" id="variable-boolean_string"></span>character(len=20),</td>
-  <td>intent(out)</td>
-  <td></td>
+  <td><span class="anchor" id="variable-start_time~4"></span>real,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>boolean_string</strong></td><td><p><tt>True</tt> if boolean == True, <tt>False</tt> otherwise</p></td>
+  <td><strong>start_time</strong></td><td><p>Optional starting time. If not present the time recorded in
+the module variable is used.</p></td>
   
 </tr>
 

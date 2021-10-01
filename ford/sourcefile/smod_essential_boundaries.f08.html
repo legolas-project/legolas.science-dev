@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for source files.">55 statements</a>
+    title=" 0.7% of total for source files.">56 statements</a>
      </li> 
      
      
@@ -328,7 +328,7 @@
 <a id="ln-62" name="ln-62"></a>
 <a id="ln-63" name="ln-63"></a>
 <a id="ln-64" name="ln-64"></a>  <span class="k">function </span><span class="n">get_diagonal_factor</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">diagonal_factor</span><span class="p">)</span>
-<a id="ln-65" name="ln-65"></a>    <span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">solver</span>
+<a id="ln-65" name="ln-65"></a>    <span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">solver</span><span class="p">,</span> <span class="n">NaN</span>
 <a id="ln-66" name="ln-66"></a>
 <a id="ln-67" name="ln-67"></a>    <span class="kt">character</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">matrix</span>
 <a id="ln-68" name="ln-68"></a>    <span class="kt">complex</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">diagonal_factor</span>
@@ -342,14 +342,15 @@
 <a id="ln-76" name="ln-76"></a><span class="k">        </span><span class="n">diagonal_factor</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0d20</span><span class="p">,</span> <span class="mf">0.0d0</span><span class="p">)</span>
 <a id="ln-77" name="ln-77"></a>      <span class="k">end if</span>
 <a id="ln-78" name="ln-78"></a><span class="k">    else</span>
-<a id="ln-79" name="ln-79"></a><span class="k">      call </span><span class="n">log_message</span><span class="p">(</span> <span class="p">&amp;</span>
-<a id="ln-80" name="ln-80"></a>        <span class="s2">&quot;get_diagonal_factor: invalid matrix argument &quot;</span> <span class="o">//</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span> <span class="p">&amp;</span>
-<a id="ln-81" name="ln-81"></a>      <span class="p">)</span>
-<a id="ln-82" name="ln-82"></a>    <span class="k">end if</span>
-<a id="ln-83" name="ln-83"></a><span class="k">  end function </span><span class="n">get_diagonal_factor</span>
-<a id="ln-84" name="ln-84"></a>
+<a id="ln-79" name="ln-79"></a><span class="k">      </span><span class="n">diagonal_factor</span> <span class="o">=</span> <span class="n">NaN</span>
+<a id="ln-80" name="ln-80"></a>      <span class="k">call </span><span class="n">log_message</span><span class="p">(</span> <span class="p">&amp;</span>
+<a id="ln-81" name="ln-81"></a>        <span class="s2">&quot;get_diagonal_factor: invalid matrix argument &quot;</span> <span class="o">//</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span> <span class="p">&amp;</span>
+<a id="ln-82" name="ln-82"></a>      <span class="p">)</span>
+<a id="ln-83" name="ln-83"></a>    <span class="k">end if</span>
+<a id="ln-84" name="ln-84"></a><span class="k">  end function </span><span class="n">get_diagonal_factor</span>
 <a id="ln-85" name="ln-85"></a>
-<a id="ln-86" name="ln-86"></a><span class="k">end submodule </span><span class="n">smod_essential_boundaries</span>
+<a id="ln-86" name="ln-86"></a>
+<a id="ln-87" name="ln-87"></a><span class="k">end submodule </span><span class="n">smod_essential_boundaries</span>
 </pre></div>
 
     </section>
