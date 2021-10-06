@@ -143,7 +143,7 @@ added/removed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.figure_manager.</span></span><span class="sig-name descname"><span class="pre">FigureContainer</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 <p>A special dictionary containing the currently active figures.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.stack_is_enabled">
@@ -154,7 +154,7 @@ If <cite>False</cite>, the figures in the dictionary will remain
 closed and will not be drawn.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -168,7 +168,7 @@ closed and will not be drawn.</p>
 <dd class="field-odd"><p><strong>figure</strong> (<a class="reference internal" href="#pylbo.visualisation.figure_manager.FigureWindow" title="pylbo.visualisation.figure_manager.FigureWindow"><em>FigureWindow</em></a>) – The figure to add.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – If the figure id is already present in the stack.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – If the figure id is already present in the stack.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -179,7 +179,7 @@ closed and will not be drawn.</p>
 <dd><p>Removes and returns the figure corresponding to the given id from the stack.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>figure_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The figure id, corresponds to the dictionary key.</p>
+<dd class="field-odd"><p><strong>figure_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The figure id, corresponds to the dictionary key.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>figure</strong> – The figure corresponding to <cite>figure_id</cite>.</p>
@@ -197,10 +197,10 @@ closed and will not be drawn.</p>
 when trying to close.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>figure_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The figure id, corresponds to the dictionary key.</p>
+<dd class="field-odd"><p><strong>figure_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The figure id, corresponds to the dictionary key.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – If the given id is not present in the list.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – If the given id is not present in the list.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -238,9 +238,9 @@ when trying to close.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>figure_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The type of figure to create, links to the figure id.</p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – The figuresize as a matplotlib (x, x) tuple.</p></li>
-<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – A custom figure to use, in the form (fig, ax) corresponding to the figure
+<li><p><strong>figure_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The type of figure to create, links to the figure id.</p></li>
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – The figuresize as a matplotlib (x, x) tuple.</p></li>
+<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – A custom figure to use, in the form (fig, ax) corresponding to the figure
 and axis objects from matplotlib.</p></li>
 </ul>
 </dd>
@@ -273,7 +273,7 @@ and axis objects from matplotlib.</p></li>
 <dd><p>The (fig, ax) custom figure that was passed, <cite>None</cite> by default.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)">tuple</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -284,7 +284,7 @@ and axis objects from matplotlib.</p></li>
 <dd><p>The size of the figure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)">tuple</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -295,7 +295,7 @@ and axis objects from matplotlib.</p></li>
 <dd><p>A unique id associated with the figure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -306,7 +306,7 @@ and axis objects from matplotlib.</p></li>
 <dd><p>Scaling to apply to the x-axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.9)">complex</a>, np.ndarray</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)">complex</a>, np.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -317,7 +317,7 @@ and axis objects from matplotlib.</p></li>
 <dd><p>Scaling to apply to the y-axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.9)">complex</a>, np.ndarray</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)">complex</a>, np.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -333,13 +333,13 @@ and axis objects from matplotlib.</p></li>
 <dd><p>Generates a unique figure id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>figure_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The type of figure to create</p>
+<dd class="field-odd"><p><strong>figure_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The type of figure to create</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>figure_id</strong> – The unique figure id of the form “figure_type-x” where x is an integer.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -391,15 +391,15 @@ On return, <cite>tight_layout()</cite> is called by default to prevent overlappi
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.4.3)"><em>Axes</em></a>) – The axes object, this will be “split” and a new axes will be added
 to the figure.</p></li>
-<li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – The location of the new subplot to add, should be “right”, “left”, “top”
+<li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The location of the new subplot to add, should be “right”, “left”, “top”
 or “bottom”. Equal to “right” by default, so the original figure is shifted
 to the left and the new axis is added on the right.</p></li>
-<li><p><strong>share</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Can be “x”, “y” or “all”. This locks axes zooming between both subplots.</p></li>
-<li><p><strong>apply_tight_layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – If <cite>True</cite> applies <cite>tight_layout()</cite> to the figure on return.</p></li>
+<li><p><strong>share</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Can be “x”, “y” or “all”. This locks axes zooming between both subplots.</p></li>
+<li><p><strong>apply_tight_layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite> applies <cite>tight_layout()</cite> to the figure on return.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – If the loc argument is invalid.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – If the loc argument is invalid.</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The axes instance that was added.</p>
@@ -424,7 +424,7 @@ figure first.</p>
 <dd><p>Sets the x scaling, should be overridden by a subclass.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x_scaling</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.9)"><em>complex</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – The scaling to apply to the x-axis.</p>
+<dd class="field-odd"><p><strong>x_scaling</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – The scaling to apply to the x-axis.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -435,7 +435,7 @@ figure first.</p>
 <dd><p>Sets the y scaling, should be overridden by a subclass.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>y_scaling</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.9)"><em>complex</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – The scaling to apply to the y-axis</p>
+<dd class="field-odd"><p><strong>y_scaling</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – The scaling to apply to the y-axis</p>
 </dd>
 </dl>
 </dd></dl>
@@ -459,7 +459,7 @@ figure first.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.9)"><em>PathLike</em></a>) – The filename to which the current figure is saved.</p></li>
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.10)"><em>PathLike</em></a>) – The filename to which the current figure is saved.</p></li>
 <li><p><strong>kwargs</strong> – Default keyword arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">savefig()</span></code>.</p></li>
 </ul>
 </dd>

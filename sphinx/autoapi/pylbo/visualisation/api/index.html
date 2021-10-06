@@ -167,10 +167,10 @@
 <dd><p>Ensures that the data object passed is a LegolasDataSet</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><em>object</em></a>) – The data object to check.</p>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><em>object</em></a>) – The data object to check.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – If data is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">LegolasDataSet</span></code>.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – If data is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">LegolasDataSet</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -181,10 +181,10 @@
 <dd><p>Ensures that the data object passed is a LegolasDataSeries</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><em>object</em></a>) – The data object to check.</p>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><em>object</em></a>) – The data object to check.</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – If data is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">LegolasDataSeries</span></code>.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – If data is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">LegolasDataSeries</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -197,8 +197,8 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The dataset that should be used.</p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
-<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional, in the form (fig, ax). If supplied no new figure will be created
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
+<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional, in the form (fig, ax). If supplied no new figure will be created
 but this one will be used instead. <cite>fig</cite> refers to the matplotlib figure and
 <cite>ax</cite> to a (single) axes instance, meaning that you can pass a subplot as well.</p></li>
 </ul>
@@ -221,15 +221,15 @@ eigenfunctions, etc.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSeries" title="pylbo.data_containers.LegolasDataSeries"><em>LegolasDataSeries</em></a>) – The dataseries that should be used.</p></li>
-<li><p><strong>xdata</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – Data to use for the horizontal axis. This can either be a key from the
+<li><p><strong>xdata</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – Data to use for the horizontal axis. This can either be a key from the
 parameters dictionary, or a list/numpy array containing actual data.</p></li>
-<li><p><strong>use_squared_omega</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – If <cite>True</cite>, this will square the eigenvalues when they are plotted on the
+<li><p><strong>use_squared_omega</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite>, this will square the eigenvalues when they are plotted on the
 vertical axis. If <cite>False</cite> (default), either the real or imaginary part of the
 eigenvalues will be plotted depending on the value of <cite>use_real_parts</cite>.</p></li>
-<li><p><strong>use_real_parts</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – If <cite>True</cite> (default), this will plot the real part of the eigenvalues on the
+<li><p><strong>use_real_parts</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite> (default), this will plot the real part of the eigenvalues on the
 vertical axis. If <cite>False</cite> the imaginary part will be used.</p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
-<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional, in the form (fig, ax). If supplied no new figure will be created
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
+<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional, in the form (fig, ax). If supplied no new figure will be created
 but this one will be used instead. <cite>fig</cite> refers to the matplotlib figure and
 <cite>ax</cite> to a (single) axes instance, meaning that you can pass a subplot as well.</p></li>
 </ul>
@@ -255,12 +255,12 @@ optional argument <cite>color</cite> to draw all points in the same color.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSeries" title="pylbo.data_containers.LegolasDataSeries"><em>LegolasDataSeries</em></a>) – </p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
-<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional, in the form (fig, ax). If supplied no new figure will be created
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
+<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional, in the form (fig, ax). If supplied no new figure will be created
 but this one will be used instead. <cite>fig</cite> refers to the matplotlib figure and
 <cite>ax</cite> to a (single) axes instance, meaning that you can pass a subplot as well.</p></li>
-<li><p><strong>interactive</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – If <cite>True</cite> (default), enables an interactive legend.</p></li>
-<li><p><strong>legend</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – If <cite>True</cite> (default), draws a legend.</p></li>
+<li><p><strong>interactive</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite> (default), enables an interactive legend.</p></li>
+<li><p><strong>legend</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite> (default), draws a legend.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -281,9 +281,9 @@ but this one will be used instead. <cite>fig</cite> refers to the matplotlib fig
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ds1</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The first dataset, this one is put on the left panel.</p></li>
 <li><p><strong>ds2</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The second dataset, this one is put on the right panel.</p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
-<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – The custom figure to use in the form (fig, axes).</p></li>
-<li><p><strong>lock_zoom</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – If <cite>True</cite> (<cite>False</cite> by default), locks the zoom of both axis. When locked,
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
+<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – The custom figure to use in the form (fig, axes).</p></li>
+<li><p><strong>lock_zoom</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite> (<cite>False</cite> by default), locks the zoom of both axis. When locked,
 zoomin in on one of the axis automatically scales the zoom on the other one
 as well.</p></li>
 </ul>
@@ -305,8 +305,8 @@ as well.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The dataset or series that should be used.</p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
-<li><p><strong>interactive</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – If <cite>True</cite> (default), enables an interactive legend.</p></li>
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
+<li><p><strong>interactive</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite> (default), enables an interactive legend.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -328,7 +328,7 @@ All values smaller than 1e-16 are set to zero.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The dataset that should be used</p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -348,8 +348,8 @@ All values smaller than 1e-16 are set to zero.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The dataset or series that should be used.</p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
-<li><p><strong>interactive</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – If <cite>True</cite> (default), enables an interactive legend.</p></li>
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
+<li><p><strong>interactive</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite> (default), enables an interactive legend.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -369,7 +369,7 @@ All values smaller than 1e-16 are set to zero.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The dataset that should be used.</p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
