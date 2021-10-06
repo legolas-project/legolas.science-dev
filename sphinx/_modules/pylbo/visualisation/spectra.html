@@ -257,45 +257,20 @@
             <span class="n">continuum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">continua</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">check_if_all_zero</span><span class="p">(</span><span class="n">continuum</span><span class="o">=</span><span class="n">continuum</span><span class="p">):</span>
                 <span class="k">continue</span>
-            <span class="n">min_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">continuum</span><span class="p">)</span>
-            <span class="n">max_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">continuum</span><span class="p">)</span>
-            <span class="c1"># check if continua are complex</span>
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">iscomplex</span><span class="p">(</span><span class="n">continuum</span><span class="p">)):</span>
-                <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-                    <span class="n">continuum</span><span class="o">.</span><span class="n">real</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_scaling</span><span class="p">,</span>
-                    <span class="n">continuum</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_scaling</span><span class="p">,</span>
-                    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span>
-                    <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
-                    <span class="n">linewidth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">markersize</span><span class="p">,</span>
-                    <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">/</span> <span class="mf">1.5</span><span class="p">,</span>
-                    <span class="n">label</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
-                <span class="p">)</span>
-            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">check_if_collapsed</span><span class="p">(</span><span class="n">continuum</span><span class="o">=</span><span class="n">continuum</span><span class="p">):</span>
-                <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-                    <span class="n">min_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_scaling</span><span class="p">,</span>
-                    <span class="mi">0</span><span class="p">,</span>
-                    <span class="n">marker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">marker</span><span class="p">,</span>
-                    <span class="n">s</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">markersize</span><span class="p">,</span>
-                    <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
-                    <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">alpha_point</span><span class="p">,</span>
-                    <span class="n">label</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
-                <span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">props</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-                    <span class="n">facecolor</span><span class="o">=</span><span class="n">colors</span><span class="o">.</span><span class="n">to_rgba</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">alpha_region</span><span class="p">),</span>
-                    <span class="n">edgecolor</span><span class="o">=</span><span class="n">colors</span><span class="o">.</span><span class="n">to_rgba</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">alpha_point</span><span class="p">),</span>
-                    <span class="n">label</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
-                <span class="p">)</span>
-                <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;thermal&quot;</span><span class="p">:</span>
-                    <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">axhspan</span><span class="p">(</span>
-                        <span class="n">min_value</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_scaling</span><span class="p">,</span>
-                        <span class="n">max_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_scaling</span><span class="p">,</span>
-                        <span class="o">**</span><span class="n">props</span><span class="p">,</span>
-                    <span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span>
-                        <span class="n">min_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_scaling</span><span class="p">,</span> <span class="n">max_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_scaling</span><span class="p">,</span> <span class="o">**</span><span class="n">props</span>
-                    <span class="p">)</span>
+            <span class="n">realvals</span> <span class="o">=</span> <span class="n">continuum</span><span class="o">.</span><span class="n">real</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_scaling</span>
+            <span class="n">imagvals</span> <span class="o">=</span> <span class="n">continuum</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_scaling</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">check_if_collapsed</span><span class="p">(</span><span class="n">continuum</span><span class="o">=</span><span class="n">continuum</span><span class="p">):</span>
+                <span class="n">realvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">realvals</span><span class="p">)</span>
+                <span class="n">imagvals</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                <span class="n">realvals</span><span class="p">,</span>
+                <span class="n">imagvals</span><span class="p">,</span>
+                <span class="n">marker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">marker</span><span class="p">,</span>
+                <span class="n">linewidth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">markersize</span><span class="p">,</span>
+                <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">alpha_point</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+            <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">legend_properties</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_continua</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">interactive</span><span class="p">)</span>
@@ -319,12 +294,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span> <span class="o">=</span> <span class="n">DerivedEigenfunctionHandler</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span>
             <span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_enable_interface</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="SingleSpectrumPlot._ensure_smooth_continuum"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/spectra/index.html#pylbo.visualisation.spectra.SingleSpectrumPlot._ensure_smooth_continuum">[docs]</a>    <span class="k">def</span> <span class="nf">_ensure_smooth_continuum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">continuum</span><span class="p">):</span>
-        <span class="c1"># TODO: this method should split the continuum into multiple parts, such that</span>
-        <span class="c1">#       regions that lie far apart are not connected by a line.</span>
-        <span class="k">pass</span></div></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_enable_interface</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span><span class="p">)</span></div></div>
 
 
 <div class="viewcode-block" id="MultiSpectrumPlot"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/spectra/index.html#pylbo.visualisation.spectra.MultiSpectrumPlot">[docs]</a><span class="k">class</span> <span class="nc">MultiSpectrumPlot</span><span class="p">(</span><span class="n">SpectrumFigure</span><span class="p">):</span>
@@ -502,9 +472,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">continua_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="o">.</span><span class="n">continua_colors</span>
         <span class="p">):</span>
             <span class="c1"># we skip duplicates if eigenvalues are squared</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_squared_omega</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;slow-&quot;</span><span class="p">,</span> <span class="s2">&quot;alfven-&quot;</span><span class="p">):</span>
-                    <span class="k">continue</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_squared_omega</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;slow-&quot;</span><span class="p">,</span> <span class="s2">&quot;alfven-&quot;</span><span class="p">):</span>
+                <span class="k">continue</span>
             <span class="c1"># retrieve continuum, calculate region boundaries</span>
             <span class="n">continuum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataseries</span><span class="o">.</span><span class="n">continua</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">_w_pow</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_real_parts</span><span class="p">:</span>
@@ -558,7 +527,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span> <span class="o">=</span> <span class="n">DerivedEigenfunctionHandler</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">dataseries</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span>
             <span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_enable_interface</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_pp_handler</span><span class="p">)</span></div></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_enable_interface</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span><span class="p">)</span></div></div>
 
 
 <div class="viewcode-block" id="MergedSpectrumPlot"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/spectra/index.html#pylbo.visualisation.spectra.MergedSpectrumPlot">[docs]</a><span class="k">class</span> <span class="nc">MergedSpectrumPlot</span><span class="p">(</span><span class="n">SpectrumFigure</span><span class="p">):</span>

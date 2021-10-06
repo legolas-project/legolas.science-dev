@@ -157,11 +157,7 @@ used to set geometry/grid values in the submodule it becomes possible to overrid
 them through the parfile. Warnings will always be printed if this happens.
 </p><a href="../proc/allow_geometry_override.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
-			   <tr><td><a href='../proc/apply_boundary_conditions.html'>apply_boundary_conditions</a></td><td><a href='../module/mod_boundary_conditions.html'>mod_boundary_conditions</a></td><td>Subroutine</td><td><p>Main routine to handle the boundary conditions. This subroutine first performs some checks
-and then handles the natural and essential boundary conditions.
-</p><a href="../proc/apply_boundary_conditions.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
-			   <tr><td><a href='../proc/apply_boundary_conditions~2.html'>apply_boundary_conditions</a></td><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/apply_boundary_conditions.html'>apply_boundary_conditions</a></td><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../interface/apply_essential_boundaries_left.html'>apply_essential_boundaries_left</a></td><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td>Interface</td><td></td></tr>
 			 
@@ -327,12 +323,6 @@ boundary conditions are imposed.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/equilibrium_clean.html'>equilibrium_clean</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Subroutine</td><td><p>Cleaning routine, deallocates the equilibrium types.</p></td></tr>
 			 
-			   <tr><td><a href='../proc/essential_boundaries.html'>essential_boundaries</a></td><td><a href='../module/mod_boundary_conditions.html'>mod_boundary_conditions</a></td><td>Subroutine</td><td><p>Imposes essential boundary conditions on a given matrix, that is,
-the ones that have to be implemented explicitly.
-For a wall, that means handling <script type="math/tex">v1, a2</script> and <script type="math/tex">a3</script> (and <script type="math/tex">T1</script> if there is
-perpendicular thermal conduction).
-</p><a href="../proc/essential_boundaries.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
 			   <tr><td><a href='../proc/find_name_loc_in_array.html'>find_name_loc_in_array</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Function</td><td><p>Function to locate the index of a given name in a character array.
 Iterates over the elements and returns on the first hit, if no match
 was found zero is returned.</p></td></tr>
@@ -403,23 +393,6 @@ the unit resistivity remains unity.
 </script>
 </p></td></tr>
 			 
-			   <tr><td><a href='../proc/get_hallterm.html'>get_hallterm</a></td><td><a href='../module/mod_hallmhd.html'>mod_hallmhd</a></td><td>Subroutine</td><td><p>Retrieves the A-matrix Hall contribution for a given quadblock corresponding
-to a particular point in the grid and a particular Gaussian weight.
-If <tt>hall_mhd = True</tt>, this routine is called <tt>n_gauss</tt> times
-for every grid interval.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/get_hallterm_b01.html'>get_hallterm_B01</a></td><td><a href='../module/mod_hallmhd.html'>mod_hallmhd</a></td><td>Subroutine</td><td><p>Retrieves the B01 (constant) contributions to the A-matrix Hall
-contribution for a given quadblock corresponding
-to a particular point in the grid and a particular Gaussian weight.
-If <tt>hall_mhd = True</tt>, this routine is called <tt>n_gauss</tt> times
-for every grid interval.
-</p><a href="../proc/get_hallterm_b01.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			 
-			   <tr><td><a href='../proc/get_hallterm_bmat.html'>get_hallterm_Bmat</a></td><td><a href='../module/mod_hallmhd.html'>mod_hallmhd</a></td><td>Subroutine</td><td><p>Retrieves the A-matrix Hall contribution for a given quadblock corresponding
-to a particular point in the grid and a particular Gaussian weight.
-If <tt>hall_mhd = True</tt>, this routine is called <tt>n_gauss</tt> times
-for every grid interval.</p></td></tr>
-			 
 			   <tr><td><a href='../proc/get_kp_operator.html'>get_Kp_operator</a></td><td><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></td><td>Function</td><td><p>Calculates the (modified) conduction prefactor, given as
 \boldsymbol{K_p^+} =
      \left(\boldsymbol{K_p} + \frac{\partial \kappa_\perp}{\partial(B^2)}\right)
@@ -474,10 +447,6 @@ requested eigenfunction at the current subblock index mapping.</p></td></tr>
 			   <tr><td><a href='../interface/gravito_mhd_eq.html'>gravito_mhd_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 
 			   <tr><td><a href='../proc/grid_clean.html'>grid_clean</a></td><td><a href='../module/mod_grid.html'>mod_grid</a></td><td>Subroutine</td><td><p>Cleanup routine, deallocates the arrays at module scope.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/hall_boundaries.html'>hall_boundaries</a></td><td><a href='../module/mod_hallmhd.html'>mod_hallmhd</a></td><td>Subroutine</td><td><p>Creates a quadblock for the A matrix containing the natural boundary
-conditions coming from the Hall term, depending on the supplied edge.
-</p><a href="../proc/hall_boundaries.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../proc/handle_spurious_eigenvalues.html'>handle_spurious_eigenvalues</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Handles spurious eigenvalue through removal.
 If requested, this can remove spurious eigenvalues on the edges
@@ -642,10 +611,6 @@ The output folder is prepended to the base filename.
 			   <tr><td><a href='../interface/mri_accretion_eq.html'>MRI_accretion_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 
 			   <tr><td><a href='../interface/multiply_matrices.html'>multiply_matrices</a></td><td><a href='../module/mod_matrix_operations.html'>mod_matrix_operations</a></td><td>Interface</td><td><p>Interface to do matrix multiplication</p></td></tr>
-			 
-			   <tr><td><a href='../proc/natural_boundaries.html'>natural_boundaries</a></td><td><a href='../module/mod_boundary_conditions.html'>mod_boundary_conditions</a></td><td>Subroutine</td><td><p>Imposes the natural boundary conditions, that is, the ones originating
-from the weak formulation. This is only applicable for the A-matrix.
-</p><a href="../proc/natural_boundaries.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../proc/needs_resampling.html'>needs_resampling</a></td><td><a href='../module/mod_integration.html'>mod_integration</a></td><td>Function</td><td><p>Checks if an array needs resampling.</p></td></tr>
 			 
@@ -835,9 +800,6 @@ eigenfunction arrays.</p></td></tr>
 			   <tr><td><a href='../proc/set_hall_factors.html'>set_hall_factors</a></td><td><a href='../module/mod_hall.html'>mod_hall</a></td><td>Subroutine</td><td><p>Retrieves the normalised Hall factor as described by Porth et al. (2014),
 with a dropoff at the boundary, if desired. Additionally defines the
 inertia term factor if included, with a dropoff profile, if desired.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/set_hallfactor.html'>set_hallfactor</a></td><td><a href='../module/mod_hallmhd.html'>mod_hallmhd</a></td><td>Subroutine</td><td><p>Retrieves the normalised Hall factor as described by Porth et al. (2014),
-with a dropoff at the boundary</p></td></tr>
 			 
 			   <tr><td><a href='../proc/set_kappa_para.html'>set_kappa_para</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>Calculates the parallel thermal conduction.
 Returns either the full parallel thermal conduction based on

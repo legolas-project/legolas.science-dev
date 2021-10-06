@@ -129,21 +129,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">29 statements</a>
+    title=" 0.4% of total for procedures.">26 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/mod_boundary_conditions.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_boundary_manager.f08"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/mod_boundary_conditions.f08.html'>mod_boundary_conditions.f08</a></li>
+     <li><a href='../sourcefile/mod_boundary_manager.f08.html'>mod_boundary_manager.f08</a></li>
     
-     <li><a href='../module/mod_boundary_conditions.html'>mod_boundary_conditions</a></li>
+     <li><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></li>
     
   
      <li class="active">apply_boundary_conditions</li>
@@ -196,7 +196,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine apply_boundary_conditions(matrix_A, matrix_B)
+public subroutine apply_boundary_conditions(matrixA, matrixB)
     
     
    
@@ -212,8 +212,6 @@ public subroutine apply_boundary_conditions(matrix_A, matrix_B)
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
-    
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
@@ -226,11 +224,6 @@ public subroutine apply_boundary_conditions(matrix_A, matrix_B)
     
 
 
-    
-    <p>Main routine to handle the boundary conditions. This subroutine first performs some checks
-and then handles the natural and essential boundary conditions.
-</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Perpendicular thermal conduction is hard-checked, that is, not just the
-       global logical. There must be a value in the corresponding array that is non-zero.</p></div>
     
 
     <h3>Arguments</h3>
@@ -251,12 +244,12 @@ and then handles the natural and essential boundary conditions.
   
 <tr>
   
-  <td><span class="anchor" id="variable-matrix_a"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-matrixa"></span>complex(kind=dp),</td>
   <td>intent(inout)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>matrix_A</strong>(matrix_gridpts,matrix_gridpts)</td><td><p>the A-matrix with boundary conditions imposed on exit</p></td>
+  <td><strong>matrixA</strong>(:,:)</td><td><p>the A-matrix with boundary conditions imposed on exit</p></td>
   
 </tr>
 
@@ -266,12 +259,12 @@ and then handles the natural and essential boundary conditions.
   
 <tr>
   
-  <td><span class="anchor" id="variable-matrix_b"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-matrixb"></span>real(kind=dp),</td>
   <td>intent(inout)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>matrix_B</strong>(matrix_gridpts,matrix_gridpts)</td><td><p>the B-matrix with boundary conditions imposed on exit</p></td>
+  <td><strong>matrixB</strong>(:,:)</td><td><p>the B-matrix with boundary conditions imposed on exit</p></td>
   
 </tr>
 
