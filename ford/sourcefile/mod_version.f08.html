@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_version.f08 &ndash; Legolas v. 1.2.0 - develop</title>
+    <title>mod_version.f08 &ndash; Legolas v. 1.2.1 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.0 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -264,25 +264,25 @@
 
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl"><pre><span></span><a id="ln-1" name="ln-1"></a><span class="c">! =============================================================================</span>
-<a id="ln-2" name="ln-2"></a><span class="c">!&gt; Simple module, containing only version-related stuff. Versioning is done in a</span>
-<a id="ln-3" name="ln-3"></a><span class="c">!! separate module to avoid cluttering the commit history of for example</span>
-<a id="ln-4" name="ln-4"></a><span class="c">!! &lt;tt&gt;mod_global_variables&lt;/tt&gt; or &lt;tt&gt;mod_output&lt;/tt&gt; every time an update</span>
-<a id="ln-5" name="ln-5"></a><span class="c">!! to the code is done.</span>
-<a id="ln-6" name="ln-6"></a><span class="c">!! The Legolas version is added to the datfile as a string and has</span>
-<a id="ln-7" name="ln-7"></a><span class="c">!! common MAJOR.MINOR.PATCH formatting.</span>
-<a id="ln-8" name="ln-8"></a><span class="c">!! This means:</span>
-<a id="ln-9" name="ln-9"></a><span class="c">!!</span>
-<a id="ln-10" name="ln-10"></a><span class="c">!! - MAJOR: increased for API changes, possibly breaking backwards compatibility.</span>
-<a id="ln-11" name="ln-11"></a><span class="c">!! - MINOR: increased for new features and extensions</span>
-<a id="ln-12" name="ln-12"></a><span class="c">!! - PATCH: increased for bugfixes and minor edits</span>
-<a id="ln-13" name="ln-13"></a><span class="k">module </span><span class="n">mod_version</span>
-<a id="ln-14" name="ln-14"></a>  <span class="k">implicit none</span>
-<a id="ln-15" name="ln-15"></a>
-<a id="ln-16" name="ln-16"></a>  <span class="c">!&gt; legolas version number</span>
-<a id="ln-17" name="ln-17"></a>  <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="k">parameter</span>    <span class="kd">::</span> <span class="n">LEGOLAS_VERSION</span> <span class="o">=</span> <span class="s2">&quot;1.2.0&quot;</span>
-<a id="ln-18" name="ln-18"></a>
-<a id="ln-19" name="ln-19"></a><span class="k">end module </span><span class="n">mod_version</span>
+    <div class="hl"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="c">! =============================================================================</span>
+<a id="ln-2" name="ln-2" href="#ln-2"></a><span class="c">!&gt; Simple module, containing only version-related stuff. Versioning is done in a</span>
+<a id="ln-3" name="ln-3" href="#ln-3"></a><span class="c">!! separate module to avoid cluttering the commit history of for example</span>
+<a id="ln-4" name="ln-4" href="#ln-4"></a><span class="c">!! &lt;tt&gt;mod_global_variables&lt;/tt&gt; or &lt;tt&gt;mod_output&lt;/tt&gt; every time an update</span>
+<a id="ln-5" name="ln-5" href="#ln-5"></a><span class="c">!! to the code is done.</span>
+<a id="ln-6" name="ln-6" href="#ln-6"></a><span class="c">!! The Legolas version is added to the datfile as a string and has</span>
+<a id="ln-7" name="ln-7" href="#ln-7"></a><span class="c">!! common MAJOR.MINOR.PATCH formatting.</span>
+<a id="ln-8" name="ln-8" href="#ln-8"></a><span class="c">!! This means:</span>
+<a id="ln-9" name="ln-9" href="#ln-9"></a><span class="c">!!</span>
+<a id="ln-10" name="ln-10" href="#ln-10"></a><span class="c">!! - MAJOR: increased for API changes, possibly breaking backwards compatibility.</span>
+<a id="ln-11" name="ln-11" href="#ln-11"></a><span class="c">!! - MINOR: increased for new features and extensions</span>
+<a id="ln-12" name="ln-12" href="#ln-12"></a><span class="c">!! - PATCH: increased for bugfixes and minor edits</span>
+<a id="ln-13" name="ln-13" href="#ln-13"></a><span class="k">module </span><span class="n">mod_version</span><span class="w"></span>
+<a id="ln-14" name="ln-14" href="#ln-14"></a><span class="w">  </span><span class="k">implicit none</span><span class="w"></span>
+<a id="ln-15" name="ln-15" href="#ln-15"></a>
+<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="w">  </span><span class="c">!&gt; legolas version number</span>
+<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">LEGOLAS_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1.2.1&quot;</span><span class="w"></span>
+<a id="ln-18" name="ln-18" href="#ln-18"></a>
+<a id="ln-19" name="ln-19" href="#ln-19"></a><span class="k">end module </span><span class="n">mod_version</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -295,7 +295,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.0 - develop was developed by <br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

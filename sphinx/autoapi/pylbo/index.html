@@ -223,7 +223,7 @@ Both the string and integer values can be set, case-insensitive.</p>
 <dd class="field-odd"><p><strong>ds</strong> – A dataset instance for the given datfile.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet">LegolasDataSet</a></p>
+<dd class="field-even"><p><a class="reference internal" href="data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -234,7 +234,7 @@ Both the string and integer values can be set, case-insensitive.</p>
 <dd><p>Loads multiple Legolas datfiles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>datfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – Paths to the datfiles that should be loaded, in list/array form. Every element
+<dd class="field-odd"><p><strong>datfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><em>numpy.ndarray</em></a>) – Paths to the datfiles that should be loaded, in list/array form. Every element
 should be a string or a ~os.PathLike object.</p>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -244,7 +244,7 @@ should be a string or a ~os.PathLike object.</p>
 <dd class="field-odd"><p><strong>series</strong> – A dataseries instance for the given datfiles.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="data_containers/index.html#pylbo.data_containers.LegolasDataSeries" title="pylbo.data_containers.LegolasDataSeries">LegolasDataSeries</a></p>
+<dd class="field-even"><p><a class="reference internal" href="data_containers/index.html#pylbo.data_containers.LegolasDataSeries" title="pylbo.data_containers.LegolasDataSeries"><em>LegolasDataSeries</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -265,7 +265,7 @@ on the real part, then on the imaginary part.</p></li>
 <dd class="field-even"><p><strong>eigenvalues</strong> – Array containing the eigenvalues from the logfile.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)">numpy.ndarray</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -289,7 +289,7 @@ but this one will be used instead. <cite>fig</cite> refers to the matplotlib fig
 eigenfunctions, etc.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="visualisation/spectra/index.html#pylbo.visualisation.spectra.SingleSpectrumPlot" title="pylbo.visualisation.spectra.SingleSpectrumPlot">SingleSpectrumPlot</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="visualisation/spectra/index.html#pylbo.visualisation.spectra.SingleSpectrumPlot" title="pylbo.visualisation.spectra.SingleSpectrumPlot"><em>SingleSpectrumPlot</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -302,7 +302,7 @@ eigenfunctions, etc.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="data_containers/index.html#pylbo.data_containers.LegolasDataSeries" title="pylbo.data_containers.LegolasDataSeries"><em>LegolasDataSeries</em></a>) – The dataseries that should be used.</p></li>
-<li><p><strong>xdata</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – Data to use for the horizontal axis. This can either be a key from the
+<li><p><strong>xdata</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><em>numpy.ndarray</em></a>) – Data to use for the horizontal axis. This can either be a key from the
 parameters dictionary, or a list/numpy array containing actual data.</p></li>
 <li><p><strong>use_squared_omega</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite>, this will square the eigenvalues when they are plotted on the
 vertical axis. If <cite>False</cite> (default), either the real or imaginary part of the
@@ -320,7 +320,7 @@ but this one will be used instead. <cite>fig</cite> refers to the matplotlib fig
 eigenfunctions, etc.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="visualisation/spectra/index.html#pylbo.visualisation.spectra.MultiSpectrumPlot" title="pylbo.visualisation.spectra.MultiSpectrumPlot">MultiSpectrumPlot</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="visualisation/spectra/index.html#pylbo.visualisation.spectra.MultiSpectrumPlot" title="pylbo.visualisation.spectra.MultiSpectrumPlot"><em>MultiSpectrumPlot</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -348,7 +348,7 @@ but this one will be used instead. <cite>fig</cite> refers to the matplotlib fig
 <dd class="field-even"><p><strong>p</strong> – The spectrumfigure instance, containing the plot.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="visualisation/spectra/index.html#pylbo.visualisation.spectra.MultiSpectrumPlot" title="pylbo.visualisation.spectra.MultiSpectrumPlot">MultiSpectrumPlot</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="visualisation/spectra/index.html#pylbo.visualisation.spectra.MultiSpectrumPlot" title="pylbo.visualisation.spectra.MultiSpectrumPlot"><em>MultiSpectrumPlot</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -373,7 +373,7 @@ as well.</p></li>
 <dd class="field-even"><p><strong>p</strong> – The figure instance containing the compared spectrum plot.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="visualisation/spectra/index.html#pylbo.visualisation.spectra.SpectrumComparisonPlot" title="pylbo.visualisation.spectra.SpectrumComparisonPlot">SpectrumComparisonPlot</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="visualisation/spectra/index.html#pylbo.visualisation.spectra.SpectrumComparisonPlot" title="pylbo.visualisation.spectra.SpectrumComparisonPlot"><em>SpectrumComparisonPlot</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -394,7 +394,7 @@ as well.</p></li>
 <dd class="field-even"><p><strong>p</strong> – The profile instance containing the equilibrium plots.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="visualisation/profiles/index.html#pylbo.visualisation.profiles.EquilibriumProfile" title="pylbo.visualisation.profiles.EquilibriumProfile">EquilibriumProfile</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="visualisation/profiles/index.html#pylbo.visualisation.profiles.EquilibriumProfile" title="pylbo.visualisation.profiles.EquilibriumProfile"><em>EquilibriumProfile</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -416,7 +416,7 @@ All values smaller than 1e-16 are set to zero.</p>
 <dd class="field-even"><p><strong>p</strong> – The profile instance containing the equilibrium balance plots.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="visualisation/profiles/index.html#pylbo.visualisation.profiles.EquilibriumBalance" title="pylbo.visualisation.profiles.EquilibriumBalance">EquilibriumBalance</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="visualisation/profiles/index.html#pylbo.visualisation.profiles.EquilibriumBalance" title="pylbo.visualisation.profiles.EquilibriumBalance"><em>EquilibriumBalance</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -437,7 +437,7 @@ All values smaller than 1e-16 are set to zero.</p>
 <dd class="field-even"><p><strong>p</strong> – The profile instance containing the continua plots.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="visualisation/profiles/index.html#pylbo.visualisation.profiles.ContinuumProfile" title="pylbo.visualisation.profiles.ContinuumProfile">ContinuumProfile</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="visualisation/profiles/index.html#pylbo.visualisation.profiles.ContinuumProfile" title="pylbo.visualisation.profiles.ContinuumProfile"><em>ContinuumProfile</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -457,7 +457,7 @@ All values smaller than 1e-16 are set to zero.</p>
 <dd class="field-even"><p><strong>p</strong> – The instance containing the matrix plots.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="visualisation/matrices/index.html#pylbo.visualisation.matrices.MatrixFigure" title="pylbo.visualisation.matrices.MatrixFigure">MatrixFigure</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="visualisation/matrices/index.html#pylbo.visualisation.matrices.MatrixFigure" title="pylbo.visualisation.matrices.MatrixFigure"><em>MatrixFigure</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -548,7 +548,7 @@ with it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – A string, list or array containing the paths to the parfile(s).
+<li><p><strong>parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><em>numpy.ndarray</em></a>) – A string, list or array containing the paths to the parfile(s).
 Accepts the output of <a class="reference internal" href="#pylbo.generate_parfiles" title="pylbo.generate_parfiles"><code class="xref py py-func docutils literal notranslate"><span class="pre">pylbo.generate_parfiles()</span></code></a>.</p></li>
 <li><p><strong>remove_parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite>, removes the parfiles after running Legolas. This will also remove
 the containing folder if it turns out to be empty after the parfiles are

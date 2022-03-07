@@ -470,7 +470,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">cA</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_alfven_speed</span><span class="p">()</span>
             <span class="n">cs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_sound_speed</span><span class="p">()</span>
-            <span class="n">ct</span> <span class="o">=</span> <span class="n">cs</span> <span class="o">*</span> <span class="n">cA</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">cs</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">cA</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">ct</span> <span class="o">=</span> <span class="n">cs</span> <span class="o">*</span> <span class="n">cA</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">cs</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">cA</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_values</span><span class="p">(</span><span class="n">ct</span><span class="p">,</span> <span class="n">which_values</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="LegolasDataSet.get_reynolds_nb"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_reynolds_nb">[docs]</a>    <span class="k">def</span> <span class="nf">get_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -941,8 +941,8 @@
 <span class="sd">            Elements are None if the resistivity is zero.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-            <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">get_magnetic_reynolds_nb</span><span class="p">(</span><span class="n">which_values</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span></div>
-        <span class="p">)</span>
+            <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">get_magnetic_reynolds_nb</span><span class="p">(</span><span class="n">which_values</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="LegolasDataSeries.get_k0_squared"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_k0_squared">[docs]</a>    <span class="k">def</span> <span class="nf">get_k0_squared</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>

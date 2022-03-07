@@ -166,8 +166,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">figure_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_id_list</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;id=&#39;</span><span class="si">{</span><span class="n">figure_id</span><span class="si">}</span><span class="s2">&#39; not in existing list </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">figure_id_list</span><span class="si">}</span><span class="s2">&quot;</span></div>
-            <span class="p">)</span>
+                <span class="sa">f</span><span class="s2">&quot;id=&#39;</span><span class="si">{</span><span class="n">figure_id</span><span class="si">}</span><span class="s2">&#39; not in existing list </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">figure_id_list</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span></div>
 
     <span class="nd">@property</span>
 <div class="viewcode-block" id="FigureContainer.number_of_figures"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_manager/index.html#pylbo.visualisation.figure_manager.FigureContainer.number_of_figures">[docs]</a>    <span class="k">def</span> <span class="nf">number_of_figures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -293,9 +293,9 @@
             <span class="p">{</span>
                 <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">callback_id</span><span class="p">,</span>
                 <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="n">callback_kind</span><span class="p">,</span>
-                <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="n">callback_method</span><span class="p">,</span></div>
+                <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="n">callback_method</span><span class="p">,</span>
             <span class="p">}</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="FigureWindow._enable_interface"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_manager/index.html#pylbo.visualisation.figure_manager.FigureWindow._enable_interface">[docs]</a>    <span class="k">def</span> <span class="nf">_enable_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -311,8 +311,8 @@
         <span class="k">for</span> <span class="n">callback_kind</span><span class="p">,</span> <span class="n">callback_method</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">callback_kinds</span><span class="p">,</span> <span class="n">callback_methods</span><span class="p">):</span>
             <span class="n">callback_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="n">callback_kind</span><span class="p">,</span> <span class="n">callback_method</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_mpl_callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="p">{</span><span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">callback_id</span><span class="p">,</span> <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="n">callback_kind</span><span class="p">,</span> <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="n">callback_method</span><span class="p">}</span></div>
-            <span class="p">)</span>
+                <span class="p">{</span><span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">callback_id</span><span class="p">,</span> <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="n">callback_kind</span><span class="p">,</span> <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="n">callback_method</span><span class="p">}</span>
+            <span class="p">)</span></div>
 
 <div class="viewcode-block" id="FigureWindow._add_subplot_axes"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_manager/index.html#pylbo.visualisation.figure_manager.FigureWindow._add_subplot_axes">[docs]</a>    <span class="k">def</span> <span class="nf">_add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">share</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">apply_tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>

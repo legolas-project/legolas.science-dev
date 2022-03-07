@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_global_variables &ndash; Legolas v. 1.2.0 - develop</title>
+    <title>mod_global_variables &ndash; Legolas v. 1.2.1 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.0 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -240,11 +240,11 @@
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-hall_dropoff">hall_dropoff</a>
       
-      <a class="list-group-item" href="../module/mod_global_variables.html#variable-elec_pressure">elec_pressure</a>
-      
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-elec_inertia">elec_inertia</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-inertia_dropoff">inertia_dropoff</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#variable-electron_fraction">electron_fraction</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-geometry">geometry</a>
       
@@ -481,11 +481,11 @@ or in an equilibrium submodule.</p>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-hall_dropoff">hall_dropoff</a>
       
-      <a class="list-group-item" href="../module/mod_global_variables.html#variable-elec_pressure">elec_pressure</a>
-      
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-elec_inertia">elec_inertia</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-inertia_dropoff">inertia_dropoff</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#variable-electron_fraction">electron_fraction</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-geometry">geometry</a>
       
@@ -1105,20 +1105,6 @@ or in an equilibrium submodule.</p>
   
 <tr>
   
-  <td><span class="anchor" id="variable-elec_pressure"></span>logical,</td>
-  
-  <td>public,</td>
-  <td>save</td><td>::</td>
-  <td><strong>elec_pressure</strong></td><td></td><td></td><td><p>boolean to use electron pressure in Ohm's law, defaults to <tt>False</tt></p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
   <td><span class="anchor" id="variable-elec_inertia"></span>logical,</td>
   
   <td>public,</td>
@@ -1138,6 +1124,20 @@ or in an equilibrium submodule.</p>
   <td>public,</td>
   <td>save</td><td>::</td>
   <td><strong>inertia_dropoff</strong></td><td></td><td></td><td><p>boolean to use dropoff profile for inertia parameter, defaults to <tt>False </tt></p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-electron_fraction"></span>real(kind=dp),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>electron_fraction</strong></td><td></td><td></td><td><p>fraction of number of electrons to number of all particles (between 0 and 1)</p></td>
   
 </tr>
 
@@ -1878,7 +1878,7 @@ eigenfunction arrays.</p>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.0 - develop was developed by <br>&copy; 2021 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">

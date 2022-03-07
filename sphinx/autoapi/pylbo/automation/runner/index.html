@@ -145,7 +145,7 @@ None, defaults to the executable in the legolas home directory.</p>
 <dd class="field-odd"><p><strong>executable</strong> – The (resolved) path to the executable to use.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.10)">PathLike</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.10)"><em>PathLike</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -190,12 +190,12 @@ Defaults to the maximum available number if exceeded.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">LegolasRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_cpus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">executable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">LegolasRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_cpus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">executable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner" title="Permalink to this definition"></a></dt>
 <dd><p>Handles running legolas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.21)"><em>numpy.ndarray</em></a>) – A list or array containing the names or paths to the parfiles.</p></li>
+<li><p><strong>parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><em>numpy.ndarray</em></a>) – A list or array containing the names or paths to the parfiles.</p></li>
 <li><p><strong>remove_parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – If <cite>True</cite>, removes the parfiles after running Legolas. This will also remove
 the containing folder if it turns out to be empty after the parfiles are
 removed. If there are other files still in the folder it remains untouched.</p></li>
@@ -209,7 +209,7 @@ standard one in the legolas home directory.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner._init_worker">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_init_worker</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner._init_worker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._init_worker" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_init_worker</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner._init_worker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._init_worker" title="Permalink to this definition"></a></dt>
 <dd><p>Worker initialisation for the multiprocessing module.</p>
 </dd></dl>
 
@@ -233,7 +233,7 @@ Calls the legolas executable as a subprocess with the parfile as argument.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner._terminate_workers">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">_terminate_workers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner._terminate_workers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._terminate_workers" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_terminate_workers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner._terminate_workers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._terminate_workers" title="Permalink to this definition"></a></dt>
 <dd><p>Terminates the multiprocessing workers after a forced interruption.
 Simply giving an interrupt terminates only the Python processes, but still
 keeps the Legolas calls running since those are subprocesses. This method first
