@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.0% of total for modules and submodules.">158 statements</a>
+    title=" 2.0% of total for modules and submodules.">160 statements</a>
      </li> 
      
      
@@ -237,6 +237,8 @@
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-viscosity_value">viscosity_value</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-hall_mhd">hall_mhd</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#variable-hall_substitution">hall_substitution</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-hall_dropoff">hall_dropoff</a>
       
@@ -478,6 +480,8 @@ or in an equilibrium submodule.</p>
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-viscosity_value">viscosity_value</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-hall_mhd">hall_mhd</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#variable-hall_substitution">hall_substitution</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-hall_dropoff">hall_dropoff</a>
       
@@ -1053,7 +1057,7 @@ or in an equilibrium submodule.</p>
   
   <td>public,</td>
   <td>save</td><td>::</td>
-  <td><strong>viscous_heating</strong></td><td></td><td></td><td><p>boolean to include viscoous heating, defaults to <tt>False</tt></p></td>
+  <td><strong>viscous_heating</strong></td><td></td><td></td><td><p>boolean to include viscous heating, defaults to <tt>False</tt></p></td>
   
 </tr>
 
@@ -1067,7 +1071,7 @@ or in an equilibrium submodule.</p>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>viscosity_value</strong></td><td></td><td></td><td><p>defines the fixed value for either the dynamic or kinematic viscosity, defaults to 0</p></td>
+  <td><strong>viscosity_value</strong></td><td></td><td></td><td><p>defines the fixed value for the dynamic viscosity, defaults to 0</p></td>
   
 </tr>
 
@@ -1091,11 +1095,25 @@ or in an equilibrium submodule.</p>
   
 <tr>
   
+  <td><span class="anchor" id="variable-hall_substitution"></span>logical,</td>
+  
+  <td>public,</td>
+  <td>save</td><td>::</td>
+  <td><strong>hall_substitution</strong></td><td></td><td></td><td><p>boolean to use substitution for Hall elements (as presented in the paper), defaults to <tt>True</tt></p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
   <td><span class="anchor" id="variable-hall_dropoff"></span>logical,</td>
   
   <td>public,</td>
   <td>save</td><td>::</td>
-  <td><strong>hall_dropoff</strong></td><td></td><td></td><td><p>boolean to use dropoff profile for Hall parameter, defaults to <tt>False </tt></p></td>
+  <td><strong>hall_dropoff</strong></td><td></td><td></td><td><p>boolean to use dropoff profile for Hall parameter, defaults to <tt>False</tt></p></td>
   
 </tr>
 
@@ -1123,7 +1141,7 @@ or in an equilibrium submodule.</p>
   
   <td>public,</td>
   <td>save</td><td>::</td>
-  <td><strong>inertia_dropoff</strong></td><td></td><td></td><td><p>boolean to use dropoff profile for inertia parameter, defaults to <tt>False </tt></p></td>
+  <td><strong>inertia_dropoff</strong></td><td></td><td></td><td><p>boolean to use dropoff profile for inertia parameter, defaults to <tt>False</tt></p></td>
   
 </tr>
 
@@ -1137,7 +1155,7 @@ or in an equilibrium submodule.</p>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>electron_fraction</strong></td><td></td><td></td><td><p>fraction of number of electrons to number of all particles (between 0 and 1)</p></td>
+  <td><strong>electron_fraction</strong></td><td></td><td></td><td><p>fraction of number of electrons to number of all particles (between 0 and 1), defaults to <tt>0.5</tt></p></td>
   
 </tr>
 

@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.9% of total for source files.">67 statements</a>
+    title=" 0.8% of total for source files.">67 statements</a>
      </li> 
      
      
@@ -265,8 +265,8 @@
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="hl"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="c">! =============================================================================</span>
-<a id="ln-2" name="ln-2" href="#ln-2"></a><span class="c">!&gt; !&gt; Module containing Hall-related routines, calculates</span>
-<a id="ln-3" name="ln-3" href="#ln-3"></a><span class="c">!! and sets the Hall and inertia term factors based on the specified profiles.</span>
+<a id="ln-2" name="ln-2" href="#ln-2"></a><span class="c">!&gt; Module containing Hall-related routines.</span>
+<a id="ln-3" name="ln-3" href="#ln-3"></a><span class="c">!! Sets the Hall and electron inertia factors based on normalisations and specified profiles.</span>
 <a id="ln-4" name="ln-4" href="#ln-4"></a><span class="k">module </span><span class="n">mod_hall</span><span class="w"></span>
 <a id="ln-5" name="ln-5" href="#ln-5"></a><span class="w">  </span><span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">dp</span><span class="p">,</span><span class="w"> </span><span class="n">dim_quadblock</span><span class="w"></span>
 <a id="ln-6" name="ln-6" href="#ln-6"></a>
@@ -279,8 +279,8 @@
 <a id="ln-13" name="ln-13" href="#ln-13"></a><span class="k">contains</span><span class="w"></span>
 <a id="ln-14" name="ln-14" href="#ln-14"></a>
 <a id="ln-15" name="ln-15" href="#ln-15"></a><span class="w">  </span><span class="c">!&gt; Retrieves the normalised Hall factor as described by Porth et al. (2014),</span>
-<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="w">  </span><span class="c">!! with a dropoff at the boundary, if desired. Additionally defines the</span>
-<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="w">  </span><span class="c">!! inertia term factor if included, with a dropoff profile, if desired.</span>
+<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="w">  </span><span class="c">!! with a dropoff at the boundary, if desired. Additionally, defines the</span>
+<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="w">  </span><span class="c">!! electron inertia factor if included, with a dropoff profile, if desired.</span>
 <a id="ln-18" name="ln-18" href="#ln-18"></a><span class="w">  </span><span class="k">subroutine </span><span class="n">set_hall_factors</span><span class="p">(</span><span class="n">hall_field</span><span class="p">)</span><span class="w"></span>
 <a id="ln-19" name="ln-19" href="#ln-19"></a><span class="w">    </span><span class="k">use </span><span class="n">mod_grid</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">grid_gauss</span><span class="w"></span>
 <a id="ln-20" name="ln-20" href="#ln-20"></a><span class="w">    </span><span class="k">use </span><span class="n">mod_physical_constants</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">dpi</span><span class="w"></span>
