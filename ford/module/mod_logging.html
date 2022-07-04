@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.0% of total for modules and submodules.">240 statements</a>
+    title=" 3.2% of total for modules and submodules.">251 statements</a>
      </li> 
      
      
@@ -220,6 +220,8 @@
       
       <a class="list-group-item" href="../module/mod_logging.html#proc-complex_tostr">complex_tostr</a>
       
+      <a class="list-group-item" href="../module/mod_logging.html#proc-character_arr_tostr">character_arr_tostr</a>
+      
     </div>
   </div>
 </div>
@@ -283,9 +285,9 @@ called <tt>logging_level</tt> defined in the parfile.
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    
     <li><a href='../module/mod_painting.html'>mod_painting</a></li>
+    
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     
   </ul>
       </li>
@@ -360,6 +362,8 @@ called <tt>logging_level</tt> defined in the parfile.
       <a class="list-group-item" href="../module/mod_logging.html#proc-float_tostr">float_tostr</a>
       
       <a class="list-group-item" href="../module/mod_logging.html#proc-complex_tostr">complex_tostr</a>
+      
+      <a class="list-group-item" href="../module/mod_logging.html#proc-character_arr_tostr">character_arr_tostr</a>
       
     </div>
   </div>
@@ -801,6 +805,71 @@ This will be printed in the form xxxx + xxxxi.</p>
 
     </li>
   
+    <li class="list-group-item">
+    
+    
+    <h3>
+private function <a href='../proc/character_arr_tostr.html'>character_arr_tostr</a>(array) result(result_str)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Converts an array of characters to a string.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>array</strong>(:)</td><td><p>the array to convert</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character,
+  allocatable</small></h4>
+  <p>returned result, trimmed</p>
+    
+
+    </li>
+  
   
   </ul>
 </div>
@@ -1130,6 +1199,74 @@ This will be printed in the form xxxx + xxxxi.</p>
      <h4>Return Value <small>character,
   allocatable</small></h4>
   <p>return string, made allocatable so it has same length as input</p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-character_arr_tostr"></span><h3>
+private function <a href='../proc/character_arr_tostr.html'>character_arr_tostr</a>(array) result(result_str)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Converts an array of characters to a string.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>array</strong>(:)</td><td><p>the array to convert</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character,
+  allocatable</small></h4>
+  <p>returned result, trimmed</p>
     
 
   </div>

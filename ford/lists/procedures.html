@@ -185,6 +185,8 @@ scale factor as well.</p></td></tr>
 			   <tr><td><a href='../proc/calculate_eigenfunctions.html'>calculate_eigenfunctions</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td><p>Calculates both the base eigenfunctions and the derived quantities thereof
 based on a 2D array of right eigenvectors.</p></td></tr>
 			 
+			   <tr><td><a href='../proc/character_arr_tostr.html'>character_arr_tostr</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Function</td><td><p>Converts an array of characters to a string.</p></td></tr>
+			 
 			   <tr><td><a href='../proc/check_and_set_supplied_unit_normalisations.html'>check_and_set_supplied_unit_normalisations</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td><p>Checks the unit normalisations that are supplied (if any), sets the
 unit normalisations if valid.</p></td></tr>
 			 
@@ -323,9 +325,13 @@ boundary conditions are imposed.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/equilibrium_clean.html'>equilibrium_clean</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Subroutine</td><td><p>Cleaning routine, deallocates the equilibrium types.</p></td></tr>
 			 
-			   <tr><td><a href='../proc/find_name_loc_in_array.html'>find_name_loc_in_array</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Function</td><td><p>Function to locate the index of a given name in a character array.
+			   <tr><td><a href='../proc/find_index_in_character_array.html'>find_index_in_character_array</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Function</td><td><p>Function to locate the index of a given character in a character array.
 Iterates over the elements and returns on the first hit, if no match
 was found zero is returned.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/find_indices_in_character_array.html'>find_indices_in_character_array</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Function</td><td><p>Function to locate the indices of an array of characters in another
+character array. Returns the indices of the first hit, it no match was
+found zero is returned.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/float_tostr.html'>float_tostr</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Function</td><td><p>Converts a given float to a string, the default format is "f20.8".</p></td></tr>
 			 
@@ -393,6 +399,9 @@ the unit resistivity remains unity.
 </script>
 </p></td></tr>
 			 
+			   <tr><td><a href='../interface/get_index.html'>get_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Interface</td><td><p>interface to retrieve the index of an element in an array.
+</p><a href="../interface/get_index.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
 			   <tr><td><a href='../proc/get_kp_operator.html'>get_Kp_operator</a></td><td><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></td><td>Function</td><td><p>Calculates the (modified) conduction prefactor, given as
 \boldsymbol{K_p^+} =
      \left(\boldsymbol{K_p} + \frac{\partial \kappa_\perp}{\partial(B^2)}\right)
@@ -427,6 +436,8 @@ based on the equilibrium temperature.
 			 
 			   <tr><td><a href='../proc/get_spline.html'>get_spline</a></td><td><a href='../module/smod_ef_operations.html'>smod_ef_operations</a></td><td>Function</td><td><p>Returns the finite element basis functions for the given eigenfunction and
 position in the grid.</p></td></tr>
+			 
+			   <tr><td><a href='../interface/get_subblock_index.html'>get_subblock_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Interface</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/get_values_from_eigenvector.html'>get_values_from_eigenvector</a></td><td><a href='../module/smod_ef_operations.html'>smod_ef_operations</a></td><td>Function</td><td><p>Retrieves the correct values from the eigenvector that correspond to the
 requested eigenfunction at the current subblock index mapping.</p></td></tr>
@@ -842,6 +853,8 @@ magnetic field curl with respect to the background magnetic field.</p></td></tr>
 			   <tr><td><a href='../proc/set_magnetic_field_pp.html'>set_magnetic_field_pp</a></td><td><a href='../module/smod_derived_pp_efs.html'>smod_derived_pp_efs</a></td><td>Subroutine</td><td><p>Sets the parallel and perpendicular components of the perturbed magnetic field
 with respect to the background magnetic field.</p></td></tr>
 			 
+			   <tr><td><a href='../proc/set_matrix_properties.html'>set_matrix_properties</a></td><td><a href='../module/mod_global_variables.html'>mod_global_variables</a></td><td>Subroutine</td><td><p>Sets dimensions for matrix A and B, subblock sizes and state vector</p></td></tr>
+			 
 			   <tr><td><a href='../proc/set_maxiter.html'>set_maxiter</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Setter for the maximum number of iterations that ARPACK can take,
 defaults to 10N with N the dimension of the eigenvalue problem.
 </p><a href="../proc/set_maxiter.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
@@ -873,8 +886,6 @@ Calls the initialisation routine if not already done.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/set_resistivity_values.html'>set_resistivity_values</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>This routines sets all resistivity values in \p eta_field,
 and calls all other relevant subroutines defined in this module.</p></td></tr>
-			 
-			   <tr><td><a href='../proc/set_row_col_to_value.html'>set_row_col_to_value</a></td><td><a href='../module/smod_essential_boundaries.html'>smod_essential_boundaries</a></td><td>Subroutine</td><td></td></tr>
 			 
 			   <tr><td><a href='../proc/set_scale_factor.html'>set_scale_factor</a></td><td><a href='../module/mod_grid.html'>mod_grid</a></td><td>Subroutine</td><td><p>The scale factor to switch between Cartesian and cylindrical geometries
 is set here, along with its derivative. For cylindrical the scale factor
@@ -966,10 +977,18 @@ passed along, and the filled quadblock is returned.
 			 
 			   <tr><td><a href='../proc/toc.html'>toc</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to end a wall clock timer.</p><a href="../proc/toc.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
+			   <tr><td><a href='../proc/transform_state_variable_to_subblock_index.html'>transform_state_variable_to_subblock_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Function</td><td><p>Transforms a given array of state variables to subblock indices.
+If <code>odd</code> is <code>.true.</code> returns the odd indices, otherwise the even indices.
+If <code>edge</code> equals <code>"left"</code>, returns the indices corresponding to the left boundary
+block, if <code>edge</code> equals <code>"right"</code> returns indices for the right boundary block.</p></td></tr>
+			 
 			   <tr><td><a href='../interface/user_defined_eq.html'>user_defined_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			 
 			   <tr><td><a href='../proc/viscosity_boundaries.html'>viscosity_boundaries</a></td><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td>Subroutine</td><td><p>Creates a quadblock for the A matrix containing the natural boundary
 conditions coming from the viscosity terms, depending on the supplied edge.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/zero_out_row_and_col.html'>zero_out_row_and_col</a></td><td><a href='../module/smod_essential_boundaries.html'>smod_essential_boundaries</a></td><td>Subroutine</td><td><p>Zeroes out the row and column corresponding to the given indices.
+Afterwards <code>diagonal_factor</code> is introduced in that row/column on the main diagonal.</p></td></tr>
 			 
 			 </tbody></table>
              

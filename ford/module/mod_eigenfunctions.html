@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.2% of total for modules and submodules.">173 statements</a>
+    title=" 2.0% of total for modules and submodules.">158 statements</a>
      </li> 
      
      
@@ -181,8 +181,6 @@
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_eps">ef_eps</a>
       
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_deps">ef_deps</a>
-      
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_names">ef_names</a>
       
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-derived_ef_names">derived_ef_names</a>
       
@@ -237,8 +235,6 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
   <div id="funcs-0" class="panel-collapse collapse">
     <div class="list-group">
-      
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-find_name_loc_in_array">find_name_loc_in_array</a>
       
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-retrieve_eigenfunctions">retrieve_eigenfunctions</a>
       
@@ -363,8 +359,6 @@ derived quantities.</p>
       
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_deps">ef_deps</a>
       
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_names">ef_names</a>
-      
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-derived_ef_names">derived_ef_names</a>
       
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_written_flags">ef_written_flags</a>
@@ -418,8 +412,6 @@ derived quantities.</p>
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
   <div id="funcs-1" class="panel-collapse collapse">
     <div class="list-group">
-      
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-find_name_loc_in_array">find_name_loc_in_array</a>
       
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-retrieve_eigenfunctions">retrieve_eigenfunctions</a>
       
@@ -546,20 +538,6 @@ derived quantities.</p>
   <td>protected</td>
   <td></td><td>::</td>
   <td><strong>ef_deps</strong></td><td></td><td></td><td><p>derivative of scale factor</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-ef_names"></span>character,</td>
-  
-  <td>public,</td>
-  <td>allocatable</td><td>::</td>
-  <td><strong>ef_names</strong>(:)</td><td></td><td></td><td><p>array with the names of the basis eigenfunctions</p></td>
   
 </tr>
 
@@ -1116,91 +1094,6 @@ private module module subroutine clean_derived_eigenfunctions()
      
     <section>
     <h2>Functions</h2>
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-find_name_loc_in_array"></span><h3>
-public function <a href='../proc/find_name_loc_in_array.html'>find_name_loc_in_array</a>(name, array) result(match_idx)
-    
-    
-   
-</h3></div>
-  <div class="panel-body">
-       
-    
-
-
-
-
-
-
-
-<p>Function to locate the index of a given name in a character array.
-Iterates over the elements and returns on the first hit, if no match
-was found zero is returned.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>character(len=*),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>name</strong></td><td><p>the name to search for</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>character(len=*),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>array</strong>(:)</td><td><p>array with the names to search in</p></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>integer
-  </small></h4>
-  <p>index of first match</p>
-    
-
-  </div>
-  </div>
-
     
     
   <div class="panel panel-default">

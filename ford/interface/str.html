@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.1% of total for procedures.</p>Including implementation: 57 statements,  0.8% of total for procedures.">6 statements</a>
+    title="<p> 0.1% of total for procedures.</p>Including implementation: 68 statements,  1.0% of total for procedures.">7 statements</a>
      </li> 
      
      
@@ -199,6 +199,8 @@
       
       <a class="list-group-item" href="../interface/str.html#moduleprocedure-complex_tostr">complex_tostr</a>
       
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-character_arr_tostr">character_arr_tostr</a>
+      
     </div>
   </div>
 </div>
@@ -253,6 +255,8 @@
       <a class="list-group-item" href="../interface/str.html#moduleprocedure-float_tostr">float_tostr</a>
       
       <a class="list-group-item" href="../interface/str.html#moduleprocedure-complex_tostr">complex_tostr</a>
+      
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-character_arr_tostr">character_arr_tostr</a>
       
     </div>
   </div>
@@ -583,6 +587,74 @@ This will be printed in the form xxxx + xxxxi.</p>
      <h4>Return Value <small>character,
   allocatable</small></h4>
   <p>return string, made allocatable so it has same length as input</p>
+    
+
+  </div>
+  </div>
+
+   
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-character_arr_tostr"></span><h3>
+private function <a href='../proc/character_arr_tostr.html'>character_arr_tostr</a>(array) result(result_str)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Converts an array of characters to a string.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>array</strong>(:)</td><td><p>the array to convert</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character,
+  allocatable</small></h4>
+  <p>returned result, trimmed</p>
     
 
   </div>

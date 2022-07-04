@@ -129,7 +129,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.0% of total for modules and submodules.">160 statements</a>
+    title=" 2.1% of total for modules and submodules.">170 statements</a>
      </li> 
      
      
@@ -262,9 +262,9 @@
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-gauss_gridpts">gauss_gridpts</a>
       
-      <a class="list-group-item" href="../module/mod_global_variables.html#variable-matrix_gridpts">matrix_gridpts</a>
-      
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-ef_gridpts">ef_gridpts</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#variable-state_vector">state_vector</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-n_gauss">n_gauss</a>
       
@@ -289,6 +289,8 @@
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-dim_subblock">dim_subblock</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-dim_quadblock">dim_quadblock</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#variable-dim_matrix">dim_matrix</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-write_matrices">write_matrices</a>
       
@@ -352,6 +354,8 @@
       <a class="list-group-item" href="../module/mod_global_variables.html#proc-set_gamma">set_gamma</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#proc-set_gridpts">set_gridpts</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#proc-set_matrix_properties">set_matrix_properties</a>
       
     </div>
   </div>
@@ -505,9 +509,9 @@ or in an equilibrium submodule.</p>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-gauss_gridpts">gauss_gridpts</a>
       
-      <a class="list-group-item" href="../module/mod_global_variables.html#variable-matrix_gridpts">matrix_gridpts</a>
-      
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-ef_gridpts">ef_gridpts</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#variable-state_vector">state_vector</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-n_gauss">n_gauss</a>
       
@@ -532,6 +536,8 @@ or in an equilibrium submodule.</p>
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-dim_subblock">dim_subblock</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-dim_quadblock">dim_quadblock</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#variable-dim_matrix">dim_matrix</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#variable-write_matrices">write_matrices</a>
       
@@ -595,6 +601,8 @@ or in an equilibrium submodule.</p>
       <a class="list-group-item" href="../module/mod_global_variables.html#proc-set_gamma">set_gamma</a>
       
       <a class="list-group-item" href="../module/mod_global_variables.html#proc-set_gridpts">set_gridpts</a>
+      
+      <a class="list-group-item" href="../module/mod_global_variables.html#proc-set_matrix_properties">set_matrix_properties</a>
       
     </div>
   </div>
@@ -1264,11 +1272,11 @@ defaults to <tt>False</tt></p></td>
   
 <tr>
   
-  <td><span class="anchor" id="variable-matrix_gridpts"></span>integer,</td>
+  <td><span class="anchor" id="variable-ef_gridpts"></span>integer,</td>
   
   <td>protected</td>
   <td></td><td>::</td>
-  <td><strong>matrix_gridpts</strong></td><td></td><td></td><td><p>size of the A and B matrices, automatically set by \p gridpts</p></td>
+  <td><strong>ef_gridpts</strong></td><td></td><td></td><td><p>size of a single eigenfunction array, automatically set by \p gridpts</p></td>
   
 </tr>
 
@@ -1278,11 +1286,11 @@ defaults to <tt>False</tt></p></td>
   
 <tr>
   
-  <td><span class="anchor" id="variable-ef_gridpts"></span>integer,</td>
+  <td><span class="anchor" id="variable-state_vector"></span>character(len=str_len_arr),</td>
   
-  <td>protected</td>
-  <td></td><td>::</td>
-  <td><strong>ef_gridpts</strong></td><td></td><td></td><td><p>size of a single eigenfunction array, automatically set by \p gridpts</p></td>
+  <td>protected,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td></td><td></td><td><p>array containing the current state vector</p></td>
   
 </tr>
 
@@ -1406,9 +1414,9 @@ defaults to <tt>False</tt></p></td>
   
   <td><span class="anchor" id="variable-nb_eqs"></span>integer,</td>
   
-  <td>public,</td>
-  <td>parameter</td><td>::</td>
-  <td><strong>nb_eqs</strong></td><td> =</td><td>8</td><td><p>total number of equations</p></td>
+  <td>protected</td>
+  <td></td><td>::</td>
+  <td><strong>nb_eqs</strong></td><td></td><td></td><td><p>total number of equations</p></td>
   
 </tr>
 
@@ -1420,9 +1428,9 @@ defaults to <tt>False</tt></p></td>
   
   <td><span class="anchor" id="variable-dim_integralblock"></span>integer,</td>
   
-  <td>public,</td>
-  <td>parameter</td><td>::</td>
-  <td><strong>dim_integralblock</strong></td><td> =</td><td>2</td><td><p>dimension of one finite element integral block, e.g. A(1, 2)</p></td>
+  <td>protected</td>
+  <td></td><td>::</td>
+  <td><strong>dim_integralblock</strong></td><td></td><td></td><td><p>dimension of one finite element integral block, e.g. A(1, 2)</p></td>
   
 </tr>
 
@@ -1434,9 +1442,9 @@ defaults to <tt>False</tt></p></td>
   
   <td><span class="anchor" id="variable-dim_subblock"></span>integer,</td>
   
-  <td>public,</td>
-  <td>parameter</td><td>::</td>
-  <td><strong>dim_subblock</strong></td><td> =</td><td>nb_eqs*dim_integralblock</td><td><p>dimension of one subblock, 4 of these define a quadblock</p></td>
+  <td>protected</td>
+  <td></td><td>::</td>
+  <td><strong>dim_subblock</strong></td><td></td><td></td><td><p>dimension of one subblock, 4 of these define a quadblock</p></td>
   
 </tr>
 
@@ -1448,9 +1456,23 @@ defaults to <tt>False</tt></p></td>
   
   <td><span class="anchor" id="variable-dim_quadblock"></span>integer,</td>
   
-  <td>public,</td>
-  <td>parameter</td><td>::</td>
-  <td><strong>dim_quadblock</strong></td><td> =</td><td>2*dim_subblock</td><td><p>dimension of one quadblock, this is the block shifted along the main diagonal</p></td>
+  <td>protected</td>
+  <td></td><td>::</td>
+  <td><strong>dim_quadblock</strong></td><td></td><td></td><td><p>dimension of one quadblock, this is the block shifted along the main diagonal</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dim_matrix"></span>integer,</td>
+  
+  <td>protected</td>
+  <td></td><td>::</td>
+  <td><strong>dim_matrix</strong></td><td></td><td></td><td><p>size of the A and B matrices</p></td>
   
 </tr>
 
@@ -1824,7 +1846,7 @@ value gamma - 1.</p>
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-set_gridpts"></span><h3>
-public subroutine <a href='../proc/set_gridpts.html'>set_gridpts</a>(gridpts_in)
+public subroutine <a href='../proc/set_gridpts.html'>set_gridpts</a>(points)
     
     
    
@@ -1867,7 +1889,66 @@ eigenfunction arrays.</p>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>gridpts_in</strong></td><td><p>amount of gridpoints for the base grid</p></td>
+  <td><strong>points</strong></td><td><p>amount of gridpoints for the base grid</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_matrix_properties"></span><h3>
+public subroutine <a href='../proc/set_matrix_properties.html'>set_matrix_properties</a>(points)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Sets dimensions for matrix A and B, subblock sizes and state vector</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>points</strong></td><td><p>gridpoints for the base grid</p></td>
   
 </tr>
 
