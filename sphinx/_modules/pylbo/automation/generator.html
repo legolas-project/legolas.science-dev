@@ -98,7 +98,7 @@
     <span class="k">return</span> <span class="n">basename</span></div>
 
 
-<div class="viewcode-block" id="_validate_output_dir"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator._validate_output_dir">[docs]</a><span class="k">def</span> <span class="nf">_validate_output_dir</span><span class="p">(</span><span class="n">output_dir</span><span class="p">):</span>
+<div class="viewcode-block" id="_validate_output_dir"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator._validate_output_dir">[docs]</a><span class="k">def</span> <span class="nf">_validate_output_dir</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">subdir</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Validates and returns the output directory for the parfiles.</span>
 
@@ -107,6 +107,8 @@
 <span class="sd">    output_dir : str, ~os.PathLike</span>
 <span class="sd">        The output directory to store the parfiles in. If not given, defaults to</span>
 <span class="sd">        the current working directory.</span>
+<span class="sd">    subdir : boolean</span>
+<span class="sd">        If `.true.`, creates a subdirectory called `parfiles`.</span>
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
@@ -124,9 +126,10 @@
     <span class="n">output</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">output</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
         <span class="k">raise</span> <span class="ne">NotADirectoryError</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="n">output</span> <span class="o">/</span> <span class="s2">&quot;parfiles&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">output</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
-        <span class="n">Path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">subdir</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">(</span><span class="n">output</span> <span class="o">/</span> <span class="s2">&quot;parfiles&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">output</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="n">Path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">output</span></div>
 
 
@@ -145,14 +148,16 @@
 <span class="sd">        If not provided, the basename will default to `parfile`.</span>
 <span class="sd">    output_dir : str, ~os.PathLike</span>
 <span class="sd">        Output directory where the parfiles are saved, defaults to the current</span>
-<span class="sd">        working directory if not specified. A subdirectory called `parfiles` will be</span>
-<span class="sd">        created in which the parfiles will be saved.</span>
+<span class="sd">        working directory if not specified.</span>
+<span class="sd">    subdir : boolean</span>
+<span class="sd">        If `.true.` (default), creates a subdirectory under `output_dir` called</span>
+<span class="sd">         `parfiles` in which the parfiles will be saved.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parfile_dict</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parfile_dict</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subdir</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parfile_dict</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">parfile_dict</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">basename</span> <span class="o">=</span> <span class="n">_validate_basename</span><span class="p">(</span><span class="n">basename</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span> <span class="o">=</span> <span class="n">_validate_output_dir</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span> <span class="o">=</span> <span class="n">_validate_output_dir</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">subdir</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nb_runs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parfile_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;number_of_runs&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parfiles</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="o">=</span> <span class="p">{}</span>

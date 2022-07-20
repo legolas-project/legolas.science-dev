@@ -73,7 +73,7 @@
 <span class="kn">from</span> <span class="nn">pylbo.automation.runner</span> <span class="kn">import</span> <span class="n">LegolasRunner</span>
 
 
-<div class="viewcode-block" id="generate_parfiles"><a class="viewcode-back" href="../../../autoapi/pylbo/index.html#pylbo.automation.api.generate_parfiles">[docs]</a><span class="k">def</span> <span class="nf">generate_parfiles</span><span class="p">(</span><span class="n">parfile_dict</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="generate_parfiles"><a class="viewcode-back" href="../../../autoapi/pylbo/index.html#pylbo.automation.api.generate_parfiles">[docs]</a><span class="k">def</span> <span class="nf">generate_parfiles</span><span class="p">(</span><span class="n">parfile_dict</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subdir</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generates parfiles based on a given configuration dictionary.</span>
 <span class="sd">    The separate namelists do not have to be taken into account, and a normal</span>
@@ -94,6 +94,8 @@
 <span class="sd">        Output directory where the parfiles are saved, defaults to the current</span>
 <span class="sd">        working directory if not specified. A subdirectory called `parfiles` will be</span>
 <span class="sd">        created in which the parfiles will be saved.</span>
+<span class="sd">    subdir : boolean</span>
+<span class="sd">        If `.true.` (default), creates a subdirectory `parfiles` in the output folder.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -145,7 +147,7 @@
 <span class="sd">    &gt;&gt;&gt; }</span>
 <span class="sd">    &gt;&gt;&gt; parfile_list = pylbo.generate_parfiles(config, output_dir=&quot;my_parfiles&quot;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">pfgen</span> <span class="o">=</span> <span class="n">ParfileGenerator</span><span class="p">(</span><span class="n">parfile_dict</span><span class="p">,</span> <span class="n">basename</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
+    <span class="n">pfgen</span> <span class="o">=</span> <span class="n">ParfileGenerator</span><span class="p">(</span><span class="n">parfile_dict</span><span class="p">,</span> <span class="n">basename</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">subdir</span><span class="p">)</span>
     <span class="n">pfgen</span><span class="o">.</span><span class="n">create_namelist_from_dict</span><span class="p">()</span>
     <span class="n">parfiles</span> <span class="o">=</span> <span class="n">pfgen</span><span class="o">.</span><span class="n">generate_parfiles</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">parfiles</span></div>

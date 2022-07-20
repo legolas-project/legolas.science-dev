@@ -122,7 +122,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.automation.generator._validate_basename" title="pylbo.automation.generator._validate_basename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_validate_basename</span></code></a>(basename)</p></td>
 <td><p>Validates the basename for a given parfile.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.automation.generator._validate_output_dir" title="pylbo.automation.generator._validate_output_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_validate_output_dir</span></code></a>(output_dir)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.automation.generator._validate_output_dir" title="pylbo.automation.generator._validate_output_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_validate_output_dir</span></code></a>(output_dir, subdir)</p></td>
 <td><p>Validates and returns the output directory for the parfiles.</p></td>
 </tr>
 </tbody>
@@ -146,12 +146,15 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.automation.generator._validate_output_dir">
-<span class="sig-prename descclassname"><span class="pre">pylbo.automation.generator.</span></span><span class="sig-name descname"><span class="pre">_validate_output_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/generator.html#_validate_output_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.generator._validate_output_dir" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.automation.generator.</span></span><span class="sig-name descname"><span class="pre">_validate_output_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subdir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/generator.html#_validate_output_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.generator._validate_output_dir" title="Permalink to this definition"></a></dt>
 <dd><p>Validates and returns the output directory for the parfiles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>output_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.10)"><em>PathLike</em></a>) – The output directory to store the parfiles in. If not given, defaults to
-the current working directory.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.10)"><em>PathLike</em></a>) – The output directory to store the parfiles in. If not given, defaults to
+the current working directory.</p></li>
+<li><p><strong>subdir</strong> (<em>boolean</em>) – If <cite>.true.</cite>, creates a subdirectory called <cite>parfiles</cite>.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotADirectoryError" title="(in Python v3.10)"><strong>NotADirectoryError</strong></a> – If the output directory is not found.</p>
@@ -167,7 +170,7 @@ the current working directory.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.automation.generator.ParfileGenerator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.automation.generator.</span></span><span class="sig-name descname"><span class="pre">ParfileGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfile_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/generator.html#ParfileGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.generator.ParfileGenerator" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.automation.generator.</span></span><span class="sig-name descname"><span class="pre">ParfileGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfile_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/generator.html#ParfileGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.generator.ParfileGenerator" title="Permalink to this definition"></a></dt>
 <dd><p>Handles parfile generation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -178,8 +181,12 @@ not needed. If multiple parfiles are generated, these
 will be prepended by a 4-digit number (e.g. 0003myparfile.par).
 If not provided, the basename will default to <cite>parfile</cite>.</p></li>
 <li><p><strong>output_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.10)"><em>PathLike</em></a>) – Output directory where the parfiles are saved, defaults to the current
-working directory if not specified. A subdirectory called <cite>parfiles</cite> will be
-created in which the parfiles will be saved.</p></li>
+working directory if not specified.</p></li>
+<li><p><strong>subdir</strong> (<em>boolean</em>) – <dl class="simple">
+<dt>If <cite>.true.</cite> (default), creates a subdirectory under <cite>output_dir</cite> called</dt><dd><p><cite>parfiles</cite> in which the parfiles will be saved.</p>
+</dd>
+</dl>
+</p></li>
 </ul>
 </dd>
 </dl>

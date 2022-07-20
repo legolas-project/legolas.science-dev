@@ -69,7 +69,8 @@ contains
         alpha, beta, delta, theta, tau, lambda, nu, &
         r0, rc, rj, Bth0, Bz0, V, j0, g, eq_bool
     namelist /solvelist/  &
-        solver, arpack_mode, number_of_eigenvalues, which_eigenvalues, maxiter, sigma
+        solver, arpack_mode, number_of_eigenvalues, which_eigenvalues, maxiter, sigma, &
+        ncv
 
     call init_equilibrium_params()
     ! if no parfile supplied flag error
@@ -261,11 +262,11 @@ contains
   !! @note If no parfile is passed, the code uses a default configuration. @endnote
   subroutine get_parfile(filename_par)
     !> the name of the parfile
-    character(len=str_len), intent(out) :: filename_par
+    character(len=*), intent(out) :: filename_par
 
-    integer                             :: num_args, i
-    character(len=str_len), allocatable :: args(:)
-    logical                             :: file_exists
+    integer :: num_args, i
+    character(len=5*str_len), allocatable :: args(:)
+    logical :: file_exists
 
     num_args = command_argument_count()
     allocate(args(num_args))

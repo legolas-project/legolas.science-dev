@@ -60,7 +60,7 @@ Functions
    ..
        !! processed by numpydoc !!
 
-.. py:function:: _validate_output_dir(output_dir)
+.. py:function:: _validate_output_dir(output_dir, subdir)
 
    
    Validates and returns the output directory for the parfiles.
@@ -68,6 +68,8 @@ Functions
    :param output_dir: The output directory to store the parfiles in. If not given, defaults to
                       the current working directory.
    :type output_dir: str, ~os.PathLike
+   :param subdir: If `.true.`, creates a subdirectory called `parfiles`.
+   :type subdir: boolean
 
    :raises NotADirectoryError: If the output directory is not found.
 
@@ -91,7 +93,7 @@ Functions
    ..
        !! processed by numpydoc !!
 
-.. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None)
+.. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None, subdir=True)
 
    
    Handles parfile generation.
@@ -104,9 +106,12 @@ Functions
                     If not provided, the basename will default to `parfile`.
    :type basename: str
    :param output_dir: Output directory where the parfiles are saved, defaults to the current
-                      working directory if not specified. A subdirectory called `parfiles` will be
-                      created in which the parfiles will be saved.
+                      working directory if not specified.
    :type output_dir: str, ~os.PathLike
+   :param subdir:
+                  If `.true.` (default), creates a subdirectory under `output_dir` called
+                   `parfiles` in which the parfiles will be saved.
+   :type subdir: boolean
 
 
 

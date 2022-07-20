@@ -1,23 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="Legolas is a novel finite-element based code that allows for realistic MHD spectroscopy of one-dimensional plasmas.">
-    
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>initialise &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>solve_arpack_general &ndash; Legolas v. 1.2.1 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -46,107 +43,53 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../lists/files.html">Source Files</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-        
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
             <li><a href="../program/legolas.html">Program</a></li>
-               
-        
-        
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../program/legolas.html">Program</a></li>
-
-
-
           </ul>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
-    <h1>initialise
-      <small>Subroutine</small>
-    
+    <h1>solve_arpack_general
+   <small>Interface</small>
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">26 statements</a>
+    title=" 0.2% of total for procedures.">17 statements</a>
      </li> 
-     
-     
-     
-    <li><i class="fa fa-code"></i><a href="../src/mod_arpack_type.f08"> Source File</a></li>
-     
-     
+    <li><i class="fa fa-code"></i><a href="../src/smod_arpack_main.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
-     <li><a href='../sourcefile/mod_arpack_type.f08.html'>mod_arpack_type.f08</a></li>
-    
-     <li><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></li>
-    
-  
-     <li class="active">initialise</li>
+     <li><a href='../sourcefile/smod_arpack_main.f08.html'>smod_arpack_main.f08</a></li>
+     <li><a href='../module/smod_arpack_main.html'>smod_arpack_main</a></li>
+     <li class="active">solve_arpack_general</li>
   </ol>
 </div>
 </div>
@@ -161,162 +104,65 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <em>None</em>
-
 
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-private subroutine initialise(this, evpdim)
-    
-    
-   
-</h2>
-    
-  
+      <h2>interface <br>
+      module module subroutine solve_arpack_general(arpack_cfg, matrix_A, matrix_B, omega, vr)   <a href='../proc/solve_arpack_general.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h2>    
 
-
-    
-    <p>Initialises the derived type based on the given dimension
-of the eigenvalue problem. Everything is allocated and the variables
-(<tt>nev, which, maxiter, iparam, ido</tt> etc.)
-are prepared for their calls in the ARPACK routines.</p>
     
 
     <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-this"></span>class(<a href='../type/arpack_type.html'>arpack_type</a>)</td>
-  <td></td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>this</strong></td><td><p>reference to type object</p></td>
-  
+  <td><span class="anchor" id="variable-arpack_cfg"></span>type(<a href='../type/arpack_t.html'>arpack_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>arpack_cfg</strong></td><td><p>arpack configuration</p></td>
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-evpdim~2"></span>integer,</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>evpdim</strong></td><td><p>dimension of eigenvalue problem</p></td>
-  
+  <td><span class="anchor" id="variable-matrix_a~6"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>matrix_A</strong></td><td><p>matrix A</p></td>
 </tr>
-
+<tr>
+  <td><span class="anchor" id="variable-matrix_b~6"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>matrix_B</strong></td><td><p>matrix B</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-omega~5"></span>complex(kind=dp),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>omega</strong>(:)</td><td><p>array with eigenvalues</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-vr~5"></span>complex(kind=dp),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>vr</strong>(:,:)</td><td><p>array with right eigenvectors</p></td>
+</tr>
 </tbody>
 </table>
 
-    
-    
-    
-    
-     
+    <h3>Description</h3>
+    <p>Solves the eigenvalue problem using the Arnoldi general method.</p>
     <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<em>None</em>
-
-
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
-
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-
-    
-    
-    
-    
-    </div>
-  </div>
-
+ </div>
+</div>
 
     <hr>    
     </div> <!-- /container -->
@@ -324,14 +170,12 @@ are prepared for their calls in the ARPACK routines.</p>
       <div class="container">
       <div class="row">
         <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
-                                          </p>
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -359,9 +203,7 @@ are prepared for their calls in the ARPACK routines.</p>
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     
   </body>

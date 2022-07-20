@@ -182,7 +182,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.plot_matrices" title="pylbo.plot_matrices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_matrices</span></code></a>(data, figsize=None, **kwargs)</p></td>
 <td><p>Plots the continua profiles.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.generate_parfiles" title="pylbo.generate_parfiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_parfiles</span></code></a>(parfile_dict, basename=None, output_dir=None)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.generate_parfiles" title="pylbo.generate_parfiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_parfiles</span></code></a>(parfile_dict, basename=None, output_dir=None, subdir=True)</p></td>
 <td><p>Generates parfiles based on a given configuration dictionary.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.run_legolas" title="pylbo.run_legolas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_legolas</span></code></a>(parfiles, remove_parfiles=False, nb_cpus=1, executable=None)</p></td>
@@ -465,7 +465,7 @@ All values smaller than 1e-16 are set to zero.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.generate_parfiles">
-<span class="sig-prename descclassname"><span class="pre">pylbo.</span></span><span class="sig-name descname"><span class="pre">generate_parfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfile_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pylbo/automation/api.html#generate_parfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.generate_parfiles" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.</span></span><span class="sig-name descname"><span class="pre">generate_parfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfile_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pylbo/automation/api.html#generate_parfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.generate_parfiles" title="Permalink to this definition"></a></dt>
 <dd><p>Generates parfiles based on a given configuration dictionary.
 The separate namelists do not have to be taken into account, and a normal
 dictionary should be supplied where the keys correspond to the namelist
@@ -482,6 +482,7 @@ If not provided, the basename will default to <cite>parfile</cite>.</p></li>
 <li><p><strong>output_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.10)"><em>PathLike</em></a>) – Output directory where the parfiles are saved, defaults to the current
 working directory if not specified. A subdirectory called <cite>parfiles</cite> will be
 created in which the parfiles will be saved.</p></li>
+<li><p><strong>subdir</strong> (<em>boolean</em>) – If <cite>.true.</cite> (default), creates a subdirectory <cite>parfiles</cite> in the output folder.</p></li>
 </ul>
 </dd>
 </dl>

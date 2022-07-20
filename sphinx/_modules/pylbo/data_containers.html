@@ -69,25 +69,27 @@
            <div itemprop="articleBody">
              
   <h1>Source code for pylbo.data_containers</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">pylbo.exceptions</span> <span class="kn">import</span> <span class="n">EigenfunctionsNotPresent</span><span class="p">,</span> <span class="n">MatricesNotPresent</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.datfile_utils</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">get_header</span><span class="p">,</span>
-    <span class="n">read_grid</span><span class="p">,</span>
-    <span class="n">read_grid_gauss</span><span class="p">,</span>
-    <span class="n">read_eigenvalues</span><span class="p">,</span>
-    <span class="n">read_equilibrium_arrays</span><span class="p">,</span>
-    <span class="n">read_matrix_B</span><span class="p">,</span>
-    <span class="n">read_matrix_A</span><span class="p">,</span>
+    <span class="n">read_derived_eigenfunction</span><span class="p">,</span>
     <span class="n">read_ef_grid</span><span class="p">,</span>
     <span class="n">read_eigenfunction</span><span class="p">,</span>
-    <span class="n">read_derived_eigenfunction</span><span class="p">,</span>
+    <span class="n">read_eigenvalues</span><span class="p">,</span>
+    <span class="n">read_equilibrium_arrays</span><span class="p">,</span>
+    <span class="n">read_grid</span><span class="p">,</span>
+    <span class="n">read_grid_gauss</span><span class="p">,</span>
+    <span class="n">read_matrix_A</span><span class="p">,</span>
+    <span class="n">read_matrix_B</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
-<span class="kn">from</span> <span class="nn">pylbo.exceptions</span> <span class="kn">import</span> <span class="n">MatricesNotPresent</span>
-<span class="kn">from</span> <span class="nn">pylbo.visualisation.continua</span> <span class="kn">import</span> <span class="n">calculate_continua</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">transform_to_numpy</span>
+<span class="kn">from</span> <span class="nn">pylbo.visualisation.continua</span> <span class="kn">import</span> <span class="n">calculate_continua</span>
 
 
 <div class="viewcode-block" id="LegolasDataContainer"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer">[docs]</a><span class="k">class</span> <span class="nc">LegolasDataContainer</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
@@ -622,6 +624,8 @@
 <span class="sd">            eigenfunctions and corresponding eigenvalue.</span>
 <span class="sd">            The keys of each dictionary are the eigenfunction names.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">efs_written</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">EigenfunctionsNotPresent</span><span class="p">(</span><span class="s2">&quot;eigenfunctions not written to datfile&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ev_guesses</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ev_idxs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;get_eigenfunctions: either provide guesses or indices but not both&quot;</span>
@@ -665,6 +669,10 @@
 <span class="sd">            corresponding eigenvalue. The keys of each dictionary are the</span>
 <span class="sd">            corresponding eigenfunction names.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">derived_efs_written</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">EigenfunctionsNotPresent</span><span class="p">(</span>
+                <span class="s2">&quot;derived eigenfunctions not written to datfile&quot;</span>
+            <span class="p">)</span>
         <span class="k">if</span> <span class="n">ev_guesses</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ev_idxs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;either provide guesses or indices but not both&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ev_guesses</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>

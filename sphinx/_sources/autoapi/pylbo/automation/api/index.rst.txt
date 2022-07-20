@@ -24,7 +24,7 @@ Functions
 
 
 
-.. py:function:: generate_parfiles(parfile_dict, basename=None, output_dir=None)
+.. py:function:: generate_parfiles(parfile_dict, basename=None, output_dir=None, subdir=True)
 
    
    Generates parfiles based on a given configuration dictionary.
@@ -44,6 +44,8 @@ Functions
                       working directory if not specified. A subdirectory called `parfiles` will be
                       created in which the parfiles will be saved.
    :type output_dir: str, ~os.PathLike
+   :param subdir: If `.true.` (default), creates a subdirectory `parfiles` in the output folder.
+   :type subdir: boolean
 
    .. rubric:: Notes
 
