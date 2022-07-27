@@ -3,12 +3,6 @@
 
 .. py:module:: pylbo.visualisation.eigenfunction_interface
 
-.. autoapi-nested-parse::
-
-   
-   ..
-       !! processed by numpydoc !!
-
 
 Module Contents
 ---------------
@@ -25,26 +19,7 @@ Classes
 
 .. py:class:: EigenfunctionInterface(data, axis, spec_axis)
 
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-   .. py:method:: _check_data_is_present(self)
+   .. py:method:: _check_data_is_present()
 
       
       Checks if the required data is present to draw for example
@@ -68,7 +43,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _artist_has_valid_attributes(self, event)
+   .. py:method:: _artist_has_valid_attributes(event)
 
       
       Checks if a given event has valid attributes, this prevents triggering the
@@ -98,7 +73,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _clear_figure_and_selection(self)
+   .. py:method:: _clear_figure_and_selection()
 
       
       Clears the current figure, clears the dictionary of selected eigenvalues.
@@ -121,7 +96,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _switch_real_and_imaginary_part(self)
+   .. py:method:: _switch_real_and_imaginary_part()
 
       
       Switches between the real and imaginary part of a given function.
@@ -144,7 +119,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _select_next_function(self)
+   .. py:method:: _select_next_function()
 
       
       Increments the index of the currently selected function by 1.
@@ -167,7 +142,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _select_previous_function(self)
+   .. py:method:: _select_previous_function()
 
       
       Decrements the index of the currently selected function by 1.
@@ -190,7 +165,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _retransform_functions(self)
+   .. py:method:: _retransform_functions()
 
       
       Toggles a retransform of a function, for example an eigenfunction
@@ -214,7 +189,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _print_selected_eigenvalues(self)
+   .. py:method:: _print_selected_eigenvalues()
 
       
       Prints all selected eigenvalues to the console as an array.
@@ -237,7 +212,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _get_label(self, ds, ev_idx, w)
+   .. py:method:: _get_label(ds, ev_idx, w)
 
       
       Returns the label used in the legend. In case of a data series, the datfile
@@ -270,7 +245,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _get_title(self)
+   .. py:method:: _get_title()
       :abstractmethod:
 
       
@@ -294,7 +269,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: update_plot(self)
+   .. py:method:: update_plot()
       :abstractmethod:
 
       
@@ -320,7 +295,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: on_point_pick(self, event)
+   .. py:method:: on_point_pick(event)
 
       
       Determines what happens when an eigenvalue is clicked.
@@ -345,7 +320,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: on_key_press(self, event)
+   .. py:method:: on_key_press(event)
 
       
       Determines what happens when a key is pressed.
@@ -370,7 +345,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: on_left_click(self, event)
+   .. py:method:: on_left_click(event)
 
       
       Determines what happens when left-clicking an eigenvalue.
@@ -395,7 +370,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: on_right_click(self, event)
+   .. py:method:: on_right_click(event)
 
       
       Determines what happens when right-clicking an eigenvalue.
@@ -420,7 +395,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _get_clicked_point_data(self, event)
+   .. py:method:: _get_clicked_point_data(event)
 
       
       Retrieves the index (in the eigenvalue array), x data coordinate and y data
@@ -450,7 +425,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _selected_point_has_eigenfunctions(self, ds, idx)
+   .. py:method:: _selected_point_has_eigenfunctions(ds, idx)
 
       
       Checks if the selected index has eigenfunctions associated with it, in the
@@ -482,29 +457,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _toggle_eigenfunction_subset_radius(self)
-
-      
+   .. py:method:: _toggle_eigenfunction_subset_radius()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: _mark_points_without_data_written(self)
+   .. py:method:: _mark_points_without_data_written()
 
       
       For dataseries, it is possible that not all datasets in the series
@@ -530,26 +486,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _display_tooltip(self)
+   .. py:method:: _display_tooltip()
 
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
 

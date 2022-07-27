@@ -3,12 +3,6 @@
 
 .. py:module:: pylbo.visualisation.spectra
 
-.. autoapi-nested-parse::
-
-   
-   ..
-       !! processed by numpydoc !!
-
 
 Module Contents
 ---------------
@@ -51,7 +45,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: draw(self)
+   .. py:method:: draw()
 
       
       Called on plot refreshing, the super call clears the figure and then redraws
@@ -75,7 +69,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _set_plot_properties(self, properties)
+   .. py:method:: _set_plot_properties(properties)
 
       
       Sets all relevant plot properties.
@@ -101,7 +95,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _add_spectrum(self)
+   .. py:method:: _add_spectrum()
 
       
       Adds the spectrum, is overridden in subclasses.
@@ -124,7 +118,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_continua(self, interactive)
+   .. py:method:: add_continua(interactive)
 
       
       Adds the continua to the plot, overridden by subclasses.
@@ -149,7 +143,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_eigenfunctions(self)
+   .. py:method:: add_eigenfunctions()
 
       
       Adds eigenfunctions to the spectrum, overridden in subclasses.
@@ -172,7 +166,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_derived_eigenfunctions(self)
+   .. py:method:: add_derived_eigenfunctions()
 
       
       Adds derived eigenfunctions to the spectrum, overridden in subclasses.
@@ -195,7 +189,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: c_handler(self)
+   .. py:method:: c_handler()
       :property:
 
       
@@ -219,7 +213,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_handler(self)
+   .. py:method:: ef_handler()
       :property:
 
       
@@ -243,7 +237,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_ax(self)
+   .. py:method:: ef_ax()
       :property:
 
       
@@ -334,7 +328,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: _add_spectrum(self)
+   .. py:method:: _add_spectrum()
 
       
       Adds the spectrum to the plot, makes the points pickable.
@@ -357,7 +351,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_continua(self, interactive=True)
+   .. py:method:: add_continua(interactive=True)
 
       
       Adds the continua to the spectrum.
@@ -385,7 +379,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_eigenfunctions(self)
+   .. py:method:: add_eigenfunctions()
 
       
       Adds the eigenfunctions to the plot, sets the eigenfunction handler.
@@ -408,7 +402,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_derived_eigenfunctions(self)
+   .. py:method:: add_derived_eigenfunctions()
 
       
       Adds the derived eigenfunctions to the plot, sets the eigenfunction handler.
@@ -474,7 +468,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: _validate_xdata(self, xdata)
+   .. py:method:: _validate_xdata(xdata)
 
       
       Validates the xdata passed, does typechecking and necessary casting.
@@ -504,7 +498,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _get_ydata(self)
+   .. py:method:: _get_ydata()
 
       
       Gets the y data based on the value of :attr:`use_squared_omega`.
@@ -532,7 +526,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: set_x_scaling(self, x_scaling)
+   .. py:method:: set_x_scaling(x_scaling)
 
       
       Sets the x scaling, properly adjusted to the dataseries length.
@@ -557,7 +551,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: set_y_scaling(self, y_scaling)
+   .. py:method:: set_y_scaling(y_scaling)
 
       
       Sets the y scaling, properly adjusted to the dataseries length.
@@ -582,7 +576,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _add_spectrum(self)
+   .. py:method:: _add_spectrum()
 
       
       Draw method, creates the spectrum.
@@ -605,7 +599,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_continua(self, interactive=True)
+   .. py:method:: add_continua(interactive=True)
 
       
       Adds the continua to the plot, either interactive or not.
@@ -630,7 +624,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_eigenfunctions(self)
+   .. py:method:: add_eigenfunctions()
 
       
       Adds the eigenfunctions to the current figure.
@@ -653,7 +647,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_derived_eigenfunctions(self)
+   .. py:method:: add_derived_eigenfunctions()
 
       
       Adds the derived eigenfunctions to the current figure.
@@ -723,7 +717,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: _add_spectrum(self)
+   .. py:method:: _add_spectrum()
 
       
       Adds the spectrum to the plot, makes the points pickable.
@@ -746,7 +740,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_eigenfunctions(self)
+   .. py:method:: add_eigenfunctions()
 
       
       Adds the eigenfunctions to the current figure.
@@ -769,7 +763,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_derived_eigenfunctions(self)
+   .. py:method:: add_derived_eigenfunctions()
 
       
       Adds the derived eigenfunctions to the current figure.
@@ -792,7 +786,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_continua(self, interactive=True)
+   .. py:method:: add_continua(interactive=True)
       :abstractmethod:
 
       
@@ -871,7 +865,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: set_x_scaling(self, x_scaling)
+   .. py:method:: set_x_scaling(x_scaling)
 
       
       Overloads parent method, calls x scaling setter for each panel.
@@ -896,7 +890,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: set_y_scaling(self, y_scaling)
+   .. py:method:: set_y_scaling(y_scaling)
 
       
       Overloads parent method, calls y scaling setter for each panel.
@@ -921,7 +915,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: _use_custom_axes(self)
+   .. py:method:: _use_custom_axes()
 
       
       Splits the original 1x2 plot into a 2x2 plot.
@@ -944,7 +938,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_eigenfunctions(self)
+   .. py:method:: add_eigenfunctions()
 
       
       Adds the eigenfunctions for both datasets and merges the mpl callbacks.
@@ -967,7 +961,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_derived_eigenfunctions(self)
+   .. py:method:: add_derived_eigenfunctions()
 
       
       Adds the derived eigenfunctions for both datasets and merges the mpl
@@ -991,7 +985,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: add_continua(self, interactive=True)
+   .. py:method:: add_continua(interactive=True)
 
       
       Adds the continua for both datasets and merges the mpl callbacks.

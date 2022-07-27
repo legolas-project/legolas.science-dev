@@ -3,12 +3,6 @@
 
 .. py:module:: pylbo.data_containers
 
-.. autoapi-nested-parse::
-
-   
-   ..
-       !! processed by numpydoc !!
-
 
 Module Contents
 ---------------
@@ -49,7 +43,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: continua(self)
+   .. py:method:: continua()
       :property:
 
       
@@ -80,7 +74,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: parameters(self)
+   .. py:method:: parameters()
       :property:
 
       
@@ -110,258 +104,49 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: efs_written(self)
+   .. py:method:: efs_written()
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: ef_grid(self)
+   .. py:method:: ef_grid()
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: ef_names(self)
+   .. py:method:: ef_names()
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: derived_efs_written(self)
+   .. py:method:: derived_efs_written()
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: derived_ef_names(self)
+   .. py:method:: derived_ef_names()
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: get_sound_speed(self, which_values=None)
+   .. py:method:: get_sound_speed(which_values=None)
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: get_alfven_speed(self, which_values=None)
+   .. py:method:: get_alfven_speed(which_values=None)
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: get_tube_speed(self, which_values=None)
+   .. py:method:: get_tube_speed(which_values=None)
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: get_reynolds_nb(self, which_values=None)
+   .. py:method:: get_reynolds_nb(which_values=None)
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: get_magnetic_reynolds_nb(self, which_values=None)
+   .. py:method:: get_magnetic_reynolds_nb(which_values=None)
       :abstractmethod:
 
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:method:: get_k0_squared(self)
+   .. py:method:: get_k0_squared()
       :abstractmethod:
 
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
 
 .. py:class:: LegolasDataSet(datfile)
@@ -504,7 +289,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: efs_written(self)
+   .. py:method:: efs_written()
       :property:
 
       
@@ -530,7 +315,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_names(self)
+   .. py:method:: ef_names()
       :property:
 
       
@@ -557,7 +342,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_grid(self)
+   .. py:method:: ef_grid()
       :property:
 
       
@@ -583,7 +368,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_subset(self)
+   .. py:method:: ef_subset()
       :property:
 
       
@@ -609,7 +394,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: derived_efs_written(self)
+   .. py:method:: derived_efs_written()
       :property:
 
       
@@ -635,7 +420,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: derived_ef_names(self)
+   .. py:method:: derived_ef_names()
       :property:
 
       
@@ -700,7 +485,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_sound_speed(self, which_values=None)
+   .. py:method:: get_sound_speed(which_values=None)
 
       
       Calculates the sound speed based on the equilibrium arrays,
@@ -735,7 +520,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_alfven_speed(self, which_values=None)
+   .. py:method:: get_alfven_speed(which_values=None)
 
       
       Calculates the Alfvén speed based on the equilibrium arrays,
@@ -770,7 +555,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_tube_speed(self, which_values=None)
+   .. py:method:: get_tube_speed(which_values=None)
 
       
       Calculates the tube speed for a cylinder, given by
@@ -806,7 +591,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_reynolds_nb(self, which_values=None)
+   .. py:method:: get_reynolds_nb(which_values=None)
 
       
       Calculates the Reynolds number, defined as
@@ -843,7 +628,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_magnetic_reynolds_nb(self, which_values=None)
+   .. py:method:: get_magnetic_reynolds_nb(which_values=None)
 
       
       Calculates the magnetic Reynolds number, defined as
@@ -880,7 +665,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_k0_squared(self)
+   .. py:method:: get_k0_squared()
 
       
       Calculates the squared wave number, defined as
@@ -906,7 +691,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_matrix_B(self)
+   .. py:method:: get_matrix_B()
 
       
       Retrieves the matrix B from the datfile.
@@ -934,7 +719,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_matrix_A(self)
+   .. py:method:: get_matrix_A()
 
       
       Retrieves the matrix A from the datfile.
@@ -962,7 +747,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_eigenfunctions(self, ev_guesses=None, ev_idxs=None)
+   .. py:method:: get_eigenfunctions(ev_guesses=None, ev_idxs=None)
 
       
       Returns the eigenfunctions based on given eigenvalue guesses or their
@@ -998,7 +783,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_derived_eigenfunctions(self, ev_guesses=None, ev_idxs=None)
+   .. py:method:: get_derived_eigenfunctions(ev_guesses=None, ev_idxs=None)
 
       
       Returns the derived eigenfunctions based on given eigenvalue guesses or their
@@ -1035,7 +820,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_nearest_eigenvalues(self, ev_guesses)
+   .. py:method:: get_nearest_eigenvalues(ev_guesses)
 
       
       Calculates the eigenvalues nearest to a given guess. This calculates
@@ -1091,7 +876,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: efs_written(self)
+   .. py:method:: efs_written()
       :property:
 
       
@@ -1118,7 +903,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_names(self)
+   .. py:method:: ef_names()
       :property:
 
       
@@ -1144,7 +929,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_grid(self)
+   .. py:method:: ef_grid()
       :property:
 
       
@@ -1170,7 +955,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: derived_efs_written(self)
+   .. py:method:: derived_efs_written()
       :property:
 
       
@@ -1197,7 +982,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: derived_ef_names(self)
+   .. py:method:: derived_ef_names()
       :property:
 
       
@@ -1223,7 +1008,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_sound_speed(self, which_values=None)
+   .. py:method:: get_sound_speed(which_values=None)
 
       
       Calculates the sound speed for the various datasets.
@@ -1261,7 +1046,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_alfven_speed(self, which_values=None)
+   .. py:method:: get_alfven_speed(which_values=None)
 
       
       Calculates the Alfvén speed for the various datasets.
@@ -1299,7 +1084,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_tube_speed(self, which_values=None)
+   .. py:method:: get_tube_speed(which_values=None)
 
       
       Calculates the tube speed for the various datasets.
@@ -1338,7 +1123,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_reynolds_nb(self, which_values=None)
+   .. py:method:: get_reynolds_nb(which_values=None)
 
       
       Calculates the Reynolds number for the various datasets.
@@ -1377,7 +1162,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_magnetic_reynolds_nb(self, which_values=None)
+   .. py:method:: get_magnetic_reynolds_nb(which_values=None)
 
       
       Calculates the magnetic Reynolds number for the various datasets.
@@ -1416,7 +1201,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_k0_squared(self)
+   .. py:method:: get_k0_squared()
 
       
       Calculates the squared wave number for the various datasets.
