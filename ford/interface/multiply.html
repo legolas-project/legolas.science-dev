@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>matrix_x_real_vector &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>multiply &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>matrix_x_real_vector
-      <small>Procedure</small>
+    <h1>multiply
+   <small>Interface</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">17 statements</a>
+    title="<p> 0.0% of total for procedures.</p>Including implementation: 9 statements,  0.1% of total for procedures.">3 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/smod_matrix_maths.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_banded_operations.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/smod_matrix_maths.f08.html'>smod_matrix_maths.f08</a></li>
-     <li><a href='../module/smod_matrix_maths.html'>smod_matrix_maths</a></li>
-     <li class="active">matrix_x_real_vector</li>
+     <li><a href='../sourcefile/mod_banded_operations.f08.html'>mod_banded_operations.f08</a></li>
+     <li><a href='../module/mod_banded_operations.html'>mod_banded_operations</a></li>
+     <li class="active">multiply</li>
   </ol>
 </div>
 </div>
@@ -103,53 +103,84 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    <div id="sidebar">
+      <div id="sidebar">
   <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-0">Module Procedures</a></h3></div>
+  <div id="modprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../interface/multiply.html#moduleprocedure-banded_matrix_x_vector">banded_matrix_x_vector</a>
+    </div>
+  </div>
+</div>
 
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure matrix_x_real_vector <small>module procedure matrix_x_real_vector()</small></h2>
-    
+      <h2>public interface multiply</h2>
+   
 
-    <p>Overloads the multiplication operator between a matrix and a real vector.</p>
-
-    <h3>Arguments</h3>
-    <em>None</em>
-    <br>
-    <br>
-
-    <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
+     <section class="visible-xs visible-sm hidden-md">
+       <h3>Contents</h3>
  
-<em>None</em>
-
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
-
-
-    
-    
-
-    
-    
-
-
-    
-    
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-1">Module Procedures</a></h3></div>
+  <div id="modprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../interface/multiply.html#moduleprocedure-banded_matrix_x_vector">banded_matrix_x_vector</a>
     </div>
   </div>
+</div>
+
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+     
+
+
+   <h2>Module Procedures</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-banded_matrix_x_vector"></span><h3>private function <a href='../proc/banded_matrix_x_vector.html'>banded_matrix_x_vector</a>(bandmatrix, vector) result(rvector)</h3></div>
+  <div class="panel-body">
+       
+<p>Calculates the matrix-vector product of a general complex banded matrix and a
+complex vector. Uses the level 2 BLAS routine <tt>zgbmv</tt>.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>bandmatrix</strong></td><td><p>the banded matrix</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>complex(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>vector</strong>(bandmatrix%n)</td><td><p>the vector</p></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>complex(kind=dp)(bandmatrix%m)</small></h4>  <p>the resulting matrix-vector product</p>
+
+  </div>
+  </div>
+
+
+ </div>
+</div>
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>All Modules &ndash; Legolas v. 1.2.1 - develop
+    <title>All Modules &ndash; Legolas v. 1.3.0 - develop
 </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -90,6 +90,10 @@ and oxygen.</em> ApJS, 175(1), 229.
 <a href="https://iopscience.iop.org/article/10.1086/523671/pdf">link</a>.</p></td></tr>
 <!--active-->			   <tr class=""><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td><a href='../sourcefile/mod_banded_matrix.f08.html'>mod_banded_matrix.f08</a></td><td><p>Contains types and routines to handle banded matrices. We use the same conventions
 as explained in the LAPACK guide http://www.netlib.org/lapack/lug/node124.html.</p></td></tr>
+<!---->			   <tr class="active"><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td><a href='../sourcefile/mod_banded_matrix_hermitian.f08.html'>mod_banded_matrix_hermitian.f08</a></td><td><p>Contains types and routines to handle banded Hermitian matrices.
+We use the same conventions as explained in the LAPACK guide
+http://www.netlib.org/lapack/lug/node124.html.</p></td></tr>
+<!--active-->			   <tr class=""><td><a href='../module/mod_banded_operations.html'>mod_banded_operations</a></td><td><a href='../sourcefile/mod_banded_operations.f08.html'>mod_banded_operations.f08</a></td><td></td></tr>
 <!---->			   <tr class="active"><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td><a href='../sourcefile/mod_boundary_manager.f08.html'>mod_boundary_manager.f08</a></td><td></td></tr>
                   			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_essential_boundaries.html'>smod_essential_boundaries</a></td><td><a href='../sourcefile/smod_essential_boundaries.f08.html'>smod_essential_boundaries.f08</a></td><td></td></tr>
 			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_natural_boundaries.html'>smod_natural_boundaries</a></td><td><a href='../sourcefile/smod_natural_boundaries.f08.html'>smod_natural_boundaries.f08</a></td><td></td></tr>
@@ -321,74 +325,76 @@ is shifted along the main diagonal.
 
 <!---->			   <tr class="active"><td><a href='../module/mod_matrix_node.html'>mod_matrix_node</a></td><td><a href='../sourcefile/mod_matrix_node.f08.html'>mod_matrix_node.f08</a></td><td><p>Module that contains the implementation of nodes in the linked-list matrix
 representation.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_operations.html'>mod_matrix_operations</a></td><td><a href='../sourcefile/mod_matrix_operations.f08.html'>mod_matrix_operations.f08</a></td><td><p>Module containing various matrix operations (inverting, multiplying, etc).
-Does calls to relevant BLAS or LAPACK routines.</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td><a href='../sourcefile/mod_matrix_row.f08.html'>mod_matrix_row.f08</a></td><td><p>Module that contains the implementation of a single row of nodes in the
+<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td><a href='../sourcefile/mod_matrix_row.f08.html'>mod_matrix_row.f08</a></td><td><p>Module that contains the implementation of a single row of nodes in the
 linked-list matrix representation.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></td><td><a href='../sourcefile/mod_matrix_shortcuts.f08.html'>mod_matrix_shortcuts.f08</a></td><td></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td><a href='../sourcefile/mod_matrix_structure.f08.html'>mod_matrix_structure.f08</a></td><td><p>Module that contains the datastructure for a linked-list matrix representation.</p></td></tr>
-                  			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_matrix_maths.html'>smod_matrix_maths</a></td><td><a href='../sourcefile/smod_matrix_maths.f08.html'>smod_matrix_maths.f08</a></td><td><p>Contains the implementation of various operator overloading methods between
-linked-list matrix datastructures.</p></td></tr>
-
-<!--active-->			   <tr class=""><td><a href='../module/mod_output.html'>mod_output</a></td><td><a href='../sourcefile/mod_output.f08.html'>mod_output.f08</a></td><td><p>This module contains all routines for file opening and file writing.</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_painting.html'>mod_painting</a></td><td><a href='../sourcefile/mod_painting.f08.html'>mod_painting.f08</a></td><td><p>This module handles formatting of terminal-printed strings.
+<!---->			   <tr class="active"><td><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></td><td><a href='../sourcefile/mod_matrix_shortcuts.f08.html'>mod_matrix_shortcuts.f08</a></td><td></td></tr>
+<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td><a href='../sourcefile/mod_matrix_structure.f08.html'>mod_matrix_structure.f08</a></td><td><p>Module that contains the datastructure for a linked-list matrix representation.</p></td></tr>
+<!---->			   <tr class="active"><td><a href='../module/mod_output.html'>mod_output</a></td><td><a href='../sourcefile/mod_output.f08.html'>mod_output.f08</a></td><td><p>This module contains all routines for file opening and file writing.</p></td></tr>
+<!--active-->			   <tr class=""><td><a href='../module/mod_painting.html'>mod_painting</a></td><td><a href='../sourcefile/mod_painting.f08.html'>mod_painting.f08</a></td><td><p>This module handles formatting of terminal-printed strings.
 Contains subroutines to colourise strings.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></td><td><a href='../sourcefile/mod_physical_constants.f08.html'>mod_physical_constants.f08</a></td><td><p>All physical constants used in the code are defined in this module.
+<!---->			   <tr class="active"><td><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></td><td><a href='../sourcefile/mod_physical_constants.f08.html'>mod_physical_constants.f08</a></td><td><p>All physical constants used in the code are defined in this module.
 We include values both in SI units and in cgs units for convenience.
 All values are taken from the
 <a href="https://www.nrl.navy.mil/ppd/content/nrl-plasma-formulary">NRL Plasma Formulary</a>.</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td><a href='../sourcefile/mod_radiative_cooling.f08.html'>mod_radiative_cooling.f08</a></td><td><p>Module containing radiative cooling-related routines.
+<!--active-->			   <tr class=""><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td><a href='../sourcefile/mod_radiative_cooling.f08.html'>mod_radiative_cooling.f08</a></td><td><p>Module containing radiative cooling-related routines.
 This module is responsible for initialising the radiative cooling
 variables and a correct handling of the cooling curves.
 If an interpolated cooling curve is selected this module calls the
 interpolation module to create one.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td><a href='../sourcefile/mod_resistivity.f08.html'>mod_resistivity.f08</a></td><td><p>Module containing resistivity-related routines, calculates
+<!---->			   <tr class="active"><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td><a href='../sourcefile/mod_resistivity.f08.html'>mod_resistivity.f08</a></td><td><p>Module containing resistivity-related routines, calculates
 and sets the resistivity values based on the equilibrium configuration.</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td><a href='../sourcefile/mod_solar_atmosphere.f08.html'>mod_solar_atmosphere.f08</a></td><td><p>Module to set a realistic solar atmosphere, using tabulated density and
+<!--active-->			   <tr class=""><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td><a href='../sourcefile/mod_solar_atmosphere.f08.html'>mod_solar_atmosphere.f08</a></td><td><p>Module to set a realistic solar atmosphere, using tabulated density and
 temperature profiles (see <tt>mod_atmosphere_curves</tt>), in Cartesian
 geometries only.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td><a href='../sourcefile/mod_solvers.f08.html'>mod_solvers.f08</a></td><td><p>Parent module for everything solver-related. Interfaces to the different
+<!---->			   <tr class="active"><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td><a href='../sourcefile/mod_solvers.f08.html'>mod_solvers.f08</a></td><td><p>Parent module for everything solver-related. Interfaces to the different
 submodules are defined here, and the <tt>solve_evp</tt> routine calls the
 correct solver based on parfile settings.</p></td></tr>
-                  			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_arpack_main.html'>smod_arpack_main</a></td><td><a href='../sourcefile/smod_arpack_main.f08.html'>smod_arpack_main.f08</a></td><td><p>Main module for the Arnoldi-type solvers. Contains interfaces to the general Arnoldi
+                  			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_arpack_main.html'>smod_arpack_main</a></td><td><a href='../sourcefile/smod_arpack_main.f08.html'>smod_arpack_main.f08</a></td><td><p>Main module for the Arnoldi-type solvers. Contains interfaces to the general Arnoldi
 procedures (general, shift-invert, etc.).</p></td></tr>
-                  			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='../module/smod_arpack_general.html'>smod_arpack_general</a></td><td><a href='../sourcefile/smod_arpack_general.f08.html'>smod_arpack_general.f08</a></td><td><p>Module containing the implementation for the ARPACK general-type solver, that is,
+                  			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='../module/smod_arpack_general.html'>smod_arpack_general</a></td><td><a href='../sourcefile/smod_arpack_general.f08.html'>smod_arpack_general.f08</a></td><td><p>Module containing the implementation for the ARPACK general-type solver, that is,
 given the general eigenvalue problem <script type="math/tex; mode=display"> AX = \omega BX, </script> find <script type="math/tex">k</script> eigenvalues
 that satisfy a given criterion.</p></td></tr>
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='../module/smod_arpack_shift_invert.html'>smod_arpack_shift_invert</a></td><td><a href='../sourcefile/smod_arpack_shift_invert.f08.html'>smod_arpack_shift_invert.f08</a></td><td><p>Module containing the implementation for the ARPACK shift-invert-type solver,
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='../module/smod_arpack_shift_invert.html'>smod_arpack_shift_invert</a></td><td><a href='../sourcefile/smod_arpack_shift_invert.f08.html'>smod_arpack_shift_invert.f08</a></td><td><p>Module containing the implementation for the ARPACK shift-invert-type solver,
 that is, given the general eigenvalue problem <script type="math/tex; mode=display"> AX = \omega BX, </script> choose a
 shift <script type="math/tex">\sigma</script> and solve the problem <script type="math/tex; mode=display"> (A - \sigma B)X = \omega X, </script> thereby
 finding <script type="math/tex">k</script> eigenvalues of the shifted problem that satisfy a given criterion.</p></td></tr>
 
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_qr_invert.html'>smod_qr_invert</a></td><td><a href='../sourcefile/smod_qr_invert.f08.html'>smod_qr_invert.f08</a></td><td><p>Submodule containing the implementation of the QR-invert algorithm.
-The original problem is written as a standard eigenvalue problem through
-<script type="math/tex; mode=display"> \mathcal{B}^{-1}\mathcal{A}\textbf{X} = \omega\textbf{X}\ </script>
-where <script type="math/tex">\mathcal{B}</script> is always properly conditioned.
-Various calls to <tt>mod_matrix_operations</tt> are done to invert the
-B-matrix and to do matrix multiplications.
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_inverse_iteration.html'>smod_inverse_iteration</a></td><td><a href='../sourcefile/smod_inverse_iteration.f08.html'>smod_inverse_iteration.f08</a></td><td><p>Submodule containing the implementation of the inverse iteration algorithm.
+TODO more docs</p></td></tr>
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_qr_cholesky.html'>smod_qr_cholesky</a></td><td><a href='../sourcefile/smod_qr_cholesky.f08.html'>smod_qr_cholesky.f08</a></td><td><p>Submodule containing the implementation of the QR-cholesky algorithm.
+Using LAPACKS's <tt>zpbtrf</tt> and BLAS's <tt>zgbtrs</tt>, the original
+problem is written as a standard eigenvalue problem as
+<script type="math/tex; mode=display"> U^{-H}\mathcal{A}U^{-1}\textbf{Y} = \omega\textbf{Y}\ </script>
+where <script type="math/tex">\mathcal{B} = U^HU</script> is positive definite and
+<script type="math/tex">\textbf{Y}=U\textbf{X}</script>.
 Eventually a call to LAPACK's <tt>zgeev</tt> routine is done to obtain
 all eigenvalues and eigenvectors.</p></td></tr>
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_qz_direct.html'>smod_qz_direct</a></td><td><a href='../sourcefile/smod_qz_direct.f08.html'>smod_qz_direct.f08</a></td><td><p>Submodule containing the implementation of the QZ-direct algorithm.
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_qr_invert.html'>smod_qr_invert</a></td><td><a href='../sourcefile/smod_qr_invert.f08.html'>smod_qr_invert.f08</a></td><td><p>Submodule containing the implementation of the QR-invert algorithm.
+The original problem is written as a standard eigenvalue problem through
+<script type="math/tex; mode=display"> \mathcal{B}^{-1}\mathcal{A}\textbf{X} = \omega\textbf{X}\ </script>. This is
+done using a LU decomposition via LAPACKS's <tt>zgbsv</tt>.
+Eventually a call to LAPACK's <tt>zgeev</tt> routine is done to obtain
+all eigenvalues and eigenvectors.</p></td></tr>
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_qz_direct.html'>smod_qz_direct</a></td><td><a href='../sourcefile/smod_qz_direct.f08.html'>smod_qz_direct.f08</a></td><td><p>Submodule containing the implementation of the QZ-direct algorithm.
 We keep the general form of the eigenvalue problem
 <script type="math/tex; mode=display"> \mathcal{A}\textbf{X} = \omega\mathcal{B}\textbf{X}\ </script>
-and solve this directly by calling LAPACK's <tt>zggev</tt> routine.
-</p><a href="../module/smod_qz_direct.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+and solve this directly by calling LAPACK's <tt>zggev3</tt> routine.</p></td></tr>
 
-<!---->			   <tr class="active"><td><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></td><td><a href='../sourcefile/mod_spline_functions.f08.html'>mod_spline_functions.f08</a></td><td><p>Module that calculates the finite element basis functions.
+<!--active-->			   <tr class=""><td><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></td><td><a href='../sourcefile/mod_spline_functions.f08.html'>mod_spline_functions.f08</a></td><td><p>Module that calculates the finite element basis functions.
 The different basis functions and their derivatives
 used throughout the code are calculated here. All routines defined in
 this module simply return the basis functions for a specific point <tt>r</tt>
 in the interval <tt>(rj_lo, rj_hi)</tt>.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td><a href='../sourcefile/mod_thermal_conduction.f08.html'>mod_thermal_conduction.f08</a></td><td><p>This module is responsible for calculating and setting the
+<!---->			   <tr class="active"><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td><a href='../sourcefile/mod_thermal_conduction.f08.html'>mod_thermal_conduction.f08</a></td><td><p>This module is responsible for calculating and setting the
 thermal conduction values based on the equilibrium configuration.</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_timing.html'>mod_timing</a></td><td><a href='../sourcefile/mod_timing.f08.html'>mod_timing.f08</a></td><td><p>Module to provide timing facilities.</p><a href="../module/mod_timing.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td><a href='../sourcefile/mod_transform_matrix.f08.html'>mod_transform_matrix.f08</a></td><td><p>Contains various subroutines and functions to switch between linked-list
+<!--active-->			   <tr class=""><td><a href='../module/mod_timing.html'>mod_timing</a></td><td><a href='../sourcefile/mod_timing.f08.html'>mod_timing.f08</a></td><td><p>Module to provide timing facilities.</p><a href="../module/mod_timing.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+<!---->			   <tr class="active"><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td><a href='../sourcefile/mod_transform_matrix.f08.html'>mod_transform_matrix.f08</a></td><td><p>Contains various subroutines and functions to switch between linked-list
 matrix representations, banded matrix representations, and full array matrices.</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_types.html'>mod_types</a></td><td><a href='../sourcefile/mod_types.f08.html'>mod_types.f08</a></td><td><p>Module containing the different types used in the code.
+<!--active-->			   <tr class=""><td><a href='../module/mod_types.html'>mod_types</a></td><td><a href='../sourcefile/mod_types.f08.html'>mod_types.f08</a></td><td><p>Module containing the different types used in the code.
 All types are defined here, this includes all types where the
 equilibrium arrays are set as attributes, as well as a type
 to handle eigenfunctions.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_units.html'>mod_units</a></td><td><a href='../sourcefile/mod_units.f08.html'>mod_units.f08</a></td><td><p>This module handles checking and setting all unit normalisations.
+<!---->			   <tr class="active"><td><a href='../module/mod_units.html'>mod_units</a></td><td><a href='../sourcefile/mod_units.f08.html'>mod_units.f08</a></td><td><p>This module handles checking and setting all unit normalisations.
 When setting the normalisations, one should always specify a unit length
 and a unit magneticfield. The normalisations use a reference value of 2 for plasma beta
 as is common practice, such that we can write <script type="math/tex">\beta/2 = \mu * p / B^2 = 1 </script>.
@@ -405,16 +411,16 @@ The other normalisations are then fixed, and are set through
 <script type="math/tex; mode=display"> \kappa_{unit} = \frac{\rho_{unit}L_{unit}v_{unit}^3}{T_{unit}} </script>
 Where the latter two denote the luminosity and thermal conduction normalisations.
 </p><a href="../module/mod_units.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_version.html'>mod_version</a></td><td><a href='../sourcefile/mod_version.f08.html'>mod_version.f08</a></td><td><p>Simple module, containing only version-related stuff. Versioning is done in a
+<!--active-->			   <tr class=""><td><a href='../module/mod_version.html'>mod_version</a></td><td><a href='../sourcefile/mod_version.f08.html'>mod_version.f08</a></td><td><p>Simple module, containing only version-related stuff. Versioning is done in a
 separate module to avoid cluttering the commit history of for example
 <tt>mod_global_variables</tt> or <tt>mod_output</tt> every time an update
 to the code is done.
 The Legolas version is added to the datfile as a string and has
 common MAJOR.MINOR.PATCH formatting.
 This means:</p><a href="../module/mod_version.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td><a href='../sourcefile/mod_viscosity.f08.html'>mod_viscosity.f08</a></td><td><p>This module is responsible for calculating the viscosity contributions
+<!---->			   <tr class="active"><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td><a href='../sourcefile/mod_viscosity.f08.html'>mod_viscosity.f08</a></td><td><p>This module is responsible for calculating the viscosity contributions
 to the A-matrix based on the equilibrium configuration.</p></td></tr>
-<!---->			 </tbody></table>
+<!--active-->			 </tbody></table>
              
         </div>
       </div>
@@ -423,7 +429,7 @@ to the A-matrix based on the equilibrium configuration.</p></td></tr>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

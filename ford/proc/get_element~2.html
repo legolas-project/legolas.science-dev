@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>matrix_x_number &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>get_element &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>matrix_x_number
-      <small>Procedure</small>
+    <h1>get_element
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">13 statements</a>
+    title=" 0.3% of total for procedures.">23 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/smod_matrix_maths.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_banded_matrix_hermitian.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/smod_matrix_maths.f08.html'>smod_matrix_maths.f08</a></li>
-     <li><a href='../module/smod_matrix_maths.html'>smod_matrix_maths</a></li>
-     <li class="active">matrix_x_number</li>
+     <li><a href='../sourcefile/mod_banded_matrix_hermitian.f08.html'>mod_banded_matrix_hermitian.f08</a></li>
+     <li><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></li>
+     <li class="active">get_element</li>
   </ol>
 </div>
 </div>
@@ -113,14 +113,41 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure matrix_x_number <small>module procedure matrix_x_number()</small></h2>
+    <h2>private pure function get_element(this, row, col) result(element)</h2>
     
 
-    <p>Overloads the multiplication operator between a complex number and a matrix</p>
+    <p>Retrieves the element at position (row, col) of the original matrix.
+See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
+at position $(kd + 1 + i - j, j)$ if <code>uplo = "U"</code> and at position
+$(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
 
     <h3>Arguments</h3>
-    <em>None</em>
-    <br>
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-this~41"></span>class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td><p>type instance</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-row~7"></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>row</strong></td><td><p>the row index of the original position</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-col~4"></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>col</strong></td><td><p>the column index of the original position</p></td>
+</tr>
+</tbody>
+</table>
+
+   <h3>Return Value <small><span class="anchor" id="variable-element~14"></span>complex(kind=dp)</small></h3>
+    <p>the element at the original position (row, col)</p>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
@@ -149,7 +176,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

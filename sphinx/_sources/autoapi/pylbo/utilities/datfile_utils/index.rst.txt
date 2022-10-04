@@ -17,6 +17,8 @@ Functions
    pylbo.utilities.datfile_utils.read_grid
    pylbo.utilities.datfile_utils.read_grid_gauss
    pylbo.utilities.datfile_utils.read_ef_grid
+   pylbo.utilities.datfile_utils.read_eigenvectors
+   pylbo.utilities.datfile_utils.read_residuals
    pylbo.utilities.datfile_utils.read_eigenvalues
    pylbo.utilities.datfile_utils.read_equilibrium_arrays
    pylbo.utilities.datfile_utils.read_eigenfunction
@@ -169,6 +171,66 @@ Attributes
 
    :returns: **ef_grid** -- The eigenfunction grid from the datfile.
    :rtype: numpy.ndarray(dtype=float, ndim=1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: read_eigenvectors(istream, header)
+
+   
+   Reads the eigenvectors from the datfile.
+
+   :param istream: Datfile opened in binary mode.
+   :type istream: ~io.BufferedReader
+   :param header: Dictionary containing the datfile header, output from :func:`get_header`.
+   :type header: dict
+
+   :returns: **eigenvectors** -- The eigenvectors from the datfile, one in each column.
+   :rtype: numpy.ndarray(dtype=complex, ndim=2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: read_residuals(istream, header)
+
+   
+   Reads the residuals from the datfile.
+
+   :param istream: Datfile opened in binary mode.
+   :type istream: ~io.BufferedReader
+   :param header: Dictionary containing the datfile header, output from :func:`get_header`.
+   :type header: dict
+
+   :returns: **eigenvectors** -- The residuals from the datfile.
+   :rtype: numpy.ndarray(dtype=double, ndim=1)
 
 
 

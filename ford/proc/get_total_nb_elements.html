@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>get_total_nb_elements &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>get_total_nb_elements &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,13 +81,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">11 statements</a>
+    title=" 0.1% of total for procedures.">9 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_banded_matrix.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_matrix_structure.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_banded_matrix.f08.html'>mod_banded_matrix.f08</a></li>
-     <li><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
+     <li><a href='../sourcefile/mod_matrix_structure.f08.html'>mod_matrix_structure.f08</a></li>
+     <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
      <li class="active">get_total_nb_elements</li>
   </ol>
 </div>
@@ -113,17 +113,17 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private pure function get_total_nb_elements(this)</h2>
+    <h2>private pure function get_total_nb_elements(this) result(total_nb_elements)</h2>
     
 
-    <p>Returns the total number of elements inside the banded matrix.</p>
+    <p>Returns the total number of elements (nodes) across the various rows.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~19"></span>class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-this~29"></span>class(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td><p>type instance</p></td>
@@ -131,8 +131,8 @@
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-get_total_nb_elements~3"></span>integer</small></h3>
-    
+   <h3>Return Value <small><span class="anchor" id="variable-total_nb_elements"></span>integer</small></h3>
+    <p>total number of (non-zero) elements in this matrix</p>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
@@ -161,7 +161,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

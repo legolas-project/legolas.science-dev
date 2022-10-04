@@ -16,6 +16,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -74,18 +75,25 @@
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">pylbo.exceptions</span> <span class="kn">import</span> <span class="n">EigenfunctionsNotPresent</span><span class="p">,</span> <span class="n">MatricesNotPresent</span>
+<span class="kn">from</span> <span class="nn">pylbo.exceptions</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">EigenfunctionsNotPresent</span><span class="p">,</span>
+    <span class="n">EigenvectorsNotPresent</span><span class="p">,</span>
+    <span class="n">MatricesNotPresent</span><span class="p">,</span>
+    <span class="n">ResidualsNotPresent</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.datfile_utils</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">get_header</span><span class="p">,</span>
     <span class="n">read_derived_eigenfunction</span><span class="p">,</span>
     <span class="n">read_ef_grid</span><span class="p">,</span>
     <span class="n">read_eigenfunction</span><span class="p">,</span>
     <span class="n">read_eigenvalues</span><span class="p">,</span>
+    <span class="n">read_eigenvectors</span><span class="p">,</span>
     <span class="n">read_equilibrium_arrays</span><span class="p">,</span>
     <span class="n">read_grid</span><span class="p">,</span>
     <span class="n">read_grid_gauss</span><span class="p">,</span>
     <span class="n">read_matrix_A</span><span class="p">,</span>
     <span class="n">read_matrix_B</span><span class="p">,</span>
+    <span class="n">read_residuals</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">transform_to_numpy</span>
@@ -601,6 +609,47 @@
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">vals</span> <span class="o">=</span> <span class="n">read_matrix_A</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">vals</span></div>
+
+<div class="viewcode-block" id="LegolasDataSet.get_eigenvectors"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_eigenvectors">[docs]</a>    <span class="k">def</span> <span class="nf">get_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves the eigenvectors from the datfile.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        eigenvectors : numpy.ndarray(dtype=complex, ndim=2)</span>
+<span class="sd">            Array containing the eigenvectors. One eigenvector</span>
+<span class="sd">            in each column.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        EigenvectorsNotPresent</span>
+<span class="sd">            If the eigenvectors were not saved to the datfile.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenvecs_written&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">EigenvectorsNotPresent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
+            <span class="n">evs</span> <span class="o">=</span> <span class="n">read_eigenvectors</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">evs</span></div>
+
+<div class="viewcode-block" id="LegolasDataSet.get_residuals"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">get_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves the residuals from the datfile.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        residuals : numpy.ndarray(dtype=double, ndim=1)</span>
+<span class="sd">            Array containing the residuals.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ResidualsNotPresent</span>
+<span class="sd">            If the residuals were not saved to the datfile.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;residuals_written&quot;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">ResidualsNotPresent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">read_residuals</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
 
 <div class="viewcode-block" id="LegolasDataSet.get_eigenfunctions"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">get_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ev_idxs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>

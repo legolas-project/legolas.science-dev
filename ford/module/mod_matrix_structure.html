@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_matrix_structure &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>mod_matrix_structure &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.9% of total for modules and submodules.">164 statements</a>
+    title=" 1.6% of total for modules and submodules.">145 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_matrix_structure.f08"> Source File</a></li>
   </ul>
@@ -106,16 +106,6 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
-  <div id="inters-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/mod_matrix_structure.html#interface-addition">addition</a>
-      <a class="list-group-item" href="../module/mod_matrix_structure.html#interface-subtraction">subtraction</a>
-      <a class="list-group-item" href="../module/mod_matrix_structure.html#interface-multiplication">multiplication</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
   <div id="types-0" class="panel-collapse collapse">
     <div class="list-group">
@@ -131,7 +121,7 @@
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-is_valid_element">is_valid_element</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-is_valid_index">is_valid_index</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_complex_element">get_complex_element</a>
-      <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_total_nb_elements~2">get_total_nb_elements</a>
+      <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_total_nb_elements">get_total_nb_elements</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_label">get_label</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-copy">copy</a>
     </div>
@@ -143,6 +133,7 @@
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-add_element">add_element</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-set_label">set_label</a>
+      <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_nb_diagonals">get_nb_diagonals</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-delete_matrix">delete_matrix</a>
     </div>
   </div>
@@ -161,44 +152,21 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_matrix_node.html'>mod_matrix_node</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></li>
-    <li><a href='../module/mod_matrix_node.html'>mod_matrix_node</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
   </ul>
       </li>
       </ul>
     </div>
 
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Used by</h3>
-      </div>
-      <ul class="list-group">
-  <li class="list-group-item">  
-    <ul class="list-inline">
-      <li><h5>Descendants:</h5></li>
-      <li><a href='../module/smod_matrix_maths.html'>smod_matrix_maths</a></li>
-    </ul>
-  </li>
-      </ul>
-    </div>
-
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
-  <div id="inters-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/mod_matrix_structure.html#interface-addition">addition</a>
-      <a class="list-group-item" href="../module/mod_matrix_structure.html#interface-subtraction">subtraction</a>
-      <a class="list-group-item" href="../module/mod_matrix_structure.html#interface-multiplication">multiplication</a>
-    </div>
-  </div>
-</div>
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
   <div id="types-1" class="panel-collapse collapse">
@@ -215,7 +183,7 @@
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-is_valid_element">is_valid_element</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-is_valid_index">is_valid_index</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_complex_element">get_complex_element</a>
-      <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_total_nb_elements~2">get_total_nb_elements</a>
+      <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_total_nb_elements">get_total_nb_elements</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_label">get_label</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-copy">copy</a>
     </div>
@@ -227,6 +195,7 @@
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-add_element">add_element</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-set_label">set_label</a>
+      <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_nb_diagonals">get_nb_diagonals</a>
       <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-delete_matrix">delete_matrix</a>
     </div>
   </div>
@@ -238,148 +207,6 @@
 
     
     
-    <section>
-   <h2>Interfaces</h2>
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-addition"></span><h3>private interface <a href='../interface/addition.html'>addition</a>  </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module function add_matrices(matrix1, matrix2) result(matrix)</h3><p>Overloads the addition operator between two matrix datastructures</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>matrix1</strong></td><td><p>left-hand side of + operator</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>matrix2</strong></td><td><p>right-hand side of + operator</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>type(<a href='../type/matrix_t.html'>matrix_t</a>)</small></h4>  <p>result of addition</p>
-
-    </li>
-  </ul>
-</div>
-
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-subtraction"></span><h3>private interface <a href='../interface/subtraction.html'>subtraction</a>  </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module function subtract_matrices(matrix1, matrix2) result(matrix)</h3><p>Overloads the subtraction operator between two matrix datastructures</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>matrix1</strong></td><td><p>left-hand side of - operator</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>matrix2</strong></td><td><p>right-hand side of + operator</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>type(<a href='../type/matrix_t.html'>matrix_t</a>)</small></h4>  <p>result of subtraction</p>
-
-    </li>
-  </ul>
-</div>
-
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-multiplication"></span><h3>private interface <a href='../interface/multiplication.html'>multiplication</a>  </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module function matrix_x_real_vector(matrix, vector) result(array)</h3><p>Overloads the multiplication operator between a matrix and a real vector</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>matrix</strong></td><td><p>left-hand side</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>vector</strong>(matrix%matrix_dim)</td><td><p>right-hand side</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>complex(kind=dp)(matrix%matrix_dim)</small></h4>  <p>result of multiplication</p>
-
-    </li>
-    <li class="list-group-item">
-    <h3>private module function matrix_x_complex_vector(matrix, vector) result(array)</h3><p>Overloads the multiplication operator between a matrix and a complex vector</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>matrix</strong></td><td><p>left-hand side</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>complex(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>vector</strong>(matrix%matrix_dim)</td><td><p>right-hand side</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>complex(kind=dp)(matrix%matrix_dim)</small></h4>  <p>result of multiplication</p>
-
-    </li>
-    <li class="list-group-item">
-    <h3>private module function matrix_x_number(matrix, number) result(matrix_out)</h3><p>Overloads the multiplication operator between a complex number and a matrix</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>matrix</strong></td><td><p>left-hand side</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>class(*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>number</strong></td><td><p>right-hand side</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>type(<a href='../type/matrix_t.html'>matrix_t</a>)</small></h4>  <p>result of multiplication</p>
-
-    </li>
-  </ul>
-</div>
-
-    </section>
-  <br>
 
     
     <section>
@@ -420,31 +247,15 @@
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/matrix_t.html#boundprocedure-get_complex_element'>get_complex_element</a></strong>  </td>
        <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/matrix_t.html#boundprocedure-get_total_nb_elements~2'>get_total_nb_elements</a></strong>  </td>
+       <tr><td>procedure, public :: <strong><a href='../type/matrix_t.html#boundprocedure-get_total_nb_elements'>get_total_nb_elements</a></strong>  </td>
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/matrix_t.html#boundprocedure-get_label'>get_label</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/matrix_t.html#boundprocedure-get_nb_diagonals'>get_nb_diagonals</a></strong>  </td>
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/matrix_t.html#boundprocedure-copy'>copy</a></strong>  </td>
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/matrix_t.html#boundprocedure-delete_matrix'>delete_matrix</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, private :: <strong><a href='../type/matrix_t.html#boundprocedure-add_matrices'>add_matrices</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>generic, public :: <strong><a href='../type/matrix_t.html#boundprocedure-operator%28%2B%29'>operator(+)</a></strong>  => add_matrices </td>
-       <td></td></tr>
-       <tr><td>procedure, private :: <strong><a href='../type/matrix_t.html#boundprocedure-subtract_matrices'>subtract_matrices</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>generic, public :: <strong><a href='../type/matrix_t.html#boundprocedure-operator%28-%29'>operator(-)</a></strong>  => subtract_matrices </td>
-       <td></td></tr>
-       <tr><td>procedure, private :: <strong><a href='../type/matrix_t.html#boundprocedure-matrix_x_real_vector'>matrix_x_real_vector</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, private :: <strong><a href='../type/matrix_t.html#boundprocedure-matrix_x_complex_vector'>matrix_x_complex_vector</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, private :: <strong><a href='../type/matrix_t.html#boundprocedure-matrix_x_number'>matrix_x_number</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>generic, public :: <strong><a href='../type/matrix_t.html#boundprocedure-operator%28ASTERISK%29'>operator(*)</a></strong>  => matrix_x_real_vector, matrix_x_complex_vector </td>
-       <td></td></tr>
-       <tr><td>generic, public :: <strong><a href='../type/matrix_t.html#boundprocedure-operator%28ASTERISK%29~2'>operator(*)</a></strong>  => matrix_x_number </td>
        <td></td></tr>
        </tbody>
        </table>
@@ -581,7 +392,7 @@ values, so when a node at (row, column) is not foudn this function returns
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_total_nb_elements~2"></span><h3>private pure function <a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a>(this) result(total_nb_elements)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_total_nb_elements"></span><h3>private pure function <a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a>(this) result(total_nb_elements)</h3></div>
   <div class="panel-body">
        
 <p>Returns the total number of elements (nodes) across the various rows.</p>
@@ -728,6 +539,40 @@ on the row and column indices.</p>
   </div>
 
       <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_nb_diagonals"></span><h3>private subroutine <a href='../proc/get_nb_diagonals.html'>get_nb_diagonals</a>(this, ku, kl)</h3></div>
+  <div class="panel-body">
+       
+<p>Subroutine to get the number of super- and sub-diagonals in the matrix.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td><p>type instance</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>ku</strong></td><td><p>number of superdiagonals</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>kl</strong></td><td><p>number of subdiagonals</p></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-delete_matrix"></span><h3>private pure subroutine <a href='../proc/delete_matrix.html'>delete_matrix</a>(this)</h3></div>
   <div class="panel-body">
        
@@ -761,7 +606,7 @@ deallocates the various nodes in the rows.</p>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>check_matrix_compatibility &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>destroy &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -71,7 +71,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>check_matrix_compatibility
+    <h1>destroy
       <small>Subroutine</small>
     </h1>
     <div class="row">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">7 statements</a>
+    title=" 0.1% of total for procedures.">4 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_matrix_operations.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_banded_matrix_hermitian.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_matrix_operations.f08.html'>mod_matrix_operations.f08</a></li>
-     <li><a href='../module/mod_matrix_operations.html'>mod_matrix_operations</a></li>
-     <li class="active">check_matrix_compatibility</li>
+     <li><a href='../sourcefile/mod_banded_matrix_hermitian.f08.html'>mod_banded_matrix_hermitian.f08</a></li>
+     <li><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></li>
+     <li class="active">destroy</li>
   </ol>
 </div>
 </div>
@@ -113,27 +113,20 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine check_matrix_compatibility(cols_mat1, rows_mat2)</h2>
+    <h2>private pure subroutine destroy(this)</h2>
     
 
-    <p>Checks if two matrices (or a matrix and a vector) are compatible
-for matrix multiplication.</p>
+    <p>Destructor, deallocates the datastructure.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-cols_mat1"></span>integer,</td>
-<td>intent(in)</td>
+  <td><span class="anchor" id="variable-this~45"></span>class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+<td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>cols_mat1</strong></td><td><p>the number of columns of the first matrix</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-rows_mat2"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>rows_mat2</strong></td><td><p>the number of rows of the second matrix</p></td>
+  <td><strong>this</strong></td><td><p>type instance</p></td>
 </tr>
 </tbody>
 </table>
@@ -166,7 +159,7 @@ for matrix multiplication.</p>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

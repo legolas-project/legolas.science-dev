@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>toc &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>toc &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">14 statements</a>
+    title=" 0.3% of total for procedures.">21 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_timing.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine toc(message, start_time)</h2>
+    <h2>public subroutine toc(message, start_time, level)</h2>
     
 
     <p>Subroutine to end a wall clock timer.</p>
@@ -133,7 +133,7 @@ the call of <code>tic(start_time)</code>, along with <strong>message</strong>.</
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-message~2"></span>character,</td>
+  <td><span class="anchor" id="variable-message~2"></span>character(len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>message</strong></td><td><p>Message to log along elapsed time.</p></td>
@@ -144,6 +144,12 @@ the call of <code>tic(start_time)</code>, along with <strong>message</strong>.</
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>start_time</strong></td><td><p>Optional starting time. If not present the time recorded in
 the module variable is used.</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-level~2"></span>character(len=*),</td>
+<td>intent(in),</td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>level</strong></td><td><p>The level (severity) of the message, default is <tt>"debug"</tt>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -176,7 +182,7 @@ the module variable is used.</p></td>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

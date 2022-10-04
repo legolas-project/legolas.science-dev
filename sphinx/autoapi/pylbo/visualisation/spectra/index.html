@@ -17,6 +17,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -133,6 +134,24 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.spectra.</span></span><span class="sig-name descname"><span class="pre">SpectrumFigure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_figure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="../figure_manager/index.html#pylbo.visualisation.figure_manager.FigureWindow" title="pylbo.visualisation.figure_manager.FigureWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pylbo.visualisation.figure_manager.FigureWindow</span></code></a></p>
 <p>Superclass of both single and multispectra.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.c_handler">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">c_handler</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.c_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.c_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Property, returns the continua handler.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.ef_handler">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ef_handler</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.ef_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.ef_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Property, returns the eigenfunction handler.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.ef_ax">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ef_ax</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.ef_ax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.ef_ax" title="Permalink to this definition"></a></dt>
+<dd><p>Property, returns the eigenfunction axes.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.draw">
 <span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.draw" title="Permalink to this definition"></a></dt>
@@ -179,24 +198,6 @@ markersize, alpha, etc.)</p>
 <dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.add_derived_eigenfunctions">
 <span class="sig-name descname"><span class="pre">add_derived_eigenfunctions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.add_derived_eigenfunctions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.add_derived_eigenfunctions" title="Permalink to this definition"></a></dt>
 <dd><p>Adds derived eigenfunctions to the spectrum, overridden in subclasses.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.c_handler">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">c_handler</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.c_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.c_handler" title="Permalink to this definition"></a></dt>
-<dd><p>Property, returns the continua handler.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.ef_handler">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ef_handler</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.ef_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.ef_handler" title="Permalink to this definition"></a></dt>
-<dd><p>Property, returns the eigenfunction handler.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.spectra.SpectrumFigure.ef_ax">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ef_ax</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/spectra.html#SpectrumFigure.ef_ax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.spectra.SpectrumFigure.ef_ax" title="Permalink to this definition"></a></dt>
-<dd><p>Property, returns the eigenfunction axes.</p>
 </dd></dl>
 
 </dd></dl>
@@ -521,7 +522,7 @@ the elements themselves may be of different length.</p>
 <dd><p>The (top)right axes object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.2)"><em>Axes</em></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><em>Axes</em></a></p>
 </dd>
 </dl>
 </dd></dl>

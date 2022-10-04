@@ -16,6 +16,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -70,6 +71,7 @@
              
   <h1>Source code for pylbo.utilities.datfile_utils</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">struct</span>
+
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pylbo._version</span> <span class="kn">import</span> <span class="n">VersionHandler</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
@@ -168,6 +170,16 @@
     <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="s2">&quot;i&quot;</span>
     <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
     <span class="n">h</span><span class="p">[</span><span class="s2">&quot;matrices_written&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="o">*</span><span class="n">hdr</span><span class="p">)</span>
+    <span class="c1"># read eigenvectors boolean</span>
+    <span class="n">h</span><span class="p">[</span><span class="s2">&quot;eigenvecs_written&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">legolas_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;1.3.0&quot;</span><span class="p">:</span>
+        <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
+        <span class="n">h</span><span class="p">[</span><span class="s2">&quot;eigenvecs_written&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="o">*</span><span class="n">hdr</span><span class="p">)</span>
+    <span class="c1"># read eigenvectors boolean</span>
+    <span class="n">h</span><span class="p">[</span><span class="s2">&quot;residuals_written&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">legolas_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;1.3.0&quot;</span><span class="p">:</span>
+        <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
+        <span class="n">h</span><span class="p">[</span><span class="s2">&quot;residuals_written&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="o">*</span><span class="n">hdr</span><span class="p">)</span>
     <span class="c1"># read eigenfunction subset info</span>
     <span class="n">h</span><span class="p">[</span><span class="s2">&quot;eigenfunction_subset_used&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">if</span> <span class="n">legolas_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;1.1.4&quot;</span><span class="p">:</span>
@@ -351,10 +363,29 @@
             <span class="n">h</span><span class="p">[</span><span class="s2">&quot;derived_ef_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pp_names</span>
             <span class="c1"># derived eigenfunction offsets</span>
             <span class="n">byte_size</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">h</span><span class="p">[</span><span class="s2">&quot;ef_gridpts&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;ef_written_flags&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="n">nb_pp</span> <span class="o">*</span> <span class="n">SIZE_COMPLEX</span>
+                <span class="n">h</span><span class="p">[</span><span class="s2">&quot;ef_gridpts&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="s2">&quot;ef_written_idxs&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="n">nb_pp</span> <span class="o">*</span> <span class="n">SIZE_COMPLEX</span>
             <span class="p">)</span>
             <span class="n">offsets</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;derived_ef_arrays&quot;</span><span class="p">:</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()})</span>
             <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">byte_size</span><span class="p">)</span>
+
+    <span class="c1"># if eigenvectors are written include offset</span>
+    <span class="k">if</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;eigenvecs_written&quot;</span><span class="p">]:</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="s2">&quot;i&quot;</span>
+        <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
+        <span class="n">h</span><span class="p">[</span><span class="s2">&quot;eigenvec_len&quot;</span><span class="p">],</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;nb_eigenvecs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hdr</span>
+
+        <span class="n">byte_size</span> <span class="o">=</span> <span class="n">SIZE_COMPLEX</span> <span class="o">*</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;eigenvec_len&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;nb_eigenvecs&quot;</span><span class="p">]</span>
+        <span class="n">offsets</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;eigenvectors&quot;</span><span class="p">:</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()})</span>
+        <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">byte_size</span><span class="p">)</span>
+
+    <span class="c1"># if residuals are written include offset</span>
+    <span class="k">if</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;residuals_written&quot;</span><span class="p">]:</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="s2">&quot;i&quot;</span>
+        <span class="n">h</span><span class="p">[</span><span class="s2">&quot;nb_residuals&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">byte_size</span> <span class="o">=</span> <span class="n">SIZE_DOUBLE</span> <span class="o">*</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;nb_residuals&quot;</span><span class="p">]</span>
+        <span class="n">offsets</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;residuals&quot;</span><span class="p">:</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()})</span>
+        <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">byte_size</span><span class="p">)</span>
 
     <span class="c1"># if matrices are written, include amount of nonzero elements and offsets</span>
     <span class="k">if</span> <span class="n">h</span><span class="p">[</span><span class="s2">&quot;matrices_written&quot;</span><span class="p">]:</span>
@@ -368,6 +399,7 @@
         <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">byte_size</span><span class="p">)</span>
         <span class="c1"># matrix A offset</span>
         <span class="n">offsets</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;matrix_A&quot;</span><span class="p">:</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()})</span>
+
     <span class="n">h</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offsets</span>
     <span class="k">return</span> <span class="n">h</span></div>
 
@@ -436,6 +468,56 @@
     <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;ef_gridpts&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="s2">&quot;d&quot;</span>
     <span class="n">ef_grid</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ef_grid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="read_eigenvectors"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/datfile_utils/index.html#pylbo.utilities.datfile_utils.read_eigenvectors">[docs]</a><span class="k">def</span> <span class="nf">read_eigenvectors</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">header</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads the eigenvectors from the datfile.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    istream : ~io.BufferedReader</span>
+<span class="sd">        Datfile opened in binary mode.</span>
+<span class="sd">    header : dict</span>
+<span class="sd">        Dictionary containing the datfile header, output from :func:`get_header`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    eigenvectors : numpy.ndarray(dtype=complex, ndim=2)</span>
+<span class="sd">        The eigenvectors from the datfile, one in each column.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">][</span><span class="s2">&quot;eigenvectors&quot;</span><span class="p">])</span>
+    <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="s2">&quot;d&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenvec_len&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;nb_eigenvecs&quot;</span><span class="p">]</span>
+    <span class="n">hdr</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
+    <span class="n">reals</span> <span class="o">=</span> <span class="n">hdr</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">imags</span> <span class="o">=</span> <span class="n">hdr</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">reals</span><span class="p">,</span> <span class="n">imags</span><span class="p">)]),</span>
+        <span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenvec_len&quot;</span><span class="p">],</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;nb_eigenvecs&quot;</span><span class="p">]),</span>
+        <span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="read_residuals"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/datfile_utils/index.html#pylbo.utilities.datfile_utils.read_residuals">[docs]</a><span class="k">def</span> <span class="nf">read_residuals</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">header</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads the residuals from the datfile.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    istream : ~io.BufferedReader</span>
+<span class="sd">        Datfile opened in binary mode.</span>
+<span class="sd">    header : dict</span>
+<span class="sd">        Dictionary containing the datfile header, output from :func:`get_header`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    eigenvectors : numpy.ndarray(dtype=double, ndim=1)</span>
+<span class="sd">        The residuals from the datfile.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">][</span><span class="s2">&quot;residuals&quot;</span><span class="p">])</span>
+    <span class="n">fmt</span> <span class="o">=</span> <span class="n">ALIGN</span> <span class="o">+</span> <span class="s2">&quot;d&quot;</span> <span class="o">*</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;nb_residuals&quot;</span><span class="p">]</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="read_eigenvalues"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/datfile_utils/index.html#pylbo.utilities.datfile_utils.read_eigenvalues">[docs]</a><span class="k">def</span> <span class="nf">read_eigenvalues</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">omit_large_evs</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>

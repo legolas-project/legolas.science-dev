@@ -43,8 +43,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: continua()
-      :property:
+   .. py:property:: continua
 
       
       Retrieves the continua based on the type of subclass, returns a dictionary
@@ -74,8 +73,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: parameters()
-      :property:
+   .. py:property:: parameters
 
       
       Retrieves the parameters based on the type of subclass, returns a dictionary
@@ -289,8 +287,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: efs_written()
-      :property:
+   .. py:property:: efs_written
 
       
       Checks if eigenfunctions are present.
@@ -315,8 +312,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_names()
-      :property:
+   .. py:property:: ef_names
 
       
       Retrieves the eigenfunction names.
@@ -342,8 +338,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_grid()
-      :property:
+   .. py:property:: ef_grid
 
       
       Retrieves the eigenfunction grid.
@@ -368,8 +363,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_subset()
-      :property:
+   .. py:property:: ef_subset
 
       
       Checks if dataset contains a subset of the eigenfunctions
@@ -394,8 +388,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: derived_efs_written()
-      :property:
+   .. py:property:: derived_efs_written
 
       
       Checks if derived eigenfunctions are present.
@@ -420,8 +413,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: derived_ef_names()
-      :property:
+   .. py:property:: derived_ef_names
 
       
       Retrieves the derived eigenfunction names.
@@ -747,6 +739,61 @@ Classes
       ..
           !! processed by numpydoc !!
 
+   .. py:method:: get_eigenvectors()
+
+      
+      Retrieves the eigenvectors from the datfile.
+
+      :returns: **eigenvectors** -- Array containing the eigenvectors. One eigenvector
+                in each column.
+      :rtype: numpy.ndarray(dtype=complex, ndim=2)
+
+      :raises EigenvectorsNotPresent: If the eigenvectors were not saved to the datfile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_residuals()
+
+      
+      Retrieves the residuals from the datfile.
+
+      :returns: **residuals** -- Array containing the residuals.
+      :rtype: numpy.ndarray(dtype=double, ndim=1)
+
+      :raises ResidualsNotPresent: If the residuals were not saved to the datfile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
    .. py:method:: get_eigenfunctions(ev_guesses=None, ev_idxs=None)
 
       
@@ -876,8 +923,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:method:: efs_written()
-      :property:
+   .. py:property:: efs_written
 
       
       Checks if the eigenfunctions are written.
@@ -903,8 +949,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_names()
-      :property:
+   .. py:property:: ef_names
 
       
       Returns the eigenfunction names.
@@ -929,8 +974,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: ef_grid()
-      :property:
+   .. py:property:: ef_grid
 
       
       Retrieves the eigenfunction grid.
@@ -955,8 +999,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: derived_efs_written()
-      :property:
+   .. py:property:: derived_efs_written
 
       
       Checks if the derived eigenfunctions are written.
@@ -982,8 +1025,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: derived_ef_names()
-      :property:
+   .. py:property:: derived_ef_names
 
       
       Returns the derived eigenfunction names.

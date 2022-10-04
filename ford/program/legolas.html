@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>legolas &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>legolas &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -80,7 +80,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="100.0% of total for programs.">101 statements</a>
+    title="100.0% of total for programs.">107 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/main.f08"> Source File</a></li>
   </ul>
@@ -108,10 +108,11 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../program/legolas.html#variable-matrix_a~12">matrix_A</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-matrix_b~12">matrix_B</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-omega~9">omega</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-matrix_a~14">matrix_A</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-matrix_b~14">matrix_B</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-omega~11">omega</a>
       <a class="list-group-item" href="../program/legolas.html#variable-eigenvecs_right">eigenvecs_right</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-start_time_evp">start_time_evp</a>
     </div>
   </div>
 </div>
@@ -138,13 +139,14 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_output.html'>mod_output</a></li>
+    <li><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
     <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
     <li><a href='../module/mod_solvers.html'>mod_solvers</a></li>
-    <li><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></li>
-    <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_timing.html'>mod_timing</a></li>
   </ul>
       </li>
       </ul>
@@ -164,10 +166,11 @@ KU Leuven, Belgium.</p>
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../program/legolas.html#variable-matrix_a~12">matrix_A</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-matrix_b~12">matrix_B</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-omega~9">omega</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-matrix_a~14">matrix_A</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-matrix_b~14">matrix_B</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-omega~11">omega</a>
       <a class="list-group-item" href="../program/legolas.html#variable-eigenvecs_right">eigenvecs_right</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-start_time_evp">start_time_evp</a>
     </div>
   </div>
 </div>
@@ -192,17 +195,17 @@ KU Leuven, Belgium.</p>
 <thead><tr><th>Type</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-matrix_a~12"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>)</td>
+  <td><span class="anchor" id="variable-matrix_a~14"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>)</td>
   <td></td><td>::</td>
   <td><strong>matrix_A</strong></td><td></td><td></td><td><p>A matrix in eigenvalue problem wBX = AX</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-matrix_b~12"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>)</td>
+  <td><span class="anchor" id="variable-matrix_b~14"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>)</td>
   <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td></td><td></td><td><p>B matrix in eigenvalue problem wBX = AX</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-omega~9"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-omega~11"></span>complex(kind=dp),</td>
   <td>allocatable</td><td>::</td>
   <td><strong>omega</strong>(:)</td><td></td><td></td><td><p>array with eigenvalues</p></td>
 </tr>
@@ -210,6 +213,11 @@ KU Leuven, Belgium.</p>
   <td><span class="anchor" id="variable-eigenvecs_right"></span>complex(kind=dp),</td>
   <td>allocatable</td><td>::</td>
   <td><strong>eigenvecs_right</strong>(:,:)</td><td></td><td></td><td><p>matrix with right eigenvectors, column indices correspond to omega indices</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-start_time_evp"></span>integer</td>
+  <td></td><td>::</td>
+  <td><strong>start_time_evp</strong></td><td></td><td></td><td><p>start time of eigenvalue solver</p></td>
 </tr>
 </tbody>
 </table>
@@ -272,7 +280,7 @@ routines of all relevant subroutines to do the same thing.</p>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

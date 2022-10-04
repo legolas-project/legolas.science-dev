@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_transform_matrix &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>mod_transform_matrix &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.2% of total for modules and submodules.">102 statements</a>
+    title=" 1.9% of total for modules and submodules.">174 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_transform_matrix.f08"> Source File</a></li>
   </ul>
@@ -111,9 +111,12 @@
     <div class="list-group">
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-matrix_to_array">matrix_to_array</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-matrix_to_banded">matrix_to_banded</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-matrix_to_hermitian_banded">matrix_to_hermitian_banded</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-array_to_matrix">array_to_matrix</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-array_to_banded">array_to_banded</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-array_to_hermitian_banded">array_to_hermitian_banded</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-banded_to_array">banded_to_array</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-hermitian_banded_to_array">hermitian_banded_to_array</a>
     </div>
   </div>
 </div>
@@ -123,6 +126,7 @@
     <div class="list-group">
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-general_array_to_matrix">general_array_to_matrix</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-banded_to_complex_array">banded_to_complex_array</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-hermitian_banded_to_complex_array">hermitian_banded_to_complex_array</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-get_array_element">get_array_element</a>
     </div>
   </div>
@@ -133,7 +137,9 @@
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-matrix_to_complex_array">matrix_to_complex_array</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-matrix_to_complex_banded">matrix_to_complex_banded</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-matrix_to_complex_hermitian_banded">matrix_to_complex_hermitian_banded</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-array_to_complex_banded">array_to_complex_banded</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-array_to_complex_hermitian_banded">array_to_complex_hermitian_banded</a>
     </div>
   </div>
 </div>
@@ -152,9 +158,11 @@ matrix representations, banded matrix representations, and full array matrices.<
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
+    <li><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></li>
   </ul>
       </li>
       </ul>
@@ -172,9 +180,12 @@ matrix representations, banded matrix representations, and full array matrices.<
     <div class="list-group">
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-matrix_to_array">matrix_to_array</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-matrix_to_banded">matrix_to_banded</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-matrix_to_hermitian_banded">matrix_to_hermitian_banded</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-array_to_matrix">array_to_matrix</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-array_to_banded">array_to_banded</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-array_to_hermitian_banded">array_to_hermitian_banded</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-banded_to_array">banded_to_array</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#interface-hermitian_banded_to_array">hermitian_banded_to_array</a>
     </div>
   </div>
 </div>
@@ -184,6 +195,7 @@ matrix representations, banded matrix representations, and full array matrices.<
     <div class="list-group">
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-general_array_to_matrix">general_array_to_matrix</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-banded_to_complex_array">banded_to_complex_array</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-hermitian_banded_to_complex_array">hermitian_banded_to_complex_array</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-get_array_element">get_array_element</a>
     </div>
   </div>
@@ -194,7 +206,9 @@ matrix representations, banded matrix representations, and full array matrices.<
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-matrix_to_complex_array">matrix_to_complex_array</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-matrix_to_complex_banded">matrix_to_complex_banded</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-matrix_to_complex_hermitian_banded">matrix_to_complex_hermitian_banded</a>
       <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-array_to_complex_banded">array_to_complex_banded</a>
+      <a class="list-group-item" href="../module/mod_transform_matrix.html#proc-array_to_complex_hermitian_banded">array_to_complex_hermitian_banded</a>
     </div>
   </div>
 </div>
@@ -280,6 +294,48 @@ matrix representations, banded matrix representations, and full array matrices.<
 </div>
 
      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-matrix_to_hermitian_banded"></span><h3>public interface <a href='../interface/matrix_to_hermitian_banded.html'>matrix_to_hermitian_banded</a>  </h3></div>
+  <ul class="list-group">
+    <li class="list-group-item">
+    <h3>private subroutine <a href='../proc/matrix_to_complex_hermitian_banded.html'>matrix_to_complex_hermitian_banded</a>(matrix, diags, uplo, banded)</h3>
+<p>Converts a matrix data structure into a complex Hermitian banded matrix.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>matrix</strong></td><td><p>the original matrix datastructure</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>diags</strong></td><td><p>number of sub/superdiagonals</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>uplo</strong></td><td><p>upper or lower triangular part of the matrix</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>banded</strong></td><td><p>the resulting banded datastructure</p></td>
+</tr>
+</tbody>
+</table>
+
+
+    </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="interface-array_to_matrix"></span><h3>public interface <a href='../interface/array_to_matrix.html'>array_to_matrix</a>  </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
@@ -315,7 +371,7 @@ matrix representations, banded matrix representations, and full array matrices.<
   <ul class="list-group">
     <li class="list-group-item">
     <h3>private subroutine <a href='../proc/array_to_complex_banded.html'>array_to_complex_banded</a>(array, subdiags, superdiags, banded)</h3>
-<p>Converts a given real array to a banded datastructure.</p>
+<p>Converts a given array to a banded datastructure.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -353,6 +409,48 @@ matrix representations, banded matrix representations, and full array matrices.<
 </div>
 
      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-array_to_hermitian_banded"></span><h3>public interface <a href='../interface/array_to_hermitian_banded.html'>array_to_hermitian_banded</a>  </h3></div>
+  <ul class="list-group">
+    <li class="list-group-item">
+    <h3>private subroutine <a href='../proc/array_to_complex_hermitian_banded.html'>array_to_complex_hermitian_banded</a>(array, diags, uplo, banded)</h3>
+<p>Converts a given array to a Hermitian banded datastructure.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>array</strong>(:,:)</td><td><p>the original array</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>diags</strong></td><td><p>the number of sub/superdiagonals</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>uplo</strong></td><td><p>upper or lower triangular part of the matrix</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>banded</strong></td><td><p>the resulting banded datastructure</p></td>
+</tr>
+</tbody>
+</table>
+
+
+    </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="interface-banded_to_array"></span><h3>public interface <a href='../interface/banded_to_array.html'>banded_to_array</a>  </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
@@ -372,6 +470,31 @@ matrix representations, banded matrix representations, and full array matrices.<
 </table>
 
 <h4>Return Value <small>complex(kind=dp)(banded%m,banded%n)</small></h4>  <p>the resulting complex array</p>
+
+    </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-hermitian_banded_to_array"></span><h3>public interface <a href='../interface/hermitian_banded_to_array.html'>hermitian_banded_to_array</a>  </h3></div>
+  <ul class="list-group">
+    <li class="list-group-item">
+    <h3>private pure function <a href='../proc/hermitian_banded_to_complex_array.html'>hermitian_banded_to_complex_array</a>(banded) result(array)</h3>
+<p>Converts a Hermitian banded datastructure to a full complex array.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>banded</strong></td><td><p>the original banded structure</p></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>complex(kind=dp)(banded%n,banded%n)</small></h4>  <p>the resulting complex array</p>
 
     </li>
   </ul>
@@ -433,6 +556,29 @@ matrix representations, banded matrix representations, and full array matrices.<
 </table>
 
 <h4>Return Value <small>complex(kind=dp)(banded%m,banded%n)</small></h4>  <p>the resulting complex array</p>
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-hermitian_banded_to_complex_array"></span><h3>private pure function <a href='../proc/hermitian_banded_to_complex_array.html'>hermitian_banded_to_complex_array</a>(banded) result(array)</h3></div>
+  <div class="panel-body">
+       
+<p>Converts a Hermitian banded datastructure to a full complex array.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>banded</strong></td><td><p>the original banded structure</p></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>complex(kind=dp)(banded%n,banded%n)</small></h4>  <p>the resulting complex array</p>
 
   </div>
   </div>
@@ -547,10 +693,50 @@ Returns the element as a (casted) complex type.</p>
   </div>
 
       <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-matrix_to_complex_hermitian_banded"></span><h3>private subroutine <a href='../proc/matrix_to_complex_hermitian_banded.html'>matrix_to_complex_hermitian_banded</a>(matrix, diags, uplo, banded)</h3></div>
+  <div class="panel-body">
+       
+<p>Converts a matrix data structure into a complex Hermitian banded matrix.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>matrix</strong></td><td><p>the original matrix datastructure</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>diags</strong></td><td><p>number of sub/superdiagonals</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>uplo</strong></td><td><p>upper or lower triangular part of the matrix</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>banded</strong></td><td><p>the resulting banded datastructure</p></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-array_to_complex_banded"></span><h3>private subroutine <a href='../proc/array_to_complex_banded.html'>array_to_complex_banded</a>(array, subdiags, superdiags, banded)</h3></div>
   <div class="panel-body">
        
-<p>Converts a given real array to a banded datastructure.</p>
+<p>Converts a given array to a banded datastructure.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -586,6 +772,46 @@ Returns the element as a (casted) complex type.</p>
   </div>
   </div>
 
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-array_to_complex_hermitian_banded"></span><h3>private subroutine <a href='../proc/array_to_complex_hermitian_banded.html'>array_to_complex_hermitian_banded</a>(array, diags, uplo, banded)</h3></div>
+  <div class="panel-body">
+       
+<p>Converts a given array to a Hermitian banded datastructure.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>array</strong>(:,:)</td><td><p>the original array</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>diags</strong></td><td><p>the number of sub/superdiagonals</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>uplo</strong></td><td><p>upper or lower triangular part of the matrix</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>banded</strong></td><td><p>the resulting banded datastructure</p></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
     </section>    
     <br>
     
@@ -597,7 +823,7 @@ Returns the element as a (casted) complex type.</p>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

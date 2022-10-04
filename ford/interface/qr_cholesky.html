@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +9,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>raise_incompatibility_error &ndash; Legolas v. 1.2.1 - develop</title>
+    <title>qr_cholesky &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -71,8 +72,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>raise_incompatibility_error
-      <small>Subroutine</small>
+    <h1>qr_cholesky
+   <small>Interface</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +82,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">5 statements</a>
+    title=" 0.4% of total for procedures.">32 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/smod_matrix_maths.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_solvers.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/smod_matrix_maths.f08.html'>smod_matrix_maths.f08</a></li>
-     <li><a href='../module/smod_matrix_maths.html'>smod_matrix_maths</a></li>
-     <li class="active">raise_incompatibility_error</li>
+     <li><a href='../sourcefile/mod_solvers.f08.html'>mod_solvers.f08</a></li>
+     <li><a href='../module/mod_solvers.html'>mod_solvers</a></li>
+     <li class="active">qr_cholesky</li>
   </ol>
 </div>
 </div>
@@ -113,59 +114,56 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>subroutine raise_incompatibility_error(dim1, dim2)</h2>
-    
+      <h2>interface</h2>
+      <p>interface to the different solution methods implemented in submodules</p>
+      <br>
+      <h2>private module module subroutine qr_cholesky(matrix_A, matrix_B, omega, vr)   <a href='../proc/qr_cholesky.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h2>
 
-    <p>Raises an error if two square matrices are not compatible.</p>
+    
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-dim1"></span>integer,</td>
+  <td><span class="anchor" id="variable-matrix_a~4"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>dim1</strong></td><td><p>dimension of the first matrix</p></td>
+  <td><strong>matrix_A</strong></td><td><p>matrix A</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-dim2"></span>integer,</td>
+  <td><span class="anchor" id="variable-matrix_b~4"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>dim2</strong></td><td><p>dimension of the second matrix</p></td>
+  <td><strong>matrix_B</strong></td><td><p>matrix B</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-omega~3"></span>complex(kind=dp),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>omega</strong>(:)</td><td><p>array with eigenvalues</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-vr~3"></span>complex(kind=dp),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>vr</strong>(:,:)</td><td><p>array with right eigenvectors</p></td>
 </tr>
 </tbody>
 </table>
 
     <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<em>None</em>
-
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
-
-
-    
-    
-
-    
-    
-
-
-    
-    
-    </div>
-  </div>
+ </div>
+</div>
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.2.1 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

@@ -17,6 +17,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -160,6 +161,30 @@ closed and will not be drawn.</p>
 </dl>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.number_of_figures">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_figures</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer.number_of_figures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer.number_of_figures" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the total number of figures in the stack.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.figure_id_list">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">figure_id_list</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer.figure_id_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer.figure_id_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of figure ids in the stack.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.figure_list">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">figure_list</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer.figure_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer.figure_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of figures in the stack.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.is_empty">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_empty</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer.is_empty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer.is_empty" title="Permalink to this definition"></a></dt>
+<dd><p>Returns <cite>True</cite> if there are no active figures.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.add">
 <span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer.add" title="Permalink to this definition"></a></dt>
@@ -206,30 +231,6 @@ when trying to close.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.number_of_figures">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_figures</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer.number_of_figures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer.number_of_figures" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the total number of figures in the stack.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.figure_id_list">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">figure_id_list</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer.figure_id_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer.figure_id_list" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the list of figure ids in the stack.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.figure_list">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">figure_list</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer.figure_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer.figure_list" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the list of figures in the stack.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.figure_manager.FigureContainer.is_empty">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_empty</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_manager.html#FigureContainer.is_empty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_manager.FigureContainer.is_empty" title="Permalink to this definition"></a></dt>
-<dd><p>Returns <cite>True</cite> if there are no active figures.</p>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
@@ -252,7 +253,7 @@ and axis objects from matplotlib.</p></li>
 <dd><p>The figure on which to draw.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.5.2)"><em>Figure</em></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.6.0)"><em>Figure</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -263,7 +264,7 @@ and axis objects from matplotlib.</p></li>
 <dd><p>The axes on which to draw.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.2)"><em>Axes</em></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><em>Axes</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -390,7 +391,7 @@ On return, <cite>tight_layout()</cite> is called by default to prevent overlappi
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.2)"><em>Axes</em></a>) – The axes object, this will be “split” and a new axes will be added
+<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><em>Axes</em></a>) – The axes object, this will be “split” and a new axes will be added
 to the figure.</p></li>
 <li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The location of the new subplot to add, should be “right”, “left”, “top”
 or “bottom”. Equal to “right” by default, so the original figure is shifted
@@ -406,7 +407,7 @@ to the left and the new axis is added on the right.</p></li>
 <dd class="field-odd"><p>The axes instance that was added.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.2)"><em>Axes</em></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><em>Axes</em></a></p>
 </dd>
 </dl>
 </dd></dl>

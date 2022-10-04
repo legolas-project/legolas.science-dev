@@ -17,6 +17,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -115,7 +116,7 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.data_containers.</span></span><span class="sig-name descname"><span class="pre">LegolasDataContainer</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abc.ABC</span></code></a></p>
 <p>Baseclass for a Legolas data container.</p>
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataContainer.continua">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">continua</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer.continua"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer.continua" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieves the continua based on the type of subclass, returns a dictionary
@@ -137,7 +138,7 @@ one for each dataset in the series.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataContainer.parameters">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parameters</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataContainer.parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataContainer.parameters" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieves the parameters based on the type of subclass, returns a dictionary
@@ -434,7 +435,7 @@ with the parameter names as keys.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.efs_written">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">efs_written</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.efs_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.efs_written" title="Permalink to this definition"></a></dt>
 <dd><p>Checks if eigenfunctions are present.</p>
@@ -448,7 +449,7 @@ with the parameter names as keys.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.ef_names">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ef_names</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.ef_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.ef_names" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieves the eigenfunction names.</p>
@@ -463,7 +464,7 @@ None if no eigenfunctions are present.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.ef_grid">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ef_grid</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.ef_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.ef_grid" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieves the eigenfunction grid.</p>
@@ -477,7 +478,7 @@ None if no eigenfunctions are present.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.ef_subset">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ef_subset</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.ef_subset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.ef_subset" title="Permalink to this definition"></a></dt>
 <dd><p>Checks if dataset contains a subset of the eigenfunctions</p>
@@ -491,7 +492,7 @@ None if no eigenfunctions are present.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.derived_efs_written">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">derived_efs_written</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.derived_efs_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.derived_efs_written" title="Permalink to this definition"></a></dt>
 <dd><p>Checks if derived eigenfunctions are present.</p>
@@ -505,7 +506,7 @@ None if no eigenfunctions are present.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.derived_ef_names">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">derived_ef_names</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.derived_ef_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.derived_ef_names" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieves the derived eigenfunction names.</p>
@@ -719,7 +720,7 @@ Returns <cite>None</cite> if the resistivity is zero somewhere on the domain.</p
 elements. Rows and columns are integers, values are real.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>3-tuple of numpy.ndarray(dtype=int, ndim=1)</p>
+<dd class="field-even"><p>3-tuple of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a>(dtype=int, ndim=1)</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><a class="reference internal" href="../exceptions/index.html#pylbo.exceptions.MatricesNotPresent" title="pylbo.exceptions.MatricesNotPresent"><strong>MatricesNotPresent</strong></a> – If the matrices were not saved to the datfile.</p>
@@ -737,10 +738,45 @@ elements. Rows and columns are integers, values are real.</p>
 elements. Rows and columns are integers, values are complex.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>3-tuple of numpy.ndarray(dtype=int, ndim=1)</p>
+<dd class="field-even"><p>3-tuple of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a>(dtype=int, ndim=1)</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><a class="reference internal" href="../exceptions/index.html#pylbo.exceptions.MatricesNotPresent" title="pylbo.exceptions.MatricesNotPresent"><strong>MatricesNotPresent</strong></a> – If the matrices were not saved to the datfile.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_eigenvectors">
+<span class="sig-name descname"><span class="pre">get_eigenvectors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.get_eigenvectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_eigenvectors" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the eigenvectors from the datfile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>eigenvectors</strong> – Array containing the eigenvectors. One eigenvector
+in each column.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a>(dtype=complex, ndim=2)</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../exceptions/index.html#pylbo.exceptions.EigenvectorsNotPresent" title="pylbo.exceptions.EigenvectorsNotPresent"><strong>EigenvectorsNotPresent</strong></a> – If the eigenvectors were not saved to the datfile.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_residuals">
+<span class="sig-name descname"><span class="pre">get_residuals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.get_residuals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_residuals" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the residuals from the datfile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>residuals</strong> – Array containing the residuals.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a>(dtype=double, ndim=1)</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../exceptions/index.html#pylbo.exceptions.ResidualsNotPresent" title="pylbo.exceptions.ResidualsNotPresent"><strong>ResidualsNotPresent</strong></a> – If the residuals were not saved to the datfile.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -805,7 +841,7 @@ corresponding eigenfunction names.</p>
 the nearest eigenvalue based on the distance between two points.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ev_guesses</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a><em>, </em><em>list of float</em><em>, </em><em>list of complex</em>) – The guesses for the eigenvalues. These can be a single float/complex value,
+<dd class="field-odd"><p><strong>ev_guesses</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – The guesses for the eigenvalues. These can be a single float/complex value,
 or a list/Numpy array of floats/complex values.</p>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -826,7 +862,7 @@ indices <cite>idxs</cite>.</p></li>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.data_containers.</span></span><span class="sig-name descname"><span class="pre">LegolasDataSeries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pylbo.data_containers.LegolasDataContainer" title="pylbo.data_containers.LegolasDataContainer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LegolasDataContainer</span></code></a></p>
 <p>Baseclass for a Legolas data container.</p>
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.efs_written">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">efs_written</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.efs_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.efs_written" title="Permalink to this definition"></a></dt>
 <dd><p>Checks if the eigenfunctions are written.</p>
@@ -841,7 +877,7 @@ dataset has eigenfunctions present.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.ef_names">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ef_names</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.ef_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.ef_names" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the eigenfunction names.</p>
@@ -855,7 +891,7 @@ dataset has eigenfunctions present.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.ef_grid">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ef_grid</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.ef_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.ef_grid" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieves the eigenfunction grid.</p>
@@ -869,7 +905,7 @@ dataset has eigenfunctions present.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.derived_efs_written">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">derived_efs_written</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.derived_efs_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.derived_efs_written" title="Permalink to this definition"></a></dt>
 <dd><p>Checks if the derived eigenfunctions are written.</p>
@@ -884,7 +920,7 @@ dataset has derived eigenfunctions present.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.derived_ef_names">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">derived_ef_names</span></span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.derived_ef_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.derived_ef_names" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the derived eigenfunction names.</p>
