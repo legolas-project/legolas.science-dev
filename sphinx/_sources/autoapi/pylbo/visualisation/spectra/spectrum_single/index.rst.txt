@@ -1,0 +1,183 @@
+:py:mod:`pylbo.visualisation.spectra.spectrum_single`
+=====================================================
+
+.. py:module:: pylbo.visualisation.spectra.spectrum_single
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot
+
+
+
+
+.. py:class:: SingleSpectrumPlot(dataset, figsize, custom_figure, **kwargs)
+
+   Bases: :py:obj:`pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure`
+
+   
+   Creates a plot of a single spectrum based on a given dataset.
+
+   :param dataset: The dataset used to create the spectrum.
+   :type dataset: ~pylbo.data_containers.LegolasDataSet
+   :param figsize: Figure size used when creating a window, analogous to matplotlib.
+   :type figsize: tuple
+   :param custom_figure: The custom figure to use in the form (fig, axes).
+   :type custom_figure: tuple
+
+   .. attribute:: dataset
+
+      The dataset passed as parameter
+
+      :type: ~pylbo.data_containers.LegolasDataSet
+
+   .. attribute:: w_real
+
+      Real part of the eigenvalues as a numpy array.
+
+      :type: numpy.ndarray(dtype=float, ndim=1)
+
+   .. attribute:: w_imag
+
+      Imaginary part of the eigenvalues as a numpy array.
+
+      :type: numpy.ndarray(dtype=float, ndim=1)
+
+   .. attribute:: marker
+
+      The marker used to draw the points.
+
+      :type: ~matplotlib.markers
+
+   .. attribute:: markersize
+
+      Size of the marker.
+
+      :type: int, float
+
+   .. attribute:: alpha
+
+      Alpha value of the points.
+
+      :type: int, float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: add_spectrum()
+
+      
+      Adds the spectrum to the plot, makes the points pickable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_continua(interactive=True)
+
+      
+      Adds the continua to the spectrum.
+
+      :param interactive: If `True`, makes the legend pickable.
+      :type interactive: bool
+
+      :returns: **c_handler** -- The legendhandler used to plot the continua.
+      :rtype: ~pylbo.continua.ContinuaHandler
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_eigenfunctions()
+
+      
+      Adds the eigenfunctions to the plot, sets the eigenfunction handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_derived_eigenfunctions()
+
+      
+      Adds the derived eigenfunctions to the plot, sets the eigenfunction handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

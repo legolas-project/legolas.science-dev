@@ -1,0 +1,178 @@
+:py:mod:`pylbo.visualisation.modes.cylindrical_2d`
+==================================================
+
+.. py:module:: pylbo.visualisation.modes.cylindrical_2d
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.modes.cylindrical_2d.CylindricalSlicePlot2D
+
+
+
+
+.. py:class:: CylindricalSlicePlot2D(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int], show_ef_panel: bool, polar: bool, **kwargs)
+
+   Bases: :py:obj:`pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D`
+
+   
+   Class for handling cylindrical 2D plots of the eigenmode solutions.
+
+   :param data: The data for the visualisation.
+   :type data: ModeVisualisationData
+   :param u2: The :math:`\theta`  coordinate of the eigenmode solution.
+   :type u2: float or ndarray
+   :param u3: The :math:`z`  coordinate of the eigenmode solution.
+   :type u3: float or ndarray
+   :param time: The time at which the eigenmode solution is calculated.
+   :type time: float
+   :param slicing_axis: The axis along which the eigenmode solution is sliced.
+   :type slicing_axis: str
+   :param figsize: The size of the figure.
+   :type figsize: tuple[int, int]
+   :param show_ef_panel: Whether to show the eigenfunction panel.
+   :type show_ef_panel: bool
+   :param polar: Whether to use polar coordinates for the plot.
+   :type polar: bool
+   :param \*\*kwargs: Additional keyword arguments to be passed to
+                      :meth:`matplotlib.pyplot.pcolormesh`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: set_plot_arrays() -> None
+
+      
+      Sets the arrays used for plotting. This should implement setting of
+      :attr:`u1_data`, :attr:`u2_data`, :attr:`u3_data`, :attr:`t_data` and
+      :attr:`ef_data`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _draw_image() -> None
+
+
+   .. py:method:: _draw_contours() -> None
+
+
+   .. py:method:: draw_eigenfunction() -> None
+
+      
+      Draws the eigenfunction(s) to the figure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_view_xlabel() -> str
+
+
+   .. py:method:: get_view_ylabel() -> str
+
+
+   .. py:method:: _create_figure_layout(figsize: tuple[int, int]) -> tuple[matplotlib.figure.Figure, dict]
+
+      
+      Create the figure layout for the visualisation. Two panels are created:
+      the top one for the eigenfunction and the bottom one for the visualisation.
+
+      :param figsize: The size of the figure.
+      :type figsize: tuple[int, int]
+
+      :returns: * **fig** (*~matplotlib.figure.Figure*) -- The figure to use for the visualisation.
+                * **axes** (*dict*) -- The axes to use for the visualisation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _update_view(updated_solution: numpy.ndarray)
+
+      
+      Updates the axes with the new solution. If a contour plot is used, the
+      contour lines are cleared and redrawn. If an image plot is used, the image is
+      updated.
+
+      :param updated_solution: The new solution.
+      :type updated_solution: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

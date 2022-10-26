@@ -72,7 +72,7 @@
   <h1>Source code for pylbo.visualisation.continua</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
-<span class="kn">from</span> <span class="nn">pylbo.visualisation.legend_interface</span> <span class="kn">import</span> <span class="n">LegendHandler</span>
+<span class="kn">from</span> <span class="nn">pylbo.visualisation.legend_handler</span> <span class="kn">import</span> <span class="n">LegendHandler</span>
 
 <div class="viewcode-block" id="CONTINUA_NAMES"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/continua/index.html#pylbo.visualisation.continua.CONTINUA_NAMES">[docs]</a><span class="n">CONTINUA_NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;slow-&quot;</span><span class="p">,</span> <span class="s2">&quot;slow+&quot;</span><span class="p">,</span> <span class="s2">&quot;alfven-&quot;</span><span class="p">,</span> <span class="s2">&quot;alfven+&quot;</span><span class="p">,</span> <span class="s2">&quot;thermal&quot;</span><span class="p">,</span> <span class="s2">&quot;doppler&quot;</span><span class="p">]</span></div>
 <div class="viewcode-block" id="CONTINUA_COLORS"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/continua/index.html#pylbo.visualisation.continua.CONTINUA_COLORS">[docs]</a><span class="n">CONTINUA_COLORS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;grey&quot;</span><span class="p">]</span></div>
@@ -273,43 +273,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;continua_colors should be of length </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">CONTINUA_COLORS</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_continua_colors</span> <span class="o">=</span> <span class="n">colors</span>
-
-    <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="ContinuaHandler.check_if_collapsed"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/continua/index.html#pylbo.visualisation.continua.ContinuaHandler.check_if_collapsed">[docs]</a>    <span class="k">def</span> <span class="nf">check_if_collapsed</span><span class="p">(</span><span class="n">continuum</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Checks if a given continuum is &quot;collapsed&quot; to a single point.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        continuum : numpy.ndarray</span>
-<span class="sd">            Array with values.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        True if all values are the same, false otherwise.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">continuum</span><span class="p">),</span> <span class="mi">0</span><span class="p">)):</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">return</span> <span class="kc">False</span></div>
-
-    <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="ContinuaHandler.check_if_all_zero"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/continua/index.html#pylbo.visualisation.continua.ContinuaHandler.check_if_all_zero">[docs]</a>    <span class="k">def</span> <span class="nf">check_if_all_zero</span><span class="p">(</span><span class="n">continuum</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Checks if a given continuum is pure zero.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        continuum : numpy.ndarray</span>
-<span class="sd">            Array with values.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        True if all values are zero, false otherwise.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">continuum</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">return</span> <span class="kc">False</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_continua_colors</span> <span class="o">=</span> <span class="n">colors</span></div>
 </pre></div>
 
            </div>

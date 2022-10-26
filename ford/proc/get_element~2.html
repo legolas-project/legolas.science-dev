@@ -81,13 +81,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">23 statements</a>
+    title=" 0.1% of total for procedures.">11 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_banded_matrix_hermitian.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_banded_matrix.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_banded_matrix_hermitian.f08.html'>mod_banded_matrix_hermitian.f08</a></li>
-     <li><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></li>
+     <li><a href='../sourcefile/mod_banded_matrix.f08.html'>mod_banded_matrix.f08</a></li>
+     <li><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
      <li class="active">get_element</li>
   </ol>
 </div>
@@ -118,15 +118,14 @@
 
     <p>Retrieves the element at position (row, col) of the original matrix.
 See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
-at position $(kd + 1 + i - j, j)$ if <code>uplo = "U"</code> and at position
-$(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
+at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~41"></span>class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-this~40"></span>class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td><p>type instance</p></td>
@@ -147,7 +146,7 @@ $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
 </table>
 
    <h3>Return Value <small><span class="anchor" id="variable-element~14"></span>complex(kind=dp)</small></h3>
-    <p>the element at the original position (row, col)</p>
+    <p>the element at original position (row, col)</p>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

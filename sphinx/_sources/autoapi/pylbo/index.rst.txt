@@ -37,450 +37,27 @@ Functions
 
 .. autoapisummary::
 
-   pylbo.set_loglevel
-   pylbo.disable_logging
-   pylbo.load
-   pylbo.load_series
-   pylbo.load_logfile
-   pylbo.plot_spectrum
-   pylbo.plot_spectrum_multi
-   pylbo.plot_merged_spectrum
-   pylbo.plot_spectrum_comparison
-   pylbo.plot_equilibrium
-   pylbo.plot_equilibrium_balance
-   pylbo.plot_continua
-   pylbo.plot_matrices
    pylbo.generate_parfiles
    pylbo.run_legolas
+   pylbo.load
+   pylbo.load_logfile
+   pylbo.load_series
+   pylbo.disable_logging
+   pylbo.set_loglevel
+   pylbo.plot_continua
+   pylbo.plot_equilibrium
+   pylbo.plot_equilibrium_balance
+   pylbo.plot_matrices
+   pylbo.plot_merged_spectrum
+   pylbo.plot_spectrum
+   pylbo.plot_spectrum_comparison
+   pylbo.plot_spectrum_multi
+   pylbo.plot_1d_temporal_evolution
+   pylbo.plot_2d_slice
+   pylbo.plot_3d_slice
+   pylbo.prepare_vtk_export
 
 
-
-.. py:function:: set_loglevel(level)
-
-   
-   Sets the logging level.
-
-   :param level: The level for logging. See :class:`~logging.Logger`, or the
-                 `allowed levels <https://docs.python.org/3/library/logging.html#levels>`_.
-                 Both the string and integer values can be set, case-insensitive.
-   :type level: int, str
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: disable_logging()
-
-   
-   Completely disables logging.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: load(datfile)
-
-   
-   Loads a single Legolas datfile.
-
-   :param datfile: Path to the datfile.
-   :type datfile: str, ~os.PathLike
-
-   :raises ValueError: If `datfile` is not a single file.
-
-   :returns: **ds** -- A dataset instance for the given datfile.
-   :rtype: ~pylbo.data_containers.LegolasDataSet
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: load_series(datfiles)
-
-   
-   Loads multiple Legolas datfiles.
-
-   :param datfiles: Paths to the datfiles that should be loaded, in list/array form. Every element
-                    should be a string or a ~os.PathLike object.
-   :type datfiles: list, numpy.ndarray
-
-   :raises ValueError: If an empty list or array is supplied.
-
-   :returns: **series** -- A dataseries instance for the given datfiles.
-   :rtype: ~pylbo.data_containers.LegolasDataSeries
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: load_logfile(logfile, sort=False)
-
-   
-   Reads a Legolas log file.
-
-   :param logfile: The path to the logfile.
-   :type logfile: str, ~os.PathLike
-   :param sort: If `True`, sorts the eigenvalues in the logfile. Sorting is done first
-                on the real part, then on the imaginary part.
-   :type sort: bool
-
-   :returns: **eigenvalues** -- Array containing the eigenvalues from the logfile.
-   :rtype: numpy.ndarray
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: plot_spectrum(data, figsize=None, custom_figure=None, **kwargs)
-
-   
-   Plots the spectrum of a single dataset.
-
-   :param data: The dataset that should be used.
-   :type data: ~pylbo.data_containers.LegolasDataSet
-   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
-   :type figsize: tuple
-   :param custom_figure: Optional, in the form (fig, ax). If supplied no new figure will be created
-                         but this one will be used instead. `fig` refers to the matplotlib figure and
-                         `ax` to a (single) axes instance, meaning that you can pass a subplot as well.
-   :type custom_figure: tuple
-
-   :returns: **p** -- The spectrum instance which can be used further to add continua,
-             eigenfunctions, etc.
-   :rtype: ~pylbo.visualisation.spectra.SingleSpectrumPlot
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: plot_spectrum_multi(data, xdata, use_squared_omega=False, use_real_parts=True, figsize=None, custom_figure=None, **kwargs)
-
-   
-   Plots the spectrum of a dataset series.
-
-   :param data: The dataseries that should be used.
-   :type data: ~pylbo.data_containers.LegolasDataSeries
-   :param xdata: Data to use for the horizontal axis. This can either be a key from the
-                 parameters dictionary, or a list/numpy array containing actual data.
-   :type xdata: str, list, numpy.ndarray
-   :param use_squared_omega: If `True`, this will square the eigenvalues when they are plotted on the
-                             vertical axis. If `False` (default), either the real or imaginary part of the
-                             eigenvalues will be plotted depending on the value of `use_real_parts`.
-   :type use_squared_omega: bool
-   :param use_real_parts: If `True` (default), this will plot the real part of the eigenvalues on the
-                          vertical axis. If `False` the imaginary part will be used.
-   :type use_real_parts: bool
-   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
-   :type figsize: tuple
-   :param custom_figure: Optional, in the form (fig, ax). If supplied no new figure will be created
-                         but this one will be used instead. `fig` refers to the matplotlib figure and
-                         `ax` to a (single) axes instance, meaning that you can pass a subplot as well.
-   :type custom_figure: tuple
-
-   :returns: **p** -- The spectrum instance which can be used further to add continua,
-             eigenfunctions, etc.
-   :rtype: ~pylbo.visualisation.spectra.MultiSpectrumPlot
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: plot_merged_spectrum(data, figsize=None, custom_figure=None, interactive=True, legend=True, **kwargs)
-
-   
-   Creates a merged spectrum from various datasets, useful in plotting multiple
-   results from the shift-invert solver, for example. This draws every dataset
-   in a different color by default, and creates a corresponding legend. Supply the
-   optional argument `color` to draw all points in the same color.
-
-   :param data:
-   :type data: ~pylbo.data_containers.LegolasDataSeries
-   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
-   :type figsize: tuple
-   :param custom_figure: Optional, in the form (fig, ax). If supplied no new figure will be created
-                         but this one will be used instead. `fig` refers to the matplotlib figure and
-                         `ax` to a (single) axes instance, meaning that you can pass a subplot as well.
-   :type custom_figure: tuple
-   :param interactive: If `True` (default), enables an interactive legend.
-   :type interactive: bool
-   :param legend: If `True` (default), draws a legend.
-   :type legend: bool
-
-   :returns: **p** -- The spectrumfigure instance, containing the plot.
-   :rtype: ~pylbo.visualisation.spectra.MultiSpectrumPlot
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: plot_spectrum_comparison(ds1, ds2, figsize=None, custom_figure=None, lock_zoom=False, **kwargs)
-
-   
-   Compares two spectra.
-
-   :param ds1: The first dataset, this one is put on the left panel.
-   :type ds1: ~pylbo.data_containers.LegolasDataSet
-   :param ds2: The second dataset, this one is put on the right panel.
-   :type ds2: ~pylbo.data_containers.LegolasDataSet
-   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
-   :type figsize: tuple
-   :param custom_figure: The custom figure to use in the form (fig, axes).
-   :type custom_figure: tuple
-   :param lock_zoom: If `True` (`False` by default), locks the zoom of both axis. When locked,
-                     zoomin in on one of the axis automatically scales the zoom on the other one
-                     as well.
-   :type lock_zoom: bool
-
-   :returns: **p** -- The figure instance containing the compared spectrum plot.
-   :rtype: ~pylbo.visualisation.spectra.SpectrumComparisonPlot
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: plot_equilibrium(data, figsize=None, interactive=True, **kwargs)
-
-   
-   Plots the equilibrium profiles.
-
-   :param data: The dataset or series that should be used.
-   :type data: ~pylbo.data_containers.LegolasDataSet
-   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
-   :type figsize: tuple
-   :param interactive: If `True` (default), enables an interactive legend.
-   :type interactive: bool
-
-   :returns: **p** -- The profile instance containing the equilibrium plots.
-   :rtype: ~pylbo.visualisation.profiles.EquilibriumProfile
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: plot_equilibrium_balance(data, figsize=None, **kwargs)
-
-   
-   Creates a plot of the force balance equation and non-adiabatic equilibrium
-   equation. These should be as close to zero as possible over the entire grid.
-   All values smaller than 1e-16 are set to zero.
-
-   :param data: The dataset that should be used
-   :type data: ~pylbo.data_containers.LegolasDataSet
-   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
-   :type figsize: tuple
-
-   :returns: **p** -- The profile instance containing the equilibrium balance plots.
-   :rtype: ~pylbo.visualisation.profiles.EquilibriumBalance
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: plot_continua(data, figsize=None, interactive=True, **kwargs)
-
-   
-   Plots the continua profiles.
-
-   :param data: The dataset or series that should be used.
-   :type data: ~pylbo.data_containers.LegolasDataSet
-   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
-   :type figsize: tuple
-   :param interactive: If `True` (default), enables an interactive legend.
-   :type interactive: bool
-
-   :returns: **p** -- The profile instance containing the continua plots.
-   :rtype: ~pylbo.visualisation.profiles.ContinuumProfile
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
-
-.. py:function:: plot_matrices(data, figsize=None, **kwargs)
-
-   
-   Plots the continua profiles.
-
-   :param data: The dataset that should be used.
-   :type data: ~pylbo.data_containers.LegolasDataSet
-   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
-   :type figsize: tuple
-
-   :returns: **p** -- The instance containing the matrix plots.
-   :rtype: ~pylbo.visualisation.matrices.MatrixFigure
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   ..
-       !! processed by numpydoc !!
 
 .. py:function:: generate_parfiles(parfile_dict, basename=None, output_dir=None, subdir=True)
 
@@ -611,6 +188,645 @@ Functions
    >>> from pathlib import Path
    >>> files = sorted(Path("parfiles").glob("*.dat"))
    >>> pylbo.run_legolas(files, nb_cpus=4, executable="legolas")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: load(datfile)
+
+   
+   Loads a single Legolas datfile.
+
+   :param datfile: Path to the datfile.
+   :type datfile: str, ~os.PathLike
+
+   :raises ValueError: If `datfile` is not a single file.
+
+   :returns: **ds** -- A dataset instance for the given datfile.
+   :rtype: ~pylbo.data_containers.LegolasDataSet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: load_logfile(logfile, sort=False)
+
+   
+   Reads a Legolas log file.
+
+   :param logfile: The path to the logfile.
+   :type logfile: str, ~os.PathLike
+   :param sort: If `True`, sorts the eigenvalues in the logfile. Sorting is done first
+                on the real part, then on the imaginary part.
+   :type sort: bool
+
+   :returns: **eigenvalues** -- Array containing the eigenvalues from the logfile.
+   :rtype: numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: load_series(datfiles)
+
+   
+   Loads multiple Legolas datfiles.
+
+   :param datfiles: Paths to the datfiles that should be loaded, in list/array form. Every element
+                    should be a string or a ~os.PathLike object.
+   :type datfiles: list, numpy.ndarray
+
+   :raises ValueError: If an empty list or array is supplied.
+
+   :returns: **series** -- A dataseries instance for the given datfiles.
+   :rtype: ~pylbo.data_containers.LegolasDataSeries
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: disable_logging()
+
+   
+   Completely disables logging.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: set_loglevel(level)
+
+   
+   Sets the logging level.
+
+   :param level: The level for logging. See :class:`~logging.Logger`, or the
+                 `allowed levels <https://docs.python.org/3/library/logging.html#levels>`_.
+                 Both the string and integer values can be set, case-insensitive.
+   :type level: int, str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_continua(data, figsize=None, interactive=True, **kwargs)
+
+   
+   Plots the continua profiles.
+
+   :param data: The dataset or series that should be used.
+   :type data: ~pylbo.data_containers.LegolasDataSet
+   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
+   :type figsize: tuple
+   :param interactive: If `True` (default), enables an interactive legend.
+   :type interactive: bool
+
+   :returns: **p** -- The profile instance containing the continua plots.
+   :rtype: ~pylbo.visualisation.profiles.ContinuumProfile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_equilibrium(data, figsize=None, interactive=True, **kwargs)
+
+   
+   Plots the equilibrium profiles.
+
+   :param data: The dataset or series that should be used.
+   :type data: ~pylbo.data_containers.LegolasDataSet
+   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
+   :type figsize: tuple
+   :param interactive: If `True` (default), enables an interactive legend.
+   :type interactive: bool
+
+   :returns: **p** -- The profile instance containing the equilibrium plots.
+   :rtype: ~pylbo.visualisation.profiles.EquilibriumProfile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_equilibrium_balance(data, figsize=None, **kwargs)
+
+   
+   Creates a plot of the force balance equation and non-adiabatic equilibrium
+   equation. These should be as close to zero as possible over the entire grid.
+   All values smaller than 1e-16 are set to zero.
+
+   :param data: The dataset that should be used
+   :type data: ~pylbo.data_containers.LegolasDataSet
+   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
+   :type figsize: tuple
+
+   :returns: **p** -- The profile instance containing the equilibrium balance plots.
+   :rtype: ~pylbo.visualisation.profiles.EquilibriumBalance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_matrices(data, figsize=None, **kwargs)
+
+   
+   Plots the continua profiles.
+
+   :param data: The dataset that should be used.
+   :type data: ~pylbo.data_containers.LegolasDataSet
+   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
+   :type figsize: tuple
+
+   :returns: **p** -- The instance containing the matrix plots.
+   :rtype: ~pylbo.visualisation.matrices.MatrixFigure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_merged_spectrum(data, figsize=None, custom_figure=None, interactive=True, legend=True, **kwargs)
+
+   
+   Creates a merged spectrum from various datasets, useful in plotting multiple
+   results from the shift-invert solver, for example. This draws every dataset
+   in a different color by default, and creates a corresponding legend. Supply the
+   optional argument `color` to draw all points in the same color.
+
+   :param data:
+   :type data: ~pylbo.data_containers.LegolasDataSeries
+   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
+   :type figsize: tuple
+   :param custom_figure: Optional, in the form (fig, ax). If supplied no new figure will be created
+                         but this one will be used instead. `fig` refers to the matplotlib figure and
+                         `ax` to a (single) axes instance, meaning that you can pass a subplot as well.
+   :type custom_figure: tuple
+   :param interactive: If `True` (default), enables an interactive legend.
+   :type interactive: bool
+   :param legend: If `True` (default), draws a legend.
+   :type legend: bool
+
+   :returns: **p** -- The spectrumfigure instance, containing the plot.
+   :rtype: ~pylbo.visualisation.spectra.MultiSpectrumPlot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_spectrum(data, figsize=None, custom_figure=None, **kwargs)
+
+   
+   Plots the spectrum of a single dataset.
+
+   :param data: The dataset that should be used.
+   :type data: ~pylbo.data_containers.LegolasDataSet
+   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
+   :type figsize: tuple
+   :param custom_figure: Optional, in the form (fig, ax). If supplied no new figure will be created
+                         but this one will be used instead. `fig` refers to the matplotlib figure and
+                         `ax` to a (single) axes instance, meaning that you can pass a subplot as well.
+   :type custom_figure: tuple
+
+   :returns: **p** -- The spectrum instance which can be used further to add continua,
+             eigenfunctions, etc.
+   :rtype: ~pylbo.visualisation.spectra.SingleSpectrumPlot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_spectrum_comparison(ds1, ds2, figsize=None, custom_figure=None, lock_zoom=False, **kwargs)
+
+   
+   Compares two spectra.
+
+   :param ds1: The first dataset, this one is put on the left panel.
+   :type ds1: ~pylbo.data_containers.LegolasDataSet
+   :param ds2: The second dataset, this one is put on the right panel.
+   :type ds2: ~pylbo.data_containers.LegolasDataSet
+   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
+   :type figsize: tuple
+   :param custom_figure: The custom figure to use in the form (fig, axes).
+   :type custom_figure: tuple
+   :param lock_zoom: If `True` (`False` by default), locks the zoom of both axis. When locked,
+                     zoomin in on one of the axis automatically scales the zoom on the other one
+                     as well.
+   :type lock_zoom: bool
+
+   :returns: **p** -- The figure instance containing the compared spectrum plot.
+   :rtype: ~pylbo.visualisation.spectra.SpectrumComparisonPlot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_spectrum_multi(data, xdata, use_squared_omega=False, use_real_parts=True, figsize=None, custom_figure=None, **kwargs)
+
+   
+   Plots the spectrum of a dataset series.
+
+   :param data: The dataseries that should be used.
+   :type data: ~pylbo.data_containers.LegolasDataSeries
+   :param xdata: Data to use for the horizontal axis. This can either be a key from the
+                 parameters dictionary, or a list/numpy array containing actual data.
+   :type xdata: str, list, numpy.ndarray
+   :param use_squared_omega: If `True`, this will square the eigenvalues when they are plotted on the
+                             vertical axis. If `False` (default), either the real or imaginary part of the
+                             eigenvalues will be plotted depending on the value of `use_real_parts`.
+   :type use_squared_omega: bool
+   :param use_real_parts: If `True` (default), this will plot the real part of the eigenvalues on the
+                          vertical axis. If `False` the imaginary part will be used.
+   :type use_real_parts: bool
+   :param figsize: Optional figure size like the usual matplotlib (x, x) size.
+   :type figsize: tuple
+   :param custom_figure: Optional, in the form (fig, ax). If supplied no new figure will be created
+                         but this one will be used instead. `fig` refers to the matplotlib figure and
+                         `ax` to a (single) axes instance, meaning that you can pass a subplot as well.
+   :type custom_figure: tuple
+
+   :returns: **p** -- The spectrum instance which can be used further to add continua,
+             eigenfunctions, etc.
+   :rtype: ~pylbo.visualisation.spectra.MultiSpectrumPlot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_1d_temporal_evolution(ds: pylbo.data_containers.LegolasDataSet, omega: Union[complex, list[complex], numpy.ndarray], ef_name: str, u2: float, u3: float, time: Union[list, numpy.ndarray], figsize: tuple[int, int] = None, add_background: bool = False, use_real_part: bool = True, complex_factor: complex = None, show_ef_panel: bool = True, **kwargs) -> pylbo.visualisation.modes.temporal_1d.TemporalEvolutionPlot1D
+
+   
+   Plot the temporal evolution of a 1D eigenmode solution, i.e.
+
+   :math:`f(u_1, u_2, u_3, t) =
+   f_1(u_1) \exp\left(ik_2u_2 + ik_3u_3 - i\omega t\right)`,
+
+   for a particular set of coordinates :math:`(u_2, u_3)` over a time interval.
+
+   :param ds: The data set containing the eigenfunction.
+   :type ds: LegolasDataSet
+   :param omega: The (approximate) eigenvalue of the mode(s) to visualise.
+   :type omega: complex, list[complex], np.ndarray
+   :param ef_name: The name of the eigenfunction to visualise.
+   :type ef_name: str
+   :param u2: The y or :math:`\theta` coordinate of the eigenmode solution.
+   :type u2: float
+   :param u3: The z coordinate of the eigenmode solution.
+   :type u3: float
+   :param time: The time interval to visualise.
+   :type time: list or np.ndarray
+   :param figsize: The size of the figure.
+   :type figsize: tuple[int, int]
+   :param add_background: Whether to add the equilibrium background to the plot.
+   :type add_background: bool
+   :param use_real_part: Whether to use the real part of the eigenmode solution.
+   :type use_real_part: bool
+   :param complex_factor: A complex factor to multiply the eigenmode solution with.
+   :type complex_factor: complex
+   :param show_ef_panel: Whether to show the eigenfunction panel.
+   :type show_ef_panel: bool
+   :param kwargs: Additional keyword arguments to pass to :meth:`~matplotlib.pyplot.imshow`.
+   :type kwargs: dict
+
+   :returns: The plot object.
+   :rtype: TemporalEvolutionPlot1D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_2d_slice(ds: pylbo.data_containers.LegolasDataSet, omega: Union[complex, list[complex], numpy.ndarray], ef_name: str, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int] = None, add_background: bool = False, use_real_part: bool = True, complex_factor: complex = None, show_ef_panel: bool = True, polar: bool = False, **kwargs) -> pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D
+
+   
+   Plot a 2D spatial view of the eigenmode solution, i.e.
+
+   :math:`f(u_1, u_2, u_3, t) =
+   f_1(u_1) \exp\left(ik_2u_2 + ik_3u_3 - i\omega t\right)`,
+
+   for a particular set of coordinates. If `slicing_axis = 'z'` then a 2D view is
+   created for a given slicing point along the 'z'-axis (hence a 'xy'-view), for
+   `slicing_axis = 'y'` a 'xz'-view will be created. The given spatial coordinates
+   `u2` and `u3` must be consistent with the slicing axis. For cylindrical geometries
+   slices in both Cartesian and polar coordinates can be created.
+
+   :param ds: The data set containing the eigenfunction.
+   :type ds: LegolasDataSet
+   :param omega: The (approximate) eigenvalue of the mode(s) to visualise.
+   :type omega: complex, list[complex], np.ndarray
+   :param ef_name: The name of the eigenfunction to visualise.
+   :type ef_name: str
+   :param u2: The y or :math:`\theta` coordinate of the eigenmode solution.
+   :type u2: float, np.ndarray
+   :param u3: The z coordinate of the eigenmode solution.
+   :type u3: float, np.ndarray
+   :param time: The time at which to visualise the eigenmode solution.
+   :type time: float
+   :param slicing_axis: The axis to slice the 2D view along, either 'z', 'y' or 'theta'
+   :type slicing_axis: str
+   :param figsize: The size of the figure.
+   :type figsize: tuple[int, int]
+   :param add_background: Whether to add the equilibrium background to the plot.
+   :type add_background: bool
+   :param use_real_part: Whether to use the real part of the eigenmode solution.
+   :type use_real_part: bool
+   :param complex_factor: A complex factor to multiply the eigenmode solution with.
+   :type complex_factor: complex
+   :param show_ef_panel: Whether to show the eigenfunction panel.
+   :type show_ef_panel: bool
+   :param polar: Whether to use polar coordinates for the 2D view. Only used if the
+                 dataset geometry is cylindrical. Default is False.
+   :type polar: bool
+   :param kwargs: Additional keyword arguments to pass to the plotting function.
+   :type kwargs: dict
+
+   :returns: **p** -- The plot object.
+   :rtype: CartesianSlicePlot2D or CylindricalSlicePlot2D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: plot_3d_slice(ds: pylbo.data_containers.LegolasDataSet, omega: Union[complex, list[complex], numpy.ndarray], ef_name: str, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int] = None, add_background: bool = False, use_real_part: bool = True, complex_factor: complex = None, **kwargs) -> pylbo.visualisation.modes.cartesian_3d.CartesianSlicePlot3D
+
+   
+   Plot a 3D spatial view of the eigenmode solution, i.e.
+
+   :math:`f(u_1, u_2, u_3, t) =
+   f_1(u_1) \exp\left(ik_2u_2 + ik_3u_3 - i\omega t\right)`,
+
+   for a particular set of coordinates. Several 2D slices are superimposed on each
+   other for every value of :math:`u_3`.
+
+   :param ds: The data set containing the eigenfunction.
+   :type ds: LegolasDataSet
+   :param omega: The (approximate) eigenvalue of the mode(s) to visualise.
+   :type omega: complex, list[complex], np.ndarray
+   :param ef_name: The name of the eigenfunction to visualise.
+   :type ef_name: str
+   :param u2: The y or :math:`\theta` coordinate of the eigenmode solution.
+   :type u2: float, np.ndarray
+   :param u3: The z coordinate of the eigenmode solution.
+   :type u3: float, np.ndarray
+   :param time: The time at which to visualise the eigenmode solution.
+   :type time: float
+   :param slicing_axis: The axis to slice the 2D view along, either 'z', 'y' or 'theta'
+   :type slicing_axis: str
+   :param figsize: The size of the figure.
+   :type figsize: tuple[int, int]
+   :param add_background: Whether to add the equilibrium background to the plot.
+   :type add_background: bool
+   :param use_real_part: Whether to use the real part of the eigenmode solution.
+   :type use_real_part: bool
+   :param complex_factor: A complex factor to multiply the eigenmode solution with.
+   :type complex_factor: complex
+   :param kwargs: Additional keyword arguments to pass to the plotting function.
+   :type kwargs: dict
+
+   :returns: **p** -- The plot object.
+   :rtype: CartesianSlicePlot3D or CylindricalSlicePlot3D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: prepare_vtk_export(ds: pylbo.data_containers.LegolasDataSet, omega: Union[complex, list[complex], numpy.ndarray], u2: numpy.ndarray, u3: numpy.ndarray, use_real_part: bool = True, complex_factor: complex = None) -> Union[pylbo.visualisation.modes.vtk_export.VTKCartesianData, pylbo.visualisation.modes.vtk_export.VTKCylindricalData]
+
+   
+   Prepares for a VTK file export of the eigenmode solution in three dimensions.
+   Returns a :class:`VTKDataCube3D` object which can be used to generate VTK files.
+
+   :param ds: The data set containing the eigenfunction.
+   :type ds: LegolasDataSet
+   :param omega: The (approximate) eigenvalue of the mode(s) to visualise.
+   :type omega: complex, list[complex], np.ndarray
+   :param u2: The y or :math:`\theta` coordinates of the eigenmode solution.
+   :type u2: np.ndarray
+   :param u3: The z coordinates of the eigenmode solution.
+   :type u3: np.ndarray
+   :param use_real_part: Whether to use the real part of the eigenmode solution.
+   :type use_real_part: bool
+
+   :returns: Object that can be used to generate VTK files.
+   :rtype: VTKCartesianData or VTKCylindricalData
 
 
 

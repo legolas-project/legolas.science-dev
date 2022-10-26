@@ -1,0 +1,66 @@
+:py:mod:`pylbo.visualisation.modes.temporal_1d`
+===============================================
+
+.. py:module:: pylbo.visualisation.modes.temporal_1d
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.modes.temporal_1d.TemporalEvolutionPlot1D
+
+
+
+
+.. py:class:: TemporalEvolutionPlot1D(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: float, u3: float, time: numpy.ndarray, figsize: tuple[int, int], show_ef_panel: bool, **kwargs)
+
+   Bases: :py:obj:`pylbo.visualisation.modes.mode_figure.ModeFigure`
+
+   
+   Main class for temporal evolutions of the eigenfunction.
+
+   :param data: Data object containing all data associated with the selected eigenmode.
+   :type data: ModeVisualisationData
+   :param u2: The data for the :math:`u_2` coordinate.
+   :type u2: float
+   :param u3: The data for the :math:`u_3` coordinate.
+   :type u3: float
+   :param time: The data for the time.
+   :type time: np.ndarray
+   :param figsize: The size of the figure.
+   :type figsize: tuple[int, int]
+   :param show_ef_panel: Whether to show the eigenfunction panel.
+   :type show_ef_panel: bool
+   :param \*\*kwargs: Additional keyword arguments to be passed to :meth:`matplotlib.pyplot.imshow`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: set_plot_arrays() -> None
+
+
+   .. py:method:: draw_solution() -> None
+
+
+   .. py:method:: get_view_ylabel() -> str
+
+
+

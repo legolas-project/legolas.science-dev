@@ -18,12 +18,11 @@
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="pylbo.visualisation.figure_manager" href="../figure_manager/index.html" />
-    <link rel="prev" title="pylbo.visualisation.eigenfunction_interface" href="../eigenfunction_interface/index.html" /> 
+    <link rel="next" title="pylbo.visualisation.eigenfunctions.derived_eigfunc_handler" href="derived_eigfunc_handler/index.html" />
+    <link rel="prev" title="pylbo.visualisation" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,16 +50,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../automation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.automation</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../utilities/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities</span></code></a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.modes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../spectra/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.spectra</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../continua/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.continua</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../derived_eigenfunctions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.derived_eigenfunctions</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../eigenfunction_interface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunction_interface</span></code></a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../figure_manager/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.figure_manager</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../legend_interface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.legend_interface</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../figure_window/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.figure_window</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../legend_handler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.legend_handler</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../matrices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.matrices</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../profiles/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.profiles</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../spectra/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.spectra</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.utils</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../_version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo._version</span></code></a></li>
@@ -103,75 +102,15 @@
              
   <section id="module-pylbo.visualisation.eigenfunctions">
 <span id="pylbo-visualisation-eigenfunctions"></span><h1><a class="reference internal" href="#module-pylbo.visualisation.eigenfunctions" title="pylbo.visualisation.eigenfunctions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions</span></code></a><a class="headerlink" href="#module-pylbo.visualisation.eigenfunctions" title="Permalink to this heading"></a></h1>
-<section id="module-contents">
-<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
-<section id="classes">
-<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h3>
-<table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.eigenfunctions.EigenfunctionHandler" title="pylbo.visualisation.eigenfunctions.EigenfunctionHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EigenfunctionHandler</span></code></a></p></td>
-<td><p>Main handler for eigenfunctions.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py class">
-<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.EigenfunctionHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.eigenfunctions.</span></span><span class="sig-name descname"><span class="pre">EigenfunctionHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ef_ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunctions.html#EigenfunctionHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.EigenfunctionHandler" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="../eigenfunction_interface/index.html#pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface" title="pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunction_interface.EigenfunctionInterface</span></code></a></p>
-<p>Main handler for eigenfunctions.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.EigenfunctionHandler._check_data_is_present">
-<span class="sig-name descname"><span class="pre">_check_data_is_present</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunctions.html#EigenfunctionHandler._check_data_is_present"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.EigenfunctionHandler._check_data_is_present" title="Permalink to this definition"></a></dt>
-<dd><p>Checks if the required data is present to draw for example
-eigenfunctions, is overloaded in subclasses.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.EigenfunctionHandler.update_plot">
-<span class="sig-name descname"><span class="pre">update_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunctions.html#EigenfunctionHandler.update_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.EigenfunctionHandler.update_plot" title="Permalink to this definition"></a></dt>
-<dd><p>Updates the plot when an event is triggered, clears and then redraws
-the functions. Rescaling of the axes is done automatically.
-Has to be overridden in a subclass.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.EigenfunctionHandler._get_title">
-<span class="sig-name descname"><span class="pre">_get_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ef_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunctions.html#EigenfunctionHandler._get_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.EigenfunctionHandler._get_title" title="Permalink to this definition"></a></dt>
-<dd><p>Creates the title of the eigenfunction plot.
-If the eigenfunction is retransformed an ‘r’ is prepended if appropriate,
-along with Re/Im depending on the real/imaginary part shown.
-Additionally, LaTeX formatting is used and numbers are replaced with the
-corresponding suffix: <span class="math notranslate nohighlight">\((1, 2, 3)\)</span>
-becomes <span class="math notranslate nohighlight">\((x, y, z)\)</span> or <span class="math notranslate nohighlight">\((r, \theta, z)\)</span>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ef_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The name of the eigenfunction as present in the datfile.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>name</strong> – The ‘new’ name for the eigenfunction, used as title.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.EigenfunctionHandler._mark_points_without_data_written">
-<span class="sig-name descname"><span class="pre">_mark_points_without_data_written</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/eigenfunctions.html#EigenfunctionHandler._mark_points_without_data_written"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.EigenfunctionHandler._mark_points_without_data_written" title="Permalink to this definition"></a></dt>
-<dd><p>For dataseries, it is possible that not all datasets in the series
-have eigenfunctions associated with them. This routine will toggle a change
-in the opacity value for datapoints with no functions, so they are
-clearly distinguishable from those who do have them.</p>
-</dd></dl>
-
-</dd></dl>
-
-</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="derived_eigfunc_handler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions.derived_eigfunc_handler</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="eigfunc_handler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions.eigfunc_handler</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="eigfunc_interface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions.eigfunc_interface</span></code></a></li>
+</ul>
+</div>
 </section>
 </section>
 
@@ -179,8 +118,8 @@ clearly distinguishable from those who do have them.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../eigenfunction_interface/index.html" class="btn btn-neutral float-left" title="pylbo.visualisation.eigenfunction_interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../figure_manager/index.html" class="btn btn-neutral float-right" title="pylbo.visualisation.figure_manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="pylbo.visualisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="derived_eigfunc_handler/index.html" class="btn btn-neutral float-right" title="pylbo.visualisation.eigenfunctions.derived_eigfunc_handler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

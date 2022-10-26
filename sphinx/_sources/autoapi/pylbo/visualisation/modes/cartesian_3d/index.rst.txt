@@ -1,0 +1,186 @@
+:py:mod:`pylbo.visualisation.modes.cartesian_3d`
+================================================
+
+.. py:module:: pylbo.visualisation.modes.cartesian_3d
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.modes.cartesian_3d.CartesianSlicePlot3D
+
+
+
+
+.. py:class:: CartesianSlicePlot3D(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: numpy.ndarray, u3: numpy.ndarray, time: float, slicing_axis: str, figsize: tuple[int, int], vmin: float = None, vmax: float = None, **kwargs)
+
+   Bases: :py:obj:`pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D`
+
+   
+   Class for handling Cartesian 3D plots of the eigenmode solution.
+
+   :param data: The data for the visualisation.
+   :type data: ModeVisualisationData
+   :param u2: The :math:`y` coordinate of the eigenmode solution.
+   :type u2: np.ndarray
+   :param u3: The :math:`z` coordinate of the eigenmode solution.
+   :type u3: np.ndarray
+   :param time: The time at which the eigenmode solution is calculated.
+   :type time: float
+   :param slicing_axis: The axis along which the eigenmode solution is sliced.
+   :type slicing_axis: str
+   :param figsize: The size of the figure.
+   :type figsize: tuple[int, int]
+   :param vmin: The minimum value of the colourbar. If None, the minimum value of the
+                solution is used.
+   :type vmin: float
+   :param vmax: The maximum value of the colourbar. If None, the maximum value of the
+                solution is used.
+   :type vmax: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: _create_figure_layout(figsize: tuple[int, int]) -> tuple[matplotlib.figure.Figure, dict]
+
+
+   .. py:method:: _create_cbar_axes()
+
+
+   .. py:method:: _validate_u2(u2: numpy.ndarray, *args, **kwargs) -> numpy.ndarray
+
+      
+      Validates the combination of u2 and slicing axis.
+
+      :param u2: The :math:`u_2` coordinate.
+      :type u2: float
+      :param slicing_axis: The slicing axis.
+      :type slicing_axis: str
+      :param axis: The coordinate axis corresponding to :math:`u_2`.
+      :type axis: str
+
+      :returns: The validated :math:`u_2` coordinate.
+      :rtype: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _validate_u3(u3: numpy.ndarray, *args, **kwargs) -> numpy.ndarray
+
+      
+      Validates the combination of u3 and slicing axis.
+
+      :param u3: The :math:`u_3` coordinate.
+      :type u3: float
+      :param slicining_axis: The slicing axis.
+      :type slicining_axis: str
+      :param axis: The coordinate axis corresponding to :math:`u_3`.
+      :type axis: str
+
+      :returns: The validated :math:`u_3` coordinate.
+      :rtype: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: set_plot_arrays() -> None
+
+
+   .. py:method:: calculate_mode_solution(efdata: numpy.ndarray, u2: numpy.ndarray, u3: numpy.ndarray, t: numpy.ndarray) -> numpy.ndarray
+
+
+   .. py:method:: draw_eigenfunction() -> None
+
+
+   .. py:method:: draw_solution() -> None
+
+
+   .. py:method:: add_axes_labels() -> None
+
+
+   .. py:method:: draw_textboxes() -> None
+
+
+   .. py:method:: _clear_contours() -> None
+
+
+   .. py:method:: _update_view(updated_solution: numpy.ndarray) -> None
+
+      
+      Updates the axes with the new solution. If a contour plot is used, the
+      contour lines are cleared and redrawn. If an image plot is used, the image is
+      updated.
+
+      :param updated_solution: The new solution.
+      :type updated_solution: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _update_view_clims(solution: numpy.ndarray) -> None
+
+
+   .. py:method:: _set_t_txt(t)
+
+
+

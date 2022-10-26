@@ -1,0 +1,717 @@
+:py:mod:`pylbo.visualisation.modes.vtk_export`
+==============================================
+
+.. py:module:: pylbo.visualisation.modes.vtk_export
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.modes.vtk_export.VTKDataExporter
+   pylbo.visualisation.modes.vtk_export.VTKCartesianData
+   pylbo.visualisation.modes.vtk_export.VTKCylindricalData
+
+
+
+
+.. py:class:: VTKDataExporter(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u1: numpy.ndarray, u2: numpy.ndarray, u3: numpy.ndarray)
+
+   
+   Main class to prepare data for export to VTK files.
+
+   :param data: The data for the visualisation
+   :type data: ModeVisualisationData
+   :param u1: The 1D :math:`u_1` coordinate array.
+   :type u1: np.ndarray
+   :param u2: The 1D :math:`u_2` coordinate array.
+   :type u2: np.ndarray
+   :param u3: The 1D :math:`u_3` coordinate array.
+   :type u3: np.ndarray
+
+   .. attribute:: _u1
+
+      The 1D :math:`u_1` coordinates.
+
+      :type: ndarray
+
+   .. attribute:: _u2
+
+      The 1D :math:`u_2` coordinates.
+
+      :type: ndarray
+
+   .. attribute:: _u3
+
+      The 1D :math:`u_3` coordinates.
+
+      :type: ndarray
+
+   .. attribute:: u1_data
+
+      The 3D :math:`u_1` coordinate data.
+
+      :type: ndarray
+
+   .. attribute:: u2_data
+
+      The 3D :math:`u_2` coordinate data.
+
+      :type: ndarray
+
+   .. attribute:: u3_data
+
+      The 3D :math:`u_3` coordinate data.
+
+      :type: ndarray
+
+   .. attribute:: dims
+
+      The grid dimensions.
+
+      :type: tuple
+
+   .. attribute:: _vtk_dtype
+
+      The VTK data type, defaults to "float".
+
+      :type: str
+
+   .. attribute:: _vtk_byte_order
+
+      The VTK byte order, defaults to ">" (big endian).
+
+      :type: str
+
+   .. attribute:: _vtk_fmt
+
+      The VTK data format, defaults to ">f".
+
+      :type: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: _set_coordinate_data(u1: numpy.ndarray, u2: numpy.ndarray, u3: numpy.ndarray)
+
+      
+      Sets the coordinate data.
+
+      :param u1: The 1D :math:`u_1` coordinate array.
+      :type u1: np.ndarray
+      :param u2: The 1D :math:`u_2` coordinate array.
+      :type u2: np.ndarray
+      :param u3: The 1D :math:`u_3` coordinate array.
+      :type u3: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_coordinate_data() -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
+      :abstractmethod:
+
+      
+      Returns the coordinate data. This should always return the data in a Cartesian
+      reference frame (u1, u2, u3), so coordinate transformations should be
+      implemented in subclassed if necessary.
+
+      :returns: * **u1_data** (*ndarray*) -- The 3D :math:`u_1` coordinate data.
+                * **u2_data** (*ndarray*) -- The 3D :math:`u_2` coordinate data.
+                * **u3_data** (*ndarray*) -- The 3D :math:`u_3` coordinate data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: broadcast_to_3d(array: numpy.ndarray) -> numpy.ndarray
+
+      
+      Broadcasts a 1D array to a 3D array with the same shape as the coordinate data.
+
+      :param array: The 1D array to broadcast.
+      :type array: np.ndarray
+
+      :returns: The broadcasted array.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_solution(name: str, time: float) -> numpy.ndarray
+
+      
+      Returns the eigenmode solution for a given time.
+
+      :param name: The name of the eigenfunction.
+      :type name: str
+      :param time: The time at which to get the solution.
+      :type time: float
+
+      :returns: The eigenmode solution.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _log_info(msg: str) -> None
+
+      
+      Logs an info message only if the progress bar is inactive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _validate_and_set_dtype(dtype: str) -> None
+
+      
+      Validates and sets the VTK data type.
+
+      :param dtype: The VTK data type. Valid values are "float32" and "float64".
+      :type dtype: str
+
+      :raises ValueError: If the VTK data type is not valid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _write_vtk_header(vtkfile)
+
+      
+      Writes the VTK file header. This includes the VTK file version, the
+      data type, the grid dimensions and the number of points.
+
+      :param vtkfile: The name of the VTK file to write to.
+      :type vtkfile: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _write_vtk_coordinate_data(vtkfile)
+
+      
+      Writes the VTK grid coordinates.
+
+      :param vtkfile: The name of the VTK file to write to.
+      :type vtkfile: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _write_vtk_point_data_start(vtkfile)
+
+      
+      Writes the VTK point data start marker, i.e. the 'POINT_DATA' statement and
+      the number of points.
+
+      :param vtkfile: The name of the VTK file to write to.
+      :type vtkfile: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _write_vtk_scalar_field(vtkfile, fieldname, fielddata)
+
+      
+      Writes a 3D VTK scalar field with a given fieldname. If `fielddata` is
+      smaller than `1e-12` everywhere the field is not written to the VTK file.
+
+      :param vtkfile: The name of the VTK file to write to.
+      :type vtkfile: str
+      :param fieldname: The name of the field.
+      :type fieldname: str
+      :param fielddata: The field data.
+      :type fielddata: ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _write_vtk_auxiliary_coordinates(vtkfile)
+
+      
+      Writes auxiliary coordinate data to the VTK file, for example the theta values
+      in cylindrical geometry. These are needed for appropriate transformations
+      to draw vector fields in e.g. ParaView.
+
+      :param vtkfile: The name of the VTK file to write to.
+      :type vtkfile: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: export_to_vtk(filename: str, time: Union[float, numpy.ndarray], names: Union[str, list[str]] = None, bg_names: Union[str, list[str]] = None, dtype: str = 'float32', starting_index: int = 0) -> None
+
+      
+      Exports the mode solution to a VTK file.
+
+      :param filename: The name of the VTK file to write to.
+      :type filename: str
+      :param time: The time(s) at which to export the mode solution.
+      :type time: Union[float, np.ndarray]
+      :param names: The name(s) of the mode(s) to export.
+      :type names: Union[str, list[str]], optional
+      :param bg_names: The name(s) of the equilibrium background(s) to export.
+      :type bg_names: Union[str, list[str]], optional
+      :param dtype: The VTK data type, defaults to "float32" (32 bit floating point).
+                    Can be set to "float64" (64 bit floating point) but uses more memory.
+      :type dtype: str, optional
+      :param starting_index: The starting index for filenames, defaults to 0.
+      :type starting_index: int, optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: VTKCartesianData(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: numpy.ndarray, u3: numpy.ndarray)
+
+   Bases: :py:obj:`VTKDataExporter`
+
+   
+   Main class to prepare data for export to VTK files.
+
+   :param data: The data for the visualisation
+   :type data: ModeVisualisationData
+   :param u1: The 1D :math:`u_1` coordinate array.
+   :type u1: np.ndarray
+   :param u2: The 1D :math:`u_2` coordinate array.
+   :type u2: np.ndarray
+   :param u3: The 1D :math:`u_3` coordinate array.
+   :type u3: np.ndarray
+
+   .. attribute:: _u1
+
+      The 1D :math:`u_1` coordinates.
+
+      :type: ndarray
+
+   .. attribute:: _u2
+
+      The 1D :math:`u_2` coordinates.
+
+      :type: ndarray
+
+   .. attribute:: _u3
+
+      The 1D :math:`u_3` coordinates.
+
+      :type: ndarray
+
+   .. attribute:: u1_data
+
+      The 3D :math:`u_1` coordinate data.
+
+      :type: ndarray
+
+   .. attribute:: u2_data
+
+      The 3D :math:`u_2` coordinate data.
+
+      :type: ndarray
+
+   .. attribute:: u3_data
+
+      The 3D :math:`u_3` coordinate data.
+
+      :type: ndarray
+
+   .. attribute:: dims
+
+      The grid dimensions.
+
+      :type: tuple
+
+   .. attribute:: _vtk_dtype
+
+      The VTK data type, defaults to "float".
+
+      :type: str
+
+   .. attribute:: _vtk_byte_order
+
+      The VTK byte order, defaults to ">" (big endian).
+
+      :type: str
+
+   .. attribute:: _vtk_fmt
+
+      The VTK data format, defaults to ">f".
+
+      :type: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: get_coordinate_data() -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
+
+      
+      Returns the coordinate data. This should always return the data in a Cartesian
+      reference frame (u1, u2, u3), so coordinate transformations should be
+      implemented in subclassed if necessary.
+
+      :returns: * **u1_data** (*ndarray*) -- The 3D :math:`u_1` coordinate data.
+                * **u2_data** (*ndarray*) -- The 3D :math:`u_2` coordinate data.
+                * **u3_data** (*ndarray*) -- The 3D :math:`u_3` coordinate data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: VTKCylindricalData(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: numpy.ndarray, u3: numpy.ndarray)
+
+   Bases: :py:obj:`VTKDataExporter`
+
+   
+   Main class to prepare data for export to VTK files.
+
+   :param data: The data for the visualisation
+   :type data: ModeVisualisationData
+   :param u1: The 1D :math:`u_1` coordinate array.
+   :type u1: np.ndarray
+   :param u2: The 1D :math:`u_2` coordinate array.
+   :type u2: np.ndarray
+   :param u3: The 1D :math:`u_3` coordinate array.
+   :type u3: np.ndarray
+
+   .. attribute:: _u1
+
+      The 1D :math:`u_1` coordinates.
+
+      :type: ndarray
+
+   .. attribute:: _u2
+
+      The 1D :math:`u_2` coordinates.
+
+      :type: ndarray
+
+   .. attribute:: _u3
+
+      The 1D :math:`u_3` coordinates.
+
+      :type: ndarray
+
+   .. attribute:: u1_data
+
+      The 3D :math:`u_1` coordinate data.
+
+      :type: ndarray
+
+   .. attribute:: u2_data
+
+      The 3D :math:`u_2` coordinate data.
+
+      :type: ndarray
+
+   .. attribute:: u3_data
+
+      The 3D :math:`u_3` coordinate data.
+
+      :type: ndarray
+
+   .. attribute:: dims
+
+      The grid dimensions.
+
+      :type: tuple
+
+   .. attribute:: _vtk_dtype
+
+      The VTK data type, defaults to "float".
+
+      :type: str
+
+   .. attribute:: _vtk_byte_order
+
+      The VTK byte order, defaults to ">" (big endian).
+
+      :type: str
+
+   .. attribute:: _vtk_fmt
+
+      The VTK data format, defaults to ">f".
+
+      :type: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: get_coordinate_data() -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
+
+      
+      Returns the coordinate data. This should always return the data in a Cartesian
+      reference frame (u1, u2, u3), so coordinate transformations should be
+      implemented in subclassed if necessary.
+
+      :returns: * **u1_data** (*ndarray*) -- The 3D :math:`u_1` coordinate data.
+                * **u2_data** (*ndarray*) -- The 3D :math:`u_2` coordinate data.
+                * **u3_data** (*ndarray*) -- The 3D :math:`u_3` coordinate data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _write_vtk_auxiliary_coordinates(vtkfile)
+
+      
+      Writes auxiliary coordinate data to the VTK file, for example the theta values
+      in cylindrical geometry. These are needed for appropriate transformations
+      to draw vector fields in e.g. ParaView.
+
+      :param vtkfile: The name of the VTK file to write to.
+      :type vtkfile: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

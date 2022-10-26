@@ -1,0 +1,83 @@
+:py:mod:`pylbo.visualisation.eigenfunctions.eigfunc_handler`
+============================================================
+
+.. py:module:: pylbo.visualisation.eigenfunctions.eigfunc_handler
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.eigenfunctions.eigfunc_handler.EigenfunctionHandler
+
+
+
+
+.. py:class:: EigenfunctionHandler(data, ef_ax, spec_ax)
+
+   Bases: :py:obj:`pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface`
+
+   
+   Main handler for eigenfunctions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: _check_data_is_present()
+
+
+   .. py:method:: update_plot()
+
+
+   .. py:method:: _get_title(ef_name)
+
+      
+      Creates the title of the eigenfunction plot.
+      If the eigenfunction is retransformed an 'r' is prepended if appropriate,
+      along with Re/Im depending on the real/imaginary part shown.
+
+      :param ef_name: The name of the eigenfunction as present in the datfile.
+      :type ef_name: str
+
+      :returns: **name** -- The 'new' name for the eigenfunction, used as title.
+      :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _mark_points_without_data_written()
+
+
+

@@ -1,0 +1,243 @@
+:py:mod:`pylbo.visualisation.modes.cartesian_2d`
+================================================
+
+.. py:module:: pylbo.visualisation.modes.cartesian_2d
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D
+
+
+
+
+.. py:class:: CartesianSlicePlot2D(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int], show_ef_panel: bool, **kwargs)
+
+   Bases: :py:obj:`pylbo.visualisation.modes.mode_figure.ModeFigure`
+
+   
+   Class for handling Cartesian 2D plots of the eigenmode solutions.
+
+   :param data: The data for the visualisation.
+   :type data: ModeVisualisationData
+   :param u2: The :math:`y`  coordinate of the eigenmode solution.
+   :type u2: float or ndarray
+   :param u3: The :math:`z`  coordinate of the eigenmode solution.
+   :type u3: float or ndarray
+   :param time: The time at which the eigenmode solution is calculated.
+   :type time: float
+   :param slicing_axis: The axis along which the eigenmode solution is sliced.
+   :type slicing_axis: str
+   :param figsize: The size of the figure.
+   :type figsize: tuple[int, int]
+   :param show_ef_panel: Whether to show the eigenfunction panel.
+   :type show_ef_panel: bool
+   :param \*\*kwargs: Additional keyword arguments to be passed to :meth:`matplotlib.pyplot.imshow`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: _validate_slicing_axis(slicing_axis: str, allowed_axes: list[str]) -> str
+
+      
+      Validates the slicing axis.
+
+      :param slicing_axis: The slicing axis.
+      :type slicing_axis: str
+      :param allowed_axes: The list of allowed axes.
+      :type allowed_axes: list[str]
+
+      :returns: The validated slicing axis.
+      :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _validate_u2(u2: float, slicing_axis: str, axis: str) -> float
+
+      
+      Validates the combination of u2 and slicing axis.
+
+      :param u2: The :math:`u_2` coordinate.
+      :type u2: float
+      :param slicing_axis: The slicing axis.
+      :type slicing_axis: str
+      :param axis: The coordinate axis corresponding to :math:`u_2`.
+      :type axis: str
+
+      :returns: The validated :math:`u_2` coordinate.
+      :rtype: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _validate_u3(u3: float, slicing_axis: str, axis: str) -> float
+
+      
+      Validates the combination of u3 and slicing axis.
+
+      :param u3: The :math:`u_3` coordinate.
+      :type u3: float
+      :param slicining_axis: The slicing axis.
+      :type slicining_axis: str
+      :param axis: The coordinate axis corresponding to :math:`u_3`.
+      :type axis: str
+
+      :returns: The validated :math:`u_3` coordinate.
+      :rtype: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: set_plot_arrays() -> None
+
+
+   .. py:method:: add_u2u3_txt(ax, **kwargs) -> None
+
+
+   .. py:method:: set_contours(levels=None, fill=False) -> None
+
+      
+      Sets up a contour plot instead of an image plot.
+
+      :param levels: The number of levels or the list of levels.
+      :type levels: int or list[float]
+      :param fill: Whether to fill the contour plot.
+      :type fill: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: draw_solution() -> None
+
+
+   .. py:method:: _draw_image() -> None
+
+
+   .. py:method:: _draw_contours() -> None
+
+
+   .. py:method:: get_view_ylabel() -> str
+
+
+   .. py:method:: create_animation(times: numpy.ndarray, filename: str, fps: float = 10, dpi: int = 200) -> None
+
+
+   .. py:method:: _ensure_first_frame_is_drawn() -> None
+
+
+   .. py:method:: _set_t_txt(t)
+
+
+   .. py:method:: _update_view(updated_solution: numpy.ndarray) -> None
+
+      
+      Updates the axes with the new solution. If a contour plot is used, the
+      contour lines are cleared and redrawn. If an image plot is used, the image is
+      updated.
+
+      :param updated_solution: The new solution.
+      :type updated_solution: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _update_view_clims(solution: numpy.ndarray) -> None
+
+
+   .. py:method:: _clear_contours()
+
+
+   .. py:method:: _update_contour_plot(updated_solution: numpy.ndarray) -> None
+
+
+

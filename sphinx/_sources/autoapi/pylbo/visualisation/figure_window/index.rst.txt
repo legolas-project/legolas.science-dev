@@ -1,0 +1,396 @@
+:py:mod:`pylbo.visualisation.figure_window`
+===========================================
+
+.. py:module:: pylbo.visualisation.figure_window
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.figure_window.FigureWindow
+   pylbo.visualisation.figure_window.InteractiveFigureWindow
+
+
+
+
+.. py:class:: FigureWindow(fig: matplotlib.figure.Figure)
+
+   
+   Class to handle the top-level creation of figure windows. Assigns unique figure
+   ids and takes care of figure, axes, and gridspec management.
+
+   :param fig: The figure object.
+   :type fig: ~matplotlib.figure.Figure
+
+   .. attribute:: fig
+
+      The figure object.
+
+      :type: ~matplotlib.figure.Figure
+
+   .. attribute:: figsize
+
+      The size of the figure in inches.
+
+      :type: tuple[int, int]
+
+   .. attribute:: figure_id
+
+      The unique figure id.
+
+      :type: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:property:: figure_ids
+      :type: list[str]
+
+      
+      Returns the list of figure ids.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: figure_stack
+      
+
+      
+
+   .. py:method:: create_default_figure(figlabel: str, figsize: tuple[int, int]) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]
+
+      
+      Creates a default figure with a 1x1 subplot.
+
+      :param figlabel: The label of the figure.
+      :type figlabel: str
+      :param figsize: The size of the figure.
+      :type figsize: tuple[int, int]
+
+      :returns: * **fig** (*~matplotlib.figure.Figure*) -- The figure on which to draw.
+                * **ax** (*~matplotlib.axes.Axes*) -- The axes on which to draw.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _generate_figure_id(figlabel: str) -> str
+
+      
+      Generates a unique figure id.
+
+      :param figlabel: The label of the figure.
+      :type figlabel: str
+
+      :returns: **figure_id** -- The unique figure id of the form "figure_type-x" where x is an integer.
+      :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_to_stack() -> None
+
+      
+      Adds the figure to the stack.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_subplot_axes(ax: matplotlib.axes.Axes, loc: str = 'right', share: str = None, apply_tight_layout: bool = True)
+
+      
+      Adds a new subplot to a given matplotlib subplot, essentially "splitting" the
+      axis into two. Position and placement depend on the loc argument.
+      When called on a more complex subplot layout the overall gridspec remains
+      untouched, only the `ax` object has its gridspec modified.
+      On return, `tight_layout()` is called by default to prevent overlapping labels.
+
+      :param ax: The axes object, this will be "split" and a new axes will be added
+                 to the figure.
+      :type ax: ~matplotlib.axes.Axes
+      :param loc: The location of the new axes. Should be one of "left", "right", "top",
+                  "bottom". Defaults to "right".
+      :type loc: str
+      :param share: Can be "x", "y" or "all". This locks axes zooming between both subplots.
+      :type share: str
+      :param apply_tight_layout: Whether to call `tight_layout()` on the figure before return.
+      :type apply_tight_layout: bool
+
+      :raises ValueError: If the loc argument is invalid.
+
+      :returns: The axes instance that was added.
+      :rtype: ~matplotlib.axes.Axes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: draw() -> None
+
+
+   .. py:method:: redraw() -> None
+
+
+   .. py:method:: save(filename: str, **kwargs) -> None
+
+      
+      Saves the current figure.
+
+      :param filename: The filename to which the current figure is saved.
+      :type filename: str, ~os.PathLike
+      :param kwargs: Default keyword arguments passed to :meth:`~matplotlib.pyplot.savefig`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: show()
+
+      
+      Shows the selected figure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: InteractiveFigureWindow(fig: matplotlib.figure.Figure)
+
+   Bases: :py:obj:`FigureWindow`
+
+   
+   Subclass to handle interactivity in the figure windows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: redraw() -> None
+
+
+   .. py:method:: connect_callbacks() -> None
+
+      
+      Connects all callbacks to the canvas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: disconnect_callbacks() -> None
+
+      
+      Disconnects all callbacks from the canvas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: make_legend_interactive(legendhandler: pylbo.visualisation.legend_handler.LegendHandler) -> None
+
+      
+      Makes the legend interactive.
+
+      :param legendhandler: The legend handler.
+      :type legendhandler: ~pylbo.visualization.legend_handler.LegendHandler
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_eigenfunction_interface(efhandler: pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface) -> None
+
+      
+      Adds an eigenfunction interface to the figure.
+
+      :param efhandler:
+      :type efhandler: ~pylbo.visualisation.eigenfunctions.eigfunc_interface.
+      :param EigenfunctionInterface: The eigenfunction interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

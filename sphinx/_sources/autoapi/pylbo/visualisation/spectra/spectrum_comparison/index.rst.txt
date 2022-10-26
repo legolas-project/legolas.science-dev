@@ -1,0 +1,238 @@
+:py:mod:`pylbo.visualisation.spectra.spectrum_comparison`
+=========================================================
+
+.. py:module:: pylbo.visualisation.spectra.spectrum_comparison
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot
+
+
+
+
+.. py:class:: SpectrumComparisonPlot(ds1, ds2, figsize, custom_figure, lock_zoom, **kwargs)
+
+   Bases: :py:obj:`pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure`
+
+   
+   Subclass to compare two spectra.
+
+   :param ds1: First dataset, will be placed on the left side.
+   :type ds1: ~pylbo.data_containers.LegolasDataSet
+   :param ds2: Second dataset for comparison, will be placed on the right side.
+   :type ds2: ~pylbo.data_containers.LegolasDataSet
+   :param figsize: Figure size used when creating a window, analogous to matplotlib.
+   :type figsize: tuple
+   :param custom_figure: The custom figure to use in the form (fig, axes).
+   :type custom_figure: tuple
+   :param lock_zoom: If `True`, locks the zoom for both spectrum plots.
+   :type lock_zoom: bool
+
+   .. attribute:: ax2
+
+      The (top)right axes object.
+
+      :type: ~matplotlib.axes.Axes
+
+   .. attribute:: panel1
+
+      The spectrum instance associated with the left side.
+
+      :type: ~pylbo.visualisation.spectra.SingleSpectrumPlot
+
+   .. attribute:: panel2
+
+      The spectrum instance associated with the right side.
+
+      :type: ~pylbo.visualisation.spectra.SingleSpectrumPlot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: set_x_scaling(x_scaling)
+
+      
+      Overloads parent method, calls x scaling setter for each panel.
+
+      :param x_scaling: The scaling to apply to the x-axis
+      :type x_scaling: int, float, complex, numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: set_y_scaling(y_scaling)
+
+      
+      Overloads parent method, calls y scaling setter for each panel.
+
+      :param y_scaling: The scaling to apply to the y-axis
+      :type y_scaling: int, float, complex, numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _use_custom_axes()
+
+      
+      Splits the original 1x2 plot into a 2x2 plot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_spectrum() -> None
+
+      
+      Adds the spectra for both datasets
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_eigenfunctions()
+
+      
+      Adds the eigenfunctions for both datasets and merges the mpl callbacks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_derived_eigenfunctions()
+
+      
+      Adds the derived eigenfunctions for both datasets and merges the mpl
+      callbacks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_continua(interactive=True)
+
+      
+      Adds the continua for both datasets and merges the mpl callbacks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

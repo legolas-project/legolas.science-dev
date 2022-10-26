@@ -1,0 +1,282 @@
+:py:mod:`pylbo.visualisation.utils`
+===================================
+
+.. py:module:: pylbo.visualisation.utils
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.utils.refresh_plot
+   pylbo.visualisation.utils.ef_name_to_latex
+   pylbo.visualisation.utils.validate_ef_name
+   pylbo.visualisation.utils._validate_textbox_location
+   pylbo.visualisation.utils._get_textbox_axes_coords
+   pylbo.visualisation.utils.add_textbox_to_axes
+   pylbo.visualisation.utils.add_axis_label
+
+
+
+.. py:function:: refresh_plot(f: callable) -> callable
+
+   
+   Simple decorator, when a routine is wrapped with this the plot will be
+   cleared and redrawn on calling it.
+   Useful for when the scaling is changed or artists are added/removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: ef_name_to_latex(ef_name: str, geometry: str = 'Cartesian', real_part: bool = None) -> str
+
+   
+   Converts an eigenfunction name to latex formatting. Numbers are replaced with a
+   suffix corresponding to the geometry: :math:`(1, 2, 3)` becomes :math:`(x, y, z)`
+   for Cartesian and :math:`(r, \theta, z)` for cylindrical geometries. Symbols
+   and letters are also converted to LaTeX.
+
+   :param ef_name: The name of the eigenfunction.
+   :type ef_name: str
+   :param geometry: The geometry of the eigenfunction. The default is "Cartesian".
+   :type geometry: str, optional
+   :param real_part: Whether the real part of the eigenfunction is being plotted. The default is
+                     None.
+   :type real_part: bool, optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: validate_ef_name(ds, ef_name: str) -> str
+
+   
+   Returns the validated eigenfunction name.
+
+   :param ds: The dataset containing the eigenfunctions.
+   :type ds: ~pylbo.data_containers.LegolasDataSet
+   :param ef_name: The name of the eigenfunction.
+   :type ef_name: str
+
+   :raises ValueError: If the eigenfunction name is not valid.
+
+   :returns: The validated eigenfunction name.
+   :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: _validate_textbox_location(loc: str) -> str
+
+   
+   Validates the location of the textbox.
+
+   :param loc: The location of the textbox.
+   :type loc: str
+
+   :raises ValueError: If the location is not one of "top left", "top right", "bottom left" or
+       "bottom right".
+
+   :returns: The validated location.
+   :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: _get_textbox_axes_coords(loc: str, outside: bool, width: float, height: float)
+
+   
+   Returns the coordinates of the textbox.
+
+   :param loc: The location of the textbox.
+   :type loc: str
+   :param outside: Whether the textbox is outside the axes.
+   :type outside: bool
+   :param width: The width of the bounding box.
+   :type width: float
+   :param height: The height of the bounding box.
+   :type height: float
+
+   :returns: * *float* -- The x-coordinate of the textbox.
+             * *float* -- The y-coordinate of the textbox.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: add_textbox_to_axes(ax: matplotlib.axes.Axes, text: str, x: float, y: float, coords: str = 'axes', fs: int = 15, alpha: float = 0.2, halign: str = 'center', color: str = 'grey', textcolor: str = 'black', boxstyle: str = 'round') -> matplotlib.axes.Axes.text
+
+   
+   Convenience method to add a textbox to the given axes.
+
+   :param ax: The axes to add the textbox to.
+   :type ax: ~matplotlib.axes.Axes
+   :param text: The text to add to the textbox.
+   :type text: str
+   :param x: The x-coordinate of the textbox.
+   :type x: float
+   :param y: The y-coordinate of the textbox.
+   :type y: float
+   :param coords: The coordinate system of the textbox. The default is "axes", options are
+                  "axes", "figure", and "data".
+   :type coords: str, optional
+   :param fs: The fontsize of the textbox. The default is 15.
+   :type fs: int, optional
+   :param alpha: The alpha value of the textbox. The default is 0.2.
+   :type alpha: float, optional
+   :param halign: The horizontal alignment of the textbox. The default is "center".
+   :type halign: str, optional
+   :param color: The color of the textbox. The default is "grey".
+   :type color: str, optional
+   :param textcolor: The color of the text. The default is "black".
+   :type textcolor: str, optional
+   :param boxstyle: The style of the textbox. The default is "round".
+   :type boxstyle: str, optional
+
+   :returns: The textbox.
+   :rtype: ~matplotlib.axes.Axes.text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: add_axis_label(ax: matplotlib.axes.Axes, text: str, loc: str = 'top left', fs: int = 15, alpha: float = 0.2, color: str = 'grey', textcolor: str = 'black', boxstyle: str = 'round', bold: bool = False, outside: bool = False) -> matplotlib.axes.Axes.text
+
+   
+   Creates a textbox in one of the corners of the specified axis. This method is meant
+   to create panel labels without having to manually specify the coordinates of the
+   textbox.
+
+   :param ax: The axes to add the textbox to.
+   :type ax: ~matplotlib.axes.Axes
+   :param text: The text to add to the textbox.
+   :type text: str
+   :param loc: The location of the textbox. The default is "top left", options are
+               "top right", "bottom left" and "bottom right".
+   :type loc: str, optional
+   :param fs: The fontsize of the textbox. The default is 15.
+   :type fs: int, optional
+   :param alpha: The alpha value of the textbox. The default is 0.2.
+   :type alpha: float, optional
+   :param color: The color of the textbox. The default is "grey".
+   :type color: str, optional
+   :param textcolor: The color of the text. The default is "black".
+   :type textcolor: str, optional
+   :param boxstyle: The style of the textbox. The default is "round". If `None` is passed
+                    no box will be drawn.
+   :type boxstyle: str, optional
+   :param bold: Whether to bold the text. The default is False.
+   :type bold: bool, optional
+   :param outside: Whether to place the textbox outside of the axis. The default is False.
+   :type outside: bool, optional
+
+   :raises ValueError: If the location is not one of "top left", "top right", "bottom left" or
+       "bottom right".
+
+   :returns: The textbox.
+   :rtype: ~matplotlib.axes.Axes.text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+

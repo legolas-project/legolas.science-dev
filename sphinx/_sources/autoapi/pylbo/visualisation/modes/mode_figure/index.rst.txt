@@ -1,0 +1,540 @@
+:py:mod:`pylbo.visualisation.modes.mode_figure`
+===============================================
+
+.. py:module:: pylbo.visualisation.modes.mode_figure
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.modes.mode_figure.ModeFigure
+
+
+
+
+.. py:class:: ModeFigure(figsize: tuple[int, int], data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, show_ef_panel: bool)
+
+   Bases: :py:obj:`pylbo.visualisation.figure_window.FigureWindow`
+
+   
+   Main class to hold the figure, axes and colorbar for eigenmode visualisations.
+
+   :param figsize: The size of the figure.
+   :type figsize: tuple[int, int]
+   :param data: The data used for eigenmode visualisations.
+   :type data: ModeVisualisationData
+
+   .. attribute:: fig
+
+      The figure.
+
+      :type: matplotlib.figure.Figure
+
+   .. attribute:: axes
+
+      The axes.
+
+      :type: dict[str, matplotlib.axes.Axes]
+
+   .. attribute:: cbar
+
+      The colorbar.
+
+      :type: matplotlib.colorbar.Colorbar
+
+   .. attribute:: cbar_ax
+
+      The axes for the colorbar.
+
+      :type: matplotlib.axes.Axes
+
+   .. attribute:: data
+
+      Data object containing all data associated with the selected eigenmode.
+
+      :type: ModeVisualisationData
+
+   .. attribute:: u1_data
+
+      The data for the :math:`u_1` coordinate.
+
+      :type: np.ndarray
+
+   .. attribute:: u2_data
+
+      The data for the :math:`u_2` coordinate.
+
+      :type: Union[float, np.ndarray]
+
+   .. attribute:: u3_data
+
+      The data for the :math:`u_3` coordinate.
+
+      :type: Union[float, np.ndarray]
+
+   .. attribute:: ef_data
+
+      The data for the eigenfunction.
+
+      :type: list[dict]
+
+   .. attribute:: time_data
+
+      The data for the time.
+
+      :type: Union[float, np.ndarray]
+
+   .. attribute:: omega_txt
+
+      The text for the :math:`\omega` label.
+
+      :type: matplotlib.text.Text
+
+   .. attribute:: k2k3_txt
+
+      The text for the :math:`k_2-k_3` label.
+
+      :type: matplotlib.text.Text
+
+   .. attribute:: u2u3_txt
+
+      The text for the :math:`u_2-u_3` label.
+
+      :type: matplotlib.text.Text
+
+   .. attribute:: t_txt
+
+      The text for the time label.
+
+      :type: matplotlib.text.Text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:property:: ax
+      :type: matplotlib.axes.Axes
+
+      
+      returns: Alias for the axes containing the eigenmode solution view.
+      :rtype: matplotlib.axes.Axes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:property:: solutions
+      :type: numpy.ndarray
+
+      
+      returns: The solutions for the eigenmode
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _ensure_attr_set(attr: str) -> None
+
+      
+      Ensures that a given attribute is set.
+
+      :param attr: The attribute to check.
+      :type attr: str
+
+      :raises ValueError: If the attribute is not set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _check_if_number(val: float, attr_name: str) -> float
+
+      
+      Checks if a given value is a number.
+
+      :param val: The value to check.
+      :type val: float
+      :param attr_name: The name of the value.
+      :type attr_name: str
+
+      :raises ValueError: If the value is not a number.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _check_if_array(array: numpy.ndarray, attr_name: str) -> numpy.ndarray
+
+      
+      Checks is a given value is a numpy array.
+
+      :param array: The value to check.
+      :type array: np.ndarray
+      :param attr_name: The name of the value.
+      :type attr_name: str
+
+      :raises ValueError: If the value is not a numpy array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: set_plot_arrays() -> None
+      :abstractmethod:
+
+      
+      Sets the arrays used for plotting. This should implement setting of
+      :attr:`u1_data`, :attr:`u2_data`, :attr:`u3_data`, :attr:`t_data` and
+      :attr:`ef_data`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: calculate_mode_solution(efdata: dict, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], t: Union[float, numpy.ndarray]) -> numpy.ndarray
+
+      
+      Calculates the mode solution.
+
+      :param efdata: The data for the eigenfunction. This should be a dictionary with the
+                     keys ``'ef'`` and ``'omega'``, with ``'ef'``containing the eigenfunction
+                     and ``'omega'`` the corresponding eigenvalue.
+      :type efdata: dict
+      :param u2: The data for the :math:`u_2` coordinate.
+      :type u2: Union[float, np.ndarray]
+      :param u3: The data for the :math:`u_3` coordinate.
+      :type u3: Union[float, np.ndarray]
+      :param t: The data for the time.
+      :type t: Union[float, np.ndarray]
+
+      :returns: The mode solution.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: draw() -> None
+
+
+   .. py:method:: draw_solution() -> None
+      :abstractmethod:
+
+
+   .. py:method:: draw_textboxes() -> None
+
+
+   .. py:method:: draw_eigenfunction() -> None
+
+      
+      Draws the eigenfunction(s) to the figure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_axes_labels() -> None
+
+
+   .. py:method:: _create_cbar_axes() -> matplotlib.axes.Axes
+
+      
+      :returns: The axes for the colorbar.
+      :rtype: matplotlib.axes.Axes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_view_xlabel() -> str
+
+
+   .. py:method:: get_view_ylabel() -> str
+
+
+   .. py:method:: get_view_cbar_label() -> str
+
+
+   .. py:method:: add_omega_txt(ax, **kwargs) -> None
+
+      
+      Creates a textbox on the axis with the value of the eigenfrequency.
+
+      :param ax: The axes to use for the textbox.
+      :type ax: ~matplotlib.axes.Axes
+      :param \*\*kwargs: Additional keyword arguments to pass to :meth:`add_axis_label`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_k2k3_txt(ax, **kwargs) -> None
+
+      
+      Creates a textbox on the figure with the value of the k2 and k3 coordinates.
+
+      :param ax: The axes to use for the textbox.
+      :type ax: ~matplotlib.axes.Axes
+      :param \*\*kwargs: Additional keyword arguments to pass to :meth:`add_axis_label`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_u2u3_txt(ax, **kwargs) -> None
+
+      
+      Creates a textbox on the figure with the value of the :math:`u_2-u_3`
+      coordinates.
+
+      :param ax: The axes to use for the textbox.
+      :type ax: ~matplotlib.axes.Axes
+      :param \*\*kwargs: Additional keyword arguments to pass to :meth:`add_axis_label`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_t_txt(ax, **kwargs) -> None
+
+
+   .. py:method:: _create_figure_layout(figsize: tuple[int, int]) -> tuple[matplotlib.figure.Figure, dict]
+
+      
+      Create the figure layout for the visualisation. Two panels are created:
+      the top one for the eigenfunction and the bottom one for the visualisation.
+
+      :param figsize: The size of the figure.
+      :type figsize: tuple[int, int]
+
+      :returns: * **fig** (*~matplotlib.figure.Figure*) -- The figure to use for the visualisation.
+                * **axes** (*dict*) -- The axes to use for the visualisation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: create_animation(times: numpy.ndarray, filename: str, fps: float = 10, dpi: int = 200) -> None
+
+      
+      Creates an animation of the eigenmode solution over a given time interval.
+
+      :param times: The times at which to create the animation.
+      :type times: np.ndarray
+      :param filename: The filename of the animation.
+      :type filename: str
+      :param fps: The frames per second of the animation.
+      :type fps: float
+      :param dpi: The resolution of the animation.
+      :type dpi: int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

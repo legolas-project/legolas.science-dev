@@ -1,0 +1,376 @@
+:py:mod:`pylbo.visualisation.modes.mode_data`
+=============================================
+
+.. py:module:: pylbo.visualisation.modes.mode_data
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.modes.mode_data.ModeVisualisationData
+
+
+
+
+.. py:class:: ModeVisualisationData(ds: pylbo.data_containers.LegolasDataSet, omega: list[complex], ef_name: str = None, use_real_part: bool = True, complex_factor: complex = None, add_background: bool = False)
+
+   
+   Class that contains the data used for eigenmode visualisations.
+
+   :param ds: The dataset containing the eigenfunctions and modes to visualise.
+   :type ds: ~pylbo.data_containers.LegolasDataSet
+   :param omega: The (approximate) eigenvalue(s) of the mode(s) to visualise.
+   :type omega: list[complex]
+   :param ef_name: The name of the eigenfunction to visualise.
+   :type ef_name: str
+   :param use_real_part: Whether to use the real part of the eigenmode solution.
+   :type use_real_part: bool
+   :param complex_factor: A complex factor to multiply the eigenmode solution with.
+   :type complex_factor: complex
+   :param add_background: Whether to add the equilibrium background to the eigenmode solution.
+   :type add_background: bool
+
+   .. attribute:: ds
+
+      The dataset containing the eigenfunctions and modes to visualise.
+
+      :type: ~pylbo.data_containers.LegolasDataSet
+
+   .. attribute:: omega
+
+      The (approximate) eigenvalue(s) of the mode(s) to visualise.
+
+      :type: list[complex]
+
+   .. attribute:: eigenfunction
+
+      The eigenfunction of the mode(s) to visualise.
+
+      :type: list[np.ndarray]
+
+   .. attribute:: use_real_part
+
+      Whether to use the real part of the eigenmode solution.
+
+      :type: bool
+
+   .. attribute:: complex_factor
+
+      The complex factor to multiply the eigenmode solution with.
+
+      :type: complex
+
+   .. attribute:: add_background
+
+      Whether to add the equilibrium background to the eigenmode solution.
+
+      :type: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:property:: k2
+      :type: float
+
+      
+      The k2 wave number of the eigenmode solution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:property:: k3
+      :type: float
+
+      
+      The k3 wave number of the eigenmode solution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:property:: part_name
+      :type: str
+
+      
+      Returns the name of the part of the eigenmode solution to use, i.e.
+      'real' or 'imag'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _get_all_efs(ds, omega)
+
+      
+      Returns an array of dicts with all eigenfunctions for every eigenvalue.
+      The dictionaries will be updated with the derived eigenfunctions if they
+      are available in the dataset.
+
+      :param ds: The dataset containing the eigenfunctions.
+      :type ds: ~pylbo.data_containers.LegolasDataSet
+      :param omega: The (approximate) eigenvalue(s) of the mode(s) to retrieve the
+                    eigenfunctions from.
+      :type omega: list[complex]
+
+      :returns: An array of dicts with all eigenfunctions for every eigenvalue.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_ef_name_latex() -> str
+
+      
+      Returns the latex representation of the eigenfunction name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _validate_complex_factor(complex_factor: complex) -> complex
+
+      
+      Validates the complex factor.
+
+      :param complex_factor: The complex factor to validate.
+      :type complex_factor: complex
+
+      :returns: The complex factor if it is valid, otherwise 1.
+      :rtype: complex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_mode_solution(ef: numpy.ndarray, omega: complex, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], t: Union[float, numpy.ndarray]) -> numpy.ndarray
+
+      
+      Calculates the full eigenmode solution for given coordinates and time.
+      If a complex factor was given, the eigenmode solution is multiplied with the
+      complex factor. If :attr:`use_real_part` is True the real part of the eigenmode
+      solution is returned, otherwise the complex part. If :attr:`add_background` is
+      True, the background is added to the eigenmode solution.
+
+      :param ef: The eigenfunction to use.
+      :type ef: np.ndarray
+      :param omega: The eigenvalue to use.
+      :type omega: complex
+      :param u2: The y coordinate(s) of the eigenmode solution.
+      :type u2: Union[float, np.ndarray]
+      :param u3: The z coordinate(s) of the eigenmode solution.
+      :type u3: Union[float, np.ndarray]
+      :param t: The time(s) of the eigenmode solution.
+      :type t: Union[float, np.ndarray]
+
+      :returns: The real or imaginary part of the eigenmode solution for the given
+                set of coordinate(s) and time(s).
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_background(shape: tuple[int, Ellipsis], name=None) -> numpy.ndarray
+
+      
+      Returns the background of the eigenmode solution.
+
+      :param shape: The shape of the eigenmode solution.
+      :type shape: tuple[int, ...]
+      :param name: The name of the background to use. If None, the background name
+                   will be inferred from the eigenfunction name.
+      :type name: str
+
+      :returns: The background of the eigenmode solution, sampled on the eigenfunction
+                grid and broadcasted to the same shape as the eigenmode solution.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _sample_background_on_ef_grid(bg: numpy.ndarray) -> numpy.ndarray
+
+      
+      Samples the background array on the eigenfunction grid.
+
+      :param bg: The background array with Gaussian grid spacing
+      :type bg: np.ndarray
+
+      :returns: The background array with eigenfunction grid spacing
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _get_background_name() -> str
+
+      
+      Returns the name of the background.
+
+      :returns: The closest match between the eigenfunction name and the equilibrium
+                name.
+      :rtype: str
+
+      :raises ValueError: If the eigenfunction name is a magnetic vector potential component.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

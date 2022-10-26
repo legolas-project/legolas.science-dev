@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pylbo.visualisation.modes.mode_data &mdash; Pylbo develop documentation</title>
+      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="pylbo.visualisation.modes.mode_figure" href="../mode_figure/index.html" />
+    <link rel="prev" title="pylbo.visualisation.modes.cylindrical_3d" href="../cylindrical_3d/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../index.html" class="icon icon-home"> Pylbo
+          </a>
+              <div class="version">
+                1.1.3 - develop
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Package structure:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../automation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.automation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../utilities/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities</span></code></a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../eigenfunctions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.modes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../spectra/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.spectra</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.api</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../continua/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.continua</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../figure_window/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.figure_window</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../legend_handler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.legend_handler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../matrices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.matrices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../profiles/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.profiles</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.utils</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo._version</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data_containers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.data_containers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.exceptions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../file_handler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.file_handler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../testing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.testing</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Pylbo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../index.html">API Reference</a> &raquo;</li>
+          <li><a href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo</span></code></a> &raquo;</li>
+          <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a> &raquo;</li>
+          <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.modes</span></code></a> &raquo;</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.modes.mode_data</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/autoapi/pylbo/visualisation/modes/mode_data/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pylbo.visualisation.modes.mode_data">
+<span id="pylbo-visualisation-modes-mode-data"></span><h1><a class="reference internal" href="#module-pylbo.visualisation.modes.mode_data" title="pylbo.visualisation.modes.mode_data"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.modes.mode_data</span></code></a><a class="headerlink" href="#module-pylbo.visualisation.modes.mode_data" title="Permalink to this heading"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModeVisualisationData</span></code></a></p></td>
+<td><p>Class that contains the data used for eigenmode visualisations.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.modes.mode_data.</span></span><span class="sig-name descname"><span class="pre">ModeVisualisationData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><span class="pre">pylbo.data_containers.LegolasDataSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ef_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_real_part</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_background</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData" title="Permalink to this definition"></a></dt>
+<dd><p>Class that contains the data used for eigenmode visualisations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds</strong> (<a class="reference internal" href="../../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The dataset containing the eigenfunctions and modes to visualise.</p></li>
+<li><p><strong>omega</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a><em>]</em>) – The (approximate) eigenvalue(s) of the mode(s) to visualise.</p></li>
+<li><p><strong>ef_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The name of the eigenfunction to visualise.</p></li>
+<li><p><strong>use_real_part</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether to use the real part of the eigenmode solution.</p></li>
+<li><p><strong>complex_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – A complex factor to multiply the eigenmode solution with.</p></li>
+<li><p><strong>add_background</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether to add the equilibrium background to the eigenmode solution.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.ds">
+<span class="sig-name descname"><span class="pre">ds</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.ds" title="Permalink to this definition"></a></dt>
+<dd><p>The dataset containing the eigenfunctions and modes to visualise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.omega">
+<span class="sig-name descname"><span class="pre">omega</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.omega" title="Permalink to this definition"></a></dt>
+<dd><p>The (approximate) eigenvalue(s) of the mode(s) to visualise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)">complex</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.eigenfunction">
+<span class="sig-name descname"><span class="pre">eigenfunction</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.eigenfunction" title="Permalink to this definition"></a></dt>
+<dd><p>The eigenfunction of the mode(s) to visualise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a>[np.ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.use_real_part">
+<span class="sig-name descname"><span class="pre">use_real_part</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.use_real_part" title="Permalink to this definition"></a></dt>
+<dd><p>Whether to use the real part of the eigenmode solution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.complex_factor">
+<span class="sig-name descname"><span class="pre">complex_factor</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.complex_factor" title="Permalink to this definition"></a></dt>
+<dd><p>The complex factor to multiply the eigenmode solution with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)">complex</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.add_background">
+<span class="sig-name descname"><span class="pre">add_background</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.add_background" title="Permalink to this definition"></a></dt>
+<dd><p>Whether to add the equilibrium background to the eigenmode solution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.k2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">k2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a></em><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData.k2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.k2" title="Permalink to this definition"></a></dt>
+<dd><p>The k2 wave number of the eigenmode solution.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.k3">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">k3</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a></em><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData.k3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.k3" title="Permalink to this definition"></a></dt>
+<dd><p>The k3 wave number of the eigenmode solution.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.part_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">part_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData.part_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.part_name" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the name of the part of the eigenmode solution to use, i.e.
+‘real’ or ‘imag’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData._get_all_efs">
+<span class="sig-name descname"><span class="pre">_get_all_efs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData._get_all_efs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData._get_all_efs" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an array of dicts with all eigenfunctions for every eigenvalue.
+The dictionaries will be updated with the derived eigenfunctions if they
+are available in the dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds</strong> (<a class="reference internal" href="../../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The dataset containing the eigenfunctions.</p></li>
+<li><p><strong>omega</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a><em>]</em>) – The (approximate) eigenvalue(s) of the mode(s) to retrieve the
+eigenfunctions from.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An array of dicts with all eigenfunctions for every eigenvalue.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.get_ef_name_latex">
+<span class="sig-name descname"><span class="pre">get_ef_name_latex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData.get_ef_name_latex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.get_ef_name_latex" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the latex representation of the eigenfunction name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData._validate_complex_factor">
+<span class="sig-name descname"><span class="pre">_validate_complex_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">complex_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData._validate_complex_factor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData._validate_complex_factor" title="Permalink to this definition"></a></dt>
+<dd><p>Validates the complex factor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>complex_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – The complex factor to validate.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The complex factor if it is valid, otherwise 1.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)">complex</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.get_mode_solution">
+<span class="sig-name descname"><span class="pre">get_mode_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ef</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><span class="pre">complex</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><span class="pre">numpy.ndarray</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><span class="pre">numpy.ndarray</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><span class="pre">numpy.ndarray</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><span class="pre">numpy.ndarray</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData.get_mode_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.get_mode_solution" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the full eigenmode solution for given coordinates and time.
+If a complex factor was given, the eigenmode solution is multiplied with the
+complex factor. If <a class="reference internal" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.use_real_part" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData.use_real_part"><code class="xref py py-attr docutils literal notranslate"><span class="pre">use_real_part</span></code></a> is True the real part of the eigenmode
+solution is returned, otherwise the complex part. If <a class="reference internal" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.add_background" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData.add_background"><code class="xref py py-attr docutils literal notranslate"><span class="pre">add_background</span></code></a> is
+True, the background is added to the eigenmode solution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ef</strong> (<em>np.ndarray</em>) – The eigenfunction to use.</p></li>
+<li><p><strong>omega</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.10)"><em>complex</em></a>) – The eigenvalue to use.</p></li>
+<li><p><strong>u2</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>np.ndarray</em><em>]</em>) – The y coordinate(s) of the eigenmode solution.</p></li>
+<li><p><strong>u3</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>np.ndarray</em><em>]</em>) – The z coordinate(s) of the eigenmode solution.</p></li>
+<li><p><strong>t</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>np.ndarray</em><em>]</em>) – The time(s) of the eigenmode solution.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The real or imaginary part of the eigenmode solution for the given
+set of coordinate(s) and time(s).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData.get_background">
+<span class="sig-name descname"><span class="pre">get_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Ellipsis</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><span class="pre">numpy.ndarray</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData.get_background"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData.get_background" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the background of the eigenmode solution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>...</em><em>]</em>) – The shape of the eigenmode solution.</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The name of the background to use. If None, the background name
+will be inferred from the eigenfunction name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The background of the eigenmode solution, sampled on the eigenfunction
+grid and broadcasted to the same shape as the eigenmode solution.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData._sample_background_on_ef_grid">
+<span class="sig-name descname"><span class="pre">_sample_background_on_ef_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><span class="pre">numpy.ndarray</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><span class="pre">numpy.ndarray</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData._sample_background_on_ef_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData._sample_background_on_ef_grid" title="Permalink to this definition"></a></dt>
+<dd><p>Samples the background array on the eigenfunction grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bg</strong> (<em>np.ndarray</em>) – The background array with Gaussian grid spacing</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The background array with eigenfunction grid spacing</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_data.ModeVisualisationData._get_background_name">
+<span class="sig-name descname"><span class="pre">_get_background_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_data.html#ModeVisualisationData._get_background_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_data.ModeVisualisationData._get_background_name" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the name of the background.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The closest match between the eigenfunction name and the equilibrium
+name.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – If the eigenfunction name is a magnetic vector potential component.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../cylindrical_3d/index.html" class="btn btn-neutral float-left" title="pylbo.visualisation.modes.cylindrical_3d" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../mode_figure/index.html" class="btn btn-neutral float-right" title="pylbo.visualisation.modes.mode_figure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Niels Claes, Jordi De Jonghe and Rony Keppens (2020).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

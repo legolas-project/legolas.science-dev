@@ -1,0 +1,255 @@
+:py:mod:`pylbo.visualisation.spectra.spectrum_figure`
+=====================================================
+
+.. py:module:: pylbo.visualisation.spectra.spectrum_figure
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure
+
+
+
+
+.. py:class:: SpectrumFigure(custom_figure: tuple[matplotlib.figure.Figure, matplotlib.axes.Axes] = None, figlabel: str = None, figsize: tuple[int, int] = None)
+
+   Bases: :py:obj:`pylbo.visualisation.figure_window.InteractiveFigureWindow`
+
+   
+   Class to handle the creation of a figure window dedicated to different types of
+   spectrum figures.
+
+   :param custom_figure: A custom figure to use, in the form (fig, ax) corresponding to the figure
+                         and axis objects from matplotlib.
+   :type custom_figure: tuple[~matplotlib.figure.Figure, ~matplotlib.axes.Axes]
+   :param figlabel: The label of the figure, used to generate a unique figure id
+   :type figlabel: str
+   :param figsize: The size of the figure, default is (10, 6).
+   :type figsize: tuple[int, int]
+
+   .. attribute:: ax
+
+      The axes object.
+
+      :type: ~matplotlib.axes.Axes
+
+   .. attribute:: x_scaling
+
+      The scaling of the x-axis.
+
+      :type: int, float, complex, np.ndarray
+
+   .. attribute:: y_scaling
+
+      The scaling of the y-axis.
+
+      :type: int, float, complex, np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:property:: c_handler
+
+      
+      Property, returns the continua handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:property:: ef_handler
+
+      
+      Property, returns the eigenfunction handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:property:: ef_ax
+
+      
+      Property, returns the eigenfunction axes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: draw()
+
+      
+      Called on plot refreshing, the super call clears the figure and then redraws
+      everything.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: set_x_scaling(x_scaling)
+
+      
+      Sets the x scaling.
+
+      :param x_scaling: The scaling to apply to the x-axis.
+      :type x_scaling: int, float, complex, numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: set_y_scaling(y_scaling)
+
+      
+      Sets the y scaling.
+
+      :param y_scaling: The scaling to apply to the y-axis
+      :type y_scaling: int, float, complex, numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _set_plot_properties(properties)
+
+      
+      Sets all relevant plot properties.
+
+      :param properties: Dictionary containing the usual matplotlib properties (marker, color,
+                         markersize, alpha, etc.)
+      :type properties: dict
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_spectrum()
+      :abstractmethod:
+
+
+   .. py:method:: add_continua(interactive)
+      :abstractmethod:
+
+
+   .. py:method:: add_eigenfunctions()
+      :abstractmethod:
+
+
+   .. py:method:: add_derived_eigenfunctions()
+      :abstractmethod:
+
+
+

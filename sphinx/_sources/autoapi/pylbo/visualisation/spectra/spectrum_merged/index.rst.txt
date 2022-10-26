@@ -1,0 +1,139 @@
+:py:mod:`pylbo.visualisation.spectra.spectrum_merged`
+=====================================================
+
+.. py:module:: pylbo.visualisation.spectra.spectrum_merged
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.spectra.spectrum_merged.MergedSpectrumPlot
+
+
+
+
+.. py:class:: MergedSpectrumPlot(data, figsize, custom_figure, interactive, legend, **kwargs)
+
+   Bases: :py:obj:`pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure`
+
+   
+   Merges the datasets from a given series into a single plot.
+
+   :param data: The dataseries which will be merged.
+   :type data: ~pylbo.data_containers.LegolasDataSeries
+   :param figsize: Figure size used when creating a window, analogous to matplotlib.
+   :type figsize: tuple
+   :param custom_figure: The custom figure to use in the form (fig, axes).
+   :type custom_figure: tuple
+   :param interactive: If `True` an interactive legend is enabled.
+   :type interactive: bool
+   :param legend: If `False` no legend will be drawn.
+   :type legend: bool
+
+   .. attribute:: data
+
+      The dataseries passed as parameter.
+
+      :type: ~pylbo.data_containers.LegolasDataSeries
+
+   .. attribute:: leg_handle
+
+      The handler for the legend.
+
+      :type: ~pylbo.visualisation.legend_interface.LegendHandler
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: add_spectrum()
+
+      
+      Adds the spectrum to the plot, makes the points pickable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_eigenfunctions()
+
+      
+      Adds the eigenfunctions to the current figure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_derived_eigenfunctions()
+
+      
+      Adds the derived eigenfunctions to the current figure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_continua(interactive=True)
+      :abstractmethod:
+
+
+

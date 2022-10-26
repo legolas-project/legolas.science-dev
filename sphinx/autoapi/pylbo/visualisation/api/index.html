@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="pylbo.visualisation.continua" href="../continua/index.html" />
-    <link rel="prev" title="pylbo.visualisation" href="../index.html" /> 
+    <link rel="prev" title="pylbo.visualisation.spectra.spectrum_single" href="../spectra/spectrum_single/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,16 +50,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../automation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.automation</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../utilities/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities</span></code></a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../eigenfunctions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.modes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../spectra/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.spectra</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.api</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../continua/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.continua</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../derived_eigenfunctions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.derived_eigenfunctions</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../eigenfunction_interface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunction_interface</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../eigenfunctions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.eigenfunctions</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../figure_manager/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.figure_manager</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../legend_interface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.legend_interface</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../figure_window/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.figure_window</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../legend_handler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.legend_handler</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../matrices/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.matrices</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../profiles/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.profiles</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../spectra/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.spectra</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation.utils</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../_version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo._version</span></code></a></li>
@@ -112,12 +112,6 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.api._ensure_dataset" title="pylbo.visualisation.api._ensure_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_ensure_dataset</span></code></a>(data)</p></td>
-<td><p>Ensures that the data object passed is a LegolasDataSet</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.api._ensure_dataseries" title="pylbo.visualisation.api._ensure_dataseries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_ensure_dataseries</span></code></a>(data)</p></td>
-<td><p>Ensures that the data object passed is a LegolasDataSeries</p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.api.plot_spectrum" title="pylbo.visualisation.api.plot_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_spectrum</span></code></a>(data[, figsize, custom_figure])</p></td>
 <td><p>Plots the spectrum of a single dataset.</p></td>
 </tr>
@@ -164,34 +158,6 @@
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pylbo.visualisation.api._ensure_dataset">
-<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.api.</span></span><span class="sig-name descname"><span class="pre">_ensure_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/api.html#_ensure_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.api._ensure_dataset" title="Permalink to this definition"></a></dt>
-<dd><p>Ensures that the data object passed is a LegolasDataSet</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><em>object</em></a>) – The data object to check.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – If data is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">LegolasDataSet</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pylbo.visualisation.api._ensure_dataseries">
-<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.api.</span></span><span class="sig-name descname"><span class="pre">_ensure_dataseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/api.html#_ensure_dataseries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.api._ensure_dataseries" title="Permalink to this definition"></a></dt>
-<dd><p>Ensures that the data object passed is a LegolasDataSeries</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><em>object</em></a>) – The data object to check.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – If data is not a <code class="xref py py-class docutils literal notranslate"><span class="pre">LegolasDataSeries</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="pylbo.visualisation.api.plot_spectrum">
 <span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.api.</span></span><span class="sig-name descname"><span class="pre">plot_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/api.html#plot_spectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.api.plot_spectrum" title="Permalink to this definition"></a></dt>
 <dd><p>Plots the spectrum of a single dataset.</p>
@@ -210,7 +176,7 @@ but this one will be used instead. <cite>fig</cite> refers to the matplotlib fig
 eigenfunctions, etc.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../spectra/index.html#pylbo.visualisation.spectra.SingleSpectrumPlot" title="pylbo.visualisation.spectra.SingleSpectrumPlot"><em>SingleSpectrumPlot</em></a></p>
+<dd class="field-odd"><p><em>SingleSpectrumPlot</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -241,7 +207,7 @@ but this one will be used instead. <cite>fig</cite> refers to the matplotlib fig
 eigenfunctions, etc.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../spectra/index.html#pylbo.visualisation.spectra.MultiSpectrumPlot" title="pylbo.visualisation.spectra.MultiSpectrumPlot"><em>MultiSpectrumPlot</em></a></p>
+<dd class="field-odd"><p><em>MultiSpectrumPlot</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -269,7 +235,7 @@ but this one will be used instead. <cite>fig</cite> refers to the matplotlib fig
 <dd class="field-even"><p><strong>p</strong> – The spectrumfigure instance, containing the plot.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../spectra/index.html#pylbo.visualisation.spectra.MultiSpectrumPlot" title="pylbo.visualisation.spectra.MultiSpectrumPlot"><em>MultiSpectrumPlot</em></a></p>
+<dd class="field-odd"><p><em>MultiSpectrumPlot</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -294,7 +260,7 @@ as well.</p></li>
 <dd class="field-even"><p><strong>p</strong> – The figure instance containing the compared spectrum plot.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../spectra/index.html#pylbo.visualisation.spectra.SpectrumComparisonPlot" title="pylbo.visualisation.spectra.SpectrumComparisonPlot"><em>SpectrumComparisonPlot</em></a></p>
+<dd class="field-odd"><p><em>SpectrumComparisonPlot</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -391,7 +357,7 @@ All values smaller than 1e-16 are set to zero.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="pylbo.visualisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../spectra/spectrum_single/index.html" class="btn btn-neutral float-left" title="pylbo.visualisation.spectra.spectrum_single" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../continua/index.html" class="btn btn-neutral float-right" title="pylbo.visualisation.continua" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

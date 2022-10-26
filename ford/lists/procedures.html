@@ -223,8 +223,8 @@ deallocates the various nodes in the rows.</p></td></tr>
 			   <tr><td><a href='../proc/delete_row.html'>delete_row</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Subroutine</td><td><p>Deletes a given linked list row by recursively iterating over all nodes.
 Nullifies the pointers and deallocates the elements.</p></td></tr>
 			   <tr><td><a href='../proc/destroy.html'>destroy</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Destructor, deallocates variables.</p></td></tr>
-			   <tr><td><a href='../proc/destroy~2.html'>destroy</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Subroutine</td><td><p>Destructor, deallocates the datastructure.</p></td></tr>
-			   <tr><td><a href='../proc/destroy~3.html'>destroy</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Subroutine</td><td><p>Destructor, deallocates the datastructure.</p></td></tr>
+			   <tr><td><a href='../proc/destroy~2.html'>destroy</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Subroutine</td><td><p>Destructor, deallocates the datastructure.</p></td></tr>
+			   <tr><td><a href='../proc/destroy~3.html'>destroy</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Subroutine</td><td><p>Destructor, deallocates the datastructure.</p></td></tr>
 			   <tr><td><a href='../proc/dimensions_are_valid.html'>dimensions_are_valid</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if the given matrix dimensions are valid. For now, we only accept
 square matrices. Returns <code>.true.</code> if <code>rows</code> equals <code>cols</code>, <code>.false.</code> otherwise.</p></td></tr>
 			   <tr><td><a href='../interface/discrete_alfven_eq.html'>discrete_alfven_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
@@ -278,13 +278,13 @@ Depends on the matrix that is used.</p></td></tr>
 \right) + k_3B_{02}\right]
 </script>
 </p></td></tr>
-			   <tr><td><a href='../proc/get_element.html'>get_element</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Retrieves the element at position (row, col) of the original matrix.
-See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
-at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p></td></tr>
-			   <tr><td><a href='../proc/get_element~2.html'>get_element</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Retrieves the element at position (row, col) of the original matrix.
+			   <tr><td><a href='../proc/get_element.html'>get_element</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Retrieves the element at position (row, col) of the original matrix.
 See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
 at position $(kd + 1 + i - j, j)$ if <code>uplo = "U"</code> and at position
 $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p></td></tr>
+			   <tr><td><a href='../proc/get_element~2.html'>get_element</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Retrieves the element at position (row, col) of the original matrix.
+See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
+at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p></td></tr>
 			   <tr><td><a href='../proc/get_eta.html'>get_eta</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Calculates the resistivity. Returns either the full Spitzer resistivity
 based on the equilibrium parameters, or a fixed resistivity value if
 specified in the global variables module. The unit resistivity is also set in this routine.
@@ -351,8 +351,8 @@ position in the grid.</p></td></tr>
 			   <tr><td><a href='../interface/get_subblock_index.html'>get_subblock_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/get_tolerance.html'>get_tolerance</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for tolerance (relative accuracy) to indicate eigenvalue convergence.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the total number of elements (nodes) across the various rows.</p></td></tr>
-			   <tr><td><a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix.</p></td></tr>
-			   <tr><td><a href='../proc/get_total_nb_elements~3.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix</p></td></tr>
+			   <tr><td><a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix</p></td></tr>
+			   <tr><td><a href='../proc/get_total_nb_elements~3.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_nonzero_elements.html'>get_total_nb_nonzero_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of nonzero elements inside the banded matrix.</p></td></tr>
 			   <tr><td><a href='../proc/get_values_from_eigenvector.html'>get_values_from_eigenvector</a></td><td><a href='../module/smod_ef_operations.html'>smod_ef_operations</a></td><td>Function</td><td><p>Retrieves the correct values from the eigenvector that correspond to the
 requested eigenfunction at the current subblock index mapping.</p></td></tr>
@@ -447,19 +447,19 @@ Interpolation is done using <tt>n_interp</tt> points, in general a second
 order polynomial approximation is used except near sharp jumps.
 </p><a href="../proc/interpolate_table.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../interface/inverse_iteration.html'>inverse_iteration</a></td><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td>Interface</td><td><p>interface to the different solution methods implemented in submodules</p></td></tr>
-			   <tr><td><a href='../proc/is_compatible_with.html'>is_compatible_with</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if a banded matrix is compatibe with another banded matrix.
-This implies that the following attributes should be equal:
-  - dimensions of the original matrices
-  - number of superdiagonals and subdiagonals
-  - dimensions of the banded matrices themselves
-Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.</code> otherwise.</p></td></tr>
-			   <tr><td><a href='../proc/is_compatible_with~2.html'>is_compatible_with</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Checks if a Hermitian band matrix is compatible with another Hermitian band matrix.
+			   <tr><td><a href='../proc/is_compatible_with.html'>is_compatible_with</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Checks if a Hermitian band matrix is compatible with another Hermitian band matrix.
 This implies that the following attributes should be equal:
   - number of rows/columns
   - number of sub/superdiagonals
   - storage of upper or lower triangular part
   - dimensions of the banded matrices themselves
 Returns <tt>.true.</tt> if all criteria are satisfied, <tt>.false.</tt> otherwise.</p></td></tr>
+			   <tr><td><a href='../proc/is_compatible_with~2.html'>is_compatible_with</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if a banded matrix is compatibe with another banded matrix.
+This implies that the following attributes should be equal:
+  - dimensions of the original matrices
+  - number of superdiagonals and subdiagonals
+  - dimensions of the banded matrices themselves
+Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.</code> otherwise.</p></td></tr>
 			   <tr><td><a href='../interface/is_constant.html'>is_constant</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check if an array is constant</p></td></tr>
 			   <tr><td><a href='../interface/is_equal.html'>is_equal</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check equality between values/arrays</p></td></tr>
 			   <tr><td><a href='../interface/is_nan.html'>is_NaN</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check for NaN values</p></td></tr>
@@ -469,15 +469,15 @@ Returns <code>.true.</code> if the element is of type real or complex, <code>.fa
 			   <tr><td><a href='../proc/is_valid_index.html'>is_valid_index</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Checks if a given index is valid for the current matrix datastructure.
 Returns <code>.true.</code> if the index (either row or column) is larger than 0 and
 smaller than the dimension of the matrix. Returns <code>.false.</code> otherwise.</p></td></tr>
-			   <tr><td><a href='../proc/is_within_band.html'>is_within_band</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if a given position (row, col) is within the banded structure, i.e.
-<script type="math/tex; mode=display"> max(1, col - ku) \leq row \leq min(m, col + kl) </script>
-with $ku$ the number of superdiagonals and $kl$ the number of subdiagonals.</p></td></tr>
-			   <tr><td><a href='../proc/is_within_band~2.html'>is_within_band</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Checks if a given position (row, col) is within the banded structure.
+			   <tr><td><a href='../proc/is_within_band.html'>is_within_band</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Checks if a given position (row, col) is within the banded structure.
 For <tt>uplo = "U"</tt> the position is within the band if
 <script type="math/tex; mode=display"> max(1, col - kd) \leq row \leq col, </script>
 for <tt>uplo = "L"</tt> the position is within the band if
 <script type="math/tex; mode=display"> col \leq row \leq min(n, col + kd) </script>
 with $kd$ the number of sub/superdiagonals and $n$ the number of rows/columns.</p></td></tr>
+			   <tr><td><a href='../proc/is_within_band~2.html'>is_within_band</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if a given position (row, col) is within the banded structure, i.e.
+<script type="math/tex; mode=display"> max(1, col - ku) \leq row \leq min(m, col + kl) </script>
+with $ku$ the number of superdiagonals and $kl$ the number of subdiagonals.</p></td></tr>
 			   <tr><td><a href='../interface/is_zero.html'>is_zero</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check if values/arrays are zero</p></td></tr>
 			   <tr><td><a href='../interface/isothermal_atmosphere_eq.html'>isothermal_atmosphere_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/kh_cd_instability_eq.html'>kh_cd_instability_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
@@ -574,9 +574,9 @@ global variables to their specified values.
 			   <tr><td><a href='../proc/real_is_equal.html'>real_is_equal</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Equality check between real values</p></td></tr>
 			   <tr><td><a href='../proc/real_is_negative.html'>real_is_negative</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Check if values are or contain negative numbers</p></td></tr>
 			   <tr><td><a href='../proc/real_is_zero.html'>real_is_zero</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Checks if real values are zero</p></td></tr>
-			   <tr><td><a href='../proc/reset_factor_positions.html'>reset_factor_positions</a></td><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
+			   <tr><td><a href='../proc/reset_factor_positions.html'>reset_factor_positions</a></td><td><a href='../module/smod_natural_boundaries.html'>smod_natural_boundaries</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
 new size.</p></td></tr>
-			   <tr><td><a href='../proc/reset_factor_positions~2.html'>reset_factor_positions</a></td><td><a href='../module/smod_natural_boundaries.html'>smod_natural_boundaries</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
+			   <tr><td><a href='../proc/reset_factor_positions~2.html'>reset_factor_positions</a></td><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
 new size.</p></td></tr>
 			   <tr><td><a href='../interface/resistive_homo_eq.html'>resistive_homo_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/resistive_tearing_modes_eq.html'>resistive_tearing_modes_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
@@ -614,11 +614,11 @@ The radial derivative of the prefactor is also set, given by
 			   <tr><td><a href='../proc/set_conduction_values.html'>set_conduction_values</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>This routines sets all thermal conduction values in <tt>kappa_field</tt>,
 and calls all other relevant subroutines defined in this module.
 </p><a href="../proc/set_conduction_values.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/set_element.html'>set_element</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Subroutine</td><td><p>Sets the element $a_{ij}$ of the original array into the banded structure.
+			   <tr><td><a href='../proc/set_element.html'>set_element</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Subroutine</td><td><p>Sets the element $a_{ij}$ of the original array into the banded structure.
 The <tt>row</tt> and <tt>col</tt> arguments refer to the row and column indices
 of the element in the original array. This routine has no effect if the location
 falls outside of the banded structure.</p></td></tr>
-			   <tr><td><a href='../proc/set_element~2.html'>set_element</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Subroutine</td><td><p>Sets the element $a_{ij}$ of the original array into the banded structure.
+			   <tr><td><a href='../proc/set_element~2.html'>set_element</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Subroutine</td><td><p>Sets the element $a_{ij}$ of the original array into the banded structure.
 The <tt>row</tt> and <tt>col</tt> arguments refer to the row and column indices
 of the element in the original array. This routine has no effect if the location
 falls outside of the banded structure.</p></td></tr>
