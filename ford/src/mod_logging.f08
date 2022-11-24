@@ -42,7 +42,6 @@ module mod_logging
   public :: print_whitespace
   public :: str
   public :: exp_fmt, dp_fmt, int_fmt
-  public :: override_prefix_to_false
 
 contains
 

@@ -14,37 +14,31 @@ program legolas
   use mod_output, only: datfile_name, create_datfile
   use mod_logging, only: log_message, str, print_console_info, print_whitespace
   use mod_inspections, only: handle_spurious_eigenvalues
-  use mod_timing, only: timer_t, new_timer
+  use mod_timing, only: tic, toc
   implicit none
 
   !> A matrix in eigenvalue problem wBX = AX
   type(matrix_t) :: matrix_A
   !> B matrix in eigenvalue problem wBX = AX
   type(matrix_t) :: matrix_B
-  !> timer used by the whole program
-  type(timer_t) :: timer
   !> array with eigenvalues
   complex(dp), allocatable  :: omega(:)
   !> matrix with right eigenvectors, column indices correspond to omega indices
   complex(dp), allocatable  :: eigenvecs_right(:, :)
+  !> start time of eigenvalue solver
+  integer                   :: start_time_evp
 
-  timer = new_timer()
-
-  call timer%start_timer()
   call initialisation()
-  timer%init_time = timer%end_timer()
-
   call print_console_info()
 
-  call timer%start_timer()
   call build_matrices(matrix_B, matrix_A)
-  timer%matrix_time = timer%end_timer()
 
   if (.not. dry_run) then
     call log_message("solving eigenvalue problem...", level="info")
-    call timer%start_timer()
+
+    call tic(start_time_evp)
     call solve_evp(matrix_A, matrix_B, omega, eigenvecs_right)
-    timer%evp_time = timer%end_timer()
+    call toc("solved eigenvalue problem", start_time_evp, level="info")
   else
     call log_message( &
       "running dry, overriding parfile and setting eigenvalues to zero", level="info"  &
@@ -52,17 +46,12 @@ program legolas
     omega = (0.0d0, 0.0d0)
   end if
 
-  call timer%start_timer()
-  call create_eigenfunctions()
-  timer%eigenfunction_time = timer%end_timer()
+  call handle_spurious_eigenvalues(omega)
 
-  call timer%start_timer()
+  call create_eigenfunctions()
   call create_datfile(omega, matrix_A, matrix_B, eigenvecs_right)
-  timer%datfile_time = timer%end_timer()
 
   call cleanup()
-
-  call print_timelog()
 
   if (show_results) then
     call print_whitespace(1)
@@ -170,39 +159,5 @@ contains
     end if
     call eigenfunctions_clean()
   end subroutine cleanup
-
-
-  subroutine print_timelog()
-    use mod_logging, only: override_prefix_to_false
-    real(dp) :: total_time
-
-    call print_whitespace(1)
-    call log_message("---------------------------------------------")
-    override_prefix_to_false = .true.
-    total_time = timer%get_total_time()
-
-    call log_message("                << Time log >>")
-    call log_message( &
-      "Legolas finished in " // str(total_time) // " seconds", level="info" &
-    )
-    call log_message( &
-      "   initialisation: " // str(timer%init_time) // " sec", level="info" &
-    )
-    call log_message( &
-      "   matrix construction: " // str(timer%matrix_time) // " sec", &
-      level="info" &
-    )
-    call log_message( &
-      "   eigenvalue problem: " // str(timer%evp_time) // " sec", &
-      level="info" &
-    )
-    call log_message( &
-      "   eigenfunction assembly: " // str(timer%eigenfunction_time) // " sec", &
-      level="info" &
-    )
-    call log_message( &
-      "   datfile creation: " // str(timer%datfile_time) // " sec", level="info" &
-    )
-  end subroutine print_timelog
 
 end program legolas
