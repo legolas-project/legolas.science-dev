@@ -58,9 +58,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">Module code</a> &raquo;</li>
-      <li>pylbo.data_containers</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pylbo.data_containers</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -328,6 +328,11 @@
 <div class="viewcode-block" id="LegolasDataSet.u3_str"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.u3_str">[docs]</a>    <span class="k">def</span> <span class="nf">u3_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns the :math:`u_3` string.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;z&quot;</span></div>
+
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="LegolasDataSet.has_residuals"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">has_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns `True` if the dataset has residuals.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;residuals_written&quot;</span><span class="p">]</span></div>
 
     <span class="nd">@property</span>
 <div class="viewcode-block" id="LegolasDataSet.efs_written"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.efs_written">[docs]</a>    <span class="k">def</span> <span class="nf">efs_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -682,7 +687,7 @@
 <span class="sd">        ResidualsNotPresent</span>
 <span class="sd">            If the residuals were not saved to the datfile.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;residuals_written&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_residuals</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">ResidualsNotPresent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">)</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">res</span> <span class="o">=</span> <span class="n">read_residuals</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>

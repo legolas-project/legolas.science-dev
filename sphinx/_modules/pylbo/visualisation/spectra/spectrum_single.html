@@ -58,9 +58,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../index.html">Module code</a> &raquo;</li>
-      <li>pylbo.visualisation.spectra.spectrum_single</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pylbo.visualisation.spectra.spectrum_single</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -70,7 +70,8 @@
            <div itemprop="articleBody">
              
   <h1>Source code for pylbo.visualisation.spectra.spectrum_single</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mpl_colors</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">add_pickradius_to_item</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.continua</span> <span class="kn">import</span> <span class="n">ContinuaHandler</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.eigenfunctions.derived_eigfunc_handler</span> <span class="kn">import</span> <span class="p">(</span>
@@ -92,6 +93,8 @@
 <span class="sd">        Figure size used when creating a window, analogous to matplotlib.</span>
 <span class="sd">    custom_figure : tuple</span>
 <span class="sd">        The custom figure to use in the form (fig, axes).</span>
+<span class="sd">    use_residuals : bool</span>
+<span class="sd">        If `True`, colors the spectrum points based on the residuals.</span>
 
 <span class="sd">    Attributes</span>
 <span class="sd">    ----------</span>
@@ -109,31 +112,35 @@
 <span class="sd">        Alpha value of the points.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="n">custom_figure</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="n">custom_figure</span><span class="p">,</span> <span class="n">use_residuals</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">custom_figure</span><span class="o">=</span><span class="n">custom_figure</span><span class="p">,</span> <span class="n">figlabel</span><span class="o">=</span><span class="s2">&quot;single-spectrum&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_set_plot_properties</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">w_real</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">eigenvalues</span><span class="o">.</span><span class="n">real</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">w_imag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">eigenvalues</span><span class="o">.</span><span class="n">imag</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span> <span class="o">=</span> <span class="n">use_residuals</span>
+        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_w_idxs</span><span class="p">,)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-12</span><span class="p">)</span>
 
 <div class="viewcode-block" id="SingleSpectrumPlot.add_spectrum"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot.add_spectrum">[docs]</a>    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds the spectrum to the plot, makes the points pickable.&quot;&quot;&quot;</span>
-        <span class="p">(</span><span class="n">spectrum_point</span><span class="p">,)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">w_real</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_scaling</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">w_imag</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_scaling</span><span class="p">,</span>
+        <span class="n">spectrum_points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_w_idxs</span><span class="p">]</span><span class="o">.</span><span class="n">real</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_scaling</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_w_idxs</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_scaling</span><span class="p">,</span>
             <span class="n">marker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">marker</span><span class="p">,</span>
-            <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">,</span>
-            <span class="n">markersize</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">markersize</span><span class="p">,</span>
+            <span class="n">c</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_colors</span><span class="p">(),</span>
+            <span class="n">s</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">markersize</span><span class="p">,</span>
             <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">,</span>
             <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
+            <span class="n">norm</span><span class="o">=</span><span class="n">mpl_colors</span><span class="o">.</span><span class="n">LogNorm</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">plot_props</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;cmap&quot;</span><span class="p">,</span> <span class="s2">&quot;jet&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
             <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">plot_props</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="c1"># set dataset associated with this line of points</span>
-        <span class="nb">setattr</span><span class="p">(</span><span class="n">spectrum_point</span><span class="p">,</span> <span class="s2">&quot;dataset&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
-        <span class="n">add_pickradius_to_item</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="n">spectrum_point</span><span class="p">,</span> <span class="n">pickradius</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">spectrum_points</span><span class="p">,</span> <span class="s2">&quot;dataset&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">add_pickradius_to_item</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="n">spectrum_points</span><span class="p">,</span> <span class="n">pickradius</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cbar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">spectrum_points</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Residual&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Re($\omega$)&quot;</span><span class="p">)</span>
@@ -197,7 +204,13 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span> <span class="o">=</span> <span class="n">DerivedEigenfunctionHandler</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span>
             <span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_eigenfunction_interface</span><span class="p">(</span><span class="n">efhandler</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span><span class="p">)</span></div></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_eigenfunction_interface</span><span class="p">(</span><span class="n">efhandler</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SingleSpectrumPlot._get_colors"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot._get_colors">[docs]</a>    <span class="k">def</span> <span class="nf">_get_colors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns the colors for the spectrum points.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_residuals</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_w_idxs</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span></div></div>
 </pre></div>
 
            </div>

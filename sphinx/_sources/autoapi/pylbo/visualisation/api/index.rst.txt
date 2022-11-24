@@ -37,7 +37,7 @@ Attributes
 
    
 
-.. py:function:: plot_spectrum(data, figsize=None, custom_figure=None, **kwargs)
+.. py:function:: plot_spectrum(data, figsize=None, custom_figure=None, use_residuals=False, **kwargs)
 
    
    Plots the spectrum of a single dataset.
@@ -50,6 +50,8 @@ Attributes
                          but this one will be used instead. `fig` refers to the matplotlib figure and
                          `ax` to a (single) axes instance, meaning that you can pass a subplot as well.
    :type custom_figure: tuple
+   :param use_residuals: If `True`, colors the spectrum based on the residual in the datfile.
+   :type use_residuals: bool
 
    :returns: **p** -- The spectrum instance which can be used further to add continua,
              eigenfunctions, etc.
@@ -72,7 +74,7 @@ Attributes
    ..
        !! processed by numpydoc !!
 
-.. py:function:: plot_spectrum_multi(data, xdata, use_squared_omega=False, use_real_parts=True, figsize=None, custom_figure=None, **kwargs)
+.. py:function:: plot_spectrum_multi(data, xdata, use_squared_omega=False, use_real_parts=True, figsize=None, custom_figure=None, use_residuals=False, **kwargs)
 
    
    Plots the spectrum of a dataset series.
