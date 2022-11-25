@@ -17,7 +17,7 @@ Classes
 
 
 
-.. py:class:: SingleSpectrumPlot(dataset, figsize, custom_figure, **kwargs)
+.. py:class:: SingleSpectrumPlot(dataset, figsize, custom_figure, use_residuals, **kwargs)
 
    Bases: :py:obj:`pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure`
 
@@ -30,6 +30,8 @@ Classes
    :type figsize: tuple
    :param custom_figure: The custom figure to use in the form (fig, axes).
    :type custom_figure: tuple
+   :param use_residuals: If `True`, colors the spectrum points based on the residuals.
+   :type use_residuals: bool
 
    .. attribute:: dataset
 
@@ -161,6 +163,29 @@ Classes
 
       
       Adds the derived eigenfunctions to the plot, sets the eigenfunction handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _get_colors() -> numpy.ndarray
+
+      
+      Returns the colors for the spectrum points.
 
 
 
