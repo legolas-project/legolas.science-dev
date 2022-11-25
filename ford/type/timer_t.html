@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_input &ndash; Legolas v. 1.3.0 - develop</title>
+    <title>timer_t &ndash; Legolas v. 1.3.0 - develop </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>mod_input 
-    <small>Module</small>
+    <h1>timer_t
+    <small>Derived Type</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,13 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.6% of total for modules and submodules.">148 statements</a>
+    title="<p> 7.6% of total for derived types.</p>Including implementation: 32 statements,  4.6% of total for derived types.">13 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_input.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_timing.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_input.f08.html'>mod_input.f08</a></li>
-     <li class="active">mod_input</li>
+     <li><a href='../sourcefile/mod_timing.f08.html'>mod_timing.f08</a></li>
+     <li><a href='../module/mod_timing.html'>mod_timing</a></li>
+     <li class="active">timer_t</li>
   </ol>
 </div>
 </div>
@@ -109,18 +110,23 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_input.html#variable-unit_par">unit_par</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-start_time">start_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-program_start_time">program_start_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-init_time">init_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-matrix_time">matrix_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-evp_time">evp_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-eigenfunction_time">eigenfunction_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-datfile_time">datfile_time</a>
     </div>
   </div>
 </div>
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_input.html#proc-read_parfile">read_parfile</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-check_and_set_supplied_unit_normalisations">check_and_set_supplied_unit_normalisations</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-check_global_eigenfunction_subset_parameters">check_global_eigenfunction_subset_parameters</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-get_parfile">get_parfile</a>
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/timer_t.html#boundprocedure-start_timer">start_timer</a>
+      <a class="list-group-item" href="../type/timer_t.html#boundprocedure-end_timer">end_timer</a>
+      <a class="list-group-item" href="../type/timer_t.html#boundprocedure-get_total_time">get_total_time</a>
     </div>
   </div>
 </div>
@@ -130,24 +136,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <p>Module to handle parfile reading.
-Contains subroutines to retrieve the parfile based on the commandline arguments
-and to read the parfile, setting the global variables.</p>
-<br>        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+      <h2>type, public :: timer_t</h2>
     
     <br>
 
@@ -158,18 +147,23 @@ and to read the parfile, setting the global variables.</p>
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_input.html#variable-unit_par">unit_par</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-start_time">start_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-program_start_time">program_start_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-init_time">init_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-matrix_time">matrix_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-evp_time">evp_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-eigenfunction_time">eigenfunction_time</a>
+      <a class="list-group-item" href="../type/timer_t.html#variable-datfile_time">datfile_time</a>
     </div>
   </div>
 </div>
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_input.html#proc-read_parfile">read_parfile</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-check_and_set_supplied_unit_normalisations">check_and_set_supplied_unit_normalisations</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-check_global_eigenfunction_subset_parameters">check_global_eigenfunction_subset_parameters</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-get_parfile">get_parfile</a>
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/timer_t.html#boundprocedure-start_timer">start_timer</a>
+      <a class="list-group-item" href="../type/timer_t.html#boundprocedure-end_timer">end_timer</a>
+      <a class="list-group-item" href="../type/timer_t.html#boundprocedure-get_total_time">get_total_time</a>
     </div>
   </div>
 </div>
@@ -177,16 +171,45 @@ and to read the parfile, setting the global variables.</p>
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-
     <section>
-    <h2>Variables</h2>
+    <h2>Components</h2>
     <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-unit_par"></span>integer,</td>
+  <td><span class="anchor" id="variable-start_time"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
-  <td><strong>unit_par</strong></td><td> =</td><td>101</td><td><p>IO unit for the parfile</p></td>
+  <td><strong>start_time</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-program_start_time"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>program_start_time</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-init_time"></span>real(kind=dp),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>init_time</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-matrix_time"></span>real(kind=dp),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>matrix_time</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-evp_time"></span>real(kind=dp),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>evp_time</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-eigenfunction_time"></span>real(kind=dp),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>eigenfunction_time</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-datfile_time"></span>real(kind=dp),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>datfile_time</strong></td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -195,120 +218,80 @@ and to read the parfile, setting the global variables.</p>
     <br>
     
     
-
     
-    
-
+ 
     <section>
-    <h2>Subroutines</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-read_parfile"></span><h3>public subroutine <a href='../proc/read_parfile.html'>read_parfile</a>(parfile)</h3></div>
-  <div class="panel-body">
-       
-<p>Reads in the supplied parfile and sets the equilibrium parameters and
-global variables to their specified values.
-</p><a href="../proc/read_parfile.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
+    <h2>Type-Bound Procedures</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-start_timer"></span><h3>procedure, public :: <strong>start_timer</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private subroutine <a href='../proc/start_timer.html'>start_timer</a>(this)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" ></span>class(<a href='../type/timer_t.html'>timer_t</a>),</td>
+<td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>parfile</strong></td><td><p>the name of the parfile</p></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
 
-  </div>
-  </div>
+      </li>
+  </ul>
+</div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-check_and_set_supplied_unit_normalisations"></span><h3>private subroutine <a href='../proc/check_and_set_supplied_unit_normalisations.html'>check_and_set_supplied_unit_normalisations</a>(unit_density, unit_temperature, unit_magneticfield, unit_length, mean_molecular_weight)</h3></div>
-  <div class="panel-body">
-       
-<p>Checks the unit normalisations that are supplied (if any), sets the
-unit normalisations if valid.</p>
-    
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-end_timer"></span><h3>procedure, public :: <strong>end_timer</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private function <a href='../proc/end_timer.html'>end_timer</a>(this) result(elapsed_time)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" ></span>class(<a href='../type/timer_t.html'>timer_t</a>),</td>
+<td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>unit_density</strong></td><td><p>supplied unit density</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>unit_temperature</strong></td><td><p>supplied unit temperature</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>unit_magneticfield</strong></td><td><p>supplied unit magneticfield</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>unit_length</strong></td><td><p>supplied unit length</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>mean_molecular_weight</strong></td><td><p>supplied mean molecular weight</p></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
+<h4>Return Value <small>real(kind=dp)</small></h4>  
 
-  </div>
-  </div>
+      </li>
+  </ul>
+</div>
 
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-check_global_eigenfunction_subset_parameters"></span><h3>private subroutine <a href='../proc/check_global_eigenfunction_subset_parameters.html'>check_global_eigenfunction_subset_parameters</a>()</h3></div>
-  <div class="panel-body">
-       
-<p>Called when the eigenfunction subset selection is enabled, this checks if the
-global variables are properly set.</p>
-    
-<h4>Arguments</h4>      <em>None</em>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_parfile"></span><h3>public subroutine <a href='../proc/get_parfile.html'>get_parfile</a>(filename_par)</h3></div>
-  <div class="panel-body">
-       
-<p>Parses the command line arguments and retrieves the parfile passed.
-</p><a href="../proc/get_parfile.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_total_time"></span><h3>procedure, public :: <strong>get_total_time</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private function <a href='../proc/get_total_time.html'>get_total_time</a>(this) result(total_time)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(out)</td>
+  <td><span class="anchor" ></span>class(<a href='../type/timer_t.html'>timer_t</a>),</td>
+<td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>filename_par</strong></td><td><p>the name of the parfile</p></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
+<h4>Return Value <small>real(kind=dp)</small></h4>  
 
-  </div>
-  </div>
+      </li>
+  </ul>
+</div>
 
-    </section>    
-    <br>
+    </section>
+    
     
     </div>
   </div>

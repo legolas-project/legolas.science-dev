@@ -230,6 +230,7 @@ square matrices. Returns <code>.true.</code> if <code>rows</code> equals <code>c
 			   <tr><td><a href='../interface/discrete_alfven_eq.html'>discrete_alfven_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../proc/eigenfunctions_clean.html'>eigenfunctions_clean</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td><p>Cleaning routine.</p></td></tr>
 			   <tr><td><a href='../proc/eigenvalue_is_inside_subset_radius.html'>eigenvalue_is_inside_subset_radius</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Function</td><td><p>Checks if a specific eigenvalue is within the provided subset radius.</p></td></tr>
+			   <tr><td><a href='../proc/end_timer.html'>end_timer</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/equilibrium_clean.html'>equilibrium_clean</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Subroutine</td><td><p>Cleaning routine, deallocates the equilibrium types.</p></td></tr>
 			   <tr><td><a href='../proc/find_index_in_character_array.html'>find_index_in_character_array</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Function</td><td><p>Function to locate the index of a given character in a character array.
 Iterates over the elements and returns on the first hit, if no match
@@ -354,6 +355,7 @@ position in the grid.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the total number of elements (nodes) across the various rows.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_elements~3.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_nonzero_elements.html'>get_total_nb_nonzero_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of nonzero elements inside the banded matrix.</p></td></tr>
+			   <tr><td><a href='../proc/get_total_time.html'>get_total_time</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_values_from_eigenvector.html'>get_values_from_eigenvector</a></td><td><a href='../module/smod_ef_operations.html'>smod_ef_operations</a></td><td>Function</td><td><p>Retrieves the correct values from the eigenvector that correspond to the
 requested eigenfunction at the current subblock index mapping.</p></td></tr>
 			   <tr><td><a href='../proc/get_viscosity_terms.html'>get_viscosity_terms</a></td><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td>Subroutine</td><td></td></tr>
@@ -523,6 +525,7 @@ The element passed is polymorphic, but will be cast to complex in the node itsel
 No nodes are linked yet; the pointer to the next node is initialised to <code>null()</code>.</p></td></tr>
 			   <tr><td><a href='../proc/new_row.html'>new_row</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Function</td><td><p>Constructor for a new row, initialises the linked list datastructure
 and sets the current head and tail pointers to <code>null()</code>.</p></td></tr>
+			   <tr><td><a href='../proc/new_timer.html'>new_timer</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/on_exception_raised.html'>on_exception_raised</a></td><td><a href='../module/mod_exceptions.html'>mod_exceptions</a></td><td>Subroutine</td><td><p>Workflow that is executed by default when
 an exception is raised. The argument <tt>message</tt>
 is printed to the console and program execution
@@ -556,6 +559,7 @@ equilibrium parameters etc. Only for logging level "info" or above.</p></td></tr
 			   <tr><td><a href='../proc/print_logo.html'>print_logo</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td><p>Prints the Legolas logo to the console.
 The logo is wrapped in 1 whitespace at the top and
 two at the bottom. Only for logging level 'warning' (1) and above</p></td></tr>
+			   <tr><td><a href='../proc/print_timelog.html'>print_timelog</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/print_whitespace.html'>print_whitespace</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td><p>Prints an empty line to the console.
 Only if logging level is 'warning' or above.</p></td></tr>
 			   <tr><td><a href='../interface/qr_cholesky.html'>qr_cholesky</a></td><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td>Interface</td><td><p>interface to the different solution methods implemented in submodules</p></td></tr>
@@ -777,6 +781,7 @@ results in three expressions,
 <script type="math/tex; mode=display"> \rho_0 v_{01} v_{03}' - B_{01} B_{03}' = 0, </script>
 and they should all be fulfilled.
 </p><a href="../proc/standard_equil_conditions.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/start_timer.html'>start_timer</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../interface/str.html'>str</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Interface</td><td><p>a convenient "tostring" interface, used for easy console writing</p></td></tr>
 			   <tr><td><a href='../proc/subblock.html'>subblock</a></td><td><a href='../module/mod_make_subblock.html'>mod_make_subblock</a></td><td>Subroutine</td><td><p>Builds the quadblock.
 The four subblocks are calculated based on the specified

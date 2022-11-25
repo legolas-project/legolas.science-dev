@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>create_cooling_curve &ndash; Legolas v. 1.3.0 - develop</title>
+    <title>print_timelog &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>create_cooling_curve
+    <h1>print_timelog
       <small>Subroutine</small>
     </h1>
     <div class="row">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">25 statements</a>
+    title=" 0.2% of total for procedures.">15 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_radiative_cooling.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/main.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_radiative_cooling.f08.html'>mod_radiative_cooling.f08</a></li>
-     <li><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></li>
-     <li class="active">create_cooling_curve</li>
+     <li><a href='../sourcefile/main.f08.html'>main.f08</a></li>
+     <li><a href='../program/legolas.html'>legolas</a></li>
+     <li class="active">print_timelog</li>
   </ol>
 </div>
 </div>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine create_cooling_curve(table_T, table_L)</h2>
+    <h2>subroutine print_timelog()</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,39 +121,17 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
-    <li><a href='../module/mod_units.html'>mod_units</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
       </li>
       </ul>
     </div>
 
 
-    <p>Creates an interpolated cooling curve based on the chosen table.
-Calls a second-order polynomial interpolation routine and takes
-care of normalisations.
-</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>The interpolated cooling curves are normalised on exit.</p></div>
 
     <h3>Arguments</h3>
-      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-table_t"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>table_T</strong>(:)</td><td><p>temperature values in the cooling table</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-table_l"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>table_L</strong>(:)</td><td><p>luminosity values in the cooling table</p></td>
-</tr>
-</tbody>
-</table>
-
+    <em>None</em>
+    <br>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
