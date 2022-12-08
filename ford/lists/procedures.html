@@ -320,6 +320,8 @@ the unit resistivity remains unity.
 \right)
 $$</p></td></tr>
 			   <tr><td><a href='../proc/get_label.html'>get_label</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the current label.</p></td></tr>
+			   <tr><td><a href='../proc/get_lu_factorisation_banded.html'>get_LU_factorisation_banded</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Subroutine</td><td><p>Calculates the LU factorisation of a complex banded matrix <script type="math/tex">A</script>.
+Uses the LAPACK routine zgbtrf.</p></td></tr>
 			   <tr><td><a href='../proc/get_lworkl.html'>get_lworkl</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for length of workl array, returns 3 * ncv**2 + 5 * ncv</p></td></tr>
 			   <tr><td><a href='../proc/get_nb_diagonals.html'>get_nb_diagonals</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Subroutine</td><td><p>Subroutine to get the number of super- and sub-diagonals in the matrix.</p></td></tr>
 			   <tr><td><a href='../proc/get_ncv.html'>get_ncv</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for number of Arnoldi basis vectors that should be calculated.</p></td></tr>
@@ -351,8 +353,8 @@ based on the equilibrium temperature.
 position in the grid.</p></td></tr>
 			   <tr><td><a href='../interface/get_subblock_index.html'>get_subblock_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/get_tolerance.html'>get_tolerance</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for tolerance (relative accuracy) to indicate eigenvalue convergence.</p></td></tr>
-			   <tr><td><a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix.</p></td></tr>
-			   <tr><td><a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the total number of elements (nodes) across the various rows.</p></td></tr>
+			   <tr><td><a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the total number of elements (nodes) across the various rows.</p></td></tr>
+			   <tr><td><a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_elements~3.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_nonzero_elements.html'>get_total_nb_nonzero_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of nonzero elements inside the banded matrix.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_time.html'>get_total_time</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Function</td><td></td></tr>
@@ -578,9 +580,9 @@ global variables to their specified values.
 			   <tr><td><a href='../proc/real_is_equal.html'>real_is_equal</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Equality check between real values</p></td></tr>
 			   <tr><td><a href='../proc/real_is_negative.html'>real_is_negative</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Check if values are or contain negative numbers</p></td></tr>
 			   <tr><td><a href='../proc/real_is_zero.html'>real_is_zero</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Checks if real values are zero</p></td></tr>
-			   <tr><td><a href='../proc/reset_factor_positions.html'>reset_factor_positions</a></td><td><a href='../module/smod_natural_boundaries.html'>smod_natural_boundaries</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
+			   <tr><td><a href='../proc/reset_factor_positions.html'>reset_factor_positions</a></td><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
 new size.</p></td></tr>
-			   <tr><td><a href='../proc/reset_factor_positions~2.html'>reset_factor_positions</a></td><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
+			   <tr><td><a href='../proc/reset_factor_positions~2.html'>reset_factor_positions</a></td><td><a href='../module/smod_natural_boundaries.html'>smod_natural_boundaries</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
 new size.</p></td></tr>
 			   <tr><td><a href='../interface/resistive_homo_eq.html'>resistive_homo_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/resistive_tearing_modes_eq.html'>resistive_tearing_modes_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
@@ -772,6 +774,9 @@ passed in the parfile, different solvers are called.
 </p><a href="../proc/solve_evp.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/solve_linear_system_complex_banded.html'>solve_linear_system_complex_banded</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Function</td><td><p>Calculates the solution <script type="math/tex">X</script> to a system of linear equations <script type="math/tex">AX = B</script> where
 <script type="math/tex">A</script> is a complex banded matrix and <script type="math/tex">B</script> is a complex vector.</p></td></tr>
+			   <tr><td><a href='../proc/solve_linear_system_complex_banded_lu.html'>solve_linear_system_complex_banded_LU</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Function</td><td><p>Calculates the solution <script type="math/tex">X</script> to a system of linear equations <script type="math/tex">AX = B</script> where
+<script type="math/tex">A</script> is a complex banded matrix and <script type="math/tex">B</script> is a complex vector.
+Uses the LU factorisation of <script type="math/tex">A</script> and pivoting information from zgbtrf.</p></td></tr>
 			   <tr><td><a href='../proc/standard_equil_conditions.html'>standard_equil_conditions</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Checks the standard force-balance equation for the equilibrium state. This
 results in three expressions,
 <script type="math/tex; mode=display"> \Bigl(p_0 + \frac{1}{2}B_0^2\Bigr)' + \rho_0 g + \rho_0 v_{01} v_{01}'
@@ -792,6 +797,7 @@ passed along, and the filled quadblock is returned.
 			   <tr><td><a href='../interface/suydam_cluster_eq.html'>suydam_cluster_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/taylor_couette_eq.html'>taylor_couette_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/tc_pinch_eq.html'>tc_pinch_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
+			   <tr><td><a href='../proc/throw_info_nonzero_warning.html'>throw_info_nonzero_warning</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/tic.html'>tic</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to start a wall clock timer.</p><a href="../proc/tic.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/toc.html'>toc</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to end a wall clock timer.</p><a href="../proc/toc.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/transform_state_variable_to_subblock_index.html'>transform_state_variable_to_subblock_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Function</td><td><p>Transforms a given array of state variables to subblock indices.
