@@ -82,7 +82,7 @@
 
 
 <div class="viewcode-block" id="MultiSpectrumPlot"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_multi/index.html#pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot">[docs]</a><span class="k">class</span> <span class="nc">MultiSpectrumPlot</span><span class="p">(</span><span class="n">SpectrumFigure</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Subclass that draws the multispectra.</span>
 
 <span class="sd">    Parameters</span>
@@ -133,7 +133,7 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_set_plot_properties</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
 
 <div class="viewcode-block" id="MultiSpectrumPlot._validate_xdata"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_multi/index.html#pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot._validate_xdata">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_xdata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xdata</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Validates the xdata passed, does typechecking and necessary casting.</span>
 <span class="sd">        If a string is passed, this will request the proper values based on the</span>
 <span class="sd">        parameters.</span>
@@ -169,7 +169,7 @@
         <span class="k">return</span> <span class="n">xdata_values</span></div>
 
 <div class="viewcode-block" id="MultiSpectrumPlot._get_ydata"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_multi/index.html#pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot._get_ydata">[docs]</a>    <span class="k">def</span> <span class="nf">_get_ydata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the y data based on the value of :attr:`use_squared_omega`.</span>
 
 <span class="sd">        Returns</span>
@@ -191,7 +191,7 @@
         <span class="k">return</span> <span class="n">ydata</span></div>
 
 <div class="viewcode-block" id="MultiSpectrumPlot.set_x_scaling"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_multi/index.html#pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot.set_x_scaling">[docs]</a>    <span class="k">def</span> <span class="nf">set_x_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_scaling</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the x scaling, properly adjusted to the dataseries length.</span>
 
 <span class="sd">        Parameters</span>
@@ -204,7 +204,7 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">set_x_scaling</span><span class="p">(</span><span class="n">x_scaling</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MultiSpectrumPlot.set_y_scaling"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_multi/index.html#pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot.set_y_scaling">[docs]</a>    <span class="k">def</span> <span class="nf">set_y_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y_scaling</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the y scaling, properly adjusted to the dataseries length.</span>
 
 <span class="sd">        Parameters</span>
@@ -217,7 +217,7 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">set_y_scaling</span><span class="p">(</span><span class="n">y_scaling</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MultiSpectrumPlot.add_spectrum"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_multi/index.html#pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot.add_spectrum">[docs]</a>    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Draw method, creates the spectrum.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ds</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataseries</span><span class="p">):</span>
@@ -240,7 +240,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MultiSpectrumPlot.add_continua"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_multi/index.html#pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot.add_continua">[docs]</a>    <span class="k">def</span> <span class="nf">add_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adds the continua to the plot, either interactive or not.</span>
 
 <span class="sd">        Parameters</span>
@@ -290,7 +290,7 @@
             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">make_legend_interactive</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MultiSpectrumPlot.add_eigenfunctions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_multi/index.html#pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot.add_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">add_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds the eigenfunctions to the current figure.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds the eigenfunctions to the current figure.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_ef_ax</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -300,7 +300,7 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_eigenfunction_interface</span><span class="p">(</span><span class="n">efhandler</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MultiSpectrumPlot.add_derived_eigenfunctions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_multi/index.html#pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot.add_derived_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">add_derived_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds the derived eigenfunctions to the current figure.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds the derived eigenfunctions to the current figure.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>

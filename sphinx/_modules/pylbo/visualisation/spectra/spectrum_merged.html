@@ -80,7 +80,7 @@
 
 
 <div class="viewcode-block" id="MergedSpectrumPlot"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_merged/index.html#pylbo.visualisation.spectra.spectrum_merged.MergedSpectrumPlot">[docs]</a><span class="k">class</span> <span class="nc">MergedSpectrumPlot</span><span class="p">(</span><span class="n">SpectrumFigure</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Merges the datasets from a given series into a single plot.</span>
 
 <span class="sd">    Parameters</span>
@@ -120,7 +120,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_interactive</span> <span class="o">=</span> <span class="n">interactive</span>
 
 <div class="viewcode-block" id="MergedSpectrumPlot.add_spectrum"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_merged/index.html#pylbo.visualisation.spectra.spectrum_merged.MergedSpectrumPlot.add_spectrum">[docs]</a>    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds the spectrum to the plot, makes the points pickable.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds the spectrum to the plot, makes the points pickable.&quot;&quot;&quot;</span>
         <span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_single_color</span><span class="p">:</span>
             <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span>
@@ -151,7 +151,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="MergedSpectrumPlot.add_eigenfunctions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_merged/index.html#pylbo.visualisation.spectra.spectrum_merged.MergedSpectrumPlot.add_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">add_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds the eigenfunctions to the current figure.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds the eigenfunctions to the current figure.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_ef_ax</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -159,7 +159,7 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_eigenfunction_interface</span><span class="p">(</span><span class="n">efhandler</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MergedSpectrumPlot.add_derived_eigenfunctions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_merged/index.html#pylbo.visualisation.spectra.spectrum_merged.MergedSpectrumPlot.add_derived_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">add_derived_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds the derived eigenfunctions to the current figure.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds the derived eigenfunctions to the current figure.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>

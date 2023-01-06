@@ -85,7 +85,7 @@
 
 
 <div class="viewcode-block" id="ModeFigure"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure">[docs]</a><span class="k">class</span> <span class="nc">ModeFigure</span><span class="p">(</span><span class="n">FigureWindow</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Main class to hold the figure, axes and colorbar for eigenmode visualisations.</span>
 
 <span class="sd">    Parameters</span>
@@ -174,7 +174,7 @@
         <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;eigenmode solution shape </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ModeFigure._ensure_attr_set"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure._ensure_attr_set">[docs]</a>    <span class="k">def</span> <span class="nf">_ensure_attr_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Ensures that a given attribute is set.</span>
 
 <span class="sd">        Parameters</span>
@@ -191,7 +191,7 @@
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;attribute &#39;</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">&#39; not set for </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModeFigure._check_if_number"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure._check_if_number">[docs]</a>    <span class="k">def</span> <span class="nf">_check_if_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if a given value is a number.</span>
 
 <span class="sd">        Parameters</span>
@@ -211,7 +211,7 @@
         <span class="k">return</span> <span class="n">val</span></div>
 
 <div class="viewcode-block" id="ModeFigure._check_if_array"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure._check_if_array">[docs]</a>    <span class="k">def</span> <span class="nf">_check_if_array</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks is a given value is a numpy array.</span>
 
 <span class="sd">        Parameters</span>
@@ -233,7 +233,7 @@
         <span class="k">return</span> <span class="n">array</span></div>
 
 <div class="viewcode-block" id="ModeFigure.set_plot_arrays"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure.set_plot_arrays">[docs]</a>    <span class="k">def</span> <span class="nf">set_plot_arrays</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the arrays used for plotting. This should implement setting of</span>
 <span class="sd">        :attr:`u1_data`, :attr:`u2_data`, :attr:`u3_data`, :attr:`t_data` and</span>
 <span class="sd">        :attr:`ef_data`.</span>
@@ -247,7 +247,7 @@
         <span class="n">u3</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
         <span class="n">t</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the mode solution.</span>
 
 <span class="sd">        Parameters</span>
@@ -274,7 +274,7 @@
 
     <span class="nd">@property</span>
 <div class="viewcode-block" id="ModeFigure.ax"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure.ax">[docs]</a>    <span class="k">def</span> <span class="nf">ax</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Axes</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        matplotlib.axes.Axes</span>
@@ -284,7 +284,7 @@
 
     <span class="nd">@property</span>
 <div class="viewcode-block" id="ModeFigure.solutions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure.solutions">[docs]</a>    <span class="k">def</span> <span class="nf">solutions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        np.ndarray</span>
@@ -308,7 +308,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">add_k2k3_txt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;bottom left&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModeFigure.draw_eigenfunction"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure.draw_eigenfunction">[docs]</a>    <span class="k">def</span> <span class="nf">draw_eigenfunction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Draws the eigenfunction(s) to the figure.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Draws the eigenfunction(s) to the figure.&quot;&quot;&quot;</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eigfunc&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span>
@@ -328,7 +328,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_view_cbar_label</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="ModeFigure._create_cbar_axes"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure._create_cbar_axes">[docs]</a>    <span class="k">def</span> <span class="nf">_create_cbar_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Axes</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        matplotlib.axes.Axes</span>
@@ -349,7 +349,7 @@
         <span class="k">return</span> <span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">_ef_name_latex</span><span class="si">}</span><span class="s2">&quot;</span></div>
 
 <div class="viewcode-block" id="ModeFigure.add_omega_txt"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure.add_omega_txt">[docs]</a>    <span class="k">def</span> <span class="nf">add_omega_txt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a textbox on the axis with the value of the eigenfrequency.</span>
 
 <span class="sd">        Parameters</span>
@@ -364,7 +364,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModeFigure.add_k2k3_txt"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure.add_k2k3_txt">[docs]</a>    <span class="k">def</span> <span class="nf">add_k2k3_txt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a textbox on the figure with the value of the k2 and k3 coordinates.</span>
 
 <span class="sd">        Parameters</span>
@@ -382,7 +382,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModeFigure.add_u2u3_txt"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure.add_u2u3_txt">[docs]</a>    <span class="k">def</span> <span class="nf">add_u2u3_txt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a textbox on the figure with the value of the :math:`u_2-u_3`</span>
 <span class="sd">        coordinates.</span>
 
@@ -403,7 +403,7 @@
         <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="ModeFigure._create_figure_layout"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure._create_figure_layout">[docs]</a>    <span class="k">def</span> <span class="nf">_create_figure_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figsize</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Figure</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create the figure layout for the visualisation. Two panels are created:</span>
 <span class="sd">        the top one for the eigenfunction and the bottom one for the visualisation.</span>
 
@@ -439,7 +439,7 @@
 <div class="viewcode-block" id="ModeFigure.create_animation"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_figure/index.html#pylbo.visualisation.modes.mode_figure.ModeFigure.create_animation">[docs]</a>    <span class="k">def</span> <span class="nf">create_animation</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">times</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">fps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">dpi</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates an animation of the eigenmode solution over a given time interval.</span>
 
 <span class="sd">        Parameters</span>

@@ -85,7 +85,7 @@
 
 
 <div class="viewcode-block" id="FigureWindow"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.FigureWindow">[docs]</a><span class="k">class</span> <span class="nc">FigureWindow</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Class to handle the top-level creation of figure windows. Assigns unique figure</span>
 <span class="sd">    ids and takes care of figure, axes, and gridspec management.</span>
 
@@ -115,13 +115,13 @@
 
     <span class="nd">@property</span>
 <div class="viewcode-block" id="FigureWindow.figure_ids"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.FigureWindow.figure_ids">[docs]</a>    <span class="k">def</span> <span class="nf">figure_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Returns the list of figure ids.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the list of figure ids.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure_stack</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="FigureWindow.create_default_figure"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.FigureWindow.create_default_figure">[docs]</a>    <span class="k">def</span> <span class="nf">create_default_figure</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">figlabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">figsize</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">mpl_fig</span><span class="p">,</span> <span class="n">mpl_axes</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a default figure with a 1x1 subplot.</span>
 
 <span class="sd">        Parameters</span>
@@ -145,7 +145,7 @@
         <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span></div>
 
 <div class="viewcode-block" id="FigureWindow._generate_figure_id"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.FigureWindow._generate_figure_id">[docs]</a>    <span class="k">def</span> <span class="nf">_generate_figure_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figlabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates a unique figure id.</span>
 
 <span class="sd">        Parameters</span>
@@ -160,10 +160,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># count occurences of this type of id in the list</span>
         <span class="n">occurences</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">figlabel</span> <span class="ow">in</span> <span class="n">fig_id</span> <span class="k">for</span> <span class="n">fig_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure_ids</span><span class="p">)</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">figlabel</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="mi">1</span> <span class="o">+</span> <span class="n">occurences</span><span class="si">}</span><span class="s2">&quot;</span></div>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">figlabel</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">occurences</span><span class="si">}</span><span class="s2">&quot;</span></div>
 
 <div class="viewcode-block" id="FigureWindow.add_to_stack"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.FigureWindow.add_to_stack">[docs]</a>    <span class="k">def</span> <span class="nf">add_to_stack</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adds the figure to the stack.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">figure_stack</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">figure_id</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span></div>
@@ -175,7 +175,7 @@
         <span class="n">share</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">apply_tight_layout</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adds a new subplot to a given matplotlib subplot, essentially &quot;splitting&quot; the</span>
 <span class="sd">        axis into two. Position and placement depend on the loc argument.</span>
 <span class="sd">        When called on a more complex subplot layout the overall gridspec remains</span>
@@ -247,7 +247,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="FigureWindow.save"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.FigureWindow.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the current figure.</span>
 
 <span class="sd">        Parameters</span>
@@ -262,7 +262,7 @@
         <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;figure saved to </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="FigureWindow.show"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.FigureWindow.show">[docs]</a>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Shows the selected figure&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Shows the selected figure&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_figure_drawn</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div></div>
@@ -280,17 +280,17 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">redraw</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="InteractiveFigureWindow.connect_callbacks"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.InteractiveFigureWindow.connect_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">connect_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Connects all callbacks to the canvas&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Connects all callbacks to the canvas&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mpl_callbacks</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="n">callback</span><span class="p">[</span><span class="s2">&quot;kind&quot;</span><span class="p">],</span> <span class="n">callback</span><span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="InteractiveFigureWindow.disconnect_callbacks"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.InteractiveFigureWindow.disconnect_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">disconnect_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Disconnects all callbacks from the canvas&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Disconnects all callbacks from the canvas&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mpl_callbacks</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_disconnect</span><span class="p">(</span><span class="n">callback</span><span class="p">[</span><span class="s2">&quot;cid&quot;</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="InteractiveFigureWindow.make_legend_interactive"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.InteractiveFigureWindow.make_legend_interactive">[docs]</a>    <span class="k">def</span> <span class="nf">make_legend_interactive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">legendhandler</span><span class="p">:</span> <span class="n">LegendHandler</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Makes the legend interactive.</span>
 
 <span class="sd">        Parameters</span>
@@ -310,7 +310,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="InteractiveFigureWindow.add_eigenfunction_interface"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/figure_window/index.html#pylbo.visualisation.figure_window.InteractiveFigureWindow.add_eigenfunction_interface">[docs]</a>    <span class="k">def</span> <span class="nf">add_eigenfunction_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">efhandler</span><span class="p">:</span> <span class="n">EigenfunctionInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Adds an eigenfunction interface to the figure.</span>
 
 <span class="sd">        Parameters</span>

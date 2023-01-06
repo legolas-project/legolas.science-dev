@@ -87,14 +87,14 @@
             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">finally</span><span class="p">:</span>
             <span class="n">pylboLogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> took </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="si">}</span><span class="s2"> seconds to execute&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> took </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">}</span><span class="s2"> seconds to execute&quot;</span>
             <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">_time_method</span></div>
 
 
 <div class="viewcode-block" id="get_axis_geometry"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.get_axis_geometry">[docs]</a><span class="k">def</span> <span class="nf">get_axis_geometry</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Retrieves the geometry of a given matplotlib axis.</span>
 
 <span class="sd">    Parameters</span>
@@ -119,7 +119,7 @@
 
 
 <div class="viewcode-block" id="add_pickradius_to_item"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.add_pickradius_to_item">[docs]</a><span class="k">def</span> <span class="nf">add_pickradius_to_item</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">pickradius</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Makes a matplotlib artist pickable and adds a pickradius.</span>
 <span class="sd">    We have to handle this separately, because for line2D items the method</span>
 <span class="sd">    :meth:`~matplotlib.axes.Axes.set_picker` is deprecated from version 3.3 onwards.</span>
@@ -140,7 +140,7 @@
 
 
 <div class="viewcode-block" id="custom_enumerate"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.custom_enumerate">[docs]</a><span class="k">def</span> <span class="nf">custom_enumerate</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Does a custom enumeration with a given stepsize.</span>
 
 <span class="sd">    Parameters</span>
@@ -165,7 +165,7 @@
 
 
 <div class="viewcode-block" id="transform_to_list"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.transform_to_list">[docs]</a><span class="k">def</span> <span class="nf">transform_to_list</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="nb">any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Transforms a given input argument `obj` to a list. If `obj`</span>
 <span class="sd">    is a Numpy-array or tuple, a cast to `list()` is invoked.</span>
 
@@ -189,7 +189,7 @@
 
 
 <div class="viewcode-block" id="transform_to_numpy"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.transform_to_numpy">[docs]</a><span class="k">def</span> <span class="nf">transform_to_numpy</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="nb">any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Transforms a given input argument `obj` to a numpy array.</span>
 
 <span class="sd">    Parameters</span>
@@ -213,7 +213,7 @@
 
 
 <div class="viewcode-block" id="solve_cubic_exact"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.solve_cubic_exact">[docs]</a><span class="k">def</span> <span class="nf">solve_cubic_exact</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Solves a given cubic polynomial of the form</span>
 <span class="sd">    :math:`ax^3 + bx^2 + cx + d = 0` using the analytical cubic root formula</span>
 <span class="sd">    instead of the general `numpy.roots` routine.</span>

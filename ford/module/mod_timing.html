@@ -154,30 +154,30 @@
 <h3>Usage</h3>
 <p>The simplest way is using the module variable.</p>
 <p>Using wall time</p>
-<div class="codehilite"><pre><span></span><code><span class="k">call </span><span class="n">tic</span><span class="p">()</span><span class="w"></span>
-<span class="k">call </span><span class="n">slow_operation</span><span class="p">()</span><span class="w"></span>
-<span class="k">call </span><span class="n">toc</span><span class="p">(</span><span class="s2">&quot;slow operation is done&quot;</span><span class="p">)</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="k">call </span><span class="n">tic</span><span class="p">()</span>
+<span class="k">call </span><span class="n">slow_operation</span><span class="p">()</span>
+<span class="k">call </span><span class="n">toc</span><span class="p">(</span><span class="s2">&quot;slow operation is done&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>or CPU time</p>
-<div class="codehilite"><pre><span></span><code><span class="k">call </span><span class="n">cputic</span><span class="p">()</span><span class="w"></span>
-<span class="k">call </span><span class="n">slow_operation</span><span class="p">()</span><span class="w"></span>
-<span class="k">call </span><span class="n">cputoc</span><span class="p">(</span><span class="s2">&quot;slow operation is done&quot;</span><span class="p">)</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="k">call </span><span class="n">cputic</span><span class="p">()</span>
+<span class="k">call </span><span class="n">slow_operation</span><span class="p">()</span>
+<span class="k">call </span><span class="n">cputoc</span><span class="p">(</span><span class="s2">&quot;slow operation is done&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Alternatively, if thread safety is required,
  you can keep track of the start time yourself.</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">start_time</span><span class="w"></span>
-<span class="k">call </span><span class="n">tic</span><span class="p">(</span><span class="n">start_time</span><span class="p">)</span><span class="w"></span>
-<span class="k">call </span><span class="n">slow_operation</span><span class="p">()</span><span class="w"></span>
-<span class="k">call </span><span class="n">toc</span><span class="p">(</span><span class="s2">&quot;slow operation is done&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">start_time</span><span class="p">)</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">start_time</span>
+<span class="k">call </span><span class="n">tic</span><span class="p">(</span><span class="n">start_time</span><span class="p">)</span>
+<span class="k">call </span><span class="n">slow_operation</span><span class="p">()</span>
+<span class="k">call </span><span class="n">toc</span><span class="p">(</span><span class="s2">&quot;slow operation is done&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">start_time</span><span class="p">)</span>
 </code></pre></div>
 
 <p>or</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">start_time</span><span class="w"></span>
-<span class="k">call </span><span class="n">cputic</span><span class="p">(</span><span class="n">start_time</span><span class="p">)</span><span class="w"></span>
-<span class="k">call </span><span class="n">slow_operation</span><span class="p">()</span><span class="w"></span>
-<span class="k">call </span><span class="n">cputoc</span><span class="p">(</span><span class="s2">&quot;slow operation is done&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">start_time</span><span class="p">)</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">start_time</span>
+<span class="k">call </span><span class="n">cputic</span><span class="p">(</span><span class="n">start_time</span><span class="p">)</span>
+<span class="k">call </span><span class="n">slow_operation</span><span class="p">()</span>
+<span class="k">call </span><span class="n">cputoc</span><span class="p">(</span><span class="s2">&quot;slow operation is done&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">start_time</span><span class="p">)</span>
 </code></pre></div>
 <br>        <div class="panel panel-default">
       <div class="panel-heading">
@@ -186,8 +186,8 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
   </ul>
       </li>
       </ul>
@@ -539,7 +539,7 @@ the module variable is used.</p></td>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2022 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2023 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

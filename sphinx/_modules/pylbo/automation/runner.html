@@ -83,7 +83,7 @@
 
 
 <div class="viewcode-block" id="_validate_executable"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/runner/index.html#pylbo.automation.runner._validate_executable">[docs]</a><span class="k">def</span> <span class="nf">_validate_executable</span><span class="p">(</span><span class="n">executable</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Validates the given executable, then returns it. If the argument passed is</span>
 <span class="sd">    None, defaults to the executable in the legolas home directory.</span>
 
@@ -113,7 +113,7 @@
 
 
 <div class="viewcode-block" id="_validate_nb_cpus"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/runner/index.html#pylbo.automation.runner._validate_nb_cpus">[docs]</a><span class="k">def</span> <span class="nf">_validate_nb_cpus</span><span class="p">(</span><span class="n">cpus</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Validates the number of cpus passed to the multiprocessing pool.</span>
 <span class="sd">    Defaults to the maximum available number if exceeded.</span>
 
@@ -139,7 +139,7 @@
 
 
 <div class="viewcode-block" id="_validate_parfiles"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/runner/index.html#pylbo.automation.runner._validate_parfiles">[docs]</a><span class="k">def</span> <span class="nf">_validate_parfiles</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Validates a list of parfiles.</span>
 
 <span class="sd">    Parameters</span>
@@ -167,7 +167,7 @@
 
 
 <div class="viewcode-block" id="LegolasRunner"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/runner/index.html#pylbo.automation.runner.LegolasRunner">[docs]</a><span class="k">class</span> <span class="nc">LegolasRunner</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Handles running legolas.</span>
 
 <span class="sd">    Parameters</span>
@@ -198,13 +198,13 @@
 
     <span class="nd">@staticmethod</span>
 <div class="viewcode-block" id="LegolasRunner._init_worker"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/runner/index.html#pylbo.automation.runner.LegolasRunner._init_worker">[docs]</a>    <span class="k">def</span> <span class="nf">_init_worker</span><span class="p">():</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Worker initialisation for the multiprocessing module.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIG_IGN</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="LegolasRunner._activate_worker"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/runner/index.html#pylbo.automation.runner.LegolasRunner._activate_worker">[docs]</a>    <span class="k">def</span> <span class="nf">_activate_worker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parfile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Worker activation for the multiprocessing module.</span>
 <span class="sd">        Calls the legolas executable as a subprocess with the parfile as argument.</span>
 
@@ -223,7 +223,7 @@
 
     <span class="nd">@staticmethod</span>
 <div class="viewcode-block" id="LegolasRunner._terminate_workers"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/runner/index.html#pylbo.automation.runner.LegolasRunner._terminate_workers">[docs]</a>    <span class="k">def</span> <span class="nf">_terminate_workers</span><span class="p">():</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Terminates the multiprocessing workers after a forced interruption.</span>
 <span class="sd">        Simply giving an interrupt terminates only the Python processes, but still</span>
 <span class="sd">        keeps the Legolas calls running since those are subprocesses. This method first</span>
@@ -249,7 +249,7 @@
         <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="LegolasRunner.execute"><a class="viewcode-back" href="../../../autoapi/pylbo/automation/runner/index.html#pylbo.automation.runner.LegolasRunner.execute">[docs]</a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Executes the legolas executables and initialises the multiprocessing</span>
 <span class="sd">        pool if requested.</span>
 <span class="sd">        &quot;&quot;&quot;</span>

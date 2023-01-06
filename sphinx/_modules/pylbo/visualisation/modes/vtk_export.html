@@ -85,7 +85,7 @@
 
 
 <div class="viewcode-block" id="VTKDataExporter"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter">[docs]</a><span class="k">class</span> <span class="nc">VTKDataExporter</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Main class to prepare data for export to VTK files.</span>
 
 <span class="sd">    Parameters</span>
@@ -144,7 +144,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_coordinate_data</span><span class="p">(</span><span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span><span class="p">)</span>
 
 <div class="viewcode-block" id="VTKDataExporter._set_coordinate_data"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter._set_coordinate_data">[docs]</a>    <span class="k">def</span> <span class="nf">_set_coordinate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u1</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">u2</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">u3</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the coordinate data.</span>
 
 <span class="sd">        Parameters</span>
@@ -165,7 +165,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter.get_coordinate_data"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter.get_coordinate_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_coordinate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the coordinate data. This should always return the data in a Cartesian</span>
 <span class="sd">        reference frame (u1, u2, u3), so coordinate transformations should be</span>
 <span class="sd">        implemented in subclassed if necessary.</span>
@@ -182,7 +182,7 @@
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter.broadcast_to_3d"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter.broadcast_to_3d">[docs]</a>    <span class="k">def</span> <span class="nf">broadcast_to_3d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Broadcasts a 1D array to a 3D array with the same shape as the coordinate data.</span>
 
 <span class="sd">        Parameters</span>
@@ -198,7 +198,7 @@
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter.get_solution"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter.get_solution">[docs]</a>    <span class="k">def</span> <span class="nf">get_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the eigenmode solution for a given time.</span>
 
 <span class="sd">        Parameters</span>
@@ -226,7 +226,7 @@
         <span class="k">return</span> <span class="n">solution</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter._log_info"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter._log_info">[docs]</a>    <span class="k">def</span> <span class="nf">_log_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Logs an info message only if the progress bar is inactive.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pbar</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -234,7 +234,7 @@
         <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter._validate_and_set_dtype"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter._validate_and_set_dtype">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_and_set_dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Validates and sets the VTK data type.</span>
 
 <span class="sd">        Parameters</span>
@@ -257,7 +257,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dtype </span><span class="si">{</span><span class="n">dtype</span><span class="si">}</span><span class="s2"> not supported.&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter._write_vtk_header"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter._write_vtk_header">[docs]</a>    <span class="k">def</span> <span class="nf">_write_vtk_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vtkfile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes the VTK file header. This includes the VTK file version, the</span>
 <span class="sd">        data type, the grid dimensions and the number of points.</span>
 
@@ -277,7 +277,7 @@
             <span class="n">ostream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;POINTS </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_vtk_dtype</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter._write_vtk_coordinate_data"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter._write_vtk_coordinate_data">[docs]</a>    <span class="k">def</span> <span class="nf">_write_vtk_coordinate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vtkfile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes the VTK grid coordinates.</span>
 
 <span class="sd">        Parameters</span>
@@ -296,7 +296,7 @@
                         <span class="n">ostream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vtk_fmt</span><span class="p">,</span> <span class="n">u3_data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]))</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter._write_vtk_point_data_start"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter._write_vtk_point_data_start">[docs]</a>    <span class="k">def</span> <span class="nf">_write_vtk_point_data_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vtkfile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes the VTK point data start marker, i.e. the &#39;POINT_DATA&#39; statement and</span>
 <span class="sd">        the number of points.</span>
 
@@ -309,7 +309,7 @@
             <span class="n">ostream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">POINT_DATA </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter._write_vtk_scalar_field"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter._write_vtk_scalar_field">[docs]</a>    <span class="k">def</span> <span class="nf">_write_vtk_scalar_field</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vtkfile</span><span class="p">,</span> <span class="n">fieldname</span><span class="p">,</span> <span class="n">fielddata</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes a 3D VTK scalar field with a given fieldname. If `fielddata` is</span>
 <span class="sd">        smaller than `1e-12` everywhere the field is not written to the VTK file.</span>
 
@@ -337,7 +337,7 @@
                         <span class="n">ostream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vtk_fmt</span><span class="p">,</span> <span class="n">fielddata</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]))</span></div>
 
 <div class="viewcode-block" id="VTKDataExporter._write_vtk_auxiliary_coordinates"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/vtk_export/index.html#pylbo.visualisation.modes.vtk_export.VTKDataExporter._write_vtk_auxiliary_coordinates">[docs]</a>    <span class="k">def</span> <span class="nf">_write_vtk_auxiliary_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vtkfile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Writes auxiliary coordinate data to the VTK file, for example the theta values</span>
 <span class="sd">        in cylindrical geometry. These are needed for appropriate transformations</span>
 <span class="sd">        to draw vector fields in e.g. ParaView.</span>
@@ -358,7 +358,7 @@
         <span class="n">dtype</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;float32&quot;</span><span class="p">,</span>
         <span class="n">starting_index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Exports the mode solution to a VTK file.</span>
 
 <span class="sd">        Parameters</span>
