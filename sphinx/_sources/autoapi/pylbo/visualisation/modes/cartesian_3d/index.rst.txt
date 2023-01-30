@@ -67,9 +67,67 @@ Classes
 
    .. py:method:: _validate_u2(u2: numpy.ndarray, *args, **kwargs) -> numpy.ndarray
 
+      
+      Validates the combination of u2 and slicing axis.
+
+      :param u2: The :math:`u_2` coordinate.
+      :type u2: float
+      :param slicing_axis: The slicing axis.
+      :type slicing_axis: str
+      :param axis: The coordinate axis corresponding to :math:`u_2`.
+      :type axis: str
+
+      :returns: The validated :math:`u_2` coordinate.
+      :rtype: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: _validate_u3(u3: numpy.ndarray, *args, **kwargs) -> numpy.ndarray
 
+      
+      Validates the combination of u3 and slicing axis.
+
+      :param u3: The :math:`u_3` coordinate.
+      :type u3: float
+      :param slicining_axis: The slicing axis.
+      :type slicining_axis: str
+      :param axis: The coordinate axis corresponding to :math:`u_3`.
+      :type axis: str
+
+      :returns: The validated :math:`u_3` coordinate.
+      :rtype: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: set_plot_arrays() -> None
 
@@ -94,6 +152,30 @@ Classes
 
    .. py:method:: _update_view(updated_solution: numpy.ndarray) -> None
 
+      
+      Updates the axes with the new solution. If a contour plot is used, the
+      contour lines are cleared and redrawn. If an image plot is used, the image is
+      updated.
+
+      :param updated_solution: The new solution.
+      :type updated_solution: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: _update_view_clims(solution: numpy.ndarray) -> None
 

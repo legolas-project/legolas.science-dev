@@ -70,14 +70,42 @@
            <div itemprop="articleBody">
              
   <h1>Source code for pylbo.visualisation.eigenfunctions.eigfunc_interface</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">abc</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span> <span class="nn">abc</span>
+
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">PathCollection</span>
-<span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSet</span><span class="p">,</span> <span class="n">LegolasDataSeries</span>
-<span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">add_pickradius_to_item</span>
+<span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSeries</span><span class="p">,</span> <span class="n">LegolasDataSet</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
+<span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">add_pickradius_to_item</span>
+
+
+<div class="viewcode-block" id="get_artist_data"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.get_artist_data">[docs]</a><span class="k">def</span> <span class="nf">get_artist_data</span><span class="p">(</span><span class="n">artist</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">Artist</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the (x, y) coordinates of a given artist.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    artist : ~matplotlib.artist.Artist</span>
+<span class="sd">        The artist to get the data from.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple[np.ndarray, np.ndarray]</span>
+<span class="sd">        The (x, y) coordinates of the artist.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">PathCollection</span><span class="p">):</span>
+        <span class="c1"># this block is entered for points drawn using scatter instead of plot</span>
+        <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">artist</span><span class="o">.</span><span class="n">get_offsets</span><span class="p">(),</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">xdata</span> <span class="o">=</span> <span class="n">xdata</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">ydata</span> <span class="o">=</span> <span class="n">ydata</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xdata</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_xdata</span><span class="p">()</span>
+        <span class="n">ydata</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span></div>
 
 
 <div class="viewcode-block" id="EigenfunctionInterface"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface">[docs]</a><span class="k">class</span> <span class="nc">EigenfunctionInterface</span><span class="p">:</span>
@@ -208,7 +236,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">label</span> <span class="o">=</span> <span class="sa">rf</span><span class="s2">&quot;$\omega_</span><span class="se">{{</span><span class="si">{</span><span class="n">ev_idx</span><span class="si">}</span><span class="se">}}</span><span class="s2">$ = </span><span class="si">{</span><span class="n">w</span><span class="si">:</span><span class="s2">2.3e</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">LegolasDataSeries</span><span class="p">):</span>
-            <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">label</span></div>
 
     <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
@@ -351,14 +379,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">artist</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">artist</span>
         <span class="n">idxs</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">ind</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">PathCollection</span><span class="p">):</span>
-            <span class="c1"># this block is entered for points drawn using scatter instead of plot</span>
-            <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">artist</span><span class="o">.</span><span class="n">get_offsets</span><span class="p">(),</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">xdata</span> <span class="o">=</span> <span class="n">xdata</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
-            <span class="n">ydata</span> <span class="o">=</span> <span class="n">ydata</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">xdata</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_xdata</span><span class="p">()</span>
-            <span class="n">ydata</span> <span class="o">=</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()</span>
+        <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span> <span class="o">=</span> <span class="n">get_artist_data</span><span class="p">(</span><span class="n">artist</span><span class="p">)</span>
+
         <span class="c1"># In case of overlap between clicked points then multiple</span>
         <span class="c1"># indices were selected, so we check smallest distance to mouse click</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
