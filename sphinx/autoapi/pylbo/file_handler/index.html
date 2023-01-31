@@ -102,10 +102,10 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.file_handler._validate_file" title="pylbo.file_handler._validate_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_validate_file</span></code></a>(file)</p></td>
 <td><p>Checks the file validity of a given logfile or datfile.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.file_handler.load" title="pylbo.file_handler.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(datfile)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.file_handler.load" title="pylbo.file_handler.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(datfile[, display_info])</p></td>
 <td><p>Loads a single Legolas datfile.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.file_handler.load_series" title="pylbo.file_handler.load_series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_series</span></code></a>(datfiles)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.file_handler.load_series" title="pylbo.file_handler.load_series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_series</span></code></a>(datfiles[, display_info])</p></td>
 <td><p>Loads multiple Legolas datfiles.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.file_handler.load_logfile" title="pylbo.file_handler.load_logfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_logfile</span></code></a>(logfile[, sort])</p></td>
@@ -136,11 +136,14 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.file_handler.load">
-<span class="sig-prename descclassname"><span class="pre">pylbo.file_handler.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/file_handler.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.file_handler.load" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.file_handler.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/file_handler.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.file_handler.load" title="Permalink to this definition"></a></dt>
 <dd><p>Loads a single Legolas datfile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>datfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.11)"><em>PathLike</em></a>) – Path to the datfile.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.11)"><em>PathLike</em></a>) – Path to the datfile.</p></li>
+<li><p><strong>display_info</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – If <cite>True</cite>, datfile information is written to terminal.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – If <cite>datfile</cite> is not a single file.</p>
@@ -156,12 +159,15 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.file_handler.load_series">
-<span class="sig-prename descclassname"><span class="pre">pylbo.file_handler.</span></span><span class="sig-name descname"><span class="pre">load_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/file_handler.html#load_series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.file_handler.load_series" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.file_handler.</span></span><span class="sig-name descname"><span class="pre">load_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/file_handler.html#load_series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.file_handler.load_series" title="Permalink to this definition"></a></dt>
 <dd><p>Loads multiple Legolas datfiles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>datfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – Paths to the datfiles that should be loaded, in list/array form. Every element
-should be a string or a ~os.PathLike object.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – Paths to the datfiles that should be loaded, in list/array form. Every element
+should be a string or a ~os.PathLike object.</p></li>
+<li><p><strong>display_info</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – If <cite>True</cite>, datfile information is written to terminal.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – If an empty list or array is supplied.</p>

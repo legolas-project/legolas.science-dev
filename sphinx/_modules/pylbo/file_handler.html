@@ -105,7 +105,7 @@
         <span class="k">raise</span> <span class="n">InvalidLegolasFile</span><span class="p">(</span><span class="n">path_to_file</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="load"><a class="viewcode-back" href="../../autoapi/pylbo/index.html#pylbo.file_handler.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">datfile</span><span class="p">):</span>
+<div class="viewcode-block" id="load"><a class="viewcode-back" href="../../autoapi/pylbo/index.html#pylbo.file_handler.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">datfile</span><span class="p">,</span> <span class="n">display_info</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Loads a single Legolas datfile.</span>
 
@@ -113,6 +113,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    datfile : str, ~os.PathLike</span>
 <span class="sd">        Path to the datfile.</span>
+<span class="sd">    display_info : bool</span>
+<span class="sd">        If `True`, datfile information is written to terminal.</span>
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
@@ -128,28 +130,29 @@
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;load() takes a single datfile.&quot;</span><span class="p">)</span>
     <span class="n">_validate_file</span><span class="p">(</span><span class="n">datfile</span><span class="p">)</span>
     <span class="n">ds</span> <span class="o">=</span> <span class="n">LegolasDataSet</span><span class="p">(</span><span class="n">datfile</span><span class="p">)</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Legolas version  : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">legolas_version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;file loaded      : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">parent</span><span class="si">}</span><span class="s2"> -- </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gridpoints       : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">gridpoints</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;geometry         : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">geometry</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">x_start</span><span class="p">,</span><span class="w"> </span><span class="n">ds</span><span class="o">.</span><span class="n">x_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;equilibrium      : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">eq_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;matrices_written&quot;</span><span class="p">]:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;matrices present in datfile&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenfuncs_written&quot;</span><span class="p">]:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;eigenfunctions present in datfile&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;derived_eigenfuncs_written&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;derived eigenfunctions present in datfile&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eigenfunction_subset_used&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-        <span class="n">saved_efs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ef_written_idxs&quot;</span><span class="p">])</span>
-        <span class="n">total_efs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;subset saved: </span><span class="si">{</span><span class="n">saved_efs</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">total_efs</span><span class="si">}</span><span class="s2"> eigenvalues have eigenfunctions&quot;</span>
-        <span class="p">)</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">75</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">display_info</span><span class="p">:</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Legolas version  : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">legolas_version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;file loaded      : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">parent</span><span class="si">}</span><span class="s2"> -- </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gridpoints       : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">gridpoints</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;geometry         : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">geometry</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">x_start</span><span class="p">,</span><span class="w"> </span><span class="n">ds</span><span class="o">.</span><span class="n">x_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;equilibrium      : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">eq_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;matrices_written&quot;</span><span class="p">]:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;matrices present in datfile&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenfuncs_written&quot;</span><span class="p">]:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;eigenfunctions present in datfile&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;derived_eigenfuncs_written&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;derived eigenfunctions present in datfile&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eigenfunction_subset_used&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="n">saved_efs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ef_written_idxs&quot;</span><span class="p">])</span>
+            <span class="n">total_efs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;subset saved: </span><span class="si">{</span><span class="n">saved_efs</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">total_efs</span><span class="si">}</span><span class="s2"> eigenvalues have eigenfunctions&quot;</span>
+            <span class="p">)</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">75</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ds</span></div>
 
 
-<div class="viewcode-block" id="load_series"><a class="viewcode-back" href="../../autoapi/pylbo/index.html#pylbo.file_handler.load_series">[docs]</a><span class="k">def</span> <span class="nf">load_series</span><span class="p">(</span><span class="n">datfiles</span><span class="p">):</span>
+<div class="viewcode-block" id="load_series"><a class="viewcode-back" href="../../autoapi/pylbo/index.html#pylbo.file_handler.load_series">[docs]</a><span class="k">def</span> <span class="nf">load_series</span><span class="p">(</span><span class="n">datfiles</span><span class="p">,</span> <span class="n">display_info</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Loads multiple Legolas datfiles.</span>
 
@@ -158,6 +161,8 @@
 <span class="sd">    datfiles : list, numpy.ndarray</span>
 <span class="sd">        Paths to the datfiles that should be loaded, in list/array form. Every element</span>
 <span class="sd">        should be a string or a ~os.PathLike object.</span>
+<span class="sd">    display_info : bool</span>
+<span class="sd">        If `True`, datfile information is written to terminal.</span>
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
@@ -176,70 +181,78 @@
         <span class="n">_validate_file</span><span class="p">(</span><span class="n">datfile</span><span class="p">)</span>
     <span class="n">series</span> <span class="o">=</span> <span class="n">LegolasDataSeries</span><span class="p">(</span><span class="n">datfiles</span><span class="p">)</span>
 
-    <span class="c1"># handle version printing</span>
-    <span class="n">versions</span> <span class="o">=</span> <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">legolas_version</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span>
-    <span class="n">minversion</span><span class="p">,</span> <span class="n">maxversion</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">versions</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">versions</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">minversion</span> <span class="o">==</span> <span class="n">maxversion</span><span class="p">:</span>
-        <span class="n">info_msg</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">minversion</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">info_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">minversion</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">maxversion</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Legolas_version  : </span><span class="si">{</span><span class="n">info_msg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">display_info</span><span class="p">:</span>
+        <span class="c1"># handle version printing</span>
+        <span class="n">versions</span> <span class="o">=</span> <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">legolas_version</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span>
+        <span class="n">minversion</span><span class="p">,</span> <span class="n">maxversion</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">versions</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">versions</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">minversion</span> <span class="o">==</span> <span class="n">maxversion</span><span class="p">:</span>
+            <span class="n">info_msg</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">minversion</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">info_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">minversion</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">maxversion</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Legolas_version  : </span><span class="si">{</span><span class="n">info_msg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="c1"># handle file information printing</span>
-    <span class="n">names</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;files loaded     : </span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># handle file information printing</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;files loaded     : </span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="c1"># handle gridpoints printing</span>
-    <span class="n">pts</span> <span class="o">=</span> <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">gridpoints</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span>
-    <span class="n">minpts</span><span class="p">,</span> <span class="n">maxpts</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">pts</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">pts</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">minpts</span> <span class="o">==</span> <span class="n">maxpts</span><span class="p">:</span>
-        <span class="n">info_msg</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">minpts</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">info_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">minpts</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">maxpts</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gridpoints       : </span><span class="si">{</span><span class="n">info_msg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># handle gridpoints printing</span>
+        <span class="n">pts</span> <span class="o">=</span> <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">gridpoints</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span>
+        <span class="n">minpts</span><span class="p">,</span> <span class="n">maxpts</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">pts</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">pts</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">minpts</span> <span class="o">==</span> <span class="n">maxpts</span><span class="p">:</span>
+            <span class="n">info_msg</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">minpts</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">info_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">minpts</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">maxpts</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gridpoints       : </span><span class="si">{</span><span class="n">info_msg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="c1"># handle geometry printing</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;multiple geometries detected!&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;geometries       : </span><span class="si">{</span><span class="n">series</span><span class="o">.</span><span class="n">geometry</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># handle geometry printing</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;multiple geometries detected!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;geometries       : </span><span class="si">{</span><span class="n">series</span><span class="o">.</span><span class="n">geometry</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="c1"># handle equilibrium printing</span>
-    <span class="n">equils</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">eq_type</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">equils</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;multiple equilibria detected! -- </span><span class="si">{</span><span class="n">equils</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;equilibria       : </span><span class="si">{</span><span class="n">equils</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># handle equilibrium printing</span>
+        <span class="n">equils</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">eq_type</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">equils</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;multiple equilibria detected! -- </span><span class="si">{</span><span class="n">equils</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;equilibria       : </span><span class="si">{</span><span class="n">equils</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="c1"># check presence of matrices</span>
-    <span class="n">matrices_present</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;matrices_written&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrices_present</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;matrices present in some datfiles, but not all&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">matrices_present</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
-            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;matrices present in all datfiles&quot;</span><span class="p">)</span>
+        <span class="c1"># check presence of matrices</span>
+        <span class="n">matrices_present</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;matrices_written&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrices_present</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;matrices present in some datfiles, but not all&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">matrices_present</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
+                <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;matrices present in all datfiles&quot;</span><span class="p">)</span>
 
-    <span class="c1"># check presence of eigenfunctions</span>
-    <span class="n">efs_present</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenfuncs_written&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">efs_present</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;eigenfunctions present in some datfiles, but not all&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">efs_present</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
-            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;eigenfunctions present in all datfiles&quot;</span><span class="p">)</span>
+        <span class="c1"># check presence of eigenfunctions</span>
+        <span class="n">efs_present</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;eigenfuncs_written&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">efs_present</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;eigenfunctions present in some datfiles, but not all&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">efs_present</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
+                <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;eigenfunctions present in all datfiles&quot;</span><span class="p">)</span>
 
-    <span class="c1"># check presence of derived eigenfunctions</span>
-    <span class="n">defs_present</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
-        <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;derived_eigenfuncs_written&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span>
-    <span class="p">)</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">defs_present</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;no derived eigenfunctions present&quot;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">defs_present</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;derived eigenfunctions present in some datfiles, but not all&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">defs_present</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
-            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;derived eigenfunctions present in all datfiles&quot;</span><span class="p">)</span>
-    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">75</span><span class="p">)</span>
+        <span class="c1"># check presence of derived eigenfunctions</span>
+        <span class="n">defs_present</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;derived_eigenfuncs_written&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">datasets</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">defs_present</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;no derived eigenfunctions present&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">defs_present</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;derived eigenfunctions present in some datfiles, but not all&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">defs_present</span><span class="o">.</span><span class="n">pop</span><span class="p">():</span>
+                <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;derived eigenfunctions present in all datfiles&quot;</span><span class="p">)</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">75</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">series</span></div>
 
 

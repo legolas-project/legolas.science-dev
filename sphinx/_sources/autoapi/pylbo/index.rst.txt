@@ -206,13 +206,15 @@ Functions
    ..
        !! processed by numpydoc !!
 
-.. py:function:: load(datfile)
+.. py:function:: load(datfile, display_info=True)
 
    
    Loads a single Legolas datfile.
 
    :param datfile: Path to the datfile.
    :type datfile: str, ~os.PathLike
+   :param display_info: If `True`, datfile information is written to terminal.
+   :type display_info: bool
 
    :raises ValueError: If `datfile` is not a single file.
 
@@ -267,7 +269,7 @@ Functions
    ..
        !! processed by numpydoc !!
 
-.. py:function:: load_series(datfiles)
+.. py:function:: load_series(datfiles, display_info=True)
 
    
    Loads multiple Legolas datfiles.
@@ -275,6 +277,8 @@ Functions
    :param datfiles: Paths to the datfiles that should be loaded, in list/array form. Every element
                     should be a string or a ~os.PathLike object.
    :type datfiles: list, numpy.ndarray
+   :param display_info: If `True`, datfile information is written to terminal.
+   :type display_info: bool
 
    :raises ValueError: If an empty list or array is supplied.
 
