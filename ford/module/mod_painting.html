@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for modules and submodules.">39 statements</a>
+    title=" 0.4% of total for modules and submodules.">38 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_painting.f08"> Source File</a></li>
   </ul>
@@ -117,14 +117,13 @@
       <a class="list-group-item" href="../module/mod_painting.html#variable-blue">blue</a>
       <a class="list-group-item" href="../module/mod_painting.html#variable-cyan">cyan</a>
       <a class="list-group-item" href="../module/mod_painting.html#variable-grey">grey</a>
-      <a class="list-group-item" href="../module/mod_painting.html#variable-fmt~4">fmt</a>
     </div>
   </div>
 </div>
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-0" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
       <a class="list-group-item" href="../module/mod_painting.html#proc-paint_string">paint_string</a>
     </div>
   </div>
@@ -137,19 +136,7 @@
     <div class="col-md-9" id='text'>
     <p>This module handles formatting of terminal-printed strings.
 Contains subroutines to colourise strings.</p>
-<br>        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    
     
     <br>
 
@@ -168,14 +155,13 @@ Contains subroutines to colourise strings.</p>
       <a class="list-group-item" href="../module/mod_painting.html#variable-blue">blue</a>
       <a class="list-group-item" href="../module/mod_painting.html#variable-cyan">cyan</a>
       <a class="list-group-item" href="../module/mod_painting.html#variable-grey">grey</a>
-      <a class="list-group-item" href="../module/mod_painting.html#variable-fmt~4">fmt</a>
     </div>
   </div>
 </div>
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-1" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
       <a class="list-group-item" href="../module/mod_painting.html#proc-paint_string">paint_string</a>
     </div>
   </div>
@@ -230,11 +216,6 @@ Contains subroutines to colourise strings.</p>
 <td>public,</td>  <td>parameter</td><td>::</td>
   <td><strong>grey</strong></td><td> =</td><td>esc//"[90m"</td><td><p>grey ANSI colour sequence</p></td>
 </tr>
-<tr>
-  <td><span class="anchor" id="variable-fmt~4"></span>character,</td>
-<td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>fmt</strong></td><td></td><td></td><td><p>formatting used in logging</p></td>
-</tr>
 </tbody>
 </table>
 
@@ -245,11 +226,11 @@ Contains subroutines to colourise strings.</p>
 
     
     
-
+ 
     <section>
-    <h2>Subroutines</h2>
+    <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-paint_string"></span><h3>public subroutine <a href='../proc/paint_string.html'>paint_string</a>(msg, colour, msg_painted)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-paint_string"></span><h3>public pure function <a href='../proc/paint_string.html'>paint_string</a>(msg, colour) result(msg_painted)</h3></div>
   <div class="panel-body">
        
 <p>Subroutine to paint a given string to the desired colour,
@@ -272,21 +253,17 @@ returns the string itself.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>colour</strong></td><td><p>colour of the message</p></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>msg_painted</strong></td><td><p>new string with ANSI sequences added</p></td>
-</tr>
 </tbody>
 </table>
 
+<h4>Return Value <small>character,allocatable</small></h4>  <p>new string with ANSI sequences added</p>
 
   </div>
   </div>
 
-    </section>    
+    </section>
     <br>
+
     
     </div>
   </div>

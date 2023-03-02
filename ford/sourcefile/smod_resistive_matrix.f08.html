@@ -377,27 +377,25 @@
 <a id="ln-227" name="ln-227" href="#ln-227"></a><span class="k">      </span><span class="n">Roperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">deps</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eta</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">eps</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">deta</span><span class="p">)</span>
 <a id="ln-228" name="ln-228" href="#ln-228"></a><span class="w">    </span><span class="k">else</span>
 <a id="ln-229" name="ln-229" href="#ln-229"></a><span class="k">      </span><span class="n">Roperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-230" name="ln-230" href="#ln-230"></a><span class="w">      </span><span class="k">call </span><span class="n">log_message</span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="ln-231" name="ln-231" href="#ln-231"></a><span class="w">        </span><span class="s2">&quot;requesting invalid R-operator sign: &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">which</span><span class="p">),</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="ln-232" name="ln-232" href="#ln-232"></a><span class="w">      </span><span class="p">)</span>
-<a id="ln-233" name="ln-233" href="#ln-233"></a><span class="w">    </span><span class="k">end if</span>
-<a id="ln-234" name="ln-234" href="#ln-234"></a><span class="k">  end function </span><span class="n">get_R_operator</span>
-<a id="ln-235" name="ln-235" href="#ln-235"></a>
-<a id="ln-236" name="ln-236" href="#ln-236"></a>
-<a id="ln-237" name="ln-237" href="#ln-237"></a><span class="w">  </span><span class="c">!&gt; Calculates the total derivative of $$\eta$$, given as</span>
-<a id="ln-238" name="ln-238" href="#ln-238"></a><span class="w">  </span><span class="c">!! $$ \eta_0(r, T)&#39; = \frac{d\eta_0}{dr} + \frac{dT_0}{dr}\frac{d\eta_0}{dT} $$</span>
-<a id="ln-239" name="ln-239" href="#ln-239"></a><span class="w">  </span><span class="k">function </span><span class="n">get_deta</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span><span class="w">  </span><span class="k">result</span><span class="p">(</span><span class="n">deta</span><span class="p">)</span>
-<a id="ln-240" name="ln-240" href="#ln-240"></a><span class="w">    </span><span class="c">!&gt; current intex in the Gaussian grid</span>
-<a id="ln-241" name="ln-241" href="#ln-241"></a><span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">gauss_idx</span>
-<a id="ln-242" name="ln-242" href="#ln-242"></a><span class="w">    </span><span class="c">!&gt; full eta derivative on return</span>
-<a id="ln-243" name="ln-243" href="#ln-243"></a><span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">deta</span>
-<a id="ln-244" name="ln-244" href="#ln-244"></a>
-<a id="ln-245" name="ln-245" href="#ln-245"></a><span class="w">    </span><span class="n">deta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eta_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">d_eta_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="ln-246" name="ln-246" href="#ln-246"></a><span class="w">      </span><span class="n">T_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">d_T0_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eta_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">d_eta_dT</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="ln-247" name="ln-247" href="#ln-247"></a><span class="w">    </span><span class="p">)</span>
-<a id="ln-248" name="ln-248" href="#ln-248"></a><span class="w">  </span><span class="k">end function </span><span class="n">get_deta</span>
-<a id="ln-249" name="ln-249" href="#ln-249"></a>
-<a id="ln-250" name="ln-250" href="#ln-250"></a><span class="k">end submodule </span><span class="n">smod_resistive_matrix</span>
+<a id="ln-230" name="ln-230" href="#ln-230"></a><span class="w">      </span><span class="k">call </span><span class="n">logger</span><span class="p">%</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;requesting invalid R-operator sign: &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">which</span><span class="p">))</span>
+<a id="ln-231" name="ln-231" href="#ln-231"></a><span class="w">    </span><span class="k">end if</span>
+<a id="ln-232" name="ln-232" href="#ln-232"></a><span class="k">  end function </span><span class="n">get_R_operator</span>
+<a id="ln-233" name="ln-233" href="#ln-233"></a>
+<a id="ln-234" name="ln-234" href="#ln-234"></a>
+<a id="ln-235" name="ln-235" href="#ln-235"></a><span class="w">  </span><span class="c">!&gt; Calculates the total derivative of $$\eta$$, given as</span>
+<a id="ln-236" name="ln-236" href="#ln-236"></a><span class="w">  </span><span class="c">!! $$ \eta_0(r, T)&#39; = \frac{d\eta_0}{dr} + \frac{dT_0}{dr}\frac{d\eta_0}{dT} $$</span>
+<a id="ln-237" name="ln-237" href="#ln-237"></a><span class="w">  </span><span class="k">function </span><span class="n">get_deta</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span><span class="w">  </span><span class="k">result</span><span class="p">(</span><span class="n">deta</span><span class="p">)</span>
+<a id="ln-238" name="ln-238" href="#ln-238"></a><span class="w">    </span><span class="c">!&gt; current intex in the Gaussian grid</span>
+<a id="ln-239" name="ln-239" href="#ln-239"></a><span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">gauss_idx</span>
+<a id="ln-240" name="ln-240" href="#ln-240"></a><span class="w">    </span><span class="c">!&gt; full eta derivative on return</span>
+<a id="ln-241" name="ln-241" href="#ln-241"></a><span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">deta</span>
+<a id="ln-242" name="ln-242" href="#ln-242"></a>
+<a id="ln-243" name="ln-243" href="#ln-243"></a><span class="w">    </span><span class="n">deta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eta_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">d_eta_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-244" name="ln-244" href="#ln-244"></a><span class="w">      </span><span class="n">T_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">d_T0_dr</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eta_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">d_eta_dT</span><span class="p">(</span><span class="n">gauss_idx</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-245" name="ln-245" href="#ln-245"></a><span class="w">    </span><span class="p">)</span>
+<a id="ln-246" name="ln-246" href="#ln-246"></a><span class="w">  </span><span class="k">end function </span><span class="n">get_deta</span>
+<a id="ln-247" name="ln-247" href="#ln-247"></a>
+<a id="ln-248" name="ln-248" href="#ln-248"></a><span class="k">end submodule </span><span class="n">smod_resistive_matrix</span>
 </pre></div>
 
     </section>

@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>log_message &ndash; Legolas v. 1.3.0 - develop</title>
+    <title>log_physics_info &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>log_message
+    <h1>log_physics_info
       <small>Subroutine</small>
     </h1>
     <div class="row">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.6% of total for procedures.">54 statements</a>
+    title=" 0.8% of total for procedures.">76 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_logging.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_console.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_logging.f08.html'>mod_logging.f08</a></li>
-     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-     <li class="active">log_message</li>
+     <li><a href='../sourcefile/mod_console.f08.html'>mod_console.f08</a></li>
+     <li><a href='../module/mod_console.html'>mod_console</a></li>
+     <li class="active">log_physics_info</li>
   </ol>
 </div>
 </div>
@@ -113,52 +113,19 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine log_message(msg, level, use_prefix)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_exceptions.html'>mod_exceptions</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
+    <h2>private subroutine log_physics_info(settings)</h2>
+    
 
-
-    <p>Logs messages to the console. Every message will be prepended by
-[  LEVEL  ] to indicate its type. If this is not desired, set
-<tt>use_prefix = .false.</tt>.
-</p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>An error is thrown if a wrong level is passed. </p></div>
-<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>The argument <tt>level</tt> can be 'error', 'warning', 'info' or 'debug'.
-      The 'error' level corresponds to throwing a critical error and
-      stops code execution.
-      Error messages are printed in red, warnings in yellow, info messages have
-      default colouring and debug messages are in green.</p></div>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-msg~4"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-settings~123"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>msg</strong></td><td><p>the message to print to the console</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-level~3"></span>character(len=*),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>level</strong></td><td><p>the level (severity) of the message, default is <tt>"info"</tt></p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-use_prefix"></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>use_prefix</strong></td><td><p>prefixes message type to string, default is <tt>.true.</tt></p></td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>

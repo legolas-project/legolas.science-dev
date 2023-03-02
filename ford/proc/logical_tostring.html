@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>float_tostr &ndash; Legolas v. 1.3.0 - develop</title>
+    <title>logical_tostring &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>float_tostr
+    <h1>logical_tostring
       <small>Function</small>
     </h1>
     <div class="row">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">14 statements</a>
+    title=" 0.1% of total for procedures.">9 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_logging.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/mod_logging.f08.html'>mod_logging.f08</a></li>
      <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-     <li class="active">float_tostr</li>
+     <li class="active">logical_tostring</li>
   </ol>
 </div>
 </div>
@@ -113,44 +113,25 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private function float_tostr(value, fmt) result(result_str)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
+    <h2>private pure function logical_tostring(boolean) result(string)</h2>
+    
 
-
-    <p>Converts a given float to a string, the default format is "f20.8".</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-value~7"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-boolean"></span>logical,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>float to convert</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-fmt~2"></span>character(len=*),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format use for writing, default "f20.8"</p></td>
+  <td><strong>boolean</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-result_str~3"></span>character,allocatable</small></h3>
-    <p>return string, made allocatable so it has same length as input</p>
+   <h3>Return Value <small><span class="anchor" id="variable-string"></span>character,allocatable</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

@@ -348,15 +348,14 @@
 <a id="ln-198" name="ln-198" href="#ln-198"></a><span class="k">      </span><span class="n">diagonal_factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">0.0d0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0d0</span><span class="p">)</span>
 <a id="ln-199" name="ln-199" href="#ln-199"></a><span class="w">    </span><span class="k">else</span>
 <a id="ln-200" name="ln-200" href="#ln-200"></a><span class="k">      </span><span class="n">diagonal_factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-201" name="ln-201" href="#ln-201"></a><span class="w">      </span><span class="k">call </span><span class="n">log_message</span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="ln-202" name="ln-202" href="#ln-202"></a><span class="w">        </span><span class="s2">&quot;get_diagonal_factor: invalid or empty matrix label: &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">matrix</span><span class="p">%</span><span class="n">get_label</span><span class="p">(),</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="ln-203" name="ln-203" href="#ln-203"></a><span class="w">        </span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="ln-204" name="ln-204" href="#ln-204"></a><span class="w">      </span><span class="p">)</span>
-<a id="ln-205" name="ln-205" href="#ln-205"></a><span class="w">    </span><span class="k">end if</span>
-<a id="ln-206" name="ln-206" href="#ln-206"></a><span class="k">  end function </span><span class="n">get_diagonal_factor</span>
+<a id="ln-201" name="ln-201" href="#ln-201"></a><span class="w">      </span><span class="k">call </span><span class="n">logger</span><span class="p">%</span><span class="n">error</span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-202" name="ln-202" href="#ln-202"></a><span class="w">        </span><span class="s2">&quot;get_diagonal_factor: invalid or empty matrix label: &quot;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">matrix</span><span class="p">%</span><span class="n">get_label</span><span class="p">()</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-203" name="ln-203" href="#ln-203"></a><span class="w">      </span><span class="p">)</span>
+<a id="ln-204" name="ln-204" href="#ln-204"></a><span class="w">    </span><span class="k">end if</span>
+<a id="ln-205" name="ln-205" href="#ln-205"></a><span class="k">  end function </span><span class="n">get_diagonal_factor</span>
+<a id="ln-206" name="ln-206" href="#ln-206"></a>
 <a id="ln-207" name="ln-207" href="#ln-207"></a>
-<a id="ln-208" name="ln-208" href="#ln-208"></a>
-<a id="ln-209" name="ln-209" href="#ln-209"></a><span class="k">end submodule </span><span class="n">smod_essential_boundaries</span>
+<a id="ln-208" name="ln-208" href="#ln-208"></a><span class="k">end submodule </span><span class="n">smod_essential_boundaries</span>
 </pre></div>
 
     </section>

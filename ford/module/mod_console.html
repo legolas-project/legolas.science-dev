@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.3% of total for modules and submodules.">134 statements</a>
+    title=" 1.9% of total for modules and submodules.">191 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_console.f08"> Source File</a></li>
   </ul>
@@ -112,6 +112,11 @@
       <a class="list-group-item" href="../module/mod_console.html#proc-print_logo">print_logo</a>
       <a class="list-group-item" href="../module/mod_console.html#proc-print_console_info">print_console_info</a>
       <a class="list-group-item" href="../module/mod_console.html#proc-print_whitespace">print_whitespace</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_grid_info">log_grid_info</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_equilibrium_info">log_equilibrium_info</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_physics_info">log_physics_info</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_solver_info">log_solver_info</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_io_info">log_io_info</a>
     </div>
   </div>
 </div>
@@ -129,8 +134,9 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       </ul>
@@ -149,6 +155,11 @@
       <a class="list-group-item" href="../module/mod_console.html#proc-print_logo">print_logo</a>
       <a class="list-group-item" href="../module/mod_console.html#proc-print_console_info">print_console_info</a>
       <a class="list-group-item" href="../module/mod_console.html#proc-print_whitespace">print_whitespace</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_grid_info">log_grid_info</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_equilibrium_info">log_equilibrium_info</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_physics_info">log_physics_info</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_solver_info">log_solver_info</a>
+      <a class="list-group-item" href="../module/mod_console.html#proc-log_io_info">log_io_info</a>
     </div>
   </div>
 </div>
@@ -216,6 +227,106 @@ Only if logging level is 'warning' or above.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>lines</strong></td><td><p>amount of empty lines to print</p></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-log_grid_info"></span><h3>private subroutine <a href='../proc/log_grid_info.html'>log_grid_info</a>(settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-log_equilibrium_info"></span><h3>private subroutine <a href='../proc/log_equilibrium_info.html'>log_equilibrium_info</a>(settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-log_physics_info"></span><h3>private subroutine <a href='../proc/log_physics_info.html'>log_physics_info</a>(settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-log_solver_info"></span><h3>private subroutine <a href='../proc/log_solver_info.html'>log_solver_info</a>(settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-log_io_info"></span><h3>private subroutine <a href='../proc/log_io_info.html'>log_io_info</a>(settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>

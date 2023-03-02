@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>logical_tostr &ndash; Legolas v. 1.3.0 - develop</title>
+    <title>info &ndash; Legolas v. 1.3.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>logical_tostr
-      <small>Function</small>
+    <h1>info
+      <small>Subroutine</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">9 statements</a>
+    title=" 0.1% of total for procedures.">12 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_logging.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/mod_logging.f08.html'>mod_logging.f08</a></li>
      <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-     <li class="active">logical_tostr</li>
+     <li class="active">info</li>
   </ol>
 </div>
 </div>
@@ -113,26 +113,29 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private function logical_tostr(boolean) result(result_str)</h2>
+    <h2>private subroutine info(this, msg)</h2>
     
 
-    <p>Converts a given logical to a string "True" or "False".</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-boolean"></span>logical,</td>
+  <td><span class="anchor" id="variable-this~154"></span>class(<a href='../type/logger_t.html'>logger_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>boolean</strong></td><td><p>logical to convert</p></td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-msg~6"></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>msg</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-result_str"></span>character,allocatable</small></h3>
-    <p>return string, made allocatable so it has same length as input</p>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

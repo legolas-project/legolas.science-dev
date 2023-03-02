@@ -72,7 +72,7 @@
     <div class="container">
   <div class="row">
     <h1>paint_string
-      <small>Subroutine</small>
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">23 statements</a>
+    title=" 0.3% of total for procedures.">24 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_painting.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine paint_string(msg, colour, msg_painted)</h2>
+    <h2>public pure function paint_string(msg, colour) result(msg_painted)</h2>
     
 
     <p>Subroutine to paint a given string to the desired colour,
@@ -137,15 +137,11 @@ returns the string itself.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>colour</strong></td><td><p>colour of the message</p></td>
 </tr>
-<tr>
-  <td><span class="anchor" id="variable-msg_painted"></span>character(len=*),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>msg_painted</strong></td><td><p>new string with ANSI sequences added</p></td>
-</tr>
 </tbody>
 </table>
 
+   <h3>Return Value <small><span class="anchor" id="variable-msg_painted"></span>character,allocatable</small></h3>
+    <p>new string with ANSI sequences added</p>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

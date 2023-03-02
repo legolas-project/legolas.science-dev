@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.1% of total for procedures.</p>Including implementation: 68 statements,  0.7% of total for procedures.">7 statements</a>
+    title="<p> 0.1% of total for procedures.</p>Including implementation: 69 statements,  0.7% of total for procedures.">7 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_logging.f08"> Source File</a></li>
   </ul>
@@ -110,11 +110,11 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-0">Module Procedures</a></h3></div>
   <div id="modprocs-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-logical_tostr">logical_tostr</a>
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-int_tostr">int_tostr</a>
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-float_tostr">float_tostr</a>
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-complex_tostr">complex_tostr</a>
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-character_arr_tostr">character_arr_tostr</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-logical_tostring">logical_tostring</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-integer_tostring">integer_tostring</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-real_tostring">real_tostring</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-complex_tostring">complex_tostring</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-character_array_tostring">character_array_tostring</a>
     </div>
   </div>
 </div>
@@ -125,8 +125,8 @@
     
     <div class="col-md-9" id='text'>
       <h2>public interface str</h2>
-   <p>a convenient "tostring" interface, used for easy console writing</p>
-<br>
+   
+
      <section class="visible-xs visible-sm hidden-md">
        <h3>Contents</h3>
  
@@ -134,11 +134,11 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-1">Module Procedures</a></h3></div>
   <div id="modprocs-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-logical_tostr">logical_tostr</a>
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-int_tostr">int_tostr</a>
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-float_tostr">float_tostr</a>
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-complex_tostr">complex_tostr</a>
-      <a class="list-group-item" href="../interface/str.html#moduleprocedure-character_arr_tostr">character_arr_tostr</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-logical_tostring">logical_tostring</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-integer_tostring">integer_tostring</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-real_tostring">real_tostring</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-complex_tostring">complex_tostring</a>
+      <a class="list-group-item" href="../interface/str.html#moduleprocedure-character_array_tostring">character_array_tostring</a>
     </div>
   </div>
 </div>
@@ -150,11 +150,9 @@
 
    <h2>Module Procedures</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-logical_tostr"></span><h3>private function <a href='../proc/logical_tostr.html'>logical_tostr</a>(boolean) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-logical_tostring"></span><h3>private pure function <a href='../proc/logical_tostring.html'>logical_tostring</a>(boolean) result(string)</h3></div>
   <div class="panel-body">
-       
-<p>Converts a given logical to a string "True" or "False".</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -162,22 +160,20 @@
   <td><span class="anchor" ></span>logical,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>boolean</strong></td><td><p>logical to convert</p></td>
+  <td><strong>boolean</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-int_tostr"></span><h3>private function <a href='../proc/int_tostr.html'>int_tostr</a>(value, fmt) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-integer_tostring"></span><h3>private pure function <a href='../proc/integer_tostring.html'>integer_tostring</a>(int_value, fmt) result(string)</h3></div>
   <div class="panel-body">
-       
-<p>Converts a given integer to a string, the default format is "i8".</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -185,28 +181,26 @@
   <td><span class="anchor" ></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>integer to convert</p></td>
+  <td><strong>int_value</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format used for writing, default "i8"</p></td>
+  <td><strong>fmt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-float_tostr"></span><h3>private function <a href='../proc/float_tostr.html'>float_tostr</a>(value, fmt) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-real_tostring"></span><h3>private pure function <a href='../proc/real_tostring.html'>real_tostring</a>(real_value, fmt) result(string)</h3></div>
   <div class="panel-body">
-       
-<p>Converts a given float to a string, the default format is "f20.8".</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -214,29 +208,26 @@
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>float to convert</p></td>
+  <td><strong>real_value</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format use for writing, default "f20.8"</p></td>
+  <td><strong>fmt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-complex_tostr"></span><h3>private function <a href='../proc/complex_tostr.html'>complex_tostr</a>(value, fmt) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-complex_tostring"></span><h3>private pure function <a href='../proc/complex_tostring.html'>complex_tostring</a>(complex_value, fmt) result(string)</h3></div>
   <div class="panel-body">
-       
-<p>Converts a given complex number to a string, the default format is "f20.8".
-This will be printed in the form xxxx + xxxxi.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -244,28 +235,26 @@ This will be printed in the form xxxx + xxxxi.</p>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>complex to convert</p></td>
+  <td><strong>complex_value</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format use for writing, default "f20.8"</p></td>
+  <td><strong>fmt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-character_arr_tostr"></span><h3>private function <a href='../proc/character_arr_tostr.html'>character_arr_tostr</a>(array) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-character_array_tostring"></span><h3>private pure function <a href='../proc/character_array_tostring.html'>character_array_tostring</a>(array) result(string)</h3></div>
   <div class="panel-body">
-       
-<p>Converts an array of characters to a string.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.3% of total for modules and submodules.">137 statements</a>
+    title=" 1.6% of total for modules and submodules.">159 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_logging.f08"> Source File</a></li>
   </ul>
@@ -112,7 +112,7 @@
       <a class="list-group-item" href="../module/mod_logging.html#variable-exp_fmt">exp_fmt</a>
       <a class="list-group-item" href="../module/mod_logging.html#variable-dp_fmt">dp_fmt</a>
       <a class="list-group-item" href="../module/mod_logging.html#variable-int_fmt">int_fmt</a>
-      <a class="list-group-item" href="../module/mod_logging.html#variable-override_prefix_to_false">override_prefix_to_false</a>
+      <a class="list-group-item" href="../module/mod_logging.html#variable-logger">logger</a>
     </div>
   </div>
 </div>
@@ -125,14 +125,23 @@
   </div>
 </div>
 <div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_logging.html#type-logger_t">logger_t</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
   <div id="funcs-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_logging.html#proc-logical_tostr">logical_tostr</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-int_tostr">int_tostr</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-float_tostr">float_tostr</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-complex_tostr">complex_tostr</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-character_arr_tostr">character_arr_tostr</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-get_logging_level">get_logging_level</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-logical_tostring">logical_tostring</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-integer_tostring">integer_tostring</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-real_tostring">real_tostring</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-complex_tostring">complex_tostring</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-character_array_tostring">character_array_tostring</a>
     </div>
   </div>
 </div>
@@ -140,7 +149,14 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_logging.html#proc-log_message">log_message</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-initialise">initialise</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-set_logging_level">set_logging_level</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-enable_prefix">enable_prefix</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-disable_prefix">disable_prefix</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-error">error</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-warning">warning</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-info">info</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-debug">debug</a>
     </div>
   </div>
 </div>
@@ -150,20 +166,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <p>Main handler for console print statements. The level of information
-printed to the console depends on the corresponding global variable
-called <tt>logging_level</tt> defined in the parfile.
-</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Values for <tt>logging_level</tt> can be set to</p>
-<ul>
-<li>If <tt>logging_level = 0</tt>: only critical errors are printed, everything else
-                                 is suppressed.</li>
-<li>If <tt>logging_level = 1</tt>: only errors and warnings are printed.</li>
-<li>If <tt>logging_level = 2</tt>: errors, warnings and info messages are printed.
-                                 This is the default value.</li>
-<li>If <tt>logging_level = 3+</tt>: prints all of the above,
-                                  including debug messages. </p></div>
-<p></li>
-</ul>
+    
 <br>        <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -191,7 +194,7 @@ called <tt>logging_level</tt> defined in the parfile.
       <a class="list-group-item" href="../module/mod_logging.html#variable-exp_fmt">exp_fmt</a>
       <a class="list-group-item" href="../module/mod_logging.html#variable-dp_fmt">dp_fmt</a>
       <a class="list-group-item" href="../module/mod_logging.html#variable-int_fmt">int_fmt</a>
-      <a class="list-group-item" href="../module/mod_logging.html#variable-override_prefix_to_false">override_prefix_to_false</a>
+      <a class="list-group-item" href="../module/mod_logging.html#variable-logger">logger</a>
     </div>
   </div>
 </div>
@@ -204,14 +207,23 @@ called <tt>logging_level</tt> defined in the parfile.
   </div>
 </div>
 <div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_logging.html#type-logger_t">logger_t</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
   <div id="funcs-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_logging.html#proc-logical_tostr">logical_tostr</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-int_tostr">int_tostr</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-float_tostr">float_tostr</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-complex_tostr">complex_tostr</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-character_arr_tostr">character_arr_tostr</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-get_logging_level">get_logging_level</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-logical_tostring">logical_tostring</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-integer_tostring">integer_tostring</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-real_tostring">real_tostring</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-complex_tostring">complex_tostring</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-character_array_tostring">character_array_tostring</a>
     </div>
   </div>
 </div>
@@ -219,7 +231,14 @@ called <tt>logging_level</tt> defined in the parfile.
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_logging.html#proc-log_message">log_message</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-initialise">initialise</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-set_logging_level">set_logging_level</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-enable_prefix">enable_prefix</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-disable_prefix">disable_prefix</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-error">error</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-warning">warning</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-info">info</a>
+      <a class="list-group-item" href="../module/mod_logging.html#proc-debug">debug</a>
     </div>
   </div>
 </div>
@@ -236,22 +255,22 @@ called <tt>logging_level</tt> defined in the parfile.
 <tr>
   <td><span class="anchor" id="variable-exp_fmt"></span>character(len=8),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
-  <td><strong>exp_fmt</strong></td><td> =</td><td>'(e20.8)'</td><td><p>exponential format</p></td>
+  <td><strong>exp_fmt</strong></td><td> =</td><td>"(e20.8)"</td><td><p>exponential format</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-dp_fmt"></span>character(len=8),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
-  <td><strong>dp_fmt</strong></td><td> =</td><td>'(f20.8)'</td><td><p>shorter float format</p></td>
+  <td><strong>dp_fmt</strong></td><td> =</td><td>"(f20.8)"</td><td><p>shorter float format</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-int_fmt"></span>character(len=4),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
-  <td><strong>int_fmt</strong></td><td> =</td><td>'(i8)'</td><td><p>integer format</p></td>
+  <td><strong>int_fmt</strong></td><td> =</td><td>"(i8)"</td><td><p>integer format</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-override_prefix_to_false"></span>logical,</td>
+  <td><span class="anchor" id="variable-logger"></span>type(<a href='../type/logger_t.html'>logger_t</a>),</td>
 <td>public</td>  <td></td><td>::</td>
-  <td><strong>override_prefix_to_false</strong></td><td> =</td><td>.false.</td><td><p>logical used to (locally) force a prefix override</p></td>
+  <td><strong>logger</strong></td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -264,14 +283,9 @@ called <tt>logging_level</tt> defined in the parfile.
    <h2>Interfaces</h2>
      <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="interface-str"></span><h3>public interface <a href='../interface/str.html'>str</a>  </h3></div>
-  <div class="panel-body">
-    <p>a convenient "tostring" interface, used for easy console writing</p>
-  </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private function <a href='../proc/logical_tostr.html'>logical_tostr</a>(boolean) result(result_str)</h3>
-<p>Converts a given logical to a string "True" or "False".</p>
-    
+    <h3>private pure function <a href='../proc/logical_tostring.html'>logical_tostring</a>(boolean) result(string)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -279,18 +293,16 @@ called <tt>logging_level</tt> defined in the parfile.
   <td><span class="anchor" ></span>logical,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>boolean</strong></td><td><p>logical to convert</p></td>
+  <td><strong>boolean</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
     </li>
     <li class="list-group-item">
-    <h3>private function <a href='../proc/int_tostr.html'>int_tostr</a>(value, fmt) result(result_str)</h3>
-<p>Converts a given integer to a string, the default format is "i8".</p>
-    
+    <h3>private pure function <a href='../proc/integer_tostring.html'>integer_tostring</a>(int_value, fmt) result(string)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -298,24 +310,22 @@ called <tt>logging_level</tt> defined in the parfile.
   <td><span class="anchor" ></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>integer to convert</p></td>
+  <td><strong>int_value</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format used for writing, default "i8"</p></td>
+  <td><strong>fmt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
     </li>
     <li class="list-group-item">
-    <h3>private function <a href='../proc/float_tostr.html'>float_tostr</a>(value, fmt) result(result_str)</h3>
-<p>Converts a given float to a string, the default format is "f20.8".</p>
-    
+    <h3>private pure function <a href='../proc/real_tostring.html'>real_tostring</a>(real_value, fmt) result(string)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -323,25 +333,22 @@ called <tt>logging_level</tt> defined in the parfile.
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>float to convert</p></td>
+  <td><strong>real_value</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format use for writing, default "f20.8"</p></td>
+  <td><strong>fmt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
     </li>
     <li class="list-group-item">
-    <h3>private function <a href='../proc/complex_tostr.html'>complex_tostr</a>(value, fmt) result(result_str)</h3>
-<p>Converts a given complex number to a string, the default format is "f20.8".
-This will be printed in the form xxxx + xxxxi.</p>
-    
+    <h3>private pure function <a href='../proc/complex_tostring.html'>complex_tostring</a>(complex_value, fmt) result(string)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -349,24 +356,22 @@ This will be printed in the form xxxx + xxxxi.</p>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>complex to convert</p></td>
+  <td><strong>complex_value</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format use for writing, default "f20.8"</p></td>
+  <td><strong>fmt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
     </li>
     <li class="list-group-item">
-    <h3>private function <a href='../proc/character_arr_tostr.html'>character_arr_tostr</a>(array) result(result_str)</h3>
-<p>Converts an array of characters to a string.</p>
-    
+    <h3>private pure function <a href='../proc/character_array_tostring.html'>character_array_tostring</a>(array) result(string)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -389,16 +394,86 @@ This will be printed in the form xxxx + xxxxi.</p>
   <br>
 
     
+    <section>
+     <h2>Derived Types</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-logger_t"></span><h3>type, public :: <a href='../type/logger_t.html'>logger_t</a>  </h3></div>
+  <div class="panel-body">
+     <h4>Components</h4>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-logging_level"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>logging_level</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-use_prefix"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>use_prefix</strong></td><td></td><td></td><td></td>
+</tr>
+</tbody>
+</table>
+
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+       <tr><td>procedure, public, nopass :: <strong><a href='../type/logger_t.html#boundprocedure-error'>error</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/logger_t.html#boundprocedure-warning'>warning</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/logger_t.html#boundprocedure-info~2'>info</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/logger_t.html#boundprocedure-debug'>debug</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/logger_t.html#boundprocedure-initialise'>initialise</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/logger_t.html#boundprocedure-set_logging_level'>set_logging_level</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/logger_t.html#boundprocedure-get_logging_level'>get_logging_level</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/logger_t.html#boundprocedure-enable_prefix'>enable_prefix</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/logger_t.html#boundprocedure-disable_prefix'>disable_prefix</a></strong>  </td>
+       <td></td></tr>
+       </tbody>
+       </table>
+  </div>
+</div>
+
+    </section>
+  <br>
     
  
     <section>
     <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-logical_tostr"></span><h3>private function <a href='../proc/logical_tostr.html'>logical_tostr</a>(boolean) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logging_level"></span><h3>private pure function <a href='../proc/get_logging_level.html'>get_logging_level</a>(this) result(logging_level)</h3></div>
   <div class="panel-body">
-       
-<p>Converts a given logical to a string "True" or "False".</p>
-    
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/logger_t.html'>logger_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>integer</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-logical_tostring"></span><h3>private pure function <a href='../proc/logical_tostring.html'>logical_tostring</a>(boolean) result(string)</h3></div>
+  <div class="panel-body">
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -406,22 +481,20 @@ This will be printed in the form xxxx + xxxxi.</p>
   <td><span class="anchor" ></span>logical,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>boolean</strong></td><td><p>logical to convert</p></td>
+  <td><strong>boolean</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-int_tostr"></span><h3>private function <a href='../proc/int_tostr.html'>int_tostr</a>(value, fmt) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-integer_tostring"></span><h3>private pure function <a href='../proc/integer_tostring.html'>integer_tostring</a>(int_value, fmt) result(string)</h3></div>
   <div class="panel-body">
-       
-<p>Converts a given integer to a string, the default format is "i8".</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -429,28 +502,26 @@ This will be printed in the form xxxx + xxxxi.</p>
   <td><span class="anchor" ></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>integer to convert</p></td>
+  <td><strong>int_value</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format used for writing, default "i8"</p></td>
+  <td><strong>fmt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-float_tostr"></span><h3>private function <a href='../proc/float_tostr.html'>float_tostr</a>(value, fmt) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-real_tostring"></span><h3>private pure function <a href='../proc/real_tostring.html'>real_tostring</a>(real_value, fmt) result(string)</h3></div>
   <div class="panel-body">
-       
-<p>Converts a given float to a string, the default format is "f20.8".</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -458,29 +529,26 @@ This will be printed in the form xxxx + xxxxi.</p>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>float to convert</p></td>
+  <td><strong>real_value</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format use for writing, default "f20.8"</p></td>
+  <td><strong>fmt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-complex_tostr"></span><h3>private function <a href='../proc/complex_tostr.html'>complex_tostr</a>(value, fmt) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-complex_tostring"></span><h3>private pure function <a href='../proc/complex_tostring.html'>complex_tostring</a>(complex_value, fmt) result(string)</h3></div>
   <div class="panel-body">
-       
-<p>Converts a given complex number to a string, the default format is "f20.8".
-This will be printed in the form xxxx + xxxxi.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -488,28 +556,26 @@ This will be printed in the form xxxx + xxxxi.</p>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>complex to convert</p></td>
+  <td><strong>complex_value</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>fmt</strong></td><td><p>optional format use for writing, default "f20.8"</p></td>
+  <td><strong>fmt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>character,allocatable</small></h4>  <p>return string, made allocatable so it has same length as input</p>
+<h4>Return Value <small>character,allocatable</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-character_arr_tostr"></span><h3>private function <a href='../proc/character_arr_tostr.html'>character_arr_tostr</a>(array) result(result_str)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-character_array_tostring"></span><h3>private pure function <a href='../proc/character_array_tostring.html'>character_array_tostring</a>(array) result(string)</h3></div>
   <div class="panel-body">
-       
-<p>Converts an array of characters to a string.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -533,14 +599,95 @@ This will be printed in the form xxxx + xxxxi.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-log_message"></span><h3>public subroutine <a href='../proc/log_message.html'>log_message</a>(msg, level, use_prefix)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise"></span><h3>private pure subroutine <a href='../proc/initialise.html'>initialise</a>(this)</h3></div>
   <div class="panel-body">
-       
-<p>Logs messages to the console. Every message will be prepended by
-[  LEVEL  ] to indicate its type. If this is not desired, set
-<tt>use_prefix = .false.</tt>.
-</p><a href="../proc/log_message.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/logger_t.html'>logger_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_logging_level"></span><h3>private pure subroutine <a href='../proc/set_logging_level.html'>set_logging_level</a>(this, logging_level)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/logger_t.html'>logger_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>logging_level</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-enable_prefix"></span><h3>private pure subroutine <a href='../proc/enable_prefix.html'>enable_prefix</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/logger_t.html'>logger_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-disable_prefix"></span><h3>private pure subroutine <a href='../proc/disable_prefix.html'>disable_prefix</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/logger_t.html'>logger_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-error"></span><h3>private subroutine <a href='../proc/error.html'>error</a>(msg)</h3></div>
+  <div class="panel-body">
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -548,19 +695,85 @@ This will be printed in the form xxxx + xxxxi.</p>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>msg</strong></td><td><p>the message to print to the console</p></td>
+  <td><strong>msg</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-warning"></span><h3>private subroutine <a href='../proc/warning.html'>warning</a>(this, msg)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/logger_t.html'>logger_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>level</strong></td><td><p>the level (severity) of the message, default is <tt>"info"</tt></p></td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>msg</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-info"></span><h3>private subroutine <a href='../proc/info.html'>info</a>(this, msg)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/logger_t.html'>logger_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>use_prefix</strong></td><td><p>prefixes message type to string, default is <tt>.true.</tt></p></td>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>msg</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-debug"></span><h3>private subroutine <a href='../proc/debug.html'>debug</a>(this, msg)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/logger_t.html'>logger_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>msg</strong></td><td></td>
 </tr>
 </tbody>
 </table>
