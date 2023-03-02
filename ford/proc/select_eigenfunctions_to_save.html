@@ -113,26 +113,25 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine select_eigenfunctions_to_save(omega, settings)</h2>
+    <h2>private pure subroutine select_eigenfunctions_to_save(this, omega)</h2>
     
 
-    <p>Selects a subset of eigenfunctions to be saved.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
+  <td><span class="anchor" id="variable-this~167"></span>class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-omega~2"></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>omega</strong>(:)</td><td><p>the array of calculated eigenvalues</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-settings~79"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>omega</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>

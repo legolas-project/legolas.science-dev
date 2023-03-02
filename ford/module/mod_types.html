@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.9% of total for modules and submodules.">303 statements</a>
+    title=" 2.9% of total for modules and submodules.">297 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_types.f08"> Source File</a></li>
   </ul>
@@ -126,7 +126,6 @@
       <a class="list-group-item" href="../module/mod_types.html#type-resistivity_type">resistivity_type</a>
       <a class="list-group-item" href="../module/mod_types.html#type-cooling_type">cooling_type</a>
       <a class="list-group-item" href="../module/mod_types.html#type-conduction_type">conduction_type</a>
-      <a class="list-group-item" href="../module/mod_types.html#type-ef_type">ef_type</a>
       <a class="list-group-item" href="../module/mod_types.html#type-hall_type">hall_type</a>
     </div>
   </div>
@@ -173,8 +172,8 @@ to handle eigenfunctions.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       </ul>
@@ -207,7 +206,6 @@ to handle eigenfunctions.</p>
       <a class="list-group-item" href="../module/mod_types.html#type-resistivity_type">resistivity_type</a>
       <a class="list-group-item" href="../module/mod_types.html#type-cooling_type">cooling_type</a>
       <a class="list-group-item" href="../module/mod_types.html#type-conduction_type">conduction_type</a>
-      <a class="list-group-item" href="../module/mod_types.html#type-ef_type">ef_type</a>
       <a class="list-group-item" href="../module/mod_types.html#type-hall_type">hall_type</a>
     </div>
   </div>
@@ -951,36 +949,6 @@ to handle eigenfunctions.</p>
   <td><span class="anchor" id="variable-d_prefactor_dr"></span>real(kind=dp),</td>
 <td>private,</td>  <td>allocatable</td><td>::</td>
   <td><strong>d_prefactor_dr</strong>(:)</td><td></td><td></td><td><p>derivative conduction prefactor with respect to r</p></td>
-</tr>
-</tbody>
-</table>
-
-     
-  </div>
-</div>
-
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="type-ef_type"></span><h3>type, public :: <a href='../type/ef_type.html'>ef_type</a>  </h3></div>
-  <div class="panel-body">
-    <p>type containing all eigenfuction related variables</p>
-     <h4>Components</h4>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-state_vector_index"></span>integer,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>state_vector_index</strong></td><td></td><td></td><td><p>index of the eigenfunction variable in the state vector</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-name"></span>character,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>name</strong></td><td></td><td></td><td><p>name of the eigenfunction</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-quantities"></span>complex(kind=dp),</td>
-<td>private,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>quantities</strong>(:,:)</td><td></td><td></td><td><p>array with eigenfunctions</p></td>
 </tr>
 </tbody>
 </table>

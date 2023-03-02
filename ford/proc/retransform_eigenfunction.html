@@ -72,7 +72,7 @@
     <div class="container">
   <div class="row">
     <h1>retransform_eigenfunction
-      <small>Module Procedure</small>
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,13 +81,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">14 statements</a>
+    title=" 0.2% of total for procedures.">18 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/smod_ef_operations.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_ef_assembly.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/smod_ef_operations.f08.html'>smod_ef_operations.f08</a></li>
-     <li><a href='../module/smod_ef_operations.html'>smod_ef_operations</a></li>
+     <li><a href='../sourcefile/mod_ef_assembly.f08.html'>mod_ef_assembly.f08</a></li>
+     <li><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></li>
      <li class="active">retransform_eigenfunction</li>
   </ol>
 </div>
@@ -113,45 +113,37 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure retransform_eigenfunction <small>module module subroutine retransform_eigenfunction(name, eigenfunction)</small>   <a href='../interface/retransform_eigenfunction.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
-</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
+    <h2>public function retransform_eigenfunction(ef_name, ef_eps, eigenfunction) result(ef_transformed)</h2>
+    
 
-
-    <p>Retransforms the eigenfunctions to their "actual" values.
-For example, <script type="math/tex">\rho</script> is defined as <script type="math/tex">\varepsilon\rho</script> in the equations,
-in this case the eigenfunction is divided by the scale factor.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-name~5"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-ef_name"></span>character(len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>name</strong></td><td><p>name of the current eigenfunction</p></td>
+  <td><strong>ef_name</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-eigenfunction~2"></span>complex(kind=dp),</td>
-<td>intent(inout)</td>
+  <td><span class="anchor" id="variable-ef_eps~2"></span>real(kind=dp),</td>
+<td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>eigenfunction</strong>(:)</td><td><p>the current eigenfunction, transformed on exit if applicable</p></td>
+  <td><strong>ef_eps</strong>(:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-eigenfunction"></span>complex(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>eigenfunction</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>
 
+   <h3>Return Value <small><span class="anchor" id="variable-ef_transformed"></span>complex(kind=dp)(size(eigenfunction))</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

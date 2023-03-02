@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.6% of total for modules and submodules.">165 statements</a>
+    title=" 1.1% of total for modules and submodules.">117 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_eigenfunctions.f08"> Source File</a></li>
   </ul>
@@ -106,33 +106,10 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-efs_initialised">efs_initialised</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-derived_efs_initialised">derived_efs_initialised</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_grid">ef_grid</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_eps">ef_eps</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_deps">ef_deps</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-derived_ef_names">derived_ef_names</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_written_flags">ef_written_flags</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_written_idxs">ef_written_idxs</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-base_eigenfunctions">base_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-derived_eigenfunctions">derived_eigenfunctions</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
-  <div id="inters-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-initialise_base_eigenfunctions">initialise_base_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-initialise_derived_eigenfunctions">initialise_derived_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-calculate_base_eigenfunctions">calculate_base_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-calculate_derived_eigenfunctions">calculate_derived_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-assemble_eigenfunction">assemble_eigenfunction</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-retransform_eigenfunction">retransform_eigenfunction</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-clean_derived_eigenfunctions">clean_derived_eigenfunctions</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#type-eigenfunctions_t">eigenfunctions_t</a>
     </div>
   </div>
 </div>
@@ -140,9 +117,9 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
   <div id="funcs-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-retrieve_eigenfunctions">retrieve_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-retrieve_eigenfunction_from_index">retrieve_eigenfunction_from_index</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-new_eigenfunctions">new_eigenfunctions</a>
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-eigenvalue_is_inside_subset_radius">eigenvalue_is_inside_subset_radius</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-get_ef_grid">get_ef_grid</a>
     </div>
   </div>
 </div>
@@ -150,11 +127,10 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-initialise_eigenfunctions">initialise_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-calculate_eigenfunctions">calculate_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-assemble_eigenfunction_grid">assemble_eigenfunction_grid</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-initialise">initialise</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-assemble">assemble</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-delete~9">delete</a>
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-select_eigenfunctions_to_save">select_eigenfunctions_to_save</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-eigenfunctions_clean">eigenfunctions_clean</a>
     </div>
   </div>
 </div>
@@ -164,9 +140,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <p>Main module responsible for eigenfunction management. Contains routines
-and interfaces to initialise and calculate the eigenfunctions and
-derived quantities.</p>
+    
 <br>        <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -174,64 +148,27 @@ derived quantities.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_types.html'>mod_types</a></li>
+    <li><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_base_efs.html'>mod_base_efs</a></li>
+    <li><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       </ul>
     </div>
 
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Used by</h3>
-      </div>
-      <ul class="list-group">
-  <li class="list-group-item">  
-    <ul class="list-inline">
-      <li><h5>Descendants:</h5></li>
-      <li><a href='../module/smod_base_efs.html'>smod_base_efs</a></li>
-      <li><a href='../module/smod_ef_operations.html'>smod_ef_operations</a></li>
-      <li><a href='../module/smod_derived_efs.html'>smod_derived_efs</a></li>
-    </ul>
-  </li>
-      </ul>
-    </div>
-
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-efs_initialised">efs_initialised</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-derived_efs_initialised">derived_efs_initialised</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_grid">ef_grid</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_eps">ef_eps</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_deps">ef_deps</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-derived_ef_names">derived_ef_names</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_written_flags">ef_written_flags</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-ef_written_idxs">ef_written_idxs</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-base_eigenfunctions">base_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#variable-derived_eigenfunctions">derived_eigenfunctions</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
-  <div id="inters-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-initialise_base_eigenfunctions">initialise_base_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-initialise_derived_eigenfunctions">initialise_derived_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-calculate_base_eigenfunctions">calculate_base_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-calculate_derived_eigenfunctions">calculate_derived_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-assemble_eigenfunction">assemble_eigenfunction</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-retransform_eigenfunction">retransform_eigenfunction</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#interface-clean_derived_eigenfunctions">clean_derived_eigenfunctions</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#type-eigenfunctions_t">eigenfunctions_t</a>
     </div>
   </div>
 </div>
@@ -239,9 +176,9 @@ derived quantities.</p>
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
   <div id="funcs-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-retrieve_eigenfunctions">retrieve_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-retrieve_eigenfunction_from_index">retrieve_eigenfunction_from_index</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-new_eigenfunctions">new_eigenfunctions</a>
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-eigenvalue_is_inside_subset_radius">eigenvalue_is_inside_subset_radius</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-get_ef_grid">get_ef_grid</a>
     </div>
   </div>
 </div>
@@ -249,11 +186,10 @@ derived quantities.</p>
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-initialise_eigenfunctions">initialise_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-calculate_eigenfunctions">calculate_eigenfunctions</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-assemble_eigenfunction_grid">assemble_eigenfunction_grid</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-initialise">initialise</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-assemble">assemble</a>
+      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-delete~9">delete</a>
       <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-select_eigenfunctions_to_save">select_eigenfunctions_to_save</a>
-      <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-eigenfunctions_clean">eigenfunctions_clean</a>
     </div>
   </div>
 </div>
@@ -262,336 +198,92 @@ derived quantities.</p>
     <br class="visible-xs visible-sm hidden-md">
 
 
+    
+    
+
+    
     <section>
-    <h2>Variables</h2>
+     <h2>Derived Types</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-eigenfunctions_t"></span><h3>type, public :: <a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>  </h3></div>
+  <div class="panel-body">
+     <h4>Components</h4>
     <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-efs_initialised"></span>logical,</td>
-<td>protected,</td>  <td>save</td><td>::</td>
-  <td><strong>efs_initialised</strong></td><td> =</td><td>.false.</td><td><p>logical to check whether eigenfunctions are initialised</p></td>
+  <td><span class="anchor" id="variable-settings"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>private,</td>  <td>pointer</td><td>::</td>
+  <td><strong>settings</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-derived_efs_initialised"></span>logical,</td>
-<td>protected,</td>  <td>save</td><td>::</td>
-  <td><strong>derived_efs_initialised</strong></td><td> =</td><td>.false.</td><td><p>logical to check whether derived eigenfunctions are initialised</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ef_grid"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-base_efs"></span>type(<a href='../type/base_ef_t.html'>base_ef_t</a>),</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td><td></td><td><p>grid on which the eigenfunctions are assembled</p></td>
+  <td><strong>base_efs</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-ef_eps"></span>real(kind=dp),</td>
-<td>protected,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>ef_eps</strong>(:)</td><td></td><td></td><td><p>scale factor dedicated for eigenfunctions (eigenfunction grid != gauss grid)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ef_deps"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>ef_deps</strong></td><td></td><td></td><td><p>derivative of scale factor</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-derived_ef_names"></span>character,</td>
+  <td><span class="anchor" id="variable-derived_efs"></span>type(<a href='../type/derived_ef_t.html'>derived_ef_t</a>),</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>derived_ef_names</strong>(:)</td><td></td><td></td><td><p>array with the names of the derived eigenfunctions</p></td>
+  <td><strong>derived_efs</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-ef_written_flags"></span>logical,</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>ef_written_flags</strong>(:)</td><td></td><td></td><td><p>logical array containing flags for written eigenfunctions</p></td>
+  <td><strong>ef_written_flags</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-ef_written_idxs"></span>integer,</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>ef_written_idxs</strong>(:)</td><td></td><td></td><td><p>integer array containing indices for written eigenfunctions</p></td>
+  <td><strong>ef_written_idxs</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-base_eigenfunctions"></span>type(<a href='../type/ef_type.html'>ef_type</a>),</td>
+  <td><span class="anchor" id="variable-ef_grid"></span>real(kind=dp),</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>base_eigenfunctions</strong>(:)</td><td></td><td></td><td><p>array with base eigenfunctions</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-derived_eigenfunctions"></span>type(<a href='../type/ef_type.html'>ef_type</a>),</td>
-<td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>derived_eigenfunctions</strong>(:)</td><td></td><td></td><td><p>array with derived eigenfunctions</p></td>
+  <td><strong>ef_grid</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
 
-    </section>
-    <br>
-    
-    
-    <section>
-   <h2>Interfaces</h2>
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-initialise_base_eigenfunctions"></span><h3>interface   </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module module subroutine initialise_base_eigenfunctions(nb_eigenfuncs, state_vector)   <a href='../proc/initialise_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-</h3>    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>nb_eigenfuncs</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>state_vector</strong>(:)</td><td></td>
-</tr>
-</tbody>
-</table>
-
-
-    </li>
-  </ul>
-</div>
-
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-initialise_derived_eigenfunctions"></span><h3>interface   </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module module subroutine initialise_derived_eigenfunctions(nb_eigenfuncs)   <a href='../proc/initialise_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-</h3>    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>nb_eigenfuncs</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-
-    </li>
-  </ul>
-</div>
-
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-calculate_base_eigenfunctions"></span><h3>interface   </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module module subroutine calculate_base_eigenfunctions(settings, right_eigenvectors)   <a href='../proc/calculate_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-</h3>    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>complex(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>right_eigenvectors</strong>(:,:)</td><td></td>
-</tr>
-</tbody>
-</table>
-
-
-    </li>
-  </ul>
-</div>
-
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-calculate_derived_eigenfunctions"></span><h3>interface   </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module module subroutine calculate_derived_eigenfunctions(settings, right_eigenvectors)   <a href='../proc/calculate_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-</h3>    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>complex(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>right_eigenvectors</strong>(:,:)</td><td></td>
-</tr>
-</tbody>
-</table>
-
-
-    </li>
-  </ul>
-</div>
-
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-assemble_eigenfunction"></span><h3>interface   </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module module function assemble_eigenfunction(base_ef, eigenvector, settings, derivative_order) result(assembled_ef)   <a href='../proc/assemble_eigenfunction.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-</h3>    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/ef_type.html'>ef_type</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>base_ef</strong></td><td><p>the base eigenfunction at the current position in the eigenfunction array</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>complex(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>eigenvector</strong>(:)</td><td><p>the eigenvector for the eigenvalue under consideration</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td><p>the dimensions object</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>derivative_order</strong></td><td><p>derivative order of the eigenfunction, defaults to 0</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>complex(kind=dp)(settings%grid%get_ef_gridpts())</small></h4>  <p>the assembled eigenfunction (not yet transformed to "actual" values)</p>
-
-    </li>
-  </ul>
-</div>
-
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-retransform_eigenfunction"></span><h3>interface   </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module module subroutine retransform_eigenfunction(name, eigenfunction)   <a href='../proc/retransform_eigenfunction.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-</h3>    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>name</strong></td><td><p>name of the current eigenfunction</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>complex(kind=dp),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>eigenfunction</strong>(:)</td><td><p>the current eigenfunction, transformed on exit if applicable</p></td>
-</tr>
-</tbody>
-</table>
-
-
-    </li>
-  </ul>
-</div>
-
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-clean_derived_eigenfunctions"></span><h3>interface   </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>private module module subroutine clean_derived_eigenfunctions()   <a href='../proc/clean_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-</h3>    
-<h4>Arguments</h4>      <em>None</em>
-
-    </li>
-  </ul>
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+       <tr><td>procedure, public :: <strong><a href='../type/eigenfunctions_t.html#boundprocedure-initialise'>initialise</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/eigenfunctions_t.html#boundprocedure-assemble'>assemble</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/eigenfunctions_t.html#boundprocedure-delete~9'>delete</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, private :: <strong><a href='../type/eigenfunctions_t.html#boundprocedure-select_eigenfunctions_to_save'>select_eigenfunctions_to_save</a></strong>  </td>
+       <td></td></tr>
+       </tbody>
+       </table>
+  </div>
 </div>
 
     </section>
   <br>
-
-    
     
  
     <section>
     <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-retrieve_eigenfunctions"></span><h3>public function <a href='../proc/retrieve_eigenfunctions.html'>retrieve_eigenfunctions</a>(name, state_vector) result(eigenfunctions)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-new_eigenfunctions"></span><h3>public function <a href='../proc/new_eigenfunctions.html'>new_eigenfunctions</a>(settings) result(eigenfunctions)</h3></div>
   <div class="panel-body">
-       
-<p>Returns the full set of eigenfunctions corresponding to the given eigenfunction
-name.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>name</strong></td><td><p>name of the eigenfunction to retrieve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>state_vector</strong>(:)</td><td><p>the state vector to use for the eigenfunctions</p></td>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout),</td>
+  <td></td>  <td>target</td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>type(<a href='../type/ef_type.html'>ef_type</a>)</small></h4>  <p>the eigenfunctions corresponding to the given name</p>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-retrieve_eigenfunction_from_index"></span><h3>public function <a href='../proc/retrieve_eigenfunction_from_index.html'>retrieve_eigenfunction_from_index</a>(name, state_vector, ef_index) result(eigenfunction)</h3></div>
-  <div class="panel-body">
-       
-<p>Retrieves a single eigenfunction based on its index in the attribute
-of the main array. For example, if name equals "rho" and ef_idx equals 2
-then this routine returns the quantities attribute evaluated at index 2
-for the "rho" eigenfunctions.
-</p><a href="../proc/retrieve_eigenfunction_from_index.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>name</strong></td><td><p>name of the eigenfunction to retrieve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>state_vector</strong>(:)</td><td><p>the state vector to use for the eigenfunctions</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_index</strong></td><td><p>index of the eigenfunction to retrieve</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  <p>the eigenfunction corresponding to the given name and index</p>
+<h4>Return Value <small>type(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>)</small></h4>  
 
   </div>
   </div>
@@ -599,9 +291,7 @@ for the "rho" eigenfunctions.
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-eigenvalue_is_inside_subset_radius"></span><h3>private elemental function <a href='../proc/eigenvalue_is_inside_subset_radius.html'>eigenvalue_is_inside_subset_radius</a>(eigenvalue, radius, center)</h3></div>
   <div class="panel-body">
-       
-<p>Checks if a specific eigenvalue is within the provided subset radius.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -609,24 +299,45 @@ for the "rho" eigenfunctions.
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>eigenvalue</strong></td><td><p>complex value/array to check</p></td>
+  <td><strong>eigenvalue</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>radius</strong></td><td><p>radius of the subset</p></td>
+  <td><strong>radius</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>center</strong></td><td><p>center of the subset</p></td>
+  <td><strong>center</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
 <h4>Return Value <small>logical</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_ef_grid"></span><h3>private pure function <a href='../proc/get_ef_grid.html'>get_ef_grid</a>(settings) result(ef_grid)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp),allocatable, (:)</small></h4>  
 
   </div>
   </div>
@@ -637,27 +348,23 @@ for the "rho" eigenfunctions.
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_eigenfunctions"></span><h3>public subroutine <a href='../proc/initialise_eigenfunctions.html'>initialise_eigenfunctions</a>(omega, settings)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise"></span><h3>private subroutine <a href='../proc/initialise.html'>initialise</a>(this, omega)</h3></div>
   <div class="panel-body">
-       
-<p>Initialises the eigenfunctions based on an array of eigenvalues.
-Before initialising all arrays we check which subset of eigenvalues, if any,
-needs its eigenfunctions saved.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
+  <td><span class="anchor" ></span>class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>omega</strong>(:)</td><td><p>the array of calculated eigenvalues</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td><p>the settings object</p></td>
+  <td><strong>omega</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>
@@ -667,26 +374,43 @@ needs its eigenfunctions saved.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-calculate_eigenfunctions"></span><h3>public subroutine <a href='../proc/calculate_eigenfunctions.html'>calculate_eigenfunctions</a>(right_eigenvectors, settings)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble"></span><h3>private subroutine <a href='../proc/assemble.html'>assemble</a>(this, right_eigenvectors)</h3></div>
   <div class="panel-body">
-       
-<p>Calculates both the base eigenfunctions and the derived quantities thereof
-based on a 2D array of right eigenvectors.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>right_eigenvectors</strong>(:,:)</td><td></td>
 </tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-delete~9"></span><h3>private pure subroutine <a href='../proc/delete~9.html'>delete</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
 <tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" ></span>class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),</td>
+<td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -696,63 +420,27 @@ based on a 2D array of right eigenvectors.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble_eigenfunction_grid"></span><h3>private subroutine <a href='../proc/assemble_eigenfunction_grid.html'>assemble_eigenfunction_grid</a>(settings)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-select_eigenfunctions_to_save"></span><h3>private pure subroutine <a href='../proc/select_eigenfunctions_to_save.html'>select_eigenfunctions_to_save</a>(this, omega)</h3></div>
   <div class="panel-body">
-       
-<p>Allocates and assembles the eigenfunction grid, checks the corresponding
-scale factor as well.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" ></span>class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),</td>
+<td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-select_eigenfunctions_to_save"></span><h3>private subroutine <a href='../proc/select_eigenfunctions_to_save.html'>select_eigenfunctions_to_save</a>(omega, settings)</h3></div>
-  <div class="panel-body">
-       
-<p>Selects a subset of eigenfunctions to be saved.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>omega</strong>(:)</td><td><p>the array of calculated eigenvalues</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>omega</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>
 
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-eigenfunctions_clean"></span><h3>public subroutine <a href='../proc/eigenfunctions_clean.html'>eigenfunctions_clean</a>()</h3></div>
-  <div class="panel-body">
-       
-<p>Cleaning routine.</p>
-    
-<h4>Arguments</h4>      <em>None</em>
 
   </div>
   </div>

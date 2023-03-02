@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.0% of total for modules and submodules.">309 statements</a>
+    title=" 3.0% of total for modules and submodules.">311 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_output.f08"> Source File</a></li>
   </ul>
@@ -163,10 +163,11 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
+    <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
   </ul>
       </li>
       </ul>
@@ -358,7 +359,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-create_datfile"></span><h3>public subroutine <a href='../proc/create_datfile.html'>create_datfile</a>(settings, eigenvalues, matrix_A, matrix_B, eigenvectors)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-create_datfile"></span><h3>public subroutine <a href='../proc/create_datfile.html'>create_datfile</a>(settings, eigenvalues, matrix_A, matrix_B, eigenvectors, eigenfunctions)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -393,6 +394,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvectors</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>eigenfunctions</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -611,17 +618,17 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_base_eigenfunction_data"></span><h3>private subroutine <a href='../proc/write_base_eigenfunction_data.html'>write_base_eigenfunction_data</a>(settings)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-write_base_eigenfunction_data"></span><h3>private subroutine <a href='../proc/write_base_eigenfunction_data.html'>write_base_eigenfunction_data</a>(eigenfunctions)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>eigenfunctions</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -631,7 +638,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_derived_eigenfunction_data"></span><h3>private subroutine <a href='../proc/write_derived_eigenfunction_data.html'>write_derived_eigenfunction_data</a>(settings)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-write_derived_eigenfunction_data"></span><h3>private subroutine <a href='../proc/write_derived_eigenfunction_data.html'>write_derived_eigenfunction_data</a>(settings, eigenfunctions)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -642,6 +649,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>eigenfunctions</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -651,18 +664,12 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_eigenvector_data"></span><h3>private subroutine <a href='../proc/write_eigenvector_data.html'>write_eigenvector_data</a>(settings, eigenvectors)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-write_eigenvector_data"></span><h3>private subroutine <a href='../proc/write_eigenvector_data.html'>write_eigenvector_data</a>(eigenvectors)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
@@ -677,18 +684,12 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_residual_data"></span><h3>private subroutine <a href='../proc/write_residual_data.html'>write_residual_data</a>(settings, eigenvalues, matrix_A, matrix_B, eigenvectors)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-write_residual_data"></span><h3>private subroutine <a href='../proc/write_residual_data.html'>write_residual_data</a>(eigenvalues, matrix_A, matrix_B, eigenvectors)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
@@ -721,18 +722,12 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_matrix_data"></span><h3>private subroutine <a href='../proc/write_matrix_data.html'>write_matrix_data</a>(settings, matrix_A, matrix_B)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-write_matrix_data"></span><h3>private subroutine <a href='../proc/write_matrix_data.html'>write_matrix_data</a>(matrix_A, matrix_B)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(in)</td>

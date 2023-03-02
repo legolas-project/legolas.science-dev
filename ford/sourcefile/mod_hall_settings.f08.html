@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for source files.">69 statements</a>
+    title=" 0.6% of total for source files.">68 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_hall_settings.f08"> Source File</a></li>
   </ul>
@@ -203,11 +203,11 @@
 <a id="ln-53" name="ln-53" href="#ln-53"></a><span class="w">  </span><span class="k">end function </span><span class="n">is_using_substitution</span>
 <a id="ln-54" name="ln-54" href="#ln-54"></a>
 <a id="ln-55" name="ln-55" href="#ln-55"></a>
-<a id="ln-56" name="ln-56" href="#ln-56"></a><span class="w">  </span><span class="k">pure subroutine </span><span class="n">enable</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">use_hall_substitution</span><span class="p">)</span>
+<a id="ln-56" name="ln-56" href="#ln-56"></a><span class="w">  </span><span class="k">pure subroutine </span><span class="n">enable</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
 <a id="ln-57" name="ln-57" href="#ln-57"></a><span class="w">    </span><span class="k">class</span><span class="p">(</span><span class="n">hall_settings_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
-<a id="ln-58" name="ln-58" href="#ln-58"></a><span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">use_hall_substitution</span>
-<a id="ln-59" name="ln-59" href="#ln-59"></a><span class="w">    </span><span class="n">this</span><span class="p">%</span><span class="n">has_hall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
-<a id="ln-60" name="ln-60" href="#ln-60"></a><span class="w">    </span><span class="n">this</span><span class="p">%</span><span class="n">use_hall_substitution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">use_hall_substitution</span>
+<a id="ln-58" name="ln-58" href="#ln-58"></a><span class="w">    </span><span class="n">this</span><span class="p">%</span><span class="n">has_hall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<a id="ln-59" name="ln-59" href="#ln-59"></a><span class="w">    </span><span class="c">! we always use substitution but keep this for future use</span>
+<a id="ln-60" name="ln-60" href="#ln-60"></a><span class="w">    </span><span class="n">this</span><span class="p">%</span><span class="n">use_hall_substitution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
 <a id="ln-61" name="ln-61" href="#ln-61"></a><span class="w">  </span><span class="k">end subroutine </span><span class="n">enable</span>
 <a id="ln-62" name="ln-62" href="#ln-62"></a>
 <a id="ln-63" name="ln-63" href="#ln-63"></a>

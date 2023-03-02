@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.5% of total for modules and submodules.">152 statements</a>
+    title=" 1.3% of total for modules and submodules.">139 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_matrix_manager.f08"> Source File</a></li>
   </ul>
@@ -113,8 +113,6 @@
       <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-dh_quad">dh_quad</a>
       <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-h_cubic~4">h_cubic</a>
       <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-dh_cubic">dh_cubic</a>
-      <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-factors~2">factors</a>
-      <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-positions~2">positions</a>
     </div>
   </div>
 </div>
@@ -139,7 +137,6 @@
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-build_matrices">build_matrices</a>
-      <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-reset_factor_positions">reset_factor_positions</a>
     </div>
   </div>
 </div>
@@ -158,13 +155,14 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_make_subblock.html'>mod_make_subblock</a></li>
-    <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_build_quadblock.html'>mod_build_quadblock</a></li>
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    <li><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
+    <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
   </ul>
       </li>
       </ul>
@@ -203,8 +201,6 @@
       <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-dh_quad">dh_quad</a>
       <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-h_cubic~4">h_cubic</a>
       <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-dh_cubic">dh_cubic</a>
-      <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-factors~2">factors</a>
-      <a class="list-group-item" href="../module/mod_matrix_manager.html#variable-positions~2">positions</a>
     </div>
   </div>
 </div>
@@ -229,7 +225,6 @@
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-build_matrices">build_matrices</a>
-      <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-reset_factor_positions">reset_factor_positions</a>
     </div>
   </div>
 </div>
@@ -262,16 +257,6 @@
   <td><span class="anchor" id="variable-dh_cubic"></span>real(kind=dp),</td>
 <td>public</td>  <td></td><td>::</td>
   <td><strong>dh_cubic</strong>(4)</td><td></td><td></td><td><p>derivative of cubic basis functions</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-factors~2"></span>complex(kind=dp),</td>
-<td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>factors</strong>(:)</td><td></td><td></td><td><p>array of factors, these are the integrands at every gaussian point</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-positions~2"></span>integer,</td>
-<td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>positions</strong>(:,:)</td><td></td><td></td><td><p>array of positions, governs where factors are placed in the matrices</p></td>
 </tr>
 </tbody>
 </table>
@@ -685,29 +670,6 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td><p>the settings object</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-reset_factor_positions"></span><h3>public subroutine <a href='../proc/reset_factor_positions.html'>reset_factor_positions</a>(new_size)</h3></div>
-  <div class="panel-body">
-       
-<p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
-new size.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>new_size</strong></td><td><p>the new size for the <tt>factors</tt> and <tt>positions</tt> arrays</p></td>
 </tr>
 </tbody>
 </table>

@@ -111,9 +111,10 @@
       <a class="list-group-item" href="../program/legolas.html#variable-matrix_a~15">matrix_A</a>
       <a class="list-group-item" href="../program/legolas.html#variable-matrix_b~15">matrix_B</a>
       <a class="list-group-item" href="../program/legolas.html#variable-timer~2">timer</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-settings~148">settings</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-settings~165">settings</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-eigenfunctions~5">eigenfunctions</a>
       <a class="list-group-item" href="../program/legolas.html#variable-omega~11">omega</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-eigenvecs_right">eigenvecs_right</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-right_eigenvectors~4">right_eigenvectors</a>
     </div>
   </div>
 </div>
@@ -122,7 +123,7 @@
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../program/legolas.html#proc-initialisation">initialisation</a>
-      <a class="list-group-item" href="../program/legolas.html#proc-create_eigenfunctions">create_eigenfunctions</a>
+      <a class="list-group-item" href="../program/legolas.html#proc-get_eigenfunctions">get_eigenfunctions</a>
       <a class="list-group-item" href="../program/legolas.html#proc-cleanup">cleanup</a>
       <a class="list-group-item" href="../program/legolas.html#proc-print_timelog">print_timelog</a>
     </div>
@@ -141,15 +142,16 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_timing.html'>mod_timing</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
     <li><a href='../module/mod_output.html'>mod_output</a></li>
-    <li><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></li>
-    <li><a href='../module/mod_console.html'>mod_console</a></li>
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_solvers.html'>mod_solvers</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_console.html'>mod_console</a></li>
     <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
+    <li><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></li>
+    <li><a href='../module/mod_timing.html'>mod_timing</a></li>
+    <li><a href='../module/mod_solvers.html'>mod_solvers</a></li>
   </ul>
       </li>
       </ul>
@@ -172,9 +174,10 @@ KU Leuven, Belgium.</p>
       <a class="list-group-item" href="../program/legolas.html#variable-matrix_a~15">matrix_A</a>
       <a class="list-group-item" href="../program/legolas.html#variable-matrix_b~15">matrix_B</a>
       <a class="list-group-item" href="../program/legolas.html#variable-timer~2">timer</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-settings~148">settings</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-settings~165">settings</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-eigenfunctions~5">eigenfunctions</a>
       <a class="list-group-item" href="../program/legolas.html#variable-omega~11">omega</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-eigenvecs_right">eigenvecs_right</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-right_eigenvectors~4">right_eigenvectors</a>
     </div>
   </div>
 </div>
@@ -183,7 +186,7 @@ KU Leuven, Belgium.</p>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../program/legolas.html#proc-initialisation">initialisation</a>
-      <a class="list-group-item" href="../program/legolas.html#proc-create_eigenfunctions">create_eigenfunctions</a>
+      <a class="list-group-item" href="../program/legolas.html#proc-get_eigenfunctions">get_eigenfunctions</a>
       <a class="list-group-item" href="../program/legolas.html#proc-cleanup">cleanup</a>
       <a class="list-group-item" href="../program/legolas.html#proc-print_timelog">print_timelog</a>
     </div>
@@ -215,9 +218,14 @@ KU Leuven, Belgium.</p>
   <td><strong>timer</strong></td><td></td><td></td><td><p>timer used by the whole program</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-settings~148"></span>type(<a href='../type/settings_t.html'>settings_t</a>)</td>
+  <td><span class="anchor" id="variable-settings~165"></span>type(<a href='../type/settings_t.html'>settings_t</a>)</td>
   <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td><td></td><td><p>dedicated settings type</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-eigenfunctions~5"></span>type(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>)</td>
+  <td></td><td>::</td>
+  <td><strong>eigenfunctions</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-omega~11"></span>complex(kind=dp),</td>
@@ -225,9 +233,9 @@ KU Leuven, Belgium.</p>
   <td><strong>omega</strong>(:)</td><td></td><td></td><td><p>array with eigenvalues</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-eigenvecs_right"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-right_eigenvectors~4"></span>complex(kind=dp),</td>
   <td>allocatable</td><td>::</td>
-  <td><strong>eigenvecs_right</strong>(:,:)</td><td></td><td></td><td><p>matrix with right eigenvectors, column indices correspond to omega indices</p></td>
+  <td><strong>right_eigenvectors</strong>(:,:)</td><td></td><td></td><td><p>matrix with right eigenvectors, column indices correspond to omega indices</p></td>
 </tr>
 </tbody>
 </table>
@@ -257,7 +265,7 @@ and eigenfunctions are initialised and the equilibrium is set.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-create_eigenfunctions"></span><h3>subroutine <a href='../proc/create_eigenfunctions.html'>create_eigenfunctions</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_eigenfunctions"></span><h3>subroutine <a href='../proc/get_eigenfunctions.html'>get_eigenfunctions</a>()</h3></div>
   <div class="panel-body">
        
 <p>Initialises and calculates the eigenfunctions if requested.</p>

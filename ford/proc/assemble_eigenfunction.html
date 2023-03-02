@@ -72,7 +72,7 @@
     <div class="container">
   <div class="row">
     <h1>assemble_eigenfunction
-      <small>Module Procedure</small>
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,13 +81,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">20 statements</a>
+    title=" 0.2% of total for procedures.">24 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/smod_ef_operations.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_ef_assembly.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/smod_ef_operations.f08.html'>smod_ef_operations.f08</a></li>
-     <li><a href='../module/smod_ef_operations.html'>smod_ef_operations</a></li>
+     <li><a href='../sourcefile/mod_ef_assembly.f08.html'>mod_ef_assembly.f08</a></li>
+     <li><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></li>
      <li class="active">assemble_eigenfunction</li>
   </ol>
 </div>
@@ -113,47 +113,55 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure assemble_eigenfunction <small>module module function assemble_eigenfunction(base_ef, eigenvector, settings, derivative_order) result(assembled_ef)</small>   <a href='../interface/assemble_eigenfunction.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
-</h2>
+    <h2>public function assemble_eigenfunction(settings, ef_name, ef_grid, state_vector_index, eigenvector, derivative_order) result(assembled_ef)</h2>
     
 
-    <p>This function assembles the eigenfunction corresponding to the given
-eigenvector. Which eigenfunction to assemble is determined from the
-name attribute of the eigenfunction and the derivative order.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-base_ef"></span>type(<a href='../type/ef_type.html'>ef_type</a>),</td>
+  <td><span class="anchor" id="variable-settings~82"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>base_ef</strong></td><td><p>the base eigenfunction at the current position in the eigenfunction array</p></td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ef_name~2"></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>ef_name</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ef_grid~4"></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>ef_grid</strong>(:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-state_vector_index"></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector_index</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-eigenvector"></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>eigenvector</strong>(:)</td><td><p>the eigenvector for the eigenvalue under consideration</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-settings~82"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td><p>the dimensions object</p></td>
+  <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-derivative_order"></span>integer,</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>derivative_order</strong></td><td><p>derivative order of the eigenfunction, defaults to 0</p></td>
+  <td><strong>derivative_order</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
    <h3>Return Value <small><span class="anchor" id="variable-assembled_ef"></span>complex(kind=dp)(settings%grid%get_ef_gridpts())</small></h3>
-    <p>the assembled eigenfunction (not yet transformed to "actual" values)</p>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

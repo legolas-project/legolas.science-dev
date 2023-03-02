@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.3% of total for modules and submodules.">138 statements</a>
+    title=" 0.6% of total for modules and submodules.">65 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_resistive_matrix.f08"> Source File</a></li>
   </ul>
@@ -105,15 +105,6 @@
     <div id="sidebar">
   <h3>Contents</h3>
  
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
-  <div id="funcs-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/smod_resistive_matrix.html#proc-get_r_operator">get_R_operator</a>
-      <a class="list-group-item" href="../module/smod_resistive_matrix.html#proc-get_deta">get_deta</a>
-    </div>
-  </div>
-</div>
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-0">Module Procedures</a></h3></div>
   <div id="modprocs-0" class="panel-collapse collapse">
@@ -155,15 +146,6 @@
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
-  <div id="funcs-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/smod_resistive_matrix.html#proc-get_r_operator">get_R_operator</a>
-      <a class="list-group-item" href="../module/smod_resistive_matrix.html#proc-get_deta">get_deta</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-1">Module Procedures</a></h3></div>
   <div id="modprocs-1" class="panel-collapse collapse">
     <div class="list-group">
@@ -181,70 +163,6 @@
 
     
     
- 
-    <section>
-    <h2>Functions</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_operator"></span><h3>function <a href='../proc/get_r_operator.html'>get_R_operator</a>(gauss_idx, which) result(Roperator)</h3></div>
-  <div class="panel-body">
-       
-<p>Calculates the <script type="math/tex; mode=display">\boldsymbol{\mathcal{R}}</script> operator, given as
-<script type="math/tex; mode=display">
-\boldsymbol{\mathcal{R}} =
-     \left(\frac{\varepsilon'}{\varepsilon}\eta_0' \pm \eta_0\right)
-</script>
-</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>gauss_idx</strong></td><td><p>current index in the Gaussian grid</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>which</strong></td><td><p>which operator to calculate, <tt>"plus"</tt> or <tt>"minus"</tt></p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)</small></h4>  <p>the R operator on return</p>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_deta"></span><h3>function <a href='../proc/get_deta.html'>get_deta</a>(gauss_idx) result(deta)</h3></div>
-  <div class="panel-body">
-       
-<p>Calculates the total derivative of <script type="math/tex; mode=display">\eta</script>, given as
-<script type="math/tex; mode=display"> \eta_0(r, T)' = \frac{d\eta_0}{dr} + \frac{dT_0}{dr}\frac{d\eta_0}{dT} </script>
-</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>gauss_idx</strong></td><td><p>current intex in the Gaussian grid</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)</small></h4>  <p>full eta derivative on return</p>
-
-  </div>
-  </div>
-
-    </section>
-    <br>
 
     
     
