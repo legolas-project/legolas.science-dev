@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pylbo.visualisation.modes.mode_figure &mdash; Pylbo develop documentation</title>
@@ -12,10 +12,8 @@
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-        <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -31,14 +29,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../../index.html" class="icon icon-home"> Pylbo
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            Pylbo
           </a>
               <div class="version">
                 1.1.3 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -87,7 +89,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../../index.html">API Reference</a></li>
           <li class="breadcrumb-item"><a href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo</span></code></a></li>
           <li class="breadcrumb-item"><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a></li>
@@ -109,10 +111,6 @@
 <section id="classes">
 <h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.modes.mode_figure.ModeFigure" title="pylbo.visualisation.modes.mode_figure.ModeFigure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModeFigure</span></code></a></p></td>
 <td><p>Main class to hold the figure, axes and colorbar for eigenmode visualisations.</p></td>
@@ -125,7 +123,7 @@
 <dd><p>Bases: <a class="reference internal" href="../../figure_window/index.html#pylbo.visualisation.figure_window.FigureWindow" title="pylbo.visualisation.figure_window.FigureWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pylbo.visualisation.figure_window.FigureWindow</span></code></a></p>
 <p>Main class to hold the figure, axes and colorbar for eigenmode visualisations.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>]</em>) – The size of the figure.</p></li>
 <li><p><strong>data</strong> (<a class="reference internal" href="../mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData"><em>ModeVisualisationData</em></a>) – The data used for eigenmode visualisations.</p></li>
@@ -137,8 +135,8 @@
 <span class="sig-name descname"><span class="pre">fig</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.fig" title="Permalink to this definition"></a></dt>
 <dd><p>The figure.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.6.3)">matplotlib.figure.Figure</a></p>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.7.0)">matplotlib.figure.Figure</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -148,8 +146,8 @@
 <span class="sig-name descname"><span class="pre">axes</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.axes" title="Permalink to this definition"></a></dt>
 <dd><p>The axes.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a>, <a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)">matplotlib.axes.Axes</a>]</p>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a>, <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)">matplotlib.axes.Axes</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -159,8 +157,8 @@
 <span class="sig-name descname"><span class="pre">cbar</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.cbar" title="Permalink to this definition"></a></dt>
 <dd><p>The colorbar.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/colorbar_api.html#matplotlib.colorbar.Colorbar" title="(in Matplotlib v3.6.3)">matplotlib.colorbar.Colorbar</a></p>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/colorbar_api.html#matplotlib.colorbar.Colorbar" title="(in Matplotlib v3.7.0)">matplotlib.colorbar.Colorbar</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -170,8 +168,8 @@
 <span class="sig-name descname"><span class="pre">cbar_ax</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.cbar_ax" title="Permalink to this definition"></a></dt>
 <dd><p>The axes for the colorbar.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)">matplotlib.axes.Axes</a></p>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)">matplotlib.axes.Axes</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -181,7 +179,7 @@
 <span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.data" title="Permalink to this definition"></a></dt>
 <dd><p>Data object containing all data associated with the selected eigenmode.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="../mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData">ModeVisualisationData</a></p>
 </dd>
 </dl>
@@ -192,7 +190,7 @@
 <span class="sig-name descname"><span class="pre">u1_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.u1_data" title="Permalink to this definition"></a></dt>
 <dd><p>The data for the <span class="math notranslate nohighlight">\(u_1\)</span> coordinate.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
@@ -203,7 +201,7 @@
 <span class="sig-name descname"><span class="pre">u2_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.u2_data" title="Permalink to this definition"></a></dt>
 <dd><p>The data for the <span class="math notranslate nohighlight">\(u_2\)</span> coordinate.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Union[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>, np.ndarray]</p>
 </dd>
 </dl>
@@ -214,7 +212,7 @@
 <span class="sig-name descname"><span class="pre">u3_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.u3_data" title="Permalink to this definition"></a></dt>
 <dd><p>The data for the <span class="math notranslate nohighlight">\(u_3\)</span> coordinate.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Union[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>, np.ndarray]</p>
 </dd>
 </dl>
@@ -225,7 +223,7 @@
 <span class="sig-name descname"><span class="pre">ef_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.ef_data" title="Permalink to this definition"></a></dt>
 <dd><p>The data for the eigenfunction.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a>]</p>
 </dd>
 </dl>
@@ -236,7 +234,7 @@
 <span class="sig-name descname"><span class="pre">time_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.time_data" title="Permalink to this definition"></a></dt>
 <dd><p>The data for the time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Union[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>, np.ndarray]</p>
 </dd>
 </dl>
@@ -247,8 +245,8 @@
 <span class="sig-name descname"><span class="pre">omega_txt</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.omega_txt" title="Permalink to this definition"></a></dt>
 <dd><p>The text for the <span class="math notranslate nohighlight">\(\omega\)</span> label.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/text_api.html#matplotlib.text.Text" title="(in Matplotlib v3.6.3)">matplotlib.text.Text</a></p>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/text_api.html#matplotlib.text.Text" title="(in Matplotlib v3.7.0)">matplotlib.text.Text</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -258,8 +256,8 @@
 <span class="sig-name descname"><span class="pre">k2k3_txt</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.k2k3_txt" title="Permalink to this definition"></a></dt>
 <dd><p>The text for the <span class="math notranslate nohighlight">\(k_2-k_3\)</span> label.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/text_api.html#matplotlib.text.Text" title="(in Matplotlib v3.6.3)">matplotlib.text.Text</a></p>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/text_api.html#matplotlib.text.Text" title="(in Matplotlib v3.7.0)">matplotlib.text.Text</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -269,8 +267,8 @@
 <span class="sig-name descname"><span class="pre">u2u3_txt</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.u2u3_txt" title="Permalink to this definition"></a></dt>
 <dd><p>The text for the <span class="math notranslate nohighlight">\(u_2-u_3\)</span> label.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/text_api.html#matplotlib.text.Text" title="(in Matplotlib v3.6.3)">matplotlib.text.Text</a></p>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/text_api.html#matplotlib.text.Text" title="(in Matplotlib v3.7.0)">matplotlib.text.Text</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -280,15 +278,15 @@
 <span class="sig-name descname"><span class="pre">t_txt</span></span><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.t_txt" title="Permalink to this definition"></a></dt>
 <dd><p>The text for the time label.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/text_api.html#matplotlib.text.Text" title="(in Matplotlib v3.6.3)">matplotlib.text.Text</a></p>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/text_api.html#matplotlib.text.Text" title="(in Matplotlib v3.7.0)">matplotlib.text.Text</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_figure.ModeFigure.ax">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ax</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)"><span class="pre">matplotlib.axes.Axes</span></a></em><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure.ax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.ax" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ax</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)"><span class="pre">matplotlib.axes.Axes</span></a></em><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure.ax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.ax" title="Permalink to this definition"></a></dt>
 <dd><p>returns: Alias for the axes containing the eigenmode solution view.
 :rtype: matplotlib.axes.Axes</p>
 </dd></dl>
@@ -305,10 +303,10 @@
 <span class="sig-name descname"><span class="pre">_ensure_attr_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure._ensure_attr_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure._ensure_attr_set" title="Permalink to this definition"></a></dt>
 <dd><p>Ensures that a given attribute is set.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>attr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The attribute to check.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – If the attribute is not set.</p>
 </dd>
 </dl>
@@ -319,13 +317,13 @@
 <span class="sig-name descname"><span class="pre">_check_if_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure._check_if_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure._check_if_number" title="Permalink to this definition"></a></dt>
 <dd><p>Checks if a given value is a number.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>val</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – The value to check.</p></li>
 <li><p><strong>attr_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the value.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – If the value is not a number.</p>
 </dd>
 </dl>
@@ -336,13 +334,13 @@
 <span class="sig-name descname"><span class="pre">_check_if_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure._check_if_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure._check_if_array" title="Permalink to this definition"></a></dt>
 <dd><p>Checks is a given value is a numpy array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>array</strong> (<em>np.ndarray</em>) – The value to check.</p></li>
 <li><p><strong>attr_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the value.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – If the value is not a numpy array.</p>
 </dd>
 </dl>
@@ -358,10 +356,10 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_figure.ModeFigure.calculate_mode_solution">
-<span class="sig-name descname"><span class="pre">calculate_mode_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">efdata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure.calculate_mode_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.calculate_mode_solution" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">calculate_mode_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">efdata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure.calculate_mode_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.calculate_mode_solution" title="Permalink to this definition"></a></dt>
 <dd><p>Calculates the mode solution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>efdata</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) – The data for the eigenfunction. This should be a dictionary with the
 keys <code class="docutils literal notranslate"><span class="pre">'ef'</span></code> and <code class="docutils literal notranslate"><span class="pre">'omega'</span></code>, with <code class="docutils literal notranslate"><span class="pre">'ef'``containing</span> <span class="pre">the</span> <span class="pre">eigenfunction</span>
@@ -371,10 +369,10 @@ keys <code class="docutils literal notranslate"><span class="pre">'ef'</span></c
 <li><p><strong>t</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>np.ndarray</em><em>]</em>) – The data for the time.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The mode solution.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
@@ -408,13 +406,13 @@ keys <code class="docutils literal notranslate"><span class="pre">'ef'</span></c
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_figure.ModeFigure._create_cbar_axes">
-<span class="sig-name descname"><span class="pre">_create_cbar_axes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)"><span class="pre">matplotlib.axes.Axes</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure._create_cbar_axes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure._create_cbar_axes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_create_cbar_axes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)"><span class="pre">matplotlib.axes.Axes</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure._create_cbar_axes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure._create_cbar_axes" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The axes for the colorbar.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)">matplotlib.axes.Axes</a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)">matplotlib.axes.Axes</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -439,9 +437,9 @@ keys <code class="docutils literal notranslate"><span class="pre">'ef'</span></c
 <span class="sig-name descname"><span class="pre">add_omega_txt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure.add_omega_txt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.add_omega_txt" title="Permalink to this definition"></a></dt>
 <dd><p>Creates a textbox on the axis with the value of the eigenfrequency.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)"><em>Axes</em></a>) – The axes to use for the textbox.</p></li>
+<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)"><em>Axes</em></a>) – The axes to use for the textbox.</p></li>
 <li><p><strong>**kwargs</strong> – Additional keyword arguments to pass to <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_axis_label()</span></code>.</p></li>
 </ul>
 </dd>
@@ -453,9 +451,9 @@ keys <code class="docutils literal notranslate"><span class="pre">'ef'</span></c
 <span class="sig-name descname"><span class="pre">add_k2k3_txt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure.add_k2k3_txt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.add_k2k3_txt" title="Permalink to this definition"></a></dt>
 <dd><p>Creates a textbox on the figure with the value of the k2 and k3 coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)"><em>Axes</em></a>) – The axes to use for the textbox.</p></li>
+<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)"><em>Axes</em></a>) – The axes to use for the textbox.</p></li>
 <li><p><strong>**kwargs</strong> – Additional keyword arguments to pass to <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_axis_label()</span></code>.</p></li>
 </ul>
 </dd>
@@ -468,9 +466,9 @@ keys <code class="docutils literal notranslate"><span class="pre">'ef'</span></c
 <dd><p>Creates a textbox on the figure with the value of the <span class="math notranslate nohighlight">\(u_2-u_3\)</span>
 coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)"><em>Axes</em></a>) – The axes to use for the textbox.</p></li>
+<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)"><em>Axes</em></a>) – The axes to use for the textbox.</p></li>
 <li><p><strong>**kwargs</strong> – Additional keyword arguments to pass to <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_axis_label()</span></code>.</p></li>
 </ul>
 </dd>
@@ -484,14 +482,14 @@ coordinates.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.modes.mode_figure.ModeFigure._create_figure_layout">
-<span class="sig-name descname"><span class="pre">_create_figure_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.6.3)"><span class="pre">matplotlib.figure.Figure</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure._create_figure_layout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure._create_figure_layout" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_create_figure_layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.7.0)"><span class="pre">matplotlib.figure.Figure</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure._create_figure_layout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure._create_figure_layout" title="Permalink to this definition"></a></dt>
 <dd><p>Create the figure layout for the visualisation. Two panels are created:
 the top one for the eigenfunction and the bottom one for the visualisation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>]</em>) – The size of the figure.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>fig</strong> (<em>~matplotlib.figure.Figure</em>) – The figure to use for the visualisation.</p></li>
 <li><p><strong>axes</strong> (<em>dict</em>) – The axes to use for the visualisation.</p></li>
@@ -506,7 +504,7 @@ the top one for the eigenfunction and the bottom one for the visualisation.</p>
 <span class="sig-name descname"><span class="pre">create_animation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">times</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/mode_figure.html#ModeFigure.create_animation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.mode_figure.ModeFigure.create_animation" title="Permalink to this definition"></a></dt>
 <dd><p>Creates an animation of the eigenmode solution over a given time interval.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>times</strong> (<em>np.ndarray</em>) – The times at which to create the animation.</p></li>
 <li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The filename of the animation.</p></li>

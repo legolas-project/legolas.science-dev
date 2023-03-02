@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">23 statements</a>
+    title=" 0.2% of total for procedures.">19 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_arpack_type.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public function new_arpack_config(evpdim, mode, bmat, which, nev, tolerance, maxiter, ncv) result(arpack_config)</h2>
+    <h2>public function new_arpack_config(evpdim, mode, bmat, solver_settings) result(arpack_config)</h2>
     
 
     <p>Constructor for a new ARPACK configuration based on the dimension of the eigenvalue
@@ -143,34 +143,10 @@ variables and allocates work arrays to be used when calling the solvers.</p>
   <td><strong>bmat</strong></td><td><p>type of the matrix B</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-which~2"></span>character(len=2),</td>
+  <td><span class="anchor" id="variable-solver_settings"></span>type(<a href='../type/solvers_t.html'>solvers_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>which</strong></td><td><p>which eigenvalues to calculate</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-nev~2"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>nev</strong></td><td><p>number of eigenvalues to calculate</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-tolerance~2"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>tolerance</strong></td><td><p>relative accuracy (stopping criteria) for eigenvalues</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-maxiter~2"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>maxiter</strong></td><td><p>maximum number of iterations, defaults to 10*evpdim</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ncv~2"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ncv</strong></td><td><p>number of Arnoldi basis vectors</p></td>
+  <td><strong>solver_settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>

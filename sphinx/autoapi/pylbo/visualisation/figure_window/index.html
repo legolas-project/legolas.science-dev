@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pylbo.visualisation.figure_window &mdash; Pylbo develop documentation</title>
@@ -12,10 +12,8 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
@@ -30,14 +28,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../index.html" class="icon icon-home"> Pylbo
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Pylbo
           </a>
               <div class="version">
                 1.1.3 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -86,7 +88,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../index.html">API Reference</a></li>
           <li class="breadcrumb-item"><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo</span></code></a></li>
           <li class="breadcrumb-item"><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a></li>
@@ -107,10 +109,6 @@
 <section id="classes">
 <h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.figure_window.FigureWindow" title="pylbo.visualisation.figure_window.FigureWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FigureWindow</span></code></a></p></td>
 <td><p>Class to handle the top-level creation of figure windows. Assigns unique figure</p></td>
@@ -122,12 +120,12 @@
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.visualisation.figure_window.FigureWindow">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.figure_window.</span></span><span class="sig-name descname"><span class="pre">FigureWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.6.3)"><span class="pre">matplotlib.figure.Figure</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#FigureWindow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.figure_window.</span></span><span class="sig-name descname"><span class="pre">FigureWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.7.0)"><span class="pre">matplotlib.figure.Figure</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#FigureWindow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow" title="Permalink to this definition"></a></dt>
 <dd><p>Class to handle the top-level creation of figure windows. Assigns unique figure
 ids and takes care of figure, axes, and gridspec management.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>fig</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.6.3)"><em>Figure</em></a>) – The figure object.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fig</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.7.0)"><em>Figure</em></a>) – The figure object.</p>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -135,8 +133,8 @@ ids and takes care of figure, axes, and gridspec management.</p>
 <span class="sig-name descname"><span class="pre">fig</span></span><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow.fig" title="Permalink to this definition"></a></dt>
 <dd><p>The figure object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.6.3)"><em>Figure</em></a></p>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.7.0)"><em>Figure</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -146,7 +144,7 @@ ids and takes care of figure, axes, and gridspec management.</p>
 <span class="sig-name descname"><span class="pre">figsize</span></span><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow.figsize" title="Permalink to this definition"></a></dt>
 <dd><p>The size of the figure in inches.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a>]</p>
 </dd>
 </dl>
@@ -157,7 +155,7 @@ ids and takes care of figure, axes, and gridspec management.</p>
 <span class="sig-name descname"><span class="pre">figure_id</span></span><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow.figure_id" title="Permalink to this definition"></a></dt>
 <dd><p>The unique figure id.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -176,16 +174,16 @@ ids and takes care of figure, axes, and gridspec management.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.figure_window.FigureWindow.create_default_figure">
-<span class="sig-name descname"><span class="pre">create_default_figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figlabel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.6.3)"><span class="pre">matplotlib.figure.Figure</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)"><span class="pre">matplotlib.axes.Axes</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#FigureWindow.create_default_figure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow.create_default_figure" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_default_figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figlabel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.7.0)"><span class="pre">matplotlib.figure.Figure</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)"><span class="pre">matplotlib.axes.Axes</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#FigureWindow.create_default_figure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow.create_default_figure" title="Permalink to this definition"></a></dt>
 <dd><p>Creates a default figure with a 1x1 subplot.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>figlabel</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The label of the figure.</p></li>
 <li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>]</em>) – The size of the figure.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>fig</strong> (<em>~matplotlib.figure.Figure</em>) – The figure on which to draw.</p></li>
 <li><p><strong>ax</strong> (<em>~matplotlib.axes.Axes</em>) – The axes on which to draw.</p></li>
@@ -200,13 +198,13 @@ ids and takes care of figure, axes, and gridspec management.</p>
 <span class="sig-name descname"><span class="pre">_generate_figure_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figlabel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#FigureWindow._generate_figure_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow._generate_figure_id" title="Permalink to this definition"></a></dt>
 <dd><p>Generates a unique figure id.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>figlabel</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The label of the figure.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>figure_id</strong> – The unique figure id of the form “figure_type-x” where x is an integer.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -220,16 +218,16 @@ ids and takes care of figure, axes, and gridspec management.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.figure_window.FigureWindow.add_subplot_axes">
-<span class="sig-name descname"><span class="pre">add_subplot_axes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)"><span class="pre">matplotlib.axes.Axes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_tight_layout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#FigureWindow.add_subplot_axes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow.add_subplot_axes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_subplot_axes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)"><span class="pre">matplotlib.axes.Axes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">share</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_tight_layout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#FigureWindow.add_subplot_axes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow.add_subplot_axes" title="Permalink to this definition"></a></dt>
 <dd><p>Adds a new subplot to a given matplotlib subplot, essentially “splitting” the
 axis into two. Position and placement depend on the loc argument.
 When called on a more complex subplot layout the overall gridspec remains
 untouched, only the <cite>ax</cite> object has its gridspec modified.
 On return, <cite>tight_layout()</cite> is called by default to prevent overlapping labels.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)"><em>Axes</em></a>) – The axes object, this will be “split” and a new axes will be added
+<li><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)"><em>Axes</em></a>) – The axes object, this will be “split” and a new axes will be added
 to the figure.</p></li>
 <li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The location of the new axes. Should be one of “left”, “right”, “top”,
 “bottom”. Defaults to “right”.</p></li>
@@ -237,14 +235,14 @@ to the figure.</p></li>
 <li><p><strong>apply_tight_layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Whether to call <cite>tight_layout()</cite> on the figure before return.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – If the loc argument is invalid.</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The axes instance that was added.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.3)"><em>Axes</em></a></p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.0)"><em>Axes</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -264,7 +262,7 @@ to the figure.</p></li>
 <span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#FigureWindow.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.FigureWindow.save" title="Permalink to this definition"></a></dt>
 <dd><p>Saves the current figure.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.11)"><em>PathLike</em></a>) – The filename to which the current figure is saved.</p></li>
 <li><p><strong>kwargs</strong> – Default keyword arguments passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">savefig()</span></code>.</p></li>
@@ -283,7 +281,7 @@ to the figure.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.visualisation.figure_window.InteractiveFigureWindow">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.figure_window.</span></span><span class="sig-name descname"><span class="pre">InteractiveFigureWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.6.3)"><span class="pre">matplotlib.figure.Figure</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#InteractiveFigureWindow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.InteractiveFigureWindow" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.figure_window.</span></span><span class="sig-name descname"><span class="pre">InteractiveFigureWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.7.0)"><span class="pre">matplotlib.figure.Figure</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#InteractiveFigureWindow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.InteractiveFigureWindow" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#pylbo.visualisation.figure_window.FigureWindow" title="pylbo.visualisation.figure_window.FigureWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FigureWindow</span></code></a></p>
 <p>Subclass to handle interactivity in the figure windows.</p>
 <dl class="py method">
@@ -308,7 +306,7 @@ to the figure.</p></li>
 <span class="sig-name descname"><span class="pre">make_legend_interactive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">legendhandler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler" title="pylbo.visualisation.legend_handler.LegendHandler"><span class="pre">pylbo.visualisation.legend_handler.LegendHandler</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#InteractiveFigureWindow.make_legend_interactive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.InteractiveFigureWindow.make_legend_interactive" title="Permalink to this definition"></a></dt>
 <dd><p>Makes the legend interactive.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>legendhandler</strong> (<em>LegendHandler</em>) – The legend handler.</p>
 </dd>
 </dl>
@@ -319,7 +317,7 @@ to the figure.</p></li>
 <span class="sig-name descname"><span class="pre">add_eigenfunction_interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">efhandler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface" title="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface"><span class="pre">pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/figure_window.html#InteractiveFigureWindow.add_eigenfunction_interface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.figure_window.InteractiveFigureWindow.add_eigenfunction_interface" title="Permalink to this definition"></a></dt>
 <dd><p>Adds an eigenfunction interface to the figure.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>efhandler</strong> (<em></em>) – </p></li>
 <li><p><strong>EigenfunctionInterface</strong> – The eigenfunction interface.</p></li>

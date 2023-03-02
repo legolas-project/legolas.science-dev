@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.7% of total for modules and submodules.">158 statements</a>
+    title=" 1.6% of total for modules and submodules.">165 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_eigenfunctions.f08"> Source File</a></li>
   </ul>
@@ -174,8 +174,9 @@ derived quantities.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_types.html'>mod_types</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       </ul>
@@ -328,7 +329,7 @@ derived quantities.</p>
   <div class="panel-heading codesum"><span class="anchor" id="interface-initialise_base_eigenfunctions"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine initialise_base_eigenfunctions(nb_eigenfuncs)   <a href='../proc/initialise_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine initialise_base_eigenfunctions(nb_eigenfuncs, state_vector)   <a href='../proc/initialise_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -338,6 +339,12 @@ derived quantities.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>nb_eigenfuncs</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>
@@ -374,11 +381,17 @@ derived quantities.</p>
   <div class="panel-heading codesum"><span class="anchor" id="interface-calculate_base_eigenfunctions"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine calculate_base_eigenfunctions(right_eigenvectors)   <a href='../proc/calculate_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine calculate_base_eigenfunctions(settings, right_eigenvectors)   <a href='../proc/calculate_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
@@ -397,11 +410,17 @@ derived quantities.</p>
   <div class="panel-heading codesum"><span class="anchor" id="interface-calculate_derived_eigenfunctions"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine calculate_derived_eigenfunctions(right_eigenvectors)   <a href='../proc/calculate_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine calculate_derived_eigenfunctions(settings, right_eigenvectors)   <a href='../proc/calculate_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
@@ -420,7 +439,7 @@ derived quantities.</p>
   <div class="panel-heading codesum"><span class="anchor" id="interface-assemble_eigenfunction"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module function assemble_eigenfunction(base_ef, eigenvector, derivative_order) result(assembled_ef)   <a href='../proc/assemble_eigenfunction.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module function assemble_eigenfunction(base_ef, eigenvector, settings, derivative_order) result(assembled_ef)   <a href='../proc/assemble_eigenfunction.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -438,6 +457,12 @@ derived quantities.</p>
   <td><strong>eigenvector</strong>(:)</td><td><p>the eigenvector for the eigenvalue under consideration</p></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>the dimensions object</p></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>integer,</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
@@ -446,7 +471,7 @@ derived quantities.</p>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(ef_gridpts)</small></h4>  <p>the assembled eigenfunction (not yet transformed to "actual" values)</p>
+<h4>Return Value <small>complex(kind=dp)(settings%grid%get_ef_gridpts())</small></h4>  <p>the assembled eigenfunction (not yet transformed to "actual" values)</p>
 
     </li>
   </ul>
@@ -502,7 +527,7 @@ derived quantities.</p>
     <section>
     <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-retrieve_eigenfunctions"></span><h3>public function <a href='../proc/retrieve_eigenfunctions.html'>retrieve_eigenfunctions</a>(name) result(eigenfunctions)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-retrieve_eigenfunctions"></span><h3>public function <a href='../proc/retrieve_eigenfunctions.html'>retrieve_eigenfunctions</a>(name, state_vector) result(eigenfunctions)</h3></div>
   <div class="panel-body">
        
 <p>Returns the full set of eigenfunctions corresponding to the given eigenfunction
@@ -517,6 +542,12 @@ name.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>name</strong></td><td><p>name of the eigenfunction to retrieve</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>the state vector to use for the eigenfunctions</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -526,7 +557,7 @@ name.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-retrieve_eigenfunction_from_index"></span><h3>public function <a href='../proc/retrieve_eigenfunction_from_index.html'>retrieve_eigenfunction_from_index</a>(name, ef_index) result(eigenfunction)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-retrieve_eigenfunction_from_index"></span><h3>public function <a href='../proc/retrieve_eigenfunction_from_index.html'>retrieve_eigenfunction_from_index</a>(name, state_vector, ef_index) result(eigenfunction)</h3></div>
   <div class="panel-body">
        
 <p>Retrieves a single eigenfunction based on its index in the attribute
@@ -545,6 +576,12 @@ for the "rho" eigenfunctions.
   <td><strong>name</strong></td><td><p>name of the eigenfunction to retrieve</p></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>the state vector to use for the eigenfunctions</p></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
@@ -559,7 +596,7 @@ for the "rho" eigenfunctions.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-eigenvalue_is_inside_subset_radius"></span><h3>private elemental function <a href='../proc/eigenvalue_is_inside_subset_radius.html'>eigenvalue_is_inside_subset_radius</a>(eigenvalue)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-eigenvalue_is_inside_subset_radius"></span><h3>private elemental function <a href='../proc/eigenvalue_is_inside_subset_radius.html'>eigenvalue_is_inside_subset_radius</a>(eigenvalue, radius, center)</h3></div>
   <div class="panel-body">
        
 <p>Checks if a specific eigenvalue is within the provided subset radius.</p>
@@ -572,6 +609,18 @@ for the "rho" eigenfunctions.
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvalue</strong></td><td><p>complex value/array to check</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>radius</strong></td><td><p>radius of the subset</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>complex(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>center</strong></td><td><p>center of the subset</p></td>
 </tr>
 </tbody>
 </table>
@@ -587,7 +636,7 @@ for the "rho" eigenfunctions.
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_eigenfunctions"></span><h3>public subroutine <a href='../proc/initialise_eigenfunctions.html'>initialise_eigenfunctions</a>(omega)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_eigenfunctions"></span><h3>public subroutine <a href='../proc/initialise_eigenfunctions.html'>initialise_eigenfunctions</a>(omega, settings)</h3></div>
   <div class="panel-body">
        
 <p>Initialises the eigenfunctions based on an array of eigenvalues.
@@ -603,6 +652,12 @@ needs its eigenfunctions saved.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>omega</strong>(:)</td><td><p>the array of calculated eigenvalues</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>the settings object</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -611,7 +666,7 @@ needs its eigenfunctions saved.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-calculate_eigenfunctions"></span><h3>public subroutine <a href='../proc/calculate_eigenfunctions.html'>calculate_eigenfunctions</a>(right_eigenvectors)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-calculate_eigenfunctions"></span><h3>public subroutine <a href='../proc/calculate_eigenfunctions.html'>calculate_eigenfunctions</a>(right_eigenvectors, settings)</h3></div>
   <div class="panel-body">
        
 <p>Calculates both the base eigenfunctions and the derived quantities thereof
@@ -626,6 +681,12 @@ based on a 2D array of right eigenvectors.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>right_eigenvectors</strong>(:,:)</td><td></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 </tbody>
 </table>
 
@@ -634,19 +695,30 @@ based on a 2D array of right eigenvectors.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble_eigenfunction_grid"></span><h3>private subroutine <a href='../proc/assemble_eigenfunction_grid.html'>assemble_eigenfunction_grid</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble_eigenfunction_grid"></span><h3>private subroutine <a href='../proc/assemble_eigenfunction_grid.html'>assemble_eigenfunction_grid</a>(settings)</h3></div>
   <div class="panel-body">
        
 <p>Allocates and assembles the eigenfunction grid, checks the corresponding
 scale factor as well.</p>
     
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-select_eigenfunctions_to_save"></span><h3>private subroutine <a href='../proc/select_eigenfunctions_to_save.html'>select_eigenfunctions_to_save</a>(omega)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-select_eigenfunctions_to_save"></span><h3>private subroutine <a href='../proc/select_eigenfunctions_to_save.html'>select_eigenfunctions_to_save</a>(omega, settings)</h3></div>
   <div class="panel-body">
        
 <p>Selects a subset of eigenfunctions to be saved.</p>
@@ -659,6 +731,12 @@ scale factor as well.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>omega</strong>(:)</td><td><p>the array of calculated eigenvalues</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>

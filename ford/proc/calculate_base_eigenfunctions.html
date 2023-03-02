@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">12 statements</a>
+    title=" 0.1% of total for procedures.">12 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_base_efs.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure calculate_base_eigenfunctions <small>module module subroutine calculate_base_eigenfunctions(right_eigenvectors)</small>   <a href='../interface/calculate_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    <h2>module procedure calculate_base_eigenfunctions <small>module module subroutine calculate_base_eigenfunctions(settings, right_eigenvectors)</small>   <a href='../interface/calculate_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h2>
     
 
@@ -124,6 +124,12 @@ sets them as attributes for the corresponding types.</p>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" id="variable-settings~80"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" id="variable-right_eigenvectors~2"></span>complex(kind=dp),</td>
 <td>intent(in)</td>

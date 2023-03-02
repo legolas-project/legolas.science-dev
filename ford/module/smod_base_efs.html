@@ -169,7 +169,7 @@ corresponding to the basic state vector variables (rho, v1, v2, etc.)</p>
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_base_eigenfunctions"></span><h3>module procedure <a href='../proc/initialise_base_eigenfunctions.html'>initialise_base_eigenfunctions</a> <small>module module subroutine initialise_base_eigenfunctions(nb_eigenfuncs)</small>   <a href='../interface/initialise_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_base_eigenfunctions"></span><h3>module procedure <a href='../proc/initialise_base_eigenfunctions.html'>initialise_base_eigenfunctions</a> <small>module module subroutine initialise_base_eigenfunctions(nb_eigenfuncs, state_vector)</small>   <a href='../interface/initialise_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
        
@@ -185,6 +185,12 @@ vector indices, allocates the (subset of) eigenfunctions.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>nb_eigenfuncs</strong></td><td></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td></td>
+</tr>
 </tbody>
 </table>
 
@@ -193,7 +199,7 @@ vector indices, allocates the (subset of) eigenfunctions.</p>
   </div>
 
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-calculate_base_eigenfunctions"></span><h3>module procedure <a href='../proc/calculate_base_eigenfunctions.html'>calculate_base_eigenfunctions</a> <small>module module subroutine calculate_base_eigenfunctions(right_eigenvectors)</small>   <a href='../interface/calculate_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-calculate_base_eigenfunctions"></span><h3>module procedure <a href='../proc/calculate_base_eigenfunctions.html'>calculate_base_eigenfunctions</a> <small>module module subroutine calculate_base_eigenfunctions(settings, right_eigenvectors)</small>   <a href='../interface/calculate_base_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
        
@@ -203,6 +209,12 @@ sets them as attributes for the corresponding types.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>

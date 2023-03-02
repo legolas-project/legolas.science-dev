@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">8 statements</a>
+    title=" 0.1% of total for procedures.">9 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_eigenfunctions.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public function retrieve_eigenfunction_from_index(name, ef_index) result(eigenfunction)</h2>
+    <h2>public function retrieve_eigenfunction_from_index(name, state_vector, ef_index) result(eigenfunction)</h2>
     
 
     <p>Retrieves a single eigenfunction based on its index in the attribute
@@ -134,6 +134,12 @@ for the "rho" eigenfunctions.
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>name</strong></td><td><p>name of the eigenfunction to retrieve</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-state_vector~5"></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>the state vector to use for the eigenfunctions</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-ef_index"></span>integer,</td>

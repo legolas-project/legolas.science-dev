@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for modules and submodules.">70 statements</a>
+    title=" 0.7% of total for modules and submodules.">74 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_solvers.f08"> Source File</a></li>
   </ul>
@@ -141,11 +141,12 @@ correct solver based on parfile settings.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
-    <li><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
+    <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
+    <li><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></li>
   </ul>
       </li>
       </ul>
@@ -210,7 +211,7 @@ correct solver based on parfile settings.</p>
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine qr_invert(matrix_A, matrix_B, omega, vr)   <a href='../proc/qr_invert.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine qr_invert(matrix_A, matrix_B, settings, omega, vr)   <a href='../proc/qr_invert.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -226,6 +227,12 @@ correct solver based on parfile settings.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>matrix B</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>settings object</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
@@ -254,7 +261,7 @@ correct solver based on parfile settings.</p>
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine qr_cholesky(matrix_A, matrix_B, omega, vr)   <a href='../proc/qr_cholesky.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine qr_cholesky(matrix_A, matrix_B, settings, omega, vr)   <a href='../proc/qr_cholesky.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -270,6 +277,12 @@ correct solver based on parfile settings.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>matrix B</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>settings object</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
@@ -298,7 +311,7 @@ correct solver based on parfile settings.</p>
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine qz_direct(matrix_A, matrix_B, omega, vr)   <a href='../proc/qz_direct.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine qz_direct(matrix_A, matrix_B, settings, omega, vr)   <a href='../proc/qz_direct.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -314,6 +327,12 @@ correct solver based on parfile settings.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>matrix B</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>settings object</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
@@ -342,7 +361,7 @@ correct solver based on parfile settings.</p>
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine arnoldi(matrix_A, matrix_B, omega, vr)   <a href='../proc/arnoldi.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine arnoldi(matrix_A, matrix_B, settings, omega, vr)   <a href='../proc/arnoldi.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -358,6 +377,12 @@ correct solver based on parfile settings.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>matrix B</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>settings object</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
@@ -386,7 +411,7 @@ correct solver based on parfile settings.</p>
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine inverse_iteration(matrix_A, matrix_B, omega, vr)   <a href='../proc/inverse_iteration.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine inverse_iteration(matrix_A, matrix_B, settings, omega, vr)   <a href='../proc/inverse_iteration.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -402,6 +427,12 @@ correct solver based on parfile settings.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>matrix B</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>settings object</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
@@ -432,7 +463,7 @@ correct solver based on parfile settings.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-solve_evp"></span><h3>public subroutine <a href='../proc/solve_evp.html'>solve_evp</a>(matrix_A, matrix_B, omega, vr)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-solve_evp"></span><h3>public subroutine <a href='../proc/solve_evp.html'>solve_evp</a>(matrix_A, matrix_B, settings, omega, vr)</h3></div>
   <div class="panel-body">
        
 <p>Main subroutine to solve the eigenvalue problem. Depending on the solvelist
@@ -453,6 +484,12 @@ passed in the parfile, different solvers are called.
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>B-matrix</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>settings object</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>

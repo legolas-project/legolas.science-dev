@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for procedures.">63 statements</a>
+    title=" 0.3% of total for procedures.">25 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_input.f08"> Source File</a></li>
   </ul>
@@ -113,34 +113,9 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine read_parfile(parfile)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
+    <h2>public subroutine read_parfile(parfile, settings)</h2>
+    
 
-
-    <p>Reads in the supplied parfile and sets the equilibrium parameters and
-global variables to their specified values.
-</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>The order of the different namelists in the parfile does not matter, this
-         is automatically handled. </p></div>
-<p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if:</p>
-<ul>
-<li>both a density and temperature unit are present in the parfile.</li>
-<li>a <tt>unit_density</tt> is supplied, but no length or magnetic field unit.</li>
-<li>a <tt>unit_temprature</tt> is supplied, but no length or magnetic field unit. </p></div>
-<p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>If <tt>dry_run</tt> is <tt>True</tt>, this automatically sets eigenfunction
-         and matrix saving to <tt>False</tt>, independent of the settings in the parfile! </p></div>
-<p>Start reading namelists, rewind so they can appear out of order</li>
-</ul>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
@@ -150,7 +125,13 @@ global variables to their specified values.
   <td><span class="anchor" id="variable-parfile"></span>character(len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>parfile</strong></td><td><p>the name of the parfile</p></td>
+  <td><strong>parfile</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-settings~110"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>

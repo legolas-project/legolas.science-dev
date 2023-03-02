@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">26 statements</a>
+    title=" 0.3% of total for procedures.">31 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_cooling_curves.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine get_rosner_cooling(T0, lambda_T, dlambda_dT)</h2>
+    <h2>public subroutine get_rosner_cooling(settings, T0, lambda_T, dlambda_dT)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,7 +121,7 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_units.html'>mod_units</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       </ul>
@@ -140,6 +140,12 @@ based on the equilibrium temperature.
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" id="variable-settings~109"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" id="variable-t0~2"></span>real(kind=dp),</td>
 <td>intent(in)</td>

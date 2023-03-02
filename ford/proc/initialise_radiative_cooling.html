@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for procedures.">57 statements</a>
+    title=" 0.6% of total for procedures.">58 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_radiative_cooling.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine initialise_radiative_cooling()</h2>
+    <h2>public subroutine initialise_radiative_cooling(settings)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,7 +121,6 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></li>
   </ul>
@@ -137,8 +136,18 @@ to interpolate the final cooling curve using \p ncool points.
 </p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if the cooling curve is unknown.</p></div>
 
     <h3>Arguments</h3>
-    <em>None</em>
-    <br>
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-settings~106"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

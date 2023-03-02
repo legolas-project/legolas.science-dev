@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">19 statements</a>
+    title=" 0.2% of total for procedures.">16 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_output.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine create_logfile(eigenvalues)</h2>
+    <h2>private subroutine create_logfile(settings, eigenvalues)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,7 +121,6 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
       </li>
@@ -144,7 +143,13 @@ purposes but may come in handy to do some quick inspections on the data.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-eigenvalues~3"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-settings~119"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-eigenvalues~2"></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvalues</strong>(:)</td><td><p>the eigenvalues</p></td>

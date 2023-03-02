@@ -1,237 +1,253 @@
-! =============================================================================
-!> This module handles checking and setting all unit normalisations.
-!! When setting the normalisations, one should always specify a unit length
-!! and a unit magneticfield. The normalisations use a reference value of 2 for plasma beta
-!! as is common practice, such that we can write \(\beta/2 = \mu * p / B^2 = 1 \).
-!! The pressure unit is then calculated as
-!! $$ p_{unit} = \frac{B_{unit}^2}{\mu} $$
-!! Then, if a unit density is specified this fixes the unit temperature and vice-versa,
-!! through use of the ideal gas law
-!! $$ p_{unit} = \mathcal{R}_{specific}T_{unit}\rho_{unit} $$
-!! The other normalisations are then fixed, and are set through
-!! $$ n_{unit} = \frac{\rho_{unit}}{m_p}, ~~~~~~~
-!!    v_{unit} = \frac{B_{unit}}{\sqrt{\mu\rho_{unit}}},  $$
-!! $$ t_{unit} = \frac{L_{unit}}{v_{unit}},  ~~~~~~~~~
-!!    \mathscr{L}_{unit} = \frac{p_{unit}}{t_{unit}n_{unit}^2}, $$
-!! $$ \kappa_{unit} = \frac{\rho_{unit}L_{unit}v_{unit}^3}{T_{unit}} $$
-!! Where the latter two denote the luminosity and thermal conduction normalisations.
-!! @note    The normalisations are only used when conduction, resistivity or radiative cooling
-!!          is included. However, we always set base units for good practice, and take reference
-!!          values of 1 MK, 10 Gauss and <tt>1e9</tt> cm. @endnote
-!! @note    As one can always specify a unit current, the unit resistivity is defined in such
-!!          a way that the normalised resistivity equals 0.1 at 1 MK. @endnote
 module mod_units
-  use mod_global_variables, only: dp, cgs_units
-  use mod_logging, only: log_message, str
+  use mod_global_variables, only: dp
   implicit none
 
   private
 
-  !> length normalisation
-  real(dp), protected   :: unit_length = 1.0d0
-  !> time normalisation
-  real(dp), protected   :: unit_time = 1.0d0
-  !> density normalisation
-  real(dp), protected   :: unit_density = 1.0d0
-  !> velocity normalisation
-  real(dp), protected   :: unit_velocity = 0.0d0
-  !> temperature normalisation
-  real(dp), protected   :: unit_temperature = 1.0d0
-  !> pressure normalisation
-  real(dp), protected   :: unit_pressure = 1.0d0
-  !> magnetic field normalisation
-  real(dp), protected   :: unit_magneticfield = 1.0d0
-  !> numberdensity normalisation
-  real(dp), protected   :: unit_numberdensity = 1.0d0
-  !> cooling function normalisation
-  real(dp), protected   :: unit_lambdaT = 1.0d0
-  !> normalisation for derivative of cooling function with respect to temperature
-  real(dp), protected   :: unit_dlambdaT_dT = 1.0d0
-  !> thermal conduction normalisation
-  real(dp), protected   :: unit_conduction = 1.0d0
-  !> normalisation for d(kappa_perp)/d(rho)
-  real(dp), protected   :: unit_dtc_drho = 1.0d0
-  !> normalisation for d(kappa_perp)/d(T)
-  real(dp), protected   :: unit_dtc_dT = 1.0d0
-  !> normalisation for d(kappa_perp)/d(B^2)
-  real(dp), protected   :: unit_dtc_dB2 = 1.0d0
-  !> resistivity normalisation
-  real(dp), protected   :: unit_resistivity = 1.0d0
-  !> normalisation for d(eta)/d(T)
-  real(dp), protected   :: unit_deta_dT = 1.0d0
-  !> mass normalisation
-  real(dp), protected   :: unit_mass = 1.0d0
-  !> mean molecular weight
-  real(dp), protected   :: mean_molecular_weight = 1.0d0
+  type, public :: units_t
+    logical, private :: units_set
+    logical, private :: cgs
+    logical, private :: based_on_density
+    logical, private :: based_on_temperature
 
+    real(dp), private :: unit_length
+    real(dp), private :: unit_time
+    real(dp), private :: unit_density
+    real(dp), private :: unit_velocity
+    real(dp), private :: unit_temperature
+    real(dp), private :: unit_pressure
+    real(dp), private :: unit_magneticfield
+    real(dp), private :: unit_numberdensity
+    real(dp), private :: unit_mass
+    real(dp), private :: mean_molecular_weight
+    real(dp), private :: unit_resistivity
+    real(dp), private :: unit_lambdaT
+    real(dp), private :: unit_conduction
 
-  !> boolean to check if normalisations are set
-  logical, protected    :: normalisations_are_set = .false.
+  contains
 
-  public  :: check_if_normalisations_set
-  public  :: normalisations_are_set
-  public  :: set_normalisations
-  public  :: set_unit_resistivity
+    procedure, public :: in_cgs
+    procedure, public :: are_set
+    procedure, public :: set_units_from_density
+    procedure, public :: set_units_from_temperature
+    procedure, public :: set_mean_molecular_weight
+    procedure, public :: get_unit_length
+    procedure, public :: get_unit_time
+    procedure, public :: get_unit_density
+    procedure, public :: get_unit_velocity
+    procedure, public :: get_unit_temperature
+    procedure, public :: get_unit_pressure
+    procedure, public :: get_unit_magneticfield
+    procedure, public :: get_unit_numberdensity
+    procedure, public :: get_unit_mass
+    procedure, public :: get_mean_molecular_weight
+    procedure, public :: get_unit_resistivity
+    procedure, public :: get_unit_lambdaT
+    procedure, public :: get_unit_conduction
+    procedure, public :: get_unit_gravity
 
-  public  :: unit_length, unit_time, unit_density, unit_velocity
-  public  :: unit_temperature, unit_pressure, unit_magneticfield
-  public  :: unit_numberdensity, unit_lambdaT, unit_dlambdaT_dT
-  public  :: unit_conduction, unit_dtc_drho, unit_dtc_dT, unit_dtc_dB2
-  public  :: unit_resistivity, unit_deta_dT
-  public  :: mean_molecular_weight
+    procedure, private :: update_dependent_units
+
+  end type units_t
+
+  public :: new_unit_system
 
 contains
 
+  pure function new_unit_system() result(units)
+    type(units_t) :: units
 
-  !> Checks if normalisations are set.
-  !! If normalisations are not set, set them to default values.
-  !! These are 1 MK as unit temperature, 10 Gauss as unit magnetic field and
-  !! <tt>1e9</tt> cm as a unit length. If normalisations are already set through
-  !! the equilibrium submodule or parfiles nothing is done.
-  subroutine check_if_normalisations_set()
-    if (normalisations_are_set) then
-      call log_message("normalisations are already set", level="debug")
-      return
-    else
-      cgs_units = .true.
-      call set_normalisations( &
-        new_unit_temperature=1.0d6, &
-        new_unit_magneticfield=10.0d0, &
-        new_unit_length=1.0d9 &
-      )
-    end if
-  end subroutine check_if_normalisations_set
+    units%units_set = .false.
+    units%cgs = .true.
+    units%based_on_density = .false.
+    units%based_on_temperature = .false.
+    units%mean_molecular_weight = 0.5_dp
+
+    call units%set_units_from_temperature( &
+      unit_length=1.0e9_dp, &
+      unit_magneticfield=10.0_dp, &
+      unit_temperature=1.0e6_dp &
+    )
+  end function new_unit_system
 
 
-  !> Returns the Boltzmann constant, proton mass, magnetic constant
-  !! and gas constant in either cgs (default) or SI units.
-  subroutine get_constants(kB, mp, mu0, Rgas)
-    use mod_physical_constants, only: kB_si, kB_cgs, mp_si, mp_cgs, mu0_si, mu0_cgs, R_si, R_cgs
-
-    !> Boltzmann constant
-    real(dp), intent(out) :: kB
-    !> proton mass
-    real(dp), intent(out) :: mp
-    !> magnetic constant
-    real(dp), intent(out) :: mu0
-    !> gas constant
-    real(dp), intent(out) :: Rgas
-
-    if (cgs_units) then
-      call log_message("getting constants in cgs units", level="debug")
-      kB = kB_cgs
-      mp = mp_cgs
-      mu0 = mu0_cgs
-      Rgas = R_cgs
-    else
-      call log_message("getting constants in SI units", level="debug")
-      kB = kB_si
-      mp = mp_si
-      mu0 = mu0_si
-      Rgas = R_si
-    end if
-  end subroutine get_constants
+  pure logical function in_cgs(this)
+    class(units_t), intent(in) :: this
+    in_cgs = this%cgs
+  end function in_cgs
 
 
-  !> Defines unit normalisations based on a magnetic field unit, length unit,
-  !! and a density OR temperature unit. Calling this routine automatically
-  !! sets <tt>normalisations_are_set</tt> to <tt>True</tt>.
-  !! An optional mean molecular weight can be passed, which defaults to 1/2
-  !! corresponding to an electron-proton plasma.
-  !! @note  It is good practice to specify the keyword arguments when calling this
-  !!        routine, to make sure units are not switched. @endnote
-  !! @warning Throws an error if:
-  !!
-  !! - the unit density and unit temperature are both specified.
-  !! - neither unit density or unit temperature is specified.  @endwarning
-  subroutine set_normalisations( &
-    new_unit_density, &
-    new_unit_temperature, &
-    new_unit_magneticfield, &
-    new_unit_length, &
-    new_mean_molecular_weight &
+  pure logical function are_set(this)
+    class(units_t), intent(in) :: this
+    are_set = this%units_set
+  end function are_set
+
+
+  pure subroutine set_units_from_density( &
+    this, unit_length, unit_magneticfield, unit_density, mean_molecular_weight &
   )
-    !> new value for the unit density
-    real(dp), intent(in), optional  :: new_unit_density
-    !> new value for the unit temperature
-    real(dp), intent(in), optional  :: new_unit_temperature
-    !> new value for the unit magnetic field
-    real(dp), intent(in)            :: new_unit_magneticfield
-    !> new value for the unit length
-    real(dp), intent(in)            :: new_unit_length
-    !> new value for the mean molecular weigth
-    real(dp), intent(in), optional  :: new_mean_molecular_weight
-    real(dp)  :: kB, mp, mu0, Rgas
+    class(units_t), intent(inout) :: this
+    real(dp), intent(in) :: unit_length
+    real(dp), intent(in) :: unit_magneticfield
+    real(dp), intent(in) :: unit_density
+    real(dp), intent(in), optional :: mean_molecular_weight
 
-    call get_constants(kB, mp, mu0, Rgas)
-
-    if (present(new_unit_density) .and. present(new_unit_temperature)) then
-      call log_message( &
-        "unit density and unit temperature can not both be set.", level="error" &
-      )
+    this%unit_length = unit_length
+    this%unit_magneticfield = unit_magneticfield
+    this%unit_density = unit_density
+    this%based_on_density = .true.
+    if (present(mean_molecular_weight)) then
+      this%mean_molecular_weight = mean_molecular_weight
     end if
+    call this%update_dependent_units()
+  end subroutine set_units_from_density
 
-    if (present(new_mean_molecular_weight)) then
-      mean_molecular_weight = new_mean_molecular_weight
-      call log_message( &
-        "mean molecular weight set to " // str(mean_molecular_weight), level="info" &
-      )
+
+  pure subroutine set_units_from_temperature( &
+    this, unit_length, unit_magneticfield, unit_temperature, mean_molecular_weight &
+  )
+    class(units_t), intent(inout) :: this
+    real(dp), intent(in) :: unit_length
+    real(dp), intent(in) :: unit_magneticfield
+    real(dp), intent(in) :: unit_temperature
+    real(dp), intent(in), optional :: mean_molecular_weight
+
+    this%unit_length = unit_length
+    this%unit_magneticfield = unit_magneticfield
+    this%unit_temperature = unit_temperature
+    this%based_on_temperature = .true.
+    if (present(mean_molecular_weight)) then
+      this%mean_molecular_weight = mean_molecular_weight
     end if
-
-    ! TODO (niels):
-    ! remove this error once SI is properly checked. I suspect there is an
-    ! inconsistency in the radiative cooling module: all tables are given in
-    ! cgs units, so I think if SI units are specified we first have to scale
-    ! the tables to SI and THEN normalise using SI normalisations.
-    if (.not. cgs_units) then
-      call log_message( &
-        "possible inconsistency in SI units, use cgs for now!", level="error" &
-      )
-    end if
-
-    unit_magneticfield = new_unit_magneticfield
-    unit_length = new_unit_length
-    unit_pressure = unit_magneticfield**2 / mu0
-
-    if (present(new_unit_density)) then
-      unit_density = new_unit_density
-      unit_temperature = ( &
-        mean_molecular_weight * unit_pressure * mp / (kB * unit_density) &
-      )
-    else if (present(new_unit_temperature)) then
-      unit_temperature = new_unit_temperature
-      unit_density = ( &
-        mean_molecular_weight * unit_pressure * mp / (kB * unit_temperature) &
-      )
-    else
-      call log_message("no unit density or unit temperature specified.", level="error")
-    end if
-
-    unit_mass = unit_density * unit_length**3
-    unit_numberdensity = unit_density / mp
-    unit_velocity = unit_magneticfield / sqrt(mu0 * unit_density)
-    unit_time = unit_length / unit_velocity
-    unit_lambdaT = unit_pressure / (unit_time * unit_numberdensity**2)
-    unit_dlambdaT_dT = unit_lambdaT / unit_temperature
-
-    unit_conduction    = unit_density * unit_length * unit_velocity**3 / unit_temperature
-    unit_dtc_drho      = unit_conduction / unit_density
-    unit_dtc_dT        = unit_conduction / unit_temperature
-    unit_dtc_dB2       = unit_conduction / (unit_magneticfield**2)
-
-    normalisations_are_set = .true.
-  end subroutine set_normalisations
+    call this%update_dependent_units()
+  end subroutine set_units_from_temperature
 
 
-  !> Sets the unit resistivity.
-  !! This routine is called by the resistivity module and is used to set the
-  !! resistivity unit in such a way that eta equals 0.1 when the temperature is 1 MK.
-  subroutine set_unit_resistivity(new_unit_resistivity)
-    !> new value for the unit resistivity
-    real(dp), intent(in)  :: new_unit_resistivity
+  pure subroutine update_dependent_units(this)
+    use mod_physical_constants, only: mu0_cgs, mp_cgs, kB_cgs
 
-    unit_resistivity = new_unit_resistivity
-    unit_deta_dT = unit_resistivity / unit_temperature
-  end subroutine set_unit_resistivity
+    class(units_t), intent(inout) :: this
 
+    this%unit_pressure = this%unit_magneticfield**2 / mu0_cgs
+    if (this%based_on_density) this%unit_temperature = ( &
+      this%mean_molecular_weight &
+      * this%unit_pressure &
+      * mp_cgs &
+      / (kB_cgs * this%unit_density) &
+    )
+    if (this%based_on_temperature) this%unit_density = ( &
+      this%mean_molecular_weight &
+      * this%unit_pressure &
+      * mp_cgs &
+      / (kB_cgs * this%unit_temperature) &
+    )
+    this%unit_mass = this%unit_density * this%unit_length**3
+    this%unit_numberdensity = this%unit_density / mp_cgs
+    this%unit_velocity = this%unit_magneticfield / sqrt(mu0_cgs * this%unit_density)
+    this%unit_time = this%unit_length / this%unit_velocity
+    this%unit_resistivity = this%unit_length**2 / this%unit_time
+    this%unit_lambdaT = this%unit_pressure / ( &
+      this%unit_time * this%unit_numberdensity**2 &
+    )
+    this%unit_conduction = ( &
+      this%unit_density &
+      * this%unit_length &
+      * this%unit_velocity**3 &
+      / this%unit_temperature &
+    )
+
+    this%units_set = .true.
+  end subroutine update_dependent_units
+
+
+  pure subroutine set_mean_molecular_weight(this, mean_molecular_weight)
+    class(units_t), intent(inout) :: this
+    real(dp), intent(in) :: mean_molecular_weight
+    this%mean_molecular_weight = mean_molecular_weight
+    if (this%units_set) call this%update_dependent_units()
+  end subroutine set_mean_molecular_weight
+
+
+  pure real(dp) function get_unit_length(this)
+    class(units_t), intent(in) :: this
+    get_unit_length = this%unit_length
+  end function get_unit_length
+
+
+  pure real(dp) function get_unit_time(this)
+    class(units_t), intent(in) :: this
+    get_unit_time = this%unit_time
+  end function get_unit_time
+
+
+  pure real(dp) function get_unit_density(this)
+    class(units_t), intent(in) :: this
+    get_unit_density = this%unit_density
+  end function get_unit_density
+
+
+  pure real(dp) function get_unit_velocity(this)
+    class(units_t), intent(in) :: this
+    get_unit_velocity = this%unit_velocity
+  end function get_unit_velocity
+
+
+  pure real(dp) function get_unit_temperature(this)
+    class(units_t), intent(in) :: this
+    get_unit_temperature = this%unit_temperature
+  end function get_unit_temperature
+
+
+  pure real(dp) function get_unit_pressure(this)
+    class(units_t), intent(in) :: this
+    get_unit_pressure = this%unit_pressure
+  end function get_unit_pressure
+
+
+  pure real(dp) function get_unit_magneticfield(this)
+    class(units_t), intent(in) :: this
+    get_unit_magneticfield = this%unit_magneticfield
+  end function get_unit_magneticfield
+
+
+  pure real(dp) function get_unit_numberdensity(this)
+    class(units_t), intent(in) :: this
+    get_unit_numberdensity = this%unit_numberdensity
+  end function get_unit_numberdensity
+
+
+  pure real(dp) function get_unit_mass(this)
+    class(units_t), intent(in) :: this
+    get_unit_mass = this%unit_mass
+  end function get_unit_mass
+
+
+  pure real(dp) function get_mean_molecular_weight(this)
+    class(units_t), intent(in) :: this
+    get_mean_molecular_weight = this%mean_molecular_weight
+  end function get_mean_molecular_weight
+
+
+  pure real(dp) function get_unit_resistivity(this)
+    class(units_t), intent(in) :: this
+    get_unit_resistivity = this%unit_resistivity
+  end function get_unit_resistivity
+
+
+  pure real(dp) function get_unit_lambdaT(this)
+    class(units_t), intent(in) :: this
+    get_unit_lambdaT = this%unit_lambdaT
+  end function get_unit_lambdaT
+
+
+  pure real(dp) function get_unit_conduction(this)
+    class(units_t), intent(in) :: this
+    get_unit_conduction = this%unit_conduction
+  end function get_unit_conduction
+
+
+  pure real(dp) function get_unit_gravity(this)
+    class(units_t), intent(in) :: this
+    get_unit_gravity = this%unit_length / this%unit_time**2
+  end function get_unit_gravity
 end module mod_units

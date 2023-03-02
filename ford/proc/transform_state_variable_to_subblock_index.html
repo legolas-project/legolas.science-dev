@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">16 statements</a>
+    title=" 0.2% of total for procedures.">17 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_get_indices.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private function transform_state_variable_to_subblock_index(variables, odd, edge) result(idxs)</h2>
+    <h2>private function transform_state_variable_to_subblock_index(variables, state_vector, dim_subblock, odd, edge) result(idxs)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,7 +121,6 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
       </li>
@@ -145,13 +144,25 @@ block, if <code>edge</code> equals <code>"right"</code> returns indices for the 
   <td><strong>variables</strong>(:)</td><td><p>array of state vector variable names</p></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-state_vector~2"></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector to consider</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dim_subblock~2"></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dim_subblock</strong></td><td><p>dimension of the subblock</p></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-odd"></span>logical,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>odd</strong></td><td><p>uses odd indices if .true. and even if .false.</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-edge~3"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-edge"></span>character(len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>edge</strong></td><td><p>which edge to consider, <code>"left"</code> for left boundary and <code>"right"</code> for right one</p></td>
@@ -159,7 +170,7 @@ block, if <code>edge</code> equals <code>"right"</code> returns indices for the 
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-idxs~2"></span>integer,allocatable,(:)</small></h3>
+   <h3>Return Value <small><span class="anchor" id="variable-idxs"></span>integer,allocatable,(:)</small></h3>
     <p>integer array containing the corresponding subblock indices</p>
     <br>
 

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.7% of total for modules and submodules.">242 statements</a>
+    title=" 2.4% of total for modules and submodules.">244 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_equilibrium.f08"> Source File</a></li>
   </ul>
@@ -166,7 +166,6 @@
       <a class="list-group-item" href="../module/mod_equilibrium.html#proc-initialise_equilibrium">initialise_equilibrium</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#proc-set_equilibrium">set_equilibrium</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#proc-set_equilibrium_pointer">set_equilibrium_pointer</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#proc-allow_geometry_override">allow_geometry_override</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#proc-equilibrium_clean">equilibrium_clean</a>
     </div>
   </div>
@@ -193,13 +192,13 @@ respective modules.
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_units.html'>mod_units</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-    <li><a href='../module/mod_types.html'>mod_types</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_types.html'>mod_types</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
   </ul>
       </li>
       </ul>
@@ -314,7 +313,6 @@ respective modules.
       <a class="list-group-item" href="../module/mod_equilibrium.html#proc-initialise_equilibrium">initialise_equilibrium</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#proc-set_equilibrium">set_equilibrium</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#proc-set_equilibrium_pointer">set_equilibrium_pointer</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#proc-allow_geometry_override">allow_geometry_override</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#proc-equilibrium_clean">equilibrium_clean</a>
     </div>
   </div>
@@ -395,9 +393,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine adiabatic_homo_eq()   <a href='../proc/adiabatic_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine adiabatic_homo_eq(settings)   <a href='../proc/adiabatic_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -410,9 +419,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine constant_current_eq()   <a href='../proc/constant_current_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine constant_current_eq(settings)   <a href='../proc/constant_current_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -425,9 +445,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine coronal_flux_tube_eq()   <a href='../proc/coronal_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine coronal_flux_tube_eq(settings)   <a href='../proc/coronal_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -440,9 +471,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine discrete_alfven_eq()   <a href='../proc/discrete_alfven_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine discrete_alfven_eq(settings)   <a href='../proc/discrete_alfven_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -455,9 +497,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine flow_driven_instabilities_eq()   <a href='../proc/flow_driven_instabilities_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine flow_driven_instabilities_eq(settings)   <a href='../proc/flow_driven_instabilities_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -470,9 +523,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine gold_hoyle_eq()   <a href='../proc/gold_hoyle_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine gold_hoyle_eq(settings)   <a href='../proc/gold_hoyle_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -485,9 +549,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine gravito_acoustic_eq()   <a href='../proc/gravito_acoustic_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine gravito_acoustic_eq(settings)   <a href='../proc/gravito_acoustic_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -500,9 +575,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine gravito_mhd_eq()   <a href='../proc/gravito_mhd_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine gravito_mhd_eq(settings)   <a href='../proc/gravito_mhd_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -515,9 +601,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine interchange_modes_eq()   <a href='../proc/interchange_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine interchange_modes_eq(settings)   <a href='../proc/interchange_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -530,9 +627,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine internal_kink_eq()   <a href='../proc/internal_kink_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine internal_kink_eq(settings)   <a href='../proc/internal_kink_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -545,9 +653,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine isothermal_atmosphere_eq()   <a href='../proc/isothermal_atmosphere_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine isothermal_atmosphere_eq(settings)   <a href='../proc/isothermal_atmosphere_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -560,9 +679,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine KHI_eq()   <a href='../proc/khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine KHI_eq(settings)   <a href='../proc/khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -575,9 +705,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine kh_cd_instability_eq()   <a href='../proc/kh_cd_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine kh_cd_instability_eq(settings)   <a href='../proc/kh_cd_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -590,9 +731,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine magnetothermal_instability_eq()   <a href='../proc/magnetothermal_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine magnetothermal_instability_eq(settings)   <a href='../proc/magnetothermal_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -605,9 +757,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine MRI_accretion_eq()   <a href='../proc/mri_accretion_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine MRI_accretion_eq(settings)   <a href='../proc/mri_accretion_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -620,9 +783,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine photospheric_flux_tube_eq()   <a href='../proc/photospheric_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine photospheric_flux_tube_eq(settings)   <a href='../proc/photospheric_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -635,9 +809,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resistive_homo_eq()   <a href='../proc/resistive_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resistive_homo_eq(settings)   <a href='../proc/resistive_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -650,9 +835,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resistive_tearing_modes_eq()   <a href='../proc/resistive_tearing_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resistive_tearing_modes_eq(settings)   <a href='../proc/resistive_tearing_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -665,9 +861,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resistive_tearing_modes_flow_eq()   <a href='../proc/resistive_tearing_modes_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resistive_tearing_modes_flow_eq(settings)   <a href='../proc/resistive_tearing_modes_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -680,9 +887,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resonant_absorption_eq()   <a href='../proc/resonant_absorption_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resonant_absorption_eq(settings)   <a href='../proc/resonant_absorption_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -695,9 +913,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine rotating_plasma_cyl_eq()   <a href='../proc/rotating_plasma_cyl_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine rotating_plasma_cyl_eq(settings)   <a href='../proc/rotating_plasma_cyl_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -710,9 +939,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine RTI_eq()   <a href='../proc/rti_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine RTI_eq(settings)   <a href='../proc/rti_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -725,9 +965,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine RTI_KHI_eq()   <a href='../proc/rti_khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine RTI_KHI_eq(settings)   <a href='../proc/rti_khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -740,9 +991,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine RTI_theta_pinch_eq()   <a href='../proc/rti_theta_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine RTI_theta_pinch_eq(settings)   <a href='../proc/rti_theta_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -755,9 +1017,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine suydam_cluster_eq()   <a href='../proc/suydam_cluster_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine suydam_cluster_eq(settings)   <a href='../proc/suydam_cluster_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -770,9 +1043,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine couette_flow_eq()   <a href='../proc/couette_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine couette_flow_eq(settings)   <a href='../proc/couette_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -785,9 +1069,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine taylor_couette_eq()   <a href='../proc/taylor_couette_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine taylor_couette_eq(settings)   <a href='../proc/taylor_couette_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -800,9 +1095,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine harris_sheet_eq()   <a href='../proc/harris_sheet_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine harris_sheet_eq(settings)   <a href='../proc/harris_sheet_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -815,9 +1121,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine tc_pinch_eq()   <a href='../proc/tc_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine tc_pinch_eq(settings)   <a href='../proc/tc_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -830,9 +1147,20 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine user_defined_eq()   <a href='../proc/user_defined_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine user_defined_eq(settings)   <a href='../proc/user_defined_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
     </li>
   </ul>
@@ -847,19 +1175,30 @@ respective modules.
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_equilibrium"></span><h3>public subroutine <a href='../proc/initialise_equilibrium.html'>initialise_equilibrium</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_equilibrium"></span><h3>public subroutine <a href='../proc/initialise_equilibrium.html'>initialise_equilibrium</a>(settings)</h3></div>
   <div class="panel-body">
        
 <p>Initialises the equilibrium types by calling the corresponding
 subroutine, which allocates all necessary attributes.</p>
     
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium"></span><h3>public subroutine <a href='../proc/set_equilibrium.html'>set_equilibrium</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium"></span><h3>public subroutine <a href='../proc/set_equilibrium.html'>set_equilibrium</a>(settings)</h3></div>
   <div class="panel-body">
        
 <p>Calls the routine to set the equilibrium pointer, then calls the correct
@@ -867,54 +1206,38 @@ submodule. Performs some sanity checks (negative values, NaNs etc.) when
 the equilibrium is set, then calls additional physics modules if needed.
 </p><a href="../proc/set_equilibrium.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium_pointer"></span><h3>private subroutine <a href='../proc/set_equilibrium_pointer.html'>set_equilibrium_pointer</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium_pointer"></span><h3>private subroutine <a href='../proc/set_equilibrium_pointer.html'>set_equilibrium_pointer</a>(settings)</h3></div>
   <div class="panel-body">
        
 <p>Selects the submodule based on the specified equilibrium
 in the parfile. Works on a case-select basis.
 </p><a href="../proc/set_equilibrium_pointer.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
-<h4>Arguments</h4>      <em>None</em>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-allow_geometry_override"></span><h3>public subroutine <a href='../proc/allow_geometry_override.html'>allow_geometry_override</a>(default_geometry, default_x_start, default_x_end)</h3></div>
-  <div class="panel-body">
-       
-<p>Allows overriding geometry and grid-related parameters.
-Sets default values for the geometry and grid start/end. If this subroutine is
-used to set geometry/grid values in the submodule it becomes possible to override
-them through the parfile. Warnings will always be printed if this happens.
-</p><a href="../proc/allow_geometry_override.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>character,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>default_geometry</strong></td><td><p>default geometry to set</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>default_x_start</strong></td><td><p>default start of the grid</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>default_x_end</strong></td><td><p>default end of the grid</p></td>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>

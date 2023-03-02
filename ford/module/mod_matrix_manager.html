@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.6% of total for modules and submodules.">143 statements</a>
+    title=" 1.5% of total for modules and submodules.">152 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_matrix_manager.f08"> Source File</a></li>
   </ul>
@@ -139,7 +139,7 @@
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-build_matrices">build_matrices</a>
-      <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-reset_factor_positions~2">reset_factor_positions</a>
+      <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-reset_factor_positions">reset_factor_positions</a>
     </div>
   </div>
 </div>
@@ -157,13 +157,14 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    <li><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></li>
-    <li><a href='../module/mod_make_subblock.html'>mod_make_subblock</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_make_subblock.html'>mod_make_subblock</a></li>
     <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
   </ul>
       </li>
       </ul>
@@ -228,7 +229,7 @@
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-build_matrices">build_matrices</a>
-      <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-reset_factor_positions~2">reset_factor_positions</a>
+      <a class="list-group-item" href="../module/mod_matrix_manager.html#proc-reset_factor_positions">reset_factor_positions</a>
     </div>
   </div>
 </div>
@@ -285,7 +286,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_bmatrix_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public module module subroutine add_bmatrix_terms(gauss_idx, current_weight, quadblock)   <a href='../proc/add_bmatrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>public module module subroutine add_bmatrix_terms(gauss_idx, current_weight, quadblock, settings)   <a href='../proc/add_bmatrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -307,6 +308,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -320,7 +327,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_regular_matrix_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public module module subroutine add_regular_matrix_terms(gauss_idx, current_weight, quadblock)   <a href='../proc/add_regular_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>public module module subroutine add_regular_matrix_terms(gauss_idx, current_weight, quadblock, settings)   <a href='../proc/add_regular_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -342,6 +349,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -355,7 +368,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_flow_matrix_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public module module subroutine add_flow_matrix_terms(gauss_idx, current_weight, quadblock)   <a href='../proc/add_flow_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>public module module subroutine add_flow_matrix_terms(gauss_idx, current_weight, quadblock, settings)   <a href='../proc/add_flow_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -377,6 +390,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -390,7 +409,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_resistive_matrix_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public module module subroutine add_resistive_matrix_terms(gauss_idx, current_weight, quadblock)   <a href='../proc/add_resistive_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>public module module subroutine add_resistive_matrix_terms(gauss_idx, current_weight, quadblock, settings)   <a href='../proc/add_resistive_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -412,6 +431,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -425,7 +450,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_cooling_matrix_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public module module subroutine add_cooling_matrix_terms(gauss_idx, current_weight, quadblock)   <a href='../proc/add_cooling_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>public module module subroutine add_cooling_matrix_terms(gauss_idx, current_weight, quadblock, settings)   <a href='../proc/add_cooling_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -447,6 +472,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -460,7 +491,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_conduction_matrix_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public module module subroutine add_conduction_matrix_terms(gauss_idx, current_weight, quadblock)   <a href='../proc/add_conduction_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>public module module subroutine add_conduction_matrix_terms(gauss_idx, current_weight, quadblock, settings)   <a href='../proc/add_conduction_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -482,6 +513,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -495,7 +532,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_viscosity_matrix_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public module module subroutine add_viscosity_matrix_terms(gauss_idx, current_weight, quadblock)   <a href='../proc/add_viscosity_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>public module module subroutine add_viscosity_matrix_terms(gauss_idx, current_weight, quadblock, settings)   <a href='../proc/add_viscosity_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -517,6 +554,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -530,7 +573,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_hall_matrix_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public module module subroutine add_hall_matrix_terms(gauss_idx, current_weight, quadblock)   <a href='../proc/add_hall_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>public module module subroutine add_hall_matrix_terms(gauss_idx, current_weight, quadblock, settings)   <a href='../proc/add_hall_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -552,6 +595,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -565,7 +614,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_hall_bmatrix_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public module module subroutine add_hall_bmatrix_terms(gauss_idx, current_weight, quadblock)   <a href='../proc/add_hall_bmatrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>public module module subroutine add_hall_bmatrix_terms(gauss_idx, current_weight, quadblock, settings)   <a href='../proc/add_hall_bmatrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -587,6 +636,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -605,7 +660,7 @@
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-build_matrices"></span><h3>public subroutine <a href='../proc/build_matrices.html'>build_matrices</a>(matrix_B, matrix_A)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-build_matrices"></span><h3>public subroutine <a href='../proc/build_matrices.html'>build_matrices</a>(matrix_B, matrix_A, settings)</h3></div>
   <div class="panel-body">
        
 <p></p><a href="../proc/build_matrices.html" class="pull-right"><emph>Read more&hellip;</emph></a>
@@ -625,6 +680,12 @@
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_A</strong></td><td><p>the A-matrix</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>the settings object</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -633,7 +694,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-reset_factor_positions~2"></span><h3>public subroutine <a href='../proc/reset_factor_positions~2.html'>reset_factor_positions</a>(new_size)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-reset_factor_positions"></span><h3>public subroutine <a href='../proc/reset_factor_positions.html'>reset_factor_positions</a>(new_size)</h3></div>
   <div class="panel-body">
        
 <p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given

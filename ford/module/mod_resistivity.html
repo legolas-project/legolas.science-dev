@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.2% of total for modules and submodules.">112 statements</a>
+    title=" 1.0% of total for modules and submodules.">102 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_resistivity.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
       <a class="list-group-item" href="../module/mod_resistivity.html#proc-get_eta">get_eta</a>
       <a class="list-group-item" href="../module/mod_resistivity.html#proc-get_deta_dt">get_deta_dT</a>
       <a class="list-group-item" href="../module/mod_resistivity.html#proc-set_eta_dropoff">set_eta_dropoff</a>
-      <a class="list-group-item" href="../module/mod_resistivity.html#proc-get_constants~2">get_constants</a>
+      <a class="list-group-item" href="../module/mod_resistivity.html#proc-get_constants">get_constants</a>
     </div>
   </div>
 </div>
@@ -132,8 +132,9 @@ and sets the resistivity values based on the equilibrium configuration.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       </ul>
@@ -153,7 +154,7 @@ and sets the resistivity values based on the equilibrium configuration.</p>
       <a class="list-group-item" href="../module/mod_resistivity.html#proc-get_eta">get_eta</a>
       <a class="list-group-item" href="../module/mod_resistivity.html#proc-get_deta_dt">get_deta_dT</a>
       <a class="list-group-item" href="../module/mod_resistivity.html#proc-set_eta_dropoff">set_eta_dropoff</a>
-      <a class="list-group-item" href="../module/mod_resistivity.html#proc-get_constants~2">get_constants</a>
+      <a class="list-group-item" href="../module/mod_resistivity.html#proc-get_constants">get_constants</a>
     </div>
   </div>
 </div>
@@ -171,7 +172,7 @@ and sets the resistivity values based on the equilibrium configuration.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_resistivity_values"></span><h3>public subroutine <a href='../proc/set_resistivity_values.html'>set_resistivity_values</a>(T_field, eta_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_resistivity_values"></span><h3>public subroutine <a href='../proc/set_resistivity_values.html'>set_resistivity_values</a>(settings, T_field, eta_field)</h3></div>
   <div class="panel-body">
        
 <p>This routines sets all resistivity values in \p eta_field,
@@ -180,6 +181,12 @@ and calls all other relevant subroutines defined in this module.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/temperature_type.html'>temperature_type</a>),</td>
 <td>intent(in)</td>
@@ -200,7 +207,7 @@ and calls all other relevant subroutines defined in this module.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_eta"></span><h3>private subroutine <a href='../proc/get_eta.html'>get_eta</a>(T0_eq, eta)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_eta"></span><h3>private subroutine <a href='../proc/get_eta.html'>get_eta</a>(settings, T0_eq, eta)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the resistivity. Returns either the full Spitzer resistivity
@@ -214,16 +221,22 @@ the unit resistivity remains unity.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>T0_eq</strong>(gauss_gridpts)</td><td><p>equilibrium temperature</p></td>
+  <td><strong>T0_eq</strong>(:)</td><td><p>equilibrium temperature</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>eta</strong>(gauss_gridpts)</td><td><p>resistivity values, normalised on exit</p></td>
+  <td><strong>eta</strong>(:)</td><td><p>resistivity values, normalised on exit</p></td>
 </tr>
 </tbody>
 </table>
@@ -233,7 +246,7 @@ the unit resistivity remains unity.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_deta_dt"></span><h3>private subroutine <a href='../proc/get_deta_dt.html'>get_deta_dT</a>(T0_eq, deta_dT)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_deta_dt"></span><h3>private subroutine <a href='../proc/get_deta_dt.html'>get_deta_dT</a>(settings, T0_eq, deta_dT)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the derivative of the resistivity.
@@ -246,16 +259,22 @@ this routine returns zero.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>T0_eq</strong>(gauss_gridpts)</td><td><p>equilibrium temperature</p></td>
+  <td><strong>T0_eq</strong>(:)</td><td><p>equilibrium temperature</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>deta_dT</strong>(gauss_gridpts)</td><td><p>derivative of resistivity with respect to temperature, normalised on exit</p></td>
+  <td><strong>deta_dT</strong>(:)</td><td><p>derivative of resistivity with respect to temperature, normalised on exit</p></td>
 </tr>
 </tbody>
 </table>
@@ -265,7 +284,7 @@ this routine returns zero.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_eta_dropoff"></span><h3>private subroutine <a href='../proc/set_eta_dropoff.html'>set_eta_dropoff</a>(eta_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_eta_dropoff"></span><h3>private subroutine <a href='../proc/set_eta_dropoff.html'>set_eta_dropoff</a>(settings, eta_field)</h3></div>
   <div class="panel-body">
        
 <p>Sets a hyperbolic tangent profile for the resistivity so it goes smoothly to zero
@@ -276,6 +295,12 @@ through <tt>dropoff_edge_dist</tt> and <tt>dropoff_width</tt>.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/resistivity_type.html'>resistivity_type</a>),</td>
 <td>intent(inout)</td>
@@ -290,12 +315,11 @@ through <tt>dropoff_edge_dist</tt> and <tt>dropoff_width</tt>.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_constants~2"></span><h3>private subroutine <a href='../proc/get_constants~2.html'>get_constants</a>(ec, me, e0, kB)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_constants"></span><h3>private subroutine <a href='../proc/get_constants.html'>get_constants</a>(ec, me, kB)</h3></div>
   <div class="panel-body">
        
 <p>Retrieves resistivity constants.
-Returns all physical constants used to calculate the Spitzer resistivity,
-either in cgs (default) or SI depending on the unit system chosen.</p>
+Returns all physical constants used to calculate the Spitzer resistivity.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -311,12 +335,6 @@ either in cgs (default) or SI depending on the unit system chosen.</p>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>me</strong></td><td><p>electron mass</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>e0</strong></td><td><p>permittivity of free space</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>

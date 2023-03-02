@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pylbo.visualisation.modes.vtk_export &mdash; Pylbo develop documentation</title>
@@ -12,10 +12,8 @@
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-        <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -31,14 +29,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../../index.html" class="icon icon-home"> Pylbo
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            Pylbo
           </a>
               <div class="version">
                 1.1.3 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -87,7 +89,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../../index.html">API Reference</a></li>
           <li class="breadcrumb-item"><a href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo</span></code></a></li>
           <li class="breadcrumb-item"><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a></li>
@@ -109,10 +111,6 @@
 <section id="classes">
 <h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter" title="pylbo.visualisation.modes.vtk_export.VTKDataExporter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VTKDataExporter</span></code></a></p></td>
 <td><p>Main class to prepare data for export to VTK files.</p></td>
@@ -130,7 +128,7 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.modes.vtk_export.</span></span><span class="sig-name descname"><span class="pre">VTKDataExporter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData"><span class="pre">pylbo.visualisation.modes.mode_data.ModeVisualisationData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/vtk_export.html#VTKDataExporter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter" title="Permalink to this definition"></a></dt>
 <dd><p>Main class to prepare data for export to VTK files.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData"><em>ModeVisualisationData</em></a>) – The data for the visualisation</p></li>
 <li><p><strong>u1</strong> (<em>np.ndarray</em>) – The 1D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate array.</p></li>
@@ -144,7 +142,7 @@
 <span class="sig-name descname"><span class="pre">_u1</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter._u1" title="Permalink to this definition"></a></dt>
 <dd><p>The 1D <span class="math notranslate nohighlight">\(u_1\)</span> coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -155,7 +153,7 @@
 <span class="sig-name descname"><span class="pre">_u2</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter._u2" title="Permalink to this definition"></a></dt>
 <dd><p>The 1D <span class="math notranslate nohighlight">\(u_2\)</span> coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -166,7 +164,7 @@
 <span class="sig-name descname"><span class="pre">_u3</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter._u3" title="Permalink to this definition"></a></dt>
 <dd><p>The 1D <span class="math notranslate nohighlight">\(u_3\)</span> coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -177,7 +175,7 @@
 <span class="sig-name descname"><span class="pre">u1_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter.u1_data" title="Permalink to this definition"></a></dt>
 <dd><p>The 3D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -188,7 +186,7 @@
 <span class="sig-name descname"><span class="pre">u2_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter.u2_data" title="Permalink to this definition"></a></dt>
 <dd><p>The 3D <span class="math notranslate nohighlight">\(u_2\)</span> coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -199,7 +197,7 @@
 <span class="sig-name descname"><span class="pre">u3_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter.u3_data" title="Permalink to this definition"></a></dt>
 <dd><p>The 3D <span class="math notranslate nohighlight">\(u_3\)</span> coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -210,7 +208,7 @@
 <span class="sig-name descname"><span class="pre">dims</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter.dims" title="Permalink to this definition"></a></dt>
 <dd><p>The grid dimensions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a></p>
 </dd>
 </dl>
@@ -221,7 +219,7 @@
 <span class="sig-name descname"><span class="pre">_vtk_dtype</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter._vtk_dtype" title="Permalink to this definition"></a></dt>
 <dd><p>The VTK data type, defaults to “float”.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -232,7 +230,7 @@
 <span class="sig-name descname"><span class="pre">_vtk_byte_order</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter._vtk_byte_order" title="Permalink to this definition"></a></dt>
 <dd><p>The VTK byte order, defaults to “&gt;” (big endian).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -243,7 +241,7 @@
 <span class="sig-name descname"><span class="pre">_vtk_fmt</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter._vtk_fmt" title="Permalink to this definition"></a></dt>
 <dd><p>The VTK data format, defaults to “&gt;f”.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -254,7 +252,7 @@
 <span class="sig-name descname"><span class="pre">_set_coordinate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/vtk_export.html#VTKDataExporter._set_coordinate_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter._set_coordinate_data" title="Permalink to this definition"></a></dt>
 <dd><p>Sets the coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>u1</strong> (<em>np.ndarray</em>) – The 1D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate array.</p></li>
 <li><p><strong>u2</strong> (<em>np.ndarray</em>) – The 1D <span class="math notranslate nohighlight">\(u_2\)</span> coordinate array.</p></li>
@@ -271,7 +269,7 @@
 reference frame (u1, u2, u3), so coordinate transformations should be
 implemented in subclassed if necessary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><ul class="simple">
 <li><p><strong>u1_data</strong> (<em>ndarray</em>) – The 3D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate data.</p></li>
 <li><p><strong>u2_data</strong> (<em>ndarray</em>) – The 3D <span class="math notranslate nohighlight">\(u_2\)</span> coordinate data.</p></li>
@@ -287,13 +285,13 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">broadcast_to_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/vtk_export.html#VTKDataExporter.broadcast_to_3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter.broadcast_to_3d" title="Permalink to this definition"></a></dt>
 <dd><p>Broadcasts a 1D array to a 3D array with the same shape as the coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>array</strong> (<em>np.ndarray</em>) – The 1D array to broadcast.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The broadcasted array.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
@@ -304,16 +302,16 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">get_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/vtk_export.html#VTKDataExporter.get_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter.get_solution" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the eigenmode solution for a given time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the eigenfunction.</p></li>
 <li><p><strong>time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – The time at which to get the solution.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The eigenmode solution.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
@@ -330,10 +328,10 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">_validate_and_set_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/vtk_export.html#VTKDataExporter._validate_and_set_dtype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter._validate_and_set_dtype" title="Permalink to this definition"></a></dt>
 <dd><p>Validates and sets the VTK data type.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The VTK data type. Valid values are “float32” and “float64”.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – If the VTK data type is not valid.</p>
 </dd>
 </dl>
@@ -345,7 +343,7 @@ implemented in subclassed if necessary.</p>
 <dd><p>Writes the VTK file header. This includes the VTK file version, the
 data type, the grid dimensions and the number of points.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>vtkfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the VTK file to write to.</p>
 </dd>
 </dl>
@@ -356,7 +354,7 @@ data type, the grid dimensions and the number of points.</p>
 <span class="sig-name descname"><span class="pre">_write_vtk_coordinate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vtkfile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/vtk_export.html#VTKDataExporter._write_vtk_coordinate_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter._write_vtk_coordinate_data" title="Permalink to this definition"></a></dt>
 <dd><p>Writes the VTK grid coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>vtkfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the VTK file to write to.</p>
 </dd>
 </dl>
@@ -368,7 +366,7 @@ data type, the grid dimensions and the number of points.</p>
 <dd><p>Writes the VTK point data start marker, i.e. the ‘POINT_DATA’ statement and
 the number of points.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>vtkfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the VTK file to write to.</p>
 </dd>
 </dl>
@@ -380,7 +378,7 @@ the number of points.</p>
 <dd><p>Writes a 3D VTK scalar field with a given fieldname. If <cite>fielddata</cite> is
 smaller than <cite>1e-12</cite> everywhere the field is not written to the VTK file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vtkfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the VTK file to write to.</p></li>
 <li><p><strong>fieldname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the field.</p></li>
@@ -397,7 +395,7 @@ smaller than <cite>1e-12</cite> everywhere the field is not written to the VTK f
 in cylindrical geometry. These are needed for appropriate transformations
 to draw vector fields in e.g. ParaView.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>vtkfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the VTK file to write to.</p>
 </dd>
 </dl>
@@ -405,10 +403,10 @@ to draw vector fields in e.g. ParaView.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.modes.vtk_export.VTKDataExporter.export_to_vtk">
-<span class="sig-name descname"><span class="pre">export_to_vtk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'float32'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">starting_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/vtk_export.html#VTKDataExporter.export_to_vtk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter.export_to_vtk" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">export_to_vtk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'float32'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">starting_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/modes/vtk_export.html#VTKDataExporter.export_to_vtk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter.export_to_vtk" title="Permalink to this definition"></a></dt>
 <dd><p>Exports the mode solution to a VTK file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the VTK file to write to.</p></li>
 <li><p><strong>time</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>np.ndarray</em><em>]</em>) – The time(s) at which to export the mode solution.</p></li>
@@ -430,7 +428,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <dd><p>Bases: <a class="reference internal" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter" title="pylbo.visualisation.modes.vtk_export.VTKDataExporter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VTKDataExporter</span></code></a></p>
 <p>Main class to prepare data for export to VTK files.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData"><em>ModeVisualisationData</em></a>) – The data for the visualisation</p></li>
 <li><p><strong>u1</strong> (<em>np.ndarray</em>) – The 1D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate array.</p></li>
@@ -444,7 +442,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">_u1</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData._u1" title="Permalink to this definition"></a></dt>
 <dd><p>The 1D <span class="math notranslate nohighlight">\(u_1\)</span> coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -455,7 +453,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">_u2</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData._u2" title="Permalink to this definition"></a></dt>
 <dd><p>The 1D <span class="math notranslate nohighlight">\(u_2\)</span> coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -466,7 +464,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">_u3</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData._u3" title="Permalink to this definition"></a></dt>
 <dd><p>The 1D <span class="math notranslate nohighlight">\(u_3\)</span> coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -477,7 +475,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">u1_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData.u1_data" title="Permalink to this definition"></a></dt>
 <dd><p>The 3D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -488,7 +486,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">u2_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData.u2_data" title="Permalink to this definition"></a></dt>
 <dd><p>The 3D <span class="math notranslate nohighlight">\(u_2\)</span> coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -499,7 +497,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">u3_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData.u3_data" title="Permalink to this definition"></a></dt>
 <dd><p>The 3D <span class="math notranslate nohighlight">\(u_3\)</span> coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -510,7 +508,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">dims</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData.dims" title="Permalink to this definition"></a></dt>
 <dd><p>The grid dimensions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a></p>
 </dd>
 </dl>
@@ -521,7 +519,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">_vtk_dtype</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData._vtk_dtype" title="Permalink to this definition"></a></dt>
 <dd><p>The VTK data type, defaults to “float”.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -532,7 +530,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">_vtk_byte_order</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData._vtk_byte_order" title="Permalink to this definition"></a></dt>
 <dd><p>The VTK byte order, defaults to “&gt;” (big endian).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -543,7 +541,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 <span class="sig-name descname"><span class="pre">_vtk_fmt</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCartesianData._vtk_fmt" title="Permalink to this definition"></a></dt>
 <dd><p>The VTK data format, defaults to “&gt;f”.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -556,7 +554,7 @@ Can be set to “float64” (64 bit floating point) but uses more memory.</p></l
 reference frame (u1, u2, u3), so coordinate transformations should be
 implemented in subclassed if necessary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><ul class="simple">
 <li><p><strong>u1_data</strong> (<em>ndarray</em>) – The 3D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate data.</p></li>
 <li><p><strong>u2_data</strong> (<em>ndarray</em>) – The 3D <span class="math notranslate nohighlight">\(u_2\)</span> coordinate data.</p></li>
@@ -575,7 +573,7 @@ implemented in subclassed if necessary.</p>
 <dd><p>Bases: <a class="reference internal" href="#pylbo.visualisation.modes.vtk_export.VTKDataExporter" title="pylbo.visualisation.modes.vtk_export.VTKDataExporter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VTKDataExporter</span></code></a></p>
 <p>Main class to prepare data for export to VTK files.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData"><em>ModeVisualisationData</em></a>) – The data for the visualisation</p></li>
 <li><p><strong>u1</strong> (<em>np.ndarray</em>) – The 1D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate array.</p></li>
@@ -589,7 +587,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">_u1</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData._u1" title="Permalink to this definition"></a></dt>
 <dd><p>The 1D <span class="math notranslate nohighlight">\(u_1\)</span> coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -600,7 +598,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">_u2</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData._u2" title="Permalink to this definition"></a></dt>
 <dd><p>The 1D <span class="math notranslate nohighlight">\(u_2\)</span> coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -611,7 +609,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">_u3</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData._u3" title="Permalink to this definition"></a></dt>
 <dd><p>The 1D <span class="math notranslate nohighlight">\(u_3\)</span> coordinates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -622,7 +620,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">u1_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData.u1_data" title="Permalink to this definition"></a></dt>
 <dd><p>The 3D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -633,7 +631,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">u2_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData.u2_data" title="Permalink to this definition"></a></dt>
 <dd><p>The 3D <span class="math notranslate nohighlight">\(u_2\)</span> coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -644,7 +642,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">u3_data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData.u3_data" title="Permalink to this definition"></a></dt>
 <dd><p>The 3D <span class="math notranslate nohighlight">\(u_3\)</span> coordinate data.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -655,7 +653,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">dims</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData.dims" title="Permalink to this definition"></a></dt>
 <dd><p>The grid dimensions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a></p>
 </dd>
 </dl>
@@ -666,7 +664,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">_vtk_dtype</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData._vtk_dtype" title="Permalink to this definition"></a></dt>
 <dd><p>The VTK data type, defaults to “float”.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -677,7 +675,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">_vtk_byte_order</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData._vtk_byte_order" title="Permalink to this definition"></a></dt>
 <dd><p>The VTK byte order, defaults to “&gt;” (big endian).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -688,7 +686,7 @@ implemented in subclassed if necessary.</p>
 <span class="sig-name descname"><span class="pre">_vtk_fmt</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vtk_export.VTKCylindricalData._vtk_fmt" title="Permalink to this definition"></a></dt>
 <dd><p>The VTK data format, defaults to “&gt;f”.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
 </dd>
 </dl>
@@ -701,7 +699,7 @@ implemented in subclassed if necessary.</p>
 reference frame (u1, u2, u3), so coordinate transformations should be
 implemented in subclassed if necessary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><ul class="simple">
 <li><p><strong>u1_data</strong> (<em>ndarray</em>) – The 3D <span class="math notranslate nohighlight">\(u_1\)</span> coordinate data.</p></li>
 <li><p><strong>u2_data</strong> (<em>ndarray</em>) – The 3D <span class="math notranslate nohighlight">\(u_2\)</span> coordinate data.</p></li>
@@ -719,7 +717,7 @@ implemented in subclassed if necessary.</p>
 in cylindrical geometry. These are needed for appropriate transformations
 to draw vector fields in e.g. ParaView.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>vtkfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the VTK file to write to.</p>
 </dd>
 </dl>

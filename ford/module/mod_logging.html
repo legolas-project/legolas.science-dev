@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.9% of total for modules and submodules.">261 statements</a>
+    title=" 1.3% of total for modules and submodules.">137 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_logging.f08"> Source File</a></li>
   </ul>
@@ -141,9 +141,6 @@
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_logging.html#proc-log_message">log_message</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-print_logo">print_logo</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-print_console_info">print_console_info</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-print_whitespace">print_whitespace</a>
     </div>
   </div>
 </div>
@@ -223,9 +220,6 @@ called <tt>logging_level</tt> defined in the parfile.
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_logging.html#proc-log_message">log_message</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-print_logo">print_logo</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-print_console_info">print_console_info</a>
-      <a class="list-group-item" href="../module/mod_logging.html#proc-print_whitespace">print_whitespace</a>
     </div>
   </div>
 </div>
@@ -567,54 +561,6 @@ This will be printed in the form xxxx + xxxxi.</p>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>use_prefix</strong></td><td><p>prefixes message type to string, default is <tt>.true.</tt></p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-print_logo"></span><h3>public subroutine <a href='../proc/print_logo.html'>print_logo</a>()</h3></div>
-  <div class="panel-body">
-       
-<p>Prints the Legolas logo to the console.
-The logo is wrapped in 1 whitespace at the top and
-two at the bottom. Only for logging level 'warning' (1) and above</p>
-    
-<h4>Arguments</h4>      <em>None</em>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-print_console_info"></span><h3>public subroutine <a href='../proc/print_console_info.html'>print_console_info</a>()</h3></div>
-  <div class="panel-body">
-       
-<p>Prints various console messages showing geometry, grid parameters,
-equilibrium parameters etc. Only for logging level "info" or above.</p>
-    
-<h4>Arguments</h4>      <em>None</em>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-print_whitespace"></span><h3>public subroutine <a href='../proc/print_whitespace.html'>print_whitespace</a>(lines)</h3></div>
-  <div class="panel-body">
-       
-<p>Prints an empty line to the console.
-Only if logging level is 'warning' or above.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>lines</strong></td><td><p>amount of empty lines to print</p></td>
 </tr>
 </tbody>
 </table>

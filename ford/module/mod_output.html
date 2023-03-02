@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.8% of total for modules and submodules.">163 statements</a>
+    title=" 1.6% of total for modules and submodules.">163 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_output.f08"> Source File</a></li>
   </ul>
@@ -150,6 +150,7 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
   </ul>
@@ -312,7 +313,7 @@ All files are opened using <tt>access='stream'</tt>,
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-make_filename"></span><h3>private subroutine <a href='../proc/make_filename.html'>make_filename</a>(base_filename, filename)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-make_filename"></span><h3>private subroutine <a href='../proc/make_filename.html'>make_filename</a>(settings, extension, filename)</h3></div>
   <div class="panel-body">
        
 <p>Builds a filename based on a given base filename and the
@@ -324,10 +325,16 @@ The output folder is prepended to the base filename.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>base_filename</strong></td><td><p>the base filename to use</p></td>
+  <td><strong>extension</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
@@ -343,7 +350,7 @@ The output folder is prepended to the base filename.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-create_datfile"></span><h3>public subroutine <a href='../proc/create_datfile.html'>create_datfile</a>(eigenvalues, matrix_A, matrix_B, eigenvectors)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-create_datfile"></span><h3>public subroutine <a href='../proc/create_datfile.html'>create_datfile</a>(eigenvalues, matrix_A, matrix_B, eigenvectors, settings)</h3></div>
   <div class="panel-body">
        
 <p>Writes the datfile, where eigenfunctions and matrices are optionally
@@ -377,6 +384,12 @@ on the configuration, then the actual data.
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvectors</strong>(:,:)</td><td><p>the eigenvectors</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>the settings object</p></td>
 </tr>
 </tbody>
 </table>
@@ -412,7 +425,7 @@ on the configuration, then the actual data.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-create_logfile"></span><h3>private subroutine <a href='../proc/create_logfile.html'>create_logfile</a>(eigenvalues)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-create_logfile"></span><h3>private subroutine <a href='../proc/create_logfile.html'>create_logfile</a>(settings, eigenvalues)</h3></div>
   <div class="panel-body">
        
 <p>Creates a logfile. If <tt>basename_logfile</tt> is specified in the datfile,
@@ -425,6 +438,12 @@ purposes but may come in handy to do some quick inspections on the data.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>

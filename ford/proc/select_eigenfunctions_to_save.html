@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">13 statements</a>
+    title=" 0.1% of total for procedures.">13 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_eigenfunctions.f08"> Source File</a></li>
   </ul>
@@ -113,20 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine select_eigenfunctions_to_save(omega)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>private subroutine select_eigenfunctions_to_save(omega, settings)</h2>
+    
 
     <p>Selects a subset of eigenfunctions to be saved.</p>
 
@@ -135,10 +123,16 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-omega~10"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-omega~2"></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>omega</strong>(:)</td><td><p>the array of calculated eigenvalues</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-settings~79"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>

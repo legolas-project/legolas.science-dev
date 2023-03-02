@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for procedures.">38 statements</a>
+    title=" 0.4% of total for procedures.">41 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_make_subblock.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine subblock(quadblock, factors, positions, curr_weight, spline1, spline2)</h2>
+    <h2>public subroutine subblock(quadblock, factors, positions, curr_weight, spline1, spline2, dims)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -156,7 +156,7 @@ passed along, and the filled quadblock is returned.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-quadblock~8"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-quadblock~10"></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>quadblock</strong>(:,:)</td><td><p>the quadblock, filled on exit</p></td>
@@ -174,7 +174,7 @@ passed along, and the filled quadblock is returned.
   <td><strong>positions</strong>(:,:)</td><td><p>array containing the positions of the blocks to fill</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-curr_weight~4"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-curr_weight~3"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>curr_weight</strong></td><td><p>the current weight of the Gaussian quadrature</p></td>
@@ -190,6 +190,12 @@ passed along, and the filled quadblock is returned.
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>spline2</strong>(4)</td><td><p>the second basis function</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dims~2"></span>type(<a href='../type/dims_t.html'>dims_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>dimensions object</p></td>
 </tr>
 </tbody>
 </table>

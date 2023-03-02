@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for procedures.">65 statements</a>
+    title=" 0.7% of total for procedures.">64 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_matrix_manager.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine build_matrices(matrix_B, matrix_A)</h2>
+    <h2>public subroutine build_matrices(matrix_B, matrix_A, settings)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -122,9 +122,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></li>
     <li><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></li>
     <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
-    <li><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></li>
   </ul>
       </li>
       </ul>
@@ -141,16 +141,22 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-matrix_b~13"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-matrix_b~2"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>the B-matrix</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-matrix_a~13"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-matrix_a~2"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_A</strong></td><td><p>the A-matrix</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-settings~51"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>the settings object</p></td>
 </tr>
 </tbody>
 </table>

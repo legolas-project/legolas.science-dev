@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.1% of total for modules and submodules.">276 statements</a>
+    title=" 2.9% of total for modules and submodules.">297 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_solar_atmosphere.f08"> Source File</a></li>
   </ul>
@@ -171,6 +171,7 @@ geometries only.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
@@ -319,7 +320,7 @@ geometries only.</p>
   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>public function oned_profile(x)</h3>    
+    <h3>public function oned_profile(x, settings)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -328,6 +329,12 @@ geometries only.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>x</strong>(:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -346,7 +353,7 @@ geometries only.</p>
     <section>
     <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_b02_profile"></span><h3>private function <a href='../proc/default_b02_profile.html'>default_b02_profile</a>(x) result(b02)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-default_b02_profile"></span><h3>private function <a href='../proc/default_b02_profile.html'>default_b02_profile</a>(x, settings) result(b02)</h3></div>
   <div class="panel-body">
        
 <p>Sets the default profile for B02, taken to be zero.</p>
@@ -360,6 +367,12 @@ geometries only.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>x</strong>(:)</td><td><p>x-values to evaluate the profile in</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 </tbody>
 </table>
 
@@ -369,7 +382,7 @@ geometries only.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_db02_profile"></span><h3>private function <a href='../proc/default_db02_profile.html'>default_db02_profile</a>(x) result(db02)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-default_db02_profile"></span><h3>private function <a href='../proc/default_db02_profile.html'>default_db02_profile</a>(x, settings) result(db02)</h3></div>
   <div class="panel-body">
        
 <p>Sets the default profile for dB02, taken to be zero.</p>
@@ -381,7 +394,13 @@ geometries only.</p>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>x</strong>(:)</td><td><p>x-values to evaluate the profile in</p></td>
+  <td><strong>x</strong>(:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -392,7 +411,7 @@ geometries only.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_b03_profile"></span><h3>private function <a href='../proc/default_b03_profile.html'>default_b03_profile</a>(x) result(b03)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-default_b03_profile"></span><h3>private function <a href='../proc/default_b03_profile.html'>default_b03_profile</a>(x, settings) result(b03)</h3></div>
   <div class="panel-body">
        
 <p>Sets the default profile for B03, taken to be a uniform field of 10 Gauss.</p>
@@ -406,6 +425,12 @@ geometries only.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>x</strong>(:)</td><td><p>x-values to evaluate the profile in</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 </tbody>
 </table>
 
@@ -415,7 +440,7 @@ geometries only.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_db03_profile"></span><h3>private function <a href='../proc/default_db03_profile.html'>default_db03_profile</a>(x) result(db03)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-default_db03_profile"></span><h3>private function <a href='../proc/default_db03_profile.html'>default_db03_profile</a>(x, settings) result(db03)</h3></div>
   <div class="panel-body">
        
 <p>Sets the default profile for dB03, taken to be zero.</p>
@@ -427,7 +452,13 @@ geometries only.</p>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>x</strong>(:)</td><td><p>x-values to evaluate the profile in</p></td>
+  <td><strong>x</strong>(:)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -438,7 +469,7 @@ geometries only.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_gravity_profile"></span><h3>private function <a href='../proc/default_gravity_profile.html'>default_gravity_profile</a>(x) result(grav)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-default_gravity_profile"></span><h3>private function <a href='../proc/default_gravity_profile.html'>default_gravity_profile</a>(x, settings) result(grav)</h3></div>
   <div class="panel-body">
        
 <p>Sets the default profile for the gravitational field, taken to be
@@ -454,6 +485,12 @@ geometries only.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>x</strong>(:)</td><td><p>x-values to evaluate the profile in</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 </tbody>
 </table>
 
@@ -468,7 +505,7 @@ geometries only.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_solar_atmosphere"></span><h3>public subroutine <a href='../proc/set_solar_atmosphere.html'>set_solar_atmosphere</a>(f_b02, f_db02, f_b03, f_db03, f_g, n_interp, load_from, save_to)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_solar_atmosphere"></span><h3>public subroutine <a href='../proc/set_solar_atmosphere.html'>set_solar_atmosphere</a>(settings, f_b02, f_db02, f_b03, f_db03, f_g, n_interp, load_from, save_to)</h3></div>
   <div class="panel-body">
        
 <p>Sets the density, temperature, gravity and magnetic field attributes of
@@ -488,6 +525,12 @@ can all use the same result.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
 <td></td>
@@ -522,7 +565,7 @@ can all use the same result.
   <td><span class="anchor" ></span>integer,</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>n_interp</strong></td><td><p>points used for interpolation, defaults to <tt>ncool</tt> if not present</p></td>
+  <td><strong>n_interp</strong></td><td><p>points used for interpolation, defaults to 4000 if not present</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
@@ -544,19 +587,30 @@ can all use the same result.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-create_atmosphere_curves"></span><h3>private subroutine <a href='../proc/create_atmosphere_curves.html'>create_atmosphere_curves</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-create_atmosphere_curves"></span><h3>private subroutine <a href='../proc/create_atmosphere_curves.html'>create_atmosphere_curves</a>(settings)</h3></div>
   <div class="panel-body">
        
 <p>Interpolates the atmospheric tables to the desired resolution. The temperature
 derivative is obtained numerically.</p>
     
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-save_profile_to_file"></span><h3>private subroutine <a href='../proc/save_profile_to_file.html'>save_profile_to_file</a>(filename)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-save_profile_to_file"></span><h3>private subroutine <a href='../proc/save_profile_to_file.html'>save_profile_to_file</a>(settings, filename)</h3></div>
   <div class="panel-body">
        
 <p>Saves the density and density derivatives to the given filename. These can be
@@ -565,6 +619,12 @@ used later on to set the values instead of solving the differential equation.</p
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in)</td>
@@ -579,7 +639,7 @@ used later on to set the values instead of solving the differential equation.</p
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-load_profile_from_file"></span><h3>private subroutine <a href='../proc/load_profile_from_file.html'>load_profile_from_file</a>(filename, loading_ok)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-load_profile_from_file"></span><h3>private subroutine <a href='../proc/load_profile_from_file.html'>load_profile_from_file</a>(settings, filename, loading_ok)</h3></div>
   <div class="panel-body">
        
 <p>Loads a previously calculated profile and uses that to set the resolution,
@@ -588,6 +648,12 @@ density and density derivatives.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in)</td>

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.0% of total for procedures.">78 statements</a>
+    title=" 0.8% of total for procedures.">80 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_output.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine create_datfile(eigenvalues, matrix_A, matrix_B, eigenvectors)</h2>
+    <h2>public subroutine create_datfile(eigenvalues, matrix_A, matrix_B, eigenvectors, settings)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,16 +121,15 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    <li><a href='../module/mod_version.html'>mod_version</a></li>
-    <li><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
-    <li><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_units.html'>mod_units</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    <li><a href='../module/mod_version.html'>mod_version</a></li>
+    <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
+    <li><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
+    <li><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
   </ul>
       </li>
       </ul>
@@ -157,19 +156,19 @@ on the configuration, then the actual data.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-eigenvalues~2"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-eigenvalues"></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvalues</strong>(:)</td><td><p>the eigenvalues</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-matrix_a~3"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-matrix_a~4"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_A</strong></td><td><p>the A-matrix</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-matrix_b~3"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-matrix_b~4"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>the B-matrix</p></td>
@@ -179,6 +178,12 @@ on the configuration, then the actual data.
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvectors</strong>(:,:)</td><td><p>the eigenvectors</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-settings~118"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>the settings object</p></td>
 </tr>
 </tbody>
 </table>

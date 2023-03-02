@@ -83,11 +83,11 @@
     data-placement="bottom" data-html="true"
     title=" 0.1% of total for procedures.">7 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_global_variables.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_grid_settings.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_global_variables.f08.html'>mod_global_variables.f08</a></li>
-     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+     <li><a href='../sourcefile/mod_grid_settings.f08.html'>mod_grid_settings.f08</a></li>
+     <li><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></li>
      <li class="active">set_gridpts</li>
   </ol>
 </div>
@@ -113,22 +113,25 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine set_gridpts(points)</h2>
+    <h2>private pure subroutine set_gridpts(this, gridpts)</h2>
     
 
-    <p>Sets all gridpoint-related variables: sets the base number of gridpoints,
-the gridpoints of the Gaussian grid, matrix sizes and size of the
-eigenfunction arrays.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-points"></span>integer,</td>
+  <td><span class="anchor" id="variable-this~78"></span>class(<a href='../type/grid_settings_t.html'>grid_settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gridpts~3"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>points</strong></td><td><p>amount of gridpoints for the base grid</p></td>
+  <td><strong>gridpts</strong></td><td></td>
 </tr>
 </tbody>
 </table>

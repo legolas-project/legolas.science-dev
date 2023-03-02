@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for modules and submodules.">44 statements</a>
+    title=" 0.5% of total for modules and submodules.">48 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_make_subblock.f08"> Source File</a></li>
   </ul>
@@ -122,7 +122,19 @@
     <p>Module to build a single quadblock by creating the four comprising subblocks.
 This is done for every grid interval, for specific integral elements
 and spline functions.</p>
-    
+<br>        <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      <li class="list-group-item">
+  <ul class="list-inline">
+    <li><a href='../module/mod_dims.html'>mod_dims</a></li>
+  </ul>
+      </li>
+      </ul>
+    </div>
+
     
     <br>
 
@@ -151,7 +163,7 @@ and spline functions.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-subblock"></span><h3>public subroutine <a href='../proc/subblock.html'>subblock</a>(quadblock, factors, positions, curr_weight, spline1, spline2)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-subblock"></span><h3>public subroutine <a href='../proc/subblock.html'>subblock</a>(quadblock, factors, positions, curr_weight, spline1, spline2, dims)</h3></div>
   <div class="panel-body">
        
 <p>Builds the quadblock.
@@ -199,6 +211,12 @@ passed along, and the filled quadblock is returned.
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>spline2</strong>(4)</td><td><p>the second basis function</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/dims_t.html'>dims_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>dimensions object</p></td>
 </tr>
 </tbody>
 </table>

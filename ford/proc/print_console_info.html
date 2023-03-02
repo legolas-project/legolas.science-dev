@@ -81,13 +81,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.1% of total for procedures.">85 statements</a>
+    title=" 0.9% of total for procedures.">87 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_logging.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_console.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_logging.f08.html'>mod_logging.f08</a></li>
-     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+     <li><a href='../sourcefile/mod_console.f08.html'>mod_console.f08</a></li>
+     <li><a href='../module/mod_console.html'>mod_console</a></li>
      <li class="active">print_console_info</li>
   </ol>
 </div>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine print_console_info()</h2>
+    <h2>public subroutine print_console_info(settings)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,6 +121,7 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
   </ul>
@@ -133,8 +134,18 @@
 equilibrium parameters etc. Only for logging level "info" or above.</p>
 
     <h3>Arguments</h3>
-    <em>None</em>
-    <br>
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-settings~120"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

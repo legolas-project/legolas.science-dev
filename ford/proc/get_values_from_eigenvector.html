@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">8 statements</a>
+    title=" 0.1% of total for procedures.">11 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_ef_operations.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>function get_values_from_eigenvector(eigenvector, subblock_idx, spline) result(val)</h2>
+    <h2>function get_values_from_eigenvector(eigenvector, subblock_idx, dims, spline) result(val)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,7 +121,7 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_dims.html'>mod_dims</a></li>
   </ul>
       </li>
       </ul>
@@ -136,7 +136,7 @@ requested eigenfunction at the current subblock index mapping.</p>
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-eigenvector~3"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-eigenvector~2"></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td><p>the eigenvector associated with the requested eigenvalue</p></td>
@@ -146,6 +146,12 @@ requested eigenfunction at the current subblock index mapping.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>subblock_idx</strong></td><td><p>current subblock index mapping</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dims~4"></span>type(<a href='../type/dims_t.html'>dims_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dims</strong></td><td><p>the dimensions object</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-spline"></span>real(kind=dp),</td>

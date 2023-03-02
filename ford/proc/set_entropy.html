@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">9 statements</a>
+    title=" 0.1% of total for procedures.">10 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_derived_efs.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>subroutine set_entropy(loc, ef_index)</h2>
+    <h2>subroutine set_entropy(loc, ef_index, state_vector)</h2>
     
 
     <p>Calculates the entropy S1 and places it at location "loc" in the main array.</p>
@@ -133,6 +133,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>ef_index</strong></td><td><p>index of the eigenfunction in the "quantities" array attribute</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-state_vector~10"></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector</p></td>
 </tr>
 </tbody>
 </table>

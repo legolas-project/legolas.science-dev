@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for modules and submodules.">69 statements</a>
+    title=" 0.7% of total for modules and submodules.">74 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_cooling_curves.f08"> Source File</a></li>
   </ul>
@@ -334,7 +334,7 @@ along with handling piecewise cooling curves.
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_rosner_cooling"></span><h3>public subroutine <a href='../proc/get_rosner_cooling.html'>get_rosner_cooling</a>(T0, lambda_T, dlambda_dT)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_rosner_cooling"></span><h3>public subroutine <a href='../proc/get_rosner_cooling.html'>get_rosner_cooling</a>(settings, T0, lambda_T, dlambda_dT)</h3></div>
   <div class="panel-body">
        
 <p>Uses the piecewise rosner cooling curve to calculate the radiative cooling values
@@ -344,6 +344,12 @@ based on the equilibrium temperature.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>

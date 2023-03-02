@@ -100,11 +100,6 @@ on the row and column indices.</p></td></tr>
 element given. Allowed types are complex, real, integer.</p></td></tr>
 			   <tr><td><a href='../interface/add_viscosity_matrix_terms.html'>add_viscosity_matrix_terms</a></td><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../interface/adiabatic_homo_eq.html'>adiabatic_homo_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
-			   <tr><td><a href='../proc/allow_geometry_override.html'>allow_geometry_override</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Subroutine</td><td><p>Allows overriding geometry and grid-related parameters.
-Sets default values for the geometry and grid start/end. If this subroutine is
-used to set geometry/grid values in the submodule it becomes possible to override
-them through the parfile. Warnings will always be printed if this happens.
-</p><a href="../proc/allow_geometry_override.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/append_node.html'>append_node</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Subroutine</td><td><p>Subroutine to append a new node to an already existing list of nodes.
 A new node is created, appended, and the tail is updated.</p></td></tr>
 			   <tr><td><a href='../proc/apply_boundary_conditions.html'>apply_boundary_conditions</a></td><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td>Subroutine</td><td></td></tr>
@@ -112,6 +107,7 @@ A new node is created, appended, and the tail is updated.</p></td></tr>
 			   <tr><td><a href='../interface/apply_essential_boundaries_right.html'>apply_essential_boundaries_right</a></td><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../interface/apply_natural_boundaries_left.html'>apply_natural_boundaries_left</a></td><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../interface/apply_natural_boundaries_right.html'>apply_natural_boundaries_right</a></td><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td>Interface</td><td></td></tr>
+			   <tr><td><a href='../proc/are_set.html'>are_set</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/arnoldi.html'>arnoldi</a></td><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td>Interface</td><td><p>interface to the different solution methods implemented in submodules</p></td></tr>
 			   <tr><td><a href='../interface/array_to_banded.html'>array_to_banded</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/array_to_complex_banded.html'>array_to_complex_banded</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Subroutine</td><td><p>Converts a given array to a banded datastructure.</p></td></tr>
@@ -132,15 +128,8 @@ complex vector. Uses the level 2 BLAS routine <tt>zgbmv</tt>.</p></td></tr>
 			   <tr><td><a href='../proc/calculate_eigenfunctions.html'>calculate_eigenfunctions</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td><p>Calculates both the base eigenfunctions and the derived quantities thereof
 based on a 2D array of right eigenvectors.</p></td></tr>
 			   <tr><td><a href='../proc/character_arr_tostr.html'>character_arr_tostr</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Function</td><td><p>Converts an array of characters to a string.</p></td></tr>
-			   <tr><td><a href='../proc/check_and_set_supplied_unit_normalisations.html'>check_and_set_supplied_unit_normalisations</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td><p>Checks the unit normalisations that are supplied (if any), sets the
-unit normalisations if valid.</p></td></tr>
-			   <tr><td><a href='../proc/check_global_eigenfunction_subset_parameters.html'>check_global_eigenfunction_subset_parameters</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td><p>Called when the eigenfunction subset selection is enabled, this checks if the
+			   <tr><td><a href='../proc/check_eigenfunction_subset_params.html'>check_eigenfunction_subset_params</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td><p>Called when the eigenfunction subset selection is enabled, this checks if the
 global variables are properly set.</p></td></tr>
-			   <tr><td><a href='../proc/check_if_normalisations_set.html'>check_if_normalisations_set</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Subroutine</td><td><p>Checks if normalisations are set.
-If normalisations are not set, set them to default values.
-These are 1 MK as unit temperature, 10 Gauss as unit magnetic field and
-<tt>1e9</tt> cm as a unit length. If normalisations are already set through
-the equilibrium submodule or parfiles nothing is done.</p></td></tr>
 			   <tr><td><a href='../proc/check_if_pp_quantities_can_be_calculated.html'>check_if_pp_quantities_can_be_calculated</a></td><td><a href='../module/smod_derived_efs.html'>smod_derived_efs</a></td><td>Subroutine</td><td><p>Determines if parallel/perpendicular quantities can be calculated and
 sets the corresponding module flag. This flag will be false if there is a
 non-zero B01 component present, or no magnetic field.</p></td></tr>
@@ -217,19 +206,48 @@ boundary conditions are imposed.</p></td></tr>
 <script type="math/tex; mode=display"> g(x) = g_\odot \left(\frac{R_\odot}{(R_\odot + x)}\right)^2 </script>
 </p></td></tr>
 			   <tr><td><a href='../proc/delete.html'>delete</a></td><td><a href='../module/mod_matrix_node.html'>mod_matrix_node</a></td><td>Subroutine</td><td><p>Destructor, deallocates the node attributes.</p></td></tr>
+			   <tr><td><a href='../proc/delete~2.html'>delete</a></td><td><a href='../module/mod_solver_settings.html'>mod_solver_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~3.html'>delete</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~4.html'>delete</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~5.html'>delete</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~6.html'>delete</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/delete_matrix.html'>delete_matrix</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Subroutine</td><td><p>Deallocates the matrix datastructure, nullifies all corresponding pointers and
 deallocates the various nodes in the rows.</p></td></tr>
 			   <tr><td><a href='../proc/delete_node_from_row.html'>delete_node_from_row</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Subroutine</td><td><p>Deletes a given node from the current row.</p></td></tr>
 			   <tr><td><a href='../proc/delete_row.html'>delete_row</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Subroutine</td><td><p>Deletes a given linked list row by recursively iterating over all nodes.
 Nullifies the pointers and deallocates the elements.</p></td></tr>
-			   <tr><td><a href='../proc/destroy.html'>destroy</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Destructor, deallocates variables.</p></td></tr>
+			   <tr><td><a href='../proc/destroy.html'>destroy</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Subroutine</td><td><p>Destructor, deallocates the datastructure.</p></td></tr>
 			   <tr><td><a href='../proc/destroy~2.html'>destroy</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Subroutine</td><td><p>Destructor, deallocates the datastructure.</p></td></tr>
-			   <tr><td><a href='../proc/destroy~3.html'>destroy</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Subroutine</td><td><p>Destructor, deallocates the datastructure.</p></td></tr>
+			   <tr><td><a href='../proc/destroy~3.html'>destroy</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Destructor, deallocates variables.</p></td></tr>
 			   <tr><td><a href='../proc/dimensions_are_valid.html'>dimensions_are_valid</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if the given matrix dimensions are valid. For now, we only accept
 square matrices. Returns <code>.true.</code> if <code>rows</code> equals <code>cols</code>, <code>.false.</code> otherwise.</p></td></tr>
+			   <tr><td><a href='../proc/disable.html'>disable</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/disable~2.html'>disable</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/disable~3.html'>disable</a></td><td><a href='../module/mod_flow_settings.html'>mod_flow_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/disable~4.html'>disable</a></td><td><a href='../module/mod_gravity_settings.html'>mod_gravity_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/disable~5.html'>disable</a></td><td><a href='../module/mod_viscosity_settings.html'>mod_viscosity_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/disable~6.html'>disable</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/disable~7.html'>disable</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../interface/discrete_alfven_eq.html'>discrete_alfven_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../proc/eigenfunctions_clean.html'>eigenfunctions_clean</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td><p>Cleaning routine.</p></td></tr>
 			   <tr><td><a href='../proc/eigenvalue_is_inside_subset_radius.html'>eigenvalue_is_inside_subset_radius</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Function</td><td><p>Checks if a specific eigenvalue is within the provided subset radius.</p></td></tr>
+			   <tr><td><a href='../proc/enable.html'>enable</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable~2.html'>enable</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable~3.html'>enable</a></td><td><a href='../module/mod_flow_settings.html'>mod_flow_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable~4.html'>enable</a></td><td><a href='../module/mod_gravity_settings.html'>mod_gravity_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable~5.html'>enable</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_cooling.html'>enable_cooling</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_electron_inertia.html'>enable_electron_inertia</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_flow.html'>enable_flow</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_gravity.html'>enable_gravity</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_hall.html'>enable_hall</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_para_conduction.html'>enable_para_conduction</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_parallel_conduction.html'>enable_parallel_conduction</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_perp_conduction.html'>enable_perp_conduction</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_perpendicular_conduction.html'>enable_perpendicular_conduction</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_resistivity.html'>enable_resistivity</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_viscosity.html'>enable_viscosity</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/enable_viscous_heating.html'>enable_viscous_heating</a></td><td><a href='../module/mod_viscosity_settings.html'>mod_viscosity_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/end_timer.html'>end_timer</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/equilibrium_clean.html'>equilibrium_clean</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Subroutine</td><td><p>Cleaning routine, deallocates the equilibrium types.</p></td></tr>
 			   <tr><td><a href='../proc/find_index_in_character_array.html'>find_index_in_character_array</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Function</td><td><p>Function to locate the index of a given character in a character array.
@@ -245,22 +263,23 @@ found zero is returned.</p></td></tr>
 to a particular point in the grid and a particular Gaussian weight.
 This routine is called <tt>n_gauss</tt> times for every grid interval.
 </p><a href="../proc/get_a_elements.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/get_arpack_mode.html'>get_arpack_mode</a></td><td><a href='../module/mod_solver_settings.html'>mod_solver_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_array_element.html'>get_array_element</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Function</td><td><p>Retrieves the element at index (i, j) for an array of general type.
 Returns the element as a (casted) complex type.</p></td></tr>
 			   <tr><td><a href='../proc/get_b_elements.html'>get_B_elements</a></td><td><a href='../module/mod_matrix_creation.html'>mod_matrix_creation</a></td><td>Subroutine</td><td><p>Retrieves the B-matrix elements for a given quadblock corresponding
 to a particular point in the grid and a particular Gaussian weight.
 This routine is called <tt>n_gauss</tt> times for every grid interval.
 </p><a href="../proc/get_b_elements.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/get_basename_datfile.html'>get_basename_datfile</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_bmat.html'>get_bmat</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for kind of B-matrix in eigenvalue problem.</p></td></tr>
+			   <tr><td><a href='../proc/get_boundary_type.html'>get_boundary_type</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_complex_element.html'>get_complex_element</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the complex element associated with the linked-list node at position
 (row, column) in the matrix datastructure. Non-existing nodes correspond to zero
 values, so when a node at (row, column) is not foudn this function returns
 (complex) zero.</p></td></tr>
-			   <tr><td><a href='../proc/get_constants.html'>get_constants</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Subroutine</td><td><p>Returns the Boltzmann constant, proton mass, magnetic constant
-and gas constant in either cgs (default) or SI units.</p></td></tr>
-			   <tr><td><a href='../proc/get_constants~2.html'>get_constants</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Retrieves resistivity constants.
-Returns all physical constants used to calculate the Spitzer resistivity,
-either in cgs (default) or SI depending on the unit system chosen.</p></td></tr>
+			   <tr><td><a href='../proc/get_constants.html'>get_constants</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Retrieves resistivity constants.
+Returns all physical constants used to calculate the Spitzer resistivity.</p></td></tr>
+			   <tr><td><a href='../proc/get_cooling_curve.html'>get_cooling_curve</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_deta.html'>get_deta</a></td><td><a href='../module/smod_resistive_matrix.html'>smod_resistive_matrix</a></td><td>Function</td><td><p>Calculates the total derivative of <script type="math/tex; mode=display">\eta</script>, given as
 <script type="math/tex; mode=display"> \eta_0(r, T)' = \frac{d\eta_0}{dr} + \frac{dT_0}{dr}\frac{d\eta_0}{dT} </script>
 </p></td></tr>
@@ -279,13 +298,20 @@ Depends on the matrix that is used.</p></td></tr>
 \right) + k_3B_{02}\right]
 </script>
 </p></td></tr>
-			   <tr><td><a href='../proc/get_element.html'>get_element</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Retrieves the element at position (row, col) of the original matrix.
-See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
-at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p></td></tr>
-			   <tr><td><a href='../proc/get_element~2.html'>get_element</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Retrieves the element at position (row, col) of the original matrix.
+			   <tr><td><a href='../proc/get_dim_integralblock.html'>get_dim_integralblock</a></td><td><a href='../module/mod_dims.html'>mod_dims</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dim_matrix.html'>get_dim_matrix</a></td><td><a href='../module/mod_dims.html'>mod_dims</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dim_quadblock.html'>get_dim_quadblock</a></td><td><a href='../module/mod_dims.html'>mod_dims</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dim_subblock.html'>get_dim_subblock</a></td><td><a href='../module/mod_dims.html'>mod_dims</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_ef_gridpts.html'>get_ef_gridpts</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_electron_fraction.html'>get_electron_fraction</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_element.html'>get_element</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Retrieves the element at position (row, col) of the original matrix.
 See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
 at position $(kd + 1 + i - j, j)$ if <code>uplo = "U"</code> and at position
 $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p></td></tr>
+			   <tr><td><a href='../proc/get_element~2.html'>get_element</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Retrieves the element at position (row, col) of the original matrix.
+See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
+at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p></td></tr>
+			   <tr><td><a href='../proc/get_equilibrium_type.html'>get_equilibrium_type</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_eta.html'>get_eta</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Calculates the resistivity. Returns either the full Spitzer resistivity
 based on the equilibrium parameters, or a fixed resistivity value if
 specified in the global variables module. The unit resistivity is also set in this routine.
@@ -299,6 +325,9 @@ the unit resistivity remains unity.
      \left(\frac{k_2}{\varepsilon}B_{02} \pm k_3B_{03}\right)
 </script>
 </p></td></tr>
+			   <tr><td><a href='../proc/get_fixed_resistivity.html'>get_fixed_resistivity</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_fixed_tc_para.html'>get_fixed_tc_para</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_fixed_tc_perp.html'>get_fixed_tc_perp</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_flow_operator.html'>get_flow_operator</a></td><td><a href='../module/smod_flow_matrix.html'>smod_flow_matrix</a></td><td>Function</td><td><p>Calculates the <script type="math/tex; mode=display">\boldsymbol{\mathcal{V}}</script> operator, given as
 <script type="math/tex; mode=display"> \boldsymbol{\mathcal{V}} = \left(\frac{k_2}{\eps}v_{02} + k_3v_{03}\right) </script>
 </p></td></tr>
@@ -308,8 +337,16 @@ the unit resistivity remains unity.
      \left(k_3 B_{02} \mp \frac{k_2}{\varepsilon}B_{03}\right)
 </script>
 </p></td></tr>
+			   <tr><td><a href='../proc/get_gamma.html'>get_gamma</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_gamma_1.html'>get_gamma_1</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_gauss_gridpts.html'>get_gauss_gridpts</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_geometry.html'>get_geometry</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_grid_end.html'>get_grid_end</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_grid_start.html'>get_grid_start</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_gridpts.html'>get_gridpts</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/get_index.html'>get_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Interface</td><td><p>interface to retrieve the index of an element in an array.
 </p><a href="../interface/get_index.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/get_interpolation_points.html'>get_interpolation_points</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_kp_operator.html'>get_Kp_operator</a></td><td><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></td><td>Function</td><td><p>Calculates the (modified) conduction prefactor, given as
 \boldsymbol{K_p^+} =
      \left(\boldsymbol{K_p} + \frac{\partial \kappa_\perp}{\partial(B^2)}\right)
@@ -323,7 +360,9 @@ $$</p></td></tr>
 			   <tr><td><a href='../proc/get_lu_factorisation_banded.html'>get_LU_factorisation_banded</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Subroutine</td><td><p>Calculates the LU factorisation of a complex banded matrix <script type="math/tex">A</script>.
 Uses the LAPACK routine zgbtrf.</p></td></tr>
 			   <tr><td><a href='../proc/get_lworkl.html'>get_lworkl</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for length of workl array, returns 3 * ncv**2 + 5 * ncv</p></td></tr>
+			   <tr><td><a href='../proc/get_mean_molecular_weight.html'>get_mean_molecular_weight</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_nb_diagonals.html'>get_nb_diagonals</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Subroutine</td><td><p>Subroutine to get the number of super- and sub-diagonals in the matrix.</p></td></tr>
+			   <tr><td><a href='../proc/get_nb_eqs.html'>get_nb_eqs</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_ncv.html'>get_ncv</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for number of Arnoldi basis vectors that should be calculated.</p></td></tr>
 			   <tr><td><a href='../proc/get_nev.html'>get_nev</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for number of eigenvalues to calculate.</p></td></tr>
 			   <tr><td><a href='../proc/get_node.html'>get_node</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Function</td><td><p>Returns a pointer to the node corresponding to the given column.
@@ -337,8 +376,10 @@ difference stencil is used for the left and right boundary, respectively.
 It is assumed that the x values are all equally spaced. If this is not the case,
 a polynomial interpolation on a uniform grid can be done and that one can be
 differentiated instead. The stencils are as follows:</p><a href="../proc/get_numerical_derivative.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/get_output_folder.html'>get_output_folder</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_parfile.html'>get_parfile</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td><p>Parses the command line arguments and retrieves the parfile passed.
 </p><a href="../proc/get_parfile.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/get_physics_type.html'>get_physics_type</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_r_operator.html'>get_R_operator</a></td><td><a href='../module/smod_resistive_matrix.html'>smod_resistive_matrix</a></td><td>Function</td><td><p>Calculates the <script type="math/tex; mode=display">\boldsymbol{\mathcal{R}}</script> operator, given as
 <script type="math/tex; mode=display">
 \boldsymbol{\mathcal{R}} =
@@ -349,18 +390,34 @@ differentiated instead. The stencils are as follows:</p><a href="../proc/get_num
 			   <tr><td><a href='../proc/get_rosner_cooling.html'>get_rosner_cooling</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Subroutine</td><td><p>Uses the piecewise rosner cooling curve to calculate the radiative cooling values
 based on the equilibrium temperature.
 </p><a href="../proc/get_rosner_cooling.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/get_solver.html'>get_solver</a></td><td><a href='../module/mod_solver_settings.html'>mod_solver_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_spline.html'>get_spline</a></td><td><a href='../module/smod_ef_operations.html'>smod_ef_operations</a></td><td>Function</td><td><p>Returns the finite element basis functions for the given eigenfunction and
 position in the grid.</p></td></tr>
+			   <tr><td><a href='../proc/get_state_vector.html'>get_state_vector</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/get_subblock_index.html'>get_subblock_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/get_tolerance.html'>get_tolerance</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for tolerance (relative accuracy) to indicate eigenvalue convergence.</p></td></tr>
-			   <tr><td><a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix.</p></td></tr>
-			   <tr><td><a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the total number of elements (nodes) across the various rows.</p></td></tr>
-			   <tr><td><a href='../proc/get_total_nb_elements~3.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix</p></td></tr>
+			   <tr><td><a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the total number of elements (nodes) across the various rows.</p></td></tr>
+			   <tr><td><a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix</p></td></tr>
+			   <tr><td><a href='../proc/get_total_nb_elements~3.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_nonzero_elements.html'>get_total_nb_nonzero_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of nonzero elements inside the banded matrix.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_time.html'>get_total_time</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_conduction.html'>get_unit_conduction</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_density.html'>get_unit_density</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_gravity.html'>get_unit_gravity</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_lambdat.html'>get_unit_lambdaT</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_length.html'>get_unit_length</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_magneticfield.html'>get_unit_magneticfield</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_mass.html'>get_unit_mass</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_numberdensity.html'>get_unit_numberdensity</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_pressure.html'>get_unit_pressure</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_resistivity.html'>get_unit_resistivity</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_temperature.html'>get_unit_temperature</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_time.html'>get_unit_time</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_unit_velocity.html'>get_unit_velocity</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_values_from_eigenvector.html'>get_values_from_eigenvector</a></td><td><a href='../module/smod_ef_operations.html'>smod_ef_operations</a></td><td>Function</td><td><p>Retrieves the correct values from the eigenvector that correspond to the
 requested eigenfunction at the current subblock index mapping.</p></td></tr>
 			   <tr><td><a href='../proc/get_viscosity_terms.html'>get_viscosity_terms</a></td><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/get_viscosity_value.html'>get_viscosity_value</a></td><td><a href='../module/mod_viscosity_settings.html'>mod_viscosity_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_which.html'>get_which</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for which eigenvalues to return.</p></td></tr>
 			   <tr><td><a href='../proc/get_wv_operator.html'>get_wv_operator</a></td><td><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></td><td>Function</td><td><p>Calculates the wave vector operator <script type="math/tex; mode=display">\boldsymbol{\mathcal{K}}</script>, given as
 <script type="math/tex; mode=display">
@@ -372,17 +429,17 @@ requested eigenfunction at the current subblock index mapping.</p></td></tr>
 			   <tr><td><a href='../interface/gravito_acoustic_eq.html'>gravito_acoustic_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/gravito_mhd_eq.html'>gravito_mhd_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../proc/grid_clean.html'>grid_clean</a></td><td><a href='../module/mod_grid.html'>mod_grid</a></td><td>Subroutine</td><td><p>Cleanup routine, deallocates the arrays at module scope.</p></td></tr>
-			   <tr><td><a href='../proc/handle_spurious_eigenvalues.html'>handle_spurious_eigenvalues</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Handles spurious eigenvalue through removal.
-If requested, this can remove spurious eigenvalues on the edges
-of the spectrum. This usually only occurs in cylindrical geometries
-with forced on-axis conditions. The amount of eigenvalues to handle on every side
-of the imaginary axis is specified in the parfile.
-Example: <tt>nb_spurious_eigenvalues = 1</tt> removes the outermost
-eigenvalue on each side of the imaginary axis (so two in total).
-</p><a href="../proc/handle_spurious_eigenvalues.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../interface/harris_sheet_eq.html'>harris_sheet_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
+			   <tr><td><a href='../proc/has_electron_inertia.html'>has_electron_inertia</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/has_fixed_resistivity.html'>has_fixed_resistivity</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/has_fixed_tc_para.html'>has_fixed_tc_para</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/has_fixed_tc_perp.html'>has_fixed_tc_perp</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/has_parallel_conduction.html'>has_parallel_conduction</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/has_perpendicular_conduction.html'>has_perpendicular_conduction</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/has_viscous_heating.html'>has_viscous_heating</a></td><td><a href='../module/mod_viscosity_settings.html'>mod_viscosity_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/hermitian_banded_to_array.html'>hermitian_banded_to_array</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/hermitian_banded_to_complex_array.html'>hermitian_banded_to_complex_array</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Function</td><td><p>Converts a Hermitian banded datastructure to a full complex array.</p></td></tr>
+			   <tr><td><a href='../proc/in_cgs.html'>in_cgs</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/induction_equil_conditions.html'>induction_equil_conditions</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Checks the induction equation for the equilibrium state. The two (nonzero)
 resulting expressions are
 <script type="math/tex; mode=display"> (B_{01} v_{02} - (B_{02} v_{01})' = 0, </script>
@@ -451,37 +508,45 @@ Interpolation is done using <tt>n_interp</tt> points, in general a second
 order polynomial approximation is used except near sharp jumps.
 </p><a href="../proc/interpolate_table.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../interface/inverse_iteration.html'>inverse_iteration</a></td><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td>Interface</td><td><p>interface to the different solution methods implemented in submodules</p></td></tr>
-			   <tr><td><a href='../proc/is_compatible_with.html'>is_compatible_with</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if a banded matrix is compatibe with another banded matrix.
-This implies that the following attributes should be equal:
-  - dimensions of the original matrices
-  - number of superdiagonals and subdiagonals
-  - dimensions of the banded matrices themselves
-Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.</code> otherwise.</p></td></tr>
-			   <tr><td><a href='../proc/is_compatible_with~2.html'>is_compatible_with</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Checks if a Hermitian band matrix is compatible with another Hermitian band matrix.
+			   <tr><td><a href='../proc/is_compatible_with.html'>is_compatible_with</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Checks if a Hermitian band matrix is compatible with another Hermitian band matrix.
 This implies that the following attributes should be equal:
   - number of rows/columns
   - number of sub/superdiagonals
   - storage of upper or lower triangular part
   - dimensions of the banded matrices themselves
 Returns <tt>.true.</tt> if all criteria are satisfied, <tt>.false.</tt> otherwise.</p></td></tr>
+			   <tr><td><a href='../proc/is_compatible_with~2.html'>is_compatible_with</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if a banded matrix is compatibe with another banded matrix.
+This implies that the following attributes should be equal:
+  - dimensions of the original matrices
+  - number of superdiagonals and subdiagonals
+  - dimensions of the banded matrices themselves
+Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.</code> otherwise.</p></td></tr>
 			   <tr><td><a href='../interface/is_constant.html'>is_constant</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check if an array is constant</p></td></tr>
+			   <tr><td><a href='../proc/is_enabled.html'>is_enabled</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_enabled~2.html'>is_enabled</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_enabled~3.html'>is_enabled</a></td><td><a href='../module/mod_flow_settings.html'>mod_flow_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_enabled~4.html'>is_enabled</a></td><td><a href='../module/mod_gravity_settings.html'>mod_gravity_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_enabled~5.html'>is_enabled</a></td><td><a href='../module/mod_viscosity_settings.html'>mod_viscosity_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_enabled~6.html'>is_enabled</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_enabled~7.html'>is_enabled</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/is_equal.html'>is_equal</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check equality between values/arrays</p></td></tr>
 			   <tr><td><a href='../interface/is_nan.html'>is_NaN</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check for NaN values</p></td></tr>
 			   <tr><td><a href='../interface/is_negative.html'>is_negative</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check for negative values</p></td></tr>
+			   <tr><td><a href='../proc/is_using_substitution.html'>is_using_substitution</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/is_valid_element.html'>is_valid_element</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Checks if a given element is valid in order to add it to the matrix.
 Returns <code>.true.</code> if the element is of type real or complex, <code>.false.</code> otherwise.</p></td></tr>
 			   <tr><td><a href='../proc/is_valid_index.html'>is_valid_index</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Checks if a given index is valid for the current matrix datastructure.
 Returns <code>.true.</code> if the index (either row or column) is larger than 0 and
 smaller than the dimension of the matrix. Returns <code>.false.</code> otherwise.</p></td></tr>
-			   <tr><td><a href='../proc/is_within_band.html'>is_within_band</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if a given position (row, col) is within the banded structure, i.e.
-<script type="math/tex; mode=display"> max(1, col - ku) \leq row \leq min(m, col + kl) </script>
-with $ku$ the number of superdiagonals and $kl$ the number of subdiagonals.</p></td></tr>
-			   <tr><td><a href='../proc/is_within_band~2.html'>is_within_band</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Checks if a given position (row, col) is within the banded structure.
+			   <tr><td><a href='../proc/is_within_band.html'>is_within_band</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Checks if a given position (row, col) is within the banded structure.
 For <tt>uplo = "U"</tt> the position is within the band if
 <script type="math/tex; mode=display"> max(1, col - kd) \leq row \leq col, </script>
 for <tt>uplo = "L"</tt> the position is within the band if
 <script type="math/tex; mode=display"> col \leq row \leq min(n, col + kd) </script>
 with $kd$ the number of sub/superdiagonals and $n$ the number of rows/columns.</p></td></tr>
+			   <tr><td><a href='../proc/is_within_band~2.html'>is_within_band</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Checks if a given position (row, col) is within the banded structure, i.e.
+<script type="math/tex; mode=display"> max(1, col - ku) \leq row \leq min(m, col + kl) </script>
+with $ku$ the number of superdiagonals and $kl$ the number of subdiagonals.</p></td></tr>
 			   <tr><td><a href='../interface/is_zero.html'>is_zero</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check if values/arrays are zero</p></td></tr>
 			   <tr><td><a href='../interface/isothermal_atmosphere_eq.html'>isothermal_atmosphere_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/kh_cd_instability_eq.html'>kh_cd_instability_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
@@ -517,17 +582,32 @@ problem, mode of the solver and type of the B-matrix. Initialises required
 variables and allocates work arrays to be used when calling the solvers.</p></td></tr>
 			   <tr><td><a href='../proc/new_banded_matrix.html'>new_banded_matrix</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Constructor for a new banded matrix with a given number of rows, columns,
 subdiagonals and superdiagonals. Allocates and initialises the datatype.</p></td></tr>
+			   <tr><td><a href='../proc/new_block_dims.html'>new_block_dims</a></td><td><a href='../module/mod_dims.html'>mod_dims</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_conduction_settings.html'>new_conduction_settings</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_cooling_settings.html'>new_cooling_settings</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_equilibrium_settings.html'>new_equilibrium_settings</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_flow_settings.html'>new_flow_settings</a></td><td><a href='../module/mod_flow_settings.html'>mod_flow_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_gravity_settings.html'>new_gravity_settings</a></td><td><a href='../module/mod_gravity_settings.html'>mod_gravity_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_grid_settings.html'>new_grid_settings</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_hall_settings.html'>new_hall_settings</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_hermitian_banded_matrix.html'>new_hermitian_banded_matrix</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Constructor for a new Hermitian banded matrix with a given number of rows and
 diagonals. Allocates and initialises the datatype.
 initialise all to zero</p></td></tr>
+			   <tr><td><a href='../proc/new_io_settings.html'>new_io_settings</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_matrix.html'>new_matrix</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Constructor for a new matrix matrix with a given number of rows.
 Allocates and initialises the matrix datatype.</p></td></tr>
 			   <tr><td><a href='../proc/new_node.html'>new_node</a></td><td><a href='../module/mod_matrix_node.html'>mod_matrix_node</a></td><td>Function</td><td><p>Constructor for a new node, sets the column and element attributes.
 The element passed is polymorphic, but will be cast to complex in the node itself.
 No nodes are linked yet; the pointer to the next node is initialised to <code>null()</code>.</p></td></tr>
+			   <tr><td><a href='../proc/new_physics_settings.html'>new_physics_settings</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_resistivity_settings.html'>new_resistivity_settings</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_row.html'>new_row</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Function</td><td><p>Constructor for a new row, initialises the linked list datastructure
 and sets the current head and tail pointers to <code>null()</code>.</p></td></tr>
+			   <tr><td><a href='../proc/new_settings.html'>new_settings</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_solver_settings.html'>new_solver_settings</a></td><td><a href='../module/mod_solver_settings.html'>mod_solver_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_timer.html'>new_timer</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_unit_system.html'>new_unit_system</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_viscosity_settings.html'>new_viscosity_settings</a></td><td><a href='../module/mod_viscosity_settings.html'>mod_viscosity_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/on_exception_raised.html'>on_exception_raised</a></td><td><a href='../module/mod_exceptions.html'>mod_exceptions</a></td><td>Subroutine</td><td><p>Workflow that is executed by default when
 an exception is raised. The argument <tt>message</tt>
 is printed to the console and program execution
@@ -542,6 +622,7 @@ returns the string itself.</p></td></tr>
 			   <tr><td><a href='../proc/parse_finished_stats.html'>parse_finished_stats</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Parses the statistics that come out of ARPACK when the run is finished. Displays
 the number of OP<em>X and B</em>X operations and the number of re-orthogonalisation
 steps that were needed.</p></td></tr>
+			   <tr><td><a href='../proc/parse_io_info.html'>parse_io_info</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/parse_znaupd_info.html'>parse_znaupd_info</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Parses the info parameter that comes out of ARPACK's <tt>znaupd</tt> method.
 If info = 0, everything behaved nicely and the reverse communication subroutines
 exited properly. If info is any other value something went wrong and
@@ -556,13 +637,13 @@ values are positive.</p></td></tr>
 We check the wavenumbers and on-axis values, as well as standard
 and non-adiabatic equilibrium force balance.</p></td></tr>
 			   <tr><td><a href='../interface/photospheric_flux_tube_eq.html'>photospheric_flux_tube_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
-			   <tr><td><a href='../proc/print_console_info.html'>print_console_info</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td><p>Prints various console messages showing geometry, grid parameters,
+			   <tr><td><a href='../proc/print_console_info.html'>print_console_info</a></td><td><a href='../module/mod_console.html'>mod_console</a></td><td>Subroutine</td><td><p>Prints various console messages showing geometry, grid parameters,
 equilibrium parameters etc. Only for logging level "info" or above.</p></td></tr>
-			   <tr><td><a href='../proc/print_logo.html'>print_logo</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td><p>Prints the Legolas logo to the console.
+			   <tr><td><a href='../proc/print_logo.html'>print_logo</a></td><td><a href='../module/mod_console.html'>mod_console</a></td><td>Subroutine</td><td><p>Prints the Legolas logo to the console.
 The logo is wrapped in 1 whitespace at the top and
 two at the bottom. Only for logging level 'warning' (1) and above</p></td></tr>
 			   <tr><td><a href='../proc/print_timelog.html'>print_timelog</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/print_whitespace.html'>print_whitespace</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td><p>Prints an empty line to the console.
+			   <tr><td><a href='../proc/print_whitespace.html'>print_whitespace</a></td><td><a href='../module/mod_console.html'>mod_console</a></td><td>Subroutine</td><td><p>Prints an empty line to the console.
 Only if logging level is 'warning' or above.</p></td></tr>
 			   <tr><td><a href='../interface/qr_cholesky.html'>qr_cholesky</a></td><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td>Interface</td><td><p>interface to the different solution methods implemented in submodules</p></td></tr>
 			   <tr><td><a href='../interface/qr_invert.html'>qr_invert</a></td><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td>Interface</td><td><p>interface to the different solution methods implemented in submodules</p></td></tr>
@@ -573,16 +654,21 @@ Only if logging level is 'warning' or above.</p></td></tr>
 			   <tr><td><a href='../proc/raise_exception.html'>raise_exception</a></td><td><a href='../module/mod_exceptions.html'>mod_exceptions</a></td><td>Subroutine</td><td><p>Raises an exception with a given message.
 By default, exceptions terminate program execution.
 Calls the initialisation routine if not already done.</p></td></tr>
-			   <tr><td><a href='../proc/read_parfile.html'>read_parfile</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td><p>Reads in the supplied parfile and sets the equilibrium parameters and
-global variables to their specified values.
-</p><a href="../proc/read_parfile.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/read_equilibriumlist.html'>read_equilibriumlist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/read_gridlist.html'>read_gridlist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/read_paramlist.html'>read_paramlist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/read_parfile.html'>read_parfile</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/read_physicslist.html'>read_physicslist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/read_savelist.html'>read_savelist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/read_solvelist.html'>read_solvelist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/read_unitlist.html'>read_unitlist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/real_array_is_constant.html'>real_array_is_constant</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Check if an array has constant values</p></td></tr>
 			   <tr><td><a href='../proc/real_is_equal.html'>real_is_equal</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Equality check between real values</p></td></tr>
 			   <tr><td><a href='../proc/real_is_negative.html'>real_is_negative</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Check if values are or contain negative numbers</p></td></tr>
 			   <tr><td><a href='../proc/real_is_zero.html'>real_is_zero</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Checks if real values are zero</p></td></tr>
-			   <tr><td><a href='../proc/reset_factor_positions.html'>reset_factor_positions</a></td><td><a href='../module/smod_natural_boundaries.html'>smod_natural_boundaries</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
+			   <tr><td><a href='../proc/reset_factor_positions.html'>reset_factor_positions</a></td><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
 new size.</p></td></tr>
-			   <tr><td><a href='../proc/reset_factor_positions~2.html'>reset_factor_positions</a></td><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
+			   <tr><td><a href='../proc/reset_factor_positions~2.html'>reset_factor_positions</a></td><td><a href='../module/smod_natural_boundaries.html'>smod_natural_boundaries</a></td><td>Subroutine</td><td><p>Resets the <tt>factors</tt> and <tt>positions</tt> arrays to a given
 new size.</p></td></tr>
 			   <tr><td><a href='../interface/resistive_homo_eq.html'>resistive_homo_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/resistive_tearing_modes_eq.html'>resistive_tearing_modes_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
@@ -605,9 +691,14 @@ order solutions for step i+1 based on the values at step i.</p></td></tr>
 			   <tr><td><a href='../proc/save_profile_to_file.html'>save_profile_to_file</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Subroutine</td><td><p>Saves the density and density derivatives to the given filename. These can be
 used later on to set the values instead of solving the differential equation.</p></td></tr>
 			   <tr><td><a href='../proc/select_eigenfunctions_to_save.html'>select_eigenfunctions_to_save</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td><p>Selects a subset of eigenfunctions to be saved.</p></td></tr>
+			   <tr><td><a href='../proc/set_all_io_to_false.html'>set_all_io_to_false</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_arpack_mode.html'>set_arpack_mode</a></td><td><a href='../module/mod_solver_settings.html'>mod_solver_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_basename_datfile.html'>set_basename_datfile</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_basis_functions.html'>set_basis_functions</a></td><td><a href='../module/smod_natural_boundaries.html'>smod_natural_boundaries</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_block_dims.html'>set_block_dims</a></td><td><a href='../module/mod_dims.html'>mod_dims</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_bmat.html'>set_bmat</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Sets the type of B-matrix.</p></td></tr>
 			   <tr><td><a href='../proc/set_boundary_flags.html'>set_boundary_flags</a></td><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_boundary_type.html'>set_boundary_type</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_conduction_prefactor.html'>set_conduction_prefactor</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>Sets the thermal conduction prefactor, given by
 <script type="math/tex; mode=display"> \frac{\kappa_{\parallel, 0} - \kappa_{\perp, 0}}{B_0^2} </script>.
 The radial derivative of the prefactor is also set, given by
@@ -620,11 +711,13 @@ The radial derivative of the prefactor is also set, given by
 			   <tr><td><a href='../proc/set_conduction_values.html'>set_conduction_values</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>This routines sets all thermal conduction values in <tt>kappa_field</tt>,
 and calls all other relevant subroutines defined in this module.
 </p><a href="../proc/set_conduction_values.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/set_element.html'>set_element</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Subroutine</td><td><p>Sets the element $a_{ij}$ of the original array into the banded structure.
+			   <tr><td><a href='../proc/set_cooling_curve.html'>set_cooling_curve</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_electron_fraction.html'>set_electron_fraction</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_element.html'>set_element</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Subroutine</td><td><p>Sets the element $a_{ij}$ of the original array into the banded structure.
 The <tt>row</tt> and <tt>col</tt> arguments refer to the row and column indices
 of the element in the original array. This routine has no effect if the location
 falls outside of the banded structure.</p></td></tr>
-			   <tr><td><a href='../proc/set_element~2.html'>set_element</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Subroutine</td><td><p>Sets the element $a_{ij}$ of the original array into the banded structure.
+			   <tr><td><a href='../proc/set_element~2.html'>set_element</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Subroutine</td><td><p>Sets the element $a_{ij}$ of the original array into the banded structure.
 The <tt>row</tt> and <tt>col</tt> arguments refer to the row and column indices
 of the element in the original array. This routine has no effect if the location
 falls outside of the banded structure.</p></td></tr>
@@ -656,21 +749,26 @@ looking up the nearest values for every point in the eigenfunction grid.</p></td
 			   <tr><td><a href='../proc/set_equilibrium_pointer.html'>set_equilibrium_pointer</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Subroutine</td><td><p>Selects the submodule based on the specified equilibrium
 in the parfile. Works on a case-select basis.
 </p><a href="../proc/set_equilibrium_pointer.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/set_equilibrium_type.html'>set_equilibrium_type</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_eta_dropoff.html'>set_eta_dropoff</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Sets a hyperbolic tangent profile for the resistivity so it goes smoothly to zero
 near the edges. The location and width of the dropoff profile can be controlled
 through <tt>dropoff_edge_dist</tt> and <tt>dropoff_width</tt>.
 </p><a href="../proc/set_eta_dropoff.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/set_gamma.html'>set_gamma</a></td><td><a href='../module/mod_global_variables.html'>mod_global_variables</a></td><td>Subroutine</td><td><p>Sets the ratio of specific heats gamma and its corresponding
-value gamma - 1.</p></td></tr>
+			   <tr><td><a href='../proc/set_fixed_resistivity.html'>set_fixed_resistivity</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_fixed_tc_para.html'>set_fixed_tc_para</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_fixed_tc_perp.html'>set_fixed_tc_perp</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_gamma.html'>set_gamma</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_geometry.html'>set_geometry</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_grid_boundaries.html'>set_grid_boundaries</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_grid_gauss.html'>set_grid_gauss</a></td><td><a href='../module/mod_grid.html'>mod_grid</a></td><td>Subroutine</td><td><p>Sets up grid_gauss, that is, the grid evaluated in the four
 Gaussian points. This is done by evaluating the weights
 at the four Gaussian nodes.</p></td></tr>
-			   <tr><td><a href='../proc/set_gridpts.html'>set_gridpts</a></td><td><a href='../module/mod_global_variables.html'>mod_global_variables</a></td><td>Subroutine</td><td><p>Sets all gridpoint-related variables: sets the base number of gridpoints,
-the gridpoints of the Gaussian grid, matrix sizes and size of the
-eigenfunction arrays.</p></td></tr>
+			   <tr><td><a href='../proc/set_gridpts.html'>set_gridpts</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_hall_factors.html'>set_hall_factors</a></td><td><a href='../module/mod_hall.html'>mod_hall</a></td><td>Subroutine</td><td><p>Retrieves the normalised Hall factor as described by Porth et al. (2014),
 with a dropoff at the boundary, if desired. Additionally, defines the
 electron inertia factor if included, with a dropoff profile, if desired.</p></td></tr>
+			   <tr><td><a href='../proc/set_incompressible.html'>set_incompressible</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_interpolation_points.html'>set_interpolation_points</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_kappa_para.html'>set_kappa_para</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>Calculates the parallel thermal conduction.
 Returns either the full parallel thermal conduction based on
 the equilibrium parameters, or a fixed value if specified
@@ -703,21 +801,17 @@ magnetic field curl with respect to the background magnetic field.</p></td></tr>
 			   <tr><td><a href='../proc/set_magnetic_field_divergence.html'>set_magnetic_field_divergence</a></td><td><a href='../module/smod_derived_efs.html'>smod_derived_efs</a></td><td>Subroutine</td><td><p>Calculates the divergence of the perturbed magnetic field</p></td></tr>
 			   <tr><td><a href='../proc/set_magnetic_field_pp.html'>set_magnetic_field_pp</a></td><td><a href='../module/smod_derived_pp_efs.html'>smod_derived_pp_efs</a></td><td>Subroutine</td><td><p>Sets the parallel and perpendicular components of the perturbed magnetic field
 with respect to the background magnetic field.</p></td></tr>
-			   <tr><td><a href='../proc/set_matrix_properties.html'>set_matrix_properties</a></td><td><a href='../module/mod_global_variables.html'>mod_global_variables</a></td><td>Subroutine</td><td><p>Sets dimensions for matrix A and B, subblock sizes and state vector</p></td></tr>
 			   <tr><td><a href='../proc/set_maxiter.html'>set_maxiter</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Sets the maximum number of iterations that ARPACK is allowed to take, defaults
 to max(100, 10 * k) with k the number of eigenvalues.
 </p><a href="../proc/set_maxiter.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/set_mean_molecular_weight.html'>set_mean_molecular_weight</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_mode.html'>set_mode</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Sets the mode for the solver.</p></td></tr>
+			   <tr><td><a href='../proc/set_nb_eqs.html'>set_nb_eqs</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_ncv.html'>set_ncv</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Setter for ncv, the number of Arnoldi basis vectors to calculate.
 This should satisfy 1 &lt;= ncv - nev and ncv &lt;= evpdim, with recommended
 value ncv = 2 * nev (see arpack docs).</p></td></tr>
 			   <tr><td><a href='../proc/set_nev.html'>set_nev</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Setter for number of eigenvalues to calculate.</p></td></tr>
-			   <tr><td><a href='../proc/set_normalisations.html'>set_normalisations</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Subroutine</td><td><p>Defines unit normalisations based on a magnetic field unit, length unit,
-and a density OR temperature unit. Calling this routine automatically
-sets <tt>normalisations_are_set</tt> to <tt>True</tt>.
-An optional mean molecular weight can be passed, which defaults to 1/2
-corresponding to an electron-proton plasma.
-</p><a href="../proc/set_normalisations.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/set_output_folder.html'>set_output_folder</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../interface/set_pp_quantities.html'>set_pp_quantities</a></td><td><a href='../module/smod_derived_efs.html'>smod_derived_efs</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/set_radiative_cooling_values.html'>set_radiative_cooling_values</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Subroutine</td><td><p>Sets the radiative cooling attributes of the corresponding types.
 This is called <em>after</em> the equilibrium is initialised in the submodule.
@@ -749,17 +843,19 @@ the optional argument <tt>load_from</tt>. The integration is done over the entir
 table, the curve is sampled on the Gaussian grid, meaning that grid variations
 can all use the same result.
 </p><a href="../proc/set_solar_atmosphere.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/set_unit_resistivity.html'>set_unit_resistivity</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Subroutine</td><td><p>Sets the unit resistivity.
-This routine is called by the resistivity module and is used to set the
-resistivity unit in such a way that eta equals 0.1 when the temperature is 1 MK.</p></td></tr>
+			   <tr><td><a href='../proc/set_solver.html'>set_solver</a></td><td><a href='../module/mod_solver_settings.html'>mod_solver_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_state_vector.html'>set_state_vector</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_units_from_density.html'>set_units_from_density</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_units_from_temperature.html'>set_units_from_temperature</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_velocity_curl.html'>set_velocity_curl</a></td><td><a href='../module/smod_derived_efs.html'>smod_derived_efs</a></td><td>Subroutine</td><td><p>Sets the three components of velocity curl.</p></td></tr>
 			   <tr><td><a href='../proc/set_velocity_curl_pp.html'>set_velocity_curl_pp</a></td><td><a href='../module/smod_derived_pp_efs.html'>smod_derived_pp_efs</a></td><td>Subroutine</td><td><p>Sets the parallel and perpendicular components of the velocity curl with
 respect to the background magnetic field.</p></td></tr>
 			   <tr><td><a href='../proc/set_velocity_divergence.html'>set_velocity_divergence</a></td><td><a href='../module/smod_derived_efs.html'>smod_derived_efs</a></td><td>Subroutine</td><td><p>Calculates the divergence of the perturbed velocity v1</p></td></tr>
 			   <tr><td><a href='../proc/set_velocity_pp.html'>set_velocity_pp</a></td><td><a href='../module/smod_derived_pp_efs.html'>smod_derived_pp_efs</a></td><td>Subroutine</td><td><p>Sets the parallel and perpendicular components of the perturbed velocity with
 respect to the background magnetic field.</p></td></tr>
+			   <tr><td><a href='../proc/set_viscosity_value.html'>set_viscosity_value</a></td><td><a href='../module/mod_viscosity_settings.html'>mod_viscosity_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_which.html'>set_which</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Setter for the "which" argument of ARPACK routines.</p></td></tr>
-			   <tr><td><a href='../proc/should_compute_eigenvectors.html'>should_compute_eigenvectors</a></td><td><a href='../module/mod_global_variables.html'>mod_global_variables</a></td><td>Function</td><td><p>See if any output options require us to compute the eigenvectors</p></td></tr>
+			   <tr><td><a href='../proc/should_compute_eigenvectors.html'>should_compute_eigenvectors</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/small_values_complex.html'>small_values_complex</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Subroutine</td><td><p>Small value checks for a complex variable/array/matrix, with the real and
 imaginary parts checked separately. Values that are
 smaller than the specified tolerance <tt>tol</tt> are set to zero. If
@@ -787,6 +883,7 @@ results in three expressions,
 and they should all be fulfilled.
 </p><a href="../proc/standard_equil_conditions.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/start_timer.html'>start_timer</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/state_vector_is_set.html'>state_vector_is_set</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/str.html'>str</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Interface</td><td><p>a convenient "tostring" interface, used for easy console writing</p></td></tr>
 			   <tr><td><a href='../proc/subblock.html'>subblock</a></td><td><a href='../module/mod_make_subblock.html'>mod_make_subblock</a></td><td>Subroutine</td><td><p>Builds the quadblock.
 The four subblocks are calculated based on the specified
@@ -804,6 +901,8 @@ passed along, and the filled quadblock is returned.
 If <code>odd</code> is <code>.true.</code> returns the odd indices, otherwise the even indices.
 If <code>edge</code> equals <code>"left"</code>, returns the indices corresponding to the left boundary
 block, if <code>edge</code> equals <code>"right"</code> returns indices for the right boundary block.</p></td></tr>
+			   <tr><td><a href='../proc/update_block_dimensions.html'>update_block_dimensions</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/update_dependent_units.html'>update_dependent_units</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/uplo_is_valid.html'>uplo_is_valid</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Checks whether the given <tt>uplo</tt> parameter is valid.</p></td></tr>
 			   <tr><td><a href='../interface/user_defined_eq.html'>user_defined_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../proc/viscosity_boundaries.html'>viscosity_boundaries</a></td><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td>Subroutine</td><td><p>Creates a quadblock for the A matrix containing the natural boundary

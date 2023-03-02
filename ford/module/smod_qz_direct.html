@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.6% of total for modules and submodules.">55 statements</a>
+    title=" 0.5% of total for modules and submodules.">52 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_qz_direct.f08"> Source File</a></li>
   </ul>
@@ -169,7 +169,7 @@ and solve this directly by calling LAPACK's <tt>zggev3</tt> routine.</p>
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-qz_direct"></span><h3>module procedure <a href='../proc/qz_direct.html'>qz_direct</a> <small>module module subroutine qz_direct(matrix_A, matrix_B, omega, vr)</small>   <a href='../interface/qz_direct.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-qz_direct"></span><h3>module procedure <a href='../proc/qz_direct.html'>qz_direct</a> <small>module module subroutine qz_direct(matrix_A, matrix_B, settings, omega, vr)</small>   <a href='../interface/qz_direct.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
        
@@ -189,6 +189,12 @@ and solve this directly by calling LAPACK's <tt>zggev3</tt> routine.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>matrix B</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>settings object</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>

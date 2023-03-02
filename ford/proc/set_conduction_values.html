@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">25 statements</a>
+    title=" 0.2% of total for procedures.">20 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_thermal_conduction.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine set_conduction_values(rho_field, T_field, B_field, kappa_field)</h2>
+    <h2>public subroutine set_conduction_values(settings, rho_field, T_field, B_field, kappa_field)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,7 +121,6 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_types.html'>mod_types</a></li>
   </ul>
       </li>
@@ -139,13 +138,19 @@ and calls all other relevant subroutines defined in this module.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
+  <td><span class="anchor" id="variable-settings~100"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-rho_field~6"></span>type(<a href='../type/density_type.html'>density_type</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>rho_field</strong></td><td><p>the type containing the density attributes</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-t_field~5"></span>type(<a href='../type/temperature_type.html'>temperature_type</a>),</td>
+  <td><span class="anchor" id="variable-t_field~6"></span>type(<a href='../type/temperature_type.html'>temperature_type</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>T_field</strong></td><td><p>the type containing the temperature attributes</p></td>

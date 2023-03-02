@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">7 statements</a>
+    title=" 0.1% of total for procedures.">8 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_eigenfunctions.f08"> Source File</a></li>
   </ul>
@@ -113,20 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private elemental function eigenvalue_is_inside_subset_radius(eigenvalue)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>private elemental function eigenvalue_is_inside_subset_radius(eigenvalue, radius, center)</h2>
+    
 
     <p>Checks if a specific eigenvalue is within the provided subset radius.</p>
 
@@ -135,10 +123,22 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-eigenvalue~2"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-eigenvalue"></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvalue</strong></td><td><p>complex value/array to check</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-radius"></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>radius</strong></td><td><p>radius of the subset</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-center"></span>complex(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>center</strong></td><td><p>center of the subset</p></td>
 </tr>
 </tbody>
 </table>

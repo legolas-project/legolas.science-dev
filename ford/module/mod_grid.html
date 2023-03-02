@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.1% of total for modules and submodules.">96 statements</a>
+    title=" 1.0% of total for modules and submodules.">106 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_grid.f08"> Source File</a></li>
   </ul>
@@ -109,7 +109,7 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_grid.html#variable-grid">grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#variable-grid~2">grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#variable-grid_gauss">grid_gauss</a>
       <a class="list-group-item" href="../module/mod_grid.html#variable-eps_grid">eps_grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#variable-d_eps_grid_dr">d_eps_grid_dr</a>
@@ -150,6 +150,7 @@ four nodes <script type="math/tex">j</script> as
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
@@ -167,7 +168,7 @@ four nodes <script type="math/tex">j</script> as
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_grid.html#variable-grid">grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#variable-grid~2">grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#variable-grid_gauss">grid_gauss</a>
       <a class="list-group-item" href="../module/mod_grid.html#variable-eps_grid">eps_grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#variable-d_eps_grid_dr">d_eps_grid_dr</a>
@@ -196,7 +197,7 @@ four nodes <script type="math/tex">j</script> as
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-grid"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-grid~2"></span>real(kind=dp),</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
   <td><strong>grid</strong>(:)</td><td></td><td></td><td><p>array containing the base grid</p></td>
 </tr>
@@ -229,7 +230,7 @@ four nodes <script type="math/tex">j</script> as
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_grid"></span><h3>public subroutine <a href='../proc/initialise_grid.html'>initialise_grid</a>(custom_grid)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_grid"></span><h3>public subroutine <a href='../proc/initialise_grid.html'>initialise_grid</a>(settings, custom_grid)</h3></div>
   <div class="panel-body">
        
 <p>General grid initialisations.
@@ -241,6 +242,12 @@ and sets the scale factor and its derivative.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in),</td>
@@ -255,20 +262,31 @@ and sets the scale factor and its derivative.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_grid_gauss"></span><h3>public subroutine <a href='../proc/set_grid_gauss.html'>set_grid_gauss</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_grid_gauss"></span><h3>public subroutine <a href='../proc/set_grid_gauss.html'>set_grid_gauss</a>(gridpts)</h3></div>
   <div class="panel-body">
        
 <p>Sets up grid_gauss, that is, the grid evaluated in the four
 Gaussian points. This is done by evaluating the weights
 at the four Gaussian nodes.</p>
     
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>gridpts</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_scale_factor"></span><h3>private subroutine <a href='../proc/set_scale_factor.html'>set_scale_factor</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_scale_factor"></span><h3>private subroutine <a href='../proc/set_scale_factor.html'>set_scale_factor</a>(geometry)</h3></div>
   <div class="panel-body">
        
 <p>The scale factor to switch between Cartesian and cylindrical geometries
@@ -277,7 +295,18 @@ is simply equal to the Gaussian grid, and its derivative is unity.
 For Cartesian the scale factor is unity and its derivative is zero.
 </p><a href="../proc/set_scale_factor.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>geometry</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>

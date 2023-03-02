@@ -113,20 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine initialise_eigenfunctions(omega)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>public subroutine initialise_eigenfunctions(omega, settings)</h2>
+    
 
     <p>Initialises the eigenfunctions based on an array of eigenvalues.
 Before initialising all arrays we check which subset of eigenvalues, if any,
@@ -137,10 +125,16 @@ needs its eigenfunctions saved.</p>
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-omega~9"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-omega"></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>omega</strong>(:)</td><td><p>the array of calculated eigenvalues</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-settings~76"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>the settings object</p></td>
 </tr>
 </tbody>
 </table>

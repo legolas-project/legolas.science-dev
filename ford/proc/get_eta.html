@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">18 statements</a>
+    title=" 0.1% of total for procedures.">14 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_resistivity.f08"> Source File</a></li>
   </ul>
@@ -113,21 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine get_eta(T0_eq, eta)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_units.html'>mod_units</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>private subroutine get_eta(settings, T0_eq, eta)</h2>
+    
 
     <p>Calculates the resistivity. Returns either the full Spitzer resistivity
 based on the equilibrium parameters, or a fixed resistivity value if
@@ -142,16 +129,22 @@ the unit resistivity remains unity.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-t0_eq~5"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-settings~97"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>T0_eq</strong>(gauss_gridpts)</td><td><p>equilibrium temperature</p></td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-eta~2"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-t0_eq"></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>T0_eq</strong>(:)</td><td><p>equilibrium temperature</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-eta~3"></span>real(kind=dp),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>eta</strong>(gauss_gridpts)</td><td><p>resistivity values, normalised on exit</p></td>
+  <td><strong>eta</strong>(:)</td><td><p>resistivity values, normalised on exit</p></td>
 </tr>
 </tbody>
 </table>

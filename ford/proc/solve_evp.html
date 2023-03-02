@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">27 statements</a>
+    title=" 0.3% of total for procedures.">25 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_solvers.f08"> Source File</a></li>
   </ul>
@@ -113,20 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine solve_evp(matrix_A, matrix_B, omega, vr)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>public subroutine solve_evp(matrix_A, matrix_B, settings, omega, vr)</h2>
+    
 
     <p>Main subroutine to solve the eigenvalue problem. Depending on the solvelist
 passed in the parfile, different solvers are called.
@@ -138,19 +126,25 @@ passed in the parfile, different solvers are called.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-matrix_a~5"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-matrix_a~6"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_A</strong></td><td><p>A-matrix</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-matrix_b~5"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-matrix_b~6"></span>type(<a href='../type/matrix_t.html'>matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix_B</strong></td><td><p>B-matrix</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-omega"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-settings~121"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>settings object</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-omega~3"></span>complex(kind=dp),</td>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>omega</strong>(:)</td><td><p>eigenvalues</p></td>

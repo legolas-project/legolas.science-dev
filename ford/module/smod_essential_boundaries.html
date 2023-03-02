@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.9% of total for modules and submodules.">78 statements</a>
+    title=" 0.8% of total for modules and submodules.">80 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_essential_boundaries.f08"> Source File</a></li>
   </ul>
@@ -153,8 +153,8 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
     <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -307,7 +307,7 @@ Afterwards <code>diagonal_factor</code> is introduced in that row/column on the 
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_essential_boundaries_left"></span><h3>module procedure <a href='../proc/apply_essential_boundaries_left.html'>apply_essential_boundaries_left</a> <small>module module subroutine apply_essential_boundaries_left(matrix)</small>   <a href='../interface/apply_essential_boundaries_left.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_essential_boundaries_left"></span><h3>module procedure <a href='../proc/apply_essential_boundaries_left.html'>apply_essential_boundaries_left</a> <small>module module subroutine apply_essential_boundaries_left(matrix, settings)</small>   <a href='../interface/apply_essential_boundaries_left.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
@@ -320,6 +320,12 @@ Afterwards <code>diagonal_factor</code> is introduced in that row/column on the 
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix</strong></td><td></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 </tbody>
 </table>
 
@@ -328,7 +334,7 @@ Afterwards <code>diagonal_factor</code> is introduced in that row/column on the 
   </div>
 
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_essential_boundaries_right"></span><h3>module procedure <a href='../proc/apply_essential_boundaries_right.html'>apply_essential_boundaries_right</a> <small>module module subroutine apply_essential_boundaries_right(matrix)</small>   <a href='../interface/apply_essential_boundaries_right.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_essential_boundaries_right"></span><h3>module procedure <a href='../proc/apply_essential_boundaries_right.html'>apply_essential_boundaries_right</a> <small>module module subroutine apply_essential_boundaries_right(matrix, settings)</small>   <a href='../interface/apply_essential_boundaries_right.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
@@ -340,6 +346,12 @@ Afterwards <code>diagonal_factor</code> is introduced in that row/column on the 
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>matrix</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.6% of total for modules and submodules.">148 statements</a>
+    title=" 2.8% of total for modules and submodules.">286 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_input.f08"> Source File</a></li>
   </ul>
@@ -118,8 +118,15 @@
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_input.html#proc-read_parfile">read_parfile</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-check_and_set_supplied_unit_normalisations">check_and_set_supplied_unit_normalisations</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-check_global_eigenfunction_subset_parameters">check_global_eigenfunction_subset_parameters</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_gridlist">read_gridlist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_savelist">read_savelist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_solvelist">read_solvelist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_physicslist">read_physicslist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_equilibriumlist">read_equilibriumlist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_paramlist">read_paramlist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_unitlist">read_unitlist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-check_eigenfunction_subset_params">check_eigenfunction_subset_params</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-parse_io_info">parse_io_info</a>
       <a class="list-group-item" href="../module/mod_input.html#proc-get_parfile">get_parfile</a>
     </div>
   </div>
@@ -140,8 +147,8 @@ and to read the parfile, setting the global variables.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
       </li>
@@ -167,8 +174,15 @@ and to read the parfile, setting the global variables.</p>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_input.html#proc-read_parfile">read_parfile</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-check_and_set_supplied_unit_normalisations">check_and_set_supplied_unit_normalisations</a>
-      <a class="list-group-item" href="../module/mod_input.html#proc-check_global_eigenfunction_subset_parameters">check_global_eigenfunction_subset_parameters</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_gridlist">read_gridlist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_savelist">read_savelist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_solvelist">read_solvelist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_physicslist">read_physicslist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_equilibriumlist">read_equilibriumlist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_paramlist">read_paramlist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-read_unitlist">read_unitlist</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-check_eigenfunction_subset_params">check_eigenfunction_subset_params</a>
+      <a class="list-group-item" href="../module/mod_input.html#proc-parse_io_info">parse_io_info</a>
       <a class="list-group-item" href="../module/mod_input.html#proc-get_parfile">get_parfile</a>
     </div>
   </div>
@@ -185,8 +199,8 @@ and to read the parfile, setting the global variables.</p>
 <tbody>
 <tr>
   <td><span class="anchor" id="variable-unit_par"></span>integer,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>unit_par</strong></td><td> =</td><td>101</td><td><p>IO unit for the parfile</p></td>
+<td>private,</td>  <td>parameter</td><td>::</td>
+  <td><strong>unit_par</strong></td><td> =</td><td>101</td><td></td>
 </tr>
 </tbody>
 </table>
@@ -202,13 +216,9 @@ and to read the parfile, setting the global variables.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-read_parfile"></span><h3>public subroutine <a href='../proc/read_parfile.html'>read_parfile</a>(parfile)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_parfile"></span><h3>public subroutine <a href='../proc/read_parfile.html'>read_parfile</a>(parfile, settings)</h3></div>
   <div class="panel-body">
-       
-<p>Reads in the supplied parfile and sets the equilibrium parameters and
-global variables to their specified values.
-</p><a href="../proc/read_parfile.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -216,7 +226,13 @@ global variables to their specified values.
   <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>parfile</strong></td><td><p>the name of the parfile</p></td>
+  <td><strong>parfile</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -226,44 +242,23 @@ global variables to their specified values.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-check_and_set_supplied_unit_normalisations"></span><h3>private subroutine <a href='../proc/check_and_set_supplied_unit_normalisations.html'>check_and_set_supplied_unit_normalisations</a>(unit_density, unit_temperature, unit_magneticfield, unit_length, mean_molecular_weight)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_gridlist"></span><h3>private subroutine <a href='../proc/read_gridlist.html'>read_gridlist</a>(unit, settings)</h3></div>
   <div class="panel-body">
-       
-<p>Checks the unit normalisations that are supplied (if any), sets the
-unit normalisations if valid.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
+  <td><span class="anchor" ></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>unit_density</strong></td><td><p>supplied unit density</p></td>
+  <td><strong>unit</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>unit_temperature</strong></td><td><p>supplied unit temperature</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>unit_magneticfield</strong></td><td><p>supplied unit magneticfield</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>unit_length</strong></td><td><p>supplied unit length</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>mean_molecular_weight</strong></td><td><p>supplied mean molecular weight</p></td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -273,13 +268,206 @@ unit normalisations if valid.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-check_global_eigenfunction_subset_parameters"></span><h3>private subroutine <a href='../proc/check_global_eigenfunction_subset_parameters.html'>check_global_eigenfunction_subset_parameters</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_savelist"></span><h3>private subroutine <a href='../proc/read_savelist.html'>read_savelist</a>(unit, settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_solvelist"></span><h3>private subroutine <a href='../proc/read_solvelist.html'>read_solvelist</a>(unit, settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_physicslist"></span><h3>private subroutine <a href='../proc/read_physicslist.html'>read_physicslist</a>(unit, settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_equilibriumlist"></span><h3>private subroutine <a href='../proc/read_equilibriumlist.html'>read_equilibriumlist</a>(unit, settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_paramlist"></span><h3>private subroutine <a href='../proc/read_paramlist.html'>read_paramlist</a>(unit)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_unitlist"></span><h3>private subroutine <a href='../proc/read_unitlist.html'>read_unitlist</a>(unit, settings)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-check_eigenfunction_subset_params"></span><h3>private subroutine <a href='../proc/check_eigenfunction_subset_params.html'>check_eigenfunction_subset_params</a>(center, radius)</h3></div>
   <div class="panel-body">
        
 <p>Called when the eigenfunction subset selection is enabled, this checks if the
 global variables are properly set.</p>
     
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>complex(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>center</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>radius</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-parse_io_info"></span><h3>private subroutine <a href='../proc/parse_io_info.html'>parse_io_info</a>(iostat, iomsg)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>iostat</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>iomsg</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>

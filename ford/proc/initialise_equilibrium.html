@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">11 statements</a>
+    title=" 0.1% of total for procedures.">12 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_equilibrium.f08"> Source File</a></li>
   </ul>
@@ -113,15 +113,25 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine initialise_equilibrium()</h2>
+    <h2>public subroutine initialise_equilibrium(settings)</h2>
     
 
     <p>Initialises the equilibrium types by calling the corresponding
 subroutine, which allocates all necessary attributes.</p>
 
     <h3>Arguments</h3>
-    <em>None</em>
-    <br>
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-settings~8"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

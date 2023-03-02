@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.0% of total for modules and submodules.">275 statements</a>
+    title=" 3.0% of total for modules and submodules.">303 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_types.f08"> Source File</a></li>
   </ul>
@@ -173,6 +173,7 @@ to handle eigenfunctions.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
   </ul>
       </li>
@@ -252,12 +253,18 @@ to handle eigenfunctions.</p>
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private subroutine <a href='../proc/initialise_density_type.html'>initialise_density_type</a>(type_rho)</h3>
+    <h3>private subroutine <a href='../proc/initialise_density_type.html'>initialise_density_type</a>(settings, type_rho)</h3>
 <p>Allocates the density type and initialises all values to zero.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/density_type.html'>density_type</a>),</td>
 <td>intent(inout)</td>
@@ -270,12 +277,18 @@ to handle eigenfunctions.</p>
 
     </li>
     <li class="list-group-item">
-    <h3>private subroutine <a href='../proc/initialise_temperature_type.html'>initialise_temperature_type</a>(type_T)</h3>
+    <h3>private subroutine <a href='../proc/initialise_temperature_type.html'>initialise_temperature_type</a>(settings, type_T)</h3>
 <p>Allocates the temperature type and initialises all values to zero.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/temperature_type.html'>temperature_type</a>),</td>
 <td>intent(inout)</td>
@@ -288,12 +301,18 @@ to handle eigenfunctions.</p>
 
     </li>
     <li class="list-group-item">
-    <h3>private subroutine <a href='../proc/initialise_bfield_type.html'>initialise_bfield_type</a>(type_B)</h3>
+    <h3>private subroutine <a href='../proc/initialise_bfield_type.html'>initialise_bfield_type</a>(settings, type_B)</h3>
 <p>Allocates the magnetic field type and initialises all values to zero.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/bfield_type.html'>bfield_type</a>),</td>
 <td>intent(inout)</td>
@@ -306,12 +325,18 @@ to handle eigenfunctions.</p>
 
     </li>
     <li class="list-group-item">
-    <h3>private subroutine <a href='../proc/initialise_velocity_type.html'>initialise_velocity_type</a>(type_v)</h3>
+    <h3>private subroutine <a href='../proc/initialise_velocity_type.html'>initialise_velocity_type</a>(settings, type_v)</h3>
 <p>Allocates the velocity type and initialises all values to zero.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/velocity_type.html'>velocity_type</a>),</td>
 <td>intent(inout)</td>
@@ -324,12 +349,18 @@ to handle eigenfunctions.</p>
 
     </li>
     <li class="list-group-item">
-    <h3>private subroutine <a href='../proc/initialise_gravity_type.html'>initialise_gravity_type</a>(type_grav)</h3>
+    <h3>private subroutine <a href='../proc/initialise_gravity_type.html'>initialise_gravity_type</a>(settings, type_grav)</h3>
 <p>Allocates the gravity type and initialises all values to zero.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/gravity_type.html'>gravity_type</a>),</td>
 <td>intent(inout)</td>
@@ -342,13 +373,19 @@ to handle eigenfunctions.</p>
 
     </li>
     <li class="list-group-item">
-    <h3>private subroutine <a href='../proc/initialise_resistivity_type.html'>initialise_resistivity_type</a>(type_eta)</h3>
+    <h3>private subroutine <a href='../proc/initialise_resistivity_type.html'>initialise_resistivity_type</a>(settings, type_eta)</h3>
 <p>Allocates the resistivity type and initialises all values to zero.
 </p><a href="../proc/initialise_resistivity_type.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/resistivity_type.html'>resistivity_type</a>),</td>
 <td>intent(inout)</td>
@@ -361,12 +398,18 @@ to handle eigenfunctions.</p>
 
     </li>
     <li class="list-group-item">
-    <h3>private subroutine <a href='../proc/initialise_cooling_type.html'>initialise_cooling_type</a>(type_rc)</h3>
+    <h3>private subroutine <a href='../proc/initialise_cooling_type.html'>initialise_cooling_type</a>(settings, type_rc)</h3>
 <p>Allocates the radiative cooling type and initialises all values to zero.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/cooling_type.html'>cooling_type</a>),</td>
 <td>intent(inout)</td>
@@ -379,12 +422,18 @@ to handle eigenfunctions.</p>
 
     </li>
     <li class="list-group-item">
-    <h3>private subroutine <a href='../proc/initialise_conduction_type.html'>initialise_conduction_type</a>(type_kappa)</h3>
+    <h3>private subroutine <a href='../proc/initialise_conduction_type.html'>initialise_conduction_type</a>(settings, type_kappa)</h3>
 <p>Allocates the thermal conduction type and initialises all values to zero.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/conduction_type.html'>conduction_type</a>),</td>
 <td>intent(inout)</td>
@@ -397,12 +446,18 @@ to handle eigenfunctions.</p>
 
     </li>
     <li class="list-group-item">
-    <h3>private subroutine <a href='../proc/initialise_hall_type.html'>initialise_hall_type</a>(type_hall)</h3>
+    <h3>private subroutine <a href='../proc/initialise_hall_type.html'>initialise_hall_type</a>(settings, type_hall)</h3>
 <p>Allocates the Hall type and initialises all values to zero.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/hall_type.html'>hall_type</a>),</td>
 <td>intent(inout)</td>
@@ -966,7 +1021,7 @@ to handle eigenfunctions.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_density_type"></span><h3>private subroutine <a href='../proc/initialise_density_type.html'>initialise_density_type</a>(type_rho)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_density_type"></span><h3>private subroutine <a href='../proc/initialise_density_type.html'>initialise_density_type</a>(settings, type_rho)</h3></div>
   <div class="panel-body">
        
 <p>Allocates the density type and initialises all values to zero.</p>
@@ -974,6 +1029,12 @@ to handle eigenfunctions.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/density_type.html'>density_type</a>),</td>
 <td>intent(inout)</td>
@@ -988,7 +1049,7 @@ to handle eigenfunctions.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_temperature_type"></span><h3>private subroutine <a href='../proc/initialise_temperature_type.html'>initialise_temperature_type</a>(type_T)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_temperature_type"></span><h3>private subroutine <a href='../proc/initialise_temperature_type.html'>initialise_temperature_type</a>(settings, type_T)</h3></div>
   <div class="panel-body">
        
 <p>Allocates the temperature type and initialises all values to zero.</p>
@@ -996,6 +1057,12 @@ to handle eigenfunctions.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/temperature_type.html'>temperature_type</a>),</td>
 <td>intent(inout)</td>
@@ -1010,7 +1077,7 @@ to handle eigenfunctions.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_bfield_type"></span><h3>private subroutine <a href='../proc/initialise_bfield_type.html'>initialise_bfield_type</a>(type_B)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_bfield_type"></span><h3>private subroutine <a href='../proc/initialise_bfield_type.html'>initialise_bfield_type</a>(settings, type_B)</h3></div>
   <div class="panel-body">
        
 <p>Allocates the magnetic field type and initialises all values to zero.</p>
@@ -1018,6 +1085,12 @@ to handle eigenfunctions.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/bfield_type.html'>bfield_type</a>),</td>
 <td>intent(inout)</td>
@@ -1032,7 +1105,7 @@ to handle eigenfunctions.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_velocity_type"></span><h3>private subroutine <a href='../proc/initialise_velocity_type.html'>initialise_velocity_type</a>(type_v)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_velocity_type"></span><h3>private subroutine <a href='../proc/initialise_velocity_type.html'>initialise_velocity_type</a>(settings, type_v)</h3></div>
   <div class="panel-body">
        
 <p>Allocates the velocity type and initialises all values to zero.</p>
@@ -1040,6 +1113,12 @@ to handle eigenfunctions.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/velocity_type.html'>velocity_type</a>),</td>
 <td>intent(inout)</td>
@@ -1054,7 +1133,7 @@ to handle eigenfunctions.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_gravity_type"></span><h3>private subroutine <a href='../proc/initialise_gravity_type.html'>initialise_gravity_type</a>(type_grav)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_gravity_type"></span><h3>private subroutine <a href='../proc/initialise_gravity_type.html'>initialise_gravity_type</a>(settings, type_grav)</h3></div>
   <div class="panel-body">
        
 <p>Allocates the gravity type and initialises all values to zero.</p>
@@ -1062,6 +1141,12 @@ to handle eigenfunctions.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/gravity_type.html'>gravity_type</a>),</td>
 <td>intent(inout)</td>
@@ -1076,7 +1161,7 @@ to handle eigenfunctions.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_resistivity_type"></span><h3>private subroutine <a href='../proc/initialise_resistivity_type.html'>initialise_resistivity_type</a>(type_eta)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_resistivity_type"></span><h3>private subroutine <a href='../proc/initialise_resistivity_type.html'>initialise_resistivity_type</a>(settings, type_eta)</h3></div>
   <div class="panel-body">
        
 <p>Allocates the resistivity type and initialises all values to zero.
@@ -1085,6 +1170,12 @@ to handle eigenfunctions.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/resistivity_type.html'>resistivity_type</a>),</td>
 <td>intent(inout)</td>
@@ -1099,7 +1190,7 @@ to handle eigenfunctions.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_cooling_type"></span><h3>private subroutine <a href='../proc/initialise_cooling_type.html'>initialise_cooling_type</a>(type_rc)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_cooling_type"></span><h3>private subroutine <a href='../proc/initialise_cooling_type.html'>initialise_cooling_type</a>(settings, type_rc)</h3></div>
   <div class="panel-body">
        
 <p>Allocates the radiative cooling type and initialises all values to zero.</p>
@@ -1107,6 +1198,12 @@ to handle eigenfunctions.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/cooling_type.html'>cooling_type</a>),</td>
 <td>intent(inout)</td>
@@ -1121,7 +1218,7 @@ to handle eigenfunctions.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_hall_type"></span><h3>private subroutine <a href='../proc/initialise_hall_type.html'>initialise_hall_type</a>(type_hall)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_hall_type"></span><h3>private subroutine <a href='../proc/initialise_hall_type.html'>initialise_hall_type</a>(settings, type_hall)</h3></div>
   <div class="panel-body">
        
 <p>Allocates the Hall type and initialises all values to zero.</p>
@@ -1129,6 +1226,12 @@ to handle eigenfunctions.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/hall_type.html'>hall_type</a>),</td>
 <td>intent(inout)</td>
@@ -1143,7 +1246,7 @@ to handle eigenfunctions.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_conduction_type"></span><h3>private subroutine <a href='../proc/initialise_conduction_type.html'>initialise_conduction_type</a>(type_kappa)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_conduction_type"></span><h3>private subroutine <a href='../proc/initialise_conduction_type.html'>initialise_conduction_type</a>(settings, type_kappa)</h3></div>
   <div class="panel-body">
        
 <p>Allocates the thermal conduction type and initialises all values to zero.</p>
@@ -1151,6 +1254,12 @@ to handle eigenfunctions.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/conduction_type.html'>conduction_type</a>),</td>
 <td>intent(inout)</td>

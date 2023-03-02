@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for modules and submodules.">46 statements</a>
+    title=" 0.5% of total for modules and submodules.">49 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_derived_pp_efs.f08"> Source File</a></li>
   </ul>
@@ -191,7 +191,7 @@ parallel or perpendicular to the background magnetic field:
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_magnetic_field_pp"></span><h3>subroutine <a href='../proc/set_magnetic_field_pp.html'>set_magnetic_field_pp</a>(loc, ef_index)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_magnetic_field_pp"></span><h3>subroutine <a href='../proc/set_magnetic_field_pp.html'>set_magnetic_field_pp</a>(loc, ef_index, state_vector)</h3></div>
   <div class="panel-body">
        
 <p>Sets the parallel and perpendicular components of the perturbed magnetic field
@@ -212,6 +212,12 @@ with respect to the background magnetic field.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>ef_index</strong></td><td><p>index of the eigenfunction in the "quantities" array attribute</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -220,7 +226,7 @@ with respect to the background magnetic field.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_magnetic_field_curl_pp"></span><h3>subroutine <a href='../proc/set_magnetic_field_curl_pp.html'>set_magnetic_field_curl_pp</a>(loc, ef_index)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_magnetic_field_curl_pp"></span><h3>subroutine <a href='../proc/set_magnetic_field_curl_pp.html'>set_magnetic_field_curl_pp</a>(loc, ef_index, state_vector)</h3></div>
   <div class="panel-body">
        
 <p>Sets the parallel and perpendicular components of the perturbed
@@ -240,6 +246,12 @@ magnetic field curl with respect to the background magnetic field.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>ef_index</strong></td><td><p>index of the eigenfunction in the "quantities" array attribute</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector</p></td>
 </tr>
 </tbody>
 </table>
@@ -278,7 +290,7 @@ respect to the background magnetic field.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_velocity_curl_pp"></span><h3>subroutine <a href='../proc/set_velocity_curl_pp.html'>set_velocity_curl_pp</a>(loc, ef_index)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_velocity_curl_pp"></span><h3>subroutine <a href='../proc/set_velocity_curl_pp.html'>set_velocity_curl_pp</a>(loc, ef_index, state_vector)</h3></div>
   <div class="panel-body">
        
 <p>Sets the parallel and perpendicular components of the velocity curl with
@@ -299,6 +311,12 @@ respect to the background magnetic field.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>ef_index</strong></td><td><p>index of the eigenfunction in the "quantities" array attribute</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -315,7 +333,7 @@ respect to the background magnetic field.</p>
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_pp_quantities"></span><h3>module procedure <a href='../proc/set_pp_quantities.html'>set_pp_quantities</a> <small>module module subroutine set_pp_quantities(locB, locCurlB, locV, locCurlV, ef_index)</small>   <a href='../interface/set_pp_quantities.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_pp_quantities"></span><h3>module procedure <a href='../proc/set_pp_quantities.html'>set_pp_quantities</a> <small>module module subroutine set_pp_quantities(locB, locCurlB, locV, locCurlV, ef_index, state_vector)</small>   <a href='../interface/set_pp_quantities.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
        
@@ -353,6 +371,12 @@ respect to the background magnetic field.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>ef_index</strong></td><td><p>index of the eigenfunction in the "quantities" array attribute</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector for which to calculate the eigenfunctions</p></td>
 </tr>
 </tbody>
 </table>

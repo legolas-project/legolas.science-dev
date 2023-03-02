@@ -179,11 +179,11 @@
 <a id="ln-29" name="ln-29" href="#ln-29"></a>
 <a id="ln-30" name="ln-30" href="#ln-30"></a><span class="k">contains</span>
 <a id="ln-31" name="ln-31" href="#ln-31"></a>
-<a id="ln-32" name="ln-32" href="#ln-32"></a><span class="k">  module subroutine </span><span class="n">KHI_eq</span><span class="p">()</span>
+<a id="ln-32" name="ln-32" href="#ln-32"></a><span class="k">  module procedure </span><span class="n">KHI_eq</span>
 <a id="ln-33" name="ln-33" href="#ln-33"></a><span class="w">    </span><span class="k">use </span><span class="n">mod_equilibrium_params</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">p3</span><span class="p">,</span><span class="w"> </span><span class="n">tau</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
 <a id="ln-34" name="ln-34" href="#ln-34"></a><span class="w">      </span><span class="n">p4</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">cte_rho0</span><span class="p">,</span><span class="w"> </span><span class="n">cte_p0</span>
 <a id="ln-35" name="ln-35" href="#ln-35"></a>
-<a id="ln-36" name="ln-36" href="#ln-36"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_defaults</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">! LCOV_EXCL_START</span>
+<a id="ln-36" name="ln-36" href="#ln-36"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">settings</span><span class="p">%</span><span class="n">equilibrium</span><span class="p">%</span><span class="n">use_defaults</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c">! LCOV_EXCL_START</span>
 <a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">      </span><span class="n">k2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0d0</span>
 <a id="ln-38" name="ln-38" href="#ln-38"></a><span class="w">      </span><span class="n">k3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0d0</span>
 <a id="ln-39" name="ln-39" href="#ln-39"></a><span class="w">      </span><span class="n">cte_rho0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0d0</span>
@@ -199,7 +199,7 @@
 <a id="ln-49" name="ln-49" href="#ln-49"></a><span class="w">      </span><span class="n">tau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="mf">1.0d0</span>
 <a id="ln-50" name="ln-50" href="#ln-50"></a><span class="w">    </span><span class="k">end if</span><span class="w"> </span><span class="c">! LCOV_EXCL_STOP</span>
 <a id="ln-51" name="ln-51" href="#ln-51"></a>
-<a id="ln-52" name="ln-52" href="#ln-52"></a><span class="w">    </span><span class="k">call </span><span class="n">flow_driven_instabilities_eq</span><span class="p">()</span>
+<a id="ln-52" name="ln-52" href="#ln-52"></a><span class="w">    </span><span class="k">call </span><span class="n">flow_driven_instabilities_eq</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
 <a id="ln-53" name="ln-53" href="#ln-53"></a><span class="w">    </span><span class="c">! manually force the magnetic field to zero, it&#39;s HD here (the above set</span>
 <a id="ln-54" name="ln-54" href="#ln-54"></a><span class="w">    </span><span class="c">! of parameters still yield a B03 component)</span>
 <a id="ln-55" name="ln-55" href="#ln-55"></a><span class="w">    </span><span class="n">B_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">B02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0d0</span>
@@ -207,7 +207,7 @@
 <a id="ln-57" name="ln-57" href="#ln-57"></a><span class="w">    </span><span class="n">B_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">B0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0d0</span>
 <a id="ln-58" name="ln-58" href="#ln-58"></a><span class="w">    </span><span class="n">B_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">d_B02_dr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0d0</span>
 <a id="ln-59" name="ln-59" href="#ln-59"></a><span class="w">    </span><span class="n">B_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">d_B03_dr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0d0</span>
-<a id="ln-60" name="ln-60" href="#ln-60"></a><span class="w">  </span><span class="k">end subroutine </span><span class="n">KHI_eq</span>
+<a id="ln-60" name="ln-60" href="#ln-60"></a><span class="w">  </span><span class="k">end procedure </span><span class="n">KHI_eq</span>
 <a id="ln-61" name="ln-61" href="#ln-61"></a>
 <a id="ln-62" name="ln-62" href="#ln-62"></a><span class="k">end submodule </span><span class="n">smod_equil_KHI</span>
 </pre></div>

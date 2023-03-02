@@ -82,7 +82,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">9 statements</a>
+    title=" 0.1% of total for procedures.">10 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_derived_efs.f08"> Source File</a></li>
   </ul>
@@ -115,7 +115,7 @@
     
     <div class="col-md-9" id='text'>
       <h2>interface <br>
-      module module subroutine set_pp_quantities(locB, locCurlB, locV, locCurlV, ef_index)   <a href='../proc/set_pp_quantities.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+      module module subroutine set_pp_quantities(locB, locCurlB, locV, locCurlV, ef_index, state_vector)   <a href='../proc/set_pp_quantities.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h2>    
 
     
@@ -153,6 +153,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>ef_index</strong></td><td><p>index of the eigenfunction in the "quantities" array attribute</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-state_vector~14"></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector for which to calculate the eigenfunctions</p></td>
 </tr>
 </tbody>
 </table>

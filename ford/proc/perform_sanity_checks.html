@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">15 statements</a>
+    title=" 0.2% of total for procedures.">16 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine perform_sanity_checks(rho_field, T_field, B_field, v_field, grav_field, rc_field, kappa_field)</h2>
+    <h2>public subroutine perform_sanity_checks(settings, rho_field, T_field, B_field, v_field, grav_field, rc_field, kappa_field)</h2>
     
 
     <p>General routine to do sanity checks on the different equilibrium types.
@@ -124,6 +124,12 @@ and non-adiabatic equilibrium force balance.</p>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" id="variable-settings~2"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>the settings object</p></td>
+</tr>
 <tr>
   <td><span class="anchor" id="variable-rho_field~2"></span>type(<a href='../type/density_type.html'>density_type</a>),</td>
 <td>intent(in)</td>

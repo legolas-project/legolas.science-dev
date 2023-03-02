@@ -128,6 +128,7 @@ Sets the Hall and electron inertia factors based on normalisations and specified
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
   </ul>
       </li>
@@ -162,7 +163,7 @@ Sets the Hall and electron inertia factors based on normalisations and specified
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_hall_factors"></span><h3>public subroutine <a href='../proc/set_hall_factors.html'>set_hall_factors</a>(hall_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_hall_factors"></span><h3>public subroutine <a href='../proc/set_hall_factors.html'>set_hall_factors</a>(settings, hall_field)</h3></div>
   <div class="panel-body">
        
 <p>Retrieves the normalised Hall factor as described by Porth et al. (2014),
@@ -172,6 +173,12 @@ electron inertia factor if included, with a dropoff profile, if desired.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/hall_type.html'>hall_type</a>),</td>
 <td>intent(inout)</td>

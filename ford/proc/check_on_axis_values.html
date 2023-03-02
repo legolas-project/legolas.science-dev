@@ -113,20 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine check_on_axis_values(B_field, v_field)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>private subroutine check_on_axis_values(settings, B_field, v_field)</h2>
+    
 
     <p>Checks if on-axis regularity conditions are satisfied in cylindrical geometry.
 We check if <script type="math/tex">B_\theta, B_z', v_\theta</script> and <script type="math/tex">v_z'</script> are smaller than <tt>1e-3</tt> on-axis.
@@ -148,6 +136,12 @@ Nothing is checked if the geometry is Cartesian.
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" id="variable-settings~3"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" id="variable-b_field~3"></span>type(<a href='../type/bfield_type.html'>bfield_type</a>),</td>
 <td>intent(in)</td>

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for source files.">46 statements</a>
+    title=" 0.4% of total for source files.">46 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_arpack_general.f08"> Source File</a></li>
   </ul>
@@ -187,7 +187,7 @@
 <a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">    </span><span class="c">! IDEA: maybe do a pass over the B-matrix first to figure out how many diagonals</span>
 <a id="ln-38" name="ln-38" href="#ln-38"></a><span class="w">    </span><span class="c">! we need? This is problem-dependent so in some cases there might be quite some</span>
 <a id="ln-39" name="ln-39" href="#ln-39"></a><span class="w">    </span><span class="c">! room here for optimisations</span>
-<a id="ln-40" name="ln-40" href="#ln-40"></a><span class="w">    </span><span class="n">diags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dim_quadblock</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<a id="ln-40" name="ln-40" href="#ln-40"></a><span class="w">    </span><span class="n">diags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">settings</span><span class="p">%</span><span class="n">dims</span><span class="p">%</span><span class="n">get_dim_quadblock</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
 <a id="ln-41" name="ln-41" href="#ln-41"></a><span class="w">    </span><span class="k">call </span><span class="n">log_message</span><span class="p">(</span><span class="s2">&quot;converting A-matrix into banded structure&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;debug&quot;</span><span class="p">)</span>
 <a id="ln-42" name="ln-42" href="#ln-42"></a><span class="w">    </span><span class="k">call </span><span class="n">matrix_to_banded</span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
 <a id="ln-43" name="ln-43" href="#ln-43"></a><span class="w">      </span><span class="n">matrix</span><span class="o">=</span><span class="n">matrix_A</span><span class="p">,</span><span class="w"> </span><span class="n">subdiags</span><span class="o">=</span><span class="n">diags</span><span class="p">,</span><span class="w"> </span><span class="n">superdiags</span><span class="o">=</span><span class="n">diags</span><span class="p">,</span><span class="w"> </span><span class="n">banded</span><span class="o">=</span><span class="n">amat_banded</span><span class="w"> </span><span class="p">&amp;</span>

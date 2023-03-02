@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.6% of total for modules and submodules.">145 statements</a>
+    title=" 1.5% of total for modules and submodules.">150 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_radiative_cooling.f08"> Source File</a></li>
   </ul>
@@ -145,6 +145,7 @@ interpolation module to create one.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
@@ -224,7 +225,7 @@ interpolation module to create one.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_radiative_cooling"></span><h3>public subroutine <a href='../proc/initialise_radiative_cooling.html'>initialise_radiative_cooling</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_radiative_cooling"></span><h3>public subroutine <a href='../proc/initialise_radiative_cooling.html'>initialise_radiative_cooling</a>(settings)</h3></div>
   <div class="panel-body">
        
 <p>Initialises the radiative cooling variables.
@@ -233,13 +234,24 @@ tables, depending on the desired curve. These tables are used
 to interpolate the final cooling curve using \p ncool points.
 </p><a href="../proc/initialise_radiative_cooling.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_radiative_cooling_values"></span><h3>public subroutine <a href='../proc/set_radiative_cooling_values.html'>set_radiative_cooling_values</a>(rho_field, T_field, rc_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_radiative_cooling_values"></span><h3>public subroutine <a href='../proc/set_radiative_cooling_values.html'>set_radiative_cooling_values</a>(settings, rho_field, T_field, rc_field)</h3></div>
   <div class="panel-body">
        
 <p>Sets the radiative cooling attributes of the corresponding types.
@@ -249,6 +261,12 @@ This is called <em>after</em> the equilibrium is initialised in the submodule.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/density_type.html'>density_type</a>),</td>
 <td>intent(in)</td>
@@ -275,7 +293,7 @@ This is called <em>after</em> the equilibrium is initialised in the submodule.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-create_cooling_curve"></span><h3>private subroutine <a href='../proc/create_cooling_curve.html'>create_cooling_curve</a>(table_T, table_L)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-create_cooling_curve"></span><h3>private subroutine <a href='../proc/create_cooling_curve.html'>create_cooling_curve</a>(settings, table_T, table_L)</h3></div>
   <div class="panel-body">
        
 <p>Creates an interpolated cooling curve based on the chosen table.
@@ -286,6 +304,12 @@ care of normalisations.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>

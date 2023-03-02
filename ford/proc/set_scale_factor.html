@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">12 statements</a>
+    title=" 0.1% of total for procedures.">12 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_grid.f08"> Source File</a></li>
   </ul>
@@ -113,20 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine set_scale_factor()</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>private subroutine set_scale_factor(geometry)</h2>
+    
 
     <p>The scale factor to switch between Cartesian and cylindrical geometries
 is set here, along with its derivative. For cylindrical the scale factor
@@ -135,8 +123,18 @@ For Cartesian the scale factor is unity and its derivative is zero.
 </p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if the geometry is not defined correctly.</p></div>
 
     <h3>Arguments</h3>
-    <em>None</em>
-    <br>
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-geometry~3"></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>geometry</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

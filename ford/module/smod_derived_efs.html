@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.9% of total for modules and submodules.">168 statements</a>
+    title=" 1.7% of total for modules and submodules.">178 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_derived_efs.f08"> Source File</a></li>
   </ul>
@@ -355,7 +355,7 @@ taken in the 23-plane. The right-handed triad is e1, B0/|B0|, (e1 x B0) / |B0|.<
   <div class="panel-heading codesum"><span class="anchor" id="interface-set_pp_quantities"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>module module subroutine set_pp_quantities(locB, locCurlB, locV, locCurlV, ef_index)   <a href='../proc/set_pp_quantities.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>module module subroutine set_pp_quantities(locB, locCurlB, locV, locCurlV, ef_index, state_vector)   <a href='../proc/set_pp_quantities.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -389,6 +389,12 @@ taken in the 23-plane. The right-handed triad is e1, B0/|B0|, (e1 x B0) / |B0|.<
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>ef_index</strong></td><td><p>index of the eigenfunction in the "quantities" array attribute</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector for which to calculate the eigenfunctions</p></td>
 </tr>
 </tbody>
 </table>
@@ -435,7 +441,7 @@ looking up the nearest values for every point in the eigenfunction grid.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_entropy"></span><h3>subroutine <a href='../proc/set_entropy.html'>set_entropy</a>(loc, ef_index)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_entropy"></span><h3>subroutine <a href='../proc/set_entropy.html'>set_entropy</a>(loc, ef_index, state_vector)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the entropy S1 and places it at location "loc" in the main array.</p>
@@ -455,6 +461,12 @@ looking up the nearest values for every point in the eigenfunction grid.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>ef_index</strong></td><td><p>index of the eigenfunction in the "quantities" array attribute</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -463,7 +475,7 @@ looking up the nearest values for every point in the eigenfunction grid.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_velocity_divergence"></span><h3>subroutine <a href='../proc/set_velocity_divergence.html'>set_velocity_divergence</a>(loc, ef_index, rvec)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_velocity_divergence"></span><h3>subroutine <a href='../proc/set_velocity_divergence.html'>set_velocity_divergence</a>(loc, ef_index, rvec, state_vector, settings)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the divergence of the perturbed velocity v1</p>
@@ -489,6 +501,18 @@ looking up the nearest values for every point in the eigenfunction grid.</p>
   <td></td>  <td></td><td>::</td>
   <td><strong>rvec</strong>(:)</td><td><p>right eigenvector</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>dimensions object</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -497,7 +521,7 @@ looking up the nearest values for every point in the eigenfunction grid.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_velocity_curl"></span><h3>subroutine <a href='../proc/set_velocity_curl.html'>set_velocity_curl</a>(loc, ef_index, rvec)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_velocity_curl"></span><h3>subroutine <a href='../proc/set_velocity_curl.html'>set_velocity_curl</a>(loc, ef_index, rvec, state_vector, settings)</h3></div>
   <div class="panel-body">
        
 <p>Sets the three components of velocity curl.</p>
@@ -522,6 +546,18 @@ looking up the nearest values for every point in the eigenfunction grid.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>rvec</strong>(:)</td><td><p>right eigenvector</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>dimensions object</p></td>
 </tr>
 </tbody>
 </table>
@@ -587,7 +623,7 @@ looking up the nearest values for every point in the eigenfunction grid.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_magnetic_field_curl"></span><h3>subroutine <a href='../proc/set_magnetic_field_curl.html'>set_magnetic_field_curl</a>(loc, ef_index, rvec)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_magnetic_field_curl"></span><h3>subroutine <a href='../proc/set_magnetic_field_curl.html'>set_magnetic_field_curl</a>(loc, ef_index, rvec, state_vector, settings)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the curl of the perturbed magnetic field.</p>
@@ -612,6 +648,18 @@ looking up the nearest values for every point in the eigenfunction grid.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>rvec</strong>(:)</td><td><p>right eigenvector</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>state_vector</strong>(:)</td><td><p>state vector</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td><p>dimensions object</p></td>
 </tr>
 </tbody>
 </table>
@@ -653,7 +701,7 @@ vector indices, allocates the (subset of) derived eigenfunctions</p>
   </div>
 
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-calculate_derived_eigenfunctions"></span><h3>module procedure <a href='../proc/calculate_derived_eigenfunctions.html'>calculate_derived_eigenfunctions</a> <small>module module subroutine calculate_derived_eigenfunctions(right_eigenvectors)</small>   <a href='../interface/calculate_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-calculate_derived_eigenfunctions"></span><h3>module procedure <a href='../proc/calculate_derived_eigenfunctions.html'>calculate_derived_eigenfunctions</a> <small>module module subroutine calculate_derived_eigenfunctions(settings, right_eigenvectors)</small>   <a href='../interface/calculate_derived_eigenfunctions.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
        
@@ -663,6 +711,12 @@ eigenvalues and sets them as attributes for the corresponding types.</p>
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>

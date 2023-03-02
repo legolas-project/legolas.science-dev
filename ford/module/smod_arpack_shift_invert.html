@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for modules and submodules.">62 statements</a>
+    title=" 0.6% of total for modules and submodules.">64 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_arpack_shift_invert.f08"> Source File</a></li>
   </ul>
@@ -130,9 +130,9 @@ finding <script type="math/tex">k</script> eigenvalues of the shifted problem th
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_banded_operations.html'>mod_banded_operations</a></li>
     <li><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
     <li><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></li>
-    <li><a href='../module/mod_banded_operations.html'>mod_banded_operations</a></li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -177,7 +177,7 @@ finding <script type="math/tex">k</script> eigenvalues of the shifted problem th
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-solve_arpack_shift_invert"></span><h3>module procedure <a href='../proc/solve_arpack_shift_invert.html'>solve_arpack_shift_invert</a> <small>module module subroutine solve_arpack_shift_invert(arpack_cfg, matrix_A, matrix_B, sigma, omega, vr)</small>   <a href='../interface/solve_arpack_shift_invert.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-solve_arpack_shift_invert"></span><h3>module procedure <a href='../proc/solve_arpack_shift_invert.html'>solve_arpack_shift_invert</a> <small>module module subroutine solve_arpack_shift_invert(arpack_cfg, matrix_A, matrix_B, settings, omega, vr)</small>   <a href='../interface/solve_arpack_shift_invert.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
        
@@ -206,10 +206,10 @@ finding <script type="math/tex">k</script> eigenvalues of the shifted problem th
   <td><strong>matrix_B</strong></td><td><p>matrix B</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>complex(kind=dp),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>sigma</strong></td><td><p>the shift to apply</p></td>
+  <td><strong>settings</strong></td><td><p>settings object</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>

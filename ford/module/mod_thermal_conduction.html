@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.4% of total for modules and submodules.">126 statements</a>
+    title=" 1.3% of total for modules and submodules.">131 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_thermal_conduction.f08"> Source File</a></li>
   </ul>
@@ -143,10 +143,10 @@ thermal conduction values based on the equilibrium configuration.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_units.html'>mod_units</a></li>
-    <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       </ul>
@@ -215,7 +215,7 @@ thermal conduction values based on the equilibrium configuration.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_conduction_values"></span><h3>public subroutine <a href='../proc/set_conduction_values.html'>set_conduction_values</a>(rho_field, T_field, B_field, kappa_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_conduction_values"></span><h3>public subroutine <a href='../proc/set_conduction_values.html'>set_conduction_values</a>(settings, rho_field, T_field, B_field, kappa_field)</h3></div>
   <div class="panel-body">
        
 <p>This routines sets all thermal conduction values in <tt>kappa_field</tt>,
@@ -225,6 +225,12 @@ and calls all other relevant subroutines defined in this module.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/density_type.html'>density_type</a>),</td>
 <td>intent(in)</td>
@@ -257,7 +263,7 @@ and calls all other relevant subroutines defined in this module.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_para"></span><h3>private subroutine <a href='../proc/set_kappa_para.html'>set_kappa_para</a>(T0_eq, tc_para)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_para"></span><h3>private subroutine <a href='../proc/set_kappa_para.html'>set_kappa_para</a>(settings, T0_eq, tc_para)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the parallel thermal conduction.
@@ -269,6 +275,12 @@ in the global variables module.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
@@ -289,7 +301,7 @@ in the global variables module.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_perp"></span><h3>private subroutine <a href='../proc/set_kappa_perp.html'>set_kappa_perp</a>(T0_eq, rho0_eq, B0_eq, tc_perp)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_perp"></span><h3>private subroutine <a href='../proc/set_kappa_perp.html'>set_kappa_perp</a>(settings, T0_eq, rho0_eq, B0_eq, tc_perp)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the perpendicular thermal conduction.
@@ -301,6 +313,12 @@ in the global variables module.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
@@ -333,7 +351,7 @@ in the global variables module.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_para_derivatives"></span><h3>private subroutine <a href='../proc/set_kappa_para_derivatives.html'>set_kappa_para_derivatives</a>(T0_eq, d_tcpara_dT)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_para_derivatives"></span><h3>private subroutine <a href='../proc/set_kappa_para_derivatives.html'>set_kappa_para_derivatives</a>(settings, T0_eq, d_tcpara_dT)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the temperature derivative of the parallel thermal conduction component.
@@ -342,6 +360,12 @@ in the global variables module.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
@@ -362,7 +386,7 @@ in the global variables module.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_perp_derivatives"></span><h3>private subroutine <a href='../proc/set_kappa_perp_derivatives.html'>set_kappa_perp_derivatives</a>(T0_eq, rho0_eq, B0_eq, d_tc_drho, d_tc_dB2, d_tc_dT)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_perp_derivatives"></span><h3>private subroutine <a href='../proc/set_kappa_perp_derivatives.html'>set_kappa_perp_derivatives</a>(settings, T0_eq, rho0_eq, B0_eq, d_tc_drho, d_tc_dB2, d_tc_dT)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the thermal conduction derivatives.
@@ -373,6 +397,12 @@ density, magnetic field squared and temperature.
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
@@ -417,7 +447,7 @@ density, magnetic field squared and temperature.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_perp_radial_derivative"></span><h3>private subroutine <a href='../proc/set_kappa_perp_radial_derivative.html'>set_kappa_perp_radial_derivative</a>(rho_field, T_field, B_field, kappa_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_perp_radial_derivative"></span><h3>private subroutine <a href='../proc/set_kappa_perp_radial_derivative.html'>set_kappa_perp_radial_derivative</a>(settings, rho_field, T_field, B_field, kappa_field)</h3></div>
   <div class="panel-body">
        
 <p>Sets the radial derivative of the perpendicular thermal conduction coefficient.
@@ -432,6 +462,12 @@ kappa_{\perp, 0}' = \frac{d\kappa_{\perp, 0}}{d\rho} \rho_0'
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/density_type.html'>density_type</a>),</td>
 <td>intent(in)</td>

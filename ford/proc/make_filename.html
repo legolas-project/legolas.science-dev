@@ -113,20 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine make_filename(base_filename, filename)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>private subroutine make_filename(settings, extension, filename)</h2>
+    
 
     <p>Builds a filename based on a given base filename and the
 output folder defined in the global variables module.
@@ -138,10 +126,16 @@ The output folder is prepended to the base filename.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-base_filename"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-settings~117"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>base_filename</strong></td><td><p>the base filename to use</p></td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-extension"></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>extension</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-filename~4"></span>character(len=*),</td>
