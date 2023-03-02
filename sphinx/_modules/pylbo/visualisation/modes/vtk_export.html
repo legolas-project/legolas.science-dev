@@ -329,6 +329,9 @@
                 <span class="sa">f</span><span class="s2">&quot;field </span><span class="si">{</span><span class="n">fieldname</span><span class="si">}</span><span class="s2"> is zero everywhere and thus not written to VTK.&quot;</span>
             <span class="p">)</span>
             <span class="k">return</span>
+        <span class="c1"># note: spaces are NOT supported in fieldnames (parentheses should be fine)</span>
+        <span class="c1"># see https://gitlab.kitware.com/paraview/paraview/-/issues/19769</span>
+        <span class="n">fieldname</span> <span class="o">=</span> <span class="n">fieldname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vtkfile</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ostream</span><span class="p">:</span>
             <span class="n">ostream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SCALARS </span><span class="si">{</span><span class="n">fieldname</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_vtk_dtype</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">ostream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;LOOKUP_TABLE default </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>

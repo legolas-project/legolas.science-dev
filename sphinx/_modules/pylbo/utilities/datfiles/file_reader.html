@@ -87,6 +87,7 @@
     <span class="n">read_string_from_istream</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
+<span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">transform_to_list</span>
 
 
 <div class="viewcode-block" id="LegolasFileReader"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader">[docs]</a><span class="k">class</span> <span class="nc">LegolasFileReader</span><span class="p">:</span>
@@ -164,7 +165,8 @@
                 <span class="n">amount</span><span class="o">=</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;nb_eigenvalues&quot;</span><span class="p">],</span>
                 <span class="n">offset</span><span class="o">=</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">][</span><span class="s2">&quot;eigenvalues&quot;</span><span class="p">],</span>
             <span class="p">)</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span></div>
+        <span class="c1"># ensure we have a list, also for 1 eigenvalue</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">transform_to_list</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="LegolasFileReader.read_eigenvectors"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_eigenvectors">[docs]</a>    <span class="k">def</span> <span class="nf">read_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
