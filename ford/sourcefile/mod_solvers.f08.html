@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_solvers.f08 &ndash; Legolas v. 1.3.0 - develop</title>
+    <title>mod_solvers.f08 &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.0.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -210,7 +210,7 @@
 <a id="ln-60" name="ln-60" href="#ln-60"></a><span class="w">      </span><span class="c">!&gt; matrix B</span>
 <a id="ln-61" name="ln-61" href="#ln-61"></a><span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">matrix_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">matrix_B</span>
 <a id="ln-62" name="ln-62" href="#ln-62"></a><span class="w">      </span><span class="c">!&gt; settings object</span>
-<a id="ln-63" name="ln-63" href="#ln-63"></a><span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">settings_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">settings</span>
+<a id="ln-63" name="ln-63" href="#ln-63"></a><span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">settings_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">settings</span>
 <a id="ln-64" name="ln-64" href="#ln-64"></a><span class="w">      </span><span class="c">!&gt; array with eigenvalues</span>
 <a id="ln-65" name="ln-65" href="#ln-65"></a><span class="w">      </span><span class="kt">complex</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">omega</span><span class="p">(:)</span>
 <a id="ln-66" name="ln-66" href="#ln-66"></a><span class="w">      </span><span class="c">!&gt; array with right eigenvectors</span>
@@ -245,7 +245,7 @@
 <a id="ln-95" name="ln-95" href="#ln-95"></a><span class="w">    </span><span class="c">!&gt; B-matrix</span>
 <a id="ln-96" name="ln-96" href="#ln-96"></a><span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">matrix_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">matrix_B</span>
 <a id="ln-97" name="ln-97" href="#ln-97"></a><span class="w">    </span><span class="c">!&gt; settings object</span>
-<a id="ln-98" name="ln-98" href="#ln-98"></a><span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">settings_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">settings</span>
+<a id="ln-98" name="ln-98" href="#ln-98"></a><span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">settings_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">settings</span>
 <a id="ln-99" name="ln-99" href="#ln-99"></a><span class="w">    </span><span class="c">!&gt; eigenvalues</span>
 <a id="ln-100" name="ln-100" href="#ln-100"></a><span class="w">    </span><span class="kt">complex</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">omega</span><span class="p">(:)</span>
 <a id="ln-101" name="ln-101" href="#ln-101"></a><span class="w">    </span><span class="c">!&gt; right eigenvectors</span>
@@ -284,7 +284,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2023 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.0.0 - develop was developed by <br>&copy; 2023 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

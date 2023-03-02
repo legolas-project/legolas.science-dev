@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>All Procedures &ndash; Legolas v. 1.3.0 - develop
+    <title>All Procedures &ndash; Legolas v. 2.0.0 - develop
 </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 1.3.0 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.0.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -166,19 +166,10 @@ derivative is obtained numerically.</p></td></tr>
 Calls a second-order polynomial interpolation routine and takes
 care of normalisations.
 </p><a href="../proc/create_cooling_curve.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/create_datfile.html'>create_datfile</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td><p>Writes the datfile, where eigenfunctions and matrices are optionally
-included. First a header is written containing default information
-on the configuration, then the actual data.
-</p><a href="../proc/create_datfile.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/create_datfile.html'>create_datfile</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/create_eigenfunctions.html'>create_eigenfunctions</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td><p>Initialises and calculates the eigenfunctions if requested.</p></td></tr>
 			   <tr><td><a href='../proc/create_first_node.html'>create_first_node</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Subroutine</td><td><p>Subroutine to add the first node to the linked list. Allocates a new node and
 sets both the head and tail to this node.</p></td></tr>
-			   <tr><td><a href='../proc/create_logfile.html'>create_logfile</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td><p>Creates a logfile. If <tt>basename_logfile</tt> is specified in the datfile,
-a logfile is written.
-This is a pure textfile containing the real and imaginary parts of the
-eigenvalues, written in an exponential format. This is mainly used for testing
-purposes but may come in handy to do some quick inspections on the data.
-</p><a href="../proc/create_logfile.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/create_matrices.html'>create_matrices</a></td><td><a href='../module/mod_matrix_creation.html'>mod_matrix_creation</a></td><td>Subroutine</td><td><p>Main subroutine to assemble the matrices A and B, which are
 already allocated when entering this subroutine but not yet initialised.
 The quadblock is calculated for every grid interval and used to assemble
@@ -282,6 +273,7 @@ values, so when a node at (row, column) is not foudn this function returns
 			   <tr><td><a href='../proc/get_constants.html'>get_constants</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Retrieves resistivity constants.
 Returns all physical constants used to calculate the Spitzer resistivity.</p></td></tr>
 			   <tr><td><a href='../proc/get_cooling_curve.html'>get_cooling_curve</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_datfile_path.html'>get_datfile_path</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_deta.html'>get_deta</a></td><td><a href='../module/smod_resistive_matrix.html'>smod_resistive_matrix</a></td><td>Function</td><td><p>Calculates the total derivative of <script type="math/tex; mode=display">\eta</script>, given as
 <script type="math/tex; mode=display"> \eta_0(r, T)' = \frac{d\eta_0}{dr} + \frac{dT_0}{dr}\frac{d\eta_0}{dT} </script>
 </p></td></tr>
@@ -363,6 +355,7 @@ $$</p></td></tr>
 			   <tr><td><a href='../proc/get_lu_factorisation_banded.html'>get_LU_factorisation_banded</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Subroutine</td><td><p>Calculates the LU factorisation of a complex banded matrix <script type="math/tex">A</script>.
 Uses the LAPACK routine zgbtrf.</p></td></tr>
 			   <tr><td><a href='../proc/get_lworkl.html'>get_lworkl</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for length of workl array, returns 3 * ncv**2 + 5 * ncv</p></td></tr>
+			   <tr><td><a href='../proc/get_maxiter.html'>get_maxiter</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for maximum number of iterations.</p></td></tr>
 			   <tr><td><a href='../proc/get_mean_molecular_weight.html'>get_mean_molecular_weight</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_nb_diagonals.html'>get_nb_diagonals</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Subroutine</td><td><p>Subroutine to get the number of super- and sub-diagonals in the matrix.</p></td></tr>
 			   <tr><td><a href='../proc/get_nb_eqs.html'>get_nb_eqs</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Function</td><td></td></tr>
@@ -570,10 +563,6 @@ If the <tt>allow_outside</tt> flag is given as <tt>.true.</tt> then values
 on the edge of the table are returned when the lookup value is outside the array.
 Uses simple linear interpolation.</p></td></tr>
 			   <tr><td><a href='../interface/magnetothermal_instability_eq.html'>magnetothermal_instability_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
-			   <tr><td><a href='../proc/make_filename.html'>make_filename</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td><p>Builds a filename based on a given base filename and the
-output folder defined in the global variables module.
-The output folder is prepended to the base filename.
-</p><a href="../proc/make_filename.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../interface/matrix_to_array.html'>matrix_to_array</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../interface/matrix_to_banded.html'>matrix_to_banded</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/matrix_to_complex_array.html'>matrix_to_complex_array</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Subroutine</td><td><p>Converts a given matrix data structure with complex nodes to a 2D complex array.</p></td></tr>
@@ -618,9 +607,7 @@ and sets the current head and tail pointers to <code>null()</code>.</p></td></tr
 an exception is raised. The argument <tt>message</tt>
 is printed to the console and program execution
 is terminated.</p></td></tr>
-			   <tr><td><a href='../proc/open_file.html'>open_file</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td><p>Opens a file with a given IO unit and filename.
-All files are opened using <tt>access='stream'</tt>,
-<tt>status='unknown'</tt> and <tt>action='write'</tt>.</p></td></tr>
+			   <tr><td><a href='../proc/open_file.html'>open_file</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/paint_string.html'>paint_string</a></td><td><a href='../module/mod_painting.html'>mod_painting</a></td><td>Function</td><td><p>Subroutine to paint a given string to the desired colour,
 returns a new string with ANSI escape sequences prepended
 and appended. If the 'colour' argument is not known, simply
@@ -916,7 +903,22 @@ block, if <code>edge</code> equals <code>"right"</code> returns indices for the 
 			   <tr><td><a href='../proc/viscosity_boundaries.html'>viscosity_boundaries</a></td><td><a href='../module/mod_viscosity.html'>mod_viscosity</a></td><td>Subroutine</td><td><p>Creates a quadblock for the A matrix containing the natural boundary
 conditions coming from the viscosity terms, depending on the supplied edge.</p></td></tr>
 			   <tr><td><a href='../proc/warning.html'>warning</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/write_matrices_to_file.html'>write_matrices_to_file</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_base_eigenfunction_data.html'>write_base_eigenfunction_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_derived_eigenfunction_data.html'>write_derived_eigenfunction_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_eigenvector_data.html'>write_eigenvector_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_equilibrium_data.html'>write_equilibrium_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_equilibrium_info.html'>write_equilibrium_info</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_equilibrium_names.html'>write_equilibrium_names</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_grid_info.html'>write_grid_info</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_header.html'>write_header</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_io_info.html'>write_io_info</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_matrix_data.html'>write_matrix_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_parameters.html'>write_parameters</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_physics_info.html'>write_physics_info</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_physics_type_info.html'>write_physics_type_info</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_residual_data.html'>write_residual_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_solver_info.html'>write_solver_info</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_units_info.html'>write_units_info</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/zero_out_row_and_col.html'>zero_out_row_and_col</a></td><td><a href='../module/smod_essential_boundaries.html'>smod_essential_boundaries</a></td><td>Subroutine</td><td><p>Zeroes out the row and column corresponding to the given indices.
 Afterwards <code>diagonal_factor</code> is introduced in that row/column on the main diagonal.</p></td></tr>
 			 </tbody></table>
@@ -928,7 +930,7 @@ Afterwards <code>diagonal_factor</code> is introduced in that row/column on the 
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 1.3.0 - develop was developed by <br>&copy; 2023 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.0.0 - develop was developed by <br>&copy; 2023 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

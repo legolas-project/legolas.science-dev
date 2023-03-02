@@ -1,0 +1,67 @@
+:py:mod:`pylbo.utilities.datfiles.file_reader`
+==============================================
+
+.. py:module:: pylbo.utilities.datfiles.file_reader
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.utilities.datfiles.file_reader.LegolasFileReader
+
+
+
+
+.. py:class:: LegolasFileReader(datfile: os.PathLike, byte_order: str = 'native')
+
+   .. py:method:: _read_legolas_version(istream: BinaryIO) -> pylbo._version.VersionHandler
+
+
+   .. py:method:: get_header() -> pylbo.utilities.datfiles.header.LegolasHeader
+
+
+   .. py:method:: read_grid(header: pylbo.utilities.datfiles.header.LegolasHeader) -> numpy.ndarray
+
+
+   .. py:method:: read_gaussian_grid(header: pylbo.utilities.datfiles.header.LegolasHeader) -> numpy.ndarray
+
+
+   .. py:method:: read_ef_grid(header: pylbo.utilities.datfiles.header.LegolasHeader) -> numpy.ndarray
+
+
+   .. py:method:: read_equilibrium_arrays(header: pylbo.utilities.datfiles.header.LegolasHeader) -> dict
+
+
+   .. py:method:: read_eigenvalues(header: pylbo.utilities.datfiles.header.LegolasHeader) -> numpy.ndarray
+
+
+   .. py:method:: read_eigenvectors(header: pylbo.utilities.datfiles.header.LegolasHeader) -> numpy.ndarray
+
+
+   .. py:method:: read_residuals(header: pylbo.utilities.datfiles.header.LegolasHeader) -> numpy.ndarray
+
+
+   .. py:method:: read_matrix_A(header: pylbo.utilities.datfiles.header.LegolasHeader) -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
+
+
+   .. py:method:: read_matrix_B(header: pylbo.utilities.datfiles.header.LegolasHeader) -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
+
+
+   .. py:method:: read_eigenfunction(header: pylbo.utilities.datfiles.header.LegolasHeader, ev_index: int) -> dict
+
+
+   .. py:method:: read_derived_eigenfunction(header: pylbo.utilities.datfiles.header.LegolasHeader, ev_index: int) -> dict
+
+
+   .. py:method:: _read_eigenfunction_like(header: pylbo.utilities.datfiles.header.LegolasHeader, offset: int, ef_index: int, state_vector: numpy.ndarray) -> dict
+
+
+   .. py:method:: _get_ef_index(header: pylbo.utilities.datfiles.header.LegolasHeader, ev_index: int) -> int
+
+
+

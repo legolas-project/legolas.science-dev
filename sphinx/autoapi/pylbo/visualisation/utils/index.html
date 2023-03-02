@@ -68,7 +68,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../_version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo._version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../data_containers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.data_containers</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../file_handler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.file_handler</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../testing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.testing</span></code></a></li>
 </ul>
 </li>
@@ -114,22 +113,25 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.refresh_plot" title="pylbo.visualisation.utils.refresh_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">refresh_plot</span></code></a>(→ callable)</p></td>
 <td><p>Simple decorator, when a routine is wrapped with this the plot will be</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.ef_name_to_latex" title="pylbo.visualisation.utils.ef_name_to_latex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ef_name_to_latex</span></code></a>(→ str)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.ensure_attr_set" title="pylbo.visualisation.utils.ensure_attr_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ensure_attr_set</span></code></a>(→ None)</p></td>
+<td><p>Ensures that a given attribute is set.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.ef_name_to_latex" title="pylbo.visualisation.utils.ef_name_to_latex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ef_name_to_latex</span></code></a>(→ str)</p></td>
 <td><p>Converts an eigenfunction name to latex formatting. Numbers are replaced with a</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.validate_ef_name" title="pylbo.visualisation.utils.validate_ef_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_ef_name</span></code></a>(→ str)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.validate_ef_name" title="pylbo.visualisation.utils.validate_ef_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_ef_name</span></code></a>(→ str)</p></td>
 <td><p>Returns the validated eigenfunction name.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.utils._validate_textbox_location" title="pylbo.visualisation.utils._validate_textbox_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_validate_textbox_location</span></code></a>(→ str)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.utils._validate_textbox_location" title="pylbo.visualisation.utils._validate_textbox_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_validate_textbox_location</span></code></a>(→ str)</p></td>
 <td><p>Validates the location of the textbox.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.utils._get_textbox_axes_coords" title="pylbo.visualisation.utils._get_textbox_axes_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_get_textbox_axes_coords</span></code></a>(loc, outside, width, height)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.utils._get_textbox_axes_coords" title="pylbo.visualisation.utils._get_textbox_axes_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_get_textbox_axes_coords</span></code></a>(loc, outside, width, height)</p></td>
 <td><p>Returns the coordinates of the textbox.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.add_textbox_to_axes" title="pylbo.visualisation.utils.add_textbox_to_axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_textbox_to_axes</span></code></a>(→ matplotlib.axes.Axes.text)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.add_textbox_to_axes" title="pylbo.visualisation.utils.add_textbox_to_axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_textbox_to_axes</span></code></a>(→ matplotlib.axes.Axes.text)</p></td>
 <td><p>Convenience method to add a textbox to the given axes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.add_axis_label" title="pylbo.visualisation.utils.add_axis_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_axis_label</span></code></a>(→ matplotlib.axes.Axes.text)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.utils.add_axis_label" title="pylbo.visualisation.utils.add_axis_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_axis_label</span></code></a>(→ matplotlib.axes.Axes.text)</p></td>
 <td><p>Creates a textbox in one of the corners of the specified axis. This method is meant</p></td>
 </tr>
 </tbody>
@@ -140,6 +142,23 @@
 <dd><p>Simple decorator, when a routine is wrapped with this the plot will be
 cleared and redrawn on calling it.
 Useful for when the scaling is changed or artists are added/removed.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.visualisation.utils.ensure_attr_set">
+<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.utils.</span></span><span class="sig-name descname"><span class="pre">ensure_attr_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/utils.html#ensure_attr_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.utils.ensure_attr_set" title="Permalink to this definition"></a></dt>
+<dd><p>Ensures that a given attribute is set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>Any</em>) – The object to check.</p></li>
+<li><p><strong>attr</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The attribute to check.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – If the attribute is not set.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">

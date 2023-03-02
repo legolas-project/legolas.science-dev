@@ -1,0 +1,281 @@
+:py:mod:`pylbo.utilities.datfiles.istream_reader`
+=================================================
+
+.. py:module:: pylbo.utilities.datfiles.istream_reader
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.utilities.datfiles.istream_reader.requires_version
+   pylbo.utilities.datfiles.istream_reader.read_string_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_int_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_boolean_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_float_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_complex_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_mixed_from_istream
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.utilities.datfiles.istream_reader.DTYPES
+   pylbo.utilities.datfiles.istream_reader.NP_DTYPES
+   pylbo.utilities.datfiles.istream_reader.BYTE_ORDERS
+   pylbo.utilities.datfiles.istream_reader.SIZE_CHAR
+   pylbo.utilities.datfiles.istream_reader.SIZE_INT
+   pylbo.utilities.datfiles.istream_reader.SIZE_BOOL
+   pylbo.utilities.datfiles.istream_reader.SIZE_DOUBLE
+   pylbo.utilities.datfiles.istream_reader.SIZE_COMPLEX
+
+
+.. py:data:: DTYPES
+
+   
+
+.. py:data:: NP_DTYPES
+
+   
+
+.. py:data:: BYTE_ORDERS
+
+   
+
+.. py:data:: SIZE_CHAR
+
+   
+
+.. py:data:: SIZE_INT
+
+   
+
+.. py:data:: SIZE_BOOL
+
+   
+
+.. py:data:: SIZE_DOUBLE
+
+   
+
+.. py:data:: SIZE_COMPLEX
+
+   
+
+.. py:function:: requires_version(version_needed, default=None)
+
+
+.. py:function:: read_string_from_istream(istream: BinaryIO, length: int, amount: int = 1, offset: int = None, byte_order: str = 'native') -> Union[str, list[str]]
+
+   
+   Reads a string from the input stream.
+
+   :param istream: The input stream to read from.
+   :type istream: BinaryIO
+   :param length: The length of the string to read.
+   :type length: int
+   :param amount: The amount of strings to read, by default 1.
+   :type amount: int, optional
+   :param offset: The offset to seek to before reading, by default `None`.
+   :type offset: int, optional
+   :param byte_order: The byte order to use, by default "native".
+   :type byte_order: str, optional
+
+   :returns: The string(s) read from the input stream.
+   :rtype: str, list of str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: read_int_from_istream(istream: BinaryIO, amount: int = 1, offset: int = None, byte_order: str = 'native') -> Union[int, tuple[int, Ellipsis]]
+
+   
+   Reads an integer from the input stream.
+
+   :param istream: The input stream to read from.
+   :type istream: BinaryIO
+   :param amount: The amount of integers to read, by default 1.
+   :type amount: int, optional
+   :param offset: The offset to seek to before reading, by default `None`.
+   :type offset: int, optional
+   :param byte_order: The byte order to use, by default "native".
+   :type byte_order: str, optional
+
+   :returns: The integer(s) read from the input stream.
+   :rtype: int, tuple of int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: read_boolean_from_istream(istream: BinaryIO, offset: int = None, byte_order: str = 'native') -> bool
+
+   
+   Reads a boolean from the input stream.
+
+   :param istream: The input stream to read from.
+   :type istream: BinaryIO
+   :param offset: The offset to seek to before reading, by default `None`.
+   :type offset: int, optional
+   :param byte_order: The byte order to use, by default "native".
+   :type byte_order: str, optional
+
+   :returns: The boolean read from the input stream.
+   :rtype: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: read_float_from_istream(istream: BinaryIO, amount: int = 1, offset: int = None, byte_order: str = 'native') -> Union[float, tuple[float, Ellipsis]]
+
+   
+   Reads a float from the input stream.
+
+   :param istream: The input stream to read from.
+   :type istream: BinaryIO
+   :param amount: The amount of floats to read, by default 1.
+   :type amount: int, optional
+   :param offset: The offset to seek to before reading, by default `None`.
+   :type offset: int, optional
+   :param byte_order: The byte order to use, by default "native".
+   :type byte_order: str, optional
+
+   :returns: The float(s) read from the input stream.
+   :rtype: float, tuple of float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: read_complex_from_istream(istream: BinaryIO, amount: int = 1, offset: int = None, byte_order: str = 'native') -> Union[complex, tuple[complex, Ellipsis]]
+
+   
+   Reads a complex from the input stream.
+
+   :param istream: The input stream to read from.
+   :type istream: BinaryIO
+   :param amount: The amount of complex numbers to read, by default 1.
+   :type amount: int, optional
+   :param offset: The offset to seek to before reading, by default `None`.
+   :type offset: int, optional
+   :param byte_order: The byte order to use, by default "native".
+   :type byte_order: str, optional
+
+   :returns: The complex number(s) read from the input stream.
+   :rtype: complex, tuple of complex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: read_mixed_from_istream(istream: BinaryIO, fmt: str, amount: int = 1, offset: int = None, byte_order: str = 'native') -> tuple(complex, ...)
+
+   
+   Reads a number of mixed types from the input stream.
+
+   :param istream: The input stream to read from.
+   :type istream: BinaryIO
+   :param fmt: The format string to use.
+   :type fmt: str
+   :param amount: The amount of mixed types to read, by default 1.
+   :type amount: int, optional
+   :param offset: The offset to seek to before reading, by default `None`.
+   :type offset: int, optional
+   :param byte_order: The byte order to use, by default "native".
+   :type byte_order: str, optional
+
+   :returns: The mixed types read from the input stream.
+   :rtype: tuple of mixed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+

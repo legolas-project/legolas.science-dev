@@ -52,7 +52,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo</span></code></a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../../automation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.automation</span></code></a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities</span></code></a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../datfile_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities.datfile_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../datfiles/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities.datfiles</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../debug/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities.debug</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities.logger</span></code></a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities.toolbox</span></code></a></li>
@@ -62,7 +62,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../_version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo._version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../data_containers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.data_containers</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../file_handler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.file_handler</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../testing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.testing</span></code></a></li>
 </ul>
 </li>
@@ -111,19 +110,22 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.get_axis_geometry" title="pylbo.utilities.toolbox.get_axis_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_axis_geometry</span></code></a>(ax)</p></td>
 <td><p>Retrieves the geometry of a given matplotlib axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.add_pickradius_to_item" title="pylbo.utilities.toolbox.add_pickradius_to_item"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_pickradius_to_item</span></code></a>(item, pickradius)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.get_values" title="pylbo.utilities.toolbox.get_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_values</span></code></a>(array, which_values)</p></td>
+<td><p>Determines which values to retrieve from an array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.add_pickradius_to_item" title="pylbo.utilities.toolbox.add_pickradius_to_item"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_pickradius_to_item</span></code></a>(item, pickradius)</p></td>
 <td><p>Makes a matplotlib artist pickable and adds a pickradius.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.custom_enumerate" title="pylbo.utilities.toolbox.custom_enumerate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom_enumerate</span></code></a>(iterable[, start, step])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.custom_enumerate" title="pylbo.utilities.toolbox.custom_enumerate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom_enumerate</span></code></a>(iterable[, start, step])</p></td>
 <td><p>Does a custom enumeration with a given stepsize.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.transform_to_list" title="pylbo.utilities.toolbox.transform_to_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_to_list</span></code></a>(→ list)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.transform_to_list" title="pylbo.utilities.toolbox.transform_to_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_to_list</span></code></a>(→ list)</p></td>
 <td><p>Transforms a given input argument <cite>obj</cite> to a list. If <cite>obj</cite></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.transform_to_numpy" title="pylbo.utilities.toolbox.transform_to_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_to_numpy</span></code></a>(→ numpy.ndarray)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.transform_to_numpy" title="pylbo.utilities.toolbox.transform_to_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_to_numpy</span></code></a>(→ numpy.ndarray)</p></td>
 <td><p>Transforms a given input argument <cite>obj</cite> to a numpy array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.solve_cubic_exact" title="pylbo.utilities.toolbox.solve_cubic_exact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_cubic_exact</span></code></a>(a, b, c, d)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.solve_cubic_exact" title="pylbo.utilities.toolbox.solve_cubic_exact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_cubic_exact</span></code></a>(a, b, c, d)</p></td>
 <td><p>Solves a given cubic polynomial of the form</p></td>
 </tr>
 </tbody>
@@ -146,6 +148,35 @@
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)">tuple</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.utilities.toolbox.get_values">
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">get_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">which_values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#get_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.get_values" title="Permalink to this definition"></a></dt>
+<dd><p>Determines which values to retrieve from an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – The array with values.</p></li>
+<li><p><strong>which_values</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – <p>Can be one of the following:</p>
+<blockquote>
+<div><ul>
+<li><p>”average”: returns the average of the array</p></li>
+<li><p>”minimum”: returns the minimum of the array</p></li>
+<li><p>”maximum”: returns the maximum of the array</p></li>
+</ul>
+</div></blockquote>
+<p>If not supplied or equal to None, simply returns the array.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>array</strong> – Numpy array with values depending on the argument provided.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>

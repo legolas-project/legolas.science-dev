@@ -93,7 +93,7 @@
         <span class="p">)</span>
 
 <div class="viewcode-block" id="DerivedEigenfunctionHandler._check_data_is_present"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/derived_eigfunc_handler/index.html#pylbo.visualisation.eigenfunctions.derived_eigfunc_handler.DerivedEigenfunctionHandler._check_data_is_present">[docs]</a>    <span class="k">def</span> <span class="nf">_check_data_is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">transform_to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">derived_efs_written</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">transform_to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">has_derived_efs</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="n">EigenfunctionsNotPresent</span><span class="p">(</span>
                 <span class="s2">&quot;None of the given datfiles has derived eigenfunctions &quot;</span>
                 <span class="s2">&quot;written to it.&quot;</span>
@@ -143,7 +143,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="DerivedEigenfunctionHandler._mark_points_without_data_written"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/derived_eigfunc_handler/index.html#pylbo.visualisation.eigenfunctions.derived_eigfunc_handler.DerivedEigenfunctionHandler._mark_points_without_data_written">[docs]</a>    <span class="k">def</span> <span class="nf">_mark_points_without_data_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span> <span class="o">=</span> <span class="s2">&quot;derived_efs_written&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span> <span class="o">=</span> <span class="s2">&quot;has_derived_efs&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_mark_points_without_data_written</span><span class="p">()</span></div></div>
 </pre></div>
 

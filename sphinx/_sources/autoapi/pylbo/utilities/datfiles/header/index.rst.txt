@@ -1,0 +1,108 @@
+:py:mod:`pylbo.utilities.datfiles.header`
+=========================================
+
+.. py:module:: pylbo.utilities.datfiles.header
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.utilities.datfiles.header.LegolasHeader
+
+
+
+
+.. py:class:: LegolasHeader(istream: BinaryIO, version: pylbo._version.VersionHandler)
+
+   
+   Baseclass for a Legolas header
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: _set_str_lengths(istream: BinaryIO) -> None
+
+
+   .. py:method:: get(key: str, default: Any = None) -> Any
+
+
+   .. py:method:: read_header_data(istream: BinaryIO) -> None
+
+
+   .. py:method:: read_data_offsets(istream: BinaryIO) -> None
+
+
+   .. py:method:: _read_physics_type_info(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _read_grid_info(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _read_io_info(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _read_solver_info(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _read_equilibrium_info(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _read_units_info(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _read_physics_info(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _read_parameters(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _read_equilibrium_names(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_eigenfunction_offsets(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_ef_grid_offset(ef_gridsize: int, istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_ef_written_flags(istream: BinaryIO) -> None
+
+
+   .. py:method:: _get_ef_block_offsets(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_derived_eigenfunction_offsets(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_derived_ef_names_and_offsets(nb_names, size_names, istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_eigenvector_offsets(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_residual_offsets(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_matrices_offsets(istream: BinaryIO) -> dict
+
+
+

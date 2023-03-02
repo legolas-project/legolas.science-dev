@@ -75,7 +75,7 @@
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 
 <span class="kn">import</span> <span class="nn">difflib</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSet</span>
@@ -157,7 +157,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;real&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_real_part</span> <span class="k">else</span> <span class="s2">&quot;imag&quot;</span></div>
 
-<div class="viewcode-block" id="ModeVisualisationData._get_all_efs"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData._get_all_efs">[docs]</a>    <span class="k">def</span> <span class="nf">_get_all_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">omega</span><span class="p">):</span>
+<div class="viewcode-block" id="ModeVisualisationData._get_all_efs"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData._get_all_efs">[docs]</a>    <span class="k">def</span> <span class="nf">_get_all_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">:</span> <span class="n">LegolasDataSet</span><span class="p">,</span> <span class="n">omega</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">complex</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns an array of dicts with all eigenfunctions for every eigenvalue.</span>
 <span class="sd">        The dictionaries will be updated with the derived eigenfunctions if they</span>
@@ -177,7 +177,7 @@
 <span class="sd">            An array of dicts with all eigenfunctions for every eigenvalue.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">arr1</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_eigenfunctions</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">ds</span><span class="o">.</span><span class="n">derived_efs_written</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ds</span><span class="o">.</span><span class="n">has_derived_efs</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">arr1</span>
 
         <span class="n">arr2</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_derived_eigenfunctions</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span>

@@ -1,0 +1,83 @@
+:py:mod:`pylbo.utilities.datfiles.header_legacy`
+================================================
+
+.. py:module:: pylbo.utilities.datfiles.header_legacy
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.utilities.datfiles.header_legacy.LegolasLegacyHeader
+
+
+
+
+.. py:class:: LegolasLegacyHeader(istream: BinaryIO, version: pylbo._version.VersionHandler)
+
+   Bases: :py:obj:`pylbo.utilities.datfiles.header.LegolasHeader`
+
+   
+   Baseclass for a Legolas header
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: read_header_data(istream: BinaryIO) -> None
+
+
+   .. py:method:: read_data_offsets(istream: BinaryIO) -> None
+
+
+   .. py:method:: _read_has_derived_efs(istream: BinaryIO) -> bool
+
+
+   .. py:method:: _read_has_eigenvectors(istream: BinaryIO) -> bool
+
+
+   .. py:method:: _read_has_residuals(istream: BinaryIO) -> bool
+
+
+   .. py:method:: _read_ef_subset_properties(istream: BinaryIO) -> tuple(bool, complex, float)
+
+
+   .. py:method:: _read_parameters(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _read_equilibrium_names(istream: BinaryIO) -> list[str]
+
+
+   .. py:method:: _read_units(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_eigenfunction_offsets(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _get_ef_written_flags(istream: BinaryIO) -> None
+
+
+   .. py:method:: _get_derived_eigenfunction_offsets(istream: BinaryIO) -> dict
+
+
+   .. py:method:: _handle_entries_not_in_datfile_for_compatibility() -> None
+
+
+
