@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.9% of total for procedures.">97 statements</a>
+    title=" 0.4% of total for procedures.">41 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_solar_atmosphere.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine set_solar_atmosphere(settings, f_b02, f_db02, f_b03, f_db03, f_g, n_interp, load_from, save_to)</h2>
+    <h2>public subroutine set_solar_atmosphere(settings, background, n_interp)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,10 +121,8 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-    <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
-    <li><a href='../module/mod_integration.html'>mod_integration</a></li>
     <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
+    <li><a href='../module/mod_integration.html'>mod_integration</a></li>
   </ul>
       </li>
       </ul>
@@ -151,58 +149,22 @@ can all use the same result.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~164"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~154"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-f_b02"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_b02</strong></td><td><p>function reference for calculation of B02</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-f_db02"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_db02</strong></td><td><p>function reference for calculation of B02'</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-f_b03"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_b03</strong></td><td><p>function reference for calculation of B03</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-f_db03"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_db03</strong></td><td><p>function reference for calculation of B03'</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-f_g"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_g</strong></td><td><p>function reference for calculation of gravitational profile</p></td>
+  <td><span class="anchor" id="variable-background~76"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-n_interp~4"></span>integer,</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>n_interp</strong></td><td><p>points used for interpolation, defaults to 4000 if not present</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-load_from"></span>character(len=*),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>load_from</strong></td><td><p>if present loads the (previously) integrated density profile from this</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-save_to"></span>character(len=*),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>save_to</strong></td><td><p>if present, saves the integrated density profile to this</p></td>
 </tr>
 </tbody>
 </table>

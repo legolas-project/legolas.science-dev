@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">13 statements</a>
+    title=" 0.1% of total for procedures.">14 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_derived_efs.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine assemble(this, settings, idxs_to_assemble, right_eigenvectors, ef_grid)</h2>
+    <h2>private subroutine assemble(this, settings, background, idxs_to_assemble, right_eigenvectors, ef_grid)</h2>
     
 
 
@@ -128,10 +128,16 @@
   <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-settings~134"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~129"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-background~65"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-idxs_to_assemble~2"></span>integer,</td>

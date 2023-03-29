@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for modules and submodules.">31 statements</a>
+    title=" 0.3% of total for modules and submodules.">33 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_physical_constants.f08"> Source File</a></li>
   </ul>
@@ -135,6 +135,8 @@
       <a class="list-group-item" href="../module/mod_physical_constants.html#variable-lsun_cgs">Lsun_cgs</a>
       <a class="list-group-item" href="../module/mod_physical_constants.html#variable-au_cgs">AU_cgs</a>
       <a class="list-group-item" href="../module/mod_physical_constants.html#variable-fsun_cgs">fsun_cgs</a>
+      <a class="list-group-item" href="../module/mod_physical_constants.html#variable-tc_pf_kappa_para">tc_pf_kappa_para</a>
+      <a class="list-group-item" href="../module/mod_physical_constants.html#variable-tc_pf_kappa_perp">tc_pf_kappa_perp</a>
     </div>
   </div>
 </div>
@@ -197,6 +199,8 @@ All values are taken from the
       <a class="list-group-item" href="../module/mod_physical_constants.html#variable-lsun_cgs">Lsun_cgs</a>
       <a class="list-group-item" href="../module/mod_physical_constants.html#variable-au_cgs">AU_cgs</a>
       <a class="list-group-item" href="../module/mod_physical_constants.html#variable-fsun_cgs">fsun_cgs</a>
+      <a class="list-group-item" href="../module/mod_physical_constants.html#variable-tc_pf_kappa_para">tc_pf_kappa_para</a>
+      <a class="list-group-item" href="../module/mod_physical_constants.html#variable-tc_pf_kappa_perp">tc_pf_kappa_perp</a>
     </div>
   </div>
 </div>
@@ -340,6 +344,18 @@ All values are taken from the
   <td><span class="anchor" id="variable-fsun_cgs"></span>real(kind=dp),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
   <td><strong>fsun_cgs</strong></td><td> =</td><td>1.36d6</td><td><p>solar constant (intensity at 1 AU) in erg/cm^2/s</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-tc_pf_kappa_para"></span>real(kind=dp),</td>
+<td>public,</td>  <td>parameter</td><td>::</td>
+  <td><strong>tc_pf_kappa_para</strong></td><td> =</td><td>1.8d-5</td><td><p>coefficient of parallel thermal conduction in erg*s/cm/K
+the coulomb logarithm ln(Lambda) has not yet been included</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-tc_pf_kappa_perp"></span>real(kind=dp),</td>
+<td>public,</td>  <td>parameter</td><td>::</td>
+  <td><strong>tc_pf_kappa_perp</strong></td><td> =</td><td>8.2d-13</td><td><p>coefficient of perpendicular thermal conduction in erg*s/cm/K
+the coulomb logarithm ln(Lambda) has not yet been included</p></td>
 </tr>
 </tbody>
 </table>

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.8% of total for modules and submodules.">296 statements</a>
+    title=" 1.3% of total for modules and submodules.">133 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_solar_atmosphere.f08"> Source File</a></li>
   </ul>
@@ -115,20 +115,9 @@
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-dt_interp">dT_interp</a>
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-nbpoints~2">nbpoints</a>
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-rho_values">rho_values</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-drho_values">drho_values</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-b02_prof">b02_prof</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-db02_prof">db02_prof</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-b03_prof">b03_prof</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-db03_prof">db03_prof</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-gravity_prof">gravity_prof</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#absints-0">Abstract Interfaces</a></h3></div>
-  <div id="absints-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#interface-oned_profile">oned_profile</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-unit_length~5">unit_length</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-unit_time~2">unit_time</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-unit_magneticfield~4">unit_magneticfield</a>
     </div>
   </div>
 </div>
@@ -136,11 +125,15 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
   <div id="funcs-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_b02_profile">default_b02_profile</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_db02_profile">default_db02_profile</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_b03_profile">default_b03_profile</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_db03_profile">default_db03_profile</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_gravity_profile">default_gravity_profile</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-b02~20">B02</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-db02~16">dB02</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-b03~23">B03</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-db03~12">dB03</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-g0">g0</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-rho0~28">rho0</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-t0~28">T0</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-dt0~12">dT0</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-drho0">drho0</a>
     </div>
   </div>
 </div>
@@ -150,8 +143,7 @@
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-set_solar_atmosphere">set_solar_atmosphere</a>
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-create_atmosphere_curves">create_atmosphere_curves</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-save_profile_to_file">save_profile_to_file</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-load_profile_from_file">load_profile_from_file</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-solar_atmosphere_dealloc">solar_atmosphere_dealloc</a>
     </div>
   </div>
 </div>
@@ -171,9 +163,15 @@ geometries only.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
+    <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
+    <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
+    <li><a href='../module/mod_function_utils.html'>mod_function_utils</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
   </ul>
       </li>
       </ul>
@@ -195,20 +193,9 @@ geometries only.</p>
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-dt_interp">dT_interp</a>
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-nbpoints~2">nbpoints</a>
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-rho_values">rho_values</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-drho_values">drho_values</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-b02_prof">b02_prof</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-db02_prof">db02_prof</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-b03_prof">b03_prof</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-db03_prof">db03_prof</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-gravity_prof">gravity_prof</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#absints-1">Abstract Interfaces</a></h3></div>
-  <div id="absints-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#interface-oned_profile">oned_profile</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-unit_length~5">unit_length</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-unit_time~2">unit_time</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#variable-unit_magneticfield~4">unit_magneticfield</a>
     </div>
   </div>
 </div>
@@ -216,11 +203,15 @@ geometries only.</p>
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
   <div id="funcs-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_b02_profile">default_b02_profile</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_db02_profile">default_db02_profile</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_b03_profile">default_b03_profile</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_db03_profile">default_db03_profile</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-default_gravity_profile">default_gravity_profile</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-b02~20">B02</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-db02~16">dB02</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-b03~23">B03</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-db03~12">dB03</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-g0">g0</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-rho0~28">rho0</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-t0~28">T0</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-dt0~12">dT0</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-drho0">drho0</a>
     </div>
   </div>
 </div>
@@ -230,8 +221,7 @@ geometries only.</p>
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-set_solar_atmosphere">set_solar_atmosphere</a>
       <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-create_atmosphere_curves">create_atmosphere_curves</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-save_profile_to_file">save_profile_to_file</a>
-      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-load_profile_from_file">load_profile_from_file</a>
+      <a class="list-group-item" href="../module/mod_solar_atmosphere.html#proc-solar_atmosphere_dealloc">solar_atmosphere_dealloc</a>
     </div>
   </div>
 </div>
@@ -276,34 +266,19 @@ geometries only.</p>
   <td><strong>rho_values</strong>(:)</td><td></td><td></td><td><p>integrated density profile</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-drho_values"></span>real(kind=dp),</td>
-<td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>drho_values</strong>(:)</td><td></td><td></td><td><p>derivative of integrated density profile</p></td>
+  <td><span class="anchor" id="variable-unit_length~5"></span>real(kind=dp),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>unit_length</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-b02_prof"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td>public,</td>  <td>pointer</td><td>::</td>
-  <td><strong>b02_prof</strong></td><td></td><td></td><td><p>chosen profile for B02(x)</p></td>
+  <td><span class="anchor" id="variable-unit_time~2"></span>real(kind=dp),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>unit_time</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-db02_prof"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td>public,</td>  <td>pointer</td><td>::</td>
-  <td><strong>db02_prof</strong></td><td></td><td></td><td><p>chosen profile for dB02(x)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-b03_prof"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td>public,</td>  <td>pointer</td><td>::</td>
-  <td><strong>b03_prof</strong></td><td></td><td></td><td><p>chosen profile for B03(x)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-db03_prof"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td>public,</td>  <td>pointer</td><td>::</td>
-  <td><strong>db03_prof</strong></td><td></td><td></td><td><p>chosen profile for dB03(x)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-gravity_prof"></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td>public,</td>  <td>pointer</td><td>::</td>
-  <td><strong>gravity_prof</strong></td><td></td><td></td><td><p>chosen profile for g(x)</p></td>
+  <td><span class="anchor" id="variable-unit_magneticfield~4"></span>real(kind=dp),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>unit_magneticfield</strong></td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -313,166 +288,56 @@ geometries only.</p>
     
     
 
-    <section>
-     <h2>Abstract Interfaces</h2>
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-oned_profile"></span><h3>abstract interface
-  </h3></div>
-  <ul class="list-group">
-    <li class="list-group-item">
-    <h3>public function oned_profile(x, settings)</h3>    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>x</strong>(:)</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)(size(x))</small></h4>  
-
-    </li>
-  </ul>
-</div>
-
-    </section>
-  <br>
     
     
  
     <section>
     <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_b02_profile"></span><h3>private function <a href='../proc/default_b02_profile.html'>default_b02_profile</a>(x, settings) result(b02)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-b02~20"></span><h3>private function <a href='../proc/b02~20.html'>B02</a>()</h3></div>
   <div class="panel-body">
-       
-<p>Sets the default profile for B02, taken to be zero.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>x</strong>(:)</td><td><p>x-values to evaluate the profile in</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)(size(x))</small></h4>  <p>resulting B02 profile</p>
+           
+<h4>Arguments</h4>      <em>None</em>
+<h4>Return Value <small>real(kind=dp)</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_db02_profile"></span><h3>private function <a href='../proc/default_db02_profile.html'>default_db02_profile</a>(x, settings) result(db02)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-db02~16"></span><h3>private function <a href='../proc/db02~16.html'>dB02</a>()</h3></div>
   <div class="panel-body">
-       
-<p>Sets the default profile for dB02, taken to be zero.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>x</strong>(:)</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)(size(x))</small></h4>  <p>resulting dB02 profile</p>
+           
+<h4>Arguments</h4>      <em>None</em>
+<h4>Return Value <small>real(kind=dp)</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_b03_profile"></span><h3>private function <a href='../proc/default_b03_profile.html'>default_b03_profile</a>(x, settings) result(b03)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-b03~23"></span><h3>private function <a href='../proc/b03~23.html'>B03</a>()</h3></div>
   <div class="panel-body">
-       
-<p>Sets the default profile for B03, taken to be a uniform field of 10 Gauss.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>x</strong>(:)</td><td><p>x-values to evaluate the profile in</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)(size(x))</small></h4>  <p>resulting B03 profile</p>
+           
+<h4>Arguments</h4>      <em>None</em>
+<h4>Return Value <small>real(kind=dp)</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_db03_profile"></span><h3>private function <a href='../proc/default_db03_profile.html'>default_db03_profile</a>(x, settings) result(db03)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-db03~12"></span><h3>private function <a href='../proc/db03~12.html'>dB03</a>()</h3></div>
   <div class="panel-body">
-       
-<p>Sets the default profile for dB03, taken to be zero.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>x</strong>(:)</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)(size(x))</small></h4>  <p>resulting dB03 profile</p>
+           
+<h4>Arguments</h4>      <em>None</em>
+<h4>Return Value <small>real(kind=dp)</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-default_gravity_profile"></span><h3>private function <a href='../proc/default_gravity_profile.html'>default_gravity_profile</a>(x, settings) result(grav)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-g0"></span><h3>private function <a href='../proc/g0.html'>g0</a>(x)</h3></div>
   <div class="panel-body">
        
-<p>Sets the default profile for the gravitational field, taken to be
+<p>Default profile for the solar gravitational field
 <script type="math/tex; mode=display"> g(x) = g_\odot \left(\frac{R_\odot}{(R_\odot + x)}\right)^2 </script>
 </p>
     
@@ -483,18 +348,99 @@ geometries only.</p>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>x</strong>(:)</td><td><p>x-values to evaluate the profile in</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>real(kind=dp)(size(x))</small></h4>  <p>resulting gravitational profile</p>
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-rho0~28"></span><h3>private function <a href='../proc/rho0~28.html'>rho0</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-t0~28"></span><h3>private function <a href='../proc/t0~28.html'>T0</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dt0~12"></span><h3>private function <a href='../proc/dt0~12.html'>dT0</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-drho0"></span><h3>private function <a href='../proc/drho0.html'>drho0</a>(x)</h3></div>
+  <div class="panel-body">
+       
+<p>Sets density derivative using the differential equation to ensure force balance,
+instead of relying on numerical differentiation.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
 
   </div>
   </div>
@@ -505,7 +451,7 @@ geometries only.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_solar_atmosphere"></span><h3>public subroutine <a href='../proc/set_solar_atmosphere.html'>set_solar_atmosphere</a>(settings, f_b02, f_db02, f_b03, f_db03, f_g, n_interp, load_from, save_to)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_solar_atmosphere"></span><h3>public subroutine <a href='../proc/set_solar_atmosphere.html'>set_solar_atmosphere</a>(settings, background, n_interp)</h3></div>
   <div class="panel-body">
        
 <p>Sets the density, temperature, gravity and magnetic field attributes of
@@ -532,52 +478,16 @@ can all use the same result.
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_b02</strong></td><td><p>function reference for calculation of B02</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_db02</strong></td><td><p>function reference for calculation of B02'</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_b03</strong></td><td><p>function reference for calculation of B03</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_db03</strong></td><td><p>function reference for calculation of B03'</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>procedure(<a href='../interface/oned_profile.html'>oned_profile</a>),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>f_g</strong></td><td><p>function reference for calculation of gravitational profile</p></td>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>n_interp</strong></td><td><p>points used for interpolation, defaults to 4000 if not present</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>load_from</strong></td><td><p>if present loads the (previously) integrated density profile from this</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>save_to</strong></td><td><p>if present, saves the integrated density profile to this</p></td>
 </tr>
 </tbody>
 </table>
@@ -610,65 +520,10 @@ derivative is obtained numerically.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-save_profile_to_file"></span><h3>private subroutine <a href='../proc/save_profile_to_file.html'>save_profile_to_file</a>(settings, filename)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-solar_atmosphere_dealloc"></span><h3>public subroutine <a href='../proc/solar_atmosphere_dealloc.html'>solar_atmosphere_dealloc</a>()</h3></div>
   <div class="panel-body">
-       
-<p>Saves the density and density derivatives to the given filename. These can be
-used later on to set the values instead of solving the differential equation.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>filename</strong></td><td><p>values are saved to this filename</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-load_profile_from_file"></span><h3>private subroutine <a href='../proc/load_profile_from_file.html'>load_profile_from_file</a>(settings, filename, loading_ok)</h3></div>
-  <div class="panel-body">
-       
-<p>Loads a previously calculated profile and uses that to set the resolution,
-density and density derivatives.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>filename</strong></td><td><p>values are loaded from this file</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>loading_ok</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
+           
+<h4>Arguments</h4>      <em>None</em>
 
   </div>
   </div>

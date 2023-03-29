@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.3% of total for modules and submodules.">244 statements</a>
+    title=" 2.5% of total for modules and submodules.">260 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_equilibrium.f08"> Source File</a></li>
   </ul>
@@ -110,10 +110,6 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       <a class="list-group-item" href="../module/mod_equilibrium.html#variable-set_equilibrium_values">set_equilibrium_values</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#variable-rho_field~9">rho_field</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#variable-t_field~10">T_field</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#variable-b_field~10">B_field</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#variable-v_field~8">v_field</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#variable-grav_field~4">grav_field</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#variable-eta_field~3">eta_field</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#variable-rc_field~4">rc_field</a>
@@ -193,12 +189,13 @@ respective modules.
       <li class="list-group-item">
   <ul class="list-inline">
     <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_types.html'>mod_types</a></li>
+    <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
   </ul>
       </li>
       </ul>
@@ -257,10 +254,6 @@ respective modules.
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       <a class="list-group-item" href="../module/mod_equilibrium.html#variable-set_equilibrium_values">set_equilibrium_values</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#variable-rho_field~9">rho_field</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#variable-t_field~10">T_field</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#variable-b_field~10">B_field</a>
-      <a class="list-group-item" href="../module/mod_equilibrium.html#variable-v_field~8">v_field</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#variable-grav_field~4">grav_field</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#variable-eta_field~3">eta_field</a>
       <a class="list-group-item" href="../module/mod_equilibrium.html#variable-rc_field~4">rc_field</a>
@@ -333,26 +326,6 @@ respective modules.
   <td><strong>set_equilibrium_values</strong></td><td>=> </td><td>null()</td><td><p>pointer for the submodule, initialised to null</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-rho_field~9"></span>type(<a href='../type/density_type.html'>density_type</a>),</td>
-<td>public</td>  <td></td><td>::</td>
-  <td><strong>rho_field</strong></td><td></td><td></td><td><p>type containing all density-related equilibrium variables</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-t_field~10"></span>type(<a href='../type/temperature_type.html'>temperature_type</a>),</td>
-<td>public</td>  <td></td><td>::</td>
-  <td><strong>T_field</strong></td><td></td><td></td><td><p>type containing all temperature-related equilibrium variables</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-b_field~10"></span>type(<a href='../type/bfield_type.html'>bfield_type</a>),</td>
-<td>public</td>  <td></td><td>::</td>
-  <td><strong>B_field</strong></td><td></td><td></td><td><p>type containing all magnetic field-related equilibrium variables</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-v_field~8"></span>type(<a href='../type/velocity_type.html'>velocity_type</a>),</td>
-<td>public</td>  <td></td><td>::</td>
-  <td><strong>v_field</strong></td><td></td><td></td><td><p>type containing all velocity-related equilibrium variables</p></td>
-</tr>
-<tr>
   <td><span class="anchor" id="variable-grav_field~4"></span>type(<a href='../type/gravity_type.html'>gravity_type</a>),</td>
 <td>public</td>  <td></td><td>::</td>
   <td><strong>grav_field</strong></td><td></td><td></td><td><p>type containing all gravity-related equilibrium variables</p></td>
@@ -393,7 +366,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine adiabatic_homo_eq(settings)   <a href='../proc/adiabatic_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine adiabatic_homo_eq(settings, background)   <a href='../proc/adiabatic_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -403,6 +376,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -419,7 +398,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine constant_current_eq(settings)   <a href='../proc/constant_current_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine constant_current_eq(settings, background)   <a href='../proc/constant_current_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -429,6 +408,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -445,7 +430,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine coronal_flux_tube_eq(settings)   <a href='../proc/coronal_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine coronal_flux_tube_eq(settings, background)   <a href='../proc/coronal_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -455,6 +440,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -471,7 +462,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine discrete_alfven_eq(settings)   <a href='../proc/discrete_alfven_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine discrete_alfven_eq(settings, background)   <a href='../proc/discrete_alfven_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -481,6 +472,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -497,7 +494,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine flow_driven_instabilities_eq(settings)   <a href='../proc/flow_driven_instabilities_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine flow_driven_instabilities_eq(settings, background)   <a href='../proc/flow_driven_instabilities_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -507,6 +504,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -523,7 +526,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine gold_hoyle_eq(settings)   <a href='../proc/gold_hoyle_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine gold_hoyle_eq(settings, background)   <a href='../proc/gold_hoyle_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -533,6 +536,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -549,7 +558,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine gravito_acoustic_eq(settings)   <a href='../proc/gravito_acoustic_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine gravito_acoustic_eq(settings, background)   <a href='../proc/gravito_acoustic_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -559,6 +568,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -575,7 +590,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine gravito_mhd_eq(settings)   <a href='../proc/gravito_mhd_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine gravito_mhd_eq(settings, background)   <a href='../proc/gravito_mhd_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -585,6 +600,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -601,7 +622,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine interchange_modes_eq(settings)   <a href='../proc/interchange_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine interchange_modes_eq(settings, background)   <a href='../proc/interchange_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -611,6 +632,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -627,7 +654,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine internal_kink_eq(settings)   <a href='../proc/internal_kink_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine internal_kink_eq(settings, background)   <a href='../proc/internal_kink_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -637,6 +664,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -653,7 +686,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine isothermal_atmosphere_eq(settings)   <a href='../proc/isothermal_atmosphere_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine isothermal_atmosphere_eq(settings, background)   <a href='../proc/isothermal_atmosphere_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -663,6 +696,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -679,7 +718,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine KHI_eq(settings)   <a href='../proc/khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine KHI_eq(settings, background)   <a href='../proc/khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -689,6 +728,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -705,7 +750,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine kh_cd_instability_eq(settings)   <a href='../proc/kh_cd_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine kh_cd_instability_eq(settings, background)   <a href='../proc/kh_cd_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -715,6 +760,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -731,7 +782,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine magnetothermal_instability_eq(settings)   <a href='../proc/magnetothermal_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine magnetothermal_instability_eq(settings, background)   <a href='../proc/magnetothermal_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -741,6 +792,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -757,7 +814,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine MRI_accretion_eq(settings)   <a href='../proc/mri_accretion_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine MRI_accretion_eq(settings, background)   <a href='../proc/mri_accretion_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -767,6 +824,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -783,7 +846,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine photospheric_flux_tube_eq(settings)   <a href='../proc/photospheric_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine photospheric_flux_tube_eq(settings, background)   <a href='../proc/photospheric_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -793,6 +856,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -809,7 +878,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resistive_homo_eq(settings)   <a href='../proc/resistive_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resistive_homo_eq(settings, background)   <a href='../proc/resistive_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -819,6 +888,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -835,7 +910,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resistive_tearing_modes_eq(settings)   <a href='../proc/resistive_tearing_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resistive_tearing_modes_eq(settings, background)   <a href='../proc/resistive_tearing_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -845,6 +920,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -861,7 +942,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resistive_tearing_modes_flow_eq(settings)   <a href='../proc/resistive_tearing_modes_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resistive_tearing_modes_flow_eq(settings, background)   <a href='../proc/resistive_tearing_modes_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -871,6 +952,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -887,7 +974,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resonant_absorption_eq(settings)   <a href='../proc/resonant_absorption_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resonant_absorption_eq(settings, background)   <a href='../proc/resonant_absorption_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -897,6 +984,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -913,7 +1006,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine rotating_plasma_cyl_eq(settings)   <a href='../proc/rotating_plasma_cyl_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine rotating_plasma_cyl_eq(settings, background)   <a href='../proc/rotating_plasma_cyl_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -923,6 +1016,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -939,7 +1038,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine RTI_eq(settings)   <a href='../proc/rti_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine RTI_eq(settings, background)   <a href='../proc/rti_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -949,6 +1048,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -965,7 +1070,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine RTI_KHI_eq(settings)   <a href='../proc/rti_khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine RTI_KHI_eq(settings, background)   <a href='../proc/rti_khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -975,6 +1080,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -991,7 +1102,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine RTI_theta_pinch_eq(settings)   <a href='../proc/rti_theta_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine RTI_theta_pinch_eq(settings, background)   <a href='../proc/rti_theta_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1001,6 +1112,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -1017,7 +1134,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine suydam_cluster_eq(settings)   <a href='../proc/suydam_cluster_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine suydam_cluster_eq(settings, background)   <a href='../proc/suydam_cluster_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1027,6 +1144,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -1043,7 +1166,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine couette_flow_eq(settings)   <a href='../proc/couette_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine couette_flow_eq(settings, background)   <a href='../proc/couette_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1053,6 +1176,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -1069,7 +1198,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine taylor_couette_eq(settings)   <a href='../proc/taylor_couette_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine taylor_couette_eq(settings, background)   <a href='../proc/taylor_couette_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1079,6 +1208,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -1095,7 +1230,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine harris_sheet_eq(settings)   <a href='../proc/harris_sheet_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine harris_sheet_eq(settings, background)   <a href='../proc/harris_sheet_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1105,6 +1240,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -1121,7 +1262,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine tc_pinch_eq(settings)   <a href='../proc/tc_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine tc_pinch_eq(settings, background)   <a href='../proc/tc_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1131,6 +1272,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -1147,7 +1294,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine user_defined_eq(settings)   <a href='../proc/user_defined_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine user_defined_eq(settings, background)   <a href='../proc/user_defined_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1157,6 +1304,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -1198,7 +1351,7 @@ subroutine, which allocates all necessary attributes.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium"></span><h3>public subroutine <a href='../proc/set_equilibrium.html'>set_equilibrium</a>(settings)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium"></span><h3>public subroutine <a href='../proc/set_equilibrium.html'>set_equilibrium</a>(settings, background)</h3></div>
   <div class="panel-body">
        
 <p>Calls the routine to set the equilibrium pointer, then calls the correct
@@ -1214,6 +1367,12 @@ the equilibrium is set, then calls additional physics modules if needed.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>

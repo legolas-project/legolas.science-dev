@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.8% of total for modules and submodules.">394 statements</a>
+    title=" 3.8% of total for modules and submodules.">400 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_derived_efs.f08"> Source File</a></li>
   </ul>
@@ -189,13 +189,13 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></li>
-    <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
-    <li><a href='../module/mod_base_efs.html'>mod_base_efs</a></li>
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
+    <li><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></li>
   </ul>
       </li>
       </ul>
@@ -357,19 +357,19 @@
     <section>
      <h2>Derived Types</h2>
      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="type-derived_ef_t"></span><h3>type, public, extends(<a href='../type/base_ef_t.html'>base_ef_t</a>) :: <a href='../type/derived_ef_t.html'>derived_ef_t</a>  </h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="type-derived_ef_t"></span><h3>type, public :: <a href='../type/derived_ef_t.html'>derived_ef_t</a>  </h3></div>
   <div class="panel-body">
      <h4>Components</h4>
     <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-name"></span>character,</td>
+  <td><span class="anchor" id="variable-name~2"></span>character,</td>
 <td>public</td>  <td></td><td>::</td>
   <td><strong>name</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-quantities"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-quantities~2"></span>complex(kind=dp),</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
   <td><strong>quantities</strong>(:,:)</td><td></td><td></td><td></td>
 </tr>
@@ -1180,7 +1180,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble~2"></span><h3>private subroutine <a href='../proc/assemble~2.html'>assemble</a>(this, settings, idxs_to_assemble, right_eigenvectors, ef_grid)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble~2"></span><h3>private subroutine <a href='../proc/assemble~2.html'>assemble</a>(this, settings, background, idxs_to_assemble, right_eigenvectors, ef_grid)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1197,6 +1197,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -1264,12 +1270,18 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium_arrays_on_ef_grid"></span><h3>private subroutine <a href='../proc/set_equilibrium_arrays_on_ef_grid.html'>set_equilibrium_arrays_on_ef_grid</a>(ef_grid)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium_arrays_on_ef_grid"></span><h3>private subroutine <a href='../proc/set_equilibrium_arrays_on_ef_grid.html'>set_equilibrium_arrays_on_ef_grid</a>(background, ef_grid)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>

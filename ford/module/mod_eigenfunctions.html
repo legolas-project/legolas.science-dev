@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.1% of total for modules and submodules.">117 statements</a>
+    title=" 1.1% of total for modules and submodules.">121 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_eigenfunctions.f08"> Source File</a></li>
   </ul>
@@ -148,11 +148,12 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></li>
-    <li><a href='../module/mod_base_efs.html'>mod_base_efs</a></li>
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_base_efs.html'>mod_base_efs</a></li>
+    <li><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></li>
   </ul>
       </li>
       </ul>
@@ -217,6 +218,11 @@
   <td><strong>settings</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-background"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>private,</td>  <td>pointer</td><td>::</td>
+  <td><strong>background</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-base_efs"></span>type(<a href='../type/base_ef_t.html'>base_ef_t</a>),</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
   <td><strong>base_efs</strong>(:)</td><td></td><td></td><td></td>
@@ -268,7 +274,7 @@
     <section>
     <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-new_eigenfunctions"></span><h3>public function <a href='../proc/new_eigenfunctions.html'>new_eigenfunctions</a>(settings) result(eigenfunctions)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-new_eigenfunctions"></span><h3>public function <a href='../proc/new_eigenfunctions.html'>new_eigenfunctions</a>(settings, background) result(eigenfunctions)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -279,6 +285,12 @@
 <td>intent(inout),</td>
   <td></td>  <td>target</td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in),</td>
+  <td></td>  <td>target</td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>

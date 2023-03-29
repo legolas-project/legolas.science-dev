@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">10 statements</a>
+    title=" 0.1% of total for procedures.">12 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_derived_efs.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine set_equilibrium_arrays_on_ef_grid(ef_grid)</h2>
+    <h2>private subroutine set_equilibrium_arrays_on_ef_grid(background, ef_grid)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,7 +121,8 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
+    <li><a href='../module/mod_function_utils.html'>mod_function_utils</a></li>
   </ul>
       </li>
       </ul>
@@ -133,6 +134,12 @@
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" id="variable-background~66"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" id="variable-ef_grid~26"></span>real(kind=dp),</td>
 <td>intent(in)</td>

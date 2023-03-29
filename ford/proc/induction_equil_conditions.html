@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for procedures.">51 statements</a>
+    title=" 0.4% of total for procedures.">49 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
@@ -113,21 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine induction_equil_conditions(settings, B_field, v_field)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>private subroutine induction_equil_conditions(settings, background)</h2>
+    
 
     <p>Checks the induction equation for the equilibrium state. The two (nonzero)
 resulting expressions are
@@ -143,22 +130,16 @@ and should both be fulfilled.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~50"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~46"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-b_field~6"></span>type(<a href='../type/bfield_type.html'>bfield_type</a>),</td>
+  <td><span class="anchor" id="variable-background~39"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>B_field</strong></td><td><p>the type containing the magnetic field attributes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-v_field~6"></span>type(<a href='../type/velocity_type.html'>velocity_type</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>v_field</strong></td><td><p>the type containing the velocity attributes</p></td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>

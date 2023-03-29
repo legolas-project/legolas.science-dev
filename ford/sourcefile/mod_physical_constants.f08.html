@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for source files.">31 statements</a>
+    title=" 0.3% of total for source files.">33 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_physical_constants.f08"> Source File</a></li>
   </ul>
@@ -214,7 +214,14 @@
 <a id="ln-64" name="ln-64" href="#ln-64"></a><span class="w">  </span><span class="c">!&gt; solar constant (intensity at 1 AU) in erg/cm^2/s</span>
 <a id="ln-65" name="ln-65" href="#ln-65"></a><span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">fsun_cgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.36d6</span>
 <a id="ln-66" name="ln-66" href="#ln-66"></a>
-<a id="ln-67" name="ln-67" href="#ln-67"></a><span class="k">end module </span><span class="n">mod_physical_constants</span>
+<a id="ln-67" name="ln-67" href="#ln-67"></a><span class="w">  </span><span class="c">!&gt; coefficient of parallel thermal conduction in erg*s/cm/K</span>
+<a id="ln-68" name="ln-68" href="#ln-68"></a><span class="w">  </span><span class="c">!! the coulomb logarithm ln(Lambda) has not yet been included</span>
+<a id="ln-69" name="ln-69" href="#ln-69"></a><span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tc_pf_kappa_para</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.8d-5</span>
+<a id="ln-70" name="ln-70" href="#ln-70"></a><span class="w">  </span><span class="c">!&gt; coefficient of perpendicular thermal conduction in erg*s/cm/K</span>
+<a id="ln-71" name="ln-71" href="#ln-71"></a><span class="w">  </span><span class="c">!! the coulomb logarithm ln(Lambda) has not yet been included</span>
+<a id="ln-72" name="ln-72" href="#ln-72"></a><span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tc_pf_kappa_perp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.2d-13</span>
+<a id="ln-73" name="ln-73" href="#ln-73"></a>
+<a id="ln-74" name="ln-74" href="#ln-74"></a><span class="k">end module </span><span class="n">mod_physical_constants</span>
 </pre></div>
 
     </section>

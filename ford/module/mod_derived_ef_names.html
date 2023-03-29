@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.0% of total for modules and submodules.">105 statements</a>
+    title=" 1.0% of total for modules and submodules.">107 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_derived_ef_names.f08"> Source File</a></li>
   </ul>
@@ -172,9 +172,10 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
   </ul>
       </li>
       </ul>
@@ -373,7 +374,7 @@
     <section>
     <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-create_and_set_derived_state_vector"></span><h3>public function <a href='../proc/create_and_set_derived_state_vector.html'>create_and_set_derived_state_vector</a>(settings) result(derived_state_vector)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-create_and_set_derived_state_vector"></span><h3>public function <a href='../proc/create_and_set_derived_state_vector.html'>create_and_set_derived_state_vector</a>(settings, background) result(derived_state_vector)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -384,6 +385,12 @@
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -555,10 +562,21 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-can_calculate_pp_quantities"></span><h3>private function <a href='../proc/can_calculate_pp_quantities.html'>can_calculate_pp_quantities</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-can_calculate_pp_quantities"></span><h3>private function <a href='../proc/can_calculate_pp_quantities.html'>can_calculate_pp_quantities</a>(background)</h3></div>
   <div class="panel-body">
            
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 <h4>Return Value <small>logical</small></h4>  
 
   </div>

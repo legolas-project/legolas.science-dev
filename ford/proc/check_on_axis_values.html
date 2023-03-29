@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">25 statements</a>
+    title=" 0.2% of total for procedures.">18 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine check_on_axis_values(settings, B_field, v_field)</h2>
+    <h2>private subroutine check_on_axis_values(settings, background)</h2>
     
 
     <p>Checks if on-axis regularity conditions are satisfied in cylindrical geometry.
@@ -137,22 +137,16 @@ Nothing is checked if the geometry is Cartesian.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~47"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~43"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-b_field~3"></span>type(<a href='../type/bfield_type.html'>bfield_type</a>),</td>
+  <td><span class="anchor" id="variable-background~36"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>B_field</strong></td><td><p>the type containing the magnetic field attributes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-v_field~3"></span>type(<a href='../type/velocity_type.html'>velocity_type</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>v_field</strong></td><td><p>the type containing the velocity attributes</p></td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>

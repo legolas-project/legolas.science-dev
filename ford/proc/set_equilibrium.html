@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">30 statements</a>
+    title=" 0.3% of total for procedures.">31 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_equilibrium.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine set_equilibrium(settings)</h2>
+    <h2>public subroutine set_equilibrium(settings, background)</h2>
         <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -121,12 +121,12 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></li>
-    <li><a href='../module/mod_hall.html'>mod_hall</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></li>
-    <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
     <li><a href='../module/mod_resistivity.html'>mod_resistivity</a></li>
+    <li><a href='../module/mod_hall.html'>mod_hall</a></li>
+    <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
+    <li><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></li>
   </ul>
       </li>
       </ul>
@@ -145,10 +145,16 @@ the equilibrium is set, then calls additional physics modules if needed.
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~4"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~3"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-background~2"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>

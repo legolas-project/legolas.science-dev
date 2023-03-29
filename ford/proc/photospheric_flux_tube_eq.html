@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for procedures.">82 statements</a>
+    title=" 0.6% of total for procedures.">68 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_equil_photospheric_flux_tube.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure photospheric_flux_tube_eq <small>module module subroutine photospheric_flux_tube_eq(settings)</small>   <a href='../interface/photospheric_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    <h2>module procedure photospheric_flux_tube_eq <small>module module subroutine photospheric_flux_tube_eq(settings, background)</small>   <a href='../interface/photospheric_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h2>
         <div class="panel panel-default">
       <div class="panel-heading">
@@ -123,7 +123,6 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
   </ul>
       </li>
       </ul>
@@ -136,10 +135,16 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~21"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~20"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-background~18"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
 </tr>
 </tbody>
 </table>
