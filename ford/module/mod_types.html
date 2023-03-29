@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.9% of total for modules and submodules.">297 statements</a>
+    title=" 3.0% of total for modules and submodules.">313 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_types.f08"> Source File</a></li>
   </ul>
@@ -876,19 +876,39 @@ to handle eigenfunctions.</p>
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-heat_loss"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-l0"></span>real(kind=dp),</td>
 <td>private,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>heat_loss</strong>(:)</td><td></td><td></td><td><p>equilibrium heat-loss function L0 (losses - gains)</p></td>
+  <td><strong>L0</strong>(:)</td><td></td><td></td><td><p>equilibrium heat-loss function L0 (losses - gains)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-d_l_dt"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-dl_dt"></span>real(kind=dp),</td>
 <td>private,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>d_L_dT</strong>(:)</td><td></td><td></td><td><p>derivative dL/dT</p></td>
+  <td><strong>dL_dT</strong>(:)</td><td></td><td></td><td><p>derivative dL/dT</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-d_l_drho"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-dl_drho"></span>real(kind=dp),</td>
 <td>private,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>d_L_drho</strong>(:)</td><td></td><td></td><td><p>derivative dL/drho</p></td>
+  <td><strong>dL_drho</strong>(:)</td><td></td><td></td><td><p>derivative dL/drho</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-h0"></span>real(kind=dp),</td>
+<td>private,</td>  <td>allocatable</td><td>::</td>
+  <td><strong>H0</strong>(:)</td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dh_drho"></span>real(kind=dp),</td>
+<td>private,</td>  <td>allocatable</td><td>::</td>
+  <td><strong>dH_drho</strong>(:)</td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dh_dt"></span>real(kind=dp),</td>
+<td>private,</td>  <td>allocatable</td><td>::</td>
+  <td><strong>dH_dT</strong>(:)</td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-lambdat"></span>real(kind=dp),</td>
+<td>private,</td>  <td>allocatable</td><td>::</td>
+  <td><strong>lambdaT</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>

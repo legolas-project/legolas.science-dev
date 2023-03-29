@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 5.0% of total for derived types.</p>Including implementation: 88 statements,  4.3% of total for derived types.">25 statements</a>
+    title="<p> 5.4% of total for derived types.</p>Including implementation: 103 statements,  4.9% of total for derived types.">28 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_settings.f08"> Source File</a></li>
   </ul>
@@ -113,6 +113,7 @@
       <a class="list-group-item" href="../type/settings_t.html#variable-state_vector~2">state_vector</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-derived_state_vector">derived_state_vector</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-physics_type">physics_type</a>
+      <a class="list-group-item" href="../type/settings_t.html#variable-state_vector_has_bfield">state_vector_has_bfield</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-nb_eqs">nb_eqs</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-dims">dims</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-io">io</a>
@@ -137,8 +138,10 @@
       <a class="list-group-item" href="../type/settings_t.html#boundprocedure-get_physics_type">get_physics_type</a>
       <a class="list-group-item" href="../type/settings_t.html#boundprocedure-get_nb_eqs">get_nb_eqs</a>
       <a class="list-group-item" href="../type/settings_t.html#boundprocedure-update_block_dimensions">update_block_dimensions</a>
-      <a class="list-group-item" href="../type/settings_t.html#boundprocedure-delete~6">delete</a>
+      <a class="list-group-item" href="../type/settings_t.html#boundprocedure-has_bfield">has_bfield</a>
+      <a class="list-group-item" href="../type/settings_t.html#boundprocedure-delete~11">delete</a>
       <a class="list-group-item" href="../type/settings_t.html#boundprocedure-set_nb_eqs">set_nb_eqs</a>
+      <a class="list-group-item" href="../type/settings_t.html#boundprocedure-check_bfield">check_bfield</a>
     </div>
   </div>
 </div>
@@ -162,6 +165,7 @@
       <a class="list-group-item" href="../type/settings_t.html#variable-state_vector~2">state_vector</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-derived_state_vector">derived_state_vector</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-physics_type">physics_type</a>
+      <a class="list-group-item" href="../type/settings_t.html#variable-state_vector_has_bfield">state_vector_has_bfield</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-nb_eqs">nb_eqs</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-dims">dims</a>
       <a class="list-group-item" href="../type/settings_t.html#variable-io">io</a>
@@ -186,8 +190,10 @@
       <a class="list-group-item" href="../type/settings_t.html#boundprocedure-get_physics_type">get_physics_type</a>
       <a class="list-group-item" href="../type/settings_t.html#boundprocedure-get_nb_eqs">get_nb_eqs</a>
       <a class="list-group-item" href="../type/settings_t.html#boundprocedure-update_block_dimensions">update_block_dimensions</a>
-      <a class="list-group-item" href="../type/settings_t.html#boundprocedure-delete~6">delete</a>
+      <a class="list-group-item" href="../type/settings_t.html#boundprocedure-has_bfield">has_bfield</a>
+      <a class="list-group-item" href="../type/settings_t.html#boundprocedure-delete~11">delete</a>
       <a class="list-group-item" href="../type/settings_t.html#boundprocedure-set_nb_eqs">set_nb_eqs</a>
+      <a class="list-group-item" href="../type/settings_t.html#boundprocedure-check_bfield">check_bfield</a>
     </div>
   </div>
 </div>
@@ -214,6 +220,11 @@
   <td><span class="anchor" id="variable-physics_type"></span>character(len=:),</td>
 <td>private,</td>  <td>allocatable</td><td>::</td>
   <td><strong>physics_type</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-state_vector_has_bfield"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>state_vector_has_bfield</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-nb_eqs"></span>integer,</td>
@@ -483,10 +494,33 @@
 </div>
 
      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-delete~6"></span><h3>procedure, public :: <strong>delete</strong>    </h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-has_bfield"></span><h3>procedure, public :: <strong>has_bfield</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private pure subroutine <a href='../proc/delete~6.html'>delete</a>(this)</h3>    
+          <h3>private pure function <a href='../proc/has_bfield.html'>has_bfield</a>(this)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>logical</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-delete~11"></span><h3>procedure, public :: <strong>delete</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private pure subroutine <a href='../proc/delete~11.html'>delete</a>(this)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -523,6 +557,28 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>nb_eqs</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-check_bfield"></span><h3>procedure, private :: <strong>check_bfield</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private pure subroutine <a href='../proc/check_bfield.html'>check_bfield</a>(this)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>

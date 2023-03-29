@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.9% of total for modules and submodules.">301 statements</a>
+    title=" 3.0% of total for modules and submodules.">319 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
@@ -114,7 +114,7 @@
       <a class="list-group-item" href="../module/mod_inspections.html#proc-check_wavenumbers">check_wavenumbers</a>
       <a class="list-group-item" href="../module/mod_inspections.html#proc-check_on_axis_values">check_on_axis_values</a>
       <a class="list-group-item" href="../module/mod_inspections.html#proc-standard_equil_conditions">standard_equil_conditions</a>
-      <a class="list-group-item" href="../module/mod_inspections.html#proc-set_energy_balance">set_energy_balance</a>
+      <a class="list-group-item" href="../module/mod_inspections.html#proc-check_energy_balance">check_energy_balance</a>
       <a class="list-group-item" href="../module/mod_inspections.html#proc-induction_equil_conditions">induction_equil_conditions</a>
       <a class="list-group-item" href="../module/mod_inspections.html#proc-continuity_equil_conditions">continuity_equil_conditions</a>
     </div>
@@ -139,9 +139,9 @@ for both the Cartesian and cylindrical cases is checked.</p>
       <li class="list-group-item">
   <ul class="list-inline">
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_types.html'>mod_types</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_types.html'>mod_types</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       </ul>
@@ -162,7 +162,7 @@ for both the Cartesian and cylindrical cases is checked.</p>
       <a class="list-group-item" href="../module/mod_inspections.html#proc-check_wavenumbers">check_wavenumbers</a>
       <a class="list-group-item" href="../module/mod_inspections.html#proc-check_on_axis_values">check_on_axis_values</a>
       <a class="list-group-item" href="../module/mod_inspections.html#proc-standard_equil_conditions">standard_equil_conditions</a>
-      <a class="list-group-item" href="../module/mod_inspections.html#proc-set_energy_balance">set_energy_balance</a>
+      <a class="list-group-item" href="../module/mod_inspections.html#proc-check_energy_balance">check_energy_balance</a>
       <a class="list-group-item" href="../module/mod_inspections.html#proc-induction_equil_conditions">induction_equil_conditions</a>
       <a class="list-group-item" href="../module/mod_inspections.html#proc-continuity_equil_conditions">continuity_equil_conditions</a>
     </div>
@@ -417,7 +417,7 @@ and they should all be fulfilled.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_energy_balance"></span><h3>private subroutine <a href='../proc/set_energy_balance.html'>set_energy_balance</a>(settings, rho_field, T_field, B_field, v_field, rc_field, kappa_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-check_energy_balance"></span><h3>private subroutine <a href='../proc/check_energy_balance.html'>check_energy_balance</a>(settings, rho_field, T_field, B_field, v_field, rc_field, kappa_field)</h3></div>
   <div class="panel-body">
        
 <p>Enforces the non-adiabatic force-balance equation for the equilibrium state.
@@ -429,12 +429,7 @@ T_0 \rho_0 \frac{\left(\varepsilon v_{01}\right)'}{\varepsilon}
 - \frac{1}{\varepsilon}\left(\varepsilon \kappa_{\perp, 0} T_0'\right)'
 + \frac{1}{(\gamma - 1)}T_0'\rho_0 v_{01} = 0
 </script>
-This subroutine essentially sets $\mathscr{L}<em 01>0$ in such a way that this equation
-is satisfied. If the heating is assumed to only depend on the equilibrium,
-and if there is no $B</em>$, $v_{01}$ or perpendicular thermal conduction,
-then $\mathscr{L}_0 = 0$. If one (or more) of these effects are present, then
-$\mathscr{L}_0 = 0$ is no longer true.
- The <tt>rc_field % heat_loss</tt> attribute is modified on exit.</p>
+</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>

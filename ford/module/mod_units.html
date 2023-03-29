@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.7% of total for modules and submodules.">171 statements</a>
+    title=" 2.0% of total for modules and submodules.">210 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_units.f08"> Source File</a></li>
   </ul>
@@ -141,8 +141,10 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
+      <a class="list-group-item" href="../module/mod_units.html#proc-set_based_on_to_false">set_based_on_to_false</a>
       <a class="list-group-item" href="../module/mod_units.html#proc-set_units_from_density">set_units_from_density</a>
       <a class="list-group-item" href="../module/mod_units.html#proc-set_units_from_temperature">set_units_from_temperature</a>
+      <a class="list-group-item" href="../module/mod_units.html#proc-set_units_from_numberdensity">set_units_from_numberdensity</a>
       <a class="list-group-item" href="../module/mod_units.html#proc-update_dependent_units">update_dependent_units</a>
       <a class="list-group-item" href="../module/mod_units.html#proc-set_mean_molecular_weight">set_mean_molecular_weight</a>
     </div>
@@ -210,8 +212,10 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
+      <a class="list-group-item" href="../module/mod_units.html#proc-set_based_on_to_false">set_based_on_to_false</a>
       <a class="list-group-item" href="../module/mod_units.html#proc-set_units_from_density">set_units_from_density</a>
       <a class="list-group-item" href="../module/mod_units.html#proc-set_units_from_temperature">set_units_from_temperature</a>
+      <a class="list-group-item" href="../module/mod_units.html#proc-set_units_from_numberdensity">set_units_from_numberdensity</a>
       <a class="list-group-item" href="../module/mod_units.html#proc-update_dependent_units">update_dependent_units</a>
       <a class="list-group-item" href="../module/mod_units.html#proc-set_mean_molecular_weight">set_mean_molecular_weight</a>
     </div>
@@ -254,6 +258,11 @@
   <td><span class="anchor" id="variable-based_on_temperature"></span>logical,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>based_on_temperature</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-based_on_numberdensity"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>based_on_numberdensity</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-unit_length"></span>real(kind=dp),</td>
@@ -335,6 +344,8 @@
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/units_t.html#boundprocedure-set_units_from_temperature'>set_units_from_temperature</a></strong>  </td>
        <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/units_t.html#boundprocedure-set_units_from_numberdensity'>set_units_from_numberdensity</a></strong>  </td>
+       <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/units_t.html#boundprocedure-set_mean_molecular_weight'>set_mean_molecular_weight</a></strong>  </td>
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/units_t.html#boundprocedure-get_unit_length'>get_unit_length</a></strong>  </td>
@@ -366,6 +377,8 @@
        <tr><td>procedure, public :: <strong><a href='../type/units_t.html#boundprocedure-get_unit_gravity'>get_unit_gravity</a></strong>  </td>
        <td></td></tr>
        <tr><td>procedure, private :: <strong><a href='../type/units_t.html#boundprocedure-update_dependent_units'>update_dependent_units</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, private :: <strong><a href='../type/units_t.html#boundprocedure-set_based_on_to_false'>set_based_on_to_false</a></strong>  </td>
        <td></td></tr>
        </tbody>
        </table>
@@ -730,6 +743,26 @@
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_based_on_to_false"></span><h3>private pure subroutine <a href='../proc/set_based_on_to_false.html'>set_based_on_to_false</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/units_t.html'>units_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-set_units_from_density"></span><h3>private pure subroutine <a href='../proc/set_units_from_density.html'>set_units_from_density</a>(this, unit_length, unit_magneticfield, unit_density, mean_molecular_weight)</h3></div>
   <div class="panel-body">
            
@@ -803,6 +836,50 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>unit_temperature</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in),</td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>mean_molecular_weight</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_units_from_numberdensity"></span><h3>private pure subroutine <a href='../proc/set_units_from_numberdensity.html'>set_units_from_numberdensity</a>(this, unit_length, unit_temperature, unit_numberdensity, mean_molecular_weight)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/units_t.html'>units_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit_length</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit_temperature</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit_numberdensity</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>

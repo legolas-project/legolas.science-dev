@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 5.2% of total for derived types.</p>Including implementation: 118 statements,  5.8% of total for derived types.">26 statements</a>
+    title="<p> 5.4% of total for derived types.</p>Including implementation: 124 statements,  5.9% of total for derived types.">28 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_physics_settings.f08"> Source File</a></li>
   </ul>
@@ -116,6 +116,7 @@
       <a class="list-group-item" href="../type/physics_t.html#variable-dropoff_width">dropoff_width</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-flow">flow</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-cooling">cooling</a>
+      <a class="list-group-item" href="../type/physics_t.html#variable-heating">heating</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-gravity">gravity</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-resistivity">resistivity</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-viscosity">viscosity</a>
@@ -134,6 +135,7 @@
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-set_incompressible">set_incompressible</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_flow">enable_flow</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_cooling">enable_cooling</a>
+      <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_heating">enable_heating</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_gravity">enable_gravity</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_resistivity">enable_resistivity</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_viscosity">enable_viscosity</a>
@@ -166,6 +168,7 @@
       <a class="list-group-item" href="../type/physics_t.html#variable-dropoff_width">dropoff_width</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-flow">flow</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-cooling">cooling</a>
+      <a class="list-group-item" href="../type/physics_t.html#variable-heating">heating</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-gravity">gravity</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-resistivity">resistivity</a>
       <a class="list-group-item" href="../type/physics_t.html#variable-viscosity">viscosity</a>
@@ -184,6 +187,7 @@
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-set_incompressible">set_incompressible</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_flow">enable_flow</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_cooling">enable_cooling</a>
+      <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_heating">enable_heating</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_gravity">enable_gravity</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_resistivity">enable_resistivity</a>
       <a class="list-group-item" href="../type/physics_t.html#boundprocedure-enable_viscosity">enable_viscosity</a>
@@ -231,6 +235,11 @@
   <td><span class="anchor" id="variable-cooling"></span>type(<a href='../type/cooling_settings_t.html'>cooling_settings_t</a>),</td>
 <td>public</td>  <td></td><td>::</td>
   <td><strong>cooling</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-heating"></span>type(<a href='../type/heating_settings_t.html'>heating_settings_t</a>),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>heating</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-gravity"></span>type(<a href='../type/gravity_settings_t.html'>gravity_settings_t</a>),</td>
@@ -411,6 +420,28 @@
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>interpolation_points</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-enable_heating"></span><h3>procedure, public :: <strong>enable_heating</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private pure subroutine <a href='../proc/enable_heating.html'>enable_heating</a>(this)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/physics_t.html'>physics_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>

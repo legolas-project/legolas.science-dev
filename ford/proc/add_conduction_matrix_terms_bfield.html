@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>set_energy_balance &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>add_conduction_matrix_terms_bfield &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>set_energy_balance
+    <h1>add_conduction_matrix_terms_bfield
       <small>Subroutine</small>
     </h1>
     <div class="row">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for procedures.">48 statements</a>
+    title=" 0.5% of total for procedures.">55 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/smod_conduction_matrix.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></li>
-     <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-     <li class="active">set_energy_balance</li>
+     <li><a href='../sourcefile/smod_conduction_matrix.f08.html'>smod_conduction_matrix.f08</a></li>
+     <li><a href='../module/smod_conduction_matrix.html'>smod_conduction_matrix</a></li>
+     <li class="active">add_conduction_matrix_terms_bfield</li>
   </ol>
 </div>
 </div>
@@ -113,83 +113,31 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine set_energy_balance(settings, rho_field, T_field, B_field, v_field, rc_field, kappa_field)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
+    <h2>subroutine add_conduction_matrix_terms_bfield(gauss_idx, settings, elements)</h2>
+    
 
-
-    <p>Enforces the non-adiabatic force-balance equation for the equilibrium state.
-This is given by
-<script type="math/tex; mode=display">
-T_0 \rho_0 \frac{\left(\varepsilon v_{01}\right)'}{\varepsilon}
-+ \rho_0 \mathscr{L}_0
-- B_{01}^2\left[\frac{\kappa_{\parallel,0} - \kappa_{\perp,0}}{B_0^2} T_0'\right]'
-- \frac{1}{\varepsilon}\left(\varepsilon \kappa_{\perp, 0} T_0'\right)'
-+ \frac{1}{(\gamma - 1)}T_0'\rho_0 v_{01} = 0
-</script>
-This subroutine essentially sets $\mathscr{L}<em 01>0$ in such a way that this equation
-is satisfied. If the heating is assumed to only depend on the equilibrium,
-and if there is no $B</em>$, $v_{01}$ or perpendicular thermal conduction,
-then $\mathscr{L}_0 = 0$. If one (or more) of these effects are present, then
-$\mathscr{L}_0 = 0$ is no longer true.
- The <tt>rc_field % heat_loss</tt> attribute is modified on exit.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~6"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-gauss_idx~3"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td><p>the settings object</p></td>
+  <td><strong>gauss_idx</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-rho_field~4"></span>type(<a href='../type/density_type.html'>density_type</a>),</td>
+  <td><span class="anchor" id="variable-settings~101"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>rho_field</strong></td><td><p>the type containing the density attributes</p></td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-t_field~4"></span>type(<a href='../type/temperature_type.html'>temperature_type</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>T_field</strong></td><td><p>the type containing the temperature attributes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-b_field~5"></span>type(<a href='../type/bfield_type.html'>bfield_type</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>B_field</strong></td><td><p>the type containing the magnetic field attributes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-v_field~5"></span>type(<a href='../type/velocity_type.html'>velocity_type</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>v_field</strong></td><td><p>the type containing the velocity attributes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-rc_field~2"></span>type(<a href='../type/cooling_type.html'>cooling_type</a>),</td>
+  <td><span class="anchor" id="variable-elements~3"></span>type(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>rc_field</strong></td><td><p>the type containing the radiative cooling attributes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-kappa_field~2"></span>type(<a href='../type/conduction_type.html'>conduction_type</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>kappa_field</strong></td><td><p>the type containing the thermal conduction attributes</p></td>
+  <td><strong>elements</strong></td><td></td>
 </tr>
 </tbody>
 </table>

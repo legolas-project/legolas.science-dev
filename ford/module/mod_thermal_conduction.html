@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.3% of total for modules and submodules.">131 statements</a>
+    title=" 1.5% of total for modules and submodules.">161 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_thermal_conduction.f08"> Source File</a></li>
   </ul>
@@ -143,9 +143,10 @@ thermal conduction values based on the equilibrium configuration.</p>
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
       </li>
@@ -500,7 +501,7 @@ kappa_{\perp, 0}' = \frac{d\kappa_{\perp, 0}}{d\rho} \rho_0'
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_conduction_prefactor"></span><h3>private subroutine <a href='../proc/set_conduction_prefactor.html'>set_conduction_prefactor</a>(T_field, B_field, kappa_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_conduction_prefactor"></span><h3>private subroutine <a href='../proc/set_conduction_prefactor.html'>set_conduction_prefactor</a>(settings, T_field, B_field, kappa_field)</h3></div>
   <div class="panel-body">
        
 <p>Sets the thermal conduction prefactor, given by
@@ -516,6 +517,12 @@ The radial derivative of the prefactor is also set, given by
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/temperature_type.html'>temperature_type</a>),</td>
 <td>intent(in)</td>

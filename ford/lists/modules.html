@@ -271,50 +271,50 @@ four nodes <script type="math/tex">j</script> as
 <!--active-->			   <tr class=""><td><a href='../module/mod_hall.html'>mod_hall</a></td><td><a href='../sourcefile/mod_hall.f08.html'>mod_hall.f08</a></td><td><p>Module containing Hall-related routines.
 Sets the Hall and electron inertia factors based on normalisations and specified profiles.</p></td></tr>
 <!---->			   <tr class="active"><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td><a href='../sourcefile/mod_hall_settings.f08.html'>mod_hall_settings.f08</a></td><td></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_input.html'>mod_input</a></td><td><a href='../sourcefile/mod_input.f08.html'>mod_input.f08</a></td><td><p>Module to handle parfile reading.
+<!--active-->			   <tr class=""><td><a href='../module/mod_heating_settings.html'>mod_heating_settings</a></td><td><a href='../sourcefile/mod_heating_settings.f08.html'>mod_heating_settings.f08</a></td><td></td></tr>
+<!---->			   <tr class="active"><td><a href='../module/mod_input.html'>mod_input</a></td><td><a href='../sourcefile/mod_input.f08.html'>mod_input.f08</a></td><td><p>Module to handle parfile reading.
 Contains subroutines to retrieve the parfile based on the commandline arguments
 and to read the parfile, setting the global variables.</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></td><td><p>Module to inspect if certain conditions are fulfilled by doing
+<!--active-->			   <tr class=""><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></td><td><p>Module to inspect if certain conditions are fulfilled by doing
 additional sanity checks on the equilibrium configuration.
 For cylindrical geometries we check if <script type="math/tex">k_2</script> is an integer and if the
 on-axis values obey regularity conditions. Equilibrium balance
 for both the Cartesian and cylindrical cases is checked.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_integration.html'>mod_integration</a></td><td><a href='../sourcefile/mod_integration.f08.html'>mod_integration.f08</a></td><td><p>Module responsible for integration of differential equations, useful
+<!---->			   <tr class="active"><td><a href='../module/mod_integration.html'>mod_integration</a></td><td><a href='../sourcefile/mod_integration.f08.html'>mod_integration.f08</a></td><td><p>Module responsible for integration of differential equations, useful
 when setting equilibria or integrating the equilibrium equation.
 Contains subroutines to numerically solve the following systems
 of differential equations:
 <script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script>
 These are solved using a fifth-order Runge-Kutta method.</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_interpolation.html'>mod_interpolation</a></td><td><a href='../sourcefile/mod_interpolation.f08.html'>mod_interpolation.f08</a></td><td><p>Module responsible for table interpolations and array lookups.
+<!--active-->			   <tr class=""><td><a href='../module/mod_interpolation.html'>mod_interpolation</a></td><td><a href='../sourcefile/mod_interpolation.f08.html'>mod_interpolation.f08</a></td><td><p>Module responsible for table interpolations and array lookups.
 Contains subroutines for table interpolations, numerical derivatives
 of arrays and lookup functions.
 Subroutines are loosely based on routines implemented in the
 <a href="amrvac.org">MPI-AMRVAC</a> code.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td><a href='../sourcefile/mod_io_settings.f08.html'>mod_io_settings.f08</a></td><td></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td><a href='../sourcefile/mod_linear_systems.f08.html'>mod_linear_systems.f08</a></td><td><p>Module containing functions to solve linear systems <script type="math/tex; mode=display"> AX = B </script>.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_logging.html'>mod_logging</a></td><td><a href='../sourcefile/mod_logging.f08.html'>mod_logging.f08</a></td><td></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_matrix_creation.html'>mod_matrix_creation</a></td><td><a href='../sourcefile/mod_matrix_creation.f08.html'>mod_matrix_creation.f08</a></td><td><p>Assembly of the finite element matrices <script type="math/tex">\mathcal{A}</script> and <script type="math/tex">\mathcal{B}</script> in the matrix
+<!---->			   <tr class="active"><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td><a href='../sourcefile/mod_io_settings.f08.html'>mod_io_settings.f08</a></td><td></td></tr>
+<!--active-->			   <tr class=""><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td><a href='../sourcefile/mod_linear_systems.f08.html'>mod_linear_systems.f08</a></td><td><p>Module containing functions to solve linear systems <script type="math/tex; mode=display"> AX = B </script>.</p></td></tr>
+<!---->			   <tr class="active"><td><a href='../module/mod_logging.html'>mod_logging</a></td><td><a href='../sourcefile/mod_logging.f08.html'>mod_logging.f08</a></td><td></td></tr>
+<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_creation.html'>mod_matrix_creation</a></td><td><a href='../sourcefile/mod_matrix_creation.f08.html'>mod_matrix_creation.f08</a></td><td><p>Assembly of the finite element matrices <script type="math/tex">\mathcal{A}</script> and <script type="math/tex">\mathcal{B}</script> in the matrix
 eigenvalue problem <script type="math/tex">\mathcal{A}\textbf{X} = \omega\mathcal{B}\textbf{X}</script>.
 Matrix creation proceeds by first assembling a quadblock at every grid interval
 using the integrals and finite element basis functions, after which this quadblock
 is shifted along the main diagonal.
 </p><a href="../module/mod_matrix_creation.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_element_node.html'>mod_matrix_element_node</a></td><td><a href='../sourcefile/mod_matrix_element_node.f08.html'>mod_matrix_element_node.f08</a></td><td></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></td><td><a href='../sourcefile/mod_matrix_elements.f08.html'>mod_matrix_elements.f08</a></td><td></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td><a href='../sourcefile/mod_matrix_manager.f08.html'>mod_matrix_manager.f08</a></td><td></td></tr>
-                  			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_conduction_matrix.html'>smod_conduction_matrix</a></td><td><a href='../sourcefile/smod_conduction_matrix.f08.html'>smod_conduction_matrix.f08</a></td><td></td></tr>
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_cooling_matrix.html'>smod_cooling_matrix</a></td><td><a href='../sourcefile/smod_cooling_matrix.f08.html'>smod_cooling_matrix.f08</a></td><td></td></tr>
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_flow_matrix.html'>smod_flow_matrix</a></td><td><a href='../sourcefile/smod_flow_matrix.f08.html'>smod_flow_matrix.f08</a></td><td></td></tr>
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_hall_matrix.html'>smod_hall_matrix</a></td><td><a href='../sourcefile/smod_hall_matrix.f08.html'>smod_hall_matrix.f08</a></td><td></td></tr>
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_regular_matrix.html'>smod_regular_matrix</a></td><td><a href='../sourcefile/smod_regular_matrix.f08.html'>smod_regular_matrix.f08</a></td><td></td></tr>
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_resistive_matrix.html'>smod_resistive_matrix</a></td><td><a href='../sourcefile/smod_resistive_matrix.f08.html'>smod_resistive_matrix.f08</a></td><td></td></tr>
-			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_viscosity_matrix.html'>smod_viscosity_matrix</a></td><td><a href='../sourcefile/smod_viscosity_matrix.f08.html'>smod_viscosity_matrix.f08</a></td><td></td></tr>
+<!---->			   <tr class="active"><td><a href='../module/mod_matrix_element_node.html'>mod_matrix_element_node</a></td><td><a href='../sourcefile/mod_matrix_element_node.f08.html'>mod_matrix_element_node.f08</a></td><td></td></tr>
+<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></td><td><a href='../sourcefile/mod_matrix_elements.f08.html'>mod_matrix_elements.f08</a></td><td></td></tr>
+<!---->			   <tr class="active"><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td><a href='../sourcefile/mod_matrix_manager.f08.html'>mod_matrix_manager.f08</a></td><td></td></tr>
+                  			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_conduction_matrix.html'>smod_conduction_matrix</a></td><td><a href='../sourcefile/smod_conduction_matrix.f08.html'>smod_conduction_matrix.f08</a></td><td></td></tr>
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_cooling_matrix.html'>smod_cooling_matrix</a></td><td><a href='../sourcefile/smod_cooling_matrix.f08.html'>smod_cooling_matrix.f08</a></td><td></td></tr>
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_flow_matrix.html'>smod_flow_matrix</a></td><td><a href='../sourcefile/smod_flow_matrix.f08.html'>smod_flow_matrix.f08</a></td><td></td></tr>
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_hall_matrix.html'>smod_hall_matrix</a></td><td><a href='../sourcefile/smod_hall_matrix.f08.html'>smod_hall_matrix.f08</a></td><td></td></tr>
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_regular_matrix.html'>smod_regular_matrix</a></td><td><a href='../sourcefile/smod_regular_matrix.f08.html'>smod_regular_matrix.f08</a></td><td></td></tr>
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_resistive_matrix.html'>smod_resistive_matrix</a></td><td><a href='../sourcefile/smod_resistive_matrix.f08.html'>smod_resistive_matrix.f08</a></td><td></td></tr>
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_viscosity_matrix.html'>smod_viscosity_matrix</a></td><td><a href='../sourcefile/smod_viscosity_matrix.f08.html'>smod_viscosity_matrix.f08</a></td><td></td></tr>
 
-<!---->			   <tr class="active"><td><a href='../module/mod_matrix_node.html'>mod_matrix_node</a></td><td><a href='../sourcefile/mod_matrix_node.f08.html'>mod_matrix_node.f08</a></td><td><p>Module that contains the implementation of nodes in the linked-list matrix
+<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_node.html'>mod_matrix_node</a></td><td><a href='../sourcefile/mod_matrix_node.f08.html'>mod_matrix_node.f08</a></td><td><p>Module that contains the implementation of nodes in the linked-list matrix
 representation.</p></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td><a href='../sourcefile/mod_matrix_row.f08.html'>mod_matrix_row.f08</a></td><td><p>Module that contains the implementation of a single row of nodes in the
+<!---->			   <tr class="active"><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td><a href='../sourcefile/mod_matrix_row.f08.html'>mod_matrix_row.f08</a></td><td><p>Module that contains the implementation of a single row of nodes in the
 linked-list matrix representation.</p></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/mod_matrix_shortcuts.html'>mod_matrix_shortcuts</a></td><td><a href='../sourcefile/mod_matrix_shortcuts.f08.html'>mod_matrix_shortcuts.f08</a></td><td></td></tr>
 <!--active-->			   <tr class=""><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td><a href='../sourcefile/mod_matrix_structure.f08.html'>mod_matrix_structure.f08</a></td><td><p>Module that contains the datastructure for a linked-list matrix representation.</p></td></tr>
 <!---->			   <tr class="active"><td><a href='../module/mod_output.html'>mod_output</a></td><td><a href='../sourcefile/mod_output.f08.html'>mod_output.f08</a></td><td></td></tr>
 <!--active-->			   <tr class=""><td><a href='../module/mod_painting.html'>mod_painting</a></td><td><a href='../sourcefile/mod_painting.f08.html'>mod_painting.f08</a></td><td><p>This module handles formatting of terminal-printed strings.
