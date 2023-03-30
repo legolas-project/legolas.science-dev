@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine assemble(this, settings, background, idxs_to_assemble, right_eigenvectors, ef_grid)</h2>
+    <h2>private subroutine assemble(this, settings, grid, background, idxs_to_assemble, right_eigenvectors)</h2>
     
 
 
@@ -122,19 +122,25 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~75"></span>class(<a href='../type/derived_ef_t.html'>derived_ef_t</a>),</td>
+  <td><span class="anchor" id="variable-this~83"></span>class(<a href='../type/derived_ef_t.html'>derived_ef_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-settings~126"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~129"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-background~66"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+  <td><span class="anchor" id="variable-grid~91"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-background~67"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
@@ -150,12 +156,6 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>right_eigenvectors</strong>(:,:)</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ef_grid~25"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>

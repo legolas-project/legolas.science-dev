@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for modules and submodules.">52 statements</a>
+    title=" 0.4% of total for modules and submodules.">48 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_natural_bounds_hall.f08"> Source File</a></li>
   </ul>
@@ -169,13 +169,25 @@
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_hall_bterms"></span><h3>module procedure <a href='../proc/add_natural_hall_bterms.html'>add_natural_hall_Bterms</a> <small>module module subroutine add_natural_hall_Bterms(quadblock, settings, background, physics)</small>   <a href='../interface/add_natural_hall_bterms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_hall_bterms"></span><h3>module procedure <a href='../proc/add_natural_hall_bterms.html'>add_natural_hall_Bterms</a> <small>module module subroutine add_natural_hall_Bterms(x, weight, quadblock, settings, grid, background, physics)</small>   <a href='../interface/add_natural_hall_bterms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -187,6 +199,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -208,13 +226,25 @@
   </div>
 
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_hall_terms"></span><h3>module procedure <a href='../proc/add_natural_hall_terms.html'>add_natural_hall_terms</a> <small>module module subroutine add_natural_hall_terms(quadblock, settings, background, physics)</small>   <a href='../interface/add_natural_hall_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_hall_terms"></span><h3>module procedure <a href='../proc/add_natural_hall_terms.html'>add_natural_hall_terms</a> <small>module module subroutine add_natural_hall_terms(x, weight, quadblock, settings, grid, background, physics)</small>   <a href='../interface/add_natural_hall_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -226,6 +256,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>

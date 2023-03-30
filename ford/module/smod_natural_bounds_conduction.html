@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for modules and submodules.">75 statements</a>
+    title=" 0.7% of total for modules and submodules.">73 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_natural_bounds_conduction.f08"> Source File</a></li>
   </ul>
@@ -179,17 +179,29 @@
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_conduction_terms_bfield"></span><h3>subroutine <a href='../proc/add_natural_conduction_terms_bfield.html'>add_natural_conduction_terms_bfield</a>(settings, background, physics, elements)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_conduction_terms_bfield"></span><h3>subroutine <a href='../proc/add_natural_conduction_terms_bfield.html'>add_natural_conduction_terms_bfield</a>(x, settings, grid, background, physics, elements)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -225,13 +237,25 @@
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_conduction_terms"></span><h3>module procedure <a href='../proc/add_natural_conduction_terms.html'>add_natural_conduction_terms</a> <small>module module subroutine add_natural_conduction_terms(quadblock, settings, background, physics)</small>   <a href='../interface/add_natural_conduction_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_conduction_terms"></span><h3>module procedure <a href='../proc/add_natural_conduction_terms.html'>add_natural_conduction_terms</a> <small>module module subroutine add_natural_conduction_terms(x, weight, quadblock, settings, grid, background, physics)</small>   <a href='../interface/add_natural_conduction_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -243,6 +267,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>

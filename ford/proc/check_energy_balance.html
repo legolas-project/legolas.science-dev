@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">55 statements</a>
+    title=" 0.4% of total for procedures.">56 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine check_energy_balance(settings, background, physics)</h2>
+    <h2>private subroutine check_energy_balance(settings, grid, background, physics)</h2>
     
 
     <p>Enforces the non-adiabatic force-balance equation for the equilibrium state.
@@ -132,10 +132,16 @@ T_0 \rho_0 \frac{\left(\varepsilon v_{01}\right)'}{\varepsilon}
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~40"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~42"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-grid~39"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-background~38"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>

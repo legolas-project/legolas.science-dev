@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for modules and submodules.">84 statements</a>
+    title=" 1.0% of total for modules and submodules.">106 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_grid_settings.f08"> Source File</a></li>
   </ul>
@@ -134,7 +134,8 @@
       <a class="list-group-item" href="../module/mod_grid_settings.html#proc-set_geometry">set_geometry</a>
       <a class="list-group-item" href="../module/mod_grid_settings.html#proc-set_gridpts">set_gridpts</a>
       <a class="list-group-item" href="../module/mod_grid_settings.html#proc-set_grid_boundaries">set_grid_boundaries</a>
-      <a class="list-group-item" href="../module/mod_grid_settings.html#proc-delete~12">delete</a>
+      <a class="list-group-item" href="../module/mod_grid_settings.html#proc-validate_grid_start">validate_grid_start</a>
+      <a class="list-group-item" href="../module/mod_grid_settings.html#proc-delete~13">delete</a>
     </div>
   </div>
 </div>
@@ -193,7 +194,8 @@
       <a class="list-group-item" href="../module/mod_grid_settings.html#proc-set_geometry">set_geometry</a>
       <a class="list-group-item" href="../module/mod_grid_settings.html#proc-set_gridpts">set_gridpts</a>
       <a class="list-group-item" href="../module/mod_grid_settings.html#proc-set_grid_boundaries">set_grid_boundaries</a>
-      <a class="list-group-item" href="../module/mod_grid_settings.html#proc-delete~12">delete</a>
+      <a class="list-group-item" href="../module/mod_grid_settings.html#proc-validate_grid_start">validate_grid_start</a>
+      <a class="list-group-item" href="../module/mod_grid_settings.html#proc-delete~13">delete</a>
     </div>
   </div>
 </div>
@@ -280,7 +282,9 @@
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/grid_settings_t.html#boundprocedure-get_grid_end'>get_grid_end</a></strong>  </td>
        <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/grid_settings_t.html#boundprocedure-delete~12'>delete</a></strong>  </td>
+       <tr><td>procedure, public :: <strong><a href='../type/grid_settings_t.html#boundprocedure-delete~13'>delete</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, private :: <strong><a href='../type/grid_settings_t.html#boundprocedure-validate_grid_start'>validate_grid_start</a></strong>  </td>
        <td></td></tr>
        </tbody>
        </table>
@@ -294,7 +298,7 @@
     <section>
     <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-new_grid_settings"></span><h3>public pure function <a href='../proc/new_grid_settings.html'>new_grid_settings</a>() result(grid_settings)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-new_grid_settings"></span><h3>public function <a href='../proc/new_grid_settings.html'>new_grid_settings</a>() result(grid_settings)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <em>None</em>
@@ -487,7 +491,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_grid_boundaries"></span><h3>private pure subroutine <a href='../proc/set_grid_boundaries.html'>set_grid_boundaries</a>(this, grid_start, grid_end)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_grid_boundaries"></span><h3>private subroutine <a href='../proc/set_grid_boundaries.html'>set_grid_boundaries</a>(this, grid_start, grid_end)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -519,7 +523,27 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-delete~12"></span><h3>private pure subroutine <a href='../proc/delete~12.html'>delete</a>(this)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-validate_grid_start"></span><h3>private subroutine <a href='../proc/validate_grid_start.html'>validate_grid_start</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_settings_t.html'>grid_settings_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-delete~13"></span><h3>private pure subroutine <a href='../proc/delete~13.html'>delete</a>(this)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">

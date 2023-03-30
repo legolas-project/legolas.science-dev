@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.2% of total for modules and submodules.">133 statements</a>
+    title=" 1.4% of total for modules and submodules.">154 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_natural_boundaries.f08"> Source File</a></li>
   </ul>
@@ -109,8 +109,6 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-grid_idx~2">grid_idx</a>
-      <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-weight~11">weight</a>
       <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-h_quad~2">h_quad</a>
       <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-dh_quad~2">dh_quad</a>
       <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-h_cubic~3">h_cubic</a>
@@ -163,12 +161,11 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
     <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
     <li><a href='../module/mod_build_quadblock.html'>mod_build_quadblock</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -208,8 +205,6 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-grid_idx~2">grid_idx</a>
-      <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-weight~11">weight</a>
       <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-h_quad~2">h_quad</a>
       <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-dh_quad~2">dh_quad</a>
       <a class="list-group-item" href="../module/smod_natural_boundaries.html#variable-h_cubic~3">h_cubic</a>
@@ -259,16 +254,6 @@
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-grid_idx~2"></span>integer,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>grid_idx</strong></td><td></td><td></td><td><p>current position in the grid</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-weight~11"></span>real(kind=dp),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>weight</strong></td><td></td><td></td><td><p>weight for the subblock factors, no integrals here so +1 or -1 depending on side</p></td>
-</tr>
-<tr>
   <td><span class="anchor" id="variable-h_quad~2"></span>real(kind=dp),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>h_quad</strong>(4)</td><td></td><td></td><td><p>quadratic basis functions</p></td>
@@ -301,11 +286,23 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_natural_regular_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>module module subroutine add_natural_regular_terms(quadblock, settings, background)   <a href='../proc/add_natural_regular_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>module module subroutine add_natural_regular_terms(x, weight, quadblock, settings, grid, background)   <a href='../proc/add_natural_regular_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -317,6 +314,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -336,11 +339,23 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_natural_flow_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>module module subroutine add_natural_flow_terms(quadblock, settings, background)   <a href='../proc/add_natural_flow_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>module module subroutine add_natural_flow_terms(x, weight, quadblock, settings, grid, background)   <a href='../proc/add_natural_flow_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -352,6 +367,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -371,11 +392,23 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_natural_resistive_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>module module subroutine add_natural_resistive_terms(quadblock, settings, background, physics)   <a href='../proc/add_natural_resistive_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>module module subroutine add_natural_resistive_terms(x, weight, quadblock, settings, grid, background, physics)   <a href='../proc/add_natural_resistive_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -387,6 +420,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -412,11 +451,23 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_natural_conduction_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>module module subroutine add_natural_conduction_terms(quadblock, settings, background, physics)   <a href='../proc/add_natural_conduction_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>module module subroutine add_natural_conduction_terms(x, weight, quadblock, settings, grid, background, physics)   <a href='../proc/add_natural_conduction_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -428,6 +479,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -453,11 +510,23 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_natural_viscosity_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>module module subroutine add_natural_viscosity_terms(quadblock, settings, background)   <a href='../proc/add_natural_viscosity_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>module module subroutine add_natural_viscosity_terms(x, weight, quadblock, settings, grid, background)   <a href='../proc/add_natural_viscosity_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -469,6 +538,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -488,11 +563,23 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_natural_hall_terms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>module module subroutine add_natural_hall_terms(quadblock, settings, background, physics)   <a href='../proc/add_natural_hall_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>module module subroutine add_natural_hall_terms(x, weight, quadblock, settings, grid, background, physics)   <a href='../proc/add_natural_hall_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -504,6 +591,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -529,11 +622,23 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-add_natural_hall_bterms"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>module module subroutine add_natural_hall_Bterms(quadblock, settings, background, physics)   <a href='../proc/add_natural_hall_bterms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>module module subroutine add_natural_hall_Bterms(x, weight, quadblock, settings, grid, background, physics)   <a href='../proc/add_natural_hall_bterms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(inout)</td>
@@ -545,6 +650,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -575,7 +686,7 @@
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_basis_functions"></span><h3>subroutine <a href='../proc/set_basis_functions.html'>set_basis_functions</a>(settings, edge)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_basis_functions"></span><h3>subroutine <a href='../proc/set_basis_functions.html'>set_basis_functions</a>(settings, grid, edge)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -586,6 +697,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
@@ -609,7 +726,7 @@
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_natural_boundaries_left"></span><h3>module procedure <a href='../proc/apply_natural_boundaries_left.html'>apply_natural_boundaries_left</a> <small>module module subroutine apply_natural_boundaries_left(matrix, settings, background, physics)</small>   <a href='../interface/apply_natural_boundaries_left.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_natural_boundaries_left"></span><h3>module procedure <a href='../proc/apply_natural_boundaries_left.html'>apply_natural_boundaries_left</a> <small>module module subroutine apply_natural_boundaries_left(matrix, settings, grid, background, physics)</small>   <a href='../interface/apply_natural_boundaries_left.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
@@ -627,6 +744,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -648,7 +771,7 @@
   </div>
 
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_natural_boundaries_right"></span><h3>module procedure <a href='../proc/apply_natural_boundaries_right.html'>apply_natural_boundaries_right</a> <small>module module subroutine apply_natural_boundaries_right(matrix, settings, background, physics)</small>   <a href='../interface/apply_natural_boundaries_right.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-apply_natural_boundaries_right"></span><h3>module procedure <a href='../proc/apply_natural_boundaries_right.html'>apply_natural_boundaries_right</a> <small>module module subroutine apply_natural_boundaries_right(matrix, settings, grid, background, physics)</small>   <a href='../interface/apply_natural_boundaries_right.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
@@ -666,6 +789,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>

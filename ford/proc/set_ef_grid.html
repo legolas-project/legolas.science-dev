@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>get_ef_grid &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>set_ef_grid &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>get_ef_grid
-      <small>Function</small>
+    <h1>set_ef_grid
+      <small>Subroutine</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">12 statements</a>
+    title=" 0.1% of total for procedures.">10 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_eigenfunctions.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_grid.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_eigenfunctions.f08.html'>mod_eigenfunctions.f08</a></li>
-     <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
-     <li class="active">get_ef_grid</li>
+     <li><a href='../sourcefile/mod_grid.f08.html'>mod_grid.f08</a></li>
+     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
+     <li class="active">set_ef_grid</li>
   </ol>
 </div>
 </div>
@@ -113,20 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private pure function get_ef_grid(settings) result(ef_grid)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>private pure subroutine set_ef_grid(this)</h2>
+    
 
 
     <h3>Arguments</h3>
@@ -134,16 +122,14 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~132"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" id="variable-this~7"></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-ef_grid~31"></span>real(kind=dp),allocatable,(:)</small></h3>
-    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

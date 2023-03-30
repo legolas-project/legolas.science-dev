@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">13 statements</a>
+    title=" 0.1% of total for procedures.">15 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_derived_efs.f08"> Source File</a></li>
   </ul>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private function get_curl_B_1(settings, eigenvector, ef_grid) result(curl_B_1)</h2>
+    <h2>private function get_curl_B_1(settings, grid, eigenvector) result(curl_B_1)</h2>
     
 
 
@@ -122,10 +122,16 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~114"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~117"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-grid~78"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-eigenvector~11"></span>complex(kind=dp),</td>
@@ -133,16 +139,10 @@
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" id="variable-ef_grid~12"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-curl_b_1"></span>complex(kind=dp)(size(ef_grid))</small></h3>
+   <h3>Return Value <small><span class="anchor" id="variable-curl_b_1"></span>complex(kind=dp)(size(grid%ef_grid))</small></h3>
     
     <br>
 

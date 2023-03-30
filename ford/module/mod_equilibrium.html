@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.3% of total for modules and submodules.">251 statements</a>
+    title=" 2.6% of total for modules and submodules.">278 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_equilibrium.f08"> Source File</a></li>
   </ul>
@@ -181,13 +181,13 @@ respective modules.
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_background.html'>mod_background</a></li>
     <li><a href='../module/mod_physics.html'>mod_physics</a></li>
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
     <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
   </ul>
       </li>
@@ -327,7 +327,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine adiabatic_homo_eq(settings, background, physics)   <a href='../proc/adiabatic_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine adiabatic_homo_eq(settings, grid, background, physics)   <a href='../proc/adiabatic_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -337,6 +337,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -365,7 +371,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine constant_current_eq(settings, background, physics)   <a href='../proc/constant_current_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine constant_current_eq(settings, grid, background, physics)   <a href='../proc/constant_current_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -375,6 +381,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -403,7 +415,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine coronal_flux_tube_eq(settings, background, physics)   <a href='../proc/coronal_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine coronal_flux_tube_eq(settings, grid, background, physics)   <a href='../proc/coronal_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -413,6 +425,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -441,7 +459,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine discrete_alfven_eq(settings, background, physics)   <a href='../proc/discrete_alfven_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine discrete_alfven_eq(settings, grid, background, physics)   <a href='../proc/discrete_alfven_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -451,6 +469,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -479,7 +503,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine flow_driven_instabilities_eq(settings, background, physics)   <a href='../proc/flow_driven_instabilities_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine flow_driven_instabilities_eq(settings, grid, background, physics)   <a href='../proc/flow_driven_instabilities_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -489,6 +513,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -517,7 +547,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine gold_hoyle_eq(settings, background, physics)   <a href='../proc/gold_hoyle_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine gold_hoyle_eq(settings, grid, background, physics)   <a href='../proc/gold_hoyle_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -527,6 +557,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -555,7 +591,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine gravito_acoustic_eq(settings, background, physics)   <a href='../proc/gravito_acoustic_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine gravito_acoustic_eq(settings, grid, background, physics)   <a href='../proc/gravito_acoustic_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -565,6 +601,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -593,7 +635,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine gravito_mhd_eq(settings, background, physics)   <a href='../proc/gravito_mhd_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine gravito_mhd_eq(settings, grid, background, physics)   <a href='../proc/gravito_mhd_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -603,6 +645,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -631,7 +679,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine interchange_modes_eq(settings, background, physics)   <a href='../proc/interchange_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine interchange_modes_eq(settings, grid, background, physics)   <a href='../proc/interchange_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -641,6 +689,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -669,7 +723,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine internal_kink_eq(settings, background, physics)   <a href='../proc/internal_kink_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine internal_kink_eq(settings, grid, background, physics)   <a href='../proc/internal_kink_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -679,6 +733,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -707,7 +767,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine isothermal_atmosphere_eq(settings, background, physics)   <a href='../proc/isothermal_atmosphere_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine isothermal_atmosphere_eq(settings, grid, background, physics)   <a href='../proc/isothermal_atmosphere_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -717,6 +777,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -745,7 +811,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine KHI_eq(settings, background, physics)   <a href='../proc/khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine KHI_eq(settings, grid, background, physics)   <a href='../proc/khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -755,6 +821,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -783,7 +855,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine kh_cd_instability_eq(settings, background, physics)   <a href='../proc/kh_cd_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine kh_cd_instability_eq(settings, grid, background, physics)   <a href='../proc/kh_cd_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -793,6 +865,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -821,7 +899,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine magnetothermal_instability_eq(settings, background, physics)   <a href='../proc/magnetothermal_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine magnetothermal_instability_eq(settings, grid, background, physics)   <a href='../proc/magnetothermal_instability_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -831,6 +909,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -859,7 +943,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine MRI_accretion_eq(settings, background, physics)   <a href='../proc/mri_accretion_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine MRI_accretion_eq(settings, grid, background, physics)   <a href='../proc/mri_accretion_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -869,6 +953,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -897,7 +987,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine photospheric_flux_tube_eq(settings, background, physics)   <a href='../proc/photospheric_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine photospheric_flux_tube_eq(settings, grid, background, physics)   <a href='../proc/photospheric_flux_tube_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -907,6 +997,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -935,7 +1031,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resistive_homo_eq(settings, background, physics)   <a href='../proc/resistive_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resistive_homo_eq(settings, grid, background, physics)   <a href='../proc/resistive_homo_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -945,6 +1041,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -973,7 +1075,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resistive_tearing_modes_eq(settings, background, physics)   <a href='../proc/resistive_tearing_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resistive_tearing_modes_eq(settings, grid, background, physics)   <a href='../proc/resistive_tearing_modes_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -983,6 +1085,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1011,7 +1119,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resistive_tearing_modes_flow_eq(settings, background, physics)   <a href='../proc/resistive_tearing_modes_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resistive_tearing_modes_flow_eq(settings, grid, background, physics)   <a href='../proc/resistive_tearing_modes_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1021,6 +1129,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1049,7 +1163,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine resonant_absorption_eq(settings, background, physics)   <a href='../proc/resonant_absorption_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine resonant_absorption_eq(settings, grid, background, physics)   <a href='../proc/resonant_absorption_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1059,6 +1173,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1087,7 +1207,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine rotating_plasma_cyl_eq(settings, background, physics)   <a href='../proc/rotating_plasma_cyl_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine rotating_plasma_cyl_eq(settings, grid, background, physics)   <a href='../proc/rotating_plasma_cyl_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1097,6 +1217,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1125,7 +1251,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine RTI_eq(settings, background, physics)   <a href='../proc/rti_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine RTI_eq(settings, grid, background, physics)   <a href='../proc/rti_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1135,6 +1261,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1163,7 +1295,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine RTI_KHI_eq(settings, background, physics)   <a href='../proc/rti_khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine RTI_KHI_eq(settings, grid, background, physics)   <a href='../proc/rti_khi_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1173,6 +1305,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1201,7 +1339,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine RTI_theta_pinch_eq(settings, background, physics)   <a href='../proc/rti_theta_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine RTI_theta_pinch_eq(settings, grid, background, physics)   <a href='../proc/rti_theta_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1211,6 +1349,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1239,7 +1383,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine suydam_cluster_eq(settings, background, physics)   <a href='../proc/suydam_cluster_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine suydam_cluster_eq(settings, grid, background, physics)   <a href='../proc/suydam_cluster_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1249,6 +1393,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1277,7 +1427,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine couette_flow_eq(settings, background, physics)   <a href='../proc/couette_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine couette_flow_eq(settings, grid, background, physics)   <a href='../proc/couette_flow_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1287,6 +1437,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1315,7 +1471,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine taylor_couette_eq(settings, background, physics)   <a href='../proc/taylor_couette_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine taylor_couette_eq(settings, grid, background, physics)   <a href='../proc/taylor_couette_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1325,6 +1481,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1353,7 +1515,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine harris_sheet_eq(settings, background, physics)   <a href='../proc/harris_sheet_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine harris_sheet_eq(settings, grid, background, physics)   <a href='../proc/harris_sheet_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1363,6 +1525,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1391,7 +1559,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine tc_pinch_eq(settings, background, physics)   <a href='../proc/tc_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine tc_pinch_eq(settings, grid, background, physics)   <a href='../proc/tc_pinch_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1401,6 +1569,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1429,7 +1603,7 @@ respective modules.
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private module module subroutine user_defined_eq(settings, background, physics)   <a href='../proc/user_defined_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    <h3>private module module subroutine user_defined_eq(settings, grid, background, physics)   <a href='../proc/user_defined_eq.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1439,6 +1613,12 @@ respective modules.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1469,7 +1649,7 @@ respective modules.
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium"></span><h3>public subroutine <a href='../proc/set_equilibrium.html'>set_equilibrium</a>(settings, background, physics)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium"></span><h3>public subroutine <a href='../proc/set_equilibrium.html'>set_equilibrium</a>(settings, grid, background, physics)</h3></div>
   <div class="panel-body">
        
 <p>Calls the routine to set the equilibrium pointer, then calls the correct
@@ -1485,6 +1665,12 @@ the equilibrium is set, then calls additional physics modules if needed.
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>

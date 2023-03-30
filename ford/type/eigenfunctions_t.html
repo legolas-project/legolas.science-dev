@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 2.4% of total for derived types.</p>Including implementation: 82 statements,  3.4% of total for derived types.">14 statements</a>
+    title="<p> 2.4% of total for derived types.</p>Including implementation: 83 statements,  3.3% of total for derived types.">14 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_eigenfunctions.f08"> Source File</a></li>
   </ul>
@@ -110,13 +110,13 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-settings">settings</a>
+      <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-settings~2">settings</a>
+      <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-grid">grid</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-background">background</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-base_efs">base_efs</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-derived_efs">derived_efs</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-ef_written_flags">ef_written_flags</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-ef_written_idxs">ef_written_idxs</a>
-      <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-ef_grid">ef_grid</a>
     </div>
   </div>
 </div>
@@ -124,9 +124,9 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
   <div id="boundprocs-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-initialise~4">initialise</a>
+      <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-initialise~5">initialise</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-assemble~3">assemble</a>
-      <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-delete~6">delete</a>
+      <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-delete~7">delete</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-select_eigenfunctions_to_save">select_eigenfunctions_to_save</a>
     </div>
   </div>
@@ -148,13 +148,13 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-settings">settings</a>
+      <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-settings~2">settings</a>
+      <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-grid">grid</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-background">background</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-base_efs">base_efs</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-derived_efs">derived_efs</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-ef_written_flags">ef_written_flags</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-ef_written_idxs">ef_written_idxs</a>
-      <a class="list-group-item" href="../type/eigenfunctions_t.html#variable-ef_grid">ef_grid</a>
     </div>
   </div>
 </div>
@@ -162,9 +162,9 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
   <div id="boundprocs-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-initialise~4">initialise</a>
+      <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-initialise~5">initialise</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-assemble~3">assemble</a>
-      <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-delete~6">delete</a>
+      <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-delete~7">delete</a>
       <a class="list-group-item" href="../type/eigenfunctions_t.html#boundprocedure-select_eigenfunctions_to_save">select_eigenfunctions_to_save</a>
     </div>
   </div>
@@ -179,9 +179,14 @@
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~2"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>private,</td>  <td>pointer</td><td>::</td>
   <td><strong>settings</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-grid"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>private,</td>  <td>pointer</td><td>::</td>
+  <td><strong>grid</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-background"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -208,11 +213,6 @@
 <td>public,</td>  <td>allocatable</td><td>::</td>
   <td><strong>ef_written_idxs</strong>(:)</td><td></td><td></td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" id="variable-ef_grid"></span>real(kind=dp),</td>
-<td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td><td></td><td></td>
-</tr>
 </tbody>
 </table>
 
@@ -225,10 +225,10 @@
     <section>
     <h2>Type-Bound Procedures</h2>
      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-initialise~4"></span><h3>procedure, public :: <strong>initialise</strong>    </h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-initialise~5"></span><h3>procedure, public :: <strong>initialise</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private subroutine <a href='../proc/initialise~4.html'>initialise</a>(this, omega)</h3>    
+          <h3>private subroutine <a href='../proc/initialise~5.html'>initialise</a>(this, omega)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -281,10 +281,10 @@
 </div>
 
      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-delete~6"></span><h3>procedure, public :: <strong>delete</strong>    </h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-delete~7"></span><h3>procedure, public :: <strong>delete</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private pure subroutine <a href='../proc/delete~6.html'>delete</a>(this)</h3>    
+          <h3>private pure subroutine <a href='../proc/delete~7.html'>delete</a>(this)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>

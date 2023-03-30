@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.7% of total for modules and submodules.">400 statements</a>
+    title=" 3.9% of total for modules and submodules.">416 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_derived_efs.f08"> Source File</a></li>
   </ul>
@@ -165,9 +165,9 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_derived_efs.html#proc-initialise~3">initialise</a>
+      <a class="list-group-item" href="../module/mod_derived_efs.html#proc-initialise~4">initialise</a>
       <a class="list-group-item" href="../module/mod_derived_efs.html#proc-assemble~2">assemble</a>
-      <a class="list-group-item" href="../module/mod_derived_efs.html#proc-delete~5">delete</a>
+      <a class="list-group-item" href="../module/mod_derived_efs.html#proc-delete~6">delete</a>
       <a class="list-group-item" href="../module/mod_derived_efs.html#proc-set_function_pointer">set_function_pointer</a>
       <a class="list-group-item" href="../module/mod_derived_efs.html#proc-set_equilibrium_arrays_on_ef_grid">set_equilibrium_arrays_on_ef_grid</a>
       <a class="list-group-item" href="../module/mod_derived_efs.html#proc-deallocate_derived_ef_module_variables">deallocate_derived_ef_module_variables</a>
@@ -188,14 +188,15 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_background.html'>mod_background</a></li>
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-    <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></li>
+    <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
+    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
   </ul>
       </li>
       </ul>
@@ -267,9 +268,9 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_derived_efs.html#proc-initialise~3">initialise</a>
+      <a class="list-group-item" href="../module/mod_derived_efs.html#proc-initialise~4">initialise</a>
       <a class="list-group-item" href="../module/mod_derived_efs.html#proc-assemble~2">assemble</a>
-      <a class="list-group-item" href="../module/mod_derived_efs.html#proc-delete~5">delete</a>
+      <a class="list-group-item" href="../module/mod_derived_efs.html#proc-delete~6">delete</a>
       <a class="list-group-item" href="../module/mod_derived_efs.html#proc-set_function_pointer">set_function_pointer</a>
       <a class="list-group-item" href="../module/mod_derived_efs.html#proc-set_equilibrium_arrays_on_ef_grid">set_equilibrium_arrays_on_ef_grid</a>
       <a class="list-group-item" href="../module/mod_derived_efs.html#proc-deallocate_derived_ef_module_variables">deallocate_derived_ef_module_variables</a>
@@ -319,7 +320,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="interface-derived_ef_func"></span><h3>interface   </h3></div>
   <ul class="list-group">
     <li class="list-group-item">
-    <h3>private function derived_ef_func(settings, eigenvector, ef_grid) result(ef)</h3>    
+    <h3>private function derived_ef_func(settings, grid, eigenvector) result(ef)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -330,21 +331,21 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
     </li>
   </ul>
@@ -385,11 +386,11 @@
      <h4>Type-Bound Procedures</h4>
       <table class="table table-striped varlist">
       <tbody>
-       <tr><td>procedure, public :: <strong><a href='../type/derived_ef_t.html#boundprocedure-initialise~3'>initialise</a></strong>  </td>
+       <tr><td>procedure, public :: <strong><a href='../type/derived_ef_t.html#boundprocedure-initialise~4'>initialise</a></strong>  </td>
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/derived_ef_t.html#boundprocedure-assemble~2'>assemble</a></strong>  </td>
        <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/derived_ef_t.html#boundprocedure-delete~5'>delete</a></strong>  </td>
+       <tr><td>procedure, public :: <strong><a href='../type/derived_ef_t.html#boundprocedure-delete~6'>delete</a></strong>  </td>
        <td></td></tr>
        <tr><td>procedure, private :: <strong><a href='../type/derived_ef_t.html#boundprocedure-set_function_pointer'>set_function_pointer</a></strong>  </td>
        <td></td></tr>
@@ -405,7 +406,7 @@
     <section>
     <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_entropy"></span><h3>private function <a href='../proc/get_entropy.html'>get_entropy</a>(settings, eigenvector, ef_grid) result(entropy)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_entropy"></span><h3>private function <a href='../proc/get_entropy.html'>get_entropy</a>(settings, grid, eigenvector) result(entropy)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -418,27 +419,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_div_v"></span><h3>private function <a href='../proc/get_div_v.html'>get_div_v</a>(settings, eigenvector, ef_grid) result(div_v)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_div_v"></span><h3>private function <a href='../proc/get_div_v.html'>get_div_v</a>(settings, grid, eigenvector) result(div_v)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -451,27 +452,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_1"></span><h3>private function <a href='../proc/get_curl_v_1.html'>get_curl_v_1</a>(settings, eigenvector, ef_grid) result(curl_v_1)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_1"></span><h3>private function <a href='../proc/get_curl_v_1.html'>get_curl_v_1</a>(settings, grid, eigenvector) result(curl_v_1)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -484,27 +485,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_2"></span><h3>private function <a href='../proc/get_curl_v_2.html'>get_curl_v_2</a>(settings, eigenvector, ef_grid) result(curl_v_2)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_2"></span><h3>private function <a href='../proc/get_curl_v_2.html'>get_curl_v_2</a>(settings, grid, eigenvector) result(curl_v_2)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -517,27 +518,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_3"></span><h3>private function <a href='../proc/get_curl_v_3.html'>get_curl_v_3</a>(settings, eigenvector, ef_grid) result(curl_v_3)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_3"></span><h3>private function <a href='../proc/get_curl_v_3.html'>get_curl_v_3</a>(settings, grid, eigenvector) result(curl_v_3)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -550,27 +551,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b1"></span><h3>private function <a href='../proc/get_b1.html'>get_B1</a>(settings, eigenvector, ef_grid) result(B1)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b1"></span><h3>private function <a href='../proc/get_b1.html'>get_B1</a>(settings, grid, eigenvector) result(B1)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -583,27 +584,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b2"></span><h3>private function <a href='../proc/get_b2.html'>get_B2</a>(settings, eigenvector, ef_grid) result(B2)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b2"></span><h3>private function <a href='../proc/get_b2.html'>get_B2</a>(settings, grid, eigenvector) result(B2)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -616,27 +617,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b3"></span><h3>private function <a href='../proc/get_b3.html'>get_B3</a>(settings, eigenvector, ef_grid) result(B3)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b3"></span><h3>private function <a href='../proc/get_b3.html'>get_B3</a>(settings, grid, eigenvector) result(B3)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -649,27 +650,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_div_b"></span><h3>private function <a href='../proc/get_div_b.html'>get_div_B</a>(settings, eigenvector, ef_grid) result(div_B)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_div_b"></span><h3>private function <a href='../proc/get_div_b.html'>get_div_B</a>(settings, grid, eigenvector) result(div_B)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -682,27 +683,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_1"></span><h3>private function <a href='../proc/get_curl_b_1.html'>get_curl_B_1</a>(settings, eigenvector, ef_grid) result(curl_B_1)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_1"></span><h3>private function <a href='../proc/get_curl_b_1.html'>get_curl_B_1</a>(settings, grid, eigenvector) result(curl_B_1)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -715,27 +716,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_2"></span><h3>private function <a href='../proc/get_curl_b_2.html'>get_curl_B_2</a>(settings, eigenvector, ef_grid) result(curl_B_2)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_2"></span><h3>private function <a href='../proc/get_curl_b_2.html'>get_curl_B_2</a>(settings, grid, eigenvector) result(curl_B_2)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -748,27 +749,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_3"></span><h3>private function <a href='../proc/get_curl_b_3.html'>get_curl_B_3</a>(settings, eigenvector, ef_grid) result(curl_B_3)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_3"></span><h3>private function <a href='../proc/get_curl_b_3.html'>get_curl_B_3</a>(settings, grid, eigenvector) result(curl_B_3)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -781,27 +782,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b_para"></span><h3>private function <a href='../proc/get_b_para.html'>get_B_para</a>(settings, eigenvector, ef_grid) result(B_para)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b_para"></span><h3>private function <a href='../proc/get_b_para.html'>get_B_para</a>(settings, grid, eigenvector) result(B_para)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -814,27 +815,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b_perp"></span><h3>private function <a href='../proc/get_b_perp.html'>get_B_perp</a>(settings, eigenvector, ef_grid) result(B_perp)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_b_perp"></span><h3>private function <a href='../proc/get_b_perp.html'>get_B_perp</a>(settings, grid, eigenvector) result(B_perp)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -847,27 +848,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_para"></span><h3>private function <a href='../proc/get_curl_b_para.html'>get_curl_B_para</a>(settings, eigenvector, ef_grid) result(curl_B_para)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_para"></span><h3>private function <a href='../proc/get_curl_b_para.html'>get_curl_B_para</a>(settings, grid, eigenvector) result(curl_B_para)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -880,27 +881,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_perp"></span><h3>private function <a href='../proc/get_curl_b_perp.html'>get_curl_B_perp</a>(settings, eigenvector, ef_grid) result(curl_B_perp)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_b_perp"></span><h3>private function <a href='../proc/get_curl_b_perp.html'>get_curl_B_perp</a>(settings, grid, eigenvector) result(curl_B_perp)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -913,27 +914,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_v_para"></span><h3>private function <a href='../proc/get_v_para.html'>get_v_para</a>(settings, eigenvector, ef_grid) result(v_para)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_v_para"></span><h3>private function <a href='../proc/get_v_para.html'>get_v_para</a>(settings, grid, eigenvector) result(v_para)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -946,27 +947,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_v_perp"></span><h3>private function <a href='../proc/get_v_perp.html'>get_v_perp</a>(settings, eigenvector, ef_grid) result(v_perp)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_v_perp"></span><h3>private function <a href='../proc/get_v_perp.html'>get_v_perp</a>(settings, grid, eigenvector) result(v_perp)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -979,27 +980,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_para"></span><h3>private function <a href='../proc/get_curl_v_para.html'>get_curl_v_para</a>(settings, eigenvector, ef_grid) result(curl_v_para)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_para"></span><h3>private function <a href='../proc/get_curl_v_para.html'>get_curl_v_para</a>(settings, grid, eigenvector) result(curl_v_para)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1012,27 +1013,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_perp"></span><h3>private function <a href='../proc/get_curl_v_perp.html'>get_curl_v_perp</a>(settings, eigenvector, ef_grid) result(curl_v_perp)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_curl_v_perp"></span><h3>private function <a href='../proc/get_curl_v_perp.html'>get_curl_v_perp</a>(settings, grid, eigenvector) result(curl_v_perp)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1045,27 +1046,27 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eigenvector</strong>(:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_base_eigenfunction"></span><h3>private function <a href='../proc/get_base_eigenfunction.html'>get_base_eigenfunction</a>(name, settings, ef_grid, eigenvector, diff_order) result(base_ef)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_base_eigenfunction"></span><h3>private function <a href='../proc/get_base_eigenfunction.html'>get_base_eigenfunction</a>(name, settings, grid, eigenvector, diff_order) result(base_ef)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1084,10 +1085,10 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>complex(kind=dp),</td>
@@ -1104,13 +1105,13 @@
 </tbody>
 </table>
 
-<h4>Return Value <small>complex(kind=dp)(size(ef_grid))</small></h4>  
+<h4>Return Value <small>complex(kind=dp)(size(grid%ef_grid))</small></h4>  
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-interpolate_array_on_ef_grid"></span><h3>private function <a href='../proc/interpolate_array_on_ef_grid.html'>interpolate_array_on_ef_grid</a>(array, ef_grid) result(array_on_ef_grid)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-interpolate_array_on_ef_grid"></span><h3>private function <a href='../proc/interpolate_array_on_ef_grid.html'>interpolate_array_on_ef_grid</a>(array, grid) result(array_on_ef_grid)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1123,10 +1124,10 @@
   <td><strong>array</strong>(:)</td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -1142,7 +1143,7 @@
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise~3"></span><h3>private subroutine <a href='../proc/initialise~3.html'>initialise</a>(this, name, ef_grid_size, nb_efs)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise~4"></span><h3>private subroutine <a href='../proc/initialise~4.html'>initialise</a>(this, name, ef_grid_size, nb_efs)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1180,7 +1181,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble~2"></span><h3>private subroutine <a href='../proc/assemble~2.html'>assemble</a>(this, settings, background, idxs_to_assemble, right_eigenvectors, ef_grid)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble~2"></span><h3>private subroutine <a href='../proc/assemble~2.html'>assemble</a>(this, settings, grid, background, idxs_to_assemble, right_eigenvectors)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1197,6 +1198,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -1216,12 +1223,6 @@
   <td></td>  <td></td><td>::</td>
   <td><strong>right_eigenvectors</strong>(:,:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
@@ -1230,7 +1231,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-delete~5"></span><h3>private pure subroutine <a href='../proc/delete~5.html'>delete</a>(this)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-delete~6"></span><h3>private pure subroutine <a href='../proc/delete~6.html'>delete</a>(this)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1270,7 +1271,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium_arrays_on_ef_grid"></span><h3>private subroutine <a href='../proc/set_equilibrium_arrays_on_ef_grid.html'>set_equilibrium_arrays_on_ef_grid</a>(background, ef_grid)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_equilibrium_arrays_on_ef_grid"></span><h3>private subroutine <a href='../proc/set_equilibrium_arrays_on_ef_grid.html'>set_equilibrium_arrays_on_ef_grid</a>(background, grid)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1283,10 +1284,10 @@
   <td><strong>background</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 </tbody>
 </table>

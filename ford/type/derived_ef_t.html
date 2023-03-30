@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 1.7% of total for derived types.</p>Including implementation: 87 statements,  3.6% of total for derived types.">10 statements</a>
+    title="<p> 1.7% of total for derived types.</p>Including implementation: 87 statements,  3.4% of total for derived types.">10 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_derived_efs.f08"> Source File</a></li>
   </ul>
@@ -120,9 +120,9 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
   <div id="boundprocs-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-initialise~3">initialise</a>
+      <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-initialise~4">initialise</a>
       <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-assemble~2">assemble</a>
-      <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-delete~5">delete</a>
+      <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-delete~6">delete</a>
       <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-set_function_pointer">set_function_pointer</a>
     </div>
   </div>
@@ -154,9 +154,9 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
   <div id="boundprocs-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-initialise~3">initialise</a>
+      <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-initialise~4">initialise</a>
       <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-assemble~2">assemble</a>
-      <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-delete~5">delete</a>
+      <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-delete~6">delete</a>
       <a class="list-group-item" href="../type/derived_ef_t.html#boundprocedure-set_function_pointer">set_function_pointer</a>
     </div>
   </div>
@@ -197,10 +197,10 @@
     <section>
     <h2>Type-Bound Procedures</h2>
      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-initialise~3"></span><h3>procedure, public :: <strong>initialise</strong>    </h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-initialise~4"></span><h3>procedure, public :: <strong>initialise</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private subroutine <a href='../proc/initialise~3.html'>initialise</a>(this, name, ef_grid_size, nb_efs)</h3>    
+          <h3>private subroutine <a href='../proc/initialise~4.html'>initialise</a>(this, name, ef_grid_size, nb_efs)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -240,7 +240,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-assemble~2"></span><h3>procedure, public :: <strong>assemble</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private subroutine <a href='../proc/assemble~2.html'>assemble</a>(this, settings, background, idxs_to_assemble, right_eigenvectors, ef_grid)</h3>    
+          <h3>private subroutine <a href='../proc/assemble~2.html'>assemble</a>(this, settings, grid, background, idxs_to_assemble, right_eigenvectors)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -255,6 +255,12 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -274,12 +280,6 @@
   <td></td>  <td></td><td>::</td>
   <td><strong>right_eigenvectors</strong>(:,:)</td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
 </tbody>
 </table>
 
@@ -289,10 +289,10 @@
 </div>
 
      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-delete~5"></span><h3>procedure, public :: <strong>delete</strong>    </h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-delete~6"></span><h3>procedure, public :: <strong>delete</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private pure subroutine <a href='../proc/delete~5.html'>delete</a>(this)</h3>    
+          <h3>private pure subroutine <a href='../proc/delete~6.html'>delete</a>(this)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>

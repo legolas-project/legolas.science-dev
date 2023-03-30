@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>get_ef_eps &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>set_base_grid &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>get_ef_eps
-      <small>Function</small>
+    <h1>set_base_grid
+      <small>Subroutine</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">12 statements</a>
+    title=" 0.1% of total for procedures.">13 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_ef_assembly.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_grid.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_ef_assembly.f08.html'>mod_ef_assembly.f08</a></li>
-     <li><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></li>
-     <li class="active">get_ef_eps</li>
+     <li><a href='../sourcefile/mod_grid.f08.html'>mod_grid.f08</a></li>
+     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
+     <li class="active">set_base_grid</li>
   </ol>
 </div>
 </div>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public pure function get_ef_eps(settings, ef_grid) result(ef_eps)</h2>
+    <h2>private pure subroutine set_base_grid(this)</h2>
     
 
 
@@ -122,22 +122,14 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~128"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" id="variable-this~5"></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ef_grid~28"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-ef_eps"></span>real(kind=dp)(size(ef_grid))</small></h3>
-    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

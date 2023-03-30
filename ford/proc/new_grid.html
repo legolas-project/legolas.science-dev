@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>set_grid_gauss &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>new_grid &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>set_grid_gauss
-      <small>Subroutine</small>
+    <h1>new_grid
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">16 statements</a>
+    title=" 0.1% of total for procedures.">7 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_grid.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/mod_grid.f08.html'>mod_grid.f08</a></li>
      <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-     <li class="active">set_grid_gauss</li>
+     <li class="active">new_grid</li>
   </ol>
 </div>
 </div>
@@ -113,38 +113,25 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine set_grid_gauss(gridpts)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
+    <h2>public function new_grid(settings) result(grid)</h2>
+    
 
-
-    <p>Sets up grid_gauss, that is, the grid evaluated in the four
-Gaussian points. This is done by evaluating the weights
-at the four Gaussian nodes.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-gridpts~2"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>gridpts</strong></td><td></td>
+  <td><span class="anchor" id="variable-settings~35"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in),</td>
+  <td></td>  <td>target</td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
+   <h3>Return Value <small><span class="anchor" id="variable-grid~34"></span>type(<a href='../type/grid_t.html'>grid_t</a>)</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

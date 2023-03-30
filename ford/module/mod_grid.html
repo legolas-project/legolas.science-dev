@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.0% of total for modules and submodules.">106 statements</a>
+    title=" 1.3% of total for modules and submodules.">139 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_grid.f08"> Source File</a></li>
   </ul>
@@ -106,13 +106,21 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_grid.html#variable-grid~3">grid</a>
-      <a class="list-group-item" href="../module/mod_grid.html#variable-grid_gauss">grid_gauss</a>
-      <a class="list-group-item" href="../module/mod_grid.html#variable-eps_grid">eps_grid</a>
-      <a class="list-group-item" href="../module/mod_grid.html#variable-d_eps_grid_dr">d_eps_grid_dr</a>
+      <a class="list-group-item" href="../module/mod_grid.html#type-grid_t">grid_t</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_grid.html#proc-new_grid">new_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-get_eps">get_eps</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-get_deps">get_deps</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-is_valid_custom_base_grid">is_valid_custom_base_grid</a>
     </div>
   </div>
 </div>
@@ -120,10 +128,12 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_grid.html#proc-initialise_grid">initialise_grid</a>
-      <a class="list-group-item" href="../module/mod_grid.html#proc-set_grid_gauss">set_grid_gauss</a>
-      <a class="list-group-item" href="../module/mod_grid.html#proc-set_scale_factor">set_scale_factor</a>
-      <a class="list-group-item" href="../module/mod_grid.html#proc-grid_clean">grid_clean</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-initialise">initialise</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_custom_grid">set_custom_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_base_grid">set_base_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_gaussian_grid">set_gaussian_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_ef_grid">set_ef_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-delete~2">delete</a>
     </div>
   </div>
 </div>
@@ -135,12 +145,13 @@
     <div class="col-md-9" id='text'>
     <p>Module containing all grid-related things.
 Contains subroutines to create the base grid, Gaussian grid and
-scale factors. Also handles mesh accumulation.
+scale factors.
 An integral of <script type="math/tex">f(x)</script> in <script type="math/tex">[a, b]</script> can be approximated with
-<script type="math/tex; mode=display"> f(x) \approx 0.5(b-a)\sum_{i=1}^n\bigl[w_i f\bigl(0.5(b-a)x_i + 0.5(a+b)\bigr)\bigr] </script>
+<script type="math/tex; mode=display">
+f(x) \approx 0.5(b-a)\sum_{i=1}^n\bigl[w_i f\bigl(0.5(b-a)x_i + 0.5(a+b)\bigr)\bigr] !! </script>
 where <script type="math/tex">w_i</script> and <script type="math/tex">x_i</script> are the weights and nodes of the Gaussian quadrature.
 The Gaussian grid is hence set up in every interval <script type="math/tex">[a, b]</script> across the
-four nodes <script type="math/tex">j</script> as
+nodes <script type="math/tex">j</script> as
 <script type="math/tex; mode=display"> x_i(j) = 0.5 * dx * w_i(j) + 0.5(a + b) </script>
 </p>
 <br>        <div class="panel panel-default">
@@ -150,9 +161,9 @@ four nodes <script type="math/tex">j</script> as
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
   </ul>
       </li>
       </ul>
@@ -165,13 +176,21 @@ four nodes <script type="math/tex">j</script> as
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_grid.html#variable-grid~3">grid</a>
-      <a class="list-group-item" href="../module/mod_grid.html#variable-grid_gauss">grid_gauss</a>
-      <a class="list-group-item" href="../module/mod_grid.html#variable-eps_grid">eps_grid</a>
-      <a class="list-group-item" href="../module/mod_grid.html#variable-d_eps_grid_dr">d_eps_grid_dr</a>
+      <a class="list-group-item" href="../module/mod_grid.html#type-grid_t">grid_t</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_grid.html#proc-new_grid">new_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-get_eps">get_eps</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-get_deps">get_deps</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-is_valid_custom_base_grid">is_valid_custom_base_grid</a>
     </div>
   </div>
 </div>
@@ -179,10 +198,12 @@ four nodes <script type="math/tex">j</script> as
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_grid.html#proc-initialise_grid">initialise_grid</a>
-      <a class="list-group-item" href="../module/mod_grid.html#proc-set_grid_gauss">set_grid_gauss</a>
-      <a class="list-group-item" href="../module/mod_grid.html#proc-set_scale_factor">set_scale_factor</a>
-      <a class="list-group-item" href="../module/mod_grid.html#proc-grid_clean">grid_clean</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-initialise">initialise</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_custom_grid">set_custom_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_base_grid">set_base_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_gaussian_grid">set_gaussian_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_ef_grid">set_ef_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-delete~2">delete</a>
     </div>
   </div>
 </div>
@@ -191,54 +212,156 @@ four nodes <script type="math/tex">j</script> as
     <br class="visible-xs visible-sm hidden-md">
 
 
+    
+    
+
+    
     <section>
-    <h2>Variables</h2>
+     <h2>Derived Types</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-grid_t"></span><h3>type, public :: <a href='../type/grid_t.html'>grid_t</a>  </h3></div>
+  <div class="panel-body">
+     <h4>Components</h4>
     <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-grid~3"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-base_grid"></span>real(kind=dp),</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>grid</strong>(:)</td><td></td><td></td><td><p>array containing the base grid</p></td>
+  <td><strong>base_grid</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-grid_gauss"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-gaussian_grid"></span>real(kind=dp),</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>grid_gauss</strong>(:)</td><td></td><td></td><td><p>array containing the Gaussian grid</p></td>
+  <td><strong>gaussian_grid</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-eps_grid"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-ef_grid"></span>real(kind=dp),</td>
 <td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>eps_grid</strong>(:)</td><td></td><td></td><td><p>array containing the scale factor epsilon</p></td>
+  <td><strong>ef_grid</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-d_eps_grid_dr"></span>real(kind=dp),</td>
-<td>public,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>d_eps_grid_dr</strong>(:)</td><td></td><td></td><td><p>array containing the derivative of the scale factor epsilon</p></td>
+  <td><span class="anchor" id="variable-settings"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>private,</td>  <td>pointer</td><td>::</td>
+  <td><strong>settings</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-is_initialised"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>is_initialised</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-uses_custom_base_grid"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>uses_custom_base_grid</strong></td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
 
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+       <tr><td>procedure, private :: <strong><a href='../type/grid_t.html#boundprocedure-set_base_grid'>set_base_grid</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, private :: <strong><a href='../type/grid_t.html#boundprocedure-set_gaussian_grid'>set_gaussian_grid</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, private :: <strong><a href='../type/grid_t.html#boundprocedure-set_ef_grid'>set_ef_grid</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/grid_t.html#boundprocedure-initialise'>initialise</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/grid_t.html#boundprocedure-set_custom_grid'>set_custom_grid</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/grid_t.html#boundprocedure-get_eps'>get_eps</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/grid_t.html#boundprocedure-get_deps'>get_deps</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/grid_t.html#boundprocedure-delete'>delete</a></strong>  </td>
+       <td></td></tr>
+       </tbody>
+       </table>
+  </div>
+</div>
+
     </section>
-    <br>
+  <br>
     
-    
-
-    
-    
-
+ 
     <section>
-    <h2>Subroutines</h2>
+    <h2>Functions</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_grid"></span><h3>public subroutine <a href='../proc/initialise_grid.html'>initialise_grid</a>(settings, custom_grid)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-new_grid"></span><h3>public function <a href='../proc/new_grid.html'>new_grid</a>(settings) result(grid)</h3></div>
   <div class="panel-body">
-       
-<p>General grid initialisations.
-Initialises both the regular grid and the Gaussian grid.
-Does calls to the mesh accumulation routines if needed,
-and sets the scale factor and its derivative.
-</p><a href="../proc/initialise_grid.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in),</td>
+  <td></td>  <td>target</td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>type(<a href='../type/grid_t.html'>grid_t</a>)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_eps"></span><h3>private impure elemental function <a href='../proc/get_eps.html'>get_eps</a>(this, x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_deps"></span><h3>private impure elemental function <a href='../proc/get_deps.html'>get_deps</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-is_valid_custom_base_grid"></span><h3>private function <a href='../proc/is_valid_custom_base_grid.html'>is_valid_custom_base_grid</a>(settings, custom_grid)</h3></div>
+  <div class="panel-body">
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -250,33 +373,35 @@ and sets the scale factor and its derivative.
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>custom_grid</strong>(:)</td><td><p>custom grid to use instead of the default one, optional</p></td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>custom_grid</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>
 
+<h4>Return Value <small>logical</small></h4>  
 
   </div>
   </div>
 
+    </section>
+    <br>
+
+    <section>
+    <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_grid_gauss"></span><h3>public subroutine <a href='../proc/set_grid_gauss.html'>set_grid_gauss</a>(gridpts)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-initialise"></span><h3>private subroutine <a href='../proc/initialise.html'>initialise</a>(this)</h3></div>
   <div class="panel-body">
-       
-<p>Sets up grid_gauss, that is, the grid evaluated in the four
-Gaussian points. This is done by evaluating the weights
-at the four Gaussian nodes.</p>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>gridpts</strong></td><td></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -286,23 +411,23 @@ at the four Gaussian nodes.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_scale_factor"></span><h3>private subroutine <a href='../proc/set_scale_factor.html'>set_scale_factor</a>(geometry)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_custom_grid"></span><h3>private subroutine <a href='../proc/set_custom_grid.html'>set_custom_grid</a>(this, custom)</h3></div>
   <div class="panel-body">
-       
-<p>The scale factor to switch between Cartesian and cylindrical geometries
-is set here, along with its derivative. For cylindrical the scale factor
-is simply equal to the Gaussian grid, and its derivative is unity.
-For Cartesian the scale factor is unity and its derivative is zero.
-</p><a href="../proc/set_scale_factor.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>geometry</strong></td><td></td>
+  <td><strong>custom</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>
@@ -312,12 +437,81 @@ For Cartesian the scale factor is unity and its derivative is zero.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-grid_clean"></span><h3>public subroutine <a href='../proc/grid_clean.html'>grid_clean</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_base_grid"></span><h3>private pure subroutine <a href='../proc/set_base_grid.html'>set_base_grid</a>(this)</h3></div>
   <div class="panel-body">
-       
-<p>Cleanup routine, deallocates the arrays at module scope.</p>
-    
-<h4>Arguments</h4>      <em>None</em>
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_gaussian_grid"></span><h3>private pure subroutine <a href='../proc/set_gaussian_grid.html'>set_gaussian_grid</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_ef_grid"></span><h3>private pure subroutine <a href='../proc/set_ef_grid.html'>set_ef_grid</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-delete~2"></span><h3>private pure subroutine <a href='../proc/delete~2.html'>delete</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>

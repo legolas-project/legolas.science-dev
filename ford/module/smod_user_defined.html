@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for modules and submodules.">42 statements</a>
+    title=" 0.5% of total for modules and submodules.">49 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_user_defined.f08"> Source File</a></li>
   </ul>
@@ -116,6 +116,7 @@
       <a class="list-group-item" href="../module/smod_user_defined.html#proc-ddv02~2">ddv02</a>
       <a class="list-group-item" href="../module/smod_user_defined.html#proc-t0~13">T0</a>
       <a class="list-group-item" href="../module/smod_user_defined.html#proc-b03~12">B03</a>
+      <a class="list-group-item" href="../module/smod_user_defined.html#proc-g0~5">g0</a>
     </div>
   </div>
 </div>
@@ -167,6 +168,7 @@ more information.</p>
       <a class="list-group-item" href="../module/smod_user_defined.html#proc-ddv02~2">ddv02</a>
       <a class="list-group-item" href="../module/smod_user_defined.html#proc-t0~13">T0</a>
       <a class="list-group-item" href="../module/smod_user_defined.html#proc-b03~12">B03</a>
+      <a class="list-group-item" href="../module/smod_user_defined.html#proc-g0~5">g0</a>
     </div>
   </div>
 </div>
@@ -316,6 +318,39 @@ more information.</p>
   </div>
   </div>
 
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-g0~5"></span><h3>function <a href='../proc/g0~5.html'>g0</a>(x, settings, background)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
     </section>
     <br>
 
@@ -326,7 +361,7 @@ more information.</p>
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-user_defined_eq"></span><h3>module procedure <a href='../proc/user_defined_eq.html'>user_defined_eq</a> <small>module module subroutine user_defined_eq(settings, background, physics)</small>   <a href='../interface/user_defined_eq.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-user_defined_eq"></span><h3>module procedure <a href='../proc/user_defined_eq.html'>user_defined_eq</a> <small>module module subroutine user_defined_eq(settings, grid, background, physics)</small>   <a href='../interface/user_defined_eq.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
@@ -338,6 +373,12 @@ more information.</p>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>

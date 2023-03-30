@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.1% of total for modules and submodules.">123 statements</a>
+    title=" 0.9% of total for modules and submodules.">98 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_ef_assembly.f08"> Source File</a></li>
   </ul>
@@ -109,8 +109,6 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
   <div id="funcs-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_ef_eps">get_ef_eps</a>
-      <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_ef_deps">get_ef_deps</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-retransform_eigenfunction">retransform_eigenfunction</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-assemble_eigenfunction">assemble_eigenfunction</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_combined_value_from_eigenvector">get_combined_value_from_eigenvector</a>
@@ -132,10 +130,10 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
     <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
   </ul>
       </li>
@@ -152,8 +150,6 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
   <div id="funcs-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_ef_eps">get_ef_eps</a>
-      <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_ef_deps">get_ef_deps</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-retransform_eigenfunction">retransform_eigenfunction</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-assemble_eigenfunction">assemble_eigenfunction</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_combined_value_from_eigenvector">get_combined_value_from_eigenvector</a>
@@ -174,54 +170,6 @@
  
     <section>
     <h2>Functions</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_ef_eps"></span><h3>public pure function <a href='../proc/get_ef_eps.html'>get_ef_eps</a>(settings, ef_grid) result(ef_eps)</h3></div>
-  <div class="panel-body">
-           
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)(size(ef_grid))</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_ef_deps"></span><h3>public pure function <a href='../proc/get_ef_deps.html'>get_ef_deps</a>(settings) result(ef_deps)</h3></div>
-  <div class="panel-body">
-           
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)</small></h4>  
-
-  </div>
-  </div>
-
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-retransform_eigenfunction"></span><h3>public function <a href='../proc/retransform_eigenfunction.html'>retransform_eigenfunction</a>(ef_name, ef_eps, eigenfunction) result(ef_transformed)</h3></div>
   <div class="panel-body">
@@ -256,7 +204,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble_eigenfunction"></span><h3>public function <a href='../proc/assemble_eigenfunction.html'>assemble_eigenfunction</a>(settings, ef_name, ef_grid, state_vector_index, eigenvector, derivative_order) result(assembled_ef)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble_eigenfunction"></span><h3>public function <a href='../proc/assemble_eigenfunction.html'>assemble_eigenfunction</a>(settings, ef_name, grid, state_vector_index, eigenvector, derivative_order) result(assembled_ef)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -275,10 +223,10 @@
   <td><strong>ef_name</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -346,7 +294,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_basis_function"></span><h3>private function <a href='../proc/get_basis_function.html'>get_basis_function</a>(ef_name, ef_grid, grid_idx, ef_grid_idx, diff_order) result(spline)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_basis_function"></span><h3>private function <a href='../proc/get_basis_function.html'>get_basis_function</a>(ef_name, grid, grid_idx, ef_grid_idx, diff_order) result(spline)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -359,10 +307,10 @@
   <td><strong>ef_name</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid</strong>(:)</td><td></td>
+  <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>

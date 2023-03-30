@@ -271,12 +271,13 @@ or in an equilibrium submodule.</p></td></tr>
 <!---->			   <tr class="active"><td><a href='../module/mod_gravity_settings.html'>mod_gravity_settings</a></td><td><a href='../sourcefile/mod_gravity_settings.f08.html'>mod_gravity_settings.f08</a></td><td></td></tr>
 <!--active-->			   <tr class=""><td><a href='../module/mod_grid.html'>mod_grid</a></td><td><a href='../sourcefile/mod_grid.f08.html'>mod_grid.f08</a></td><td><p>Module containing all grid-related things.
 Contains subroutines to create the base grid, Gaussian grid and
-scale factors. Also handles mesh accumulation.
+scale factors.
 An integral of <script type="math/tex">f(x)</script> in <script type="math/tex">[a, b]</script> can be approximated with
-<script type="math/tex; mode=display"> f(x) \approx 0.5(b-a)\sum_{i=1}^n\bigl[w_i f\bigl(0.5(b-a)x_i + 0.5(a+b)\bigr)\bigr] </script>
+<script type="math/tex; mode=display">
+f(x) \approx 0.5(b-a)\sum_{i=1}^n\bigl[w_i f\bigl(0.5(b-a)x_i + 0.5(a+b)\bigr)\bigr] !! </script>
 where <script type="math/tex">w_i</script> and <script type="math/tex">x_i</script> are the weights and nodes of the Gaussian quadrature.
 The Gaussian grid is hence set up in every interval <script type="math/tex">[a, b]</script> across the
-four nodes <script type="math/tex">j</script> as
+nodes <script type="math/tex">j</script> as
 <script type="math/tex; mode=display"> x_i(j) = 0.5 * dx * w_i(j) + 0.5(a + b) </script>
 </p></td></tr>
 <!---->			   <tr class="active"><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td><a href='../sourcefile/mod_grid_settings.f08.html'>mod_grid_settings.f08</a></td><td></td></tr>
