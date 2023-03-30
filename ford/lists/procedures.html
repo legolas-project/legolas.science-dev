@@ -239,10 +239,6 @@ matrix1 = matrix2 may result in pointer target losses (and wrong results).
 			   <tr><td><a href='../proc/create_and_set_derived_state_vector.html'>create_and_set_derived_state_vector</a></td><td><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/create_atmosphere_curves.html'>create_atmosphere_curves</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Subroutine</td><td><p>Interpolates the atmospheric tables to the desired resolution. The temperature
 derivative is obtained numerically.</p></td></tr>
-			   <tr><td><a href='../proc/create_cooling_curve.html'>create_cooling_curve</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Subroutine</td><td><p>Creates an interpolated cooling curve based on the chosen table.
-Calls a second-order polynomial interpolation routine and takes
-care of normalisations.
-</p><a href="../proc/create_cooling_curve.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/create_datfile.html'>create_datfile</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/create_first_node.html'>create_first_node</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Subroutine</td><td><p>Subroutine to add the first node to the linked list. Allocates a new node and
 sets both the head and tail to this node.</p></td></tr>
@@ -287,13 +283,8 @@ sets both the head and tail to this node.</p></td></tr>
 			   <tr><td><a href='../proc/ddv02.html'>ddv02</a></td><td><a href='../module/smod_equil_taylor_couette.html'>smod_equil_taylor_couette</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/ddv02~2.html'>ddv02</a></td><td><a href='../module/smod_user_defined.html'>smod_user_defined</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/ddv02~3.html'>ddv02</a></td><td><a href='../module/smod_equil_tc_pinch.html'>smod_equil_tc_pinch</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/deallocate_conduction_type.html'>deallocate_conduction_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Deallocates all attributes contained in the thermal conduction type.</p></td></tr>
-			   <tr><td><a href='../proc/deallocate_cooling_type.html'>deallocate_cooling_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Deallocates all attributes contained in the radiative cooling type.</p></td></tr>
+			   <tr><td><a href='../proc/deallocate_cooling_curves.html'>deallocate_cooling_curves</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/deallocate_derived_ef_module_variables.html'>deallocate_derived_ef_module_variables</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/deallocate_gravity_type.html'>deallocate_gravity_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Deallocates all attributes contained in the gravity type.</p></td></tr>
-			   <tr><td><a href='../proc/deallocate_hall_type.html'>deallocate_hall_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Deallocates all attributes contained in the Hall type.</p></td></tr>
-			   <tr><td><a href='../proc/deallocate_resistivity_type.html'>deallocate_resistivity_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Deallocates all attributes contained in the resistivity type.</p></td></tr>
-			   <tr><td><a href='../interface/deallocate_type.html'>deallocate_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Interface</td><td><p>interface to deallocate all the different types</p></td></tr>
 			   <tr><td><a href='../proc/debug.html'>debug</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/delete~2.html'>delete</a></td><td><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/delete~3.html'>delete</a></td><td><a href='../module/mod_matrix_element_node.html'>mod_matrix_element_node</a></td><td>Subroutine</td><td></td></tr>
@@ -311,6 +302,12 @@ sets both the head and tail to this node.</p></td></tr>
 			   <tr><td><a href='../proc/delete~14.html'>delete</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/delete~15.html'>delete</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/delete~16.html'>delete</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~17.html'>delete</a></td><td><a href='../module/mod_physics.html'>mod_physics</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~18.html'>delete</a></td><td><a href='../module/mod_gravity.html'>mod_gravity</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~19.html'>delete</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~20.html'>delete</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~21.html'>delete</a></td><td><a href='../module/mod_hall.html'>mod_hall</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/delete~22.html'>delete</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/delete_matrix.html'>delete_matrix</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Subroutine</td><td><p>Deallocates the matrix datastructure, nullifies all corresponding pointers and
 deallocates the various nodes in the rows.</p></td></tr>
 			   <tr><td><a href='../proc/delete_node_from_row.html'>delete_node_from_row</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Subroutine</td><td><p>Deletes a given node from the current row.</p></td></tr>
@@ -367,6 +364,7 @@ instead of relying on numerical differentiation.</p></td></tr>
 			   <tr><td><a href='../proc/dt0~10.html'>dT0</a></td><td><a href='../module/smod_equil_internal_kink_instability.html'>smod_equil_internal_kink_instability</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dt0~11.html'>dT0</a></td><td><a href='../module/smod_equil_constant_current.html'>smod_equil_constant_current</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dt0~12.html'>dT0</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/dtcprefactordr.html'>dtcprefactordr</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dv02.html'>dv02</a></td><td><a href='../module/smod_equil_mri.html'>smod_equil_MRI</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dv02~2.html'>dv02</a></td><td><a href='../module/smod_equil_rotating_plasma_cylinder.html'>smod_equil_rotating_plasma_cylinder</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dv02~3.html'>dv02</a></td><td><a href='../module/smod_equil_taylor_couette.html'>smod_equil_taylor_couette</a></td><td>Function</td><td></td></tr>
@@ -403,7 +401,6 @@ instead of relying on numerical differentiation.</p></td></tr>
 			   <tr><td><a href='../proc/enable_viscosity.html'>enable_viscosity</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/enable_viscous_heating.html'>enable_viscous_heating</a></td><td><a href='../module/mod_viscosity_settings.html'>mod_viscosity_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/end_timer.html'>end_timer</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/equilibrium_clean.html'>equilibrium_clean</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Subroutine</td><td><p>Cleaning routine, deallocates the equilibrium types.</p></td></tr>
 			   <tr><td><a href='../proc/error.html'>error</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/find_index_in_character_array.html'>find_index_in_character_array</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Function</td><td><p>Function to locate the index of a given character in a character array.
 Iterates over the elements and returns on the first hit, if no match
@@ -414,6 +411,12 @@ found zero is returned.</p></td></tr>
 			   <tr><td><a href='../interface/flow_driven_instabilities_eq.html'>flow_driven_instabilities_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../proc/from_function.html'>from_function</a></td><td><a href='../module/mod_function_utils.html'>mod_function_utils</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/fx.html'>fx</a></td><td><a href='../module/smod_equil_rti_theta_pinch.html'>smod_equil_RTI_theta_pinch</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/g0~2.html'>g0</a></td><td><a href='../module/smod_equil_mri.html'>smod_equil_MRI</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/g0~3.html'>g0</a></td><td><a href='../module/smod_equil_isothermal_atmosphere.html'>smod_equil_isothermal_atmosphere</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/g0~4.html'>g0</a></td><td><a href='../module/smod_equil_gravito_mhd.html'>smod_equil_gravito_mhd</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/g0~5.html'>g0</a></td><td><a href='../module/smod_equil_flow_driven_instabilities.html'>smod_equil_flow_driven_instabilities</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/g0~6.html'>g0</a></td><td><a href='../module/smod_equil_interchange_modes.html'>smod_equil_interchange_modes</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/g0~7.html'>g0</a></td><td><a href='../module/smod_equil_gravito_acoustic.html'>smod_equil_gravito_acoustic</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/g0.html'>g0</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Function</td><td><p>Default profile for the solar gravitational field
 <script type="math/tex; mode=display"> g(x) = g_\odot \left(\frac{R_\odot}{(R_\odot + x)}\right)^2 </script>
 </p></td></tr>
@@ -437,9 +440,8 @@ Returns the element as a (casted) complex type.</p></td></tr>
 (row, column) in the matrix datastructure. Non-existing nodes correspond to zero
 values, so when a node at (row, column) is not foudn this function returns
 (complex) zero.</p></td></tr>
-			   <tr><td><a href='../proc/get_constants.html'>get_constants</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Retrieves resistivity constants.
-Returns all physical constants used to calculate the Spitzer resistivity.</p></td></tr>
 			   <tr><td><a href='../proc/get_cooling_curve.html'>get_cooling_curve</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_cooling_table.html'>get_cooling_table</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/get_curl_b_1.html'>get_curl_B_1</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_curl_b_2.html'>get_curl_B_2</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_curl_b_3.html'>get_curl_B_3</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Function</td><td></td></tr>
@@ -453,11 +455,6 @@ Returns all physical constants used to calculate the Spitzer resistivity.</p></t
 			   <tr><td><a href='../proc/get_datfile_path.html'>get_datfile_path</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_db0.html'>get_dB0</a></td><td><a href='../module/mod_bg_magnetic.html'>mod_bg_magnetic</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_derived_state_vector.html'>get_derived_state_vector</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/get_deta_dt.html'>get_deta_dT</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Calculates the derivative of the resistivity.
-Returns the derivative of the full Spitzer resistivity with respect
-to the equilibrium temperature, if a fixed resistivity was set instead
-this routine returns zero.
-</p><a href="../proc/get_deta_dt.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/get_diagonal_factor.html'>get_diagonal_factor</a></td><td><a href='../module/smod_essential_boundaries.html'>smod_essential_boundaries</a></td><td>Function</td><td><p>Returns the value that is introduced on the main block diagonal after
 zeroing out the corresponding row and column.
 Depends on the matrix that is used.</p></td></tr>
@@ -467,6 +464,17 @@ Depends on the matrix that is used.</p></td></tr>
 			   <tr><td><a href='../proc/get_dim_subblock.html'>get_dim_subblock</a></td><td><a href='../module/mod_dims.html'>mod_dims</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_div_b.html'>get_div_B</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_div_v.html'>get_div_v</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dlambdadt.html'>get_dlambdadT</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dldrho.html'>get_dLdrho</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dldt.html'>get_dLdT</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dropoff.html'>get_dropoff</a></td><td><a href='../module/mod_physics_utils.html'>mod_physics_utils</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dropoff_dr.html'>get_dropoff_dr</a></td><td><a href='../module/mod_physics_utils.html'>mod_physics_utils</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dtcparadr.html'>get_dtcparadr</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dtcparadt.html'>get_dtcparadT</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dtcperpdb2.html'>get_dtcperpdB2</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dtcperpdr.html'>get_dtcperpdr</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dtcperpdrho.html'>get_dtcperpdrho</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dtcperpdt.html'>get_dtcperpdT</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_ef_deps.html'>get_ef_deps</a></td><td><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_ef_eps.html'>get_ef_eps</a></td><td><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_ef_grid.html'>get_ef_grid</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Function</td><td></td></tr>
@@ -484,12 +492,6 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p><
 			   <tr><td><a href='../proc/get_elements.html'>get_elements</a></td><td><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_entropy.html'>get_entropy</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_equilibrium_type.html'>get_equilibrium_type</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/get_eta.html'>get_eta</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Calculates the resistivity. Returns either the full Spitzer resistivity
-based on the equilibrium parameters, or a fixed resistivity value if
-specified in the global variables module. The unit resistivity is also set in this routine.
-If a fixed resistivity is used, eta is assumed to be normalised and
-the unit resistivity remains unity.
-</p><a href="../proc/get_eta.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/get_evpdim.html'>get_evpdim</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for dimension of eigenvalue problem.</p></td></tr>
 			   <tr><td><a href='../proc/get_fixed_resistivity.html'>get_fixed_resistivity</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_fixed_tc_para.html'>get_fixed_tc_para</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
@@ -501,10 +503,16 @@ the unit resistivity remains unity.
 			   <tr><td><a href='../proc/get_grid_end.html'>get_grid_end</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_grid_start.html'>get_grid_start</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_gridpts.html'>get_gridpts</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_hallfactor.html'>get_hallfactor</a></td><td><a href='../module/mod_hall.html'>mod_hall</a></td><td>Function</td><td><p>Retrieves the normalised Hall factor as described by Porth et al. (2014).</p></td></tr>
 			   <tr><td><a href='../interface/get_index.html'>get_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Interface</td><td><p>interface to retrieve the index of an element in an array.
 </p><a href="../interface/get_index.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/get_inertiafactor.html'>get_inertiafactor</a></td><td><a href='../module/mod_hall.html'>mod_hall</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_interpolated_dlambdadt.html'>get_interpolated_dlambdadT</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_interpolated_lambdat.html'>get_interpolated_lambdaT</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_interpolation_points.html'>get_interpolation_points</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_l0.html'>get_L0</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_label.html'>get_label</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the current label.</p></td></tr>
+			   <tr><td><a href='../proc/get_lambdat.html'>get_lambdaT</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_logging_level.html'>get_logging_level</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_lu_factorisation_banded.html'>get_LU_factorisation_banded</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Subroutine</td><td><p>Calculates the LU factorisation of a complex banded matrix <script type="math/tex">A</script>.
 Uses the LAPACK routine zgbtrf.</p></td></tr>
@@ -535,14 +543,16 @@ differentiated instead. The stencils are as follows:</p><a href="../proc/get_num
 			   <tr><td><a href='../proc/get_position.html'>get_position</a></td><td><a href='../module/mod_matrix_element_node.html'>mod_matrix_element_node</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_positions.html'>get_positions</a></td><td><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_residual.html'>get_residual</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/get_rosner_cooling.html'>get_rosner_cooling</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Subroutine</td><td><p>Uses the piecewise rosner cooling curve to calculate the radiative cooling values
-based on the equilibrium temperature.
-</p><a href="../proc/get_rosner_cooling.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/get_rosner_dlambdadt.html'>get_rosner_dlambdadT</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_rosner_index.html'>get_rosner_index</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_rosner_lambdat.html'>get_rosner_lambdaT</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_solver.html'>get_solver</a></td><td><a href='../module/mod_solver_settings.html'>mod_solver_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_spline1.html'>get_spline1</a></td><td><a href='../module/mod_matrix_element_node.html'>mod_matrix_element_node</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_spline2.html'>get_spline2</a></td><td><a href='../module/mod_matrix_element_node.html'>mod_matrix_element_node</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_state_vector.html'>get_state_vector</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/get_subblock_index.html'>get_subblock_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Interface</td><td></td></tr>
+			   <tr><td><a href='../proc/get_tcpara.html'>get_tcpara</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_tcperp.html'>get_tcperp</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_tolerance.html'>get_tolerance</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for tolerance (relative accuracy) to indicate eigenvalue convergence.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix.</p></td></tr>
@@ -603,10 +613,7 @@ and eigenfunctions are initialised and the equilibrium is set.</p></td></tr>
 			   <tr><td><a href='../proc/initialise~2.html'>initialise</a></td><td><a href='../module/mod_base_efs.html'>mod_base_efs</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/initialise~3.html'>initialise</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/initialise~4.html'>initialise</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/initialise_conduction_type.html'>initialise_conduction_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Allocates the thermal conduction type and initialises all values to zero.</p></td></tr>
-			   <tr><td><a href='../proc/initialise_cooling_type.html'>initialise_cooling_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Allocates the radiative cooling type and initialises all values to zero.</p></td></tr>
-			   <tr><td><a href='../proc/initialise_equilibrium.html'>initialise_equilibrium</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Subroutine</td><td><p>Initialises the equilibrium types by calling the corresponding
-subroutine, which allocates all necessary attributes.</p></td></tr>
+			   <tr><td><a href='../proc/initialise~5.html'>initialise</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/initialise_exceptions.html'>initialise_exceptions</a></td><td><a href='../module/mod_exceptions.html'>mod_exceptions</a></td><td>Subroutine</td><td><p>Private subroutine, sets the pointer to the default
 method to be used when raising exceptions.</p></td></tr>
 			   <tr><td><a href='../proc/initialise_globals.html'>initialise_globals</a></td><td><a href='../module/mod_global_variables.html'>mod_global_variables</a></td><td>Subroutine</td><td><p>Initialises the global variables in this module.
@@ -614,21 +621,11 @@ All variables in this module are first set to their default values.
 These are either regular values or NaN, the latter in case variables
 must be explicitly set in the parfile or equilibrium submodule.
 </p><a href="../proc/initialise_globals.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/initialise_gravity_type.html'>initialise_gravity_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Allocates the gravity type and initialises all values to zero.</p></td></tr>
 			   <tr><td><a href='../proc/initialise_grid.html'>initialise_grid</a></td><td><a href='../module/mod_grid.html'>mod_grid</a></td><td>Subroutine</td><td><p>General grid initialisations.
 Initialises both the regular grid and the Gaussian grid.
 Does calls to the mesh accumulation routines if needed,
 and sets the scale factor and its derivative.
 </p><a href="../proc/initialise_grid.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/initialise_hall_type.html'>initialise_hall_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Allocates the Hall type and initialises all values to zero.</p></td></tr>
-			   <tr><td><a href='../proc/initialise_radiative_cooling.html'>initialise_radiative_cooling</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Subroutine</td><td><p>Initialises the radiative cooling variables.
-This routine first selects and allocates the correct cooling
-tables, depending on the desired curve. These tables are used
-to interpolate the final cooling curve using \p ncool points.
-</p><a href="../proc/initialise_radiative_cooling.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/initialise_resistivity_type.html'>initialise_resistivity_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Subroutine</td><td><p>Allocates the resistivity type and initialises all values to zero.
-</p><a href="../proc/initialise_resistivity_type.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../interface/initialise_type.html'>initialise_type</a></td><td><a href='../module/mod_types.html'>mod_types</a></td><td>Interface</td><td><p>interface to initialise all the different types</p></td></tr>
 			   <tr><td><a href='../proc/integer_tostring.html'>integer_tostring</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/integrate_ode_rk.html'>integrate_ode_rk</a></td><td><a href='../module/mod_integration.html'>mod_integration</a></td><td>Subroutine</td><td><p>Integrates a first order differential equation of the form
 <script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta
@@ -643,6 +640,7 @@ which contains the (numerical) derivative of y.</p></td></tr>
 			   <tr><td><a href='../interface/interchange_modes_eq.html'>interchange_modes_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/internal_kink_eq.html'>internal_kink_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../proc/interpolate_array_on_ef_grid.html'>interpolate_array_on_ef_grid</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/interpolate_cooling_curves.html'>interpolate_cooling_curves</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Subroutine</td><td><p></p><a href="../proc/interpolate_cooling_curves.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/interpolate_table.html'>interpolate_table</a></td><td><a href='../module/mod_interpolation.html'>mod_interpolation</a></td><td>Subroutine</td><td><p>Interpolates a given set of tables (x, y(x)) into a smooth curve.
 Assumes that x_table is an array with a monotone increase in values.
 Interpolation is done using <tt>n_interp</tt> points, in general a second
@@ -676,6 +674,7 @@ Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.
 			   <tr><td><a href='../interface/is_nan.html'>is_NaN</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check for NaN values</p></td></tr>
 			   <tr><td><a href='../interface/is_negative.html'>is_negative</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Interface</td><td><p>interface to check for negative values</p></td></tr>
 			   <tr><td><a href='../proc/is_using_substitution.html'>is_using_substitution</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_valid_cooling_curve.html'>is_valid_cooling_curve</a></td><td><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/is_valid_element.html'>is_valid_element</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Checks if a given element is valid in order to add it to the matrix.
 Returns <code>.true.</code> if the element is of type real or complex, <code>.false.</code> otherwise.</p></td></tr>
 			   <tr><td><a href='../proc/is_valid_index.html'>is_valid_index</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Checks if a given index is valid for the current matrix datastructure.
@@ -732,13 +731,17 @@ subdiagonals and superdiagonals. Allocates and initialises the datatype.</p></td
 			   <tr><td><a href='../proc/new_bg_temperature.html'>new_bg_temperature</a></td><td><a href='../module/mod_bg_temperature.html'>mod_bg_temperature</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_bg_velocity.html'>new_bg_velocity</a></td><td><a href='../module/mod_bg_velocity.html'>mod_bg_velocity</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_block_dims.html'>new_block_dims</a></td><td><a href='../module/mod_dims.html'>mod_dims</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_conduction.html'>new_conduction</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_conduction_settings.html'>new_conduction_settings</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_cooling.html'>new_cooling</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_cooling_settings.html'>new_cooling_settings</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_eigenfunctions.html'>new_eigenfunctions</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_equilibrium_settings.html'>new_equilibrium_settings</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_flow_settings.html'>new_flow_settings</a></td><td><a href='../module/mod_flow_settings.html'>mod_flow_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_gravity.html'>new_gravity</a></td><td><a href='../module/mod_gravity.html'>mod_gravity</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_gravity_settings.html'>new_gravity_settings</a></td><td><a href='../module/mod_gravity_settings.html'>mod_gravity_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_grid_settings.html'>new_grid_settings</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_hall.html'>new_hall</a></td><td><a href='../module/mod_hall.html'>mod_hall</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_hall_settings.html'>new_hall_settings</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_heating_settings.html'>new_heating_settings</a></td><td><a href='../module/mod_heating_settings.html'>mod_heating_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_hermitian_banded_matrix.html'>new_hermitian_banded_matrix</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Constructor for a new Hermitian banded matrix with a given number of rows and
@@ -752,7 +755,9 @@ Allocates and initialises the matrix datatype.</p></td></tr>
 			   <tr><td><a href='../proc/new_node.html'>new_node</a></td><td><a href='../module/mod_matrix_node.html'>mod_matrix_node</a></td><td>Function</td><td><p>Constructor for a new node, sets the column and element attributes.
 The element passed is polymorphic, but will be cast to complex in the node itself.
 No nodes are linked yet; the pointer to the next node is initialised to <code>null()</code>.</p></td></tr>
+			   <tr><td><a href='../proc/new_physics.html'>new_physics</a></td><td><a href='../module/mod_physics.html'>mod_physics</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_physics_settings.html'>new_physics_settings</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/new_resistivity.html'>new_resistivity</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_resistivity_settings.html'>new_resistivity_settings</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_row.html'>new_row</a></td><td><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></td><td>Function</td><td><p>Constructor for a new row, initialises the linked list datastructure
 and sets the current head and tail pointers to <code>null()</code>.</p></td></tr>
@@ -808,7 +813,6 @@ Only if logging level is 'warning' or above.</p></td></tr>
 			   <tr><td><a href='../proc/quadratic_factors.html'>quadratic_factors</a></td><td><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></td><td>Subroutine</td><td><p>Calculates the quadratic basis functions.</p></td></tr>
 			   <tr><td><a href='../proc/quadratic_factors_deriv.html'>quadratic_factors_deriv</a></td><td><a href='../module/mod_spline_functions.html'>mod_spline_functions</a></td><td>Subroutine</td><td><p>Calculates the derivatives of the quadratic basis functions.</p></td></tr>
 			   <tr><td><a href='../interface/qz_direct.html'>qz_direct</a></td><td><a href='../module/mod_solvers.html'>mod_solvers</a></td><td>Interface</td><td><p>interface to the different solution methods implemented in submodules</p></td></tr>
-			   <tr><td><a href='../proc/radiative_cooling_clean.html'>radiative_cooling_clean</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Subroutine</td><td><p>Cleanup routine, deallocates all variables allocated at module-scope.</p></td></tr>
 			   <tr><td><a href='../proc/raise_exception.html'>raise_exception</a></td><td><a href='../module/mod_exceptions.html'>mod_exceptions</a></td><td>Subroutine</td><td><p>Raises an exception with a given message.
 By default, exceptions terminate program execution.
 Calls the initialisation routine if not already done.</p></td></tr>
@@ -874,18 +878,6 @@ order solutions for step i+1 based on the values at step i.</p></td></tr>
 			   <tr><td><a href='../proc/set_bmat.html'>set_bmat</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Sets the type of B-matrix.</p></td></tr>
 			   <tr><td><a href='../proc/set_boundary_flags.html'>set_boundary_flags</a></td><td><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_boundary_type.html'>set_boundary_type</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/set_conduction_prefactor.html'>set_conduction_prefactor</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>Sets the thermal conduction prefactor, given by
-<script type="math/tex; mode=display"> \frac{\kappa_{\parallel, 0} - \kappa_{\perp, 0}}{B_0^2} </script>.
-The radial derivative of the prefactor is also set, given by
-<script type="math/tex; mode=display"> \frac{1}{B_0^3}\left[
- -2\left(\kappa_{\parallel, 0} - \kappa_{\perp, 0}\right)B_0'
- +\left(\kappa_{\parallel, 0}' - \kappa_{\perp, 0}'\right)B_0
-\right]
-</script>
-</p></td></tr>
-			   <tr><td><a href='../proc/set_conduction_values.html'>set_conduction_values</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>This routines sets all thermal conduction values in <tt>kappa_field</tt>,
-and calls all other relevant subroutines defined in this module.
-</p><a href="../proc/set_conduction_values.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/set_cooling_curve.html'>set_cooling_curve</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_density_funcs.html'>set_density_funcs</a></td><td><a href='../module/mod_background.html'>mod_background</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_derived_state_vector.html'>set_derived_state_vector</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Subroutine</td><td></td></tr>
@@ -907,50 +899,20 @@ the equilibrium is set, then calls additional physics modules if needed.
 in the parfile. Works on a case-select basis.
 </p><a href="../proc/set_equilibrium_pointer.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/set_equilibrium_type.html'>set_equilibrium_type</a></td><td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/set_eta_dropoff.html'>set_eta_dropoff</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>Sets a hyperbolic tangent profile for the resistivity so it goes smoothly to zero
-near the edges. The location and width of the dropoff profile can be controlled
-through <tt>dropoff_edge_dist</tt> and <tt>dropoff_width</tt>.
-</p><a href="../proc/set_eta_dropoff.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/set_fixed_resistivity.html'>set_fixed_resistivity</a></td><td><a href='../module/mod_resistivity_settings.html'>mod_resistivity_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_fixed_tc_para.html'>set_fixed_tc_para</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_fixed_tc_perp.html'>set_fixed_tc_perp</a></td><td><a href='../module/mod_conduction_settings.html'>mod_conduction_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_function_pointer.html'>set_function_pointer</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_gamma.html'>set_gamma</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_geometry.html'>set_geometry</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_gravity_funcs.html'>set_gravity_funcs</a></td><td><a href='../module/mod_physics.html'>mod_physics</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_grid_boundaries.html'>set_grid_boundaries</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_grid_gauss.html'>set_grid_gauss</a></td><td><a href='../module/mod_grid.html'>mod_grid</a></td><td>Subroutine</td><td><p>Sets up grid_gauss, that is, the grid evaluated in the four
 Gaussian points. This is done by evaluating the weights
 at the four Gaussian nodes.</p></td></tr>
 			   <tr><td><a href='../proc/set_gridpts.html'>set_gridpts</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/set_hall_factors.html'>set_hall_factors</a></td><td><a href='../module/mod_hall.html'>mod_hall</a></td><td>Subroutine</td><td><p>Retrieves the normalised Hall factor as described by Porth et al. (2014),
-with a dropoff at the boundary, if desired. Additionally, defines the
-electron inertia factor if included, with a dropoff profile, if desired.</p></td></tr>
 			   <tr><td><a href='../proc/set_incompressible.html'>set_incompressible</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_interpolation_points.html'>set_interpolation_points</a></td><td><a href='../module/mod_cooling_settings.html'>mod_cooling_settings</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/set_kappa_para.html'>set_kappa_para</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>Calculates the parallel thermal conduction.
-Returns either the full parallel thermal conduction based on
-the equilibrium parameters, or a fixed value if specified
-in the global variables module.
-</p><a href="../proc/set_kappa_para.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/set_kappa_para_derivatives.html'>set_kappa_para_derivatives</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>Calculates the temperature derivative of the parallel thermal conduction component.
-</p><a href="../proc/set_kappa_para_derivatives.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/set_kappa_perp.html'>set_kappa_perp</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>Calculates the perpendicular thermal conduction.
-Returns either the full perpendicular thermal conduction based on
-the equilibrium parameters, or a fixed value if specified
-in the global variables module.
-</p><a href="../proc/set_kappa_perp.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/set_kappa_perp_derivatives.html'>set_kappa_perp_derivatives</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>Calculates the thermal conduction derivatives.
-Returns the derivative of the perpendicular thermal conduction with respect to
-density, magnetic field squared and temperature.
-</p><a href="../proc/set_kappa_perp_derivatives.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/set_kappa_perp_radial_derivative.html'>set_kappa_perp_radial_derivative</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Subroutine</td><td><p>Sets the radial derivative of the perpendicular thermal conduction coefficient.
-This is defined as
-<script type="math/tex; mode=display">
-kappa_{\perp, 0}' = \frac{d\kappa_{\perp, 0}}{d\rho} \rho_0'
- + \frac{d\kappa_{\perp, 0}}{dT} T_0'
- + \frac{d\kappa_{\perp, 0}}{d(B^2)}2B_0 B_0'
-</script>
-</p></td></tr>
 			   <tr><td><a href='../proc/set_label.html'>set_label</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Subroutine</td><td><p>Sets the label of the current matrix.</p></td></tr>
 			   <tr><td><a href='../proc/set_logging_level.html'>set_logging_level</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_magnetic_1_funcs.html'>set_magnetic_1_funcs</a></td><td><a href='../module/mod_background.html'>mod_background</a></td><td>Subroutine</td><td></td></tr>
@@ -967,17 +929,15 @@ This should satisfy 1 &lt;= ncv - nev and ncv &lt;= evpdim, with recommended
 value ncv = 2 * nev (see arpack docs).</p></td></tr>
 			   <tr><td><a href='../proc/set_nev.html'>set_nev</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Setter for number of eigenvalues to calculate.</p></td></tr>
 			   <tr><td><a href='../proc/set_output_folder.html'>set_output_folder</a></td><td><a href='../module/mod_io_settings.html'>mod_io_settings</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/set_radiative_cooling_values.html'>set_radiative_cooling_values</a></td><td><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></td><td>Subroutine</td><td><p>Sets the radiative cooling attributes of the corresponding types.
-This is called <em>after</em> the equilibrium is initialised in the submodule.
-</p><a href="../proc/set_radiative_cooling_values.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/set_parallel_conduction_funcs.html'>set_parallel_conduction_funcs</a></td><td><a href='../module/mod_physics.html'>mod_physics</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_perpendicular_conduction_funcs.html'>set_perpendicular_conduction_funcs</a></td><td><a href='../module/mod_physics.html'>mod_physics</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_raise_method.html'>set_raise_method</a></td><td><a href='../module/mod_exceptions.html'>mod_exceptions</a></td><td>Subroutine</td><td><p>Subroutine meant to be publicly called, sets the
 routine to be used when raising exceptions.
 Calls the initialisation routine if not already done.</p></td></tr>
 			   <tr><td><a href='../proc/set_residual.html'>set_residual</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Setter for the residual vector, allocates and manually initialises the
 residual (= starting) vector using a uniform distribution on (-1, 1)
 for both the real and imaginary parts. Relies on the LAPACK routine <code>zlarnv</code>.</p></td></tr>
-			   <tr><td><a href='../proc/set_resistivity_values.html'>set_resistivity_values</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Subroutine</td><td><p>This routines sets all resistivity values in \p eta_field,
-and calls all other relevant subroutines defined in this module.</p></td></tr>
+			   <tr><td><a href='../proc/set_resistivity_funcs.html'>set_resistivity_funcs</a></td><td><a href='../module/mod_physics.html'>mod_physics</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_scale_factor.html'>set_scale_factor</a></td><td><a href='../module/mod_grid.html'>mod_grid</a></td><td>Subroutine</td><td><p>The scale factor to switch between Cartesian and cylindrical geometries
 is set here, along with its derivative. For cylindrical the scale factor
 is simply equal to the Gaussian grid, and its derivative is unity.
@@ -1027,6 +987,18 @@ passed in the parfile, different solvers are called.
 			   <tr><td><a href='../proc/solve_linear_system_complex_banded_lu.html'>solve_linear_system_complex_banded_LU</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Function</td><td><p>Calculates the solution <script type="math/tex">X</script> to a system of linear equations <script type="math/tex">AX = B</script> where
 <script type="math/tex">A</script> is a complex banded matrix and <script type="math/tex">B</script> is a complex vector.
 Uses the LU factorisation of <script type="math/tex">A</script> and pivoting information from zgbtrf.</p></td></tr>
+			   <tr><td><a href='../proc/spitzer_detadr.html'>spitzer_detadr</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Function</td><td><p>Default profile for the derivative of the resistivity $\eta$ with respect to
+position. Returns zero unless a dropoff profile was chosen.</p></td></tr>
+			   <tr><td><a href='../proc/spitzer_detadt.html'>spitzer_detadT</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Function</td><td><p>Default profile for the derivative of the resistivity $\eta$ with respect to
+the temperature $T$. Returns one of the following:
+- zero (if resistivity is disabled or for fixed resistivity)
+- derivative of Spitzer resistivity with respect to T
+Values are normalised on return.</p></td></tr>
+			   <tr><td><a href='../proc/spitzer_eta.html'>spitzer_eta</a></td><td><a href='../module/mod_resistivity.html'>mod_resistivity</a></td><td>Function</td><td><p>Default profile for the resistivity $\eta$. Returns one of the following:
+- The Spitzer resistivity based on the equilibrium temperature profile
+- a fixed resistivity value
+- zero (if resistivity is disabled)
+Values are normalised on return.</p></td></tr>
 			   <tr><td><a href='../proc/spline_sizes_are_valid.html'>spline_sizes_are_valid</a></td><td><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/standard_equil_conditions.html'>standard_equil_conditions</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Checks the standard force-balance equation for the equilibrium state. This
 results in three expressions,
@@ -1071,6 +1043,7 @@ and they should all be fulfilled.
 			   <tr><td><a href='../proc/t0~28.html'>T0</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/taylor_couette_eq.html'>taylor_couette_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/tc_pinch_eq.html'>tc_pinch_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
+			   <tr><td><a href='../proc/tcprefactor.html'>tcprefactor</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/throw_info_nonzero_warning.html'>throw_info_nonzero_warning</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/tic.html'>tic</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to start a wall clock timer.</p><a href="../proc/tic.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/toc.html'>toc</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to end a wall clock timer.</p><a href="../proc/toc.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
@@ -1099,6 +1072,7 @@ block, if <code>edge</code> equals <code>"right"</code> returns indices for the 
 			   <tr><td><a href='../proc/v03~5.html'>v03</a></td><td><a href='../module/smod_equil_couette_flow.html'>smod_equil_couette_flow</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/v03~6.html'>v03</a></td><td><a href='../module/smod_equil_internal_kink_instability.html'>smod_equil_internal_kink_instability</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/v_prof.html'>v_prof</a></td><td><a href='../module/smod_equil_flow_driven_instabilities.html'>smod_equil_flow_driven_instabilities</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/validate_scale_ratio.html'>validate_scale_ratio</a></td><td><a href='../module/mod_hall.html'>mod_hall</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/warning.html'>warning</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/write_base_eigenfunction_data.html'>write_base_eigenfunction_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/write_derived_eigenfunction_data.html'>write_derived_eigenfunction_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>

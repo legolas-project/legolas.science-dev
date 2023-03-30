@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Legolas is a novel finite-element based code that allows for realistic MHD spectroscopy of one-dimensional plasmas.">
+    <meta name="author" content="" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>mod_data_spex.f08 &ndash; Legolas v. 2.0.0 - develop</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.0.0 - develop </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+            <li><a href="../program/legolas.html">Program</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../program/legolas.html">Program</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>mod_data_spex.f08
+    <small>Source File</small>
+    </h1>
+    <div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.1% of total for source files.">10 statements</a>
+     </li> 
+    <li><i class="fa fa-code"></i><a href="../src/mod_data_spex.f08"> Source File</a></li>
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+     <li class="active">mod_data_spex.f08</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div id="sidebar">
+  <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_data_spex.html">mod_data_spex</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/mod_data_spex.f08.html#src">mod_data_spex.f08</a>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_data_spex.html">mod_data_spex</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/mod_data_spex.f08.html#src">mod_data_spex.f08</a>
+  </div>
+</div>
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="k">module </span><span class="n">mod_data_spex</span>
+<a id="ln-2" name="ln-2" href="#ln-2"></a><span class="w">  </span><span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">dp</span>
+<a id="ln-3" name="ln-3" href="#ln-3"></a><span class="w">  </span><span class="k">implicit none</span>
+<a id="ln-4" name="ln-4" href="#ln-4"></a>
+<a id="ln-5" name="ln-5" href="#ln-5"></a><span class="k">  public</span>
+<a id="ln-6" name="ln-6" href="#ln-6"></a>
+<a id="ln-7" name="ln-7" href="#ln-7"></a><span class="k">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n_spex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">110</span>
+<a id="ln-8" name="ln-8" href="#ln-8"></a><span class="w">  </span><span class="c">!&gt; log10 temperature values from Schure et al. (2009)</span>
+<a id="ln-9" name="ln-9" href="#ln-9"></a><span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="w"> </span><span class="k">protected</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">logT_spex</span><span class="p">(</span><span class="n">n_spex</span><span class="p">)</span>
+<a id="ln-10" name="ln-10" href="#ln-10"></a><span class="w">  </span><span class="c">!&gt; log10 luminosity values from Schure et al. (2009)</span>
+<a id="ln-11" name="ln-11" href="#ln-11"></a><span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span><span class="w"> </span><span class="k">protected</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">logL_spex</span><span class="p">(</span><span class="n">n_spex</span><span class="p">)</span>
+<a id="ln-12" name="ln-12" href="#ln-12"></a>
+<a id="ln-13" name="ln-13" href="#ln-13"></a><span class="w">  </span><span class="k">data </span><span class="n">logT_spex</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-14" name="ln-14" href="#ln-14"></a><span class="w">    </span><span class="mf">3.80_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">3.84_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">3.88_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">3.92_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">3.96_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.00_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.04_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.08_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.12_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-15" name="ln-15" href="#ln-15"></a><span class="w">    </span><span class="mf">4.16_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.20_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.24_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.28_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.32_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.36_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.40_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.44_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.48_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="w">    </span><span class="mf">4.52_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.56_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.60_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.64_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.68_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.72_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.76_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.80_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.84_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="w">    </span><span class="mf">4.88_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.92_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">4.96_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.00_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.04_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.08_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.12_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.16_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.20_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-18" name="ln-18" href="#ln-18"></a><span class="w">    </span><span class="mf">5.24_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.28_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.32_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.36_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.40_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.44_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.48_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.52_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.56_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-19" name="ln-19" href="#ln-19"></a><span class="w">    </span><span class="mf">5.60_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.64_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.68_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.72_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.76_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.80_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.84_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.88_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">5.92_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-20" name="ln-20" href="#ln-20"></a><span class="w">    </span><span class="mf">5.96_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.00_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.04_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.08_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.12_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.16_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.20_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.24_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.28_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-21" name="ln-21" href="#ln-21"></a><span class="w">    </span><span class="mf">6.32_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.36_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.40_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.44_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.48_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.52_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.56_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.60_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.64_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-22" name="ln-22" href="#ln-22"></a><span class="w">    </span><span class="mf">6.68_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.72_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.76_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.80_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.84_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.88_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.92_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">6.96_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.00_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-23" name="ln-23" href="#ln-23"></a><span class="w">    </span><span class="mf">7.04_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.08_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.12_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.16_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.20_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.24_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.28_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.32_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.36_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-24" name="ln-24" href="#ln-24"></a><span class="w">    </span><span class="mf">7.40_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.44_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.48_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.52_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.56_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.60_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.64_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.68_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.72_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-25" name="ln-25" href="#ln-25"></a><span class="w">    </span><span class="mf">7.76_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.80_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.84_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.88_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.92_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">7.96_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">8.00_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">8.04_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">8.08_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-26" name="ln-26" href="#ln-26"></a><span class="w">    </span><span class="mf">8.12_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">8.16_dp</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-27" name="ln-27" href="#ln-27"></a><span class="w">  </span><span class="o">/</span>
+<a id="ln-28" name="ln-28" href="#ln-28"></a>
+<a id="ln-29" name="ln-29" href="#ln-29"></a><span class="w">  </span><span class="k">data </span><span class="n">logL_spex</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-30" name="ln-30" href="#ln-30"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">5.7331_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">5.0383_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">4.4059_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">3.8288_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">3.3027_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.8242_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-31" name="ln-31" href="#ln-31"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.3917_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.0067_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.6818_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.4529_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.3246_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.3459_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-32" name="ln-32" href="#ln-32"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.4305_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.5293_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.6138_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.6615_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.6551_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.5919_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-33" name="ln-33" href="#ln-33"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.5092_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.4124_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.3085_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.2047_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.1067_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.0194_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-34" name="ln-34" href="#ln-34"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.9413_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.8735_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.8205_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7805_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7547_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7455_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-35" name="ln-35" href="#ln-35"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7565_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7820_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.8008_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7994_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7847_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7687_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-36" name="ln-36" href="#ln-36"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7590_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7544_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7505_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7545_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.7888_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">0.8832_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.0450_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.2286_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.3737_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.4573_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.4935_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.5098_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-38" name="ln-38" href="#ln-38"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.5345_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.5863_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.6548_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.7108_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.7424_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.7576_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-39" name="ln-39" href="#ln-39"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.7696_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.7883_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.8115_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.8303_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.8419_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.8514_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-40" name="ln-40" href="#ln-40"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.8690_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.9057_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">1.9690_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.0554_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.1488_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.2355_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-41" name="ln-41" href="#ln-41"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.3084_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.3641_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4033_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4282_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4408_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4443_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-42" name="ln-42" href="#ln-42"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4411_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4334_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4242_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4164_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4134_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4168_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-43" name="ln-43" href="#ln-43"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4267_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4418_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4603_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4830_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5112_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5449_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-44" name="ln-44" href="#ln-44"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5819_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6177_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6483_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6719_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6883_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6985_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-45" name="ln-45" href="#ln-45"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.7032_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.7037_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.7008_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6950_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6869_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6769_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-46" name="ln-46" href="#ln-46"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6655_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6531_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6397_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6258_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.6111_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5964_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-47" name="ln-47" href="#ln-47"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5816_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5668_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5519_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5367_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5216_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.5062_dp</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-48" name="ln-48" href="#ln-48"></a><span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4912_dp</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="mf">2.4753_dp</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="ln-49" name="ln-49" href="#ln-49"></a><span class="w">  </span><span class="o">/</span>
+<a id="ln-50" name="ln-50" href="#ln-50"></a>
+<a id="ln-51" name="ln-51" href="#ln-51"></a><span class="k">end module </span><span class="n">mod_data_spex</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.0.0 - develop was developed by <br>&copy; 2023 
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+  </body>
+</html>

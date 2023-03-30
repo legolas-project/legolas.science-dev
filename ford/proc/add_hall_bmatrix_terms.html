@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure add_hall_bmatrix_terms <small>module module subroutine add_hall_bmatrix_terms(gauss_idx, current_weight, quadblock, settings, background)</small>   <a href='../interface/add_hall_bmatrix_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    <h2>module procedure add_hall_bmatrix_terms <small>module module subroutine add_hall_bmatrix_terms(gauss_idx, x_gauss, weight, quadblock, settings, background, physics)</small>   <a href='../interface/add_hall_bmatrix_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h2>
     
 
@@ -129,10 +129,16 @@
   <td><strong>gauss_idx</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-current_weight~9"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-x_gauss~10"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>current_weight</strong></td><td></td>
+  <td><strong>x_gauss</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-weight~10"></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-quadblock~17"></span>complex(kind=dp),</td>
@@ -141,16 +147,22 @@
   <td><strong>quadblock</strong>(:,:)</td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-settings~106"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~103"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-background~64"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+  <td><span class="anchor" id="variable-background~65"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-physics~57"></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>

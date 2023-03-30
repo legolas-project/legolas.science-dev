@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.6% of total for procedures.">75 statements</a>
+    title=" 0.6% of total for procedures.">76 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_regular_matrix.f08"> Source File</a></li>
   </ul>
@@ -113,21 +113,9 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure add_regular_matrix_terms <small>module module subroutine add_regular_matrix_terms(gauss_idx, current_weight, quadblock, settings, background)</small>   <a href='../interface/add_regular_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    <h2>module procedure add_regular_matrix_terms <small>module module subroutine add_regular_matrix_terms(gauss_idx, x_gauss, weight, quadblock, settings, background, physics)</small>   <a href='../interface/add_regular_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    
 
 
     <h3>Arguments</h3>
@@ -141,10 +129,16 @@
   <td><strong>gauss_idx</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-current_weight~2"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-x_gauss~3"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>current_weight</strong></td><td></td>
+  <td><strong>x_gauss</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-weight~3"></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>weight</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-quadblock~10"></span>complex(kind=dp),</td>
@@ -153,16 +147,22 @@
   <td><strong>quadblock</strong>(:,:)</td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-settings~99"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~96"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-background~57"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+  <td><span class="anchor" id="variable-background~58"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-physics~50"></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for modules and submodules.">82 statements</a>
+    title=" 0.8% of total for modules and submodules.">85 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_equil_flow_driven_instabilities.f08"> Source File</a></li>
   </ul>
@@ -135,6 +135,7 @@
       <a class="list-group-item" href="../module/smod_equil_flow_driven_instabilities.html#proc-p_prof">p_prof</a>
       <a class="list-group-item" href="../module/smod_equil_flow_driven_instabilities.html#proc-phi_prof">phi_prof</a>
       <a class="list-group-item" href="../module/smod_equil_flow_driven_instabilities.html#proc-v_prof">v_prof</a>
+      <a class="list-group-item" href="../module/smod_equil_flow_driven_instabilities.html#proc-g0~5">g0</a>
     </div>
   </div>
 </div>
@@ -215,6 +216,7 @@ This submodule is called within its implicit children.</p>
       <a class="list-group-item" href="../module/smod_equil_flow_driven_instabilities.html#proc-p_prof">p_prof</a>
       <a class="list-group-item" href="../module/smod_equil_flow_driven_instabilities.html#proc-phi_prof">phi_prof</a>
       <a class="list-group-item" href="../module/smod_equil_flow_driven_instabilities.html#proc-v_prof">v_prof</a>
+      <a class="list-group-item" href="../module/smod_equil_flow_driven_instabilities.html#proc-g0~5">g0</a>
     </div>
   </div>
 </div>
@@ -573,6 +575,16 @@ This submodule is called within its implicit children.</p>
   </div>
   </div>
 
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-g0~5"></span><h3>function <a href='../proc/g0~5.html'>g0</a>()</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <em>None</em>
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
     </section>
     <br>
 
@@ -583,7 +595,7 @@ This submodule is called within its implicit children.</p>
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-flow_driven_instabilities_eq"></span><h3>module procedure <a href='../proc/flow_driven_instabilities_eq.html'>flow_driven_instabilities_eq</a> <small>module module subroutine flow_driven_instabilities_eq(settings, background)</small>   <a href='../interface/flow_driven_instabilities_eq.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-flow_driven_instabilities_eq"></span><h3>module procedure <a href='../proc/flow_driven_instabilities_eq.html'>flow_driven_instabilities_eq</a> <small>module module subroutine flow_driven_instabilities_eq(settings, background, physics)</small>   <a href='../interface/flow_driven_instabilities_eq.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
@@ -601,6 +613,12 @@ This submodule is called within its implicit children.</p>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>

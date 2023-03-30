@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for modules and submodules.">44 statements</a>
+    title=" 0.5% of total for modules and submodules.">50 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_equil_isothermal_atmosphere.f08"> Source File</a></li>
   </ul>
@@ -122,6 +122,7 @@
       <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-t0~7">T0</a>
       <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-b02~7">B02</a>
       <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-b03~7">B03</a>
+      <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-g0~3">g0</a>
     </div>
   </div>
 </div>
@@ -204,6 +205,7 @@ for a horizontal magnetic field. The Astrophysical Journal, 204.</em>
       <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-t0~7">T0</a>
       <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-b02~7">B02</a>
       <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-b03~7">B03</a>
+      <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-g0~3">g0</a>
     </div>
   </div>
 </div>
@@ -315,6 +317,39 @@ for a horizontal magnetic field. The Astrophysical Journal, 204.</em>
   </div>
   </div>
 
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-g0~3"></span><h3>function <a href='../proc/g0~3.html'>g0</a>(x, settings, background)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
     </section>
     <br>
 
@@ -325,7 +360,7 @@ for a horizontal magnetic field. The Astrophysical Journal, 204.</em>
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-isothermal_atmosphere_eq"></span><h3>module procedure <a href='../proc/isothermal_atmosphere_eq.html'>isothermal_atmosphere_eq</a> <small>module module subroutine isothermal_atmosphere_eq(settings, background)</small>   <a href='../interface/isothermal_atmosphere_eq.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-isothermal_atmosphere_eq"></span><h3>module procedure <a href='../proc/isothermal_atmosphere_eq.html'>isothermal_atmosphere_eq</a> <small>module module subroutine isothermal_atmosphere_eq(settings, background, physics)</small>   <a href='../interface/isothermal_atmosphere_eq.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
@@ -343,6 +378,12 @@ for a horizontal magnetic field. The Astrophysical Journal, 204.</em>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for modules and submodules.">74 statements</a>
+    title=" 1.8% of total for modules and submodules.">188 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_cooling_curves.f08"> Source File</a></li>
   </ul>
@@ -109,25 +109,24 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_jc_corona">n_jc_corona</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_dalgarno">n_dalgarno</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_ml_solar">n_ml_solar</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_spex">n_spex</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_dalgarno2">n_dalgarno2</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_jc_corona">t_jc_corona</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_dalgarno">t_dalgarno</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_ml_solar">t_ml_solar</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_spex">t_spex</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_dalgarno2">t_dalgarno2</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_jc_corona">l_jc_corona</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_dalgarno">l_dalgarno</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_ml_solar">l_ml_solar</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_spex">l_spex</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_dalgarno2">l_dalgarno2</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_spex_enh">n_spex_enh</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-rosner_log10_t">rosner_log10_T</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-rosner_log10_xi">rosner_log10_xi</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-rosner_alpha">rosner_alpha</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-curve_t">curve_T</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-curve_lambda">curve_lambda</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-curve_dlambdadt">curve_dlambdadT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-mint">minT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-maxt">maxT</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_index">get_rosner_index</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_lambdat">get_rosner_lambdaT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_dlambdadt">get_rosner_dlambdadT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_interpolated_lambdat">get_interpolated_lambdaT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_interpolated_dlambdadt">get_interpolated_dlambdadT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-is_valid_cooling_curve">is_valid_cooling_curve</a>
     </div>
   </div>
 </div>
@@ -135,7 +134,9 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_cooling">get_rosner_cooling</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-interpolate_cooling_curves">interpolate_cooling_curves</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_cooling_table">get_cooling_table</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-deallocate_cooling_curves">deallocate_cooling_curves</a>
     </div>
   </div>
 </div>
@@ -145,23 +146,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <p>All data of the different cooling curves is contained in this module,
-along with handling piecewise cooling curves.
-</p><div class="alert alert-info" role="alert"><h4>Note</h4><p>The currently implemented cooling curves are</p>
-<ul>
-<li><em>"jc_corona"</em>: Colgan et al. (2008)</li>
-<li><em>"dalgarno"</em>: Dalgarno and McCray (1978)</li>
-<li><em>"ml_solar"</em>: Mellema and Lundqvist (2002), solar metallicity</li>
-<li><em>"spex"</em>: Schure et al. (2009)</li>
-<li><em>"spex_dalgarno"</em>: spex curve extended by the dalgarno one at low temperatures.</li>
-<li><em>"rosner"</em>: piecewise analytical cooling curve by Rosner, Tucker and Vaiana (1978),
-              extended by Priest (1982)  </p></div>
-<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>The spex_dalgarno curve assumes an ionisation fraction of <tt>1e-3</tt>. </p></div>
-<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Original values for xi in the rosner curve are given in SI, these here are scaled to cgs.
-      <script type="math/tex"> 1 Wm^{-3} = 10^{-13} erg/(s*cm^3) </script>, and since these are in a log10 scale
-      that means a -13 difference. </p></div>
-<p></li>
-</ul>
+    
 <br>        <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -169,6 +154,12 @@ along with handling piecewise cooling curves.
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_cooling_curve_names.html'>mod_cooling_curve_names</a></li>
+    <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_data_rosner.html'>mod_data_rosner</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
   </ul>
       </li>
@@ -185,25 +176,24 @@ along with handling piecewise cooling curves.
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_jc_corona">n_jc_corona</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_dalgarno">n_dalgarno</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_ml_solar">n_ml_solar</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_spex">n_spex</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_dalgarno2">n_dalgarno2</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_jc_corona">t_jc_corona</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_dalgarno">t_dalgarno</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_ml_solar">t_ml_solar</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_spex">t_spex</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-t_dalgarno2">t_dalgarno2</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_jc_corona">l_jc_corona</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_dalgarno">l_dalgarno</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_ml_solar">l_ml_solar</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_spex">l_spex</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-l_dalgarno2">l_dalgarno2</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-n_spex_enh">n_spex_enh</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-rosner_log10_t">rosner_log10_T</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-rosner_log10_xi">rosner_log10_xi</a>
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-rosner_alpha">rosner_alpha</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-curve_t">curve_T</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-curve_lambda">curve_lambda</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-curve_dlambdadt">curve_dlambdadT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-mint">minT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#variable-maxt">maxT</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_index">get_rosner_index</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_lambdat">get_rosner_lambdaT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_dlambdadt">get_rosner_dlambdadT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_interpolated_lambdat">get_interpolated_lambdaT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_interpolated_dlambdadt">get_interpolated_dlambdadT</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-is_valid_cooling_curve">is_valid_cooling_curve</a>
     </div>
   </div>
 </div>
@@ -211,7 +201,9 @@ along with handling piecewise cooling curves.
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_cooling">get_rosner_cooling</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-interpolate_cooling_curves">interpolate_cooling_curves</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_cooling_table">get_cooling_table</a>
+      <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-deallocate_cooling_curves">deallocate_cooling_curves</a>
     </div>
   </div>
 </div>
@@ -226,99 +218,29 @@ along with handling piecewise cooling curves.
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-n_jc_corona"></span>integer,</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>n_jc_corona</strong></td><td></td><td></td><td><p>amount of points in the jc_corona curve</p></td>
+  <td><span class="anchor" id="variable-curve_t"></span>real(kind=dp),</td>
+<td>private,</td>  <td>allocatable</td><td>::</td>
+  <td><strong>curve_T</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n_dalgarno"></span>integer,</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>n_dalgarno</strong></td><td></td><td></td><td><p>amount of points in the dalgarno curve</p></td>
+  <td><span class="anchor" id="variable-curve_lambda"></span>real(kind=dp),</td>
+<td>private,</td>  <td>allocatable</td><td>::</td>
+  <td><strong>curve_lambda</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n_ml_solar"></span>integer,</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>n_ml_solar</strong></td><td></td><td></td><td><p>amount of points in the ml_solar curve</p></td>
+  <td><span class="anchor" id="variable-curve_dlambdadt"></span>real(kind=dp),</td>
+<td>private,</td>  <td>allocatable</td><td>::</td>
+  <td><strong>curve_dlambdadT</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n_spex"></span>integer,</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>n_spex</strong></td><td></td><td></td><td><p>amount of points in the spex curve</p></td>
+  <td><span class="anchor" id="variable-mint"></span>real(kind=dp),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>minT</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n_dalgarno2"></span>integer,</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>n_dalgarno2</strong></td><td></td><td></td><td><p>amount of points to enhance the spex_dalgarno curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-t_jc_corona"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>t_jc_corona</strong>(45)</td><td></td><td></td><td><p>log temperature datapoints in the jc_corona curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-t_dalgarno"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>t_dalgarno</strong>(71)</td><td></td><td></td><td><p>log temperature datapoints in the dalgarno curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-t_ml_solar"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>t_ml_solar</strong>(71)</td><td></td><td></td><td><p>log temperature datapoints in the ml_solar curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-t_spex"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>t_spex</strong>(110)</td><td></td><td></td><td><p>log temperature datapoints in the spex curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-t_dalgarno2"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>t_dalgarno2</strong>(76)</td><td></td><td></td><td><p>log temperature datapoints to enhance the spex_dalgarno curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-l_jc_corona"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>l_jc_corona</strong>(45)</td><td></td><td></td><td><p>log luminosity datapoints in the jc_corona curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-l_dalgarno"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>l_dalgarno</strong>(71)</td><td></td><td></td><td><p>log luminosity datapoints in the dalgarno curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-l_ml_solar"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>l_ml_solar</strong>(71)</td><td></td><td></td><td><p>log luminosity datapoints in the ml_solar curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-l_spex"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>l_spex</strong>(110)</td><td></td><td></td><td><p>log luminosity datapoints in the spex curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-l_dalgarno2"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>l_dalgarno2</strong>(76)</td><td></td><td></td><td><p>log luminosity datapoints to enhance the spex_dalgarno curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-n_spex_enh"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>n_spex_enh</strong>(110)</td><td></td><td></td><td><p>log luminosity datapoints in the spex_dalgarno curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-rosner_log10_t"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>rosner_log10_T</strong>(8)</td><td></td><td></td><td><p>datapoints for the piecewise rosner curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-rosner_log10_xi"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>rosner_log10_xi</strong>(9)</td><td></td><td></td><td><p>log xi values for the rosner cooling curve</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-rosner_alpha"></span>real(kind=dp),</td>
-<td>protected</td>  <td></td><td>::</td>
-  <td><strong>rosner_alpha</strong>(9)</td><td></td><td></td><td><p>alpha values for the rosner cooling curve</p></td>
+  <td><span class="anchor" id="variable-maxt"></span>real(kind=dp),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>maxT</strong></td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -330,16 +252,193 @@ along with handling piecewise cooling curves.
 
     
     
+ 
+    <section>
+    <h2>Functions</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_rosner_index"></span><h3>private pure function <a href='../proc/get_rosner_index.html'>get_rosner_index</a>(logT0)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>logT0</strong></td><td><p>dimensionfull log10(T0) value</p></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>integer</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_rosner_lambdat"></span><h3>public function <a href='../proc/get_rosner_lambdat.html'>get_rosner_lambdaT</a>(x, settings, background)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_rosner_dlambdadt"></span><h3>public function <a href='../proc/get_rosner_dlambdadt.html'>get_rosner_dlambdadT</a>(x, settings, background)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_interpolated_lambdat"></span><h3>public function <a href='../proc/get_interpolated_lambdat.html'>get_interpolated_lambdaT</a>(x, settings, background)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_interpolated_dlambdadt"></span><h3>public function <a href='../proc/get_interpolated_dlambdadt.html'>get_interpolated_dlambdadT</a>(x, settings, background)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-is_valid_cooling_curve"></span><h3>public function <a href='../proc/is_valid_cooling_curve.html'>is_valid_cooling_curve</a>(name)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>name</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>logical</small></h4>  
+
+  </div>
+  </div>
+
+    </section>
+    <br>
 
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_rosner_cooling"></span><h3>public subroutine <a href='../proc/get_rosner_cooling.html'>get_rosner_cooling</a>(settings, T0, lambda_T, dlambda_dT)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-interpolate_cooling_curves"></span><h3>public subroutine <a href='../proc/interpolate_cooling_curves.html'>interpolate_cooling_curves</a>(settings)</h3></div>
   <div class="panel-body">
        
-<p>Uses the piecewise rosner cooling curve to calculate the radiative cooling values
-based on the equilibrium temperature.
-</p><a href="../proc/get_rosner_cooling.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p></p><a href="../proc/interpolate_cooling_curves.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -350,27 +449,50 @@ based on the equilibrium temperature.
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
 </tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_cooling_table"></span><h3>public subroutine <a href='../proc/get_cooling_table.html'>get_cooling_table</a>(name, table_T, table_lambda)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
+  <td><span class="anchor" ></span>character(len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>T0</strong>(:)</td><td><p>the equilibrium temperature, normalised</p></td>
+  <td><strong>name</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>lambda_T</strong>(:)</td><td><p>the cooling values corresponding to T0</p></td>
+<td>intent(out),</td>
+  <td></td>  <td>allocatable</td><td>::</td>
+  <td><strong>table_T</strong>(:)</td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>dlambda_dT</strong>(:)</td><td><p>the derivative of the cooling values corresponding to T0</p></td>
+<td>intent(out),</td>
+  <td></td>  <td>allocatable</td><td>::</td>
+  <td><strong>table_lambda</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>
 
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_cooling_curves"></span><h3>public subroutine <a href='../proc/deallocate_cooling_curves.html'>deallocate_cooling_curves</a>()</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <em>None</em>
 
   </div>
   </div>

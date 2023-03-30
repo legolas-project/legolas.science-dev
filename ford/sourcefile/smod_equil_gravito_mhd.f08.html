@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for source files.">45 statements</a>
+    title=" 0.4% of total for source files.">48 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_equil_gravito_mhd.f08"> Source File</a></li>
   </ul>
@@ -192,12 +192,12 @@
 <a id="ln-42" name="ln-42" href="#ln-42"></a>
 <a id="ln-43" name="ln-43" href="#ln-43"></a><span class="w">    </span><span class="k">call </span><span class="n">initialise_grid</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
 <a id="ln-44" name="ln-44" href="#ln-44"></a>
-<a id="ln-45" name="ln-45" href="#ln-45"></a><span class="w">    </span><span class="c">!! Equilibrium</span>
-<a id="ln-46" name="ln-46" href="#ln-46"></a><span class="w">    </span><span class="n">grav_field</span><span class="w"> </span><span class="p">%</span><span class="w"> </span><span class="n">grav</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span>
-<a id="ln-47" name="ln-47" href="#ln-47"></a>
-<a id="ln-48" name="ln-48" href="#ln-48"></a><span class="w">    </span><span class="k">call </span><span class="n">background</span><span class="p">%</span><span class="n">set_density_funcs</span><span class="p">(</span><span class="n">rho0_func</span><span class="o">=</span><span class="n">rho0</span><span class="p">,</span><span class="w"> </span><span class="n">drho0_func</span><span class="o">=</span><span class="n">drho0</span><span class="p">)</span>
-<a id="ln-49" name="ln-49" href="#ln-49"></a><span class="w">    </span><span class="k">call </span><span class="n">background</span><span class="p">%</span><span class="n">set_temperature_funcs</span><span class="p">(</span><span class="n">T0_func</span><span class="o">=</span><span class="n">T0</span><span class="p">)</span>
-<a id="ln-50" name="ln-50" href="#ln-50"></a><span class="w">    </span><span class="k">call </span><span class="n">background</span><span class="p">%</span><span class="n">set_magnetic_3_funcs</span><span class="p">(</span><span class="n">B03_func</span><span class="o">=</span><span class="n">B03</span><span class="p">,</span><span class="w"> </span><span class="n">dB03_func</span><span class="o">=</span><span class="n">dB03</span><span class="p">)</span>
+<a id="ln-45" name="ln-45" href="#ln-45"></a>
+<a id="ln-46" name="ln-46" href="#ln-46"></a><span class="w">    </span><span class="k">call </span><span class="n">background</span><span class="p">%</span><span class="n">set_density_funcs</span><span class="p">(</span><span class="n">rho0_func</span><span class="o">=</span><span class="n">rho0</span><span class="p">,</span><span class="w"> </span><span class="n">drho0_func</span><span class="o">=</span><span class="n">drho0</span><span class="p">)</span>
+<a id="ln-47" name="ln-47" href="#ln-47"></a><span class="w">    </span><span class="k">call </span><span class="n">background</span><span class="p">%</span><span class="n">set_temperature_funcs</span><span class="p">(</span><span class="n">T0_func</span><span class="o">=</span><span class="n">T0</span><span class="p">)</span>
+<a id="ln-48" name="ln-48" href="#ln-48"></a><span class="w">    </span><span class="k">call </span><span class="n">background</span><span class="p">%</span><span class="n">set_magnetic_3_funcs</span><span class="p">(</span><span class="n">B03_func</span><span class="o">=</span><span class="n">B03</span><span class="p">,</span><span class="w"> </span><span class="n">dB03_func</span><span class="o">=</span><span class="n">dB03</span><span class="p">)</span>
+<a id="ln-49" name="ln-49" href="#ln-49"></a>
+<a id="ln-50" name="ln-50" href="#ln-50"></a><span class="w">    </span><span class="k">call </span><span class="n">physics</span><span class="p">%</span><span class="n">set_gravity_funcs</span><span class="p">(</span><span class="n">g0_func</span><span class="o">=</span><span class="n">g0</span><span class="p">)</span>
 <a id="ln-51" name="ln-51" href="#ln-51"></a><span class="w">  </span><span class="k">end procedure </span><span class="n">gravito_mhd_eq</span>
 <a id="ln-52" name="ln-52" href="#ln-52"></a>
 <a id="ln-53" name="ln-53" href="#ln-53"></a>
@@ -225,7 +225,12 @@
 <a id="ln-75" name="ln-75" href="#ln-75"></a><span class="w">    </span><span class="n">dB03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">0.5_dp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B03</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <a id="ln-76" name="ln-76" href="#ln-76"></a><span class="w">  </span><span class="k">end function </span><span class="n">dB03</span>
 <a id="ln-77" name="ln-77" href="#ln-77"></a>
-<a id="ln-78" name="ln-78" href="#ln-78"></a><span class="k">end submodule </span><span class="n">smod_equil_gravito_mhd</span>
+<a id="ln-78" name="ln-78" href="#ln-78"></a>
+<a id="ln-79" name="ln-79" href="#ln-79"></a><span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w"> </span><span class="k">function </span><span class="n">g0</span><span class="p">()</span>
+<a id="ln-80" name="ln-80" href="#ln-80"></a><span class="w">    </span><span class="n">g0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span>
+<a id="ln-81" name="ln-81" href="#ln-81"></a><span class="w">  </span><span class="k">end function </span><span class="n">g0</span>
+<a id="ln-82" name="ln-82" href="#ln-82"></a>
+<a id="ln-83" name="ln-83" href="#ln-83"></a><span class="k">end submodule </span><span class="n">smod_equil_gravito_mhd</span>
 </pre></div>
 
     </section>

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.9% of total for modules and submodules.">304 statements</a>
+    title=" 2.8% of total for modules and submodules.">297 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
@@ -141,12 +141,12 @@ for both the Cartesian and cylindrical cases is checked.</p>
   <ul class="list-inline">
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_background.html'>mod_background</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
-    <li><a href='../module/mod_types.html'>mod_types</a></li>
     <li><a href='../module/mod_function_utils.html'>mod_function_utils</a></li>
+    <li><a href='../module/mod_physics.html'>mod_physics</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
   </ul>
       </li>
       </ul>
@@ -188,7 +188,7 @@ for both the Cartesian and cylindrical cases is checked.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-perform_nan_and_negative_checks"></span><h3>public subroutine <a href='../proc/perform_nan_and_negative_checks.html'>perform_NaN_and_negative_checks</a>(background, grav_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-perform_nan_and_negative_checks"></span><h3>public subroutine <a href='../proc/perform_nan_and_negative_checks.html'>perform_NaN_and_negative_checks</a>(settings, background, physics)</h3></div>
   <div class="panel-body">
        
 <p>General routine to do initial sanity checks on the various equilibrium attributes.
@@ -199,16 +199,22 @@ values are positive.</p>
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>type(<a href='../type/gravity_type.html'>gravity_type</a>),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>grav_field</strong></td><td><p>the type containing the gravity attributes</p></td>
+  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -218,7 +224,7 @@ values are positive.</p>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-perform_sanity_checks"></span><h3>public subroutine <a href='../proc/perform_sanity_checks.html'>perform_sanity_checks</a>(settings, background, grav_field, rc_field, kappa_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-perform_sanity_checks"></span><h3>public subroutine <a href='../proc/perform_sanity_checks.html'>perform_sanity_checks</a>(settings, background, physics)</h3></div>
   <div class="panel-body">
        
 <p>General routine to do sanity checks on the different equilibrium types.
@@ -232,7 +238,7 @@ and non-adiabatic equilibrium force balance.</p>
   <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td><p>the settings object</p></td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -241,22 +247,10 @@ and non-adiabatic equilibrium force balance.</p>
   <td><strong>background</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>type(<a href='../type/gravity_type.html'>gravity_type</a>),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>grav_field</strong></td><td><p>the type containing the gravity attributes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/cooling_type.html'>cooling_type</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>rc_field</strong></td><td><p>the type containing the radiative cooling attributes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/conduction_type.html'>conduction_type</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>kappa_field</strong></td><td><p>the type containing the thermal conduction attributes</p></td>
+  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -347,7 +341,7 @@ Nothing is checked if the geometry is Cartesian.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-standard_equil_conditions"></span><h3>private subroutine <a href='../proc/standard_equil_conditions.html'>standard_equil_conditions</a>(settings, background, grav_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-standard_equil_conditions"></span><h3>private subroutine <a href='../proc/standard_equil_conditions.html'>standard_equil_conditions</a>(settings, background, physics)</h3></div>
   <div class="panel-body">
        
 <p>Checks the standard force-balance equation for the equilibrium state. This
@@ -376,10 +370,10 @@ and they should all be fulfilled.
   <td><strong>background</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>type(<a href='../type/gravity_type.html'>gravity_type</a>),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>grav_field</strong></td><td><p>the type containing the gravity attributes</p></td>
+  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -389,7 +383,7 @@ and they should all be fulfilled.
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-check_energy_balance"></span><h3>private subroutine <a href='../proc/check_energy_balance.html'>check_energy_balance</a>(settings, background, rc_field, kappa_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-check_energy_balance"></span><h3>private subroutine <a href='../proc/check_energy_balance.html'>check_energy_balance</a>(settings, background, physics)</h3></div>
   <div class="panel-body">
        
 <p>Enforces the non-adiabatic force-balance equation for the equilibrium state.
@@ -410,7 +404,7 @@ T_0 \rho_0 \frac{\left(\varepsilon v_{01}\right)'}{\varepsilon}
   <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td><p>the settings object</p></td>
+  <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
@@ -419,16 +413,10 @@ T_0 \rho_0 \frac{\left(\varepsilon v_{01}\right)'}{\varepsilon}
   <td><strong>background</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>type(<a href='../type/cooling_type.html'>cooling_type</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>rc_field</strong></td><td><p>the type containing the radiative cooling attributes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/conduction_type.html'>conduction_type</a>),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>kappa_field</strong></td><td><p>the type containing the thermal conduction attributes</p></td>
+  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>

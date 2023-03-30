@@ -80,7 +80,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="100.0% of total for programs.">134 statements</a>
+    title="100.0% of total for programs.">120 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/main.f08"> Source File</a></li>
   </ul>
@@ -111,9 +111,10 @@
       <a class="list-group-item" href="../program/legolas.html#variable-matrix_a~14">matrix_A</a>
       <a class="list-group-item" href="../program/legolas.html#variable-matrix_b~14">matrix_B</a>
       <a class="list-group-item" href="../program/legolas.html#variable-timer~2">timer</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-settings~156">settings</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-background~77">background</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-settings~149">settings</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-background~82">background</a>
       <a class="list-group-item" href="../program/legolas.html#variable-eigenfunctions~5">eigenfunctions</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-physics~61">physics</a>
       <a class="list-group-item" href="../program/legolas.html#variable-omega~11">omega</a>
       <a class="list-group-item" href="../program/legolas.html#variable-right_eigenvectors~4">right_eigenvectors</a>
     </div>
@@ -145,15 +146,17 @@
   <ul class="list-inline">
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_background.html'>mod_background</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_timing.html'>mod_timing</a></li>
-    <li><a href='../module/mod_console.html'>mod_console</a></li>
-    <li><a href='../module/mod_output.html'>mod_output</a></li>
+    <li><a href='../module/mod_physics.html'>mod_physics</a></li>
     <li><a href='../module/mod_solvers.html'>mod_solvers</a></li>
+    <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
+    <li><a href='../module/mod_output.html'>mod_output</a></li>
     <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
+    <li><a href='../module/mod_timing.html'>mod_timing</a></li>
     <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
-    <li><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_console.html'>mod_console</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></li>
   </ul>
       </li>
       </ul>
@@ -176,9 +179,10 @@ KU Leuven, Belgium.</p>
       <a class="list-group-item" href="../program/legolas.html#variable-matrix_a~14">matrix_A</a>
       <a class="list-group-item" href="../program/legolas.html#variable-matrix_b~14">matrix_B</a>
       <a class="list-group-item" href="../program/legolas.html#variable-timer~2">timer</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-settings~156">settings</a>
-      <a class="list-group-item" href="../program/legolas.html#variable-background~77">background</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-settings~149">settings</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-background~82">background</a>
       <a class="list-group-item" href="../program/legolas.html#variable-eigenfunctions~5">eigenfunctions</a>
+      <a class="list-group-item" href="../program/legolas.html#variable-physics~61">physics</a>
       <a class="list-group-item" href="../program/legolas.html#variable-omega~11">omega</a>
       <a class="list-group-item" href="../program/legolas.html#variable-right_eigenvectors~4">right_eigenvectors</a>
     </div>
@@ -221,12 +225,12 @@ KU Leuven, Belgium.</p>
   <td><strong>timer</strong></td><td></td><td></td><td><p>timer used by the whole program</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-settings~156"></span>type(<a href='../type/settings_t.html'>settings_t</a>)</td>
+  <td><span class="anchor" id="variable-settings~149"></span>type(<a href='../type/settings_t.html'>settings_t</a>)</td>
   <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td><td></td><td><p>dedicated settings type</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-background~77"></span>type(<a href='../type/background_t.html'>background_t</a>)</td>
+  <td><span class="anchor" id="variable-background~82"></span>type(<a href='../type/background_t.html'>background_t</a>)</td>
   <td></td><td>::</td>
   <td><strong>background</strong></td><td></td><td></td><td></td>
 </tr>
@@ -234,6 +238,11 @@ KU Leuven, Belgium.</p>
   <td><span class="anchor" id="variable-eigenfunctions~5"></span>type(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>)</td>
   <td></td><td>::</td>
   <td><strong>eigenfunctions</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-physics~61"></span>type(<a href='../type/physics_t~2.html'>physics_t</a>)</td>
+  <td></td><td>::</td>
+  <td><strong>physics</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-omega~11"></span>complex(kind=dp),</td>

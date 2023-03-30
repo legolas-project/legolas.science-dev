@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.6% of total for modules and submodules.">165 statements</a>
+    title=" 1.7% of total for modules and submodules.">184 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_thermal_conduction.f08"> Source File</a></li>
   </ul>
@@ -106,16 +106,45 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#variable-settings~146">settings</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#variable-background~79">background</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#type-conduction_t">conduction_t</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-new_conduction">new_conduction</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_tcpara">get_tcpara</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcparadt">get_dtcparadT</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcparadr">get_dtcparadr</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_tcperp">get_tcperp</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcperpdrho">get_dtcperpdrho</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcperpdt">get_dtcperpdT</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcperpdb2">get_dtcperpdB2</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcperpdr">get_dtcperpdr</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-tcprefactor">tcprefactor</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-dtcprefactordr">dtcprefactordr</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_conduction_values">set_conduction_values</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_para">set_kappa_para</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_perp">set_kappa_perp</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_para_derivatives">set_kappa_para_derivatives</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_perp_derivatives">set_kappa_perp_derivatives</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_perp_radial_derivative">set_kappa_perp_radial_derivative</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_conduction_prefactor">set_conduction_prefactor</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-delete~20">delete</a>
     </div>
   </div>
 </div>
@@ -136,12 +165,8 @@ thermal conduction values based on the equilibrium configuration.</p>
   <ul class="list-inline">
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_background.html'>mod_background</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-    <li><a href='../module/mod_types.html'>mod_types</a></li>
     <li><a href='../module/mod_physical_constants.html'>mod_physical_constants</a></li>
-    <li><a href='../module/mod_function_utils.html'>mod_function_utils</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
   </ul>
       </li>
@@ -155,16 +180,45 @@ thermal conduction values based on the equilibrium configuration.</p>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#variable-settings~146">settings</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#variable-background~79">background</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#type-conduction_t">conduction_t</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-new_conduction">new_conduction</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_tcpara">get_tcpara</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcparadt">get_dtcparadT</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcparadr">get_dtcparadr</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_tcperp">get_tcperp</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcperpdrho">get_dtcperpdrho</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcperpdt">get_dtcperpdT</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcperpdb2">get_dtcperpdB2</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-get_dtcperpdr">get_dtcperpdr</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-tcprefactor">tcprefactor</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-dtcprefactordr">dtcprefactordr</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_conduction_values">set_conduction_values</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_para">set_kappa_para</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_perp">set_kappa_perp</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_para_derivatives">set_kappa_para_derivatives</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_perp_derivatives">set_kappa_perp_derivatives</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_kappa_perp_radial_derivative">set_kappa_perp_radial_derivative</a>
-      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-set_conduction_prefactor">set_conduction_prefactor</a>
+      <a class="list-group-item" href="../module/mod_thermal_conduction.html#proc-delete~20">delete</a>
     </div>
   </div>
 </div>
@@ -173,309 +227,369 @@ thermal conduction values based on the equilibrium configuration.</p>
     <br class="visible-xs visible-sm hidden-md">
 
 
+    <section>
+    <h2>Variables</h2>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-settings~146"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>private,</td>  <td>pointer</td><td>::</td>
+  <td><strong>settings</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-background~79"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>private,</td>  <td>pointer</td><td>::</td>
+  <td><strong>background</strong></td><td></td><td></td><td></td>
+</tr>
+</tbody>
+</table>
+
+    </section>
+    <br>
     
     
 
     
+    <section>
+     <h2>Derived Types</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-conduction_t"></span><h3>type, public :: <a href='../type/conduction_t.html'>conduction_t</a>  </h3></div>
+  <div class="panel-body">
+     <h4>Components</h4>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-tcpara"></span>procedure(realdp),</td>
+<td>public,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>tcpara</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dtcparadt"></span>procedure(realdp),</td>
+<td>public,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>dtcparadT</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dtcparadr"></span>procedure(realdp),</td>
+<td>public,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>dtcparadr</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-tcperp"></span>procedure(realdp),</td>
+<td>public,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>tcperp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dtcperpdrho"></span>procedure(realdp),</td>
+<td>public,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>dtcperpdrho</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dtcperpdt"></span>procedure(realdp),</td>
+<td>public,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>dtcperpdT</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dtcperpdb2"></span>procedure(realdp),</td>
+<td>public,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>dtcperpdB2</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dtcperpdr"></span>procedure(realdp),</td>
+<td>public,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>dtcperpdr</strong></td><td></td><td></td><td></td>
+</tr>
+</tbody>
+</table>
+
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+       <tr><td>procedure, public :: <strong><a href='../type/conduction_t.html#boundprocedure-tcprefactor'>tcprefactor</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/conduction_t.html#boundprocedure-dtcprefactordr'>dtcprefactordr</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/conduction_t.html#boundprocedure-delete~20'>delete</a></strong>  </td>
+       <td></td></tr>
+       </tbody>
+       </table>
+  </div>
+</div>
+
+    </section>
+  <br>
     
+ 
+    <section>
+    <h2>Functions</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-new_conduction"></span><h3>public function <a href='../proc/new_conduction.html'>new_conduction</a>(settings_tgt, background_tgt) result(conduction)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in),</td>
+  <td></td>  <td>target</td><td>::</td>
+  <td><strong>settings_tgt</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in),</td>
+  <td></td>  <td>target</td><td>::</td>
+  <td><strong>background_tgt</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>type(<a href='../type/conduction_t.html'>conduction_t</a>)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_tcpara"></span><h3>private function <a href='../proc/get_tcpara.html'>get_tcpara</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_dtcparadt"></span><h3>private function <a href='../proc/get_dtcparadt.html'>get_dtcparadT</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_dtcparadr"></span><h3>private function <a href='../proc/get_dtcparadr.html'>get_dtcparadr</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_tcperp"></span><h3>private function <a href='../proc/get_tcperp.html'>get_tcperp</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_dtcperpdrho"></span><h3>private function <a href='../proc/get_dtcperpdrho.html'>get_dtcperpdrho</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_dtcperpdt"></span><h3>private function <a href='../proc/get_dtcperpdt.html'>get_dtcperpdT</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_dtcperpdb2"></span><h3>private function <a href='../proc/get_dtcperpdb2.html'>get_dtcperpdB2</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_dtcperpdr"></span><h3>private function <a href='../proc/get_dtcperpdr.html'>get_dtcperpdr</a>(x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-tcprefactor"></span><h3>private function <a href='../proc/tcprefactor.html'>tcprefactor</a>(this, x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/conduction_t.html'>conduction_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-dtcprefactordr"></span><h3>private function <a href='../proc/dtcprefactordr.html'>dtcprefactordr</a>(this, x)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/conduction_t.html'>conduction_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+  </div>
+  </div>
+
+    </section>
+    <br>
 
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_conduction_values"></span><h3>public subroutine <a href='../proc/set_conduction_values.html'>set_conduction_values</a>(settings, background, kappa_field)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-delete~20"></span><h3>private subroutine <a href='../proc/delete~20.html'>delete</a>(this)</h3></div>
   <div class="panel-body">
-       
-<p>This routines sets all thermal conduction values in <tt>kappa_field</tt>,
-and calls all other relevant subroutines defined in this module.
-</p><a href="../proc/set_conduction_values.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
+           
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>background</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/conduction_type.html'>conduction_type</a>),</td>
+  <td><span class="anchor" ></span>class(<a href='../type/conduction_t.html'>conduction_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>kappa_field</strong></td><td><p>the type containing the thermal conduction attributes</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_para"></span><h3>private subroutine <a href='../proc/set_kappa_para.html'>set_kappa_para</a>(settings, T0_eq, tc_para)</h3></div>
-  <div class="panel-body">
-       
-<p>Calculates the parallel thermal conduction.
-Returns either the full parallel thermal conduction based on
-the equilibrium parameters, or a fixed value if specified
-in the global variables module.
-</p><a href="../proc/set_kappa_para.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>T0_eq</strong>(:)</td><td><p>equilibrium temperature</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>tc_para</strong>(size(T0_eq))</td><td><p>parallel thermal conduction values, normalised on exit</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_perp"></span><h3>private subroutine <a href='../proc/set_kappa_perp.html'>set_kappa_perp</a>(settings, T0_eq, rho0_eq, B0_eq, tc_perp)</h3></div>
-  <div class="panel-body">
-       
-<p>Calculates the perpendicular thermal conduction.
-Returns either the full perpendicular thermal conduction based on
-the equilibrium parameters, or a fixed value if specified
-in the global variables module.
-</p><a href="../proc/set_kappa_perp.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>T0_eq</strong>(:)</td><td><p>equilibrium temperature</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>rho0_eq</strong>(:)</td><td><p>equilibrium density</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>B0_eq</strong>(:)</td><td><p>equilibrium magnetic field</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>tc_perp</strong>(size(T0_eq))</td><td><p>perpendicular thermal conduction values, normalised on exit</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_para_derivatives"></span><h3>private subroutine <a href='../proc/set_kappa_para_derivatives.html'>set_kappa_para_derivatives</a>(settings, T0_eq, d_tcpara_dT)</h3></div>
-  <div class="panel-body">
-       
-<p>Calculates the temperature derivative of the parallel thermal conduction component.
-</p><a href="../proc/set_kappa_para_derivatives.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>T0_eq</strong>(:)</td><td><p>equilibrium temperature</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>d_tcpara_dT</strong>(size(T0_eq))</td><td><p>temperature derivative of parallel thermal conduction, normalised on exit</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_perp_derivatives"></span><h3>private subroutine <a href='../proc/set_kappa_perp_derivatives.html'>set_kappa_perp_derivatives</a>(settings, T0_eq, rho0_eq, B0_eq, d_tc_drho, d_tc_dB2, d_tc_dT)</h3></div>
-  <div class="panel-body">
-       
-<p>Calculates the thermal conduction derivatives.
-Returns the derivative of the perpendicular thermal conduction with respect to
-density, magnetic field squared and temperature.
-</p><a href="../proc/set_kappa_perp_derivatives.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>T0_eq</strong>(:)</td><td><p>equilibrium temperature</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>rho0_eq</strong>(:)</td><td><p>equilibrium density</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>B0_eq</strong>(:)</td><td><p>equilibrium magnetic field</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>d_tc_drho</strong>(size(T0_eq))</td><td><p>derivative of perpendicular conduction with respect to density</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>d_tc_dB2</strong>(size(T0_eq))</td><td><p>derivative of perpendicular conduction with respect to magnetic field squared</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>d_tc_dT</strong>(size(T0_eq))</td><td><p>derivative of perpendicular conduction with respect to temperature</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_kappa_perp_radial_derivative"></span><h3>private subroutine <a href='../proc/set_kappa_perp_radial_derivative.html'>set_kappa_perp_radial_derivative</a>(settings, background, kappa_field)</h3></div>
-  <div class="panel-body">
-       
-<p>Sets the radial derivative of the perpendicular thermal conduction coefficient.
-This is defined as
-<script type="math/tex; mode=display">
-kappa_{\perp, 0}' = \frac{d\kappa_{\perp, 0}}{d\rho} \rho_0'
- + \frac{d\kappa_{\perp, 0}}{dT} T_0'
- + \frac{d\kappa_{\perp, 0}}{d(B^2)}2B_0 B_0'
-</script>
-</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>background</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/conduction_type.html'>conduction_type</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>kappa_field</strong></td><td><p>the type containing the thermal conduction attributes</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_conduction_prefactor"></span><h3>private subroutine <a href='../proc/set_conduction_prefactor.html'>set_conduction_prefactor</a>(settings, background, kappa_field)</h3></div>
-  <div class="panel-body">
-       
-<p>Sets the thermal conduction prefactor, given by
-<script type="math/tex; mode=display"> \frac{\kappa_{\parallel, 0} - \kappa_{\perp, 0}}{B_0^2} </script>.
-The radial derivative of the prefactor is also set, given by
-<script type="math/tex; mode=display"> \frac{1}{B_0^3}\left[
- -2\left(\kappa_{\parallel, 0} - \kappa_{\perp, 0}\right)B_0'
- +\left(\kappa_{\parallel, 0}' - \kappa_{\perp, 0}'\right)B_0
-\right]
-</script>
-</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>background</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/conduction_type.html'>conduction_type</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>kappa_field</strong></td><td><p>the type containing the thermal conduction attributes</p></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 </tbody>
 </table>
