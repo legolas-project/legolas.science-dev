@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.3% of total for modules and submodules.">139 statements</a>
+    title=" 2.0% of total for modules and submodules.">218 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_grid.f08"> Source File</a></li>
   </ul>
@@ -106,6 +106,14 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
+  <div id="inters-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_grid.html#interface-dx_func_i">dx_func_i</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
   <div id="types-0" class="panel-collapse collapse">
     <div class="list-group">
@@ -121,6 +129,8 @@
       <a class="list-group-item" href="../module/mod_grid.html#proc-get_eps">get_eps</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-get_deps">get_deps</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-is_valid_custom_base_grid">is_valid_custom_base_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-get_updated_number_of_gridpoints">get_updated_number_of_gridpoints</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-is_valid_dx">is_valid_dx</a>
     </div>
   </div>
 </div>
@@ -130,10 +140,13 @@
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_grid.html#proc-initialise">initialise</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-set_custom_grid">set_custom_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_spacing_function">set_spacing_function</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-set_base_grid">set_base_grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-set_gaussian_grid">set_gaussian_grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-set_ef_grid">set_ef_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-generate_grid">generate_grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-delete~2">delete</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-log_msg_by_gridpoint_change">log_msg_by_gridpoint_change</a>
     </div>
   </div>
 </div>
@@ -161,9 +174,9 @@ nodes <script type="math/tex">j</script> as
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
       </li>
       </ul>
@@ -175,6 +188,14 @@ nodes <script type="math/tex">j</script> as
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
+  <div id="inters-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_grid.html#interface-dx_func_i">dx_func_i</a>
+    </div>
+  </div>
+</div>
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
   <div id="types-1" class="panel-collapse collapse">
@@ -191,6 +212,8 @@ nodes <script type="math/tex">j</script> as
       <a class="list-group-item" href="../module/mod_grid.html#proc-get_eps">get_eps</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-get_deps">get_deps</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-is_valid_custom_base_grid">is_valid_custom_base_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-get_updated_number_of_gridpoints">get_updated_number_of_gridpoints</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-is_valid_dx">is_valid_dx</a>
     </div>
   </div>
 </div>
@@ -200,10 +223,13 @@ nodes <script type="math/tex">j</script> as
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../module/mod_grid.html#proc-initialise">initialise</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-set_custom_grid">set_custom_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-set_spacing_function">set_spacing_function</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-set_base_grid">set_base_grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-set_gaussian_grid">set_gaussian_grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-set_ef_grid">set_ef_grid</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-generate_grid">generate_grid</a>
       <a class="list-group-item" href="../module/mod_grid.html#proc-delete~2">delete</a>
+      <a class="list-group-item" href="../module/mod_grid.html#proc-log_msg_by_gridpoint_change">log_msg_by_gridpoint_change</a>
     </div>
   </div>
 </div>
@@ -214,6 +240,33 @@ nodes <script type="math/tex">j</script> as
 
     
     
+    <section>
+   <h2>Interfaces</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-dx_func_i"></span><h3>interface   </h3></div>
+  <ul class="list-group">
+    <li class="list-group-item">
+    <h3>private function dx_func_i(x)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+    </li>
+  </ul>
+</div>
+
+    </section>
+  <br>
 
     
     <section>
@@ -241,6 +294,11 @@ nodes <script type="math/tex">j</script> as
   <td><strong>ef_grid</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-dx_func"></span>procedure(<a href='../interface/dx_func_i.html'>dx_func_i</a>),</td>
+<td>private,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>dx_func</strong></td><td>=> </td><td>null()</td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-settings"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>private,</td>  <td>pointer</td><td>::</td>
   <td><strong>settings</strong></td><td></td><td></td><td></td>
@@ -255,6 +313,11 @@ nodes <script type="math/tex">j</script> as
 <td>private</td>  <td></td><td>::</td>
   <td><strong>uses_custom_base_grid</strong></td><td></td><td></td><td></td>
 </tr>
+<tr>
+  <td><span class="anchor" id="variable-uses_custom_dx"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>uses_custom_dx</strong></td><td></td><td></td><td></td>
+</tr>
 </tbody>
 </table>
 
@@ -268,9 +331,13 @@ nodes <script type="math/tex">j</script> as
        <td></td></tr>
        <tr><td>procedure, private :: <strong><a href='../type/grid_t.html#boundprocedure-set_ef_grid'>set_ef_grid</a></strong>  </td>
        <td></td></tr>
+       <tr><td>procedure, private :: <strong><a href='../type/grid_t.html#boundprocedure-generate_grid'>generate_grid</a></strong>  </td>
+       <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/grid_t.html#boundprocedure-initialise'>initialise</a></strong>  </td>
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/grid_t.html#boundprocedure-set_custom_grid'>set_custom_grid</a></strong>  </td>
+       <td></td></tr>
+       <tr><td>procedure, public :: <strong><a href='../type/grid_t.html#boundprocedure-set_spacing_function'>set_spacing_function</a></strong>  </td>
        <td></td></tr>
        <tr><td>procedure, public :: <strong><a href='../type/grid_t.html#boundprocedure-get_eps'>get_eps</a></strong>  </td>
        <td></td></tr>
@@ -385,6 +452,54 @@ nodes <script type="math/tex">j</script> as
   </div>
   </div>
 
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_updated_number_of_gridpoints"></span><h3>private function <a href='../proc/get_updated_number_of_gridpoints.html'>get_updated_number_of_gridpoints</a>(settings, dx_func) result(updated_pts)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(<a href='../interface/dx_func_i.html'>dx_func_i</a>)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dx_func</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>integer</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-is_valid_dx"></span><h3>private function <a href='../proc/is_valid_dx.html'>is_valid_dx</a>(dx)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dx</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>logical</small></h4>  
+
+  </div>
+  </div>
+
     </section>
     <br>
 
@@ -437,7 +552,33 @@ nodes <script type="math/tex">j</script> as
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_base_grid"></span><h3>private pure subroutine <a href='../proc/set_base_grid.html'>set_base_grid</a>(this)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_spacing_function"></span><h3>private subroutine <a href='../proc/set_spacing_function.html'>set_spacing_function</a>(this, dx_func)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(<a href='../interface/dx_func_i.html'>dx_func_i</a>)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dx_func</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-set_base_grid"></span><h3>private subroutine <a href='../proc/set_base_grid.html'>set_base_grid</a>(this)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -497,6 +638,26 @@ nodes <script type="math/tex">j</script> as
   </div>
 
       <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-generate_grid"></span><h3>private subroutine <a href='../proc/generate_grid.html'>generate_grid</a>(this)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-delete~2"></span><h3>private pure subroutine <a href='../proc/delete~2.html'>delete</a>(this)</h3></div>
   <div class="panel-body">
            
@@ -508,6 +669,32 @@ nodes <script type="math/tex">j</script> as
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-log_msg_by_gridpoint_change"></span><h3>private subroutine <a href='../proc/log_msg_by_gridpoint_change.html'>log_msg_by_gridpoint_change</a>(old_pts, new_pts)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>old_pts</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>new_pts</strong></td><td></td>
 </tr>
 </tbody>
 </table>

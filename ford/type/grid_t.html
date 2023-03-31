@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 2.9% of total for derived types.</p>Including implementation: 104 statements,  4.1% of total for derived types.">17 statements</a>
+    title="<p> 3.5% of total for derived types.</p>Including implementation: 144 statements,  5.6% of total for derived types.">21 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_grid.f08"> Source File</a></li>
   </ul>
@@ -113,9 +113,11 @@
       <a class="list-group-item" href="../type/grid_t.html#variable-base_grid">base_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-gaussian_grid">gaussian_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-ef_grid">ef_grid</a>
+      <a class="list-group-item" href="../type/grid_t.html#variable-dx_func">dx_func</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-settings">settings</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-is_initialised">is_initialised</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-uses_custom_base_grid">uses_custom_base_grid</a>
+      <a class="list-group-item" href="../type/grid_t.html#variable-uses_custom_dx">uses_custom_dx</a>
     </div>
   </div>
 </div>
@@ -126,8 +128,10 @@
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_base_grid">set_base_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_gaussian_grid">set_gaussian_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_ef_grid">set_ef_grid</a>
+      <a class="list-group-item" href="../type/grid_t.html#boundprocedure-generate_grid">generate_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-initialise">initialise</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_custom_grid">set_custom_grid</a>
+      <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_spacing_function">set_spacing_function</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-get_eps">get_eps</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-get_deps">get_deps</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-delete">delete</a>
@@ -154,9 +158,11 @@
       <a class="list-group-item" href="../type/grid_t.html#variable-base_grid">base_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-gaussian_grid">gaussian_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-ef_grid">ef_grid</a>
+      <a class="list-group-item" href="../type/grid_t.html#variable-dx_func">dx_func</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-settings">settings</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-is_initialised">is_initialised</a>
       <a class="list-group-item" href="../type/grid_t.html#variable-uses_custom_base_grid">uses_custom_base_grid</a>
+      <a class="list-group-item" href="../type/grid_t.html#variable-uses_custom_dx">uses_custom_dx</a>
     </div>
   </div>
 </div>
@@ -167,8 +173,10 @@
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_base_grid">set_base_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_gaussian_grid">set_gaussian_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_ef_grid">set_ef_grid</a>
+      <a class="list-group-item" href="../type/grid_t.html#boundprocedure-generate_grid">generate_grid</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-initialise">initialise</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_custom_grid">set_custom_grid</a>
+      <a class="list-group-item" href="../type/grid_t.html#boundprocedure-set_spacing_function">set_spacing_function</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-get_eps">get_eps</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-get_deps">get_deps</a>
       <a class="list-group-item" href="../type/grid_t.html#boundprocedure-delete">delete</a>
@@ -200,6 +208,11 @@
   <td><strong>ef_grid</strong>(:)</td><td></td><td></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-dx_func"></span>procedure(<a href='../interface/dx_func_i.html'>dx_func_i</a>),</td>
+<td>private,</td>  <td>pointer, nopass</td><td>::</td>
+  <td><strong>dx_func</strong></td><td>=> </td><td>null()</td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-settings"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>private,</td>  <td>pointer</td><td>::</td>
   <td><strong>settings</strong></td><td></td><td></td><td></td>
@@ -213,6 +226,11 @@
   <td><span class="anchor" id="variable-uses_custom_base_grid"></span>logical,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>uses_custom_base_grid</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-uses_custom_dx"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>uses_custom_dx</strong></td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -229,7 +247,7 @@
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_base_grid"></span><h3>procedure, private :: <strong>set_base_grid</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private pure subroutine <a href='../proc/set_base_grid.html'>set_base_grid</a>(this)</h3>    
+          <h3>private subroutine <a href='../proc/set_base_grid.html'>set_base_grid</a>(this)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -292,6 +310,28 @@
 </div>
 
      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-generate_grid"></span><h3>procedure, private :: <strong>generate_grid</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private subroutine <a href='../proc/generate_grid.html'>generate_grid</a>(this)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-initialise"></span><h3>procedure, public :: <strong>initialise</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
@@ -332,6 +372,34 @@
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>custom</strong>(:)</td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_spacing_function"></span><h3>procedure, public :: <strong>set_spacing_function</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private subroutine <a href='../proc/set_spacing_function.html'>set_spacing_function</a>(this, dx_func)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(<a href='../interface/dx_func_i.html'>dx_func_i</a>)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dx_func</strong></td><td></td>
 </tr>
 </tbody>
 </table>
