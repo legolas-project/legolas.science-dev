@@ -663,8 +663,8 @@
 
 <div class="viewcode-block" id="LegolasDataSet.get_nearest_eigenvalues"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_nearest_eigenvalues">[docs]</a>    <span class="k">def</span> <span class="nf">get_nearest_eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Calculates the eigenvalues nearest to a given guess. This calculates</span>
-<span class="sd">        the nearest eigenvalue based on the distance between two points.</span>
+<span class="sd">        Calculates the eigenvalues nearest to a given guess based on</span>
+<span class="sd">        the distance between two points.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -679,6 +679,32 @@
 <span class="sd">            The nearest eigenvalues to the provided guesses, corresponding with the</span>
 <span class="sd">            indices `idxs`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">idxs</span><span class="p">,</span> <span class="n">eigenvals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_eigenvalues_at_distance</span><span class="p">(</span><span class="n">ev_guesses</span><span class="p">,</span> <span class="n">min_distance</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">eigenvals</span></div>
+
+<div class="viewcode-block" id="LegolasDataSet.get_eigenvalues_at_distance"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_eigenvalues_at_distance">[docs]</a>    <span class="k">def</span> <span class="nf">get_eigenvalues_at_distance</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="p">,</span> <span class="n">min_distance</span><span class="o">=</span><span class="mf">0.0</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the nearest eigenvalues nearest to a given guess</span>
+<span class="sd">        but at a minimum distance away.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        ev_guesses : float, complex, list of float, list of complex</span>
+<span class="sd">            The guesses for the eigenvalues. These can be a single float/complex value,</span>
+<span class="sd">            or a list/Numpy array of floats/complex values.</span>
+<span class="sd">        min_distance : float</span>
+<span class="sd">            Minimum distance from the guess the eigenvalue should have.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Tuple(numpy.ndarray, numpy.ndarray)</span>
+<span class="sd">            The indices of the nearest eigenvalues at the minimum distance</span>
+<span class="sd">            in the :attr:`eigenvalues` array.</span>
+<span class="sd">            The nearest eigenvalues at a minimum distance to the provided guesses,</span>
+<span class="sd">            corresponding with the indices `idxs`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ev_guesses</span> <span class="o">=</span> <span class="n">transform_to_numpy</span><span class="p">(</span><span class="n">ev_guesses</span><span class="p">)</span>
         <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ev_guesses</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
         <span class="n">eigenvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ev_guesses</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
@@ -687,11 +713,53 @@
             <span class="n">distances</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="o">.</span><span class="n">real</span> <span class="o">-</span> <span class="n">ev_guess</span><span class="o">.</span><span class="n">real</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="o">.</span><span class="n">imag</span> <span class="o">-</span> <span class="n">ev_guess</span><span class="o">.</span><span class="n">imag</span>
             <span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="c1"># we don&#39;t want eigenvalues closer than min_distance</span>
+            <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">distances</span> <span class="o">&lt;</span> <span class="n">min_distance</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">distances</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
             <span class="c1"># closest distance (squared)</span>
             <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanargmin</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
             <span class="n">idxs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
             <span class="n">eigenvals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">eigenvals</span></div></div>
+        <span class="k">return</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">eigenvals</span></div>
+
+<div class="viewcode-block" id="LegolasDataSet.get_omega_max"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_omega_max">[docs]</a>    <span class="k">def</span> <span class="nf">get_omega_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">range_omega</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1e24</span><span class="p">)):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the maximum of the real or imaginary part of a spectrum.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        real : bool</span>
+<span class="sd">            Returns the largest real part if True (default option),</span>
+<span class="sd">            returns the largest imaginary part if False.</span>
+<span class="sd">        strip : bool</span>
+<span class="sd">            Look for maximum in a horizontal half-plane if True. Default False.</span>
+<span class="sd">        range_omega : tuple of floats</span>
+<span class="sd">            The horizontal range of the strip if strip=True.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        omega_max : complex</span>
+<span class="sd">            The eigenvalue that has the largest real or imaginary part in</span>
+<span class="sd">            the chosen strip. Default: in the whole complex plane.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">eigvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">strip</span><span class="p">:</span>
+            <span class="n">omega_min</span><span class="p">,</span> <span class="n">omega_max</span> <span class="o">=</span> <span class="n">range_omega</span>
+            <span class="c1"># all eigvals outside of strip locally get replaced by NaN</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span> <span class="o">-</span> <span class="n">omega_min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span> <span class="o">-</span> <span class="n">omega_max</span>
+            <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="n">eigvals</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+        <span class="k">if</span> <span class="n">real</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanargmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">eigvals</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanargmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">eigvals</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span></div></div>
 
 
 <div class="viewcode-block" id="LegolasDataSeries"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries">[docs]</a><span class="k">class</span> <span class="nc">LegolasDataSeries</span><span class="p">(</span><span class="n">LegolasDataContainer</span><span class="p">):</span>
@@ -892,7 +960,27 @@
 <span class="sd">            A Numpy array of same length as the number of datasets, containing the</span>
 <span class="sd">            squared wavenumber for each.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_k0_squared</span><span class="p">()</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_k0_squared</span><span class="p">()</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="LegolasDataSeries.get_omega_max"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_omega_max">[docs]</a>    <span class="k">def</span> <span class="nf">get_omega_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the maximum of the real or imaginary part of the spectrum for</span>
+<span class="sd">        the various datasets.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        real : bool</span>
+<span class="sd">            Returns the largest real part if True (default option),</span>
+<span class="sd">            returns the largest imaginary part if False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        omega_max : numpy.ndarray</span>
+<span class="sd">            A Numpy array of same length as the number of datasets, containing tuples</span>
+<span class="sd">            of the eigenvalue that has the largest real or imaginary part.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_omega_max</span><span class="p">(</span><span class="n">real</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div></div>
 </pre></div>
 
            </div>

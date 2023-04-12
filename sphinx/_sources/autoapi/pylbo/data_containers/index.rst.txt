@@ -1087,8 +1087,8 @@ Functions
    .. py:method:: get_nearest_eigenvalues(ev_guesses) -> tuple(np.ndarray, np.ndarray)
 
       
-      Calculates the eigenvalues nearest to a given guess. This calculates
-      the nearest eigenvalue based on the distance between two points.
+      Calculates the eigenvalues nearest to a given guess based on
+      the distance between two points.
 
       :param ev_guesses: The guesses for the eigenvalues. These can be a single float/complex value,
                          or a list/Numpy array of floats/complex values.
@@ -1098,6 +1098,75 @@ Functions
                 The nearest eigenvalues to the provided guesses, corresponding with the
                 indices `idxs`.
       :rtype: Tuple(numpy.ndarray, numpy.ndarray)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_eigenvalues_at_distance(ev_guesses, min_distance=0.0) -> tuple(np.ndarray, np.ndarray)
+
+      
+      Calculates the nearest eigenvalues nearest to a given guess
+      but at a minimum distance away.
+
+      :param ev_guesses: The guesses for the eigenvalues. These can be a single float/complex value,
+                         or a list/Numpy array of floats/complex values.
+      :type ev_guesses: float, complex, list of float, list of complex
+      :param min_distance: Minimum distance from the guess the eigenvalue should have.
+      :type min_distance: float
+
+      :returns: The indices of the nearest eigenvalues at the minimum distance
+                in the :attr:`eigenvalues` array.
+                The nearest eigenvalues at a minimum distance to the provided guesses,
+                corresponding with the indices `idxs`.
+      :rtype: Tuple(numpy.ndarray, numpy.ndarray)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_omega_max(real=True, strip=False, range_omega=(0.0, 1e+24))
+
+      
+      Calculates the maximum of the real or imaginary part of a spectrum.
+
+      :param real: Returns the largest real part if True (default option),
+                   returns the largest imaginary part if False.
+      :type real: bool
+      :param strip: Look for maximum in a horizontal half-plane if True. Default False.
+      :type strip: bool
+      :param range_omega: The horizontal range of the strip if strip=True.
+      :type range_omega: tuple of floats
+
+      :returns: **omega_max** -- The eigenvalue that has the largest real or imaginary part in
+                the chosen strip. Default: in the whole complex plane.
+      :rtype: complex
 
 
 
@@ -1567,6 +1636,37 @@ Functions
 
       :returns: A Numpy array of same length as the number of datasets, containing the
                 squared wavenumber for each.
+      :rtype: numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_omega_max(real=True)
+
+      
+      Calculates the maximum of the real or imaginary part of the spectrum for
+      the various datasets.
+
+      :param real: Returns the largest real part if True (default option),
+                   returns the largest imaginary part if False.
+      :type real: bool
+
+      :returns: **omega_max** -- A Numpy array of same length as the number of datasets, containing tuples
+                of the eigenvalue that has the largest real or imaginary part.
       :rtype: numpy.ndarray
 
 

@@ -790,8 +790,8 @@ corresponding eigenfunction names.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_nearest_eigenvalues">
 <span class="sig-name descname"><span class="pre">get_nearest_eigenvalues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ev_guesses</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.get_nearest_eigenvalues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_nearest_eigenvalues" title="Permalink to this definition"></a></dt>
-<dd><p>Calculates the eigenvalues nearest to a given guess. This calculates
-the nearest eigenvalue based on the distance between two points.</p>
+<dd><p>Calculates the eigenvalues nearest to a given guess based on
+the distance between two points.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>ev_guesses</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><em>complex</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><em>complex</em></a>) – The guesses for the eigenvalues. These can be a single float/complex value,
@@ -804,6 +804,54 @@ indices <cite>idxs</cite>.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Tuple(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_eigenvalues_at_distance">
+<span class="sig-name descname"><span class="pre">get_eigenvalues_at_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ev_guesses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.get_eigenvalues_at_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_eigenvalues_at_distance" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the nearest eigenvalues nearest to a given guess
+but at a minimum distance away.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ev_guesses</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><em>complex</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><em>complex</em></a>) – The guesses for the eigenvalues. These can be a single float/complex value,
+or a list/Numpy array of floats/complex values.</p></li>
+<li><p><strong>min_distance</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Minimum distance from the guess the eigenvalue should have.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The indices of the nearest eigenvalues at the minimum distance
+in the <a class="reference internal" href="#pylbo.data_containers.LegolasDataSet.eigenvalues" title="pylbo.data_containers.LegolasDataSet.eigenvalues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">eigenvalues</span></code></a> array.
+The nearest eigenvalues at a minimum distance to the provided guesses,
+corresponding with the indices <cite>idxs</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_omega_max">
+<span class="sig-name descname"><span class="pre">get_omega_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_omega</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">1e+24)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSet.get_omega_max"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_omega_max" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the maximum of the real or imaginary part of a spectrum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Returns the largest real part if True (default option),
+returns the largest imaginary part if False.</p></li>
+<li><p><strong>strip</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Look for maximum in a horizontal half-plane if True. Default False.</p></li>
+<li><p><strong>range_omega</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em> of </em><em>floats</em>) – The horizontal range of the strip if strip=True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>omega_max</strong> – The eigenvalue that has the largest real or imaginary part in
+the chosen strip. Default: in the whole complex plane.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)">complex</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -992,6 +1040,26 @@ squared wavenumber for each.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSeries.get_omega_max">
+<span class="sig-name descname"><span class="pre">get_omega_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/data_containers.html#LegolasDataSeries.get_omega_max"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.data_containers.LegolasDataSeries.get_omega_max" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the maximum of the real or imaginary part of the spectrum for
+the various datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>real</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Returns the largest real part if True (default option),
+returns the largest imaginary part if False.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>omega_max</strong> – A Numpy array of same length as the number of datasets, containing tuples
+of the eigenvalue that has the largest real or imaginary part.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
 </dd>
 </dl>
 </dd></dl>

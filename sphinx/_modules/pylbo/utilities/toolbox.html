@@ -300,6 +300,96 @@
     <span class="n">x2</span> <span class="o">=</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">cterm_min</span> <span class="o">*</span> <span class="n">Aterm</span> <span class="o">-</span> <span class="n">cterm_pos</span> <span class="o">*</span> <span class="n">Bterm</span>
     <span class="n">x3</span> <span class="o">=</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">cterm_pos</span> <span class="o">*</span> <span class="n">Aterm</span> <span class="o">-</span> <span class="n">cterm_min</span> <span class="o">*</span> <span class="n">Bterm</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="count_zeroes"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.count_zeroes">[docs]</a><span class="k">def</span> <span class="nf">count_zeroes</span><span class="p">(</span><span class="n">eigfuncs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Counts the number of zeroes of an array of complex eigenfunctions by looking at</span>
+<span class="sd">    sign changes of the real and imaginary part of the eigenfunctions.</span>
+<span class="sd">    Doesn&#39;t include the grid endpoints in the count, since the boundary conditions are</span>
+<span class="sd">    automatically satisfied. This only becomes accurate for eigenfunctions with enough</span>
+<span class="sd">    oscillations and is resolution dependent. Therefore, we take the minimum</span>
+<span class="sd">    of the number of zeroes of the real and imaginary part.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    eigfuncs : numpy.ndarray</span>
+<span class="sd">        Array of eigenfunction arrays of complex numbers.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    nzeroes : np.ndarray(dtype=int)</span>
+<span class="sd">        Counter array containing the number of zeroes of the real or imaginary part</span>
+<span class="sd">        of each input eigenfunction array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">nzeroes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">eigfunc</span> <span class="ow">in</span> <span class="n">eigfuncs</span><span class="p">:</span>
+        <span class="n">counter_real</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">counter_imag</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">sign_real_eigfunc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">eigfunc</span><span class="p">))</span>
+        <span class="n">sign_imag_eigfunc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">eigfunc</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sign_real_eigfunc</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">sign_real_eigfunc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">sign_real_eigfunc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">counter_real</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">sign_real_eigfunc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">sign_real_eigfunc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">sign_real_eigfunc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">sign_real_eigfunc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">counter_real</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="n">sign_imag_eigfunc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">sign_imag_eigfunc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">counter_imag</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">sign_imag_eigfunc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">sign_imag_eigfunc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">sign_imag_eigfunc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">sign_imag_eigfunc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">counter_imag</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">counter</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">counter_real</span><span class="p">,</span> <span class="n">counter_imag</span><span class="p">)</span>
+        <span class="n">nzeroes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nzeroes</span><span class="p">,</span> <span class="n">counter</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">nzeroes</span></div>
+
+
+<div class="viewcode-block" id="invert_continuum_array"><a class="viewcode-back" href="../../../autoapi/pylbo/utilities/toolbox/index.html#pylbo.utilities.toolbox.invert_continuum_array">[docs]</a><span class="k">def</span> <span class="nf">invert_continuum_array</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">r_gauss</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Finds the location of resonance for eigenmode solutions having a real part that</span>
+<span class="sd">    might overlap with a continuum range.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cont : numpy.ndarray</span>
+<span class="sd">        Array containing the range of a specific continuum. Automatically has the same</span>
+<span class="sd">        length as r_gauss, since it has the same shape as the equilibrium fields used</span>
+<span class="sd">        to calculate the continua. Can be complex, but only the resonance with the real</span>
+<span class="sd">        part is calculated.</span>
+<span class="sd">    r_gauss : numpy.ndarray</span>
+<span class="sd">        Array containing the grid on which equilibrium fields are defined.</span>
+<span class="sd">    sigma : complex</span>
+<span class="sd">        An eigenvalue solution of the generalized eigenvalue problem.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    r_inv : None, float</span>
+<span class="sd">        The location where there is resonance between the eigenmode and the continuum.</span>
+<span class="sd">        Returns None if there is no resonance with the specified continuum.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">cont</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">sigma</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># There is no sign change, value is not contained in array.</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">diff</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Linear interpolation between the points where the sign change occurs.</span>
+            <span class="n">r_inv</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">cont</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="o">/</span> <span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">cont</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">cont</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">r_gauss</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">r_gauss</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">r_gauss</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">r_inv</span>
+        <span class="k">elif</span> <span class="n">diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">diff</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># The exact same value is in the continuum array, return it.</span>
+            <span class="k">return</span> <span class="n">r_gauss</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div>
 </pre></div>
 
            </div>

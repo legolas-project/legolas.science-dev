@@ -225,6 +225,13 @@ Files can be loaded with the numpy load function.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._print_nzeroes">
+<span class="sig-name descname"><span class="pre">_print_nzeroes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/eigenfunctions/eigfunc_interface.html#EigenfunctionInterface._print_nzeroes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._print_nzeroes" title="Permalink to this definition"></a></dt>
+<dd><p>Counts and prints the number of zeroes of the eigenfunctions for all selected
+eigenvalues on the plot, together with eigvals.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_label">
 <span class="sig-name descname"><span class="pre">_get_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/eigenfunctions/eigfunc_interface.html#EigenfunctionInterface._get_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_label" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the label used in the legend. In case of a data series, the datfile
@@ -364,6 +371,34 @@ clearly distinguishable from those who do have them.</p>
 <dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._display_tooltip">
 <span class="sig-name descname"><span class="pre">_display_tooltip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/eigenfunctions/eigfunc_interface.html#EigenfunctionInterface._display_tooltip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._display_tooltip" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._invert_continua">
+<span class="sig-name descname"><span class="pre">_invert_continua</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/eigenfunctions/eigfunc_interface.html#EigenfunctionInterface._invert_continua"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._invert_continua" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the locations of resonance with the continua for a specific
+eigenmode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ef_idx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The number of the eigenvalue in the dataset.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>r_inv</strong> (<em>dict</em>) – Dictionary of continua names and inverted resonance locations
+(float, or None if not in domain).</p></li>
+<li><p><strong>labels</strong> (<em>dict</em>) – Dictionary containing the corresponding labels to be printed when drawing
+the locations of resonance.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._show_resonances">
+<span class="sig-name descname"><span class="pre">_show_resonances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/visualisation/eigenfunctions/eigfunc_interface.html#EigenfunctionInterface._show_resonances"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._show_resonances" title="Permalink to this definition"></a></dt>
+<dd><p>Shows the locations of resonance with the continua.
+There is a different linestyle for every continuum.</p>
+</dd></dl>
 
 </dd></dl>
 

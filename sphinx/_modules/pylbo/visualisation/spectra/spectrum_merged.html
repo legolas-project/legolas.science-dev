@@ -120,6 +120,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_single_color</span> <span class="o">=</span> <span class="kc">True</span>
             <span class="c1"># if everything is 1 color no use for a legend</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_use_legend</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1"># option to color spectrum based on parameter value:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_color_from_parameter</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">color_dict</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_color_from_parameter</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">color_parameter</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_interactive</span> <span class="o">=</span> <span class="n">interactive</span>
 
 <div class="viewcode-block" id="MergedSpectrumPlot.add_spectrum"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_merged/index.html#pylbo.visualisation.spectra.spectrum_merged.MergedSpectrumPlot.add_spectrum">[docs]</a>    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -128,6 +132,11 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_single_color</span><span class="p">:</span>
             <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span>
         <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="c1"># coloring based on parameter value:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_color_from_parameter</span><span class="p">:</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">color_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                    <span class="n">ds</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">color_parameter</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span>
+                <span class="p">)</span>
             <span class="n">spectrum_point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
                 <span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="o">.</span><span class="n">real</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x_scaling</span><span class="p">,</span>
                 <span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_scaling</span><span class="p">,</span>

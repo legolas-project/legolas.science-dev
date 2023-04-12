@@ -77,7 +77,14 @@
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.legend_handler</span> <span class="kn">import</span> <span class="n">LegendHandler</span>
 
-<div class="viewcode-block" id="CONTINUA_NAMES"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/continua/index.html#pylbo.visualisation.continua.CONTINUA_NAMES">[docs]</a><span class="n">CONTINUA_NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;slow-&quot;</span><span class="p">,</span> <span class="s2">&quot;slow+&quot;</span><span class="p">,</span> <span class="s2">&quot;alfven-&quot;</span><span class="p">,</span> <span class="s2">&quot;alfven+&quot;</span><span class="p">,</span> <span class="s2">&quot;thermal&quot;</span><span class="p">,</span> <span class="s2">&quot;doppler&quot;</span><span class="p">]</span></div>
+<div class="viewcode-block" id="CONTINUA_NAMES"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/continua/index.html#pylbo.visualisation.continua.CONTINUA_NAMES">[docs]</a><span class="n">CONTINUA_NAMES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;slow-&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\Omega_S^-&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;slow+&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\Omega_S^+&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alfven-&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\Omega_A^-&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alfven+&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\Omega_A^+&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;thermal&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\Omega_T&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;doppler&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\Omega_0&quot;</span><span class="p">,</span>
+<span class="p">}</span></div>
 <div class="viewcode-block" id="CONTINUA_COLORS"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/continua/index.html#pylbo.visualisation.continua.CONTINUA_COLORS">[docs]</a><span class="n">CONTINUA_COLORS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;grey&quot;</span><span class="p">]</span></div>
 
 
@@ -208,12 +215,12 @@
 
     <span class="c1"># get doppler-shifted continua and return</span>
     <span class="n">continua</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">CONTINUA_NAMES</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">doppler</span> <span class="o">+</span> <span class="n">slow_min</span><span class="p">,</span>  <span class="c1"># minus is accounted for in slow_min</span>
-        <span class="n">CONTINUA_NAMES</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">doppler</span> <span class="o">+</span> <span class="n">slow_plus</span><span class="p">,</span>
-        <span class="n">CONTINUA_NAMES</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">doppler</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">alfven2</span><span class="p">),</span>
-        <span class="n">CONTINUA_NAMES</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">doppler</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">alfven2</span><span class="p">),</span>
-        <span class="n">CONTINUA_NAMES</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">thermal</span><span class="p">,</span>
-        <span class="n">CONTINUA_NAMES</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">doppler</span><span class="p">,</span>
+        <span class="nb">list</span><span class="p">(</span><span class="n">CONTINUA_NAMES</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">doppler</span> <span class="o">+</span> <span class="n">slow_min</span><span class="p">,</span>  <span class="c1"># minus already in slow_min</span>
+        <span class="nb">list</span><span class="p">(</span><span class="n">CONTINUA_NAMES</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">doppler</span> <span class="o">+</span> <span class="n">slow_plus</span><span class="p">,</span>
+        <span class="nb">list</span><span class="p">(</span><span class="n">CONTINUA_NAMES</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">doppler</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">alfven2</span><span class="p">),</span>
+        <span class="nb">list</span><span class="p">(</span><span class="n">CONTINUA_NAMES</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">doppler</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">alfven2</span><span class="p">),</span>
+        <span class="nb">list</span><span class="p">(</span><span class="n">CONTINUA_NAMES</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">thermal</span><span class="p">,</span>
+        <span class="nb">list</span><span class="p">(</span><span class="n">CONTINUA_NAMES</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">doppler</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">continua</span></div>
 
@@ -235,7 +242,8 @@
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interactive</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">interactive</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">continua_names</span> <span class="o">=</span> <span class="n">CONTINUA_NAMES</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">continua_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">CONTINUA_NAMES</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">continua_latex</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">CONTINUA_NAMES</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_continua_colors</span> <span class="o">=</span> <span class="n">CONTINUA_COLORS</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">markersize</span> <span class="o">=</span> <span class="mi">6</span>

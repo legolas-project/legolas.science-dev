@@ -21,6 +21,8 @@ Functions
    pylbo.utilities.toolbox.transform_to_list
    pylbo.utilities.toolbox.transform_to_numpy
    pylbo.utilities.toolbox.solve_cubic_exact
+   pylbo.utilities.toolbox.count_zeroes
+   pylbo.utilities.toolbox.invert_continuum_array
 
 
 
@@ -230,6 +232,77 @@ Functions
 
    :returns: **roots** -- The three roots of the cubic polynomial as a Numpy array.
    :rtype: np.ndarray(ndim=3, dtype=complex)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: count_zeroes(eigfuncs)
+
+   
+   Counts the number of zeroes of an array of complex eigenfunctions by looking at
+   sign changes of the real and imaginary part of the eigenfunctions.
+   Doesn't include the grid endpoints in the count, since the boundary conditions are
+   automatically satisfied. This only becomes accurate for eigenfunctions with enough
+   oscillations and is resolution dependent. Therefore, we take the minimum
+   of the number of zeroes of the real and imaginary part.
+
+   :param eigfuncs: Array of eigenfunction arrays of complex numbers.
+   :type eigfuncs: numpy.ndarray
+
+   :returns: **nzeroes** -- Counter array containing the number of zeroes of the real or imaginary part
+             of each input eigenfunction array.
+   :rtype: np.ndarray(dtype=int)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: invert_continuum_array(cont, r_gauss, sigma)
+
+   
+   Finds the location of resonance for eigenmode solutions having a real part that
+   might overlap with a continuum range.
+
+   :param cont: Array containing the range of a specific continuum. Automatically has the same
+                length as r_gauss, since it has the same shape as the equilibrium fields used
+                to calculate the continua. Can be complex, but only the resonance with the real
+                part is calculated.
+   :type cont: numpy.ndarray
+   :param r_gauss: Array containing the grid on which equilibrium fields are defined.
+   :type r_gauss: numpy.ndarray
+   :param sigma: An eigenvalue solution of the generalized eigenvalue problem.
+   :type sigma: complex
+
+   :returns: **r_inv** -- The location where there is resonance between the eigenmode and the continuum.
+             Returns None if there is no resonance with the specified continuum.
+   :rtype: None, float
 
 
 

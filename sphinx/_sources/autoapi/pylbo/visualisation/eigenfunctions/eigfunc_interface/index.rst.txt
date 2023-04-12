@@ -296,6 +296,30 @@ Functions
       ..
           !! processed by numpydoc !!
 
+   .. py:method:: _print_nzeroes()
+
+      
+      Counts and prints the number of zeroes of the eigenfunctions for all selected
+      eigenvalues on the plot, together with eigvals.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
    .. py:method:: _get_label(ds, ev_idx, w)
 
       
@@ -572,5 +596,60 @@ Functions
 
    .. py:method:: _display_tooltip()
 
+
+   .. py:method:: _invert_continua(ds, ev_idx)
+
+      
+      Calculates the locations of resonance with the continua for a specific
+      eigenmode.
+
+      :param ef_idx: The number of the eigenvalue in the dataset.
+      :type ef_idx: int
+
+      :returns: * **r_inv** (*dict*) -- Dictionary of continua names and inverted resonance locations
+                  (float, or None if not in domain).
+                * **labels** (*dict*) -- Dictionary containing the corresponding labels to be printed when drawing
+                  the locations of resonance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: _show_resonances(ds, ev_idx, color)
+
+      
+      Shows the locations of resonance with the continua.
+      There is a different linestyle for every continuum.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
 

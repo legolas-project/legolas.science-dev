@@ -83,7 +83,11 @@
 <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">PathCollection</span>
 <span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSeries</span><span class="p">,</span> <span class="n">LegolasDataSet</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
-<span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">add_pickradius_to_item</span>
+<span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">add_pickradius_to_item</span><span class="p">,</span>
+    <span class="n">count_zeroes</span><span class="p">,</span>
+    <span class="n">invert_continuum_array</span><span class="p">,</span>
+<span class="p">)</span>
 
 
 <div class="viewcode-block" id="get_artist_data"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.get_artist_data">[docs]</a><span class="k">def</span> <span class="nf">get_artist_data</span><span class="p">(</span><span class="n">artist</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">Artist</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
@@ -133,6 +137,8 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_ef_subset_artists</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_display_tooltip</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_resonances</span> <span class="o">=</span> <span class="kc">False</span>
 
 <div class="viewcode-block" id="EigenfunctionInterface._check_data_is_present"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._check_data_is_present">[docs]</a>    <span class="k">def</span> <span class="nf">_check_data_is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -259,6 +265,33 @@
             <span class="p">)</span>
             <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
+<div class="viewcode-block" id="EigenfunctionInterface._print_nzeroes"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._print_nzeroes">[docs]</a>    <span class="k">def</span> <span class="nf">_print_nzeroes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Counts and prints the number of zeroes of the eigenfunctions for all selected</span>
+<span class="sd">        eigenvalues on the plot, together with eigvals.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Currently selected eigenvalues and number of zeroes &quot;</span>
+            <span class="s2">&quot;of their eigenfunctions:&quot;</span>
+        <span class="p">)</span>
+        <span class="n">ef_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">ds</span><span class="p">,</span> <span class="n">points</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">points</span><span class="o">.</span><span class="n">keys</span><span class="p">()])</span>
+
+            <span class="n">ef_container</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_eigenfunctions</span><span class="p">(</span><span class="n">ev_idxs</span><span class="o">=</span><span class="n">idxs</span><span class="p">)</span>
+            <span class="n">eigfuncs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">idxs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">ef_grid</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;complex&quot;</span><span class="p">)</span>
+            <span class="n">current_index</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">efs</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="n">ef_container</span><span class="p">):</span>
+                <span class="n">eigfuncs</span><span class="p">[</span><span class="n">current_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">efs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ef_name</span><span class="p">)</span>
+                <span class="n">current_index</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">nzeroes</span> <span class="o">=</span> <span class="n">count_zeroes</span><span class="p">(</span><span class="n">eigfuncs</span><span class="p">)</span>
+            <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idxs</span><span class="p">],</span><span class="w"> </span><span class="n">nzeroes</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span></div>
+
 <div class="viewcode-block" id="EigenfunctionInterface._get_label"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_label">[docs]</a>    <span class="k">def</span> <span class="nf">_get_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the label used in the legend. In case of a data series, the datfile</span>
@@ -347,6 +380,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_retransform_functions</span><span class="p">()</span>
         <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;w&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_print_selected_eigenvalues</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_print_nzeroes</span><span class="p">()</span>
         <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_save_eigenvalue_selection</span><span class="p">()</span>
         <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;j&quot;</span><span class="p">:</span>
@@ -559,7 +594,89 @@
             <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
             <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
             <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface._invert_continua"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._invert_continua">[docs]</a>    <span class="k">def</span> <span class="nf">_invert_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the locations of resonance with the continua for a specific</span>
+<span class="sd">        eigenmode.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        ef_idx : int</span>
+<span class="sd">            The number of the eigenvalue in the dataset.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        r_inv : dict</span>
+<span class="sd">            Dictionary of continua names and inverted resonance locations</span>
+<span class="sd">            (float, or None if not in domain).</span>
+<span class="sd">        labels : dict</span>
+<span class="sd">            Dictionary containing the corresponding labels to be printed when drawing</span>
+<span class="sd">            the locations of resonance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">CONTINUUM_LABELS</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;slow-&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$r(\Omega_S^-)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;slow+&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$r(\Omega_S^+)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;alfven-&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$r(\Omega_A^-)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;alfven+&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$r(\Omega_A^+)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;thermal&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$r(\Omega_T)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;doppler&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$r(\Omega_0)&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">r_inv</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="n">eigfuncs</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_eigenfunctions</span><span class="p">(</span><span class="n">ev_idxs</span><span class="o">=</span><span class="p">[</span><span class="n">ev_idx</span><span class="p">])</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="n">eigfuncs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eigenvalue&quot;</span><span class="p">)</span>
+
+        <span class="n">continua_keys</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">continua</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">continuum_key</span> <span class="ow">in</span> <span class="n">continua_keys</span><span class="p">:</span>
+            <span class="n">continuum</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">continua</span><span class="p">[</span><span class="n">continuum_key</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">continuum</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="c1"># removes duplicates</span>
+            <span class="n">continuum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">continuum</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+
+            <span class="n">r_inv_temp</span> <span class="o">=</span> <span class="n">invert_continuum_array</span><span class="p">(</span><span class="n">continuum</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">grid_gauss</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+
+            <span class="n">r_inv</span><span class="p">[</span><span class="n">continuum_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_inv_temp</span>
+            <span class="n">labels</span><span class="p">[</span><span class="n">continuum_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">CONTINUUM_LABELS</span><span class="p">[</span><span class="n">continuum_key</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">gamma</span> <span class="o">&gt;</span> <span class="mf">1e3</span><span class="p">:</span>
+            <span class="c1"># Approximation for incompressibility currently implemented.</span>
+            <span class="k">del</span> <span class="n">r_inv</span><span class="p">[</span><span class="s2">&quot;slow-&quot;</span><span class="p">]</span>
+            <span class="k">del</span> <span class="n">r_inv</span><span class="p">[</span><span class="s2">&quot;slow+&quot;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">r_inv</span><span class="p">,</span> <span class="n">labels</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface._show_resonances"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._show_resonances">[docs]</a>    <span class="k">def</span> <span class="nf">_show_resonances</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Shows the locations of resonance with the continua.</span>
+<span class="sd">        There is a different linestyle for every continuum.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">RESONANCE_STYLES</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;slow-&quot;</span><span class="p">:</span> <span class="s2">&quot;dotted&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;slow+&quot;</span><span class="p">:</span> <span class="s2">&quot;dotted&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;alfven-&quot;</span><span class="p">:</span> <span class="s2">&quot;dashed&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;alfven+&quot;</span><span class="p">:</span> <span class="s2">&quot;dashed&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;thermal&quot;</span><span class="p">:</span> <span class="s2">&quot;solid&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;doppler&quot;</span><span class="p">:</span> <span class="s2">&quot;dashdot&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">r_inv</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_invert_continua</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">)</span>
+        <span class="n">cont_keys</span> <span class="o">=</span> <span class="n">r_inv</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">cont_key</span> <span class="ow">in</span> <span class="n">cont_keys</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">r_inv</span><span class="p">[</span><span class="n">cont_key</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span>
+                    <span class="n">x</span><span class="o">=</span><span class="n">r_inv</span><span class="p">[</span><span class="n">cont_key</span><span class="p">],</span>
+                    <span class="n">linestyle</span><span class="o">=</span><span class="n">RESONANCE_STYLES</span><span class="p">[</span><span class="n">cont_key</span><span class="p">],</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+                <span class="p">)</span></div></div>
 </pre></div>
 
            </div>

@@ -129,6 +129,12 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.solve_cubic_exact" title="pylbo.utilities.toolbox.solve_cubic_exact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_cubic_exact</span></code></a>(a, b, c, d)</p></td>
 <td><p>Solves a given cubic polynomial of the form</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.count_zeroes" title="pylbo.utilities.toolbox.count_zeroes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count_zeroes</span></code></a>(eigfuncs)</p></td>
+<td><p>Counts the number of zeroes of an array of complex eigenfunctions by looking at</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.invert_continuum_array" title="pylbo.utilities.toolbox.invert_continuum_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invert_continuum_array</span></code></a>(cont, r_gauss, sigma)</p></td>
+<td><p>Finds the location of resonance for eigenmode solutions having a real part that</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="py function">
@@ -275,6 +281,55 @@ From <a class="reference external" href="https://math.stackexchange.com/question
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray(ndim=3, dtype=complex)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.utilities.toolbox.count_zeroes">
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">count_zeroes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eigfuncs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#count_zeroes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.count_zeroes" title="Permalink to this definition"></a></dt>
+<dd><p>Counts the number of zeroes of an array of complex eigenfunctions by looking at
+sign changes of the real and imaginary part of the eigenfunctions.
+Doesn’t include the grid endpoints in the count, since the boundary conditions are
+automatically satisfied. This only becomes accurate for eigenfunctions with enough
+oscillations and is resolution dependent. Therefore, we take the minimum
+of the number of zeroes of the real and imaginary part.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eigfuncs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – Array of eigenfunction arrays of complex numbers.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>nzeroes</strong> – Counter array containing the number of zeroes of the real or imaginary part
+of each input eigenfunction array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray(dtype=int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.utilities.toolbox.invert_continuum_array">
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">invert_continuum_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cont</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_gauss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#invert_continuum_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.invert_continuum_array" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the location of resonance for eigenmode solutions having a real part that
+might overlap with a continuum range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cont</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – Array containing the range of a specific continuum. Automatically has the same
+length as r_gauss, since it has the same shape as the equilibrium fields used
+to calculate the continua. Can be complex, but only the resonance with the real
+part is calculated.</p></li>
+<li><p><strong>r_gauss</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – Array containing the grid on which equilibrium fields are defined.</p></li>
+<li><p><strong>sigma</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><em>complex</em></a>) – An eigenvalue solution of the generalized eigenvalue problem.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>r_inv</strong> – The location where there is resonance between the eigenmode and the continuum.
+Returns None if there is no resonance with the specified continuum.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
