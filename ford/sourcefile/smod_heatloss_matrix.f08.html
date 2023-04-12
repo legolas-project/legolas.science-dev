@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>smod_cooling_matrix.f08 &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>smod_heatloss_matrix.f08 &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>smod_cooling_matrix.f08
+    <h1>smod_heatloss_matrix.f08
     <small>Source File</small>
     </h1>
     <div class="row">
@@ -83,10 +83,10 @@
     data-placement="bottom" data-html="true"
     title=" 0.2% of total for source files.">21 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/smod_cooling_matrix.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/smod_heatloss_matrix.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li class="active">smod_cooling_matrix.f08</li>
+     <li class="active">smod_heatloss_matrix.f08</li>
   </ol>
 </div>
 </div>
@@ -107,14 +107,14 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#submods-0">Submodules</a></h3></div>
   <div id="submods-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/smod_cooling_matrix.html">smod_cooling_matrix</a>
+      <a class="list-group-item" href="../module/smod_heatloss_matrix.html">smod_heatloss_matrix</a>
     </div>
   </div>
 </div>
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../sourcefile/smod_cooling_matrix.f08.html#src">smod_cooling_matrix.f08</a>
+    <a class="list-group-item" href="../sourcefile/smod_heatloss_matrix.f08.html#src">smod_heatloss_matrix.f08</a>
   </div>
 </div>
 
@@ -132,14 +132,14 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#submods-1">Submodules</a></h3></div>
   <div id="submods-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/smod_cooling_matrix.html">smod_cooling_matrix</a>
+      <a class="list-group-item" href="../module/smod_heatloss_matrix.html">smod_heatloss_matrix</a>
     </div>
   </div>
 </div>
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../sourcefile/smod_cooling_matrix.f08.html#src">smod_cooling_matrix.f08</a>
+    <a class="list-group-item" href="../sourcefile/smod_heatloss_matrix.f08.html#src">smod_heatloss_matrix.f08</a>
   </div>
 </div>
 
@@ -148,12 +148,12 @@
 
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="k">submodule</span><span class="w"> </span><span class="p">(</span><span class="n">mod_matrix_manager</span><span class="p">)</span><span class="w"> </span><span class="n">smod_cooling_matrix</span>
+    <div class="hl"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="k">submodule</span><span class="w"> </span><span class="p">(</span><span class="n">mod_matrix_manager</span><span class="p">)</span><span class="w"> </span><span class="n">smod_heatloss_matrix</span>
 <a id="ln-2" name="ln-2" href="#ln-2"></a><span class="w">  </span><span class="k">implicit none</span>
 <a id="ln-3" name="ln-3" href="#ln-3"></a>
 <a id="ln-4" name="ln-4" href="#ln-4"></a><span class="k">contains</span>
 <a id="ln-5" name="ln-5" href="#ln-5"></a>
-<a id="ln-6" name="ln-6" href="#ln-6"></a><span class="k">  module procedure </span><span class="n">add_cooling_matrix_terms</span>
+<a id="ln-6" name="ln-6" href="#ln-6"></a><span class="k">  module procedure </span><span class="n">add_heatloss_matrix_terms</span>
 <a id="ln-7" name="ln-7" href="#ln-7"></a><span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rho</span>
 <a id="ln-8" name="ln-8" href="#ln-8"></a><span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Lrho</span><span class="p">,</span><span class="w"> </span><span class="n">LT</span><span class="p">,</span><span class="w"> </span><span class="n">L0</span>
 <a id="ln-9" name="ln-9" href="#ln-9"></a><span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">gamma_1</span>
@@ -163,9 +163,9 @@
 <a id="ln-13" name="ln-13" href="#ln-13"></a>
 <a id="ln-14" name="ln-14" href="#ln-14"></a><span class="k">    </span><span class="n">gamma_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">settings</span><span class="p">%</span><span class="n">physics</span><span class="p">%</span><span class="n">get_gamma_1</span><span class="p">()</span>
 <a id="ln-15" name="ln-15" href="#ln-15"></a><span class="w">    </span><span class="n">rho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">background</span><span class="p">%</span><span class="n">density</span><span class="p">%</span><span class="n">rho0</span><span class="p">(</span><span class="n">x_gauss</span><span class="p">)</span>
-<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="w">    </span><span class="n">Lrho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">physics</span><span class="p">%</span><span class="n">cooling</span><span class="p">%</span><span class="n">dLdrho</span><span class="p">(</span><span class="n">x_gauss</span><span class="p">)</span>
-<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="w">    </span><span class="n">LT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">physics</span><span class="p">%</span><span class="n">cooling</span><span class="p">%</span><span class="n">dLdT</span><span class="p">(</span><span class="n">x_gauss</span><span class="p">)</span>
-<a id="ln-18" name="ln-18" href="#ln-18"></a><span class="w">    </span><span class="n">L0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">physics</span><span class="p">%</span><span class="n">cooling</span><span class="p">%</span><span class="n">L0</span><span class="p">(</span><span class="n">x_gauss</span><span class="p">)</span>
+<a id="ln-16" name="ln-16" href="#ln-16"></a><span class="w">    </span><span class="n">Lrho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">physics</span><span class="p">%</span><span class="n">heatloss</span><span class="p">%</span><span class="n">get_dLdrho</span><span class="p">(</span><span class="n">x_gauss</span><span class="p">)</span>
+<a id="ln-17" name="ln-17" href="#ln-17"></a><span class="w">    </span><span class="n">LT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">physics</span><span class="p">%</span><span class="n">heatloss</span><span class="p">%</span><span class="n">get_dLdT</span><span class="p">(</span><span class="n">x_gauss</span><span class="p">)</span>
+<a id="ln-18" name="ln-18" href="#ln-18"></a><span class="w">    </span><span class="n">L0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">physics</span><span class="p">%</span><span class="n">heatloss</span><span class="p">%</span><span class="n">get_L0</span><span class="p">(</span><span class="n">x_gauss</span><span class="p">)</span>
 <a id="ln-19" name="ln-19" href="#ln-19"></a>
 <a id="ln-20" name="ln-20" href="#ln-20"></a><span class="w">    </span><span class="n">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_matrix_elements</span><span class="p">(</span><span class="n">state_vector</span><span class="o">=</span><span class="n">settings</span><span class="p">%</span><span class="n">get_state_vector</span><span class="p">())</span>
 <a id="ln-21" name="ln-21" href="#ln-21"></a>
@@ -174,9 +174,9 @@
 <a id="ln-24" name="ln-24" href="#ln-24"></a>
 <a id="ln-25" name="ln-25" href="#ln-25"></a><span class="w">    </span><span class="k">call </span><span class="n">add_to_quadblock</span><span class="p">(</span><span class="n">quadblock</span><span class="p">,</span><span class="w"> </span><span class="n">elements</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">%</span><span class="n">dims</span><span class="p">)</span>
 <a id="ln-26" name="ln-26" href="#ln-26"></a><span class="w">    </span><span class="k">call </span><span class="n">elements</span><span class="p">%</span><span class="n">delete</span><span class="p">()</span>
-<a id="ln-27" name="ln-27" href="#ln-27"></a><span class="w">  </span><span class="k">end procedure </span><span class="n">add_cooling_matrix_terms</span>
+<a id="ln-27" name="ln-27" href="#ln-27"></a><span class="w">  </span><span class="k">end procedure </span><span class="n">add_heatloss_matrix_terms</span>
 <a id="ln-28" name="ln-28" href="#ln-28"></a>
-<a id="ln-29" name="ln-29" href="#ln-29"></a><span class="k">end submodule </span><span class="n">smod_cooling_matrix</span>
+<a id="ln-29" name="ln-29" href="#ln-29"></a><span class="k">end submodule </span><span class="n">smod_heatloss_matrix</span>
 </pre></div>
 
     </section>

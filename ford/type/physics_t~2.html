@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 2.2% of total for derived types.</p>Including implementation: 57 statements,  2.2% of total for derived types.">13 statements</a>
+    title="<p> 2.4% of total for derived types.</p>Including implementation: 75 statements,  2.8% of total for derived types.">15 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_physics.f08"> Source File</a></li>
   </ul>
@@ -114,7 +114,7 @@
       <a class="list-group-item" href="../type/physics_t~2.html#variable-gravity~2">gravity</a>
       <a class="list-group-item" href="../type/physics_t~2.html#variable-hall~2">hall</a>
       <a class="list-group-item" href="../type/physics_t~2.html#variable-conduction~2">conduction</a>
-      <a class="list-group-item" href="../type/physics_t~2.html#variable-cooling~2">cooling</a>
+      <a class="list-group-item" href="../type/physics_t~2.html#variable-heatloss">heatloss</a>
     </div>
   </div>
 </div>
@@ -126,7 +126,9 @@
       <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_gravity_funcs">set_gravity_funcs</a>
       <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_parallel_conduction_funcs">set_parallel_conduction_funcs</a>
       <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_perpendicular_conduction_funcs">set_perpendicular_conduction_funcs</a>
-      <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-delete~18">delete</a>
+      <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_cooling_funcs">set_cooling_funcs</a>
+      <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_heating_funcs">set_heating_funcs</a>
+      <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-delete~19">delete</a>
     </div>
   </div>
 </div>
@@ -151,7 +153,7 @@
       <a class="list-group-item" href="../type/physics_t~2.html#variable-gravity~2">gravity</a>
       <a class="list-group-item" href="../type/physics_t~2.html#variable-hall~2">hall</a>
       <a class="list-group-item" href="../type/physics_t~2.html#variable-conduction~2">conduction</a>
-      <a class="list-group-item" href="../type/physics_t~2.html#variable-cooling~2">cooling</a>
+      <a class="list-group-item" href="../type/physics_t~2.html#variable-heatloss">heatloss</a>
     </div>
   </div>
 </div>
@@ -163,7 +165,9 @@
       <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_gravity_funcs">set_gravity_funcs</a>
       <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_parallel_conduction_funcs">set_parallel_conduction_funcs</a>
       <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_perpendicular_conduction_funcs">set_perpendicular_conduction_funcs</a>
-      <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-delete~18">delete</a>
+      <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_cooling_funcs">set_cooling_funcs</a>
+      <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-set_heating_funcs">set_heating_funcs</a>
+      <a class="list-group-item" href="../type/physics_t~2.html#boundprocedure-delete~19">delete</a>
     </div>
   </div>
 </div>
@@ -197,9 +201,9 @@
   <td><strong>conduction</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-cooling~2"></span>type(<a href='../type/cooling_t.html'>cooling_t</a>),</td>
+  <td><span class="anchor" id="variable-heatloss"></span>type(<a href='../type/heatloss_t.html'>heatloss_t</a>),</td>
 <td>public</td>  <td></td><td>::</td>
-  <td><strong>cooling</strong></td><td></td><td></td><td></td>
+  <td><strong>heatloss</strong></td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -373,10 +377,84 @@
 </div>
 
      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-delete~18"></span><h3>procedure, public :: <strong>delete</strong>    </h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_cooling_funcs"></span><h3>procedure, public :: <strong>set_cooling_funcs</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private subroutine <a href='../proc/delete~18.html'>delete</a>(this)</h3>    
+          <h3>private subroutine <a href='../proc/set_cooling_funcs.html'>set_cooling_funcs</a>(this, lambdaT_func, dlambdadT_func)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(realdp)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>lambdaT_func</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(realdp),</td>
+<td></td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>dlambdadT_func</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_heating_funcs"></span><h3>procedure, public :: <strong>set_heating_funcs</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private subroutine <a href='../proc/set_heating_funcs.html'>set_heating_funcs</a>(this, H_func, dHdT_func, dHdrho_func)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(realdp)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>H_func</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(realdp),</td>
+<td></td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>dHdT_func</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(realdp),</td>
+<td></td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>dHdrho_func</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-delete~19"></span><h3>procedure, public :: <strong>delete</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private subroutine <a href='../proc/delete~19.html'>delete</a>(this)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>

@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>add_cooling_matrix_terms &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>new_heatloss &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>add_cooling_matrix_terms
-      <small>Module Procedure</small>
+    <h1>new_heatloss
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">17 statements</a>
+    title=" 0.1% of total for procedures.">9 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/smod_cooling_matrix.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_heatloss.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/smod_cooling_matrix.f08.html'>smod_cooling_matrix.f08</a></li>
-     <li><a href='../module/smod_cooling_matrix.html'>smod_cooling_matrix</a></li>
-     <li class="active">add_cooling_matrix_terms</li>
+     <li><a href='../sourcefile/mod_heatloss.f08.html'>mod_heatloss.f08</a></li>
+     <li><a href='../module/mod_heatloss.html'>mod_heatloss</a></li>
+     <li class="active">new_heatloss</li>
   </ol>
 </div>
 </div>
@@ -113,8 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure add_cooling_matrix_terms <small>module module subroutine add_cooling_matrix_terms(x_gauss, weight, quadblock, settings, grid, background, physics)</small>   <a href='../interface/add_cooling_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
-</h2>
+    <h2>public function new_heatloss(settings_tgt, background_tgt) result(heatloss)</h2>
     
 
 
@@ -123,50 +122,22 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-x_gauss~6"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>x_gauss</strong></td><td></td>
+  <td><span class="anchor" id="variable-settings_tgt~3"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in),</td>
+  <td></td>  <td>target</td><td>::</td>
+  <td><strong>settings_tgt</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-weight~13"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>weight</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-quadblock~13"></span>complex(kind=dp),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>quadblock</strong>(:,:)</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-settings~103"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-grid~63"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>grid</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-background~62"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>background</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-physics~53"></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>physics</strong></td><td></td>
+  <td><span class="anchor" id="variable-background_tgt~3"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in),</td>
+  <td></td>  <td>target</td><td>::</td>
+  <td><strong>background_tgt</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
+   <h3>Return Value <small><span class="anchor" id="variable-heatloss~2"></span>type(<a href='../type/heatloss_t.html'>heatloss_t</a>)</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
