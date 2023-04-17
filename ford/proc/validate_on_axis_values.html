@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>standard_equil_conditions &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>validate_on_axis_values &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>standard_equil_conditions
+    <h1>validate_on_axis_values
       <small>Subroutine</small>
     </h1>
     <div class="row">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">59 statements</a>
+    title=" 0.1% of total for procedures.">17 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></li>
      <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-     <li class="active">standard_equil_conditions</li>
+     <li class="active">validate_on_axis_values</li>
   </ol>
 </div>
 </div>
@@ -113,46 +113,25 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine standard_equil_conditions(settings, grid, background, physics)</h2>
+    <h2>private subroutine validate_on_axis_values(settings, background)</h2>
     
 
-    <p>Checks the standard force-balance equation for the equilibrium state. This
-results in three expressions,
-<script type="math/tex; mode=display"> \Bigl(p_0 + \frac{1}{2}B_0^2\Bigr)' + \rho_0 g + \rho_0 v_{01} v_{01}'
-   - \frac{\varepsilon'}{\varepsilon}\bigl(\rho_0 v_{02}^2 - B_{02}^2\bigr) = 0, </script>
-<script type="math/tex; mode=display"> \rho_0 v_{01} \bigl( v_{02}' + \frac{\varepsilon'}{\varepsilon} v_{02} \bigr)
-   - \frac{B_{01}}{\varepsilon} (\varepsilon B_{02})' = 0, </script>
-<script type="math/tex; mode=display"> \rho_0 v_{01} v_{03}' - B_{01} B_{03}' = 0, </script>
-and they should all be fulfilled.
-</p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws a warning if force-balance is not satisfied.</p></div>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~42"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-settings~41"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-grid~38"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>grid</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-background~37"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+  <td><span class="anchor" id="variable-background~44"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-physics~35"></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>

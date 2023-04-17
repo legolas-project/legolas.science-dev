@@ -120,7 +120,10 @@
 <h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h3>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.calculate_continua" title="pylbo.visualisation.continua.calculate_continua"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_continua</span></code></a>(ds)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.is_zero" title="pylbo.visualisation.continua.is_zero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_zero</span></code></a>(values)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.calculate_continua" title="pylbo.visualisation.continua.calculate_continua"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_continua</span></code></a>(ds)</p></td>
 <td><p>Calculates the different continua for a given dataset.</p></td>
 </tr>
 </tbody>
@@ -130,6 +133,24 @@
 <h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading"></a></h3>
 <table class="autosummary longtable docutils align-default">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.SLOW_MIN" title="pylbo.visualisation.continua.SLOW_MIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SLOW_MIN</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.SLOW_PLUS" title="pylbo.visualisation.continua.SLOW_PLUS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SLOW_PLUS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.ALFVEN_MIN" title="pylbo.visualisation.continua.ALFVEN_MIN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALFVEN_MIN</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.ALFVEN_PLUS" title="pylbo.visualisation.continua.ALFVEN_PLUS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALFVEN_PLUS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.THERMAL" title="pylbo.visualisation.continua.THERMAL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">THERMAL</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.DOPPLER" title="pylbo.visualisation.continua.DOPPLER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DOPPLER</span></code></a></p></td>
+<td><p></p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.continua.CONTINUA_NAMES" title="pylbo.visualisation.continua.CONTINUA_NAMES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONTINUA_NAMES</span></code></a></p></td>
 <td><p></p></td>
 </tr>
@@ -139,6 +160,36 @@
 </tbody>
 </table>
 <dl class="py data">
+<dt class="sig sig-object py" id="pylbo.visualisation.continua.SLOW_MIN">
+<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.continua.</span></span><span class="sig-name descname"><span class="pre">SLOW_MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'slow-'</span></em><a class="reference internal" href="../../../../_modules/pylbo/visualisation/continua.html#SLOW_MIN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.continua.SLOW_MIN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pylbo.visualisation.continua.SLOW_PLUS">
+<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.continua.</span></span><span class="sig-name descname"><span class="pre">SLOW_PLUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'slow+'</span></em><a class="reference internal" href="../../../../_modules/pylbo/visualisation/continua.html#SLOW_PLUS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.continua.SLOW_PLUS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pylbo.visualisation.continua.ALFVEN_MIN">
+<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.continua.</span></span><span class="sig-name descname"><span class="pre">ALFVEN_MIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'alfven-'</span></em><a class="reference internal" href="../../../../_modules/pylbo/visualisation/continua.html#ALFVEN_MIN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.continua.ALFVEN_MIN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pylbo.visualisation.continua.ALFVEN_PLUS">
+<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.continua.</span></span><span class="sig-name descname"><span class="pre">ALFVEN_PLUS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'alfven+'</span></em><a class="reference internal" href="../../../../_modules/pylbo/visualisation/continua.html#ALFVEN_PLUS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.continua.ALFVEN_PLUS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pylbo.visualisation.continua.THERMAL">
+<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.continua.</span></span><span class="sig-name descname"><span class="pre">THERMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'thermal'</span></em><a class="reference internal" href="../../../../_modules/pylbo/visualisation/continua.html#THERMAL"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.continua.THERMAL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pylbo.visualisation.continua.DOPPLER">
+<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.continua.</span></span><span class="sig-name descname"><span class="pre">DOPPLER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'doppler'</span></em><a class="reference internal" href="../../../../_modules/pylbo/visualisation/continua.html#DOPPLER"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.continua.DOPPLER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
 <dt class="sig sig-object py" id="pylbo.visualisation.continua.CONTINUA_NAMES">
 <span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.continua.</span></span><span class="sig-name descname"><span class="pre">CONTINUA_NAMES</span></span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/continua.html#CONTINUA_NAMES"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.continua.CONTINUA_NAMES" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
@@ -146,6 +197,11 @@
 <dl class="py data">
 <dt class="sig sig-object py" id="pylbo.visualisation.continua.CONTINUA_COLORS">
 <span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.continua.</span></span><span class="sig-name descname"><span class="pre">CONTINUA_COLORS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['red',</span> <span class="pre">'red',</span> <span class="pre">'cyan',</span> <span class="pre">'cyan',</span> <span class="pre">'green',</span> <span class="pre">'grey']</span></em><a class="reference internal" href="../../../../_modules/pylbo/visualisation/continua.html#CONTINUA_COLORS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.continua.CONTINUA_COLORS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.visualisation.continua.is_zero">
+<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.continua.</span></span><span class="sig-name descname"><span class="pre">is_zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/continua.html#is_zero"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.continua.is_zero" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">

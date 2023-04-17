@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>check_wavenumbers &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>energy_balance_condition &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>check_wavenumbers
-      <small>Subroutine</small>
+    <h1>energy_balance_condition
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">7 statements</a>
+    title=" 0.2% of total for procedures.">25 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></li>
      <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-     <li class="active">check_wavenumbers</li>
+     <li class="active">energy_balance_condition</li>
   </ol>
 </div>
 </div>
@@ -113,39 +113,49 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine check_wavenumbers(geometry)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
+    <h2>private impure elemental function energy_balance_condition(x, settings, grid, background, physics)</h2>
+    
 
-
-    <p>Sanity check on the wavenumbers.
-Checks if k2 is an integer in cylindrical geometry.
-</p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>An error if thrown if the geometry is cylindrical and k2 is not
-         an integer.</p></div>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-geometry~2"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-x~9"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>geometry</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-settings~39"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-grid~43"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-background~40"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>background</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-physics~35"></span>type(<a href='../type/physics_t.html'>physics_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>physics</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
+   <h3>Return Value <small><span class="anchor" id="variable-energy_balance_condition"></span>real(kind=dp)</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

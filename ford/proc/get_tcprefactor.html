@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>check_on_axis_values &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>get_tcprefactor &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>check_on_axis_values
-      <small>Subroutine</small>
+    <h1>get_tcprefactor
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">18 statements</a>
+    title=" 0.1% of total for procedures.">10 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_thermal_conduction.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></li>
-     <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-     <li class="active">check_on_axis_values</li>
+     <li><a href='../sourcefile/mod_thermal_conduction.f08.html'>mod_thermal_conduction.f08</a></li>
+     <li><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></li>
+     <li class="active">get_tcprefactor</li>
   </ol>
 </div>
 </div>
@@ -113,44 +113,31 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine check_on_axis_values(settings, background)</h2>
+    <h2>private impure elemental function get_tcprefactor(this, x)</h2>
     
 
-    <p>Checks if on-axis regularity conditions are satisfied in cylindrical geometry.
-We check if <script type="math/tex">B_\theta, B_z', v_\theta</script> and <script type="math/tex">v_z'</script> are smaller than <tt>1e-3</tt> on-axis.
-Nothing is checked if the geometry is Cartesian.
-</p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws a warning if:</p>
-<ul>
-<li>
-<script type="math/tex">B_\theta</script> is not zero on-axis.</li>
-<li>
-<script type="math/tex">B_z'</script> is not zero on-axis.</li>
-<li>
-<script type="math/tex">v_\theta</script> is not zero on-axis.</li>
-<li>
-<script type="math/tex">v_z'</script> is not zero on-axis. </p></div>
-<p></li>
-</ul>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~41"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-this~232"></span>class(<a href='../type/conduction_t.html'>conduction_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-background~36"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+  <td><span class="anchor" id="variable-x~109"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>background</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
+   <h3>Return Value <small><span class="anchor" id="variable-get_tcprefactor~2"></span>real(kind=dp)</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

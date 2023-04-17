@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +9,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>perform_sanity_checks &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>dp_func &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +72,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>perform_sanity_checks
-      <small>Subroutine</small>
+    <h1>dp_func
+   <small>Interface</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +82,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">13 statements</a>
+    title=" 0.0% of total for procedures.">6 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></li>
      <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-     <li class="active">perform_sanity_checks</li>
+     <li class="active">dp_func</li>
   </ol>
 </div>
 </div>
@@ -113,66 +114,30 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public subroutine perform_sanity_checks(settings, grid, background, physics)</h2>
-    
+      <h2>interface <br>
+      private function dp_func(x)</h2>    
 
-    <p>General routine to do sanity checks on the different equilibrium types.
-We check the wavenumbers and on-axis values, as well as standard
-and non-adiabatic equilibrium force balance.</p>
+    
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~39"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-x~12"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-grid~36"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>grid</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-background~34"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>background</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-physics~34"></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>physics</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
+      <h3>Return Value <span class="anchor" id="variable-dp_func"></span><small>real(kind=dp)</small></h3>
+    
     <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<em>None</em>
-
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
-
-
-    
-    
-
-    
-    
-
-
-    
-    
-    </div>
-  </div>
+ </div>
+</div>
 
     <hr>    
     </div> <!-- /container -->

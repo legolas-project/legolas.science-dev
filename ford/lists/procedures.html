@@ -131,6 +131,7 @@ A new node is created, appended, and the tail is updated.</p></td></tr>
 			   <tr><td><a href='../proc/b0~2.html'>B0</a></td><td><a href='../module/smod_equil_resistive_tearing_flow.html'>smod_equil_resistive_tearing_flow</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/b0~3.html'>B0</a></td><td><a href='../module/smod_equil_resistive_tearing.html'>smod_equil_resistive_tearing</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/b0~4.html'>B0</a></td><td><a href='../module/smod_equil_harris_sheet.html'>smod_equil_harris_sheet</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/b01_and_cylindrical.html'>B01_and_cylindrical</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/b02.html'>B02</a></td><td><a href='../module/smod_equil_resistive_homo.html'>smod_equil_resistive_homo</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/b02~2.html'>B02</a></td><td><a href='../module/smod_equil_resistive_tearing_flow.html'>smod_equil_resistive_tearing_flow</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/b02~3.html'>B02</a></td><td><a href='../module/smod_equil_gold_hoyle.html'>smod_equil_gold_hoyle</a></td><td>Function</td><td></td></tr>
@@ -196,39 +197,21 @@ complex vector. Uses the level 2 BLAS routine <tt>zgbmv</tt>.</p></td></tr>
 			   <tr><td><a href='../proc/can_get_v_pp.html'>can_get_v_pp</a></td><td><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/cast_node_element_to_complex.html'>cast_node_element_to_complex</a></td><td><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/character_array_tostring.html'>character_array_tostring</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/check_b01_cylindrical.html'>check_B01_cylindrical</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/check_bfield.html'>check_bfield</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/check_eigenfunction_subset_params.html'>check_eigenfunction_subset_params</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td><p>Called when the eigenfunction subset selection is enabled, this checks if the
 global variables are properly set.</p></td></tr>
-			   <tr><td><a href='../proc/check_energy_balance.html'>check_energy_balance</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Enforces the non-adiabatic force-balance equation for the equilibrium state.
-This is given by
-<script type="math/tex; mode=display">
-T_0 \rho_0 \frac{\left(\varepsilon v_{01}\right)'}{\varepsilon}
-+ \rho_0 \mathscr{L}_0
-- B_{01}^2\left[\frac{\kappa_{\parallel,0} - \kappa_{\perp,0}}{B_0^2} T_0'\right]'
-- \frac{1}{\varepsilon}\left(\varepsilon \kappa_{\perp, 0} T_0'\right)'
-+ \frac{1}{(\gamma - 1)}T_0'\rho_0 v_{01} = 0
-</script>
-</p></td></tr>
 			   <tr><td><a href='../proc/check_if_thermal_balance_needs_enforcing.html'>check_if_thermal_balance_needs_enforcing</a></td><td><a href='../module/mod_heatloss.html'>mod_heatloss</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/check_on_axis_values.html'>check_on_axis_values</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Checks if on-axis regularity conditions are satisfied in cylindrical geometry.
-We check if <script type="math/tex">B_\theta, B_z', v_\theta</script> and <script type="math/tex">v_z'</script> are smaller than <tt>1e-3</tt> on-axis.
-Nothing is checked if the geometry is Cartesian.
-</p><a href="../proc/check_on_axis_values.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
-			   <tr><td><a href='../proc/check_wavenumbers.html'>check_wavenumbers</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Sanity check on the wavenumbers.
-Checks if k2 is an integer in cylindrical geometry.
-</p><a href="../proc/check_wavenumbers.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/cleanup.html'>cleanup</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td><p>Deallocates all main variables, then calls the cleanup
 routines of all relevant subroutines to do the same thing.</p></td></tr>
 			   <tr><td><a href='../proc/complex_is_equal.html'>complex_is_equal</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Equality check between complex values</p></td></tr>
 			   <tr><td><a href='../proc/complex_is_zero.html'>complex_is_zero</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Checks if complex values are zero</p></td></tr>
 			   <tr><td><a href='../proc/complex_tostring.html'>complex_tostring</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/constant_current_eq.html'>constant_current_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
+			   <tr><td><a href='../proc/contains_nan.html'>contains_NaN</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/contains_nan_complex.html'>contains_NaN_complex</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Checks a given complex value/array/matrix for NaN.</p></td></tr>
 			   <tr><td><a href='../proc/contains_nan_real.html'>contains_NaN_real</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Checks a given real value/array/matrix for NaN.</p></td></tr>
-			   <tr><td><a href='../proc/continuity_equil_conditions.html'>continuity_equil_conditions</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Checks the continuity equation for the equilibrium state. This is given by
-<script type="math/tex; mode=display"> \frac{1}{\varepsilon} \bigl( \varepsilon \rho_0 v_{01} \bigr)' = 0. </script>
-</p><a href="../proc/continuity_equil_conditions.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/contains_negative.html'>contains_negative</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/continuity_condition.html'>continuity_condition</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/copy.html'>copy</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Dedicated function to copy a matrix structure into a new matrix structure.
 The datastructure contains pointers, such that simply setting
 matrix1 = matrix2 may result in pointer target losses (and wrong results).
@@ -339,9 +322,11 @@ square matrices. Returns <code>.true.</code> if <code>rows</code> equals <code>c
 			   <tr><td><a href='../proc/dj0.html'>dJ0</a></td><td><a href='../module/smod_equil_internal_kink_instability.html'>smod_equil_internal_kink_instability</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dj1.html'>DJ1</a></td><td><a href='../module/smod_equil_suydam_cluster.html'>smod_equil_suydam_cluster</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dj1.html'>dJ1</a></td><td><a href='../module/smod_equil_internal_kink_instability.html'>smod_equil_internal_kink_instability</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/do_equilibrium_inspections.html'>do_equilibrium_inspections</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/dp0.html'>dp0</a></td><td><a href='../module/smod_equil_constant_current.html'>smod_equil_constant_current</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dp0~2.html'>dp0</a></td><td><a href='../module/smod_equil_discrete_alfven.html'>smod_equil_discrete_alfven</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dp0~3.html'>dp0</a></td><td><a href='../module/smod_equil_mri.html'>smod_equil_MRI</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../interface/dp_func.html'>dp_func</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/drho0~2.html'>drho0</a></td><td><a href='../module/smod_equil_interchange_modes.html'>smod_equil_interchange_modes</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/drho0~3.html'>drho0</a></td><td><a href='../module/smod_equil_isothermal_atmosphere.html'>smod_equil_isothermal_atmosphere</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/drho0~4.html'>drho0</a></td><td><a href='../module/smod_equil_gravito_mhd.html'>smod_equil_gravito_mhd</a></td><td>Function</td><td></td></tr>
@@ -368,7 +353,6 @@ instead of relying on numerical differentiation.</p></td></tr>
 			   <tr><td><a href='../proc/dt0~10.html'>dT0</a></td><td><a href='../module/smod_equil_harris_sheet.html'>smod_equil_harris_sheet</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dt0~11.html'>dT0</a></td><td><a href='../module/smod_equil_mri.html'>smod_equil_MRI</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dt0~12.html'>dT0</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/dtcprefactordr.html'>dtcprefactordr</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dv02.html'>dv02</a></td><td><a href='../module/smod_equil_resistive_tearing_flow.html'>smod_equil_resistive_tearing_flow</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dv02~2.html'>dv02</a></td><td><a href='../module/smod_equil_couette_flow.html'>smod_equil_couette_flow</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dv02~3.html'>dv02</a></td><td><a href='../module/smod_equil_tc_pinch.html'>smod_equil_tc_pinch</a></td><td>Function</td><td></td></tr>
@@ -406,6 +390,7 @@ instead of relying on numerical differentiation.</p></td></tr>
 			   <tr><td><a href='../proc/enable_viscosity.html'>enable_viscosity</a></td><td><a href='../module/mod_physics_settings.html'>mod_physics_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/enable_viscous_heating.html'>enable_viscous_heating</a></td><td><a href='../module/mod_viscosity_settings.html'>mod_viscosity_settings</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/end_timer.html'>end_timer</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/energy_balance_condition.html'>energy_balance_condition</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/error.html'>error</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/find_index_in_character_array.html'>find_index_in_character_array</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Function</td><td><p>Function to locate the index of a given character in a character array.
 Iterates over the elements and returns on the first hit, if no match
@@ -414,6 +399,9 @@ was found zero is returned.</p></td></tr>
 character array. Returns the indices of the first hit, it no match was
 found zero is returned.</p></td></tr>
 			   <tr><td><a href='../interface/flow_driven_instabilities_eq.html'>flow_driven_instabilities_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
+			   <tr><td><a href='../proc/force_balance_1_condition.html'>force_balance_1_condition</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/force_balance_2_condition.html'>force_balance_2_condition</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/force_balance_3_condition.html'>force_balance_3_condition</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/from_function.html'>from_function</a></td><td><a href='../module/mod_function_utils.html'>mod_function_utils</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/fx.html'>fx</a></td><td><a href='../module/smod_equil_rti_theta_pinch.html'>smod_equil_RTI_theta_pinch</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/g0~2.html'>g0</a></td><td><a href='../module/smod_equil_interchange_modes.html'>smod_equil_interchange_modes</a></td><td>Function</td><td></td></tr>
@@ -483,6 +471,7 @@ Depends on the matrix that is used.</p></td></tr>
 			   <tr><td><a href='../proc/get_dtcperpdr.html'>get_dtcperpdr</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_dtcperpdrho.html'>get_dtcperpdrho</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_dtcperpdt.html'>get_dtcperpdT</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_dtcprefactordr.html'>get_dtcprefactordr</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_ef_gridpts.html'>get_ef_gridpts</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_eigenfunctions.html'>get_eigenfunctions</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td><p>Initialises and calculates the eigenfunctions if requested.</p></td></tr>
 			   <tr><td><a href='../proc/get_electron_fraction.html'>get_electron_fraction</a></td><td><a href='../module/mod_hall_settings.html'>mod_hall_settings</a></td><td>Function</td><td></td></tr>
@@ -559,6 +548,7 @@ differentiated instead. The stencils are as follows:</p><a href="../proc/get_num
 			   <tr><td><a href='../interface/get_subblock_index.html'>get_subblock_index</a></td><td><a href='../module/mod_get_indices.html'>mod_get_indices</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/get_tcpara.html'>get_tcpara</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_tcperp.html'>get_tcperp</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/get_tcprefactor.html'>get_tcprefactor</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/get_tolerance.html'>get_tolerance</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Getter for tolerance (relative accuracy) to indicate eigenvalue convergence.</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a></td><td><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></td><td>Function</td><td><p>Returns the total number of elements inside the banded matrix</p></td></tr>
 			   <tr><td><a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a></td><td><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></td><td>Function</td><td><p>Returns the total number of elements (nodes) across the various rows.</p></td></tr>
@@ -601,14 +591,8 @@ differentiated instead. The stencils are as follows:</p><a href="../proc/get_num
 			   <tr><td><a href='../proc/hermitian_banded_to_complex_array.html'>hermitian_banded_to_complex_array</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Function</td><td><p>Converts a Hermitian banded datastructure to a full complex array.</p></td></tr>
 			   <tr><td><a href='../proc/in_cgs.html'>in_cgs</a></td><td><a href='../module/mod_units.html'>mod_units</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/increment_nb_elements.html'>increment_nb_elements</a></td><td><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/induction_equil_conditions.html'>induction_equil_conditions</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Checks the induction equation for the equilibrium state. The two (nonzero)
-resulting expressions are
-<script type="math/tex; mode=display"> (B_{01} v_{02} - (B_{02} v_{01})' = 0, </script>
-<script type="math/tex; mode=display">
-\frac{1}{\varepsilon} \bigl(\varepsilon (B_{01}v_{03} - B_{03}v_{01}) \bigr)' = 0
-</script>
-and should both be fulfilled.
-</p><a href="../proc/induction_equil_conditions.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/induction_1_condition.html'>induction_1_condition</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/induction_2_condition.html'>induction_2_condition</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/info.html'>info</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/init_equilibrium_params.html'>init_equilibrium_params</a></td><td><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></td><td>Subroutine</td><td><p>Initialises all variables defined at module scope to NaN,
 including the wave numbers. This ensures that these have to
@@ -725,7 +709,9 @@ Uses simple linear interpolation.</p></td></tr>
 			   <tr><td><a href='../interface/matrix_to_hermitian_banded.html'>matrix_to_hermitian_banded</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../interface/mri_accretion_eq.html'>MRI_accretion_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/multiply.html'>multiply</a></td><td><a href='../module/mod_banded_operations.html'>mod_banded_operations</a></td><td>Interface</td><td></td></tr>
+			   <tr><td><a href='../proc/nan_values_present.html'>nan_values_present</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/needs_resampling.html'>needs_resampling</a></td><td><a href='../module/mod_integration.html'>mod_integration</a></td><td>Function</td><td><p>Checks if an array needs resampling.</p></td></tr>
+			   <tr><td><a href='../proc/negative_values_present.html'>negative_values_present</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_arpack_config.html'>new_arpack_config</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Constructor for a new ARPACK configuration based on the dimension of the eigenvalue
 problem, mode of the solver and type of the B-matrix. Initialises required
 variables and allocates work arrays to be used when calling the solvers.</p></td></tr>
@@ -801,12 +787,6 @@ we handle it accordingly.</p></td></tr>
 			   <tr><td><a href='../proc/parse_zneupd_info.html'>parse_zneupd_info</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Subroutine</td><td><p>Parses the info parameter that comes out of ARPACK's <tt>zneupd</tt> method.
 If info = 0, the eigenvalues extraction routines exited properly, if info
 is any other value something went wrong and we handle it accordingly.</p></td></tr>
-			   <tr><td><a href='../proc/perform_nan_and_negative_checks.html'>perform_NaN_and_negative_checks</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>General routine to do initial sanity checks on the various equilibrium attributes.
-We check the equilibrium arrays for NaN and see if all density and temperature
-values are positive.</p></td></tr>
-			   <tr><td><a href='../proc/perform_sanity_checks.html'>perform_sanity_checks</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>General routine to do sanity checks on the different equilibrium types.
-We check the wavenumbers and on-axis values, as well as standard
-and non-adiabatic equilibrium force balance.</p></td></tr>
 			   <tr><td><a href='../proc/phi_prof.html'>phi_prof</a></td><td><a href='../module/smod_equil_flow_driven_instabilities.html'>smod_equil_flow_driven_instabilities</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/photospheric_flux_tube_eq.html'>photospheric_flux_tube_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../proc/print_console_info.html'>print_console_info</a></td><td><a href='../module/mod_console.html'>mod_console</a></td><td>Subroutine</td><td><p>Prints various console messages showing geometry, grid parameters,
@@ -1009,15 +989,6 @@ Values are normalised on return.</p></td></tr>
 - zero (if resistivity is disabled)
 Values are normalised on return.</p></td></tr>
 			   <tr><td><a href='../proc/spline_sizes_are_valid.html'>spline_sizes_are_valid</a></td><td><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/standard_equil_conditions.html'>standard_equil_conditions</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td><p>Checks the standard force-balance equation for the equilibrium state. This
-results in three expressions,
-<script type="math/tex; mode=display"> \Bigl(p_0 + \frac{1}{2}B_0^2\Bigr)' + \rho_0 g + \rho_0 v_{01} v_{01}'
-   - \frac{\varepsilon'}{\varepsilon}\bigl(\rho_0 v_{02}^2 - B_{02}^2\bigr) = 0, </script>
-<script type="math/tex; mode=display"> \rho_0 v_{01} \bigl( v_{02}' + \frac{\varepsilon'}{\varepsilon} v_{02} \bigr)
-   - \frac{B_{01}}{\varepsilon} (\varepsilon B_{02})' = 0, </script>
-<script type="math/tex; mode=display"> \rho_0 v_{01} v_{03}' - B_{01} B_{03}' = 0, </script>
-and they should all be fulfilled.
-</p><a href="../proc/standard_equil_conditions.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/start_timer.html'>start_timer</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/state_vector_is_set.html'>state_vector_is_set</a></td><td><a href='../module/mod_settings.html'>mod_settings</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/str.html'>str</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Interface</td><td></td></tr>
@@ -1052,7 +1023,6 @@ and they should all be fulfilled.
 			   <tr><td><a href='../proc/t0~28.html'>T0</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../interface/taylor_couette_eq.html'>taylor_couette_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/tc_pinch_eq.html'>tc_pinch_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
-			   <tr><td><a href='../proc/tcprefactor.html'>tcprefactor</a></td><td><a href='../module/mod_thermal_conduction.html'>mod_thermal_conduction</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/throw_info_nonzero_warning.html'>throw_info_nonzero_warning</a></td><td><a href='../module/mod_linear_systems.html'>mod_linear_systems</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/tic.html'>tic</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to start a wall clock timer.</p><a href="../proc/tic.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/toc.html'>toc</a></td><td><a href='../module/mod_timing.html'>mod_timing</a></td><td>Subroutine</td><td><p>Subroutine to end a wall clock timer.</p><a href="../proc/toc.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
@@ -1081,9 +1051,12 @@ block, if <code>edge</code> equals <code>"right"</code> returns indices for the 
 			   <tr><td><a href='../proc/v03~5.html'>v03</a></td><td><a href='../module/smod_equil_kelvin_helmholtz_cd.html'>smod_equil_kelvin_helmholtz_cd</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/v03~6.html'>v03</a></td><td><a href='../module/smod_equil_rotating_plasma_cylinder.html'>smod_equil_rotating_plasma_cylinder</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/v_prof.html'>v_prof</a></td><td><a href='../module/smod_equil_flow_driven_instabilities.html'>smod_equil_flow_driven_instabilities</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/validate_equilibrium_conditions.html'>validate_equilibrium_conditions</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/validate_grid_start.html'>validate_grid_start</a></td><td><a href='../module/mod_grid_settings.html'>mod_grid_settings</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/validate_on_axis_values.html'>validate_on_axis_values</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/validate_scale_ratio.html'>validate_scale_ratio</a></td><td><a href='../module/mod_hall.html'>mod_hall</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/warning.html'>warning</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/wave_numbers_are_valid.html'>wave_numbers_are_valid</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/write_base_eigenfunction_data.html'>write_base_eigenfunction_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/write_derived_eigenfunction_data.html'>write_derived_eigenfunction_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/write_eigenvector_data.html'>write_eigenvector_data</a></td><td><a href='../module/mod_output.html'>mod_output</a></td><td>Subroutine</td><td></td></tr>

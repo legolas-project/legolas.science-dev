@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>continuity_equil_conditions &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>negative_values_present &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>continuity_equil_conditions
-      <small>Subroutine</small>
+    <h1>negative_values_present
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">37 statements</a>
+    title=" 0.1% of total for procedures.">16 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></li>
      <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-     <li class="active">continuity_equil_conditions</li>
+     <li class="active">negative_values_present</li>
   </ol>
 </div>
 </div>
@@ -113,38 +113,31 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine continuity_equil_conditions(settings, grid, background)</h2>
+    <h2>private function negative_values_present(background, grid)</h2>
     
 
-    <p>Checks the continuity equation for the equilibrium state. This is given by
-<script type="math/tex; mode=display"> \frac{1}{\varepsilon} \bigl( \varepsilon \rho_0 v_{01} \bigr)' = 0. </script>
-</p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws a warning if equilibrium continuity is not satisfied.</p></div>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~45"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-grid~41"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>grid</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-background~40"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+  <td><span class="anchor" id="variable-background~34"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
 </tr>
+<tr>
+  <td><span class="anchor" id="variable-grid~38"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td>
+</tr>
 </tbody>
 </table>
 
+   <h3>Return Value <small><span class="anchor" id="variable-negative_values_present"></span>logical</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

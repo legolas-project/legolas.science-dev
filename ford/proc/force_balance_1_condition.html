@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>induction_equil_conditions &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>force_balance_1_condition &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>induction_equil_conditions
-      <small>Subroutine</small>
+    <h1>force_balance_1_condition
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">50 statements</a>
+    title=" 0.2% of total for procedures.">24 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></li>
      <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-     <li class="active">induction_equil_conditions</li>
+     <li class="active">force_balance_1_condition</li>
   </ol>
 </div>
 </div>
@@ -113,43 +113,43 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine induction_equil_conditions(settings, grid, background)</h2>
+    <h2>private impure elemental function force_balance_1_condition(x, grid, background, physics)</h2>
     
 
-    <p>Checks the induction equation for the equilibrium state. The two (nonzero)
-resulting expressions are
-<script type="math/tex; mode=display"> (B_{01} v_{02} - (B_{02} v_{01})' = 0, </script>
-<script type="math/tex; mode=display">
-\frac{1}{\varepsilon} \bigl(\varepsilon (B_{01}v_{03} - B_{03}v_{01}) \bigr)' = 0
-</script>
-and should both be fulfilled.
-</p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws a warning if the equilibrium induction equation is not satisfied.</p></div>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~44"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-x~6"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-grid~40"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+  <td><span class="anchor" id="variable-grid~41"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-background~39"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+  <td><span class="anchor" id="variable-background~37"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
 </tr>
+<tr>
+  <td><span class="anchor" id="variable-physics~34"></span>type(<a href='../type/physics_t.html'>physics_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>physics</strong></td><td></td>
+</tr>
 </tbody>
 </table>
 
+   <h3>Return Value <small><span class="anchor" id="variable-force_balance_1_condition"></span>real(kind=dp)</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

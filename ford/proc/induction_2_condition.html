@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>check_energy_balance &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>induction_2_condition &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>check_energy_balance
-      <small>Subroutine</small>
+    <h1>induction_2_condition
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">56 statements</a>
+    title=" 0.1% of total for procedures.">16 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></li>
      <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-     <li class="active">check_energy_balance</li>
+     <li class="active">induction_2_condition</li>
   </ol>
 </div>
 </div>
@@ -113,51 +113,37 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine check_energy_balance(settings, grid, background, physics)</h2>
+    <h2>private impure elemental function induction_2_condition(x, grid, background)</h2>
     
 
-    <p>Enforces the non-adiabatic force-balance equation for the equilibrium state.
-This is given by
-<script type="math/tex; mode=display">
-T_0 \rho_0 \frac{\left(\varepsilon v_{01}\right)'}{\varepsilon}
-+ \rho_0 \mathscr{L}_0
-- B_{01}^2\left[\frac{\kappa_{\parallel,0} - \kappa_{\perp,0}}{B_0^2} T_0'\right]'
-- \frac{1}{\varepsilon}\left(\varepsilon \kappa_{\perp, 0} T_0'\right)'
-+ \frac{1}{(\gamma - 1)}T_0'\rho_0 v_{01} = 0
-</script>
-</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-settings~43"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+  <td><span class="anchor" id="variable-x~11"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-grid~39"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+  <td><span class="anchor" id="variable-grid~44"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>grid</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-background~38"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
+  <td><span class="anchor" id="variable-background~42"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>background</strong></td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" id="variable-physics~36"></span>type(<a href='../type/physics_t~2.html'>physics_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>physics</strong></td><td></td>
-</tr>
 </tbody>
 </table>
 
+   <h3>Return Value <small><span class="anchor" id="variable-induction_2_condition"></span>real(kind=dp)</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 2.3% of total for derived types.</p>Including implementation: 48 statements,  1.8% of total for derived types.">14 statements</a>
+    title="<p> 2.3% of total for derived types.</p>Including implementation: 73 statements,  2.7% of total for derived types.">14 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_thermal_conduction.f08"> Source File</a></li>
   </ul>
@@ -112,12 +112,10 @@
     <div class="list-group">
       <a class="list-group-item" href="../type/conduction_t.html#variable-tcpara">tcpara</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-dtcparadt">dtcparadT</a>
-      <a class="list-group-item" href="../type/conduction_t.html#variable-dtcparadr">dtcparadr</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-tcperp">tcperp</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-dtcperpdrho">dtcperpdrho</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-dtcperpdt">dtcperpdT</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-dtcperpdb2">dtcperpdB2</a>
-      <a class="list-group-item" href="../type/conduction_t.html#variable-dtcperpdr">dtcperpdr</a>
     </div>
   </div>
 </div>
@@ -125,8 +123,10 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
   <div id="boundprocs-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-tcprefactor">tcprefactor</a>
-      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-dtcprefactordr">dtcprefactordr</a>
+      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-get_dtcparadr">get_dtcparadr</a>
+      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-get_dtcperpdr">get_dtcperpdr</a>
+      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-get_tcprefactor">get_tcprefactor</a>
+      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-get_dtcprefactordr">get_dtcprefactordr</a>
       <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-delete~17">delete</a>
     </div>
   </div>
@@ -150,12 +150,10 @@
     <div class="list-group">
       <a class="list-group-item" href="../type/conduction_t.html#variable-tcpara">tcpara</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-dtcparadt">dtcparadT</a>
-      <a class="list-group-item" href="../type/conduction_t.html#variable-dtcparadr">dtcparadr</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-tcperp">tcperp</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-dtcperpdrho">dtcperpdrho</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-dtcperpdt">dtcperpdT</a>
       <a class="list-group-item" href="../type/conduction_t.html#variable-dtcperpdb2">dtcperpdB2</a>
-      <a class="list-group-item" href="../type/conduction_t.html#variable-dtcperpdr">dtcperpdr</a>
     </div>
   </div>
 </div>
@@ -163,8 +161,10 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
   <div id="boundprocs-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-tcprefactor">tcprefactor</a>
-      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-dtcprefactordr">dtcprefactordr</a>
+      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-get_dtcparadr">get_dtcparadr</a>
+      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-get_dtcperpdr">get_dtcperpdr</a>
+      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-get_tcprefactor">get_tcprefactor</a>
+      <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-get_dtcprefactordr">get_dtcprefactordr</a>
       <a class="list-group-item" href="../type/conduction_t.html#boundprocedure-delete~17">delete</a>
     </div>
   </div>
@@ -189,11 +189,6 @@
   <td><strong>dtcparadT</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-dtcparadr"></span>procedure(realdp),</td>
-<td>public,</td>  <td>pointer, nopass</td><td>::</td>
-  <td><strong>dtcparadr</strong></td><td></td><td></td><td></td>
-</tr>
-<tr>
   <td><span class="anchor" id="variable-tcperp"></span>procedure(realdp),</td>
 <td>public,</td>  <td>pointer, nopass</td><td>::</td>
   <td><strong>tcperp</strong></td><td></td><td></td><td></td>
@@ -213,11 +208,6 @@
 <td>public,</td>  <td>pointer, nopass</td><td>::</td>
   <td><strong>dtcperpdB2</strong></td><td></td><td></td><td></td>
 </tr>
-<tr>
-  <td><span class="anchor" id="variable-dtcperpdr"></span>procedure(realdp),</td>
-<td>public,</td>  <td>pointer, nopass</td><td>::</td>
-  <td><strong>dtcperpdr</strong></td><td></td><td></td><td></td>
-</tr>
 </tbody>
 </table>
 
@@ -230,10 +220,10 @@
     <section>
     <h2>Type-Bound Procedures</h2>
      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-tcprefactor"></span><h3>procedure, public :: <strong>tcprefactor</strong>    </h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_dtcparadr"></span><h3>procedure, public :: <strong>get_dtcparadr</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private function <a href='../proc/tcprefactor.html'>tcprefactor</a>(this, x)</h3>    
+          <h3>private impure elemental function <a href='../proc/get_dtcparadr.html'>get_dtcparadr</a>(this, x)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
@@ -259,10 +249,68 @@
 </div>
 
      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-dtcprefactordr"></span><h3>procedure, public :: <strong>dtcprefactordr</strong>    </h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_dtcperpdr"></span><h3>procedure, public :: <strong>get_dtcperpdr</strong>    </h3></div>
   <ul class="list-group">
       <li class="list-group-item">
-          <h3>private function <a href='../proc/dtcprefactordr.html'>dtcprefactordr</a>(this, x)</h3>    
+          <h3>private impure elemental function <a href='../proc/get_dtcperpdr.html'>get_dtcperpdr</a>(this, x)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/conduction_t.html'>conduction_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_tcprefactor"></span><h3>procedure, public :: <strong>get_tcprefactor</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private impure elemental function <a href='../proc/get_tcprefactor.html'>get_tcprefactor</a>(this, x)</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/conduction_t.html'>conduction_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>real(kind=dp)</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_dtcprefactordr"></span><h3>procedure, public :: <strong>get_dtcprefactordr</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>private impure elemental function <a href='../proc/get_dtcprefactordr.html'>get_dtcprefactordr</a>(this, x)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>

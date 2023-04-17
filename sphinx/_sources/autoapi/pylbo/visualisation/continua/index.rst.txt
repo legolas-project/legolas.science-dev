@@ -21,6 +21,7 @@ Functions
 
 .. autoapisummary::
 
+   pylbo.visualisation.continua.is_zero
    pylbo.visualisation.continua.calculate_continua
 
 
@@ -30,9 +31,45 @@ Attributes
 
 .. autoapisummary::
 
+   pylbo.visualisation.continua.SLOW_MIN
+   pylbo.visualisation.continua.SLOW_PLUS
+   pylbo.visualisation.continua.ALFVEN_MIN
+   pylbo.visualisation.continua.ALFVEN_PLUS
+   pylbo.visualisation.continua.THERMAL
+   pylbo.visualisation.continua.DOPPLER
    pylbo.visualisation.continua.CONTINUA_NAMES
    pylbo.visualisation.continua.CONTINUA_COLORS
 
+
+.. py:data:: SLOW_MIN
+   :value: 'slow-'
+
+   
+
+.. py:data:: SLOW_PLUS
+   :value: 'slow+'
+
+   
+
+.. py:data:: ALFVEN_MIN
+   :value: 'alfven-'
+
+   
+
+.. py:data:: ALFVEN_PLUS
+   :value: 'alfven+'
+
+   
+
+.. py:data:: THERMAL
+   :value: 'thermal'
+
+   
+
+.. py:data:: DOPPLER
+   :value: 'doppler'
+
+   
 
 .. py:data:: CONTINUA_NAMES
 
@@ -42,6 +79,9 @@ Attributes
    :value: ['red', 'red', 'cyan', 'cyan', 'green', 'grey']
 
    
+
+.. py:function:: is_zero(values)
+
 
 .. py:function:: calculate_continua(ds)
 
