@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">39 statements</a>
+    title=" 0.2% of total for procedures.">29 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_integration.f08"> Source File</a></li>
   </ul>
@@ -113,20 +113,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine rk45(xi, dh, xarray, axarray, bxarray, yi, ysolrk4, ysolrk5)</h2>
-        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
-  </ul>
-      </li>
-      </ul>
-    </div>
-
+    <h2>private subroutine rk45(xi, dh, ax_func, bx_func, yi, ysolrk4, ysolrk5)</h2>
+    
 
     <p>Calculates the Runge-Kutta coefficients and calculates the fourth and fifth
 order solutions for step i+1 based on the values at step i.</p>
@@ -139,7 +127,7 @@ order solutions for step i+1 based on the values at step i.</p>
   <td><span class="anchor" id="variable-xi"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>xi</strong></td><td><p>current x value in iteration</p></td>
+  <td><strong>xi</strong></td><td><p>current x value</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-dh"></span>real(kind=dp),</td>
@@ -148,40 +136,34 @@ order solutions for step i+1 based on the values at step i.</p>
   <td><strong>dh</strong></td><td><p>current step size</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-xarray"></span>real(kind=dp),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" id="variable-ax_func~2"></span>procedure(<a href='../interface/func.html'>func</a>)</td>
+<td></td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>xarray</strong>(:)</td><td><p>array of x values</p></td>
+  <td><strong>ax_func</strong></td><td><p>function to calculate A(x)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-axarray"></span>real(kind=dp),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" id="variable-bx_func~2"></span>procedure(<a href='../interface/func.html'>func</a>)</td>
+<td></td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>axarray</strong>(:)</td><td><p>array of A(x) values</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-bxarray"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>bxarray</strong>(:)</td><td><p>array of B(x) values</p></td>
+  <td><strong>bx_func</strong></td><td><p>function to calculate B(x)</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-yi"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>yi</strong></td><td><p>current y value in iteration</p></td>
+  <td><strong>yi</strong></td><td><p>current y value</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-ysolrk4"></span>real(kind=dp),</td>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ysolrk4</strong></td><td><p>fourth-order solution</p></td>
+  <td><strong>ysolrk4</strong></td><td><p>fourth order solution</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-ysolrk5"></span>real(kind=dp),</td>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ysolrk5</strong></td><td><p>fifth-order solution</p></td>
+  <td><strong>ysolrk5</strong></td><td><p>fifth order solution</p></td>
 </tr>
 </tbody>
 </table>

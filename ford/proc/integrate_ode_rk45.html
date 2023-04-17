@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>force_balance_1_condition &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>integrate_ode_rk45 &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,8 +71,8 @@
 
     <div class="container">
   <div class="row">
-    <h1>force_balance_1_condition
-      <small>Function</small>
+    <h1>integrate_ode_rk45
+      <small>Subroutine</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">24 statements</a>
+    title=" 0.2% of total for procedures.">30 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_inspections.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_integration.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_inspections.f08.html'>mod_inspections.f08</a></li>
-     <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-     <li class="active">force_balance_1_condition</li>
+     <li><a href='../sourcefile/mod_integration.f08.html'>mod_integration.f08</a></li>
+     <li><a href='../module/mod_integration.html'>mod_integration</a></li>
+     <li class="active">integrate_ode_rk45</li>
   </ol>
 </div>
 </div>
@@ -113,43 +113,72 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private impure elemental function force_balance_1_condition(x, grid, background, physics)</h2>
+    <h2>public subroutine integrate_ode_rk45(x0, x1, ax_func, bx_func, nbpoints, yinit, yvalues, xvalues)</h2>
     
 
+    <p>Numerically integrates the differential equation
+<script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta method.
+The functions A(x) and B(x) are passed as arguments and should be conform to the
+given interface, that is, these should be <code>real(dp)</code> functions which take a single
+<code>real(dp), intent(in)</code> argument.
+The integration is performed on the interval [x0, x1] with a stepsize of
+<code>dh = (x1 - x0) / (nbpoints - 1)</code>.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-x~7"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-x0"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>x</strong></td><td></td>
+  <td><strong>x0</strong></td><td><p>start of x-interval</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-grid~41"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
+  <td><span class="anchor" id="variable-x1"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>grid</strong></td><td></td>
+  <td><strong>x1</strong></td><td><p>end of x-interval</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-background~37"></span>type(<a href='../type/background_t.html'>background_t</a>),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" id="variable-ax_func"></span>procedure(<a href='../interface/func.html'>func</a>)</td>
+<td></td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>background</strong></td><td></td>
+  <td><strong>ax_func</strong></td><td><p>function to calculate A(x)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-physics~34"></span>type(<a href='../type/physics_t.html'>physics_t</a>),</td>
+  <td><span class="anchor" id="variable-bx_func"></span>procedure(<a href='../interface/func.html'>func</a>)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>bx_func</strong></td><td><p>function to calculate B(x)</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nbpoints"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>physics</strong></td><td></td>
+  <td><strong>nbpoints</strong></td><td><p>number of points, determines stepsize</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-yinit"></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>yinit</strong></td><td><p>initial value of y</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-yvalues"></span>real(kind=dp),</td>
+<td>intent(out),</td>
+  <td></td>  <td>allocatable</td><td>::</td>
+  <td><strong>yvalues</strong>(:)</td><td><p>integrated values of y</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-xvalues"></span>real(kind=dp),</td>
+<td>intent(out),</td>
+  <td>optional</td>  <td>allocatable</td><td>::</td>
+  <td><strong>xvalues</strong>(:)</td><td><p>x-values corresponding to integrated y-values</p></td>
 </tr>
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-force_balance_1_condition"></span>real(kind=dp)</small></h3>
-    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">

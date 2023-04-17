@@ -127,6 +127,7 @@ A new node is created, appended, and the tail is updated.</p></td></tr>
 			   <tr><td><a href='../proc/assemble~3.html'>assemble</a></td><td><a href='../module/mod_base_efs.html'>mod_base_efs</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/assemble_eigenfunction.html'>assemble_eigenfunction</a></td><td><a href='../module/mod_ef_assembly.html'>mod_ef_assembly</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/assert.html'>assert</a></td><td><a href='../module/mod_assert.html'>mod_assert</a></td><td>Subroutine</td><td><p>Utility function used by <a href="../sourcefile/assert.fpp.html">assert.fpp</a>'s <code>assert</code> macro.</p><a href="../proc/assert.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/ax_values.html'>ax_values</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/b0.html'>B0</a></td><td><a href='../module/smod_equil_resistive_homo.html'>smod_equil_resistive_homo</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/b0~2.html'>B0</a></td><td><a href='../module/smod_equil_resistive_tearing_flow.html'>smod_equil_resistive_tearing_flow</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/b0~3.html'>B0</a></td><td><a href='../module/smod_equil_resistive_tearing.html'>smod_equil_resistive_tearing</a></td><td>Function</td><td></td></tr>
@@ -180,6 +181,7 @@ complex vector. Uses the level 2 BLAS routine <tt>zgbmv</tt>.</p></td></tr>
 			   <tr><td><a href='../interface/banded_to_array.html'>banded_to_array</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/banded_to_complex_array.html'>banded_to_complex_array</a></td><td><a href='../module/mod_transform_matrix.html'>mod_transform_matrix</a></td><td>Function</td><td><p>Converts a banded datastructure to a full complex array.</p></td></tr>
 			   <tr><td><a href='../proc/build_matrices.html'>build_matrices</a></td><td><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></td><td>Subroutine</td><td><p></p><a href="../proc/build_matrices.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			   <tr><td><a href='../proc/bx_values.html'>bx_values</a></td><td><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/can_calculate_pp_quantities.html'>can_calculate_pp_quantities</a></td><td><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/can_get_b1.html'>can_get_B1</a></td><td><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/can_get_b2.html'>can_get_B2</a></td><td><a href='../module/mod_derived_ef_names.html'>mod_derived_ef_names</a></td><td>Function</td><td></td></tr>
@@ -403,6 +405,7 @@ found zero is returned.</p></td></tr>
 			   <tr><td><a href='../proc/force_balance_2_condition.html'>force_balance_2_condition</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/force_balance_3_condition.html'>force_balance_3_condition</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/from_function.html'>from_function</a></td><td><a href='../module/mod_function_utils.html'>mod_function_utils</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../interface/func.html'>func</a></td><td><a href='../module/mod_integration.html'>mod_integration</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/fx.html'>fx</a></td><td><a href='../module/smod_equil_rti_theta_pinch.html'>smod_equil_RTI_theta_pinch</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/g0~2.html'>g0</a></td><td><a href='../module/smod_equil_interchange_modes.html'>smod_equil_interchange_modes</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/g0~3.html'>g0</a></td><td><a href='../module/smod_equil_isothermal_atmosphere.html'>smod_equil_isothermal_atmosphere</a></td><td>Function</td><td></td></tr>
@@ -614,16 +617,13 @@ These are either regular values or NaN, the latter in case variables
 must be explicitly set in the parfile or equilibrium submodule.
 </p><a href="../proc/initialise_globals.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			   <tr><td><a href='../proc/integer_tostring.html'>integer_tostring</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/integrate_ode_rk.html'>integrate_ode_rk</a></td><td><a href='../module/mod_integration.html'>mod_integration</a></td><td>Subroutine</td><td><p>Integrates a first order differential equation of the form
-<script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta
-method. The argument <tt>nbpoints</tt> determines the stepsize through
-<script type="math/tex; mode=display"> dh = \frac{xvalues(N) - xvalues(1)}{nbpoints} </script>
-If the arrays <script type="math/tex">A(x), B(x)</script> are not of size <tt>nbpoints</tt>, then these are
-interpolated to that resolution. The differential equation is then integrated,
-the solution will also be of size <tt>nbpoints</tt> and can be downsampled using
-the appropriate subroutine.
-If desired the optional argument <tt>dyvalues</tt> can be provided,
-which contains the (numerical) derivative of y.</p></td></tr>
+			   <tr><td><a href='../proc/integrate_ode_rk45.html'>integrate_ode_rk45</a></td><td><a href='../module/mod_integration.html'>mod_integration</a></td><td>Subroutine</td><td><p>Numerically integrates the differential equation
+<script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta method.
+The functions A(x) and B(x) are passed as arguments and should be conform to the
+given interface, that is, these should be <code>real(dp)</code> functions which take a single
+<code>real(dp), intent(in)</code> argument.
+The integration is performed on the interval [x0, x1] with a stepsize of
+<code>dh = (x1 - x0) / (nbpoints - 1)</code>.</p></td></tr>
 			   <tr><td><a href='../interface/interchange_modes_eq.html'>interchange_modes_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/internal_kink_eq.html'>internal_kink_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../proc/interpolate_array_on_ef_grid.html'>interpolate_array_on_ef_grid</a></td><td><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></td><td>Function</td><td></td></tr>
@@ -710,7 +710,6 @@ Uses simple linear interpolation.</p></td></tr>
 			   <tr><td><a href='../interface/mri_accretion_eq.html'>MRI_accretion_eq</a></td><td><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></td><td>Interface</td><td><p>interface to the different equilibrium submodules</p></td></tr>
 			   <tr><td><a href='../interface/multiply.html'>multiply</a></td><td><a href='../module/mod_banded_operations.html'>mod_banded_operations</a></td><td>Interface</td><td></td></tr>
 			   <tr><td><a href='../proc/nan_values_present.html'>nan_values_present</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
-			   <tr><td><a href='../proc/needs_resampling.html'>needs_resampling</a></td><td><a href='../module/mod_integration.html'>mod_integration</a></td><td>Function</td><td><p>Checks if an array needs resampling.</p></td></tr>
 			   <tr><td><a href='../proc/negative_values_present.html'>negative_values_present</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/new_arpack_config.html'>new_arpack_config</a></td><td><a href='../module/mod_arpack_type.html'>mod_arpack_type</a></td><td>Function</td><td><p>Constructor for a new ARPACK configuration based on the dimension of the eigenvalue
 problem, mode of the solver and type of the B-matrix. Initialises required

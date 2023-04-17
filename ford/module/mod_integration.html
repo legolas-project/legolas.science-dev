@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.7% of total for modules and submodules.">184 statements</a>
+    title=" 0.7% of total for modules and submodules.">73 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_integration.f08"> Source File</a></li>
   </ul>
@@ -106,10 +106,10 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
-  <div id="funcs-0" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
+  <div id="inters-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_integration.html#proc-needs_resampling">needs_resampling</a>
+      <a class="list-group-item" href="../module/mod_integration.html#interface-func">func</a>
     </div>
   </div>
 </div>
@@ -117,7 +117,7 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_integration.html#proc-integrate_ode_rk">integrate_ode_rk</a>
+      <a class="list-group-item" href="../module/mod_integration.html#proc-integrate_ode_rk45">integrate_ode_rk45</a>
       <a class="list-group-item" href="../module/mod_integration.html#proc-rk45">rk45</a>
     </div>
   </div>
@@ -155,10 +155,10 @@ These are solved using a fifth-order Runge-Kutta method.</p>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
-  <div id="funcs-1" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
+  <div id="inters-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../module/mod_integration.html#proc-needs_resampling">needs_resampling</a>
+      <a class="list-group-item" href="../module/mod_integration.html#interface-func">func</a>
     </div>
   </div>
 </div>
@@ -166,7 +166,7 @@ These are solved using a fifth-order Runge-Kutta method.</p>
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/mod_integration.html#proc-integrate_ode_rk">integrate_ode_rk</a>
+      <a class="list-group-item" href="../module/mod_integration.html#proc-integrate_ode_rk45">integrate_ode_rk45</a>
       <a class="list-group-item" href="../module/mod_integration.html#proc-rk45">rk45</a>
     </div>
   </div>
@@ -178,66 +178,50 @@ These are solved using a fifth-order Runge-Kutta method.</p>
 
     
     
-
-    
-    
- 
     <section>
-    <h2>Functions</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-needs_resampling"></span><h3>private function <a href='../proc/needs_resampling.html'>needs_resampling</a>(base, target, array_name) result(resample)</h3></div>
-  <div class="panel-body">
-       
-<p>Checks if an array needs resampling.</p>
-    
+   <h2>Interfaces</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-func"></span><h3>interface   </h3></div>
+  <ul class="list-group">
+    <li class="list-group-item">
+    <h3>private function func(x)</h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" ></span>integer,</td>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>base</strong></td><td><p>size of base array</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>target</strong></td><td><p>size of target array</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>array_name</strong></td><td><p>name of array (printed to console)</p></td>
+  <td><strong>x</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-<h4>Return Value <small>logical</small></h4>  <p>is <tt>.true.</tt> if arrays differ in size</p>
+<h4>Return Value <small>real(kind=dp)</small></h4>  
 
-  </div>
-  </div>
+    </li>
+  </ul>
+</div>
 
     </section>
-    <br>
+  <br>
+
+    
+    
 
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-integrate_ode_rk"></span><h3>public subroutine <a href='../proc/integrate_ode_rk.html'>integrate_ode_rk</a>(xvalues, axvalues, bxvalues, nbpoints, yinit, yvalues, adaptive, epsilon, max_step_change, min_dh_size, max_dh_size, max_iter_per_step, new_xvalues)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-integrate_ode_rk45"></span><h3>public subroutine <a href='../proc/integrate_ode_rk45.html'>integrate_ode_rk45</a>(x0, x1, ax_func, bx_func, nbpoints, yinit, yvalues, xvalues)</h3></div>
   <div class="panel-body">
        
-<p>Integrates a first order differential equation of the form
-<script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta
-method. The argument <tt>nbpoints</tt> determines the stepsize through
-<script type="math/tex; mode=display"> dh = \frac{xvalues(N) - xvalues(1)}{nbpoints} </script>
-If the arrays <script type="math/tex">A(x), B(x)</script> are not of size <tt>nbpoints</tt>, then these are
-interpolated to that resolution. The differential equation is then integrated,
-the solution will also be of size <tt>nbpoints</tt> and can be downsampled using
-the appropriate subroutine.
-If desired the optional argument <tt>dyvalues</tt> can be provided,
-which contains the (numerical) derivative of y.</p>
+<p>Numerically integrates the differential equation
+<script type="math/tex; mode=display"> y'(x) = A(x)y(x) + B(x) </script> using a fifth-order Runge-Kutta method.
+The functions A(x) and B(x) are passed as arguments and should be conform to the
+given interface, that is, these should be <code>real(dp)</code> functions which take a single
+<code>real(dp), intent(in)</code> argument.
+The integration is performed on the interval [x0, x1] with a stepsize of
+<code>dh = (x1 - x0) / (nbpoints - 1)</code>.</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -246,82 +230,49 @@ which contains the (numerical) derivative of y.</p>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>xvalues</strong>(:)</td><td><p>array of x-values</p></td>
+  <td><strong>x0</strong></td><td><p>start of x-interval</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>axvalues</strong>(:)</td><td><p>term <script type="math/tex">A(x)</script>
-</p></td>
+  <td><strong>x1</strong></td><td><p>end of x-interval</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" ></span>procedure(<a href='../interface/func.html'>func</a>)</td>
+<td></td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>bxvalues</strong>(:)</td><td><p>term <script type="math/tex">B(x)</script>
-</p></td>
+  <td><strong>ax_func</strong></td><td><p>function to calculate A(x)</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(<a href='../interface/func.html'>func</a>)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>bx_func</strong></td><td><p>function to calculate B(x)</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>nbpoints</strong></td><td><p>desired resolution of coefficient arrays <tt>axvalues</tt> and <tt>bxvalues</tt></p></td>
+  <td><strong>nbpoints</strong></td><td><p>number of points, determines stepsize</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>yinit</strong></td><td><p>initial value for <script type="math/tex">y</script> at left edge (<tt>xvalues(1)</tt>)</p></td>
+  <td><strong>yinit</strong></td><td><p>initial value of y</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(out),</td>
   <td></td>  <td>allocatable</td><td>::</td>
-  <td><strong>yvalues</strong>(:)</td><td><p>array of y-values, size will be <tt>nbpoints</tt> if <tt>adaptive=.false.</tt>,
-size will vary if <tt>adaptive=.true.</tt></p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>adaptive</strong></td><td><p>if <tt>.true.</tt> an adaptive stepsize will be used</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>epsilon</strong></td><td><p>maximum truncation error, determines adaptive step</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>max_step_change</strong></td><td><p>maximum factor by which dh can change if step is adaptive</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>min_dh_size</strong></td><td><p>limit on the minimal stepsize</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>max_dh_size</strong></td><td><p>limit on the maximal stepsize</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>max_iter_per_step</strong></td><td><p>limit on maximum number of iterations for a single step</p></td>
+  <td><strong>yvalues</strong>(:)</td><td><p>integrated values of y</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td>allocatable</td><td>::</td>
-  <td><strong>new_xvalues</strong>(:)</td><td><p>array of x-values corresponding to <tt>yvalues</tt></p></td>
+  <td><strong>xvalues</strong>(:)</td><td><p>x-values corresponding to integrated y-values</p></td>
 </tr>
 </tbody>
 </table>
@@ -331,7 +282,7 @@ size will vary if <tt>adaptive=.true.</tt></p></td>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-rk45"></span><h3>private subroutine <a href='../proc/rk45.html'>rk45</a>(xi, dh, xarray, axarray, bxarray, yi, ysolrk4, ysolrk5)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-rk45"></span><h3>private subroutine <a href='../proc/rk45.html'>rk45</a>(xi, dh, ax_func, bx_func, yi, ysolrk4, ysolrk5)</h3></div>
   <div class="panel-body">
        
 <p>Calculates the Runge-Kutta coefficients and calculates the fourth and fifth
@@ -344,7 +295,7 @@ order solutions for step i+1 based on the values at step i.</p>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>xi</strong></td><td><p>current x value in iteration</p></td>
+  <td><strong>xi</strong></td><td><p>current x value</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
@@ -353,40 +304,34 @@ order solutions for step i+1 based on the values at step i.</p>
   <td><strong>dh</strong></td><td><p>current step size</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
+  <td><span class="anchor" ></span>procedure(<a href='../interface/func.html'>func</a>)</td>
+<td></td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>xarray</strong>(:)</td><td><p>array of x values</p></td>
+  <td><strong>ax_func</strong></td><td><p>function to calculate A(x)</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>procedure(<a href='../interface/func.html'>func</a>)</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>bx_func</strong></td><td><p>function to calculate B(x)</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>axarray</strong>(:)</td><td><p>array of A(x) values</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>bxarray</strong>(:)</td><td><p>array of B(x) values</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>yi</strong></td><td><p>current y value in iteration</p></td>
+  <td><strong>yi</strong></td><td><p>current y value</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ysolrk4</strong></td><td><p>fourth-order solution</p></td>
+  <td><strong>ysolrk4</strong></td><td><p>fourth order solution</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ysolrk5</strong></td><td><p>fifth-order solution</p></td>
+  <td><strong>ysolrk5</strong></td><td><p>fifth order solution</p></td>
 </tr>
 </tbody>
 </table>

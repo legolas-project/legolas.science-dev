@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>needs_resampling &ndash; Legolas v. 2.0.0 - develop</title>
+    <title>ax_values &ndash; Legolas v. 2.0.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>needs_resampling
+    <h1>ax_values
       <small>Function</small>
     </h1>
     <div class="row">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">15 statements</a>
+    title=" 0.0% of total for procedures.">4 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_integration.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_solar_atmosphere.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_integration.f08.html'>mod_integration.f08</a></li>
-     <li><a href='../module/mod_integration.html'>mod_integration</a></li>
-     <li class="active">needs_resampling</li>
+     <li><a href='../sourcefile/mod_solar_atmosphere.f08.html'>mod_solar_atmosphere.f08</a></li>
+     <li><a href='../module/mod_solar_atmosphere.html'>mod_solar_atmosphere</a></li>
+     <li class="active">ax_values</li>
   </ol>
 </div>
 </div>
@@ -113,38 +113,25 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private function needs_resampling(base, target, array_name) result(resample)</h2>
+    <h2>private function ax_values(x)</h2>
     
 
-    <p>Checks if an array needs resampling.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-base"></span>integer,</td>
+  <td><span class="anchor" id="variable-x~97"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>base</strong></td><td><p>size of base array</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-target"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>target</strong></td><td><p>size of target array</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-array_name"></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>array_name</strong></td><td><p>name of array (printed to console)</p></td>
+  <td><strong>x</strong></td><td></td>
 </tr>
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-resample"></span>logical</small></h3>
-    <p>is <tt>.true.</tt> if arrays differ in size</p>
+   <h3>Return Value <small><span class="anchor" id="variable-ax_values"></span>real(kind=dp)</small></h3>
+    
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
