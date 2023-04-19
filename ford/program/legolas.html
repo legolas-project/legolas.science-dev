@@ -80,7 +80,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="100.0% of total for programs.">124 statements</a>
+    title="100.0% of total for programs.">130 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/main.f08"> Source File</a></li>
   </ul>
@@ -125,7 +125,9 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../program/legolas.html#proc-initialisation">initialisation</a>
+      <a class="list-group-item" href="../program/legolas.html#proc-read_user_parfile">read_user_parfile</a>
+      <a class="list-group-item" href="../program/legolas.html#proc-print_startup_info">print_startup_info</a>
+      <a class="list-group-item" href="../program/legolas.html#proc-do_eigenvalue_problem_allocations">do_eigenvalue_problem_allocations</a>
       <a class="list-group-item" href="../program/legolas.html#proc-get_eigenfunctions">get_eigenfunctions</a>
       <a class="list-group-item" href="../program/legolas.html#proc-cleanup">cleanup</a>
       <a class="list-group-item" href="../program/legolas.html#proc-print_timelog">print_timelog</a>
@@ -145,21 +147,21 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_physics.html'>mod_physics</a></li>
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
-    <li><a href='../module/mod_output.html'>mod_output</a></li>
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
-    <li><a href='../module/mod_timing.html'>mod_timing</a></li>
-    <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-    <li><a href='../module/mod_solvers.html'>mod_solvers</a></li>
-    <li><a href='../module/mod_background.html'>mod_background</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></li>
-    <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
-    <li><a href='../module/mod_console.html'>mod_console</a></li>
     <li><a href='../module/mod_equilibrium.html'>mod_equilibrium</a></li>
+    <li><a href='../module/mod_solvers.html'>mod_solvers</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_timing.html'>mod_timing</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_physics.html'>mod_physics</a></li>
+    <li><a href='../module/mod_output.html'>mod_output</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
+    <li><a href='../module/mod_console.html'>mod_console</a></li>
+    <li><a href='../module/mod_matrix_manager.html'>mod_matrix_manager</a></li>
+    <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
+    <li><a href='../module/mod_inspections.html'>mod_inspections</a></li>
+    <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
   </ul>
       </li>
       </ul>
@@ -196,7 +198,9 @@ KU Leuven, Belgium.</p>
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../program/legolas.html#proc-initialisation">initialisation</a>
+      <a class="list-group-item" href="../program/legolas.html#proc-read_user_parfile">read_user_parfile</a>
+      <a class="list-group-item" href="../program/legolas.html#proc-print_startup_info">print_startup_info</a>
+      <a class="list-group-item" href="../program/legolas.html#proc-do_eigenvalue_problem_allocations">do_eigenvalue_problem_allocations</a>
       <a class="list-group-item" href="../program/legolas.html#proc-get_eigenfunctions">get_eigenfunctions</a>
       <a class="list-group-item" href="../program/legolas.html#proc-cleanup">cleanup</a>
       <a class="list-group-item" href="../program/legolas.html#proc-print_timelog">print_timelog</a>
@@ -278,13 +282,27 @@ KU Leuven, Belgium.</p>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-initialisation"></span><h3>subroutine <a href='../proc/initialisation.html'>initialisation</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_user_parfile"></span><h3>subroutine <a href='../proc/read_user_parfile.html'>read_user_parfile</a>()</h3></div>
   <div class="panel-body">
-       
-<p>Subroutine responsible for all initialisations.
-Allocates and initialises main and global variables, then the equilibrium state
-and eigenfunctions are initialised and the equilibrium is set.</p>
-    
+           
+<h4>Arguments</h4>      <em>None</em>
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-print_startup_info"></span><h3>subroutine <a href='../proc/print_startup_info.html'>print_startup_info</a>()</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <em>None</em>
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-do_eigenvalue_problem_allocations"></span><h3>subroutine <a href='../proc/do_eigenvalue_problem_allocations.html'>do_eigenvalue_problem_allocations</a>()</h3></div>
+  <div class="panel-body">
+           
 <h4>Arguments</h4>      <em>None</em>
 
   </div>

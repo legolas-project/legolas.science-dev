@@ -324,6 +324,7 @@ square matrices. Returns <code>.true.</code> if <code>rows</code> equals <code>c
 			   <tr><td><a href='../proc/dj0.html'>dJ0</a></td><td><a href='../module/smod_equil_internal_kink_instability.html'>smod_equil_internal_kink_instability</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dj1.html'>DJ1</a></td><td><a href='../module/smod_equil_suydam_cluster.html'>smod_equil_suydam_cluster</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dj1.html'>dJ1</a></td><td><a href='../module/smod_equil_internal_kink_instability.html'>smod_equil_internal_kink_instability</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/do_eigenvalue_problem_allocations.html'>do_eigenvalue_problem_allocations</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/do_equilibrium_inspections.html'>do_equilibrium_inspections</a></td><td><a href='../module/mod_inspections.html'>mod_inspections</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/dp0.html'>dp0</a></td><td><a href='../module/smod_equil_constant_current.html'>smod_equil_constant_current</a></td><td>Function</td><td></td></tr>
 			   <tr><td><a href='../proc/dp0~2.html'>dp0</a></td><td><a href='../module/smod_equil_discrete_alfven.html'>smod_equil_discrete_alfven</a></td><td>Function</td><td></td></tr>
@@ -600,9 +601,6 @@ differentiated instead. The stencils are as follows:</p><a href="../proc/get_num
 			   <tr><td><a href='../proc/init_equilibrium_params.html'>init_equilibrium_params</a></td><td><a href='../module/mod_equilibrium_params.html'>mod_equilibrium_params</a></td><td>Subroutine</td><td><p>Initialises all variables defined at module scope to NaN,
 including the wave numbers. This ensures that these have to
 be explicitly set.</p></td></tr>
-			   <tr><td><a href='../proc/initialisation.html'>initialisation</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td><p>Subroutine responsible for all initialisations.
-Allocates and initialises main and global variables, then the equilibrium state
-and eigenfunctions are initialised and the equilibrium is set.</p></td></tr>
 			   <tr><td><a href='../proc/initialise.html'>initialise</a></td><td><a href='../module/mod_grid.html'>mod_grid</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/initialise~2.html'>initialise</a></td><td><a href='../module/mod_logging.html'>mod_logging</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/initialise~3.html'>initialise</a></td><td><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></td><td>Subroutine</td><td></td></tr>
@@ -793,6 +791,7 @@ equilibrium parameters etc. Only for logging level "info" or above.</p></td></tr
 			   <tr><td><a href='../proc/print_logo.html'>print_logo</a></td><td><a href='../module/mod_console.html'>mod_console</a></td><td>Subroutine</td><td><p>Prints the Legolas logo to the console.
 The logo is wrapped in 1 whitespace at the top and
 two at the bottom. Only for logging level 'warning' (1) and above</p></td></tr>
+			   <tr><td><a href='../proc/print_startup_info.html'>print_startup_info</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/print_timelog.html'>print_timelog</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/print_whitespace.html'>print_whitespace</a></td><td><a href='../module/mod_console.html'>mod_console</a></td><td>Subroutine</td><td><p>Prints an empty line to the console.
 Only if logging level is 'warning' or above.</p></td></tr>
@@ -812,6 +811,7 @@ Calls the initialisation routine if not already done.</p></td></tr>
 			   <tr><td><a href='../proc/read_savelist.html'>read_savelist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/read_solvelist.html'>read_solvelist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/read_unitlist.html'>read_unitlist</a></td><td><a href='../module/mod_input.html'>mod_input</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/read_user_parfile.html'>read_user_parfile</a></td><td><a href='../program/legolas.html'>legolas</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/real_array_is_constant.html'>real_array_is_constant</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Check if an array has constant values</p></td></tr>
 			   <tr><td><a href='../proc/real_is_equal.html'>real_is_equal</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Equality check between real values</p></td></tr>
 			   <tr><td><a href='../proc/real_is_negative.html'>real_is_negative</a></td><td><a href='../module/mod_check_values.html'>mod_check_values</a></td><td>Function</td><td><p>Check if values are or contain negative numbers</p></td></tr>
