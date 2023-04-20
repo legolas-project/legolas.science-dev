@@ -104,6 +104,29 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2"> is not a valid Legolas file&quot;</span></div>
 
 
+<div class="viewcode-block" id="BackgroundNotPresent"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.BackgroundNotPresent">[docs]</a><span class="k">class</span> <span class="nc">BackgroundNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handles trying to query for the background when this is not present in the datfile.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    file : str, ~os.PathLike</span>
+<span class="sd">        The path to the file.</span>
+<span class="sd">    unable_to_do : str</span>
+<span class="sd">        The thing that was unable to be done.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">unable_to_get</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unable_to_do</span> <span class="o">=</span> <span class="n">unable_to_get</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;No background present in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">unable_to_do</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">, unable to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">unable_to_do</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">msg</span></div>
+
+
 <div class="viewcode-block" id="EigenfunctionsNotPresent"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.EigenfunctionsNotPresent">[docs]</a><span class="k">class</span> <span class="nc">EigenfunctionsNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Handles trying to query for eigenfunctions when these</span>

@@ -77,6 +77,7 @@
 
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib.axes</span> <span class="kn">import</span> <span class="n">Axes</span> <span class="k">as</span> <span class="n">mpl_axes</span>
 <span class="kn">from</span> <span class="nn">matplotlib.figure</span> <span class="kn">import</span> <span class="n">Figure</span> <span class="k">as</span> <span class="n">mpl_fig</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.figure_window</span> <span class="kn">import</span> <span class="n">InteractiveFigureWindow</span>
@@ -199,6 +200,12 @@
 
 <div class="viewcode-block" id="SpectrumFigure.add_derived_eigenfunctions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.add_derived_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">add_derived_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="SpectrumFigure.has_valid_continua"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.has_valid_continua">[docs]</a>    <span class="k">def</span> <span class="nf">has_valid_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">continua</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;continua&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">continua</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="nb">all</span><span class="p">([</span><span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">continua</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">continua</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
 
     <span class="nd">@property</span>
 <div class="viewcode-block" id="SpectrumFigure.c_handler"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.c_handler">[docs]</a>    <span class="k">def</span> <span class="nf">c_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

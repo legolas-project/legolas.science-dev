@@ -271,6 +271,12 @@
 <span class="sd">        The profile instance containing the equilibrium plots.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">ensure_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="o">.</span><span class="n">has_background</span><span class="p">:</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">&quot;The dataset does not contain a background, equilibrium profiles &quot;</span>
+            <span class="s2">&quot;can not be plotted.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">EquilibriumProfile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">p</span></div>
 
@@ -293,6 +299,13 @@
 <span class="sd">    p : ~pylbo.visualisation.profiles.EquilibriumBalance</span>
 <span class="sd">        The profile instance containing the equilibrium balance plots.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ensure_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="o">.</span><span class="n">has_background</span><span class="p">:</span>
+        <span class="n">pylboLogger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">&quot;The dataset does not contain a background, equilibrium balance &quot;</span>
+            <span class="s2">&quot;can not be plotted.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">EquilibriumBalance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">p</span></div>
 

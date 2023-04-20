@@ -91,8 +91,9 @@ Attributes
    :param ds: The Legolas dataset.
    :type ds: ~pylbo.data_containers.LegolasDataSet
 
-   :returns: **continua** -- Dictonary containing the various continua as numpy arrays.
-   :rtype: dict
+   :returns: **continua** -- Dictonary containing the various continua as numpy arrays. If the
+             dataset does not contain a background, `None` is returned.
+   :rtype: dict, None
 
 
 

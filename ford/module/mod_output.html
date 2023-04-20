@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.2% of total for modules and submodules.">347 statements</a>
+    title=" 3.2% of total for modules and submodules.">354 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_output.f08"> Source File</a></li>
   </ul>
@@ -139,8 +139,8 @@
       <a class="list-group-item" href="../module/mod_output.html#proc-write_units_info">write_units_info</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_physics_info">write_physics_info</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_parameters">write_parameters</a>
-      <a class="list-group-item" href="../module/mod_output.html#proc-write_equilibrium_names">write_equilibrium_names</a>
-      <a class="list-group-item" href="../module/mod_output.html#proc-write_equilibrium_data">write_equilibrium_data</a>
+      <a class="list-group-item" href="../module/mod_output.html#proc-write_background_names">write_background_names</a>
+      <a class="list-group-item" href="../module/mod_output.html#proc-write_background_data">write_background_data</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_base_eigenfunction_data">write_base_eigenfunction_data</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_derived_eigenfunction_data">write_derived_eigenfunction_data</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_eigenvector_data">write_eigenvector_data</a>
@@ -163,14 +163,14 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
-    <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
+    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_physics.html'>mod_physics</a></li>
-    <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
-    <li><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
     <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_grid.html'>mod_grid</a></li>
   </ul>
       </li>
       </ul>
@@ -216,8 +216,8 @@
       <a class="list-group-item" href="../module/mod_output.html#proc-write_units_info">write_units_info</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_physics_info">write_physics_info</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_parameters">write_parameters</a>
-      <a class="list-group-item" href="../module/mod_output.html#proc-write_equilibrium_names">write_equilibrium_names</a>
-      <a class="list-group-item" href="../module/mod_output.html#proc-write_equilibrium_data">write_equilibrium_data</a>
+      <a class="list-group-item" href="../module/mod_output.html#proc-write_background_names">write_background_names</a>
+      <a class="list-group-item" href="../module/mod_output.html#proc-write_background_data">write_background_data</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_base_eigenfunction_data">write_base_eigenfunction_data</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_derived_eigenfunction_data">write_derived_eigenfunction_data</a>
       <a class="list-group-item" href="../module/mod_output.html#proc-write_eigenvector_data">write_eigenvector_data</a>
@@ -610,16 +610,27 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_equilibrium_names"></span><h3>private subroutine <a href='../proc/write_equilibrium_names.html'>write_equilibrium_names</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-write_background_names"></span><h3>private subroutine <a href='../proc/write_background_names.html'>write_background_names</a>(settings)</h3></div>
   <div class="panel-body">
            
-<h4>Arguments</h4>      <em>None</em>
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>settings</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_equilibrium_data"></span><h3>private subroutine <a href='../proc/write_equilibrium_data.html'>write_equilibrium_data</a>(settings, grid, background, physics)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-write_background_data"></span><h3>private subroutine <a href='../proc/write_background_data.html'>write_background_data</a>(settings, grid, background, physics)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
