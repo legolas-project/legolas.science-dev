@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for modules and submodules.">12 statements</a>
+    title=" 0.1% of total for modules and submodules.">15 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_cooling_curve_names.f08"> Source File</a></li>
   </ul>
@@ -111,10 +111,13 @@
     <div class="list-group">
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-jc_corona">JC_CORONA</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-dalgarno">DALGARNO</a>
+      <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-dalgarno2">DALGARNO2</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-ml_solar">ML_SOLAR</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-spex">SPEX</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-spex_dalgarno">SPEX_DALGARNO</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-rosner">ROSNER</a>
+      <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-colgan">COLGAN</a>
+      <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-colgan_dm">COLGAN_DM</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-known_curves">KNOWN_CURVES</a>
     </div>
   </div>
@@ -151,10 +154,13 @@
     <div class="list-group">
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-jc_corona">JC_CORONA</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-dalgarno">DALGARNO</a>
+      <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-dalgarno2">DALGARNO2</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-ml_solar">ML_SOLAR</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-spex">SPEX</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-spex_dalgarno">SPEX_DALGARNO</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-rosner">ROSNER</a>
+      <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-colgan">COLGAN</a>
+      <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-colgan_dm">COLGAN_DM</a>
       <a class="list-group-item" href="../module/mod_cooling_curve_names.html#variable-known_curves">KNOWN_CURVES</a>
     </div>
   </div>
@@ -180,6 +186,11 @@
   <td><strong>DALGARNO</strong></td><td> =</td><td>"dalgarno"</td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-dalgarno2"></span>character(len=str_len),</td>
+<td>public,</td>  <td>parameter</td><td>::</td>
+  <td><strong>DALGARNO2</strong></td><td> =</td><td>"dalgarno2"</td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-ml_solar"></span>character(len=str_len),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
   <td><strong>ML_SOLAR</strong></td><td> =</td><td>"ml_solar"</td><td></td>
@@ -200,9 +211,19 @@
   <td><strong>ROSNER</strong></td><td> =</td><td>"rosner"</td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-colgan"></span>character(len=str_len),</td>
+<td>public,</td>  <td>parameter</td><td>::</td>
+  <td><strong>COLGAN</strong></td><td> =</td><td>"colgan"</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-colgan_dm"></span>character(len=str_len),</td>
+<td>public,</td>  <td>parameter</td><td>::</td>
+  <td><strong>COLGAN_DM</strong></td><td> =</td><td>"colgan_dm"</td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-known_curves"></span>character(len=str_len),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
-  <td><strong>KNOWN_CURVES</strong>(6)</td><td> =</td><td>[JC_CORONA, DALGARNO, ML_SOLAR, SPEX, SPEX_DALGARNO, ROSNER]</td><td></td>
+  <td><strong>KNOWN_CURVES</strong>(9)</td><td> =</td><td>[JC_CORONA, DALGARNO, DALGARNO2, ML_SOLAR, SPEX, SPEX_DALGARNO, ROSNER, COLGAN, COLGAN_DM]</td><td></td>
 </tr>
 </tbody>
 </table>
