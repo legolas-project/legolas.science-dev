@@ -138,10 +138,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <p>All global variables are defined in this module, and can be accessed
-throughout the entire code. Most variables are first initialised
-to a default value, and are properly set either in the parfile
-or in an equilibrium submodule.</p>
+    
 <br>        <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
@@ -226,7 +223,7 @@ or in an equilibrium submodule.</p>
 <tr>
   <td><span class="anchor" id="variable-dp_limit"></span>real(kind=dp),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
-  <td><strong>dp_LIMIT</strong></td><td> =</td><td>5.0d-15</td><td><p>values smaller than this are forced to zero, bit higher than machine precision</p></td>
+  <td><strong>dp_LIMIT</strong></td><td> =</td><td>5.0d-15</td><td><p>tolerance for real(dp) zero, bit higher than machine precision</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-nan"></span>real(kind=dp),</td>
@@ -251,12 +248,12 @@ or in an equilibrium submodule.</p>
 <tr>
   <td><span class="anchor" id="variable-gaussian_nodes"></span>real(kind=dp),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
-  <td><strong>gaussian_nodes</strong>(n_gauss)</td><td> =</td><td>[-0.861136311594053, -0.339981043584856, 0.339981043584856, 0.861136311594053]</td><td><p>values for the Gaussian nodes in [-1, 1]</p></td>
+  <td><strong>gaussian_nodes</strong>(n_gauss)</td><td> =</td><td>[-0.861136311594053_dp, -0.339981043584856_dp, 0.339981043584856_dp, 0.861136311594053_dp]</td><td><p>values for the Gaussian nodes in [-1, 1]</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-gaussian_weights"></span>real(kind=dp),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
-  <td><strong>gaussian_weights</strong>(n_gauss)</td><td> =</td><td>[0.347854845137454, 0.652145154862546, 0.652145154862546, 0.347854845137454]</td><td><p>weights for the Gaussian nodes in [-1, 1]</p></td>
+  <td><strong>gaussian_weights</strong>(n_gauss)</td><td> =</td><td>[0.347854845137454_dp, 0.652145154862546_dp, 0.652145154862546_dp, 0.347854845137454_dp]</td><td><p>weights for the Gaussian nodes in [-1, 1]</p></td>
 </tr>
 </tbody>
 </table>
@@ -274,13 +271,7 @@ or in an equilibrium submodule.</p>
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-initialise_globals"></span><h3>public subroutine <a href='../proc/initialise_globals.html'>initialise_globals</a>()</h3></div>
   <div class="panel-body">
-       
-<p>Initialises the global variables in this module.
-All variables in this module are first set to their default values.
-These are either regular values or NaN, the latter in case variables
-must be explicitly set in the parfile or equilibrium submodule.
-</p><a href="../proc/initialise_globals.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
+           
 <h4>Arguments</h4>      <em>None</em>
 
   </div>
