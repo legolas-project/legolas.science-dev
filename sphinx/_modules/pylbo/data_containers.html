@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.0 - develop
+                2.0.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -265,6 +265,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">cgs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">[</span><span class="s2">&quot;cgs&quot;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">eq_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;equilibrium_names&quot;</span><span class="p">]</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_compatibility</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_continua</span> <span class="o">=</span> <span class="n">calculate_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -362,6 +363,26 @@
 <div class="viewcode-block" id="LegolasDataSet.has_residuals"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">has_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if residuals are present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;has_residuals&quot;</span><span class="p">]</span></div>
+
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="LegolasDataSet.is_mhd"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.is_mhd">[docs]</a>    <span class="k">def</span> <span class="nf">is_mhd</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if the dataset is MHD.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;mhd&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;physics_type&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">equilibria</span><span class="p">[</span><span class="s2">&quot;B0&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="LegolasDataSet._ensure_compatibility"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet._ensure_compatibility">[docs]</a>    <span class="k">def</span> <span class="nf">_ensure_compatibility</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Makes sure that the dataset is backwards compatible with new changes.</span>
+<span class="sd">        Mainly used for older (&lt;2.0.0) datasets.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_background</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">bg_keys_added_in_v200</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;L0&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">bg_keys_added_in_v200</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">equilibria</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">pylboLogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;added &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; to equilibrium of &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">equilibria</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid_gauss</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="LegolasDataSet.get_sound_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_sound_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_sound_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>

@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.0 - develop
+                2.0.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -79,6 +79,51 @@
 
 <span class="kn">import</span> <span class="nn">matplotlib.axes</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<div class="viewcode-block" id="_BACKGROUND_NAME_MAPPING"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils._BACKGROUND_NAME_MAPPING">[docs]</a><span class="n">_BACKGROUND_NAME_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;rho0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\rho_0$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;drho0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial \rho_0$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;T0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$T_0$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dT0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial T_0$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ddT0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial^2 T_0$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;B01&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$B_</span><span class="si">{01}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;B02&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$B_</span><span class="si">{02}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;B03&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$B_</span><span class="si">{03}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dB02&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial B_</span><span class="si">{02}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dB03&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial B_</span><span class="si">{03}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ddB02&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial^2 B_</span><span class="si">{02}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ddB03&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial^2 B_</span><span class="si">{03}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;B0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$B_0$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;v01&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$v_</span><span class="si">{01}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;v02&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$v_</span><span class="si">{02}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;v03&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$v_</span><span class="si">{03}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dv01&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial v_</span><span class="si">{01}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dv02&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial v_</span><span class="si">{02}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dv03&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial v_</span><span class="si">{03}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ddv01&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial^2 v_</span><span class="si">{01}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ddv02&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial^2 v_</span><span class="si">{02}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ddv03&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial^2 v_</span><span class="si">{03}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;L0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\mathcal</span><span class="si">{L}</span><span class="s2">_0$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dLdT&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_T \mathcal</span><span class="si">{L}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dLdrho&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_\rho \mathcal</span><span class="si">{L}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lambdaT&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\Lambda(T)$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dlambdadT&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_T \Lambda$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;H0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\mathcal</span><span class="si">{H}</span><span class="s2">_0$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dHdT&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_T \mathcal</span><span class="si">{H}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dHdrho&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_\rho \mathcal</span><span class="si">{H}</span><span class="s2">$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kappa_para&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\kappa_\parallel$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kappa_perp&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\kappa_\perp$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dkappa_para_dT&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_T \kappa_\parallel$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dkappa_para_dr&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial \kappa_\parallel$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dkappa_perp_drho&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_\rho \kappa_\perp$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dkappa_perp_dT&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_T \kappa_\perp$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dkappa_perp_dB2&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_{B^2} \kappa_\perp$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dkappa_perp_dr&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial \kappa_\perp$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;eta&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\eta$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;detadT&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial_T \eta$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;detadr&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial \eta$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gravity&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$g$&quot;</span><span class="p">,</span>
+<span class="p">}</span></div>
 
 
 <div class="viewcode-block" id="refresh_plot"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.refresh_plot">[docs]</a><span class="k">def</span> <span class="nf">refresh_plot</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="nb">callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">callable</span><span class="p">:</span>
@@ -157,6 +202,24 @@
     <span class="k">if</span> <span class="n">part</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
         <span class="n">latex_name</span> <span class="o">=</span> <span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">part</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">latex_name</span><span class="si">}</span><span class="s2">)&quot;</span>
     <span class="k">return</span> <span class="n">latex_name</span></div>
+
+
+<div class="viewcode-block" id="background_name_to_latex"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.background_name_to_latex">[docs]</a><span class="k">def</span> <span class="nf">background_name_to_latex</span><span class="p">(</span><span class="n">bg_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Maps the background name to latex formatting.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    bg_name : str</span>
+<span class="sd">        The name of the background as given by the corresponding dictionary key.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        The latex formatted background name. If the background name has no mapping</span>
+<span class="sd">        the original name is returned.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_BACKGROUND_NAME_MAPPING</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">bg_name</span><span class="p">,</span> <span class="n">bg_name</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="validate_ef_name"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.validate_ef_name">[docs]</a><span class="k">def</span> <span class="nf">validate_ef_name</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ef_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>

@@ -36,7 +36,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.0 - develop
+                2.0.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -125,8 +125,8 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.api.plot_equilibrium" title="pylbo.visualisation.api.plot_equilibrium"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_equilibrium</span></code></a>(data[, figsize, interactive])</p></td>
 <td><p>Plots the equilibrium profiles.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.api.plot_equilibrium_balance" title="pylbo.visualisation.api.plot_equilibrium_balance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_equilibrium_balance</span></code></a>(data[, figsize])</p></td>
-<td><p>Creates a plot of the force balance equation and non-adiabatic equilibrium</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.visualisation.api.plot_equilibrium_balance" title="pylbo.visualisation.api.plot_equilibrium_balance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_equilibrium_balance</span></code></a>(data[, figsize, interactive])</p></td>
+<td><p>Creates a plot of the balance equations.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.api.plot_continua" title="pylbo.visualisation.api.plot_continua"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_continua</span></code></a>(data[, figsize, interactive])</p></td>
 <td><p>Plots the continua profiles.</p></td>
@@ -282,15 +282,15 @@ as well.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.visualisation.api.plot_equilibrium_balance">
-<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.api.</span></span><span class="sig-name descname"><span class="pre">plot_equilibrium_balance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/api.html#plot_equilibrium_balance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.api.plot_equilibrium_balance" title="Permalink to this definition"></a></dt>
-<dd><p>Creates a plot of the force balance equation and non-adiabatic equilibrium
-equation. These should be as close to zero as possible over the entire grid.
-All values smaller than 1e-16 are set to zero.</p>
+<span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.api.</span></span><span class="sig-name descname"><span class="pre">plot_equilibrium_balance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interactive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/visualisation/api.html#plot_equilibrium_balance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.visualisation.api.plot_equilibrium_balance" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a plot of the balance equations.
+These should be as close to zero as possible over the entire grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – The dataset that should be used</p></li>
 <li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a>) – Optional figure size like the usual matplotlib (x, x) size.</p></li>
+<li><p><strong>interactive</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – If <cite>True</cite> (default), enables an interactive legend.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>

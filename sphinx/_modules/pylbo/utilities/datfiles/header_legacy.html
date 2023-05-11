@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.0 - develop
+                2.0.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -208,7 +208,9 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">legolas_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;1.0.2&quot;</span>
             <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_str_len_array</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">read_string_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">len_name</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="n">nb_names</span><span class="p">)</span></div>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">read_string_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">len_name</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="n">nb_names</span><span class="p">)</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;grav&quot;</span><span class="p">,</span> <span class="s2">&quot;gravity&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">names</span></div>
 
 <div class="viewcode-block" id="LegolasLegacyHeader._read_units"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header_legacy/index.html#pylbo.utilities.datfiles.header_legacy.LegolasLegacyHeader._read_units">[docs]</a>    <span class="k">def</span> <span class="nf">_read_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">units</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cgs&quot;</span><span class="p">:</span> <span class="n">read_boolean_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)}</span>

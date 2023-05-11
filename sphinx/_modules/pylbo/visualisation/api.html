@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.0 - develop
+                2.0.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -281,11 +281,10 @@
     <span class="k">return</span> <span class="n">p</span></div>
 
 
-<div class="viewcode-block" id="plot_equilibrium_balance"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_equilibrium_balance">[docs]</a><span class="k">def</span> <span class="nf">plot_equilibrium_balance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="plot_equilibrium_balance"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_equilibrium_balance">[docs]</a><span class="k">def</span> <span class="nf">plot_equilibrium_balance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Creates a plot of the force balance equation and non-adiabatic equilibrium</span>
-<span class="sd">    equation. These should be as close to zero as possible over the entire grid.</span>
-<span class="sd">    All values smaller than 1e-16 are set to zero.</span>
+<span class="sd">    Creates a plot of the balance equations.</span>
+<span class="sd">    These should be as close to zero as possible over the entire grid.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -293,6 +292,8 @@
 <span class="sd">        The dataset that should be used</span>
 <span class="sd">    figsize : tuple</span>
 <span class="sd">        Optional figure size like the usual matplotlib (x, x) size.</span>
+<span class="sd">    interactive : bool</span>
+<span class="sd">        If `True` (default), enables an interactive legend.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -306,8 +307,7 @@
             <span class="s2">&quot;can not be plotted.&quot;</span>
         <span class="p">)</span>
         <span class="k">return</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">EquilibriumBalance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">p</span></div>
+    <span class="k">return</span> <span class="n">EquilibriumBalance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="plot_continua"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_continua">[docs]</a><span class="k">def</span> <span class="nf">plot_continua</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>

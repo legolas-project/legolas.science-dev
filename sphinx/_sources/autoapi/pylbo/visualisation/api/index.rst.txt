@@ -229,17 +229,18 @@ Attributes
    ..
        !! processed by numpydoc !!
 
-.. py:function:: plot_equilibrium_balance(data, figsize=None, **kwargs)
+.. py:function:: plot_equilibrium_balance(data, figsize=None, interactive=True, **kwargs)
 
    
-   Creates a plot of the force balance equation and non-adiabatic equilibrium
-   equation. These should be as close to zero as possible over the entire grid.
-   All values smaller than 1e-16 are set to zero.
+   Creates a plot of the balance equations.
+   These should be as close to zero as possible over the entire grid.
 
    :param data: The dataset that should be used
    :type data: ~pylbo.data_containers.LegolasDataSet
    :param figsize: Optional figure size like the usual matplotlib (x, x) size.
    :type figsize: tuple
+   :param interactive: If `True` (default), enables an interactive legend.
+   :type interactive: bool
 
    :returns: **p** -- The profile instance containing the equilibrium balance plots.
    :rtype: ~pylbo.visualisation.profiles.EquilibriumBalance

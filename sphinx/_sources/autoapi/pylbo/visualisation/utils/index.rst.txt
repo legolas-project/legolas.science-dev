@@ -16,6 +16,7 @@ Functions
    pylbo.visualisation.utils.refresh_plot
    pylbo.visualisation.utils.ensure_attr_set
    pylbo.visualisation.utils.ef_name_to_latex
+   pylbo.visualisation.utils.background_name_to_latex
    pylbo.visualisation.utils.validate_ef_name
    pylbo.visualisation.utils._validate_textbox_location
    pylbo.visualisation.utils._get_textbox_axes_coords
@@ -23,6 +24,18 @@ Functions
    pylbo.visualisation.utils.add_axis_label
 
 
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.visualisation.utils._BACKGROUND_NAME_MAPPING
+
+
+.. py:data:: _BACKGROUND_NAME_MAPPING
+
+   
 
 .. py:function:: refresh_plot(f: callable) -> callable
 
@@ -93,6 +106,35 @@ Functions
    :param real_part: Whether the real part of the eigenfunction is being plotted. The default is
                      None.
    :type real_part: bool, optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: background_name_to_latex(bg_name: str) -> str
+
+   
+   Maps the background name to latex formatting.
+
+   :param bg_name: The name of the background as given by the corresponding dictionary key.
+   :type bg_name: str
+
+   :returns: The latex formatted background name. If the background name has no mapping
+             the original name is returned.
+   :rtype: str
 
 
 
