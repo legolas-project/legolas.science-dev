@@ -36,7 +36,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.1 - develop
+                2.0.2 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -186,20 +186,19 @@ Defaults to the maximum available number if exceeded.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">LegolasRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_cpus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">executable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">LegolasRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_cpus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">executable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner" title="Permalink to this definition"></a></dt>
 <dd><p>Handles running legolas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – A list or array containing the names or paths to the parfiles.</p></li>
+<li><p><strong>parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a>) – A list or array containing the names or paths to the parfiles.</p></li>
 <li><p><strong>remove_parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – If <cite>True</cite>, removes the parfiles after running Legolas. This will also remove
 the containing folder if it turns out to be empty after the parfiles are
 removed. If there are other files still in the folder it remains untouched.</p></li>
 <li><p><strong>nb_cpus</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – The number of CPUs to use when running Legolas. If equal to 1 then
 parallelisation is disabled. Defaults to the maximum number of CPUs available
 if a number larger than the available number is specified.</p></li>
-<li><p><strong>executable</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.11)"><em>PathLike</em></a>) – The path to the legolas executable. If not specified, defaults to the
-standard one in the legolas home directory.</p></li>
+<li><p><strong>executable</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.11)"><em>PathLike</em></a>) – The path to the legolas executable.</p></li>
 </ul>
 </dd>
 </dl>

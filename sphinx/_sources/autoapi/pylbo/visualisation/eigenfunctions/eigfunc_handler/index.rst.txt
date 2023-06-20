@@ -19,6 +19,7 @@ Classes
 
 .. py:class:: EigenfunctionHandler(data, ef_ax, spec_ax)
 
+
    Bases: :py:obj:`pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface`
 
    
@@ -43,9 +44,52 @@ Classes
        !! processed by numpydoc !!
    .. py:method:: _check_data_is_present()
 
+      
+      Checks if the required data is present to draw for example
+      eigenfunctions, is overloaded in subclasses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: update_plot()
 
+      
+      Updates the plot when an event is triggered, clears and then redraws
+      the functions. Rescaling of the axes is done automatically.
+      Has to be overridden in a subclass.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: _get_title(ef_name)
 
@@ -79,5 +123,28 @@ Classes
 
    .. py:method:: _mark_points_without_data_written()
 
+      
+      For dataseries, it is possible that not all datasets in the series
+      have eigenfunctions associated with them. This routine will toggle a change
+      in the opacity value for datapoints with no functions, so they are
+      clearly distinguishable from those who do have them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
 

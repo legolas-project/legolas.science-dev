@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.1 - develop
+                2.0.2 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -73,11 +73,23 @@
            <div itemprop="articleBody">
              
   <h1>Source code for pylbo.automation.api</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">pylbo.automation.generator</span> <span class="kn">import</span> <span class="n">ParfileGenerator</span>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="kn">from</span> <span class="nn">pylbo.automation.generator</span> <span class="kn">import</span> <span class="n">ParfileGenerator</span>
 <span class="kn">from</span> <span class="nn">pylbo.automation.runner</span> <span class="kn">import</span> <span class="n">LegolasRunner</span>
 
 
-<div class="viewcode-block" id="generate_parfiles"><a class="viewcode-back" href="../../../autoapi/pylbo/index.html#pylbo.automation.api.generate_parfiles">[docs]</a><span class="k">def</span> <span class="nf">generate_parfiles</span><span class="p">(</span><span class="n">parfile_dict</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subdir</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="generate_parfiles"><a class="viewcode-back" href="../../../autoapi/pylbo/index.html#pylbo.automation.api.generate_parfiles">[docs]</a><span class="k">def</span> <span class="nf">generate_parfiles</span><span class="p">(</span>
+    <span class="n">parfile_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+    <span class="n">basename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">subdir</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">prefix_numbers</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">nb_prefix_digits</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generates parfiles based on a given configuration dictionary.</span>
 <span class="sd">    The separate namelists do not have to be taken into account, and a normal</span>
@@ -99,7 +111,13 @@
 <span class="sd">        working directory if not specified. A subdirectory called `parfiles` will be</span>
 <span class="sd">        created in which the parfiles will be saved.</span>
 <span class="sd">    subdir : boolean</span>
-<span class="sd">        If `.true.` (default), creates a subdirectory `parfiles` in the output folder.</span>
+<span class="sd">        If `True` (default), creates a subdirectory `parfiles` in the output folder.</span>
+<span class="sd">    prefix_numbers : boolean</span>
+<span class="sd">        If `True` prepends the `basename` by a n-digit number (e.g. xxxxmyparfile.par).</span>
+<span class="sd">        The number of digits is specified by `nb_prefix_digits`.</span>
+<span class="sd">    nb_prefix_digits : int</span>
+<span class="sd">        Number of digits to prepend to the `basename` if `prefix_numbers` is `True`.</span>
+<span class="sd">        Defaults to 4.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -151,13 +169,24 @@
 <span class="sd">    &gt;&gt;&gt; }</span>
 <span class="sd">    &gt;&gt;&gt; parfile_list = pylbo.generate_parfiles(config, output_dir=&quot;my_parfiles&quot;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">pfgen</span> <span class="o">=</span> <span class="n">ParfileGenerator</span><span class="p">(</span><span class="n">parfile_dict</span><span class="p">,</span> <span class="n">basename</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">subdir</span><span class="p">)</span>
+    <span class="n">pfgen</span> <span class="o">=</span> <span class="n">ParfileGenerator</span><span class="p">(</span>
+        <span class="n">parfile_dict</span><span class="o">=</span><span class="n">parfile_dict</span><span class="p">,</span>
+        <span class="n">basename</span><span class="o">=</span><span class="n">basename</span><span class="p">,</span>
+        <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+        <span class="n">subdir</span><span class="o">=</span><span class="n">subdir</span><span class="p">,</span>
+        <span class="n">prefix_numbers</span><span class="o">=</span><span class="n">prefix_numbers</span><span class="p">,</span>
+        <span class="n">nb_prefix_digits</span><span class="o">=</span><span class="n">nb_prefix_digits</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="n">pfgen</span><span class="o">.</span><span class="n">create_namelist_from_dict</span><span class="p">()</span>
-    <span class="n">parfiles</span> <span class="o">=</span> <span class="n">pfgen</span><span class="o">.</span><span class="n">generate_parfiles</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">parfiles</span></div>
+    <span class="k">return</span> <span class="n">pfgen</span><span class="o">.</span><span class="n">generate_parfiles</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="run_legolas"><a class="viewcode-back" href="../../../autoapi/pylbo/index.html#pylbo.automation.api.run_legolas">[docs]</a><span class="k">def</span> <span class="nf">run_legolas</span><span class="p">(</span><span class="n">parfiles</span><span class="p">,</span> <span class="n">remove_parfiles</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nb_cpus</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="run_legolas"><a class="viewcode-back" href="../../../autoapi/pylbo/index.html#pylbo.automation.api.run_legolas">[docs]</a><span class="k">def</span> <span class="nf">run_legolas</span><span class="p">(</span>
+    <span class="n">parfiles</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">],</span>
+    <span class="n">remove_parfiles</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">nb_cpus</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">executable</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Runs the legolas executable for a given list of parfiles. If more than one parfile</span>
 <span class="sd">    is passed, the runs can be performed in parallel using the multiprocessing module.</span>

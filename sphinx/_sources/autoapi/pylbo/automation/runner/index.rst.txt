@@ -117,7 +117,8 @@ Functions
    ..
        !! processed by numpydoc !!
 
-.. py:class:: LegolasRunner(parfiles, remove_parfiles, nb_cpus, executable)
+.. py:class:: LegolasRunner(parfiles, remove_parfiles, nb_cpus, executable=None)
+
 
    
    Handles running legolas.
@@ -132,8 +133,7 @@ Functions
                    parallelisation is disabled. Defaults to the maximum number of CPUs available
                    if a number larger than the available number is specified.
    :type nb_cpus: int
-   :param executable: The path to the legolas executable. If not specified, defaults to the
-                      standard one in the legolas home directory.
+   :param executable: The path to the legolas executable.
    :type executable: str, ~os.PathLike
 
 

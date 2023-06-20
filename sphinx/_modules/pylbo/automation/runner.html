@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.1 - develop
+                2.0.2 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -73,14 +73,14 @@
            <div itemprop="articleBody">
              
   <h1>Source code for pylbo.automation.runner</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
+<span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">signal</span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
-<span class="kn">import</span> <span class="nn">psutil</span>
-<span class="kn">import</span> <span class="nn">tqdm</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
+<span class="kn">import</span> <span class="nn">psutil</span>
+<span class="kn">import</span> <span class="nn">tqdm</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">transform_to_list</span>
 
@@ -107,8 +107,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">executable</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">exec_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-        <span class="n">executable</span> <span class="o">=</span> <span class="p">(</span><span class="n">exec_dir</span> <span class="o">/</span> <span class="s2">&quot;legolas&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;No executable was specified.&quot;</span><span class="p">)</span>
     <span class="n">executable</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">executable</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">executable</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
         <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Executable was not found: </span><span class="si">{</span><span class="n">executable</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -186,11 +185,10 @@
 <span class="sd">        parallelisation is disabled. Defaults to the maximum number of CPUs available</span>
 <span class="sd">        if a number larger than the available number is specified.</span>
 <span class="sd">    executable : str, ~os.PathLike</span>
-<span class="sd">        The path to the legolas executable. If not specified, defaults to the</span>
-<span class="sd">        standard one in the legolas home directory.</span>
+<span class="sd">        The path to the legolas executable.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parfiles</span><span class="p">,</span> <span class="n">remove_parfiles</span><span class="p">,</span> <span class="n">nb_cpus</span><span class="p">,</span> <span class="n">executable</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parfiles</span><span class="p">,</span> <span class="n">remove_parfiles</span><span class="p">,</span> <span class="n">nb_cpus</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parfiles</span> <span class="o">=</span> <span class="n">_validate_parfiles</span><span class="p">(</span><span class="n">parfiles</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parfile_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parfiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parent</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">executable</span> <span class="o">=</span> <span class="n">_validate_executable</span><span class="p">(</span><span class="n">executable</span><span class="p">)</span>

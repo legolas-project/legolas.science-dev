@@ -21,21 +21,52 @@ Functions
 
 .. autoapisummary::
 
-   pylbo.automation.generator._validate_basename
+   pylbo.automation.generator._ensure_nb_names_and_nb_runs_matches
+   pylbo.automation.generator._validate_basenames
    pylbo.automation.generator._validate_output_dir
 
 
 
-.. py:function:: _validate_basename(basename)
+.. py:function:: _ensure_nb_names_and_nb_runs_matches(names: Union[str, list[str]], nb_runs: int) -> list[str]
 
    
-   Validates the basename for a given parfile.
+   Ensures that the number of names matches the number of runs.
 
-   :param basename: The basename for a parfile. If not given, defaults to "parfile".
-   :type basename: str
+   :param names: The basename(s) for the parfile(s).
+   :type names: str, list[str]
+   :param nb_runs: Number of runs for which the parfiles are generated.
+   :type nb_runs: int
+
+   :returns: **names** -- The basename(s) for the parfile(s).
+   :rtype: list[str]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: _validate_basenames(basenames: list[str]) -> list[str]
+
+   
+   Validates the basenames for given parfiles.
+
+   :param basename: The basenames for the parfiles. If not given, defaults to "parfile[i]".
+   :type basename: list[str]
 
    :returns: **basename** -- The basename for a parfile.
-   :rtype: str
+   :rtype: list[str]
 
 
 
@@ -87,7 +118,8 @@ Functions
    ..
        !! processed by numpydoc !!
 
-.. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None, subdir=True)
+.. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None, subdir=True, prefix_numbers=True, nb_prefix_digits=4)
+
 
    
    Handles parfile generation.
@@ -95,17 +127,22 @@ Functions
    :param parfile_dict: Dictionary containing the keys to be placed in the parfile.
    :type parfile_dict: dict
    :param basename: The basename for the parfile, the `.par` suffix is added automatically and is
-                    not needed. If multiple parfiles are generated, these
-                    will be prepended by a 4-digit number (e.g. 0003myparfile.par).
-                    If not provided, the basename will default to `parfile`.
-   :type basename: str
+                    not needed. If not provided, the basename will default to `parfile`.
+                    Can be a list of names as well if multiple parfiles are being generated.
+   :type basename: str, list[str]
    :param output_dir: Output directory where the parfiles are saved, defaults to the current
                       working directory if not specified.
    :type output_dir: str, ~os.PathLike
    :param subdir:
-                  If `.true.` (default), creates a subdirectory under `output_dir` called
+                  If `True` (default), creates a subdirectory under `output_dir` called
                    `parfiles` in which the parfiles will be saved.
    :type subdir: boolean
+   :param prefix_numbers: If `True` prepends the `basename` by a n-digit number (e.g. xxxxmyparfile.par).
+                          The number of digits is specified by `nb_prefix_digits`.
+   :type prefix_numbers: boolean
+   :param nb_prefix_digits: Number of digits to prepend to the `basename` if `prefix_numbers` is `True`.
+                            Defaults to 4.
+   :type nb_prefix_digits: int
 
 
 

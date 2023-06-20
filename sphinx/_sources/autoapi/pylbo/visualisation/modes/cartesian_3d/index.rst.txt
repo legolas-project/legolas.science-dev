@@ -19,6 +19,7 @@ Classes
 
 .. py:class:: CartesianSlicePlot3D(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: numpy.ndarray, u3: numpy.ndarray, time: float, slicing_axis: str, figsize: tuple[int, int], vmin: float = None, vmax: float = None, **kwargs)
 
+
    Bases: :py:obj:`pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D`
 
    
@@ -61,208 +62,24 @@ Classes
        !! processed by numpydoc !!
    .. py:method:: _create_figure_layout(figsize: tuple[int, int]) -> tuple[matplotlib.figure.Figure, dict]
 
-      
-      Create the figure layout for the visualisation. Two panels are created:
-      the top one for the eigenfunction and the bottom one for the visualisation.
-
-      :param figsize: The size of the figure.
-      :type figsize: tuple[int, int]
-
-      :returns: * **fig** (*~matplotlib.figure.Figure*) -- The figure to use for the visualisation.
-                * **axes** (*dict*) -- The axes to use for the visualisation.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: _create_cbar_axes(width: float) -> matplotlib.axes.Axes
 
-      
-      Creates the axes for the colorbar.
-
-      :param width: The width of the colorbar axes.
-      :type width: float
-
-      :returns: The axes for the colorbar.
-      :rtype: matplotlib.axes.Axes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: _validate_u2(u2: numpy.ndarray, *args, **kwargs) -> numpy.ndarray
 
-      
-      Validates the combination of u2 and slicing axis.
-
-      :param u2: The :math:`u_2` coordinate.
-      :type u2: float
-      :param slicing_axis: The slicing axis.
-      :type slicing_axis: str
-      :param axis: The coordinate axis corresponding to :math:`u_2`.
-      :type axis: str
-
-      :returns: The validated :math:`u_2` coordinate.
-      :rtype: float
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: _validate_u3(u3: numpy.ndarray, *args, **kwargs) -> numpy.ndarray
 
-      
-      Validates the combination of u3 and slicing axis.
-
-      :param u3: The :math:`u_3` coordinate.
-      :type u3: float
-      :param slicining_axis: The slicing axis.
-      :type slicining_axis: str
-      :param axis: The coordinate axis corresponding to :math:`u_3`.
-      :type axis: str
-
-      :returns: The validated :math:`u_3` coordinate.
-      :rtype: float
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: set_plot_arrays() -> None
 
-      
-      Sets the arrays used for plotting. This should implement setting of
-      :attr:`u1_data`, :attr:`u2_data`, :attr:`u3_data`, :attr:`t_data` and
-      :attr:`ef_data`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: calculate_mode_solution(efdata: numpy.ndarray, u2: numpy.ndarray, u3: numpy.ndarray, t: numpy.ndarray) -> numpy.ndarray
 
-      
-      Calculates the mode solution.
-
-      :param efdata: The data for the eigenfunction. This should be a dictionary with the
-                     keys ``'ef'`` and ``'omega'``, with ``'ef'``containing the eigenfunction
-                     and ``'omega'`` the corresponding eigenvalue.
-      :type efdata: dict
-      :param u2: The data for the :math:`u_2` coordinate.
-      :type u2: Union[float, np.ndarray]
-      :param u3: The data for the :math:`u_3` coordinate.
-      :type u3: Union[float, np.ndarray]
-      :param t: The data for the time.
-      :type t: Union[float, np.ndarray]
-
-      :returns: The mode solution.
-      :rtype: np.ndarray
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: draw_eigenfunction() -> None
 
-      
-      Draws the eigenfunction(s) to the figure.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: draw_solution() -> None
 
@@ -278,30 +95,6 @@ Classes
 
    .. py:method:: _update_view(updated_solution: numpy.ndarray) -> None
 
-      
-      Updates the axes with the new solution. If a contour plot is used, the
-      contour lines are cleared and redrawn. If an image plot is used, the image is
-      updated.
-
-      :param updated_solution: The new solution.
-      :type updated_solution: np.ndarray
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: _update_view_clims(solution: numpy.ndarray) -> None
 

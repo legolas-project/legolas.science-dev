@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.1 - develop
+                2.0.2 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -420,7 +420,8 @@
         <span class="c1"># get items corresponding to this ds</span>
         <span class="n">items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">,</span> <span class="p">{})</span>
         <span class="n">items</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="n">marked_point</span><span class="p">})</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">associated_ds</span><span class="p">:</span> <span class="n">items</span><span class="p">})</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">associated_ds</span><span class="p">:</span> <span class="n">items</span><span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_plot</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="EigenfunctionInterface.on_right_click"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.on_right_click">[docs]</a>    <span class="k">def</span> <span class="nf">on_right_click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -439,7 +440,8 @@
             <span class="n">selected_artist</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
             <span class="c1"># if no items remaining for this ds, remove key</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="p">[</span><span class="n">associated_ds</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">)</span></div>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_plot</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="EigenfunctionInterface._get_clicked_point_data"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_clicked_point_data">[docs]</a>    <span class="k">def</span> <span class="nf">_get_clicked_point_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>

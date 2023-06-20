@@ -21,8 +21,23 @@ Functions
 
 .. autoapisummary::
 
-   pylbo.visualisation.continua.is_zero
+   pylbo.visualisation.continua._is_zero
+   pylbo.visualisation.continua._is_nonadiabatic
+   pylbo.visualisation.continua._get_parallel_wave_vector
+   pylbo.visualisation.continua._get_squared_sound_speed
+   pylbo.visualisation.continua._get_squared_isothermal_sound_speed
+   pylbo.visualisation.continua._get_squared_Alfven_speed
    pylbo.visualisation.continua.calculate_continua
+   pylbo.visualisation.continua.get_squared_alfven_continuum
+   pylbo.visualisation.continua.get_doppler_shift
+   pylbo.visualisation.continua.get_squared_slow_continuum
+   pylbo.visualisation.continua._get_thermal_and_slow_continua
+   pylbo.visualisation.continua._get_thermal_continuum_analytical
+   pylbo.visualisation.continua._get_slow_and_thermal_continuum_coupled
+   pylbo.visualisation.continua._solve_coupled_continuum_polynomial
+   pylbo.visualisation.continua._extract_solutions_from_roots
+   pylbo.visualisation.continua._log_slow_continuum_zero_warning
+   pylbo.visualisation.continua._log_assumed_thermal_continuum
 
 
 
@@ -39,6 +54,7 @@ Attributes
    pylbo.visualisation.continua.DOPPLER
    pylbo.visualisation.continua.CONTINUA_NAMES
    pylbo.visualisation.continua.CONTINUA_COLORS
+   pylbo.visualisation.continua._DEFAULT_ZERO_TOL
 
 
 .. py:data:: SLOW_MIN
@@ -80,19 +96,44 @@ Attributes
 
    
 
-.. py:function:: is_zero(values)
+.. py:data:: _DEFAULT_ZERO_TOL
+   :value: 1e-12
+
+   
+
+.. py:function:: _is_zero(values: numpy.ndarray, zero_tol: float = _DEFAULT_ZERO_TOL) -> bool
 
 
-.. py:function:: calculate_continua(ds)
+.. py:function:: _is_nonadiabatic(ds: pylbo.data_containers.LegolasDataSet) -> bool
+
+
+.. py:function:: _get_parallel_wave_vector(ds: pylbo.data_containers.LegolasDataSet) -> float
+
+
+.. py:function:: _get_squared_sound_speed(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
+
+
+.. py:function:: _get_squared_isothermal_sound_speed(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
+
+
+.. py:function:: _get_squared_Alfven_speed(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
+
+
+.. py:function:: calculate_continua(ds: pylbo.data_containers.LegolasDataSet) -> dict
 
    
    Calculates the different continua for a given dataset.
+   The Alfvén and flow continua are always analytical. Depending on the background
+   and physical effects the slow and thermal continua are either all analytical, or
+   coupled through a third-order polynomial.
+   In case of the latter this polynomical is numerically solved through numpy.roots.
 
    :param ds: The Legolas dataset.
    :type ds: ~pylbo.data_containers.LegolasDataSet
 
-   :returns: **continua** -- Dictonary containing the various continua as numpy arrays. If the
-             dataset does not contain a background, `None` is returned.
+   :returns: Dictionary containing the various continua. The keys are the names of the
+             continua, the values are the corresponding frequencies as numpy arrays.
+             Returns `None` if the dataset has no background.
    :rtype: dict, None
 
 
@@ -112,7 +153,181 @@ Attributes
    ..
        !! processed by numpydoc !!
 
+.. py:function:: get_squared_alfven_continuum(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
+
+   
+   Calculates the squared Alfvén continuum.
+
+   :returns: The squared Alfvén continuum.
+   :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_doppler_shift(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
+
+   
+   Calculates the Doppler shift as the dot product between the wave vector and the
+   background velocity.
+
+   :returns: The Doppler shift.
+   :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_squared_slow_continuum(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
+
+   
+   Calculates the squared slow continuum.
+
+   :returns: The squared slow continuum.
+   :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: _get_thermal_and_slow_continua(ds: pylbo.data_containers.LegolasDataSet) -> Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
+
+   
+   Calculates the thermal and slow continua.
+
+   :returns: A tuple containing the slow-, slow+ and thermal continua, in this order.
+   :rtype: Tuple[np.ndarray, np.ndarray, np.ndarray]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: _get_thermal_continuum_analytical(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
+
+   
+   Calculates the thermal continuum analytically, when the slow continuum is zero.
+
+   :returns: The thermal continuum.
+   :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: _get_slow_and_thermal_continuum_coupled(ds: pylbo.data_containers.LegolasDataSet) -> Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
+
+
+.. py:function:: _solve_coupled_continuum_polynomial(coeff3: numpy.ndarray, coeff2: numpy.ndarray, coeff1: numpy.ndarray, coeff0: numpy.ndarray) -> Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
+
+   
+   Solves the third-order polynomial that couples the slow and thermal continua.
+   The thermal continuum corresponds to the purely imaginary solution.
+
+   :param coeff3: The coefficient corresponding to the term :math:`\omega^3`.
+   :type coeff3: np.ndarray
+   :param coeff2: The coefficient corresponding to the term :math:`\omega^2`.
+   :type coeff2: np.ndarray
+   :param coeff1: The coefficient corresponding to the term :math:`\omega^1`.
+   :type coeff1: np.ndarray
+   :param coeff0: The coefficient corresponding to the constant term.
+   :type coeff0: np.ndarray
+
+   :returns: A tuple containing the slow-, slow+ and thermal continua, in this order.
+   :rtype: Tuple[np.ndarray, np.ndarray, np.ndarray]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: _extract_solutions_from_roots(roots: numpy.ndarray, i: int = 0) -> Tuple(complex, complex, complex)
+
+
+.. py:function:: _log_slow_continuum_zero_warning(roots: numpy.ndarray, i: int)
+
+
+.. py:function:: _log_assumed_thermal_continuum(root: complex)
+
+
 .. py:class:: ContinuaHandler(interactive)
+
 
    Bases: :py:obj:`pylbo.visualisation.legend_handler.LegendHandler`
 
