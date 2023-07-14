@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.1.0 - develop
+                2.1.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -133,7 +133,6 @@
             <span class="n">use_residuals</span><span class="o">=</span><span class="n">use_residuals</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">ds2</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_axes_set</span> <span class="o">=</span> <span class="kc">False</span>
 
 <div class="viewcode-block" id="SpectrumComparisonPlot.set_x_scaling"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.set_x_scaling">[docs]</a>    <span class="k">def</span> <span class="nf">set_x_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_scaling</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -161,11 +160,8 @@
 
 <div class="viewcode-block" id="SpectrumComparisonPlot._use_custom_axes"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot._use_custom_axes">[docs]</a>    <span class="k">def</span> <span class="nf">_use_custom_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Splits the original 1x2 plot into a 2x2 plot.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axes_set</span><span class="p">:</span>
-            <span class="k">return</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="o">.</span><span class="n">_ef_ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">_ef_ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_axes_set</span> <span class="o">=</span> <span class="kc">True</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">_ef_ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="SpectrumComparisonPlot.add_spectrum"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_spectrum">[docs]</a>    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds the spectra for both datasets&quot;&quot;&quot;</span>

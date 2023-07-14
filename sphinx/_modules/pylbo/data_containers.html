@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.1.0 - develop
+                2.1.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -90,7 +90,11 @@
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.datfiles.file_reader</span> <span class="kn">import</span> <span class="n">LegolasFileReader</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
-<span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">get_values</span><span class="p">,</span> <span class="n">transform_to_numpy</span>
+<span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_maximum_eigenvalue</span><span class="p">,</span>
+    <span class="n">get_values</span><span class="p">,</span>
+    <span class="n">transform_to_numpy</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.continua</span> <span class="kn">import</span> <span class="n">calculate_continua</span>
 
 
@@ -740,43 +744,29 @@
             <span class="n">eigenvals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">eigenvals</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_omega_max"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_omega_max">[docs]</a>    <span class="k">def</span> <span class="nf">get_omega_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">range_omega</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1e24</span><span class="p">)):</span>
+<div class="viewcode-block" id="LegolasDataSet.get_omega_max"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_omega_max">[docs]</a>    <span class="k">def</span> <span class="nf">get_omega_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">re_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Calculates the maximum of the real or imaginary part of a spectrum.</span>
+<span class="sd">        Calculates the maximum eigenvalue.</span>
+<span class="sd">        The real or imaginary part is used, depending on the `real` argument.</span>
+<span class="sd">        If a range is specified, the maximum eigenvalue is calculated within</span>
+<span class="sd">        that range on the real axis.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
+<span class="sd">        eigenvalues : numpy.ndarray(dtype=complex)</span>
+<span class="sd">            The array of eigenvalues.</span>
 <span class="sd">        real : bool</span>
-<span class="sd">            Returns the largest real part if True (default option),</span>
-<span class="sd">            returns the largest imaginary part if False.</span>
-<span class="sd">        strip : bool</span>
-<span class="sd">            Look for maximum in a horizontal half-plane if True. Default False.</span>
-<span class="sd">        range_omega : tuple of floats</span>
-<span class="sd">            The horizontal range of the strip if strip=True.</span>
+<span class="sd">            If `True`, the real part of the eigenvalues is used.</span>
+<span class="sd">        re_range : tuple(float, float)</span>
+<span class="sd">            The range on the real axis to calculate the maximum eigenvalue.</span>
+<span class="sd">            Defaults to None, which means all eigenvalues are considered.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        omega_max : complex</span>
-<span class="sd">            The eigenvalue that has the largest real or imaginary part in</span>
-<span class="sd">            the chosen strip. Default: in the whole complex plane.</span>
+<span class="sd">        complex</span>
+<span class="sd">            The maximum eigenvalue.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="n">eigvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">strip</span><span class="p">:</span>
-            <span class="n">omega_min</span><span class="p">,</span> <span class="n">omega_max</span> <span class="o">=</span> <span class="n">range_omega</span>
-            <span class="c1"># all eigvals outside of strip locally get replaced by NaN</span>
-            <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span> <span class="o">-</span> <span class="n">omega_min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span> <span class="o">-</span> <span class="n">omega_max</span>
-            <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
-            <span class="n">eigvals</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-        <span class="k">if</span> <span class="n">real</span><span class="p">:</span>
-            <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanargmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">eigvals</span><span class="p">))</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanargmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">eigvals</span><span class="p">))</span>
-
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span></div></div>
+        <span class="k">return</span> <span class="n">get_maximum_eigenvalue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">re_range</span><span class="p">)</span></div></div>
 
 
 <div class="viewcode-block" id="LegolasDataSeries"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries">[docs]</a><span class="k">class</span> <span class="nc">LegolasDataSeries</span><span class="p">(</span><span class="n">LegolasDataContainer</span><span class="p">):</span>

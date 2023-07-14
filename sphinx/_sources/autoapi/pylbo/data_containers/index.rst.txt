@@ -1192,21 +1192,23 @@ Functions
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_omega_max(real=True, strip=False, range_omega=(0.0, 1e+24))
+   .. py:method:: get_omega_max(real=True, re_range=None)
 
       
-      Calculates the maximum of the real or imaginary part of a spectrum.
+      Calculates the maximum eigenvalue.
+      The real or imaginary part is used, depending on the `real` argument.
+      If a range is specified, the maximum eigenvalue is calculated within
+      that range on the real axis.
 
-      :param real: Returns the largest real part if True (default option),
-                   returns the largest imaginary part if False.
+      :param eigenvalues: The array of eigenvalues.
+      :type eigenvalues: numpy.ndarray(dtype=complex)
+      :param real: If `True`, the real part of the eigenvalues is used.
       :type real: bool
-      :param strip: Look for maximum in a horizontal half-plane if True. Default False.
-      :type strip: bool
-      :param range_omega: The horizontal range of the strip if strip=True.
-      :type range_omega: tuple of floats
+      :param re_range: The range on the real axis to calculate the maximum eigenvalue.
+                       Defaults to None, which means all eigenvalues are considered.
+      :type re_range: tuple(float, float)
 
-      :returns: **omega_max** -- The eigenvalue that has the largest real or imaginary part in
-                the chosen strip. Default: in the whole complex plane.
+      :returns: The maximum eigenvalue.
       :rtype: complex
 
 

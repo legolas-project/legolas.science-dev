@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.1.0 - develop
+                2.1.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -105,6 +105,7 @@
                     <span class="k">break</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">leg_handle</span> <span class="o">=</span> <span class="n">LegendHandler</span><span class="p">(</span><span class="n">interactive</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_figure_drawn</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">interactive</span><span class="p">:</span>
             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">make_legend_interactive</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">leg_handle</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -169,6 +170,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">handler</span> <span class="o">=</span> <span class="n">ContinuaHandler</span><span class="p">(</span><span class="n">interactive</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_figure_drawn</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">interactive</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">make_legend_interactive</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -230,6 +232,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">eq_balance</span> <span class="o">=</span> <span class="n">get_equilibrium_balance</span><span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">legend_handler</span> <span class="o">=</span> <span class="n">LegendHandler</span><span class="p">(</span><span class="n">interactive</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_figure_drawn</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">interactive</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">make_legend_interactive</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">legend_handler</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>

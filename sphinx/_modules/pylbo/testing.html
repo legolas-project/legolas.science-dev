@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.1.0 - develop
+                2.1.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -74,7 +74,10 @@
              
   <h1>Source code for pylbo.testing</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backend_bases</span> <span class="kn">import</span> <span class="n">KeyEvent</span><span class="p">,</span> <span class="n">MouseEvent</span><span class="p">,</span> <span class="n">PickEvent</span>
 <span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSet</span>
 
 
@@ -111,6 +114,64 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">complex</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
         <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="MockMouseEvent"><a class="viewcode-back" href="../../autoapi/pylbo/testing/index.html#pylbo.testing.MockMouseEvent">[docs]</a><span class="k">class</span> <span class="nc">MockMouseEvent</span><span class="p">(</span><span class="n">MouseEvent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">button</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">canvas</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;button_press_event&quot;</span><span class="p">,</span> <span class="n">canvas</span><span class="o">=</span><span class="n">canvas</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inaxes</span> <span class="o">=</span> <span class="n">axes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">button</span> <span class="o">=</span> <span class="n">button</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xdata</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span> <span class="o">=</span> <span class="n">y</span></div>
+
+
+<div class="viewcode-block" id="MockArtist"><a class="viewcode-back" href="../../autoapi/pylbo/testing/index.html#pylbo.testing.MockArtist">[docs]</a><span class="k">class</span> <span class="nc">MockArtist</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">figure</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">ds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="n">figure</span>
+        <span class="c1"># xdata and ydata contain the (x, y) coordinates of all associated artists</span>
+        <span class="c1"># that have a pick event (i.e. all eigenvalues)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_xdata</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="o">.</span><span class="n">real</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ydata</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="o">.</span><span class="n">imag</span>
+
+<div class="viewcode-block" id="MockArtist.get_xdata"><a class="viewcode-back" href="../../autoapi/pylbo/testing/index.html#pylbo.testing.MockArtist.get_xdata">[docs]</a>    <span class="k">def</span> <span class="nf">get_xdata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_xdata</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MockArtist.get_ydata"><a class="viewcode-back" href="../../autoapi/pylbo/testing/index.html#pylbo.testing.MockArtist.get_ydata">[docs]</a>    <span class="k">def</span> <span class="nf">get_ydata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ydata</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="MockPickEvent"><a class="viewcode-back" href="../../autoapi/pylbo/testing/index.html#pylbo.testing.MockPickEvent">[docs]</a><span class="k">class</span> <span class="nc">MockPickEvent</span><span class="p">(</span><span class="n">PickEvent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">ds</span><span class="p">,</span>
+        <span class="n">mouse_x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">mouse_y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">button</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">figure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">ind</span><span class="p">:</span> <span class="n">List</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">mouseevent</span> <span class="o">=</span> <span class="n">MockMouseEvent</span><span class="p">(</span>
+            <span class="n">button</span><span class="o">=</span><span class="n">button</span><span class="p">,</span> <span class="n">canvas</span><span class="o">=</span><span class="n">figure</span><span class="o">.</span><span class="n">canvas</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">mouse_x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">mouse_y</span>
+        <span class="p">)</span>
+        <span class="n">artist</span> <span class="o">=</span> <span class="n">MockArtist</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">figure</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="s2">&quot;pick_event&quot;</span><span class="p">,</span> <span class="n">figure</span><span class="o">.</span><span class="n">canvas</span><span class="p">,</span> <span class="n">mouseevent</span><span class="o">=</span><span class="n">mouseevent</span><span class="p">,</span> <span class="n">artist</span><span class="o">=</span><span class="n">artist</span>
+        <span class="p">)</span>
+        <span class="c1"># ind contains the indices of the selected eigenvalues</span>
+        <span class="n">idxs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">get_nearest_eigenvalues</span><span class="p">(</span><span class="n">mouse_x</span> <span class="o">+</span> <span class="n">mouse_y</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">mouse_x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">mouse_y</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span> <span class="k">if</span> <span class="n">ind</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">idxs</span></div>
+
+
+<div class="viewcode-block" id="MockKeyEvent"><a class="viewcode-back" href="../../autoapi/pylbo/testing/index.html#pylbo.testing.MockKeyEvent">[docs]</a><span class="k">class</span> <span class="nc">MockKeyEvent</span><span class="p">(</span><span class="n">KeyEvent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;key_press_event&quot;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">canvas</span><span class="o">=</span><span class="n">figure</span><span class="o">.</span><span class="n">canvas</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

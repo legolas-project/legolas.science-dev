@@ -13,6 +13,10 @@ Classes
 .. autoapisummary::
 
    pylbo.testing.FakeDataSet
+   pylbo.testing.MockMouseEvent
+   pylbo.testing.MockArtist
+   pylbo.testing.MockPickEvent
+   pylbo.testing.MockKeyEvent
 
 
 
@@ -172,5 +176,33 @@ Functions
 
    .. py:method:: _set_test_eigenvalues()
 
+
+
+.. py:class:: MockMouseEvent(button=1, canvas=None, axes=None, x=None, y=None)
+
+
+   Bases: :py:obj:`matplotlib.backend_bases.MouseEvent`
+
+
+.. py:class:: MockArtist(ds, axes, figure)
+
+
+   .. py:method:: get_xdata()
+
+
+   .. py:method:: get_ydata()
+
+
+
+.. py:class:: MockPickEvent(ds, mouse_x: float, mouse_y: float, button=1, axes=None, figure=None, ind: List = None)
+
+
+   Bases: :py:obj:`matplotlib.backend_bases.PickEvent`
+
+
+.. py:class:: MockKeyEvent(key, figure=None)
+
+
+   Bases: :py:obj:`matplotlib.backend_bases.KeyEvent`
 
 

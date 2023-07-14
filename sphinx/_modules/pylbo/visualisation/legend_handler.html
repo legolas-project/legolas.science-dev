@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.1.0 - develop
+                2.1.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -155,17 +155,12 @@
         <span class="n">artist</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="LegendHandler.make_legend_pickable"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.make_legend_pickable">[docs]</a>    <span class="k">def</span> <span class="nf">make_legend_pickable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Makes the legend pickable, only used if interactive.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Makes the legend pickable, only used if interactive.&quot;&quot;&quot;</span>
         <span class="n">legend_handles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">legendHandles</span>
         <span class="n">handle_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">handle</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">handle</span> <span class="ow">in</span> <span class="n">legend_handles</span><span class="p">]</span>
         <span class="c1"># we need a mapping of the legend item to the actual item that was drawn</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">drawn_item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_drawn_items</span><span class="p">):</span>
-            <span class="c1"># TODO: for some reason fill_between returns empty handles such that</span>
-            <span class="c1">#       the code below errors out. The try-except clause is an attempt</span>
-            <span class="c1">#       to fix it and _should_ work. This relies on the ordening of the</span>
-            <span class="c1">#       legend items when they are drawn, but should be thorougly tested.</span>
+            <span class="c1"># try-except needed for fill_between, which returns empty handles</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">idx</span> <span class="o">=</span> <span class="n">handle_labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">drawn_item</span><span class="o">.</span><span class="n">get_label</span><span class="p">())</span>
                 <span class="n">legend_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">legendHandles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
@@ -174,12 +169,6 @@
                 <span class="n">legend_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">legendHandles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
                 <span class="c1"># fix empty label</span>
                 <span class="n">legend_item</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">drawn_item</span><span class="o">.</span><span class="n">get_label</span><span class="p">())</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">drawn_item</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="o">==</span> <span class="n">legend_item</span><span class="o">.</span><span class="n">get_label</span><span class="p">():</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;something went wrong in mapping legend items to drawn items. </span><span class="se">\n</span><span class="s2">&quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;Tried to map </span><span class="si">{</span><span class="n">legend_item</span><span class="si">}</span><span class="s2"> (label &#39;</span><span class="si">{</span><span class="n">legend_item</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39;)&quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot; to </span><span class="si">{</span><span class="n">drawn_item</span><span class="si">}</span><span class="s2"> (label &#39;</span><span class="si">{</span><span class="n">drawn_item</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39;) </span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="p">)</span>
             <span class="n">add_pickradius_to_item</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="n">legend_item</span><span class="p">,</span> <span class="n">pickradius</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pickradius</span><span class="p">)</span>
             <span class="c1"># add an attribute to this artist to tell it&#39;s from a legend</span>
             <span class="nb">setattr</span><span class="p">(</span><span class="n">legend_item</span><span class="p">,</span> <span class="s2">&quot;is_legend_item&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
@@ -220,23 +209,13 @@
         <span class="c1"># check scaling for visible items. This explicitly implements the equilibria,</span>
         <span class="c1"># but works for general cases as well. If needed we can simply subclass</span>
         <span class="c1"># and override.</span>
-        <span class="n">ymin1</span><span class="p">,</span> <span class="n">ymax1</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
-        <span class="n">ymin2</span><span class="p">,</span> <span class="n">ymax2</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="n">ydata</span> <span class="o">=</span> <span class="n">visible_items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()</span>
+        <span class="n">ymin1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">ydata</span><span class="p">)</span>
+        <span class="n">ymax1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ydata</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">visible_items</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">ymin1</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">ymax1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="n">ymin1</span><span class="p">,</span> <span class="n">ymax1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">())</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">ymin1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ymin1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()))</span>
-                    <span class="n">ymax1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ymax1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()))</span>
-                <span class="n">item</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ymin1</span> <span class="o">-</span> <span class="nb">abs</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">ymin1</span><span class="p">),</span> <span class="n">ymax1</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">ymax1</span><span class="p">))</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">ymin2</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">ymax2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="n">ymin2</span><span class="p">,</span> <span class="n">ymax2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">())</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">ymin2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ymin2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()))</span>
-                    <span class="n">ymax2</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ymax2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()))</span>
-                <span class="n">item</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ymin2</span> <span class="o">-</span> <span class="nb">abs</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">ymin2</span><span class="p">),</span> <span class="n">ymax2</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">ymax2</span><span class="p">))</span></div></div>
+            <span class="n">ymin1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ymin1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()))</span>
+            <span class="n">ymax1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ymax1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()))</span>
+        <span class="n">item</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ymin1</span> <span class="o">-</span> <span class="nb">abs</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">ymin1</span><span class="p">),</span> <span class="n">ymax1</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">ymax1</span><span class="p">))</span></div></div>
 </pre></div>
 
            </div>

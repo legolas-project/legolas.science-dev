@@ -37,7 +37,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.1.0 - develop
+                2.1.1 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -134,14 +134,17 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.get_all_eigenfunction_names" title="pylbo.utilities.toolbox.get_all_eigenfunction_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_all_eigenfunction_names</span></code></a>(→ numpy.ndarray[str])</p></td>
 <td><p>Merges the regular and derived eigenfunction names into a unique array,</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.solve_cubic_exact" title="pylbo.utilities.toolbox.solve_cubic_exact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_cubic_exact</span></code></a>(a, b, c, d)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.get_maximum_eigenvalue" title="pylbo.utilities.toolbox.get_maximum_eigenvalue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_maximum_eigenvalue</span></code></a>(→ complex)</p></td>
+<td><p>Calculates the maximum eigenvalue of a given array of eigenvalues.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.solve_cubic_exact" title="pylbo.utilities.toolbox.solve_cubic_exact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_cubic_exact</span></code></a>(a, b, c, d)</p></td>
 <td><p>Solves a given cubic polynomial of the form</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.count_zeroes" title="pylbo.utilities.toolbox.count_zeroes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count_zeroes</span></code></a>(eigfuncs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.count_zeroes" title="pylbo.utilities.toolbox.count_zeroes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count_zeroes</span></code></a>(eigfuncs[, real])</p></td>
 <td><p>Counts the number of zeroes of an array of complex eigenfunctions by looking at</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.invert_continuum_array" title="pylbo.utilities.toolbox.invert_continuum_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invert_continuum_array</span></code></a>(cont, r_gauss, sigma)</p></td>
-<td><p>Finds the location of resonance for eigenmode solutions having a real part that</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.find_resonance_location" title="pylbo.utilities.toolbox.find_resonance_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_resonance_location</span></code></a>(continuum, grid, sigma)</p></td>
+<td><p>Finds the resonance location between sigma and the continuum. For example, if</p></td>
 </tr>
 </tbody>
 </table>
@@ -304,6 +307,31 @@ preserving order.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="pylbo.utilities.toolbox.get_maximum_eigenvalue">
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">get_maximum_eigenvalue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eigenvalues</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><span class="pre">numpy.ndarray</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><span class="pre">complex</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">re_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><span class="pre">complex</span></a></span></span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#get_maximum_eigenvalue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.get_maximum_eigenvalue" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the maximum eigenvalue of a given array of eigenvalues.
+The real or imaginary part is used, depending on the <cite>real</cite> argument.
+If a range is specified, the maximum eigenvalue is calculated within
+that range on the real axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eigenvalues</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a><em>(</em><em>dtype=complex</em><em>)</em>) – The array of eigenvalues.</p></li>
+<li><p><strong>real</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – If <cite>True</cite>, the real part of the eigenvalues is used. Imaginary part otherwise.</p></li>
+<li><p><strong>re_range</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>)</em>) – The range on the real axis to calculate the maximum eigenvalue.
+Defaults to None, which means all eigenvalues are considered.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum eigenvalue.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)">complex</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="pylbo.utilities.toolbox.solve_cubic_exact">
 <span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">solve_cubic_exact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#solve_cubic_exact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.solve_cubic_exact" title="Permalink to this definition"></a></dt>
 <dd><p>Solves a given cubic polynomial of the form
@@ -330,20 +358,20 @@ From <a class="reference external" href="https://math.stackexchange.com/question
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.utilities.toolbox.count_zeroes">
-<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">count_zeroes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eigfuncs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#count_zeroes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.count_zeroes" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">count_zeroes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eigfuncs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#count_zeroes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.count_zeroes" title="Permalink to this definition"></a></dt>
 <dd><p>Counts the number of zeroes of an array of complex eigenfunctions by looking at
-sign changes of the real and imaginary part of the eigenfunctions.
-Doesn’t include the grid endpoints in the count, since the boundary conditions are
-automatically satisfied. This only becomes accurate for eigenfunctions with enough
-oscillations and is resolution dependent. Therefore, we take the minimum
-of the number of zeroes of the real and imaginary part.</p>
+sign changes of the real and imaginary part of the eigenfunctions. Excludes
+the eigenfunction boundaries.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>eigfuncs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a>) – Array of eigenfunction arrays of complex numbers.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eigfuncs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a><em>(</em><em>dtype=complex</em><em>)</em>) – Array of eigenfunction arrays of complex numbers.</p></li>
+<li><p><strong>real</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – If <cite>True</cite>, counts the number of zeroes of the real part of the eigenfunctions.
+If <cite>False</cite>, counts the number of zeroes of the imaginary part.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>nzeroes</strong> – Counter array containing the number of zeroes of the real or imaginary part
-of each input eigenfunction array.</p>
+<dd class="field-even"><p>The number of zeroes of each eigenfunction.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray(dtype=int)</p>
@@ -352,27 +380,29 @@ of each input eigenfunction array.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="pylbo.utilities.toolbox.invert_continuum_array">
-<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">invert_continuum_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cont</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_gauss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#invert_continuum_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.invert_continuum_array" title="Permalink to this definition"></a></dt>
-<dd><p>Finds the location of resonance for eigenmode solutions having a real part that
-might overlap with a continuum range.</p>
+<dt class="sig sig-object py" id="pylbo.utilities.toolbox.find_resonance_location">
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">find_resonance_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">continuum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#find_resonance_location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.find_resonance_location" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the resonance location between sigma and the continuum. For example, if
+the continuum is given by [5, 6, 7, 8, 9, 10] and the grid is equal to
+[0, 1, 2, 3, 4, 5], then for a sigma = 9 the resonance location is 4. For a sigma
+equal to 8.5 the resonance location is 3.5. For a sigma outside of the continuum
+the resonance location is None. If the continuum array is not monotone, then
+the resonance location is interpolated between the first matched interval.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cont</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a>) – Array containing the range of a specific continuum. Automatically has the same
-length as r_gauss, since it has the same shape as the equilibrium fields used
-to calculate the continua. Can be complex, but only the resonance with the real
-part is calculated.</p></li>
-<li><p><strong>r_gauss</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a>) – Array containing the grid on which equilibrium fields are defined.</p></li>
-<li><p><strong>sigma</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><em>complex</em></a>) – An eigenvalue solution of the generalized eigenvalue problem.</p></li>
+<li><p><strong>continuum</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a><em>(</em><em>dtype=complex</em><em>)</em>) – Array containing the range of a specific continuum. Can be complex, but only
+the resonance with the real part is calculated.</p></li>
+<li><p><strong>grid</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a>) – The grid on which the continuum is defined.</p></li>
+<li><p><strong>sigma</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.11)"><em>complex</em></a>) – A given eigenvalue.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>r_inv</strong> – The location where there is resonance between the eigenmode and the continuum.
+<dd class="field-even"><p>The position where there is resonance between the eigenmode and the continuum.
 Returns None if there is no resonance with the specified continuum.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
+<dd class="field-odd"><p>None, np.ndarray(<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a>)</p>
 </dd>
 </dl>
 </dd></dl>

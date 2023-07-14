@@ -22,9 +22,10 @@ Functions
    pylbo.utilities.toolbox.transform_to_numpy
    pylbo.utilities.toolbox.reduce_to_unique_array
    pylbo.utilities.toolbox.get_all_eigenfunction_names
+   pylbo.utilities.toolbox.get_maximum_eigenvalue
    pylbo.utilities.toolbox.solve_cubic_exact
    pylbo.utilities.toolbox.count_zeroes
-   pylbo.utilities.toolbox.invert_continuum_array
+   pylbo.utilities.toolbox.find_resonance_location
 
 
 
@@ -271,6 +272,42 @@ Functions
    ..
        !! processed by numpydoc !!
 
+.. py:function:: get_maximum_eigenvalue(eigenvalues: numpy.ndarray[complex], real: bool = True, re_range: Tuple[float, float] = None) -> complex
+
+   
+   Calculates the maximum eigenvalue of a given array of eigenvalues.
+   The real or imaginary part is used, depending on the `real` argument.
+   If a range is specified, the maximum eigenvalue is calculated within
+   that range on the real axis.
+
+   :param eigenvalues: The array of eigenvalues.
+   :type eigenvalues: numpy.ndarray(dtype=complex)
+   :param real: If `True`, the real part of the eigenvalues is used. Imaginary part otherwise.
+   :type real: bool
+   :param re_range: The range on the real axis to calculate the maximum eigenvalue.
+                    Defaults to None, which means all eigenvalues are considered.
+   :type re_range: tuple(float, float)
+
+   :returns: The maximum eigenvalue.
+   :rtype: complex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
 .. py:function:: solve_cubic_exact(a, b, c, d)
 
    
@@ -309,21 +346,20 @@ Functions
    ..
        !! processed by numpydoc !!
 
-.. py:function:: count_zeroes(eigfuncs)
+.. py:function:: count_zeroes(eigfuncs, real=True)
 
    
    Counts the number of zeroes of an array of complex eigenfunctions by looking at
-   sign changes of the real and imaginary part of the eigenfunctions.
-   Doesn't include the grid endpoints in the count, since the boundary conditions are
-   automatically satisfied. This only becomes accurate for eigenfunctions with enough
-   oscillations and is resolution dependent. Therefore, we take the minimum
-   of the number of zeroes of the real and imaginary part.
+   sign changes of the real and imaginary part of the eigenfunctions. Excludes
+   the eigenfunction boundaries.
 
    :param eigfuncs: Array of eigenfunction arrays of complex numbers.
-   :type eigfuncs: numpy.ndarray
+   :type eigfuncs: numpy.ndarray(dtype=complex)
+   :param real: If `True`, counts the number of zeroes of the real part of the eigenfunctions.
+                If `False`, counts the number of zeroes of the imaginary part.
+   :type real: bool
 
-   :returns: **nzeroes** -- Counter array containing the number of zeroes of the real or imaginary part
-             of each input eigenfunction array.
+   :returns: The number of zeroes of each eigenfunction.
    :rtype: np.ndarray(dtype=int)
 
 
@@ -343,25 +379,27 @@ Functions
    ..
        !! processed by numpydoc !!
 
-.. py:function:: invert_continuum_array(cont, r_gauss, sigma)
+.. py:function:: find_resonance_location(continuum, grid, sigma)
 
    
-   Finds the location of resonance for eigenmode solutions having a real part that
-   might overlap with a continuum range.
+   Finds the resonance location between sigma and the continuum. For example, if
+   the continuum is given by [5, 6, 7, 8, 9, 10] and the grid is equal to
+   [0, 1, 2, 3, 4, 5], then for a sigma = 9 the resonance location is 4. For a sigma
+   equal to 8.5 the resonance location is 3.5. For a sigma outside of the continuum
+   the resonance location is None. If the continuum array is not monotone, then
+   the resonance location is interpolated between the first matched interval.
 
-   :param cont: Array containing the range of a specific continuum. Automatically has the same
-                length as r_gauss, since it has the same shape as the equilibrium fields used
-                to calculate the continua. Can be complex, but only the resonance with the real
-                part is calculated.
-   :type cont: numpy.ndarray
-   :param r_gauss: Array containing the grid on which equilibrium fields are defined.
-   :type r_gauss: numpy.ndarray
-   :param sigma: An eigenvalue solution of the generalized eigenvalue problem.
+   :param continuum: Array containing the range of a specific continuum. Can be complex, but only
+                     the resonance with the real part is calculated.
+   :type continuum: numpy.ndarray(dtype=complex)
+   :param grid: The grid on which the continuum is defined.
+   :type grid: numpy.ndarray
+   :param sigma: A given eigenvalue.
    :type sigma: complex
 
-   :returns: **r_inv** -- The location where there is resonance between the eigenmode and the continuum.
+   :returns: The position where there is resonance between the eigenmode and the continuum.
              Returns None if there is no resonance with the specified continuum.
-   :rtype: None, float
+   :rtype: None, np.ndarray(float)
 
 
 
