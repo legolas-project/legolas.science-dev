@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.2 - develop
+                2.1.0 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -74,9 +74,8 @@
              
   <h1>Source code for pylbo.visualisation.eigenfunctions.eigfunc_handler</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSet</span>
-<span class="kn">from</span> <span class="nn">pylbo.exceptions</span> <span class="kn">import</span> <span class="n">EigenfunctionsNotPresent</span>
-<span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">transform_to_numpy</span>
+<span class="kn">from</span> <span class="nn">matplotlib.axes</span> <span class="kn">import</span> <span class="n">Axes</span> <span class="k">as</span> <span class="n">mpl_axes</span>
+<span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataContainer</span><span class="p">,</span> <span class="n">LegolasDataSet</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.eigenfunctions.eigfunc_interface</span> <span class="kn">import</span> <span class="n">EigenfunctionInterface</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.utils</span> <span class="kn">import</span> <span class="n">ef_name_to_latex</span>
 
@@ -86,18 +85,9 @@
 <span class="sd">    Main handler for eigenfunctions.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ef_ax</span><span class="p">,</span> <span class="n">spec_ax</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">LegolasDataContainer</span><span class="p">,</span> <span class="n">ef_ax</span><span class="p">:</span> <span class="n">mpl_axes</span><span class="p">,</span> <span class="n">spec_ax</span><span class="p">:</span> <span class="n">mpl_axes</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ef_ax</span><span class="p">,</span> <span class="n">spec_ax</span><span class="p">)</span>
-        <span class="c1"># extract unique names and preserve order</span>
-        <span class="n">fnames</span><span class="p">,</span> <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">ef_names</span><span class="p">,</span> <span class="n">return_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span> <span class="o">=</span> <span class="n">fnames</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">idxs</span><span class="p">)]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span><span class="si">}</span><span class="s2"> -- eigenfunctions&quot;</span><span class="p">)</span>
-
-<div class="viewcode-block" id="EigenfunctionHandler._check_data_is_present"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_handler/index.html#pylbo.visualisation.eigenfunctions.eigfunc_handler.EigenfunctionHandler._check_data_is_present">[docs]</a>    <span class="k">def</span> <span class="nf">_check_data_is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">transform_to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">has_efs</span><span class="p">)):</span>
-            <span class="k">raise</span> <span class="n">EigenfunctionsNotPresent</span><span class="p">(</span>
-                <span class="s2">&quot;None of the given datfiles has eigenfunctions written to it.&quot;</span>
-            <span class="p">)</span></div>
 
 <div class="viewcode-block" id="EigenfunctionHandler.update_plot"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_handler/index.html#pylbo.visualisation.eigenfunctions.eigfunc_handler.EigenfunctionHandler.update_plot">[docs]</a>    <span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
@@ -106,24 +96,16 @@
             <span class="k">return</span>
         <span class="n">ef_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">ds</span><span class="p">,</span> <span class="n">idxs_dict</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">idxs_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()])</span>
+            <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">idxs_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
             <span class="n">ef_container</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_eigenfunctions</span><span class="p">(</span><span class="n">ev_idxs</span><span class="o">=</span><span class="n">idxs</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">efs</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="n">ef_container</span><span class="p">):</span>
-                <span class="n">ef</span> <span class="o">=</span> <span class="n">efs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ef_name</span><span class="p">)</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span><span class="p">:</span>
-                    <span class="n">ef</span> <span class="o">=</span> <span class="n">ef</span><span class="o">.</span><span class="n">real</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">ef</span> <span class="o">=</span> <span class="n">ef</span><span class="o">.</span><span class="n">imag</span>
-                <span class="c1"># check for retransform</span>
-                <span class="k">if</span> <span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">_retransform</span>
-                    <span class="ow">and</span> <span class="n">ef_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;rho&quot;</span><span class="p">,</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span> <span class="s2">&quot;v3&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;a2&quot;</span><span class="p">)</span>
-                    <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">geometry</span> <span class="o">==</span> <span class="s2">&quot;cylindrical&quot;</span>
-                <span class="p">):</span>
+                <span class="n">ef</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+                    <span class="n">efs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ef_name</span><span class="p">),</span> <span class="s2">&quot;real&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span> <span class="k">else</span> <span class="s2">&quot;imag&quot;</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_needs_retransform</span><span class="p">(</span><span class="n">ef_name</span><span class="p">):</span>
                     <span class="n">ef</span> <span class="o">=</span> <span class="n">ef</span> <span class="o">*</span> <span class="n">ds</span><span class="o">.</span><span class="n">ef_grid</span>
                 <span class="n">label</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_get_label</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">efs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eigenvalue&quot;</span><span class="p">))</span>
-                <span class="c1"># get color of selected point</span>
-                <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ev_idx</span><span class="p">))</span><span class="o">.</span><span class="n">get_color</span><span class="p">()</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ev_idx</span><span class="p">)</span><span class="o">.</span><span class="n">get_color</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">ef_grid</span><span class="p">,</span> <span class="n">ef</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw_resonances</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_show_resonances</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
@@ -132,6 +114,13 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">x_start</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_title</span><span class="p">(</span><span class="n">ef_name</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EigenfunctionHandler._ef_needs_retransform"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_handler/index.html#pylbo.visualisation.eigenfunctions.eigfunc_handler.EigenfunctionHandler._ef_needs_retransform">[docs]</a>    <span class="k">def</span> <span class="nf">_ef_needs_retransform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ef_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_retransform</span>
+            <span class="ow">and</span> <span class="n">ef_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;rho&quot;</span><span class="p">,</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span> <span class="s2">&quot;v3&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;a2&quot;</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">geometry</span> <span class="o">==</span> <span class="s2">&quot;cylindrical&quot;</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="EigenfunctionHandler._get_title"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_handler/index.html#pylbo.visualisation.eigenfunctions.eigfunc_handler.EigenfunctionHandler._get_title">[docs]</a>    <span class="k">def</span> <span class="nf">_get_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ef_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -149,22 +138,12 @@
 <span class="sd">        name : str</span>
 <span class="sd">            The &#39;new&#39; name for the eigenfunction, used as title.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">geometry</span> <span class="o">==</span> <span class="s2">&quot;cylindrical&quot;</span>
-            <span class="ow">and</span> <span class="n">ef_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;rho&quot;</span><span class="p">,</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span> <span class="s2">&quot;v3&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;a2&quot;</span><span class="p">)</span>
-            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retransform</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_needs_retransform</span><span class="p">(</span><span class="n">ef_name</span><span class="p">):</span>
             <span class="n">ef_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;r</span><span class="si">{</span><span class="n">ef_name</span><span class="si">}</span><span class="s2">&quot;</span>
-
         <span class="n">ef_name</span> <span class="o">=</span> <span class="n">ef_name_to_latex</span><span class="p">(</span>
             <span class="n">ef_name</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="n">real_part</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span>
         <span class="p">)</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ef_name</span><span class="si">}</span><span class="s2"> eigenfunction&quot;</span>
-        <span class="k">return</span> <span class="n">name</span></div>
-
-<div class="viewcode-block" id="EigenfunctionHandler._mark_points_without_data_written"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_handler/index.html#pylbo.visualisation.eigenfunctions.eigfunc_handler.EigenfunctionHandler._mark_points_without_data_written">[docs]</a>    <span class="k">def</span> <span class="nf">_mark_points_without_data_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span> <span class="o">=</span> <span class="s2">&quot;has_efs&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_mark_points_without_data_written</span><span class="p">()</span></div></div>
+        <span class="k">return</span> <span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ef_name</span><span class="si">}</span><span class="s2"> eigenfunction&quot;</span></div></div>
 </pre></div>
 
            </div>

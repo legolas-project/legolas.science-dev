@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.2 - develop
+                2.1.0 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -77,9 +77,6 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">add_pickradius_to_item</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.continua</span> <span class="kn">import</span> <span class="n">ContinuaHandler</span>
-<span class="kn">from</span> <span class="nn">pylbo.visualisation.eigenfunctions.derived_eigfunc_handler</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">DerivedEigenfunctionHandler</span><span class="p">,</span>
-<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.eigenfunctions.eigfunc_handler</span> <span class="kn">import</span> <span class="n">EigenfunctionHandler</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.spectra.spectrum_figure</span> <span class="kn">import</span> <span class="n">SpectrumFigure</span>
 
@@ -199,18 +196,6 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span> <span class="o">=</span> <span class="n">EigenfunctionHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_ax</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_eigenfunction_interface</span><span class="p">(</span><span class="n">efhandler</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SingleSpectrumPlot.add_derived_eigenfunctions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot.add_derived_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">add_derived_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Adds the derived eigenfunctions to the plot, sets the eigenfunction handler.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span> <span class="o">=</span> <span class="n">DerivedEigenfunctionHandler</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_ax</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span>
-            <span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_eigenfunction_interface</span><span class="p">(</span><span class="n">efhandler</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span><span class="p">)</span></div>
-
 <div class="viewcode-block" id="SingleSpectrumPlot.draw_resonances"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot.draw_resonances">[docs]</a>    <span class="k">def</span> <span class="nf">draw_resonances</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        In case the (derived) eigenfunctions are added to the plot, the locations</span>
@@ -219,10 +204,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span><span class="o">.</span><span class="n">_draw_resonances</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span><span class="o">.</span><span class="n">update_plot</span><span class="p">()</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span><span class="o">.</span><span class="n">_draw_resonances</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_def_handler</span><span class="o">.</span><span class="n">update_plot</span><span class="p">()</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span><span class="o">.</span><span class="n">update_plot</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="SingleSpectrumPlot._get_colors"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot._get_colors">[docs]</a>    <span class="k">def</span> <span class="nf">_get_colors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the colors for the spectrum points.&quot;&quot;&quot;</span>

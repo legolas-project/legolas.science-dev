@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.2 - develop
+                2.1.0 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -82,11 +82,14 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib.collections</span> <span class="kn">import</span> <span class="n">PathCollection</span>
 <span class="kn">from</span> <span class="nn">pylbo.data_containers</span> <span class="kn">import</span> <span class="n">LegolasDataSeries</span><span class="p">,</span> <span class="n">LegolasDataSet</span>
+<span class="kn">from</span> <span class="nn">pylbo.exceptions</span> <span class="kn">import</span> <span class="n">EigenfunctionsNotPresent</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">add_pickradius_to_item</span><span class="p">,</span>
     <span class="n">count_zeroes</span><span class="p">,</span>
+    <span class="n">get_all_eigenfunction_names</span><span class="p">,</span>
     <span class="n">invert_continuum_array</span><span class="p">,</span>
+    <span class="n">transform_to_numpy</span><span class="p">,</span>
 <span class="p">)</span>
 
 
@@ -124,11 +127,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span> <span class="o">=</span> <span class="n">spec_axis</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_data_is_present</span><span class="p">()</span>
         <span class="c1"># holds the points that are currently selected in the form of a &quot;double&quot; dict:</span>
-        <span class="c1"># {&quot;ds instance&quot; : {&quot;index&quot; : line2D instance}}</span>
+        <span class="c1"># {ds instance : {index : line2D instance}}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span> <span class="o">=</span> <span class="n">get_all_eigenfunction_names</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_retransform</span> <span class="o">=</span> <span class="kc">False</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span> <span class="o">=</span> <span class="kc">None</span>
@@ -145,7 +148,10 @@
 <span class="sd">        Checks if the required data is present to draw for example</span>
 <span class="sd">        eigenfunctions, is overloaded in subclasses.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">transform_to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">has_efs</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="n">EigenfunctionsNotPresent</span><span class="p">(</span>
+                <span class="s2">&quot;None of the given datfiles has eigenfunctions written to it.&quot;</span>
+            <span class="p">)</span></div>
 
 <div class="viewcode-block" id="EigenfunctionInterface._artist_has_valid_attributes"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._artist_has_valid_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">_artist_has_valid_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -221,7 +227,7 @@
             <span class="k">return</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Currently selected eigenvalues:&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">ds</span><span class="p">,</span> <span class="n">points</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">points</span><span class="o">.</span><span class="n">keys</span><span class="p">()])</span>
+            <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">points</span><span class="o">.</span><span class="n">keys</span><span class="p">()],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idxs</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="EigenfunctionInterface._save_eigenvalue_selection"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._save_eigenvalue_selection">[docs]</a>    <span class="k">def</span> <span class="nf">_save_eigenvalue_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -401,8 +407,9 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">idx</span><span class="p">,</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_clicked_point_data</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
         <span class="n">associated_ds</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">artist</span><span class="o">.</span><span class="n">dataset</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">,</span> <span class="p">{})</span>
         <span class="c1"># skip if point index is already in list</span>
-        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">items</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="k">return</span>
         <span class="c1"># skip if point has no eigenfunction due to e.g. subset</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_point_has_eigenfunctions</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
@@ -417,9 +424,7 @@
             <span class="n">markeredgewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">add_pickradius_to_item</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="n">marked_point</span><span class="p">,</span> <span class="n">pickradius</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="c1"># get items corresponding to this ds</span>
-        <span class="n">items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">,</span> <span class="p">{})</span>
-        <span class="n">items</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="n">marked_point</span><span class="p">})</span>
+        <span class="n">items</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">idx</span><span class="p">:</span> <span class="n">marked_point</span><span class="p">})</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">associated_ds</span><span class="p">:</span> <span class="n">items</span><span class="p">})</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_plot</span><span class="p">()</span></div>
 
@@ -435,7 +440,7 @@
         <span class="n">idx</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_clicked_point_data</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
         <span class="c1"># remove selected index from list</span>
         <span class="n">associated_ds</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">artist</span><span class="o">.</span><span class="n">dataset</span>
-        <span class="n">selected_artist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">selected_artist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">selected_artist</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">selected_artist</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
             <span class="c1"># if no items remaining for this ds, remove key</span>
@@ -538,9 +543,7 @@
 <span class="sd">        in the opacity value for datapoints with no functions, so they are</span>
 <span class="sd">        clearly distinguishable from those who do have them.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">LegolasDataSeries</span><span class="p">):</span>
-            <span class="k">return</span>
-        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">LegolasDataSeries</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">has_efs</span><span class="p">):</span>
             <span class="k">return</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_transparent_data</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_transparent_data</span>
         <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">get_axes</span><span class="p">():</span>
@@ -549,7 +552,7 @@
                 <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="s2">&quot;dataset&quot;</span><span class="p">):</span>
                     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">get_alpha</span><span class="p">()</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">has_efs</span><span class="p">:</span>
                         <span class="n">child</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="n">child</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span><span class="p">)</span></div>

@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.2 - develop
+                2.1.0 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -662,42 +662,21 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_efs</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">EigenfunctionsNotPresent</span><span class="p">(</span><span class="s2">&quot;eigenfunctions not written to datfile&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eigenfunction_like</span><span class="p">(</span>
+        <span class="n">efs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eigenfunction_like</span><span class="p">(</span>
             <span class="n">ev_guesses</span><span class="p">,</span> <span class="n">ev_idxs</span><span class="p">,</span> <span class="n">getter_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filereader</span><span class="o">.</span><span class="n">read_eigenfunction</span>
-        <span class="p">)</span></div>
-
-<div class="viewcode-block" id="LegolasDataSet.get_derived_eigenfunctions"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_derived_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">get_derived_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ev_idxs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Returns the derived eigenfunctions based on given eigenvalue guesses or their</span>
-<span class="sd">        indices. An array will be returned where every item is a dictionary, containing</span>
-<span class="sd">        both the eigenvalue and its quantities. Either eigenvalue guesses or</span>
-<span class="sd">        indices can be supplied, but not both.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        ev_guesses : complex, numpy.ndarray</span>
-<span class="sd">            Eigenvalue guesses.</span>
-<span class="sd">        ev_idxs : int, numpy.ndarray</span>
-<span class="sd">            Indices corresponding to the eigenvalues that need to be retrieved.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        numpy.ndarray</span>
-<span class="sd">            Array containing the derived eigenfunctions and eigenvalues</span>
-<span class="sd">            corresponding to the supplied indices. Every index in this array</span>
-<span class="sd">            contains a dictionary with the derived eigenfunctions and</span>
-<span class="sd">            corresponding eigenvalue. The keys of each dictionary are the</span>
-<span class="sd">            corresponding eigenfunction names.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_derived_efs</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">EigenfunctionsNotPresent</span><span class="p">(</span>
-                <span class="s2">&quot;derived eigenfunctions not written to datfile&quot;</span>
-            <span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eigenfunction_like</span><span class="p">(</span>
+            <span class="k">return</span> <span class="n">efs</span>
+
+        <span class="c1"># merge derived eigenfunctions with eigenfunctions</span>
+        <span class="n">derived_efs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eigenfunction_like</span><span class="p">(</span>
             <span class="n">ev_guesses</span><span class="p">,</span>
             <span class="n">ev_idxs</span><span class="p">,</span>
             <span class="n">getter_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filereader</span><span class="o">.</span><span class="n">read_derived_eigenfunction</span><span class="p">,</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ef</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">efs</span><span class="p">):</span>
+            <span class="n">ef</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">derived_efs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">ef</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">efs</span></div>
 
 <div class="viewcode-block" id="LegolasDataSet.get_nearest_eigenvalues"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_nearest_eigenvalues">[docs]</a>    <span class="k">def</span> <span class="nf">get_nearest_eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>

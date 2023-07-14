@@ -20,6 +20,8 @@ Functions
    pylbo.utilities.toolbox.custom_enumerate
    pylbo.utilities.toolbox.transform_to_list
    pylbo.utilities.toolbox.transform_to_numpy
+   pylbo.utilities.toolbox.reduce_to_unique_array
+   pylbo.utilities.toolbox.get_all_eigenfunction_names
    pylbo.utilities.toolbox.solve_cubic_exact
    pylbo.utilities.toolbox.count_zeroes
    pylbo.utilities.toolbox.invert_continuum_array
@@ -193,6 +195,63 @@ Functions
    :type obj: any
 
    :returns: The object transformed to a numpy array.
+   :rtype: numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: reduce_to_unique_array(array: numpy.ndarray) -> numpy.ndarray
+
+   
+   Reduces a given array to its unique values, preserving the order.
+
+   :param array: The array to reduce.
+   :type array: numpy.ndarray
+
+   :returns: The array with unique values.
+   :rtype: numpy.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_all_eigenfunction_names(data: pylbo.data_containers.LegolasDataContainer) -> numpy.ndarray[str]
+
+   
+   Merges the regular and derived eigenfunction names into a unique array,
+   preserving order.
+
+   :param data: The data container containing the eigenfunction names.
+   :type data: LegolasDataContainer
+
+   :returns: The array with unique eigenfunction names.
    :rtype: numpy.ndarray
 
 

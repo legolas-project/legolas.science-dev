@@ -1125,43 +1125,6 @@ Functions
       ..
           !! processed by numpydoc !!
 
-   .. py:method:: get_derived_eigenfunctions(ev_guesses=None, ev_idxs=None) -> numpy.ndarray
-
-      
-      Returns the derived eigenfunctions based on given eigenvalue guesses or their
-      indices. An array will be returned where every item is a dictionary, containing
-      both the eigenvalue and its quantities. Either eigenvalue guesses or
-      indices can be supplied, but not both.
-
-      :param ev_guesses: Eigenvalue guesses.
-      :type ev_guesses: complex, numpy.ndarray
-      :param ev_idxs: Indices corresponding to the eigenvalues that need to be retrieved.
-      :type ev_idxs: int, numpy.ndarray
-
-      :returns: Array containing the derived eigenfunctions and eigenvalues
-                corresponding to the supplied indices. Every index in this array
-                contains a dictionary with the derived eigenfunctions and
-                corresponding eigenvalue. The keys of each dictionary are the
-                corresponding eigenfunction names.
-      :rtype: numpy.ndarray
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
-
    .. py:method:: get_nearest_eigenvalues(ev_guesses) -> tuple(np.ndarray, np.ndarray)
 
       

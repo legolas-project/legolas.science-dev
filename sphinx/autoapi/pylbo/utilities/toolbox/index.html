@@ -37,7 +37,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.0.2 - develop
+                2.1.0 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -63,6 +63,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../visualisation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo._version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../data_containers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.data_containers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../deprecations/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.deprecations</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.exceptions</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../testing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.testing</span></code></a></li>
 </ul>
@@ -127,6 +128,12 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.transform_to_numpy" title="pylbo.utilities.toolbox.transform_to_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_to_numpy</span></code></a>(→ numpy.ndarray)</p></td>
 <td><p>Transforms a given input argument <cite>obj</cite> to a numpy array.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.reduce_to_unique_array" title="pylbo.utilities.toolbox.reduce_to_unique_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reduce_to_unique_array</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p>Reduces a given array to its unique values, preserving the order.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.get_all_eigenfunction_names" title="pylbo.utilities.toolbox.get_all_eigenfunction_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_all_eigenfunction_names</span></code></a>(→ numpy.ndarray[str])</p></td>
+<td><p>Merges the regular and derived eigenfunction names into a unique array,</p></td>
+</tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.solve_cubic_exact" title="pylbo.utilities.toolbox.solve_cubic_exact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_cubic_exact</span></code></a>(a, b, c, d)</p></td>
 <td><p>Solves a given cubic polynomial of the form</p></td>
 </tr>
@@ -149,7 +156,7 @@
 <dd><p>Retrieves the geometry of a given matplotlib axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.1)"><em>Axes</em></a>) – The axis to retrieve the geometry from.</p>
+<dd class="field-odd"><p><strong>ax</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.7.2)"><em>Axes</em></a>) – The axis to retrieve the geometry from.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The geometry of the given matplotlib axis.</p>
@@ -198,7 +205,7 @@ We have to handle this separately, because for line2D items the method
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>item</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/artist_api.html#matplotlib.artist.Artist" title="(in Matplotlib v3.7.1)"><em>Artist</em></a>) – The artist which will be made pickable</p></li>
+<li><p><strong>item</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/artist_api.html#matplotlib.artist.Artist" title="(in Matplotlib v3.7.2)"><em>Artist</em></a>) – The artist which will be made pickable</p></li>
 <li><p><strong>pickradius</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Sets the pickradius, which determines if something is “on” the picked point.</p></li>
 </ul>
 </dd>
@@ -254,6 +261,41 @@ is a Numpy-array or tuple, a cast to <cite>list()</cite> is invoked.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The object transformed to a numpy array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.utilities.toolbox.reduce_to_unique_array">
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">reduce_to_unique_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><span class="pre">numpy.ndarray</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><span class="pre">numpy.ndarray</span></a></span></span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#reduce_to_unique_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.reduce_to_unique_array" title="Permalink to this definition"></a></dt>
+<dd><p>Reduces a given array to its unique values, preserving the order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>array</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a>) – The array to reduce.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The array with unique values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.utilities.toolbox.get_all_eigenfunction_names">
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">get_all_eigenfunction_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataContainer" title="pylbo.data_containers.LegolasDataContainer"><span class="pre">pylbo.data_containers.LegolasDataContainer</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><span class="pre">numpy.ndarray</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../../../_modules/pylbo/utilities/toolbox.html#get_all_eigenfunction_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.toolbox.get_all_eigenfunction_names" title="Permalink to this definition"></a></dt>
+<dd><p>Merges the regular and derived eigenfunction names into a unique array,
+preserving order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="../../data_containers/index.html#pylbo.data_containers.LegolasDataContainer" title="pylbo.data_containers.LegolasDataContainer"><em>LegolasDataContainer</em></a>) – The data container containing the eigenfunction names.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The array with unique eigenfunction names.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)">numpy.ndarray</a></p>
