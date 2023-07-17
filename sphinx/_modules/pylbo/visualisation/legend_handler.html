@@ -77,7 +77,27 @@
 <span class="kn">import</span> <span class="nn">matplotlib.lines</span> <span class="k">as</span> <span class="nn">mpl_lines</span>
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpl_patches</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pylbo._version</span> <span class="kn">import</span> <span class="n">_mpl_version</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">add_pickradius_to_item</span>
+
+
+<div class="viewcode-block" id="_get_legend_handles"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler._get_legend_handles">[docs]</a><span class="k">def</span> <span class="nf">_get_legend_handles</span><span class="p">(</span><span class="n">legend</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the legend handles.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    legend : ~matplotlib.legend.Legend</span>
+<span class="sd">        The matplotlib legend to use.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    handles : list</span>
+<span class="sd">        A list of handles.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">_mpl_version</span> <span class="o">&gt;=</span> <span class="s2">&quot;3.7&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">legend</span><span class="o">.</span><span class="n">legend_handles</span>
+    <span class="k">return</span> <span class="n">legend</span><span class="o">.</span><span class="n">legendHandles</span></div>
 
 
 <div class="viewcode-block" id="LegendHandler"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler">[docs]</a><span class="k">class</span> <span class="nc">LegendHandler</span><span class="p">:</span>
@@ -151,22 +171,21 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">artist</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha_hidden</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_autoscaling</span><span class="p">()</span>
-        <span class="n">artist</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
         <span class="n">artist</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="LegendHandler.make_legend_pickable"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.make_legend_pickable">[docs]</a>    <span class="k">def</span> <span class="nf">make_legend_pickable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Makes the legend pickable, only used if interactive.&quot;&quot;&quot;</span>
-        <span class="n">legend_handles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">legendHandles</span>
+        <span class="n">legend_handles</span> <span class="o">=</span> <span class="n">_get_legend_handles</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="p">)</span>
         <span class="n">handle_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">handle</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">handle</span> <span class="ow">in</span> <span class="n">legend_handles</span><span class="p">]</span>
         <span class="c1"># we need a mapping of the legend item to the actual item that was drawn</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">drawn_item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_drawn_items</span><span class="p">):</span>
             <span class="c1"># try-except needed for fill_between, which returns empty handles</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">idx</span> <span class="o">=</span> <span class="n">handle_labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">drawn_item</span><span class="o">.</span><span class="n">get_label</span><span class="p">())</span>
-                <span class="n">legend_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">legendHandles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="n">legend_item</span> <span class="o">=</span> <span class="n">_get_legend_handles</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="p">)[</span><span class="n">idx</span><span class="p">]</span>
             <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
                 <span class="n">idx</span> <span class="o">=</span> <span class="n">i</span>
-                <span class="n">legend_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">legendHandles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="n">legend_item</span> <span class="o">=</span> <span class="n">_get_legend_handles</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">legend</span><span class="p">)[</span><span class="n">idx</span><span class="p">]</span>
                 <span class="c1"># fix empty label</span>
                 <span class="n">legend_item</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">drawn_item</span><span class="o">.</span><span class="n">get_label</span><span class="p">())</span>
             <span class="n">add_pickradius_to_item</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="n">legend_item</span><span class="p">,</span> <span class="n">pickradius</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pickradius</span><span class="p">)</span>
