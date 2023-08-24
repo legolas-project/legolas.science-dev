@@ -24,8 +24,22 @@ Functions
    pylbo.automation.generator._ensure_nb_names_and_nb_runs_matches
    pylbo.automation.generator._validate_basenames
    pylbo.automation.generator._validate_output_dir
+   pylbo.automation.generator._handle_expected_item_list
 
 
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   pylbo.automation.generator.KEYS_EXPECTED_AS_LIST
+
+
+.. py:data:: KEYS_EXPECTED_AS_LIST
+   :value: ['basis_functions']
+
+   
 
 .. py:function:: _ensure_nb_names_and_nb_runs_matches(names: Union[str, list[str]], nb_runs: int) -> list[str]
 
@@ -117,6 +131,9 @@ Functions
 
    ..
        !! processed by numpydoc !!
+
+.. py:function:: _handle_expected_item_list(item)
+
 
 .. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None, subdir=True, prefix_numbers=True, nb_prefix_digits=4)
 

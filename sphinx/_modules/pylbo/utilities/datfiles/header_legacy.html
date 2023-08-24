@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.1.1 - develop
+                2.1.2 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -316,6 +316,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;nb_eqs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;physics_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mhd&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;state_vector&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">,</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span> <span class="s2">&quot;v2&quot;</span><span class="p">,</span> <span class="s2">&quot;v3&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;a1&quot;</span><span class="p">,</span> <span class="s2">&quot;a2&quot;</span><span class="p">,</span> <span class="s2">&quot;a3&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;basis_functions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;rho&quot;</span><span class="p">:</span> <span class="s2">&quot;quadratic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;v1&quot;</span><span class="p">:</span> <span class="s2">&quot;cubic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;v2&quot;</span><span class="p">:</span> <span class="s2">&quot;quadratic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;v3&quot;</span><span class="p">:</span> <span class="s2">&quot;quadratic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;T&quot;</span><span class="p">:</span> <span class="s2">&quot;quadratic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;a1&quot;</span><span class="p">:</span> <span class="s2">&quot;quadratic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;a2&quot;</span><span class="p">:</span> <span class="s2">&quot;cubic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;a3&quot;</span><span class="p">:</span> <span class="s2">&quot;cubic&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;dims&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;dim_integralblock&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
             <span class="s2">&quot;dim_subblock&quot;</span><span class="p">:</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>

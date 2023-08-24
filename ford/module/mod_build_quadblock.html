@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_build_quadblock &ndash; Legolas v. 2.0.7 - develop</title>
+    <title>mod_build_quadblock &ndash; Legolas v. 2.1.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.0.7 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.1.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for modules and submodules.">58 statements</a>
+    title=" 0.6% of total for modules and submodules.">68 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_build_quadblock.f08"> Source File</a></li>
   </ul>
@@ -106,6 +106,14 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_build_quadblock.html#proc-node_has_spline">node_has_spline</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
   <div class="list-group">
     <div id="subs-0" class="panel-collapse collapse">
@@ -128,9 +136,10 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li><a href='../module/mod_matrix_element_node.html'>mod_matrix_element_node</a></li>
-    <li><a href='../module/mod_dims.html'>mod_dims</a></li>
     <li><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+    <li><a href='../module/mod_dims.html'>mod_dims</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
       </li>
       </ul>
@@ -142,6 +151,14 @@
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../module/mod_build_quadblock.html#proc-node_has_spline">node_has_spline</a>
+    </div>
+  </div>
+</div>
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
   <div class="list-group">
@@ -160,11 +177,37 @@
 
     
     
+ 
+    <section>
+    <h2>Functions</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-node_has_spline"></span><h3>private function <a href='../proc/node_has_spline.html'>node_has_spline</a>(node)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>type(<a href='../type/matrix_element_node_t.html'>matrix_element_node_t</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>node</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>logical</small></h4>  
+
+  </div>
+  </div>
+
+    </section>
+    <br>
 
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_to_quadblock"></span><h3>public subroutine <a href='../proc/add_to_quadblock.html'>add_to_quadblock</a>(quadblock, elements, weight, dims)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_to_quadblock"></span><h3>public subroutine <a href='../proc/add_to_quadblock.html'>add_to_quadblock</a>(quadblock, elements, x, x0, x1, weight, dims)</h3></div>
   <div class="panel-body">
        
 <p>This routine builds the quadblock at one particular grid point in the Gaussian
@@ -187,6 +230,24 @@ corners are then filled by subtracting one from an index.</p>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>elements</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x0</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>real(kind=dp),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x1</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=dp),</td>
@@ -218,7 +279,7 @@ corners are then filled by subtracting one from an index.</p>
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.0.7 - develop was developed by <br>&copy; 2023 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.1.0 - develop was developed by <br>&copy; 2023 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

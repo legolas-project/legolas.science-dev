@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.1.1 - develop
+                2.1.2 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -84,6 +84,11 @@
 <span class="kn">from</span> <span class="nn">pylbo.exceptions</span> <span class="kn">import</span> <span class="n">ParfileGenerationError</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.logger</span> <span class="kn">import</span> <span class="n">pylboLogger</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">transform_to_list</span>
+
+<div class="viewcode-block" id="KEYS_EXPECTED_AS_LIST">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.KEYS_EXPECTED_AS_LIST">[docs]</a>
+<span class="n">KEYS_EXPECTED_AS_LIST</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;basis_functions&quot;</span><span class="p">]</span></div>
+
 
 
 <div class="viewcode-block" id="_ensure_nb_names_and_nb_runs_matches">
@@ -182,6 +187,19 @@
 
 
 
+<div class="viewcode-block" id="_handle_expected_item_list">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator._handle_expected_item_list">[docs]</a>
+<span class="k">def</span> <span class="nf">_handle_expected_item_list</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="c1"># check that item is a list containing additional lists</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected item </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> to be a list of lists.&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected item &#39;</span><span class="si">{</span><span class="n">obj</span><span class="si">}</span><span class="s2">&#39; in </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> to be a list itself.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">item</span></div>
+
+
+
 <div class="viewcode-block" id="ParfileGenerator">
 <a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator">[docs]</a>
 <span class="k">class</span> <span class="nc">ParfileGenerator</span><span class="p">:</span>
@@ -259,7 +277,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parfile_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">item_aslist</span> <span class="o">=</span> <span class="n">transform_to_list</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="n">item_aslist</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">transform_to_list</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">KEYS_EXPECTED_AS_LIST</span>
+                <span class="k">else</span> <span class="n">_handle_expected_item_list</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="p">)</span>
             <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">item_aslist</span><span class="p">:</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">allowed_dtypes</span><span class="p">):</span>
                     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>

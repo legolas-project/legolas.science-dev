@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_ef_assembly &ndash; Legolas v. 2.0.7 - develop</title>
+    <title>mod_ef_assembly &ndash; Legolas v. 2.1.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.0.7 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.1.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.9% of total for modules and submodules.">98 statements</a>
+    title=" 0.6% of total for modules and submodules.">67 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_ef_assembly.f08"> Source File</a></li>
   </ul>
@@ -112,7 +112,6 @@
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-retransform_eigenfunction">retransform_eigenfunction</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-assemble_eigenfunction">assemble_eigenfunction</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_combined_value_from_eigenvector">get_combined_value_from_eigenvector</a>
-      <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_basis_function">get_basis_function</a>
     </div>
   </div>
 </div>
@@ -130,11 +129,11 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+    <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
     <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_grid.html'>mod_grid</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
   </ul>
       </li>
       </ul>
@@ -153,7 +152,6 @@
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-retransform_eigenfunction">retransform_eigenfunction</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-assemble_eigenfunction">assemble_eigenfunction</a>
       <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_combined_value_from_eigenvector">get_combined_value_from_eigenvector</a>
-      <a class="list-group-item" href="../module/mod_ef_assembly.html#proc-get_basis_function">get_basis_function</a>
     </div>
   </div>
 </div>
@@ -204,7 +202,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble_eigenfunction"></span><h3>public function <a href='../proc/assemble_eigenfunction.html'>assemble_eigenfunction</a>(settings, ef_name, grid, state_vector_index, eigenvector, derivative_order) result(assembled_ef)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-assemble_eigenfunction"></span><h3>public function <a href='../proc/assemble_eigenfunction.html'>assemble_eigenfunction</a>(settings, sv_component, grid, state_vector_index, eigenvector, derivative_order) result(assembled_ef)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -217,10 +215,10 @@
   <td><strong>settings</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/sv_component_t.html'>sv_component_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ef_name</strong></td><td></td>
+  <td><strong>sv_component</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
@@ -255,7 +253,7 @@
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_combined_value_from_eigenvector"></span><h3>private pure function <a href='../proc/get_combined_value_from_eigenvector.html'>get_combined_value_from_eigenvector</a>(eigenvector, idx, dim_subblock, basis_function)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_combined_value_from_eigenvector"></span><h3>private pure function <a href='../proc/get_combined_value_from_eigenvector.html'>get_combined_value_from_eigenvector</a>(eigenvector, idx, dim_subblock, spline)</h3></div>
   <div class="panel-body">
            
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -283,57 +281,12 @@
   <td><span class="anchor" ></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>basis_function</strong>(:)</td><td></td>
+  <td><strong>spline</strong>(:)</td><td></td>
 </tr>
 </tbody>
 </table>
 
 <h4>Return Value <small>complex(kind=dp)</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_basis_function"></span><h3>private function <a href='../proc/get_basis_function.html'>get_basis_function</a>(ef_name, grid, grid_idx, ef_grid_idx, diff_order) result(spline)</h3></div>
-  <div class="panel-body">
-           
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_name</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>grid</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>grid_idx</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>ef_grid_idx</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>diff_order</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=dp)(4)</small></h4>  
 
   </div>
   </div>
@@ -350,7 +303,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.0.7 - develop was developed by <br>&copy; 2023 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.1.0 - develop was developed by <br>&copy; 2023 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

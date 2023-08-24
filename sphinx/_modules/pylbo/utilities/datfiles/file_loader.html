@@ -33,7 +33,7 @@
             Pylbo
           </a>
               <div class="version">
-                2.1.1 - develop
+                2.1.2 - develop
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -143,6 +143,9 @@
     <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;geometry    : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">geometry</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">x_start</span><span class="p">,</span><span class="w"> </span><span class="n">ds</span><span class="o">.</span><span class="n">x_end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;equilibrium : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">eq_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;state vector: </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;state_vector&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;not present&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;basis functions: </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;basis_functions&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;not present&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
     <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">has_matrices</span><span class="p">:</span>
         <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;matrices present in datfile&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">has_eigenvectors</span><span class="p">:</span>

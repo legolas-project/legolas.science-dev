@@ -9,7 +9,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>add_viscosity_matrix_terms &ndash; Legolas v. 2.0.7 - develop</title>
+    <title>add_viscosity_matrix_terms &ndash; Legolas v. 2.1.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.0.7 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.1.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -82,7 +82,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.6% of total for procedures.">83 statements</a>
+    title=" 0.5% of total for procedures.">74 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_matrix_manager.f08"> Source File</a></li>
   </ul>
@@ -115,7 +115,7 @@
     
     <div class="col-md-9" id='text'>
       <h2>interface <br>
-      public module module subroutine add_viscosity_matrix_terms(x_gauss, weight, quadblock, settings, grid, background, physics)   <a href='../proc/add_viscosity_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+      public module module subroutine add_viscosity_matrix_terms(x, elements, settings, grid, background, physics)   <a href='../proc/add_viscosity_matrix_terms.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h2>    
 
     
@@ -125,22 +125,16 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-x_gauss~8"></span>real(kind=dp),</td>
+  <td><span class="anchor" id="variable-x~25"></span>real(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>x_gauss</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-weight~8"></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>weight</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-quadblock~8"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-elements~9"></span>type(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>quadblock</strong>(:,:)</td><td></td>
+  <td><strong>elements</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-settings~52"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
@@ -179,7 +173,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.0.7 - develop was developed by <br>&copy; 2023 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.1.0 - develop was developed by <br>&copy; 2023 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>smod_natural_bounds_hall &ndash; Legolas v. 2.0.7 - develop</title>
+    <title>smod_natural_bounds_hall &ndash; Legolas v. 2.1.0 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.0.7 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.1.0 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for modules and submodules.">48 statements</a>
+    title=" 0.4% of total for modules and submodules.">40 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/smod_natural_bounds_hall.f08"> Source File</a></li>
   </ul>
@@ -129,8 +129,7 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li><h5>Ancestors:</h5></li>
-    <li><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></li>
-<li>:</li>    <li><a href='../module/smod_natural_boundaries.html'>smod_natural_boundaries</a></li>
+    <li><a href='../module/mod_natural_boundaries.html'>mod_natural_boundaries</a></li>
   </ul>
       </li>
       </ul>
@@ -169,7 +168,7 @@
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_hall_bterms"></span><h3>module procedure <a href='../proc/add_natural_hall_bterms.html'>add_natural_hall_Bterms</a> <small>module module subroutine add_natural_hall_Bterms(x, weight, quadblock, settings, grid, background, physics)</small>   <a href='../interface/add_natural_hall_bterms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_hall_bterms"></span><h3>module procedure <a href='../proc/add_natural_hall_bterms.html'>add_natural_hall_Bterms</a> <small>module module subroutine add_natural_hall_Bterms(x, elements, settings, grid, background, physics)</small>   <a href='../interface/add_natural_hall_bterms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
@@ -183,16 +182,10 @@
   <td><strong>x</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>weight</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>complex(kind=dp),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>quadblock</strong>(:,:)</td><td></td>
+  <td><strong>elements</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
@@ -226,7 +219,7 @@
   </div>
 
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_hall_terms"></span><h3>module procedure <a href='../proc/add_natural_hall_terms.html'>add_natural_hall_terms</a> <small>module module subroutine add_natural_hall_terms(x, weight, quadblock, settings, grid, background, physics)</small>   <a href='../interface/add_natural_hall_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-add_natural_hall_terms"></span><h3>module procedure <a href='../proc/add_natural_hall_terms.html'>add_natural_hall_terms</a> <small>module module subroutine add_natural_hall_terms(x, elements, settings, grid, background, physics)</small>   <a href='../interface/add_natural_hall_terms.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
            
@@ -240,16 +233,10 @@
   <td><strong>x</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" ></span>real(kind=dp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>weight</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>complex(kind=dp),</td>
+  <td><span class="anchor" ></span>type(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>quadblock</strong>(:,:)</td><td></td>
+  <td><strong>elements</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
@@ -292,7 +279,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.0.7 - develop was developed by <br>&copy; 2023 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.1.0 - develop was developed by <br>&copy; 2023 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">
