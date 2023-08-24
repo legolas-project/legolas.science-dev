@@ -11,11 +11,11 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -93,7 +93,9 @@
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.utils</span> <span class="kn">import</span> <span class="n">ensure_attr_set</span>
 
 
-<div class="viewcode-block" id="LegolasHeader"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader">[docs]</a><span class="k">class</span> <span class="nc">LegolasHeader</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasHeader">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader">[docs]</a>
+<span class="k">class</span> <span class="nc">LegolasHeader</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Baseclass for a Legolas header&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="n">VersionHandler</span><span class="p">):</span>
@@ -119,13 +121,21 @@
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
-<div class="viewcode-block" id="LegolasHeader._set_str_lengths"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._set_str_lengths">[docs]</a>    <span class="k">def</span> <span class="nf">_set_str_lengths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasHeader._set_str_lengths">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._set_str_lengths">[docs]</a>
+    <span class="k">def</span> <span class="nf">_set_str_lengths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_str_len</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_str_len_array</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasHeader.get"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader.get">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader.get">[docs]</a>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasHeader.read_header_data"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader.read_header_data">[docs]</a>    <span class="k">def</span> <span class="nf">read_header_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader.read_header_data">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader.read_header_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_header_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_read_physics_type_info</span><span class="p">(</span><span class="n">istream</span><span class="p">))</span>
         <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_read_grid_info</span><span class="p">(</span><span class="n">istream</span><span class="p">))</span>
@@ -138,7 +148,10 @@
         <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_read_equilibrium_names</span><span class="p">(</span><span class="n">istream</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasHeader.read_data_offsets"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader.read_data_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">read_data_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader.read_data_offsets">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader.read_data_offsets">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_data_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">offsets</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="c1"># eigenvalues</span>
         <span class="n">nb_eigenvals</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
@@ -170,7 +183,10 @@
         <span class="n">offsets</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_matrices_offsets</span><span class="p">(</span><span class="n">istream</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offsets</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._read_physics_type_info"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_physics_type_info">[docs]</a>    <span class="k">def</span> <span class="nf">_read_physics_type_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._read_physics_type_info">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_physics_type_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_physics_type_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;nb_eqs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="n">len_type</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
@@ -185,7 +201,10 @@
             <span class="n">data</span><span class="p">[</span><span class="s2">&quot;dims&quot;</span><span class="p">][</span><span class="sa">f</span><span class="s2">&quot;dim_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._read_grid_info"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_grid_info">[docs]</a>    <span class="k">def</span> <span class="nf">_read_grid_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._read_grid_info">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_grid_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_grid_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">len_geom</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_string_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">len_geom</span><span class="p">)</span>
@@ -203,7 +222,10 @@
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;x_start&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;x_end&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_float_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._read_io_info"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_io_info">[docs]</a>    <span class="k">def</span> <span class="nf">_read_io_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._read_io_info">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_io_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_io_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;has_matrices&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_boolean_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;has_eigenvectors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_boolean_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
@@ -215,7 +237,10 @@
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;ef_subset_center&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_complex_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._read_solver_info"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_solver_info">[docs]</a>    <span class="k">def</span> <span class="nf">_read_solver_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._read_solver_info">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_solver_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_solver_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">len_solver</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;solver&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_string_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">len_solver</span><span class="p">)</span>
@@ -235,7 +260,10 @@
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;arnoldi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arnoldi_data</span> <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;solver&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;arnoldi&quot;</span> <span class="k">else</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._read_equilibrium_info"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_equilibrium_info">[docs]</a>    <span class="k">def</span> <span class="nf">_read_equilibrium_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._read_equilibrium_info">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_equilibrium_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_equilibrium_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">len_equil_type</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;eq_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_string_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">len_equil_type</span><span class="p">)</span>
@@ -245,7 +273,10 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._read_units_info"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_units_info">[docs]</a>    <span class="k">def</span> <span class="nf">_read_units_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._read_units_info">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_units_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_units_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">n_units</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="n">units</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cgs&quot;</span><span class="p">:</span> <span class="n">read_boolean_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)}</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_units</span><span class="p">):</span>
@@ -255,7 +286,10 @@
             <span class="n">units</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="n">units</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._read_physics_info"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_physics_info">[docs]</a>    <span class="k">def</span> <span class="nf">_read_physics_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._read_physics_info">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_physics_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_physics_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;gamma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_float_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;is_incompressible&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_boolean_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
@@ -281,7 +315,10 @@
         <span class="n">data</span><span class="p">[</span><span class="s2">&quot;physics&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">physics</span>
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._read_parameters"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_parameters">[docs]</a>    <span class="k">def</span> <span class="nf">_read_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._read_parameters">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_parameters">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">parameters</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">nb_params</span><span class="p">,</span> <span class="n">len_name</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_params</span><span class="p">):</span>
@@ -290,7 +327,10 @@
         <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">parameters</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">v</span><span class="p">)}</span>
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="n">parameters</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._read_equilibrium_names"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_equilibrium_names">[docs]</a>    <span class="k">def</span> <span class="nf">_read_equilibrium_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._read_equilibrium_names">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._read_equilibrium_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_equilibrium_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">nb_names</span><span class="p">,</span> <span class="n">len_name</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;has_background&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nb_names</span> <span class="o">&gt;</span> <span class="mi">0</span>
         <span class="n">names</span> <span class="o">=</span> <span class="p">(</span>
@@ -302,7 +342,10 @@
         <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;db03&quot;</span><span class="p">,</span> <span class="s2">&quot;dB03&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;equilibrium_names&quot;</span><span class="p">:</span> <span class="n">names</span><span class="p">}</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._get_eigenfunction_offsets"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_eigenfunction_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">_get_eigenfunction_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._get_eigenfunction_offsets">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_eigenfunction_offsets">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_eigenfunction_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;has_efs&quot;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;ef_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;state_vector&quot;</span><span class="p">]</span>
@@ -315,13 +358,19 @@
         <span class="n">offsets</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_ef_block_offsets</span><span class="p">(</span><span class="n">istream</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">offsets</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._get_ef_grid_offset"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_ef_grid_offset">[docs]</a>    <span class="k">def</span> <span class="nf">_get_ef_grid_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ef_gridsize</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._get_ef_grid_offset">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_ef_grid_offset">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_ef_grid_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ef_gridsize</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">offsets</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ef_grid&quot;</span><span class="p">:</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()}</span>
         <span class="n">bytesize</span> <span class="o">=</span> <span class="n">ef_gridsize</span> <span class="o">*</span> <span class="n">SIZE_DOUBLE</span>
         <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">bytesize</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">offsets</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._get_ef_written_flags"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_ef_written_flags">[docs]</a>    <span class="k">def</span> <span class="nf">_get_ef_written_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._get_ef_written_flags">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_ef_written_flags">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_ef_written_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># eigenfunction flags</span>
         <span class="n">ef_flags_size</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;ef_written_flags&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span>
@@ -337,7 +386,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;ef_written_idxs&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;ef_written_flags&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._get_ef_block_offsets"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_ef_block_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">_get_ef_block_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._get_ef_block_offsets">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_ef_block_offsets">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_ef_block_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="c1"># eigenfunction offsets</span>
         <span class="n">offsets</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ef_arrays&quot;</span><span class="p">:</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()}</span>
         <span class="c1"># bytesize of a single eigenfunction block (all efs for 1 state vector variable)</span>
@@ -351,13 +403,19 @@
         <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">bytesize_block</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;nb_eqs&quot;</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">offsets</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._get_derived_eigenfunction_offsets"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_derived_eigenfunction_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">_get_derived_eigenfunction_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._get_derived_eigenfunction_offsets">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_derived_eigenfunction_offsets">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_derived_eigenfunction_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;has_derived_efs&quot;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="p">{}</span>
         <span class="n">nb_names</span><span class="p">,</span> <span class="n">size_names</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_derived_ef_names_and_offsets</span><span class="p">(</span><span class="n">nb_names</span><span class="p">,</span> <span class="n">size_names</span><span class="p">,</span> <span class="n">istream</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._get_derived_ef_names_and_offsets"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_derived_ef_names_and_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">_get_derived_ef_names_and_offsets</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LegolasHeader._get_derived_ef_names_and_offsets">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_derived_ef_names_and_offsets">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_derived_ef_names_and_offsets</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">nb_names</span><span class="p">,</span> <span class="n">size_names</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;derived_ef_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span>
@@ -374,7 +432,10 @@
         <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">bytesize_block</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">offsets</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._get_eigenvector_offsets"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_eigenvector_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">_get_eigenvector_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._get_eigenvector_offsets">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_eigenvector_offsets">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_eigenvector_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;has_eigenvectors&quot;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="p">{}</span>
         <span class="n">len_eigvecs</span><span class="p">,</span> <span class="n">nb_eigvecs</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -387,7 +448,10 @@
         <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">bytesize</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">offsets</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._get_residual_offsets"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_residual_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">_get_residual_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._get_residual_offsets">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_residual_offsets">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_residual_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;has_residuals&quot;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="p">{}</span>
         <span class="n">nb_residuals</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
@@ -396,7 +460,10 @@
         <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">+</span> <span class="n">bytesize</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">offsets</span></div>
 
-<div class="viewcode-block" id="LegolasHeader._get_matrices_offsets"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_matrices_offsets">[docs]</a>    <span class="k">def</span> <span class="nf">_get_matrices_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasHeader._get_matrices_offsets">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/header/index.html#pylbo.utilities.datfiles.header.LegolasHeader._get_matrices_offsets">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_matrices_offsets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;has_matrices&quot;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="p">{}</span>
         <span class="n">nonzero_B_elements</span><span class="p">,</span> <span class="n">nonzero_A_elements</span> <span class="o">=</span> <span class="n">read_int_from_istream</span><span class="p">(</span>
@@ -410,7 +477,9 @@
         <span class="c1"># A matrix is written as (row, column, complex value)</span>
         <span class="n">offsets</span><span class="p">[</span><span class="s2">&quot;matrix_A&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;nonzero_A_elements&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nonzero_A_elements</span>
-        <span class="k">return</span> <span class="n">offsets</span></div></div>
+        <span class="k">return</span> <span class="n">offsets</span></div>
+</div>
+
 </pre></div>
 
            </div>

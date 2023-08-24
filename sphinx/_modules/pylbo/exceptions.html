@@ -11,11 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -73,7 +73,9 @@
            <div itemprop="articleBody">
              
   <h1>Source code for pylbo.exceptions</h1><div class="highlight"><pre>
-<div class="viewcode-block" id="LegolasException"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.LegolasException">[docs]</a><span></span><span class="k">class</span> <span class="nc">LegolasException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasException">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.LegolasException">[docs]</a>
+<span></span><span class="k">class</span> <span class="nc">LegolasException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Exception superclass to handle Legolas exceptions.</span>
 
@@ -87,7 +89,10 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="InvalidLegolasFile"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.InvalidLegolasFile">[docs]</a><span class="k">class</span> <span class="nc">InvalidLegolasFile</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
+
+<div class="viewcode-block" id="InvalidLegolasFile">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.InvalidLegolasFile">[docs]</a>
+<span class="k">class</span> <span class="nc">InvalidLegolasFile</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Handles trying to load invalid Legolas files.</span>
 
@@ -104,7 +109,10 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2"> is not a valid Legolas file&quot;</span></div>
 
 
-<div class="viewcode-block" id="BackgroundNotPresent"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.BackgroundNotPresent">[docs]</a><span class="k">class</span> <span class="nc">BackgroundNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BackgroundNotPresent">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.BackgroundNotPresent">[docs]</a>
+<span class="k">class</span> <span class="nc">BackgroundNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Handles trying to query for the background when this is not present in the datfile.</span>
 
@@ -127,7 +135,10 @@
         <span class="k">return</span> <span class="n">msg</span></div>
 
 
-<div class="viewcode-block" id="EigenfunctionsNotPresent"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.EigenfunctionsNotPresent">[docs]</a><span class="k">class</span> <span class="nc">EigenfunctionsNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionsNotPresent">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.EigenfunctionsNotPresent">[docs]</a>
+<span class="k">class</span> <span class="nc">EigenfunctionsNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Handles trying to query for eigenfunctions when these</span>
 <span class="sd">    are not present in the datfile.</span>
@@ -145,7 +156,10 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span></div>
 
 
-<div class="viewcode-block" id="MatricesNotPresent"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.MatricesNotPresent">[docs]</a><span class="k">class</span> <span class="nc">MatricesNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MatricesNotPresent">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.MatricesNotPresent">[docs]</a>
+<span class="k">class</span> <span class="nc">MatricesNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Handles trying to query for matrices when these</span>
 <span class="sd">    are not present in the datfile.</span>
@@ -163,7 +177,10 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No matrices present in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span></div>
 
 
-<div class="viewcode-block" id="EigenvectorsNotPresent"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.EigenvectorsNotPresent">[docs]</a><span class="k">class</span> <span class="nc">EigenvectorsNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenvectorsNotPresent">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.EigenvectorsNotPresent">[docs]</a>
+<span class="k">class</span> <span class="nc">EigenvectorsNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Handles trying to query for eigenvectors when</span>
 <span class="sd">    these are not present in the datfile.</span>
@@ -181,7 +198,10 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No eigenvectors present in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span></div>
 
 
-<div class="viewcode-block" id="ResidualsNotPresent"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.ResidualsNotPresent">[docs]</a><span class="k">class</span> <span class="nc">ResidualsNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ResidualsNotPresent">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.ResidualsNotPresent">[docs]</a>
+<span class="k">class</span> <span class="nc">ResidualsNotPresent</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Handles trying to query for residuals when</span>
 <span class="sd">    these are not present in the datfile.</span>
@@ -199,7 +219,10 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No residuals present in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span></div>
 
 
-<div class="viewcode-block" id="ParfileGenerationError"><a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.ParfileGenerationError">[docs]</a><span class="k">class</span> <span class="nc">ParfileGenerationError</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ParfileGenerationError">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.ParfileGenerationError">[docs]</a>
+<span class="k">class</span> <span class="nc">ParfileGenerationError</span><span class="p">(</span><span class="n">LegolasException</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gets thrown when something went wrong during parfile generation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -223,6 +246,7 @@
                 <span class="sa">f</span><span class="s2">&quot;Length of &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; key: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="p">)</span>
         <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">base_msg</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">])</span></div>
+
 </pre></div>
 
            </div>

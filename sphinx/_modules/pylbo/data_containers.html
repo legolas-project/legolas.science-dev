@@ -11,11 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -98,97 +98,162 @@
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.continua</span> <span class="kn">import</span> <span class="n">calculate_continua</span>
 
 
-<div class="viewcode-block" id="ensure_dataset"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.ensure_dataset">[docs]</a><span class="k">def</span> <span class="nf">ensure_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="ensure_dataset">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.ensure_dataset">[docs]</a>
+<span class="k">def</span> <span class="nf">ensure_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Ensures that the given data is a :class:`LegolasDataSet`.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">LegolasDataSet</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;expected a LegolasDataSet, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="ensure_dataseries"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.ensure_dataseries">[docs]</a><span class="k">def</span> <span class="nf">ensure_dataseries</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ensure_dataseries">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.ensure_dataseries">[docs]</a>
+<span class="k">def</span> <span class="nf">ensure_dataseries</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Ensures that the given data is a :class:`LegolasDataSeries`.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">LegolasDataSeries</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;expected a LegolasDataSeries, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="LegolasDataContainer"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer">[docs]</a><span class="k">class</span> <span class="nc">LegolasDataContainer</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LegolasDataContainer">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer">[docs]</a>
+<span class="k">class</span> <span class="nc">LegolasDataContainer</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Baseclass for a Legolas data container.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.continua"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.continua">[docs]</a>    <span class="k">def</span> <span class="nf">continua</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.continua">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.continua">[docs]</a>
+    <span class="k">def</span> <span class="nf">continua</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.parameters"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.parameters">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.parameters">[docs]</a>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.has_efs"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_efs">[docs]</a>    <span class="k">def</span> <span class="nf">has_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.has_efs">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_efs">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.ef_grid"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.ef_grid">[docs]</a>    <span class="k">def</span> <span class="nf">ef_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.ef_grid">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.ef_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">ef_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.ef_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.ef_names">[docs]</a>    <span class="k">def</span> <span class="nf">ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.ef_names">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.ef_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.has_background"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_background">[docs]</a>    <span class="k">def</span> <span class="nf">has_background</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.has_background">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_background">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_background</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.has_derived_efs"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_derived_efs">[docs]</a>    <span class="k">def</span> <span class="nf">has_derived_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.has_derived_efs">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_derived_efs">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_derived_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.derived_ef_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.derived_ef_names">[docs]</a>    <span class="k">def</span> <span class="nf">derived_ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.derived_ef_names">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.derived_ef_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">derived_ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.has_ef_subset"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_ef_subset">[docs]</a>    <span class="k">def</span> <span class="nf">has_ef_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.has_ef_subset">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_ef_subset">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_ef_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.has_matrices"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_matrices">[docs]</a>    <span class="k">def</span> <span class="nf">has_matrices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.has_matrices">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_matrices">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_matrices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.has_eigenvectors"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_eigenvectors">[docs]</a>    <span class="k">def</span> <span class="nf">has_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.has_eigenvectors">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_eigenvectors">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.has_residuals"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">has_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.has_residuals">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.has_residuals">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.get_sound_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_sound_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_sound_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.get_sound_speed">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_sound_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sound_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.get_alfven_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_alfven_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_alfven_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.get_alfven_speed">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_alfven_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_alfven_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.get_tube_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_tube_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_tube_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.get_tube_speed">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_tube_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_tube_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.get_reynolds_nb"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_reynolds_nb">[docs]</a>    <span class="k">def</span> <span class="nf">get_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.get_reynolds_nb">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_reynolds_nb">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.get_magnetic_reynolds_nb"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_magnetic_reynolds_nb">[docs]</a>    <span class="k">def</span> <span class="nf">get_magnetic_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="LegolasDataContainer.get_magnetic_reynolds_nb">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_magnetic_reynolds_nb">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_magnetic_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">pass</span></div>
 
+
     <span class="nd">@abstractmethod</span>
-<div class="viewcode-block" id="LegolasDataContainer.get_k0_squared"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_k0_squared">[docs]</a>    <span class="k">def</span> <span class="nf">get_k0_squared</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span></div></div>
+<div class="viewcode-block" id="LegolasDataContainer.get_k0_squared">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataContainer.get_k0_squared">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_k0_squared</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+</div>
 
 
-<div class="viewcode-block" id="LegolasDataSet"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet">[docs]</a><span class="k">class</span> <span class="nc">LegolasDataSet</span><span class="p">(</span><span class="n">LegolasDataContainer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LegolasDataSet">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet">[docs]</a>
+<span class="k">class</span> <span class="nc">LegolasDataSet</span><span class="p">(</span><span class="n">LegolasDataContainer</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Main container for a single Legolas dataset.</span>
 
@@ -276,56 +341,88 @@
         <span class="k">yield</span> <span class="bp">self</span>
 
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.legolas_version"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.legolas_version">[docs]</a>    <span class="k">def</span> <span class="nf">legolas_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VersionHandler</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.legolas_version">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.legolas_version">[docs]</a>
+    <span class="k">def</span> <span class="nf">legolas_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VersionHandler</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filereader</span><span class="o">.</span><span class="n">legolas_version</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.k2_str"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.k2_str">[docs]</a>    <span class="k">def</span> <span class="nf">k2_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.k2_str">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.k2_str">[docs]</a>
+    <span class="k">def</span> <span class="nf">k2_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the :math:`k_2` string.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;$k_y$&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;cartesian&quot;</span> <span class="k">else</span> <span class="s2">&quot;$m$&quot;</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.k3_str"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.k3_str">[docs]</a>    <span class="k">def</span> <span class="nf">k3_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.k3_str">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.k3_str">[docs]</a>
+    <span class="k">def</span> <span class="nf">k3_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the :math:`k_3` string.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;$k_z$&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;cartesian&quot;</span> <span class="k">else</span> <span class="s2">&quot;$k$&quot;</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.u1_str"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.u1_str">[docs]</a>    <span class="k">def</span> <span class="nf">u1_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.u1_str">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.u1_str">[docs]</a>
+    <span class="k">def</span> <span class="nf">u1_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the :math:`u_1` string.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;x&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;cartesian&quot;</span> <span class="k">else</span> <span class="s2">&quot;r&quot;</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.u2_str"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.u2_str">[docs]</a>    <span class="k">def</span> <span class="nf">u2_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.u2_str">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.u2_str">[docs]</a>
+    <span class="k">def</span> <span class="nf">u2_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the :math:`u_2` string.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;y&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;cartesian&quot;</span> <span class="k">else</span> <span class="sa">r</span><span class="s2">&quot;$\theta$&quot;</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.u3_str"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.u3_str">[docs]</a>    <span class="k">def</span> <span class="nf">u3_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.u3_str">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.u3_str">[docs]</a>
+    <span class="k">def</span> <span class="nf">u3_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the :math:`u_3` string.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;z&quot;</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.continua"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.continua">[docs]</a>    <span class="k">def</span> <span class="nf">continua</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.continua">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.continua">[docs]</a>
+    <span class="k">def</span> <span class="nf">continua</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the continua in a dict with the continua names as keys.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_continua</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.parameters"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.parameters">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.parameters">[docs]</a>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the parameters in a dict with the parameter names as keys&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.has_background"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_background">[docs]</a>    <span class="k">def</span> <span class="nf">has_background</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.has_background">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_background">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_background</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` if background is present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;has_background&quot;</span><span class="p">]</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.has_efs"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_efs">[docs]</a>    <span class="k">def</span> <span class="nf">has_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.has_efs">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_efs">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` if eigenfunctions are present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;has_efs&quot;</span><span class="p">]</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.ef_grid"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.ef_grid">[docs]</a>    <span class="k">def</span> <span class="nf">ef_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.ef_grid">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.ef_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">ef_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the eigenfunction grid, None if eigenfunctions are not present.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_efs</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -333,49 +430,76 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_ef_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filereader</span><span class="o">.</span><span class="n">read_ef_grid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_grid</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.ef_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.ef_names">[docs]</a>    <span class="k">def</span> <span class="nf">ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.ef_names">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.ef_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieves the eigenfunction names, None if eigenfunctions are not present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ef_names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.has_derived_efs"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_derived_efs">[docs]</a>    <span class="k">def</span> <span class="nf">has_derived_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.has_derived_efs">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_derived_efs">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_derived_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` if derived eigenfunctions are present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;has_derived_efs&quot;</span><span class="p">]</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.derived_ef_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.derived_ef_names">[docs]</a>    <span class="k">def</span> <span class="nf">derived_ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.derived_ef_names">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.derived_ef_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">derived_ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieves the derived eigenfunction names, None if not present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;derived_ef_names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.has_ef_subset"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_ef_subset">[docs]</a>    <span class="k">def</span> <span class="nf">has_ef_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.has_ef_subset">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_ef_subset">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_ef_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` if the dataset contains a subset of the eigenfunctions.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ef_subset_used&quot;</span><span class="p">]</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.has_matrices"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_matrices">[docs]</a>    <span class="k">def</span> <span class="nf">has_matrices</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.has_matrices">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_matrices">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_matrices</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if matrices are present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;has_matrices&quot;</span><span class="p">]</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.has_eigenvectors"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_eigenvectors">[docs]</a>    <span class="k">def</span> <span class="nf">has_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.has_eigenvectors">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_eigenvectors">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if eigenvectors are present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;has_eigenvectors&quot;</span><span class="p">]</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.has_residuals"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">has_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.has_residuals">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.has_residuals">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if residuals are present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;has_residuals&quot;</span><span class="p">]</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSet.is_mhd"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.is_mhd">[docs]</a>    <span class="k">def</span> <span class="nf">is_mhd</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSet.is_mhd">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.is_mhd">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_mhd</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if the dataset is MHD.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;mhd&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;physics_type&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">equilibria</span><span class="p">[</span><span class="s2">&quot;B0&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet._ensure_compatibility"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet._ensure_compatibility">[docs]</a>    <span class="k">def</span> <span class="nf">_ensure_compatibility</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSet._ensure_compatibility">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet._ensure_compatibility">[docs]</a>
+    <span class="k">def</span> <span class="nf">_ensure_compatibility</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Makes sure that the dataset is backwards compatible with new changes.</span>
 <span class="sd">        Mainly used for older (&lt;2.0.0) datasets.</span>
@@ -388,7 +512,10 @@
                 <span class="n">pylboLogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;added &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; to equilibrium of &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">equilibria</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid_gauss</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_sound_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_sound_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_sound_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_sound_speed">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_sound_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sound_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the sound speed based on the equilibrium arrays,</span>
 <span class="sd">        given by :math:`c_s = \\sqrt{\\frac{\\gamma p_0}{\\rho_0}}`.</span>
@@ -410,7 +537,10 @@
         <span class="n">cs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">pressure</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">equilibria</span><span class="p">[</span><span class="s2">&quot;rho0&quot;</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">get_values</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">which_values</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_alfven_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_alfven_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_alfven_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_alfven_speed">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_alfven_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_alfven_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the Alfvén speed based on the equilibrium arrays,</span>
 <span class="sd">        given by :math:`c_A = \\sqrt{\\frac{B_0^2}{\\rho_0}}`.</span>
@@ -431,7 +561,10 @@
         <span class="n">cA</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">equilibria</span><span class="p">[</span><span class="s2">&quot;B0&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">equilibria</span><span class="p">[</span><span class="s2">&quot;rho0&quot;</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">get_values</span><span class="p">(</span><span class="n">cA</span><span class="p">,</span> <span class="n">which_values</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_tube_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_tube_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_tube_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_tube_speed">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_tube_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_tube_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the tube speed for a cylinder, given by</span>
 <span class="sd">        :math:`c_t = \\frac{c_s c_A}{\\sqrt{c_s^2 + c_A^2}}`.</span>
@@ -460,7 +593,10 @@
         <span class="n">ct</span> <span class="o">=</span> <span class="n">cs</span> <span class="o">*</span> <span class="n">cA</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">cs</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">cA</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">get_values</span><span class="p">(</span><span class="n">ct</span><span class="p">,</span> <span class="n">which_values</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_reynolds_nb"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_reynolds_nb">[docs]</a>    <span class="k">def</span> <span class="nf">get_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_reynolds_nb">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_reynolds_nb">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the Reynolds number, defined as</span>
 <span class="sd">        :math:`R_e = \\frac{ac_s}{\\eta}` where the slabsize is given by</span>
@@ -492,7 +628,10 @@
         <span class="n">Re</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">cs</span> <span class="o">/</span> <span class="n">eta</span>
         <span class="k">return</span> <span class="n">get_values</span><span class="p">(</span><span class="n">Re</span><span class="p">,</span> <span class="n">which_values</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_magnetic_reynolds_nb"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_magnetic_reynolds_nb">[docs]</a>    <span class="k">def</span> <span class="nf">get_magnetic_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_magnetic_reynolds_nb">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_magnetic_reynolds_nb">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_magnetic_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the magnetic Reynolds number, defined as</span>
 <span class="sd">        :math:`R_m = \\frac{ac_A}{\\eta}` where the slabsize is given by</span>
@@ -524,14 +663,20 @@
         <span class="n">Rm</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">cA</span> <span class="o">/</span> <span class="n">eta</span>
         <span class="k">return</span> <span class="n">get_values</span><span class="p">(</span><span class="n">Rm</span><span class="p">,</span> <span class="n">which_values</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_k0_squared"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_k0_squared">[docs]</a>    <span class="k">def</span> <span class="nf">get_k0_squared</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_k0_squared">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_k0_squared">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_k0_squared</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the squared wave number, defined as</span>
 <span class="sd">        :math:`k_0^2 = k_2^2 + k_3^2`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;k2&quot;</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;k3&quot;</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_matrix_B"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_matrix_B">[docs]</a>    <span class="k">def</span> <span class="nf">get_matrix_B</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_matrix_B">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_matrix_B">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_matrix_B</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieves the matrix B from the datfile.</span>
 
@@ -550,7 +695,10 @@
             <span class="k">raise</span> <span class="n">MatricesNotPresent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filereader</span><span class="o">.</span><span class="n">read_matrix_B</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_matrix_A"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_matrix_A">[docs]</a>    <span class="k">def</span> <span class="nf">get_matrix_A</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_matrix_A">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_matrix_A">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_matrix_A</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieves the matrix A from the datfile.</span>
 
@@ -569,7 +717,10 @@
             <span class="k">raise</span> <span class="n">MatricesNotPresent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filereader</span><span class="o">.</span><span class="n">read_matrix_A</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_eigenvectors"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_eigenvectors">[docs]</a>    <span class="k">def</span> <span class="nf">get_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_eigenvectors">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_eigenvectors">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieves the eigenvectors from the datfile.</span>
 
@@ -588,7 +739,10 @@
             <span class="k">raise</span> <span class="n">EigenvectorsNotPresent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filereader</span><span class="o">.</span><span class="n">read_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_residuals"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">get_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_residuals">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_residuals">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieves the residuals from the datfile.</span>
 
@@ -606,7 +760,10 @@
             <span class="k">raise</span> <span class="n">ResidualsNotPresent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filereader</span><span class="o">.</span><span class="n">read_residuals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet._get_eigenfunction_like"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet._get_eigenfunction_like">[docs]</a>    <span class="k">def</span> <span class="nf">_get_eigenfunction_like</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LegolasDataSet._get_eigenfunction_like">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet._get_eigenfunction_like">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_eigenfunction_like</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">ev_idxs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">getter_func</span><span class="p">:</span> <span class="n">Callable</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -642,7 +799,10 @@
             <span class="n">eigenfunctions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">efs</span>
         <span class="k">return</span> <span class="n">eigenfunctions</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_eigenfunctions"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">get_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ev_idxs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_eigenfunctions">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_eigenfunctions">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ev_idxs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the eigenfunctions based on given eigenvalue guesses or their</span>
 <span class="sd">        indices. An array will be returned where every item is a dictionary, containing</span>
@@ -682,7 +842,10 @@
             <span class="n">ef</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">derived_efs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">ef</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">efs</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_nearest_eigenvalues"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_nearest_eigenvalues">[docs]</a>    <span class="k">def</span> <span class="nf">get_nearest_eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_nearest_eigenvalues">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_nearest_eigenvalues">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_nearest_eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the eigenvalues nearest to a given guess based on</span>
 <span class="sd">        the distance between two points.</span>
@@ -703,7 +866,10 @@
         <span class="n">idxs</span><span class="p">,</span> <span class="n">eigenvals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_eigenvalues_at_distance</span><span class="p">(</span><span class="n">ev_guesses</span><span class="p">,</span> <span class="n">min_distance</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">eigenvals</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_eigenvalues_at_distance"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_eigenvalues_at_distance">[docs]</a>    <span class="k">def</span> <span class="nf">get_eigenvalues_at_distance</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_eigenvalues_at_distance">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_eigenvalues_at_distance">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_eigenvalues_at_distance</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">ev_guesses</span><span class="p">,</span> <span class="n">min_distance</span><span class="o">=</span><span class="mf">0.0</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -744,7 +910,10 @@
             <span class="n">eigenvals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">eigenvals</span></div>
 
-<div class="viewcode-block" id="LegolasDataSet.get_omega_max"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_omega_max">[docs]</a>    <span class="k">def</span> <span class="nf">get_omega_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">re_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LegolasDataSet.get_omega_max">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSet.get_omega_max">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_omega_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">re_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the maximum eigenvalue.</span>
 <span class="sd">        The real or imaginary part is used, depending on the `real` argument.</span>
@@ -766,10 +935,14 @@
 <span class="sd">        complex</span>
 <span class="sd">            The maximum eigenvalue.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">get_maximum_eigenvalue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">re_range</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">get_maximum_eigenvalue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">real</span><span class="p">,</span> <span class="n">re_range</span><span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="LegolasDataSeries"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries">[docs]</a><span class="k">class</span> <span class="nc">LegolasDataSeries</span><span class="p">(</span><span class="n">LegolasDataContainer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LegolasDataSeries">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries">[docs]</a>
+<span class="k">class</span> <span class="nc">LegolasDataSeries</span><span class="p">(</span><span class="n">LegolasDataContainer</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datfiles</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">LegolasDataSet</span><span class="p">(</span><span class="n">datfile</span><span class="p">)</span> <span class="k">for</span> <span class="n">datfile</span> <span class="ow">in</span> <span class="n">datfiles</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">geometry</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span>
@@ -792,7 +965,9 @@
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">)</span>
 
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.continua"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.continua">[docs]</a>    <span class="k">def</span> <span class="nf">continua</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.continua">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.continua">[docs]</a>
+    <span class="k">def</span> <span class="nf">continua</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the continua. Each key corresponds to a multiple Numpy arrays,</span>
 <span class="sd">        one for each dataset.</span>
@@ -807,8 +982,11 @@
                 <span class="n">_continua</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">continua</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
         <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">_continua</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.parameters"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.parameters">[docs]</a>    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.parameters">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.parameters">[docs]</a>
+    <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the parameters. Each key corresponds to multiple Numpy arrays,</span>
 <span class="sd">        one for each dataset.</span>
@@ -820,57 +998,90 @@
                 <span class="n">_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
         <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">_params</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.has_background"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_background">[docs]</a>    <span class="k">def</span> <span class="nf">has_background</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.has_background">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_background">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_background</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` if background is present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">has_background</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.has_efs"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_efs">[docs]</a>    <span class="k">def</span> <span class="nf">has_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.has_efs">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_efs">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` if eigenfunctions are present.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">has_efs</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.ef_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.ef_names">[docs]</a>    <span class="k">def</span> <span class="nf">ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.ef_names">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.ef_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the eigenfunction names.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">ef_names</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.ef_grid"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.ef_grid">[docs]</a>    <span class="k">def</span> <span class="nf">ef_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.ef_grid">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.ef_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">ef_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the eigenfunction grid.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">ef_grid</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.has_derived_efs"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_derived_efs">[docs]</a>    <span class="k">def</span> <span class="nf">has_derived_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.has_derived_efs">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_derived_efs">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_derived_efs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` at index `i` if eigenfunctions are present in dataset `i`.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">has_derived_efs</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.derived_ef_names"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.derived_ef_names">[docs]</a>    <span class="k">def</span> <span class="nf">derived_ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.derived_ef_names">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.derived_ef_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">derived_ef_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the derived eigenfunction names.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">derived_ef_names</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.has_ef_subset"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_ef_subset">[docs]</a>    <span class="k">def</span> <span class="nf">has_ef_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.has_ef_subset">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_ef_subset">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_ef_subset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` at index `i` if the `i`-th dataset contains a subset.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">has_ef_subset</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.has_matrices"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_matrices">[docs]</a>    <span class="k">def</span> <span class="nf">has_matrices</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.has_matrices">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_matrices">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_matrices</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` at index `i` if the `i`-th dataset contains matrices.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">has_matrices</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.has_eigenvectors"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_eigenvectors">[docs]</a>    <span class="k">def</span> <span class="nf">has_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.has_eigenvectors">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_eigenvectors">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` at index `i` if the `i`-th dataset contains eigenvectorst.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">has_eigenvectors</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="LegolasDataSeries.has_residuals"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">has_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasDataSeries.has_residuals">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.has_residuals">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns `True` at index `i` if the `i`-th dataset contains residuals.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">has_residuals</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSeries.get_sound_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_sound_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_sound_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSeries.get_sound_speed">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_sound_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sound_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the sound speed for the various datasets.</span>
 
@@ -888,7 +1099,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_sound_speed</span><span class="p">(</span><span class="n">which_values</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="LegolasDataSeries.get_alfven_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_alfven_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_alfven_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSeries.get_alfven_speed">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_alfven_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_alfven_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the Alfvén speed for the various datasets.</span>
 
@@ -906,7 +1120,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_alfven_speed</span><span class="p">(</span><span class="n">which_values</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="LegolasDataSeries.get_tube_speed"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_tube_speed">[docs]</a>    <span class="k">def</span> <span class="nf">get_tube_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSeries.get_tube_speed">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_tube_speed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_tube_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the tube speed for the various datasets.</span>
 
@@ -925,7 +1142,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_tube_speed</span><span class="p">(</span><span class="n">which_values</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="LegolasDataSeries.get_reynolds_nb"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_reynolds_nb">[docs]</a>    <span class="k">def</span> <span class="nf">get_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSeries.get_reynolds_nb">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_reynolds_nb">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the Reynolds number for the various datasets.</span>
 
@@ -944,7 +1164,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_reynolds_nb</span><span class="p">(</span><span class="n">which_values</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="LegolasDataSeries.get_magnetic_reynolds_nb"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_magnetic_reynolds_nb">[docs]</a>    <span class="k">def</span> <span class="nf">get_magnetic_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSeries.get_magnetic_reynolds_nb">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_magnetic_reynolds_nb">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_magnetic_reynolds_nb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">which_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the magnetic Reynolds number for the various datasets.</span>
 
@@ -965,7 +1188,10 @@
             <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">get_magnetic_reynolds_nb</span><span class="p">(</span><span class="n">which_values</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">]</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSeries.get_k0_squared"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_k0_squared">[docs]</a>    <span class="k">def</span> <span class="nf">get_k0_squared</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasDataSeries.get_k0_squared">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_k0_squared">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_k0_squared</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the squared wave number for the various datasets.</span>
 
@@ -977,7 +1203,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_k0_squared</span><span class="p">()</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasDataSeries.get_omega_max"><a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_omega_max">[docs]</a>    <span class="k">def</span> <span class="nf">get_omega_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LegolasDataSeries.get_omega_max">
+<a class="viewcode-back" href="../../autoapi/pylbo/data_containers/index.html#pylbo.data_containers.LegolasDataSeries.get_omega_max">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_omega_max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the maximum of the real or imaginary part of the spectrum for</span>
 <span class="sd">        the various datasets.</span>
@@ -995,7 +1224,9 @@
 <span class="sd">            of the eigenvalue that has the largest real or imaginary part.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_omega_max</span><span class="p">(</span><span class="n">real</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div></div>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds</span><span class="o">.</span><span class="n">get_omega_max</span><span class="p">(</span><span class="n">real</span><span class="p">)</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="p">])</span></div>
+</div>
+
 </pre></div>
 
            </div>

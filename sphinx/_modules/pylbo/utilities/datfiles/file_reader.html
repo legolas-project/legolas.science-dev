@@ -11,11 +11,11 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -93,7 +93,9 @@
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">transform_to_list</span><span class="p">,</span> <span class="n">transform_to_numpy</span>
 
 
-<div class="viewcode-block" id="LegolasFileReader"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader">[docs]</a><span class="k">class</span> <span class="nc">LegolasFileReader</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasFileReader">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader">[docs]</a>
+<span class="k">class</span> <span class="nc">LegolasFileReader</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datfile</span><span class="p">:</span> <span class="n">PathLike</span><span class="p">,</span> <span class="n">byte_order</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;native&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_byte_order</span> <span class="o">=</span> <span class="n">byte_order</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">datfile</span> <span class="o">=</span> <span class="n">datfile</span>
@@ -102,7 +104,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">legolas_version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_legolas_version</span><span class="p">(</span><span class="n">istream</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span> <span class="o">=</span> <span class="n">istream</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
 
-<div class="viewcode-block" id="LegolasFileReader._read_legolas_version"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader._read_legolas_version">[docs]</a>    <span class="k">def</span> <span class="nf">_read_legolas_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VersionHandler</span><span class="p">:</span>
+<div class="viewcode-block" id="LegolasFileReader._read_legolas_version">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader._read_legolas_version">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_legolas_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">VersionHandler</span><span class="p">:</span>
         <span class="n">version_name</span> <span class="o">=</span> <span class="n">read_string_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;legolas_version&quot;</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">version_name</span> <span class="o">==</span> <span class="s2">&quot;legolas_version&quot;</span><span class="p">:</span>
             <span class="c1"># formatted version is character of length 10</span>
@@ -116,7 +120,10 @@
             <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.0.0&quot;</span>
         <span class="k">return</span> <span class="n">VersionHandler</span><span class="p">(</span><span class="n">version</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.get_header"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.get_header">[docs]</a>    <span class="k">def</span> <span class="nf">get_header</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LegolasHeader</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.get_header">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.get_header">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_header</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LegolasHeader</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">legolas_version</span> <span class="o">&lt;</span> <span class="s2">&quot;2.0&quot;</span><span class="p">:</span>
@@ -124,14 +131,20 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">LegolasHeader</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">legolas_version</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_grid"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_grid">[docs]</a>    <span class="k">def</span> <span class="nf">read_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_grid">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">grid</span> <span class="o">=</span> <span class="n">read_float_from_istream</span><span class="p">(</span>
                 <span class="n">istream</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;gridpoints&quot;</span><span class="p">],</span> <span class="n">offset</span><span class="o">=</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">][</span><span class="s2">&quot;grid&quot;</span><span class="p">]</span>
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_gaussian_grid"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_gaussian_grid">[docs]</a>    <span class="k">def</span> <span class="nf">read_gaussian_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_gaussian_grid">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_gaussian_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_gaussian_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">grid</span> <span class="o">=</span> <span class="n">read_float_from_istream</span><span class="p">(</span>
                 <span class="n">istream</span><span class="p">,</span>
@@ -140,7 +153,10 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_ef_grid"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_ef_grid">[docs]</a>    <span class="k">def</span> <span class="nf">read_ef_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_ef_grid">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_ef_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_ef_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">grid</span> <span class="o">=</span> <span class="n">read_float_from_istream</span><span class="p">(</span>
                 <span class="n">istream</span><span class="p">,</span>
@@ -149,7 +165,10 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_equilibrium_arrays"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_equilibrium_arrays">[docs]</a>    <span class="k">def</span> <span class="nf">read_equilibrium_arrays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_equilibrium_arrays">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_equilibrium_arrays">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_equilibrium_arrays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">arrays</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">][</span><span class="s2">&quot;equilibrium_arrays&quot;</span><span class="p">])</span>
@@ -160,7 +179,10 @@
                 <span class="p">)</span>
         <span class="k">return</span> <span class="n">arrays</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_eigenvalues"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_eigenvalues">[docs]</a>    <span class="k">def</span> <span class="nf">read_eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_eigenvalues">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_eigenvalues">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">eigenvalues</span> <span class="o">=</span> <span class="n">read_complex_from_istream</span><span class="p">(</span>
                 <span class="n">istream</span><span class="p">,</span>
@@ -170,7 +192,10 @@
         <span class="c1"># ensure we have a list, also for 1 eigenvalue</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">transform_to_list</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_eigenvectors"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_eigenvectors">[docs]</a>    <span class="k">def</span> <span class="nf">read_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_eigenvectors">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_eigenvectors">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_eigenvectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">offsets</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="s2">&quot;offsets&quot;</span><span class="p">]</span>
             <span class="n">eigvec_length</span> <span class="o">=</span> <span class="n">offsets</span><span class="p">[</span><span class="s2">&quot;eigenvector_length&quot;</span><span class="p">]</span>
@@ -186,7 +211,10 @@
             <span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_residuals"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_residuals">[docs]</a>    <span class="k">def</span> <span class="nf">read_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_residuals">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_residuals">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
             <span class="n">residuals</span> <span class="o">=</span> <span class="n">read_float_from_istream</span><span class="p">(</span>
                 <span class="n">istream</span><span class="p">,</span>
@@ -195,7 +223,10 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">residuals</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_matrix_A"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_matrix_A">[docs]</a>    <span class="k">def</span> <span class="nf">read_matrix_A</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_matrix_A">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_matrix_A">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_matrix_A</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
@@ -213,7 +244,10 @@
             <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_matrix_B"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_matrix_B">[docs]</a>    <span class="k">def</span> <span class="nf">read_matrix_B</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_matrix_B">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_matrix_B">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_matrix_B</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">istream</span><span class="p">:</span>
@@ -230,7 +264,10 @@
             <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_eigenfunction"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_eigenfunction">[docs]</a>    <span class="k">def</span> <span class="nf">read_eigenfunction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">,</span> <span class="n">ev_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_eigenfunction">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_eigenfunction">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_eigenfunction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">,</span> <span class="n">ev_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="c1"># extract corresponding index in the array with written indices</span>
         <span class="n">ef_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_ef_index</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">ev_index</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ef_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -242,7 +279,10 @@
             <span class="n">state_vector</span><span class="o">=</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ef_names&quot;</span><span class="p">],</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader.read_derived_eigenfunction"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_derived_eigenfunction">[docs]</a>    <span class="k">def</span> <span class="nf">read_derived_eigenfunction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">,</span> <span class="n">ev_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader.read_derived_eigenfunction">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader.read_derived_eigenfunction">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_derived_eigenfunction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">,</span> <span class="n">ev_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="n">ef_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_ef_index</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">ev_index</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ef_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -253,7 +293,10 @@
             <span class="n">state_vector</span><span class="o">=</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;derived_ef_names&quot;</span><span class="p">],</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader._read_eigenfunction_like"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader._read_eigenfunction_like">[docs]</a>    <span class="k">def</span> <span class="nf">_read_eigenfunction_like</span><span class="p">(</span>
+
+<div class="viewcode-block" id="LegolasFileReader._read_eigenfunction_like">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader._read_eigenfunction_like">[docs]</a>
+    <span class="k">def</span> <span class="nf">_read_eigenfunction_like</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">,</span>
         <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -278,14 +321,19 @@
                 <span class="p">)</span>
         <span class="k">return</span> <span class="n">eigenfunctions</span></div>
 
-<div class="viewcode-block" id="LegolasFileReader._get_ef_index"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader._get_ef_index">[docs]</a>    <span class="k">def</span> <span class="nf">_get_ef_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">,</span> <span class="n">ev_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="LegolasFileReader._get_ef_index">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/file_reader/index.html#pylbo.utilities.datfiles.file_reader.LegolasFileReader._get_ef_index">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_ef_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">LegolasHeader</span><span class="p">,</span> <span class="n">ev_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="c1"># extract eigenfunction index from the array with written indices</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="p">((</span><span class="n">ef_index</span><span class="p">,),)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">header</span><span class="p">[</span><span class="s2">&quot;ef_written_idxs&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ev_index</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="n">pylboLogger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;selected eigenvalue has no eigenfunctions!&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="kc">None</span>
-        <span class="k">return</span> <span class="n">ef_index</span></div></div>
+        <span class="k">return</span> <span class="n">ef_index</span></div>
+</div>
+
 </pre></div>
 
            </div>

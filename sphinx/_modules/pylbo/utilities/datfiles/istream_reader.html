@@ -11,11 +11,11 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -79,34 +79,60 @@
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">BinaryIO</span><span class="p">,</span> <span class="n">Union</span>
 
-<div class="viewcode-block" id="DTYPES"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.DTYPES">[docs]</a><span class="n">DTYPES</span> <span class="o">=</span> <span class="p">{</span>
+<div class="viewcode-block" id="DTYPES">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.DTYPES">[docs]</a>
+<span class="n">DTYPES</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;str&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
     <span class="s2">&quot;int&quot;</span><span class="p">:</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span>
     <span class="s2">&quot;bool&quot;</span><span class="p">:</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span>
     <span class="s2">&quot;float&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
     <span class="s2">&quot;complex&quot;</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
 <span class="p">}</span></div>
-<div class="viewcode-block" id="NP_DTYPES"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.NP_DTYPES">[docs]</a><span class="n">NP_DTYPES</span> <span class="o">=</span> <span class="p">{</span>
+
+<div class="viewcode-block" id="NP_DTYPES">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.NP_DTYPES">[docs]</a>
+<span class="n">NP_DTYPES</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;str&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="s2">&quot;int&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="s2">&quot;bool&quot;</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
     <span class="s2">&quot;float&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
     <span class="s2">&quot;complex&quot;</span><span class="p">:</span> <span class="nb">complex</span><span class="p">,</span>
 <span class="p">}</span></div>
-<div class="viewcode-block" id="BYTE_ORDERS"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.BYTE_ORDERS">[docs]</a><span class="n">BYTE_ORDERS</span> <span class="o">=</span> <span class="p">{</span>
+
+<div class="viewcode-block" id="BYTE_ORDERS">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.BYTE_ORDERS">[docs]</a>
+<span class="n">BYTE_ORDERS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;little&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;big&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;native&quot;</span><span class="p">:</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span>
 <span class="p">}</span></div>
 
-<div class="viewcode-block" id="SIZE_CHAR"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_CHAR">[docs]</a><span class="n">SIZE_CHAR</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;str&quot;</span><span class="p">])</span></div>
-<div class="viewcode-block" id="SIZE_INT"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_INT">[docs]</a><span class="n">SIZE_INT</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;int&quot;</span><span class="p">])</span></div>
-<div class="viewcode-block" id="SIZE_BOOL"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_BOOL">[docs]</a><span class="n">SIZE_BOOL</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;bool&quot;</span><span class="p">])</span></div>
-<div class="viewcode-block" id="SIZE_DOUBLE"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_DOUBLE">[docs]</a><span class="n">SIZE_DOUBLE</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;float&quot;</span><span class="p">])</span></div>
-<div class="viewcode-block" id="SIZE_COMPLEX"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_COMPLEX">[docs]</a><span class="n">SIZE_COMPLEX</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;complex&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="SIZE_CHAR">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_CHAR">[docs]</a>
+<span class="n">SIZE_CHAR</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;str&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="SIZE_INT">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_INT">[docs]</a>
+<span class="n">SIZE_INT</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;int&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="SIZE_BOOL">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_BOOL">[docs]</a>
+<span class="n">SIZE_BOOL</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;bool&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="SIZE_DOUBLE">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_DOUBLE">[docs]</a>
+<span class="n">SIZE_DOUBLE</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;float&quot;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="SIZE_COMPLEX">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.SIZE_COMPLEX">[docs]</a>
+<span class="n">SIZE_COMPLEX</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">DTYPES</span><span class="p">[</span><span class="s2">&quot;complex&quot;</span><span class="p">])</span></div>
 
 
-<div class="viewcode-block" id="requires_version"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.requires_version">[docs]</a><span class="k">def</span> <span class="nf">requires_version</span><span class="p">(</span><span class="n">version_needed</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="requires_version">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.requires_version">[docs]</a>
+<span class="k">def</span> <span class="nf">requires_version</span><span class="p">(</span><span class="n">version_needed</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">check_version</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
         <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
         <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -119,7 +145,10 @@
     <span class="k">return</span> <span class="n">check_version</span></div>
 
 
-<div class="viewcode-block" id="read_string_from_istream"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_string_from_istream">[docs]</a><span class="k">def</span> <span class="nf">read_string_from_istream</span><span class="p">(</span>
+
+<div class="viewcode-block" id="read_string_from_istream">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_string_from_istream">[docs]</a>
+<span class="k">def</span> <span class="nf">read_string_from_istream</span><span class="p">(</span>
     <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">,</span>
     <span class="n">length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -159,7 +188,10 @@
     <span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="read_int_from_istream"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_int_from_istream">[docs]</a><span class="k">def</span> <span class="nf">read_int_from_istream</span><span class="p">(</span>
+
+<div class="viewcode-block" id="read_int_from_istream">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_int_from_istream">[docs]</a>
+<span class="k">def</span> <span class="nf">read_int_from_istream</span><span class="p">(</span>
     <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">,</span>
     <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -193,7 +225,10 @@
     <span class="k">return</span> <span class="n">hdr</span></div>
 
 
-<div class="viewcode-block" id="read_boolean_from_istream"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_boolean_from_istream">[docs]</a><span class="k">def</span> <span class="nf">read_boolean_from_istream</span><span class="p">(</span>
+
+<div class="viewcode-block" id="read_boolean_from_istream">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_boolean_from_istream">[docs]</a>
+<span class="k">def</span> <span class="nf">read_boolean_from_istream</span><span class="p">(</span>
     <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">,</span>
     <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">byte_order</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;native&quot;</span><span class="p">,</span>
@@ -218,7 +253,10 @@
     <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">read_int_from_istream</span><span class="p">(</span><span class="n">istream</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">byte_order</span><span class="o">=</span><span class="n">byte_order</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="read_float_from_istream"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_float_from_istream">[docs]</a><span class="k">def</span> <span class="nf">read_float_from_istream</span><span class="p">(</span>
+
+<div class="viewcode-block" id="read_float_from_istream">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_float_from_istream">[docs]</a>
+<span class="k">def</span> <span class="nf">read_float_from_istream</span><span class="p">(</span>
     <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">,</span>
     <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -252,7 +290,10 @@
     <span class="k">return</span> <span class="n">hdr</span></div>
 
 
-<div class="viewcode-block" id="read_complex_from_istream"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_complex_from_istream">[docs]</a><span class="k">def</span> <span class="nf">read_complex_from_istream</span><span class="p">(</span>
+
+<div class="viewcode-block" id="read_complex_from_istream">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_complex_from_istream">[docs]</a>
+<span class="k">def</span> <span class="nf">read_complex_from_istream</span><span class="p">(</span>
     <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">,</span>
     <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -287,7 +328,10 @@
     <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">reals</span><span class="p">,</span> <span class="n">imags</span><span class="p">)])</span></div>
 
 
-<div class="viewcode-block" id="read_mixed_from_istream"><a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_mixed_from_istream">[docs]</a><span class="k">def</span> <span class="nf">read_mixed_from_istream</span><span class="p">(</span>
+
+<div class="viewcode-block" id="read_mixed_from_istream">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/utilities/datfiles/istream_reader/index.html#pylbo.utilities.datfiles.istream_reader.read_mixed_from_istream">[docs]</a>
+<span class="k">def</span> <span class="nf">read_mixed_from_istream</span><span class="p">(</span>
     <span class="n">istream</span><span class="p">:</span> <span class="n">BinaryIO</span><span class="p">,</span>
     <span class="n">fmt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -324,6 +368,7 @@
         <span class="n">istream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span>
     <span class="n">fmt</span> <span class="o">=</span> <span class="n">BYTE_ORDERS</span><span class="p">[</span><span class="n">byte_order</span><span class="p">]</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">*</span> <span class="n">fmt</span>
     <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">fmt</span><span class="p">,</span> <span class="n">istream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="n">fmt</span><span class="p">)))</span></div>
+
 </pre></div>
 
            </div>

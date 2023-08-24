@@ -11,11 +11,11 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -79,7 +79,9 @@
 <span class="kn">import</span> <span class="nn">matplotlib.axes</span>
 <span class="kn">from</span> <span class="nn">pylbo.utilities.toolbox</span> <span class="kn">import</span> <span class="n">get_all_eigenfunction_names</span>
 
-<div class="viewcode-block" id="_BACKGROUND_NAME_MAPPING"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils._BACKGROUND_NAME_MAPPING">[docs]</a><span class="n">_BACKGROUND_NAME_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+<div class="viewcode-block" id="_BACKGROUND_NAME_MAPPING">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils._BACKGROUND_NAME_MAPPING">[docs]</a>
+<span class="n">_BACKGROUND_NAME_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;rho0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\rho_0$&quot;</span><span class="p">,</span>
     <span class="s2">&quot;drho0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\partial \rho_0$&quot;</span><span class="p">,</span>
     <span class="s2">&quot;T0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$T_0$&quot;</span><span class="p">,</span>
@@ -125,7 +127,10 @@
 <span class="p">}</span></div>
 
 
-<div class="viewcode-block" id="refresh_plot"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.refresh_plot">[docs]</a><span class="k">def</span> <span class="nf">refresh_plot</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="nb">callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">callable</span><span class="p">:</span>
+
+<div class="viewcode-block" id="refresh_plot">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.refresh_plot">[docs]</a>
+<span class="k">def</span> <span class="nf">refresh_plot</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="nb">callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">callable</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Simple decorator, when a routine is wrapped with this the plot will be</span>
 <span class="sd">    cleared and redrawn on calling it.</span>
@@ -142,7 +147,10 @@
     <span class="k">return</span> <span class="n">refresh</span></div>
 
 
-<div class="viewcode-block" id="ensure_attr_set"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.ensure_attr_set">[docs]</a><span class="k">def</span> <span class="nf">ensure_attr_set</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ensure_attr_set">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.ensure_attr_set">[docs]</a>
+<span class="k">def</span> <span class="nf">ensure_attr_set</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">attr</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Ensures that a given attribute is set.</span>
 
@@ -162,7 +170,10 @@
         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;attribute &#39;</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">&#39; not set for </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="ef_name_to_latex"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.ef_name_to_latex">[docs]</a><span class="k">def</span> <span class="nf">ef_name_to_latex</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ef_name_to_latex">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.ef_name_to_latex">[docs]</a>
+<span class="k">def</span> <span class="nf">ef_name_to_latex</span><span class="p">(</span>
     <span class="n">ef_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">geometry</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Cartesian&quot;</span><span class="p">,</span> <span class="n">real_part</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -203,7 +214,10 @@
     <span class="k">return</span> <span class="n">latex_name</span></div>
 
 
-<div class="viewcode-block" id="background_name_to_latex"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.background_name_to_latex">[docs]</a><span class="k">def</span> <span class="nf">background_name_to_latex</span><span class="p">(</span><span class="n">bg_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+<div class="viewcode-block" id="background_name_to_latex">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.background_name_to_latex">[docs]</a>
+<span class="k">def</span> <span class="nf">background_name_to_latex</span><span class="p">(</span><span class="n">bg_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Maps the background name to latex formatting.</span>
 
@@ -221,7 +235,10 @@
     <span class="k">return</span> <span class="n">_BACKGROUND_NAME_MAPPING</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">bg_name</span><span class="p">,</span> <span class="n">bg_name</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="validate_ef_name"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.validate_ef_name">[docs]</a><span class="k">def</span> <span class="nf">validate_ef_name</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ef_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+<div class="viewcode-block" id="validate_ef_name">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.validate_ef_name">[docs]</a>
+<span class="k">def</span> <span class="nf">validate_ef_name</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ef_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the validated eigenfunction name.</span>
 
@@ -252,7 +269,10 @@
     <span class="k">return</span> <span class="n">ef_name</span></div>
 
 
-<div class="viewcode-block" id="_validate_textbox_location"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils._validate_textbox_location">[docs]</a><span class="k">def</span> <span class="nf">_validate_textbox_location</span><span class="p">(</span><span class="n">loc</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+<div class="viewcode-block" id="_validate_textbox_location">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils._validate_textbox_location">[docs]</a>
+<span class="k">def</span> <span class="nf">_validate_textbox_location</span><span class="p">(</span><span class="n">loc</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Validates the location of the textbox.</span>
 
@@ -279,7 +299,10 @@
     <span class="k">return</span> <span class="n">loc</span></div>
 
 
-<div class="viewcode-block" id="_get_textbox_axes_coords"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils._get_textbox_axes_coords">[docs]</a><span class="k">def</span> <span class="nf">_get_textbox_axes_coords</span><span class="p">(</span><span class="n">loc</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">outside</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+
+<div class="viewcode-block" id="_get_textbox_axes_coords">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils._get_textbox_axes_coords">[docs]</a>
+<span class="k">def</span> <span class="nf">_get_textbox_axes_coords</span><span class="p">(</span><span class="n">loc</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">outside</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the coordinates of the textbox.</span>
 
@@ -320,7 +343,10 @@
     <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span></div>
 
 
-<div class="viewcode-block" id="add_textbox_to_axes"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.add_textbox_to_axes">[docs]</a><span class="k">def</span> <span class="nf">add_textbox_to_axes</span><span class="p">(</span>
+
+<div class="viewcode-block" id="add_textbox_to_axes">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.add_textbox_to_axes">[docs]</a>
+<span class="k">def</span> <span class="nf">add_textbox_to_axes</span><span class="p">(</span>
     <span class="n">ax</span><span class="p">:</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
     <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
@@ -385,7 +411,10 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="add_axis_label"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.add_axis_label">[docs]</a><span class="k">def</span> <span class="nf">add_axis_label</span><span class="p">(</span>
+
+<div class="viewcode-block" id="add_axis_label">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/utils/index.html#pylbo.visualisation.utils.add_axis_label">[docs]</a>
+<span class="k">def</span> <span class="nf">add_axis_label</span><span class="p">(</span>
     <span class="n">ax</span><span class="p">:</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
     <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">loc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;top left&quot;</span><span class="p">,</span>
@@ -488,6 +517,7 @@
         <span class="n">color</span><span class="o">=</span><span class="n">textcolor</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span></div>
+
 </pre></div>
 
            </div>

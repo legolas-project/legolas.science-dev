@@ -11,11 +11,11 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -98,7 +98,9 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="get_artist_data"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.get_artist_data">[docs]</a><span class="k">def</span> <span class="nf">get_artist_data</span><span class="p">(</span><span class="n">artist</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">Artist</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<div class="viewcode-block" id="get_artist_data">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.get_artist_data">[docs]</a>
+<span class="k">def</span> <span class="nf">get_artist_data</span><span class="p">(</span><span class="n">artist</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">Artist</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the (x, y) coordinates of a given artist.</span>
 
@@ -123,7 +125,10 @@
     <span class="k">return</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span></div>
 
 
-<div class="viewcode-block" id="EigenfunctionInterface"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface">[docs]</a><span class="k">class</span> <span class="nc">EigenfunctionInterface</span><span class="p">:</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface">[docs]</a>
+<span class="k">class</span> <span class="nc">EigenfunctionInterface</span><span class="p">:</span>
     <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">spec_axis</span><span class="p">):</span>
@@ -149,7 +154,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_draw_resonances</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">savedir</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="EigenfunctionInterface._check_data_is_present"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._check_data_is_present">[docs]</a>    <span class="k">def</span> <span class="nf">_check_data_is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="EigenfunctionInterface._check_data_is_present">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._check_data_is_present">[docs]</a>
+    <span class="k">def</span> <span class="nf">_check_data_is_present</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if the required data is present to draw for example</span>
 <span class="sd">        eigenfunctions, is overloaded in subclasses.</span>
@@ -159,7 +166,10 @@
                 <span class="s2">&quot;None of the given datfiles has eigenfunctions written to it.&quot;</span>
             <span class="p">)</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._artist_has_valid_attributes"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._artist_has_valid_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">_artist_has_valid_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._artist_has_valid_attributes">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._artist_has_valid_attributes">[docs]</a>
+    <span class="k">def</span> <span class="nf">_artist_has_valid_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if a given event has valid attributes, this prevents triggering the</span>
 <span class="sd">        interface when clicking on legend items, for example.</span>
@@ -185,7 +195,10 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._clear_figure_and_selection"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._clear_figure_and_selection">[docs]</a>    <span class="k">def</span> <span class="nf">_clear_figure_and_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._clear_figure_and_selection">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._clear_figure_and_selection">[docs]</a>
+    <span class="k">def</span> <span class="nf">_clear_figure_and_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Clears the current figure, clears the dictionary of selected eigenvalues.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -196,13 +209,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_display_tooltip</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._switch_real_and_imaginary_part"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._switch_real_and_imaginary_part">[docs]</a>    <span class="k">def</span> <span class="nf">_switch_real_and_imaginary_part</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._switch_real_and_imaginary_part">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._switch_real_and_imaginary_part">[docs]</a>
+    <span class="k">def</span> <span class="nf">_switch_real_and_imaginary_part</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Switches between the real and imaginary part of a given function.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._select_next_function"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._select_next_function">[docs]</a>    <span class="k">def</span> <span class="nf">_select_next_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._select_next_function">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._select_next_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">_select_next_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Increments the index of the currently selected function by 1.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -210,7 +229,10 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span> <span class="o">=</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._select_previous_function"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._select_previous_function">[docs]</a>    <span class="k">def</span> <span class="nf">_select_previous_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._select_previous_function">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._select_previous_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">_select_previous_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Decrements the index of the currently selected function by 1.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -218,14 +240,20 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._retransform_functions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._retransform_functions">[docs]</a>    <span class="k">def</span> <span class="nf">_retransform_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._retransform_functions">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._retransform_functions">[docs]</a>
+    <span class="k">def</span> <span class="nf">_retransform_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Toggles a retransform of a function, for example an eigenfunction</span>
 <span class="sd">        :math:`v_r \\leftrightarrow rv_r`&quot;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_retransform</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retransform</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._print_selected_eigenvalues"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._print_selected_eigenvalues">[docs]</a>    <span class="k">def</span> <span class="nf">_print_selected_eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._print_selected_eigenvalues">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._print_selected_eigenvalues">[docs]</a>
+    <span class="k">def</span> <span class="nf">_print_selected_eigenvalues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Prints all selected eigenvalues to the console as an array.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -236,7 +264,10 @@
             <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">points</span><span class="o">.</span><span class="n">keys</span><span class="p">()],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
             <span class="n">pylboLogger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idxs</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._save_eigenvalue_selection"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._save_eigenvalue_selection">[docs]</a>    <span class="k">def</span> <span class="nf">_save_eigenvalue_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._save_eigenvalue_selection">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._save_eigenvalue_selection">[docs]</a>
+    <span class="k">def</span> <span class="nf">_save_eigenvalue_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves all selected eigenvalues and their eigenfunctions as a list of</span>
 <span class="sd">        dictionaries in a .npy file. Files can be loaded with the numpy load function.</span>
@@ -260,7 +291,10 @@
             <span class="p">)</span>
             <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._save_selection_indices"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._save_selection_indices">[docs]</a>    <span class="k">def</span> <span class="nf">_save_selection_indices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._save_selection_indices">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._save_selection_indices">[docs]</a>
+    <span class="k">def</span> <span class="nf">_save_selection_indices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the indices of all selected eigenvalues as an array in a .npy file.</span>
 <span class="sd">        Files can be loaded with the numpy load function.</span>
@@ -287,7 +321,10 @@
             <span class="p">)</span>
             <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._print_nzeroes"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._print_nzeroes">[docs]</a>    <span class="k">def</span> <span class="nf">_print_nzeroes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._print_nzeroes">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._print_nzeroes">[docs]</a>
+    <span class="k">def</span> <span class="nf">_print_nzeroes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Counts and prints the number of zeroes of the eigenfunctions for all selected</span>
 <span class="sd">        eigenvalues on the plot, together with eigvals.</span>
@@ -314,7 +351,10 @@
                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">[</span><span class="n">idxs</span><span class="p">],</span><span class="w"> </span><span class="n">nzeroes</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="p">)</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._get_label"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_label">[docs]</a>    <span class="k">def</span> <span class="nf">_get_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._get_label">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_label">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the label used in the legend. In case of a data series, the datfile</span>
 <span class="sd">        name is prepended.</span>
@@ -338,21 +378,33 @@
             <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">label</span></div>
 
+
     <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
-<div class="viewcode-block" id="EigenfunctionInterface._get_title"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_title">[docs]</a>    <span class="k">def</span> <span class="nf">_get_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="EigenfunctionInterface._get_title">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_title">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates the title of a given plot, has to be overridden in a subclass.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface.get_selected_idxs"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.get_selected_idxs">[docs]</a>    <span class="k">def</span> <span class="nf">get_selected_idxs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">LegolasDataContainer</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">Artist</span><span class="p">]]:</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface.get_selected_idxs">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.get_selected_idxs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_selected_idxs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">LegolasDataContainer</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">Artist</span><span class="p">]]:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface.get_name_of_drawn_eigenfunction"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.get_name_of_drawn_eigenfunction">[docs]</a>    <span class="k">def</span> <span class="nf">get_name_of_drawn_eigenfunction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface.get_name_of_drawn_eigenfunction">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.get_name_of_drawn_eigenfunction">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_name_of_drawn_eigenfunction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span><span class="p">]</span></div>
 
+
     <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
-<div class="viewcode-block" id="EigenfunctionInterface.update_plot"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.update_plot">[docs]</a>    <span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="EigenfunctionInterface.update_plot">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.update_plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Updates the plot when an event is triggered, clears and then redraws</span>
 <span class="sd">        the functions. Rescaling of the axes is done automatically.</span>
@@ -360,7 +412,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface.on_point_pick"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.on_point_pick">[docs]</a>    <span class="k">def</span> <span class="nf">on_point_pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface.on_point_pick">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.on_point_pick">[docs]</a>
+    <span class="k">def</span> <span class="nf">on_point_pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determines what happens when an eigenvalue is clicked.</span>
 
@@ -383,7 +438,10 @@
         <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
         <span class="n">event</span><span class="o">.</span><span class="n">artist</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface.on_key_press"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.on_key_press">[docs]</a>    <span class="k">def</span> <span class="nf">on_key_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface.on_key_press">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.on_key_press">[docs]</a>
+    <span class="k">def</span> <span class="nf">on_key_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determines what happens when a key is pressed.</span>
 
@@ -418,7 +476,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">update_plot</span><span class="p">()</span>
         <span class="n">event</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface.on_left_click"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.on_left_click">[docs]</a>    <span class="k">def</span> <span class="nf">on_left_click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface.on_left_click">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.on_left_click">[docs]</a>
+    <span class="k">def</span> <span class="nf">on_left_click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determines what happens when left-clicking an eigenvalue.</span>
 
@@ -450,7 +511,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">associated_ds</span><span class="p">:</span> <span class="n">items</span><span class="p">})</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_plot</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface.on_right_click"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.on_right_click">[docs]</a>    <span class="k">def</span> <span class="nf">on_right_click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface.on_right_click">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.on_right_click">[docs]</a>
+    <span class="k">def</span> <span class="nf">on_right_click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Determines what happens when right-clicking an eigenvalue.</span>
 
@@ -470,7 +534,10 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">associated_ds</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">update_plot</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._get_clicked_point_data"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_clicked_point_data">[docs]</a>    <span class="k">def</span> <span class="nf">_get_clicked_point_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._get_clicked_point_data">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_clicked_point_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">_get_clicked_point_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieves the index (in the eigenvalue array), x data coordinate and y data</span>
 <span class="sd">        coordinate of the eigenvalue nearest to the clicked point.</span>
@@ -504,7 +571,10 @@
             <span class="n">idx</span> <span class="o">=</span> <span class="n">idxs</span><span class="p">[</span><span class="n">distances</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
         <span class="k">return</span> <span class="n">idx</span><span class="p">,</span> <span class="n">xdata</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">ydata</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._selected_point_has_eigenfunctions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._selected_point_has_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">_selected_point_has_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._selected_point_has_eigenfunctions">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._selected_point_has_eigenfunctions">[docs]</a>
+    <span class="k">def</span> <span class="nf">_selected_point_has_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks if the selected index has eigenfunctions associated with it, in the</span>
 <span class="sd">        case of for example eigenfunction subsets this is not guaranteed.</span>
@@ -529,7 +599,10 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">point_has_efs</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._toggle_eigenfunction_subset_radius"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._toggle_eigenfunction_subset_radius">[docs]</a>    <span class="k">def</span> <span class="nf">_toggle_eigenfunction_subset_radius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._toggle_eigenfunction_subset_radius">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._toggle_eigenfunction_subset_radius">[docs]</a>
+    <span class="k">def</span> <span class="nf">_toggle_eigenfunction_subset_radius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">LegolasDataSet</span><span class="p">):</span>
             <span class="k">return</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">has_ef_subset</span><span class="p">:</span>
@@ -558,7 +631,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._mark_points_without_data_written"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._mark_points_without_data_written">[docs]</a>    <span class="k">def</span> <span class="nf">_mark_points_without_data_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._mark_points_without_data_written">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._mark_points_without_data_written">[docs]</a>
+    <span class="k">def</span> <span class="nf">_mark_points_without_data_written</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        For dataseries, it is possible that not all datasets in the series</span>
 <span class="sd">        have eigenfunctions associated with them. This routine will toggle a change</span>
@@ -579,7 +655,10 @@
                     <span class="k">else</span><span class="p">:</span>
                         <span class="n">child</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._display_tooltip"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._display_tooltip">[docs]</a>    <span class="k">def</span> <span class="nf">_display_tooltip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._display_tooltip">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._display_tooltip">[docs]</a>
+    <span class="k">def</span> <span class="nf">_display_tooltip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">tooltip_values</span> <span class="o">=</span> <span class="p">[</span>
             <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf{L~click}$&quot;</span><span class="p">,</span> <span class="s2">&quot;select spectrum point&quot;</span><span class="p">],</span>
             <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\mathbf{R~click}$&quot;</span><span class="p">,</span> <span class="s2">&quot;remove spectrum point&quot;</span><span class="p">],</span>
@@ -623,7 +702,10 @@
             <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._invert_continua"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._invert_continua">[docs]</a>    <span class="k">def</span> <span class="nf">_invert_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._invert_continua">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._invert_continua">[docs]</a>
+    <span class="k">def</span> <span class="nf">_invert_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the locations of resonance with the continua for a specific</span>
 <span class="sd">        eigenmode.</span>
@@ -679,7 +761,10 @@
 
         <span class="k">return</span> <span class="n">r_inv</span><span class="p">,</span> <span class="n">labels</span></div>
 
-<div class="viewcode-block" id="EigenfunctionInterface._show_resonances"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._show_resonances">[docs]</a>    <span class="k">def</span> <span class="nf">_show_resonances</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EigenfunctionInterface._show_resonances">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._show_resonances">[docs]</a>
+    <span class="k">def</span> <span class="nf">_show_resonances</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">ev_idx</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Shows the locations of resonance with the continua.</span>
 <span class="sd">        There is a different linestyle for every continuum.</span>
@@ -703,7 +788,9 @@
                     <span class="n">linestyle</span><span class="o">=</span><span class="n">RESONANCE_STYLES</span><span class="p">[</span><span class="n">cont_key</span><span class="p">],</span>
                     <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
                     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
-                <span class="p">)</span></div></div>
+                <span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

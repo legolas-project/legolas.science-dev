@@ -11,11 +11,11 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -87,7 +87,9 @@
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 
-<div class="viewcode-block" id="CartesianSlicePlot2D"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D">[docs]</a><span class="k">class</span> <span class="nc">CartesianSlicePlot2D</span><span class="p">(</span><span class="n">ModeFigure</span><span class="p">):</span>
+<div class="viewcode-block" id="CartesianSlicePlot2D">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D">[docs]</a>
+<span class="k">class</span> <span class="nc">CartesianSlicePlot2D</span><span class="p">(</span><span class="n">ModeFigure</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Class for handling Cartesian 2D plots of the eigenmode solutions.</span>
 
@@ -143,7 +145,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">vmin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span><span class="p">)</span>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._validate_slicing_axis"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._validate_slicing_axis">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_slicing_axis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slicing_axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">allowed_axes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="CartesianSlicePlot2D._validate_slicing_axis">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._validate_slicing_axis">[docs]</a>
+    <span class="k">def</span> <span class="nf">_validate_slicing_axis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slicing_axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">allowed_axes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Validates the slicing axis.</span>
 
@@ -163,7 +167,10 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slicing axis must be one of </span><span class="si">{</span><span class="n">allowed_axes</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">slicing_axis</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._validate_u2"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._validate_u2">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_u2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u2</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">slicing_axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._validate_u2">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._validate_u2">[docs]</a>
+    <span class="k">def</span> <span class="nf">_validate_u2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u2</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">slicing_axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Validates the combination of u2 and slicing axis.</span>
 
@@ -185,7 +192,10 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;u2 must be a number for slicing axis &#39;</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">u2</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._validate_u3"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._validate_u3">[docs]</a>    <span class="k">def</span> <span class="nf">_validate_u3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u3</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">slicing_axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._validate_u3">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._validate_u3">[docs]</a>
+    <span class="k">def</span> <span class="nf">_validate_u3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u3</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">slicing_axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">axis</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Validates the combination of u3 and slicing axis.</span>
 
@@ -207,7 +217,10 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;u3 must be a number for slicing axis &#39;</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">u3</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D.set_plot_arrays"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.set_plot_arrays">[docs]</a>    <span class="k">def</span> <span class="nf">set_plot_arrays</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D.set_plot_arrays">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.set_plot_arrays">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_plot_arrays</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">slicing_axis</span>
         <span class="n">coord</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_u2</span> <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_u3axis</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_u3</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">solution_shape</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_u1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">coord</span><span class="p">))</span>
@@ -221,7 +234,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">u3_data</span> <span class="o">=</span> <span class="n">coord_2d</span> <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_u2axis</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_u3</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">time_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_time</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D.add_u2u3_txt"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.add_u2u3_txt">[docs]</a>    <span class="k">def</span> <span class="nf">add_u2u3_txt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D.add_u2u3_txt">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.add_u2u3_txt">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_u2u3_txt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slicing_axis</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_u3axis</span><span class="p">:</span>
             <span class="n">txt</span> <span class="o">=</span> <span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">u3_str</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_u3</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">else</span><span class="p">:</span>
@@ -229,7 +245,10 @@
         <span class="n">txt</span> <span class="o">=</span> <span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">txt</span><span class="si">}</span><span class="s2"> | t = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">u2u3_txt</span> <span class="o">=</span> <span class="n">add_axis_label</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D.set_contours"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.set_contours">[docs]</a>    <span class="k">def</span> <span class="nf">set_contours</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D.set_contours">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.set_contours">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_contours</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets up a contour plot instead of an image plot.</span>
 
@@ -244,13 +263,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_contour_levels</span> <span class="o">=</span> <span class="n">levels</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_contour_recipe</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">contour</span> <span class="k">if</span> <span class="n">fill</span> <span class="ow">is</span> <span class="kc">False</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">contourf</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D.draw_solution"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.draw_solution">[docs]</a>    <span class="k">def</span> <span class="nf">draw_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D.draw_solution">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.draw_solution">[docs]</a>
+    <span class="k">def</span> <span class="nf">draw_solution</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_contour_plot</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_draw_contours</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_draw_image</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._draw_image"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._draw_image">[docs]</a>    <span class="k">def</span> <span class="nf">_draw_image</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._draw_image">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._draw_image">[docs]</a>
+    <span class="k">def</span> <span class="nf">_draw_image</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">vertical</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">u2_data</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slicing_axis</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_u3axis</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">u3_data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">u1_data</span><span class="p">,</span>
@@ -262,7 +287,10 @@
             <span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">norm</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">cmap</span><span class="p">),</span> <span class="n">cax</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cbar_ax</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._draw_contours"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._draw_contours">[docs]</a>    <span class="k">def</span> <span class="nf">_draw_contours</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._draw_contours">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._draw_contours">[docs]</a>
+    <span class="k">def</span> <span class="nf">_draw_contours</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">vertical</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">u2_data</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slicing_axis</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_u3axis</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">u3_data</span>
         <span class="n">additional_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_contour_levels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -280,14 +308,20 @@
             <span class="n">ScalarMappable</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">norm</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">cmap</span><span class="p">),</span> <span class="n">cax</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cbar_ax</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D.get_view_ylabel"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.get_view_ylabel">[docs]</a>    <span class="k">def</span> <span class="nf">get_view_ylabel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D.get_view_ylabel">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.get_view_ylabel">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_view_ylabel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">u2_str</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slicing_axis</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_u3axis</span>
             <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">u3_str</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D.create_animation"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.create_animation">[docs]</a>    <span class="k">def</span> <span class="nf">create_animation</span><span class="p">(</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D.create_animation">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D.create_animation">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_animation</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">times</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">fps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">dpi</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">writer</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FFMpegWriter</span><span class="p">(</span><span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">)</span>
@@ -315,17 +349,26 @@
                 <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span> <span class="o">=</span> <span class="n">initial_solution</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._ensure_first_frame_is_drawn"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._ensure_first_frame_is_drawn">[docs]</a>    <span class="k">def</span> <span class="nf">_ensure_first_frame_is_drawn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._ensure_first_frame_is_drawn">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._ensure_first_frame_is_drawn">[docs]</a>
+    <span class="k">def</span> <span class="nf">_ensure_first_frame_is_drawn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="kc">None</span> <span class="ow">in</span> <span class="n">transform_to_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._set_t_txt"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._set_t_txt">[docs]</a>    <span class="k">def</span> <span class="nf">_set_t_txt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._set_t_txt">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._set_t_txt">[docs]</a>
+    <span class="k">def</span> <span class="nf">_set_t_txt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">u2u3_txt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="n">txt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">u2u3_txt</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">u2u3_txt</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">txt</span><span class="si">}</span><span class="s2">| t = </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._update_view"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._update_view">[docs]</a>    <span class="k">def</span> <span class="nf">_update_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">updated_solution</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._update_view">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._update_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">_update_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">updated_solution</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Updates the axes with the new solution. If a contour plot is used, the</span>
 <span class="sd">        contour lines are cleared and redrawn. If an image plot is used, the image is</span>
@@ -341,11 +384,17 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">updated_solution</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._update_view_clims"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._update_view_clims">[docs]</a>    <span class="k">def</span> <span class="nf">_update_view_clims</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._update_view_clims">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._update_view_clims">[docs]</a>
+    <span class="k">def</span> <span class="nf">_update_view_clims</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solution</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vmin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">solution</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vmin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vmax</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._clear_contours"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._clear_contours">[docs]</a>    <span class="k">def</span> <span class="nf">_clear_contours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._clear_contours">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._clear_contours">[docs]</a>
+    <span class="k">def</span> <span class="nf">_clear_contours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># sadly contour(f) does not support updating the data, so we have to</span>
         <span class="c1"># delete the old contours and create new ones every frame...</span>
         <span class="k">for</span> <span class="n">coll</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_view</span><span class="o">.</span><span class="n">collections</span><span class="p">:</span>
@@ -354,11 +403,16 @@
             <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
                 <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="CartesianSlicePlot2D._update_contour_plot"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._update_contour_plot">[docs]</a>    <span class="k">def</span> <span class="nf">_update_contour_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">updated_solution</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="CartesianSlicePlot2D._update_contour_plot">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/cartesian_2d/index.html#pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D._update_contour_plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">_update_contour_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">updated_solution</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_clear_contours</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_solutions</span> <span class="o">=</span> <span class="n">updated_solution</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">draw_solution</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_axes_labels</span><span class="p">()</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_axes_labels</span><span class="p">()</span></div>
+</div>
+
 </pre></div>
 
            </div>

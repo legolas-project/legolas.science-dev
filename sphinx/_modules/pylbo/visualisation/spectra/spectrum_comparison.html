@@ -11,11 +11,11 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -77,7 +77,9 @@
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.spectra.spectrum_single</span> <span class="kn">import</span> <span class="n">SingleSpectrumPlot</span>
 
 
-<div class="viewcode-block" id="SpectrumComparisonPlot"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot">[docs]</a><span class="k">class</span> <span class="nc">SpectrumComparisonPlot</span><span class="p">(</span><span class="n">SpectrumFigure</span><span class="p">):</span>
+<div class="viewcode-block" id="SpectrumComparisonPlot">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot">[docs]</a>
+<span class="k">class</span> <span class="nc">SpectrumComparisonPlot</span><span class="p">(</span><span class="n">SpectrumFigure</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Subclass to compare two spectra.</span>
 
@@ -134,7 +136,9 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">ds2</span><span class="o">.</span><span class="n">datfile</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
 
-<div class="viewcode-block" id="SpectrumComparisonPlot.set_x_scaling"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.set_x_scaling">[docs]</a>    <span class="k">def</span> <span class="nf">set_x_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_scaling</span><span class="p">):</span>
+<div class="viewcode-block" id="SpectrumComparisonPlot.set_x_scaling">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.set_x_scaling">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_x_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_scaling</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overloads parent method, calls x scaling setter for each panel.</span>
 
@@ -146,7 +150,10 @@
         <span class="k">for</span> <span class="n">panel</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="p">):</span>
             <span class="n">panel</span><span class="o">.</span><span class="n">set_x_scaling</span><span class="p">(</span><span class="n">x_scaling</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SpectrumComparisonPlot.set_y_scaling"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.set_y_scaling">[docs]</a>    <span class="k">def</span> <span class="nf">set_y_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y_scaling</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SpectrumComparisonPlot.set_y_scaling">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.set_y_scaling">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_y_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y_scaling</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Overloads parent method, calls y scaling setter for each panel.</span>
 
@@ -158,26 +165,40 @@
         <span class="k">for</span> <span class="n">panel</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="p">):</span>
             <span class="n">panel</span><span class="o">.</span><span class="n">set_y_scaling</span><span class="p">(</span><span class="n">y_scaling</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SpectrumComparisonPlot._use_custom_axes"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot._use_custom_axes">[docs]</a>    <span class="k">def</span> <span class="nf">_use_custom_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SpectrumComparisonPlot._use_custom_axes">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot._use_custom_axes">[docs]</a>
+    <span class="k">def</span> <span class="nf">_use_custom_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Splits the original 1x2 plot into a 2x2 plot.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="o">.</span><span class="n">_ef_ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">_ef_ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">add_subplot_axes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SpectrumComparisonPlot.add_spectrum"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_spectrum">[docs]</a>    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="SpectrumComparisonPlot.add_spectrum">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_spectrum">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds the spectra for both datasets&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="o">.</span><span class="n">add_spectrum</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="o">.</span><span class="n">add_spectrum</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="SpectrumComparisonPlot.add_eigenfunctions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">add_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SpectrumComparisonPlot.add_eigenfunctions">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_eigenfunctions">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds the eigenfunctions for both datasets and merges the mpl callbacks.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_use_custom_axes</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">panel</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="p">]:</span>
             <span class="n">panel</span><span class="o">.</span><span class="n">add_eigenfunctions</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="SpectrumComparisonPlot.add_continua"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_continua">[docs]</a>    <span class="k">def</span> <span class="nf">add_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SpectrumComparisonPlot.add_continua">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_comparison/index.html#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_continua">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds the continua for both datasets and merges the mpl callbacks.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">panel</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">panel1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">panel2</span><span class="p">):</span>
-            <span class="n">panel</span><span class="o">.</span><span class="n">add_continua</span><span class="p">(</span><span class="n">interactive</span><span class="p">)</span></div></div>
+            <span class="n">panel</span><span class="o">.</span><span class="n">add_continua</span><span class="p">(</span><span class="n">interactive</span><span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>

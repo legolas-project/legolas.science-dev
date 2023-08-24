@@ -11,11 +11,11 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -86,10 +86,15 @@
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.spectra.spectrum_multi</span> <span class="kn">import</span> <span class="n">MultiSpectrumPlot</span>
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.spectra.spectrum_single</span> <span class="kn">import</span> <span class="n">SingleSpectrumPlot</span>
 
-<div class="viewcode-block" id="forbidden_args"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.forbidden_args">[docs]</a><span class="n">forbidden_args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;linestyle&quot;</span><span class="p">,</span> <span class="s2">&quot;linewidth&quot;</span><span class="p">,</span> <span class="s2">&quot;lw&quot;</span><span class="p">]</span></div>
+<div class="viewcode-block" id="forbidden_args">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.forbidden_args">[docs]</a>
+<span class="n">forbidden_args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;linestyle&quot;</span><span class="p">,</span> <span class="s2">&quot;linewidth&quot;</span><span class="p">,</span> <span class="s2">&quot;lw&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="plot_spectrum"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_spectrum">[docs]</a><span class="k">def</span> <span class="nf">plot_spectrum</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_spectrum">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_spectrum">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_spectrum</span><span class="p">(</span>
     <span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_figure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_residuals</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -122,7 +127,10 @@
     <span class="k">return</span> <span class="n">p</span></div>
 
 
-<div class="viewcode-block" id="plot_spectrum_multi"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_spectrum_multi">[docs]</a><span class="k">def</span> <span class="nf">plot_spectrum_multi</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_spectrum_multi">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_spectrum_multi">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_spectrum_multi</span><span class="p">(</span>
     <span class="n">data</span><span class="p">,</span>
     <span class="n">xdata</span><span class="p">,</span>
     <span class="n">use_squared_omega</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -176,7 +184,10 @@
     <span class="k">return</span> <span class="n">p</span></div>
 
 
-<div class="viewcode-block" id="plot_merged_spectrum"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_merged_spectrum">[docs]</a><span class="k">def</span> <span class="nf">plot_merged_spectrum</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_merged_spectrum">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_merged_spectrum">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_merged_spectrum</span><span class="p">(</span>
     <span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_figure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -209,7 +220,10 @@
     <span class="k">return</span> <span class="n">p</span></div>
 
 
-<div class="viewcode-block" id="plot_spectrum_comparison"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_spectrum_comparison">[docs]</a><span class="k">def</span> <span class="nf">plot_spectrum_comparison</span><span class="p">(</span>
+
+<div class="viewcode-block" id="plot_spectrum_comparison">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_spectrum_comparison">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_spectrum_comparison</span><span class="p">(</span>
     <span class="n">ds1</span><span class="p">,</span>
     <span class="n">ds2</span><span class="p">,</span>
     <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -252,7 +266,10 @@
     <span class="k">return</span> <span class="n">p</span></div>
 
 
-<div class="viewcode-block" id="plot_equilibrium"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_equilibrium">[docs]</a><span class="k">def</span> <span class="nf">plot_equilibrium</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="plot_equilibrium">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_equilibrium">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_equilibrium</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plots the equilibrium profiles.</span>
 
@@ -281,7 +298,10 @@
     <span class="k">return</span> <span class="n">p</span></div>
 
 
-<div class="viewcode-block" id="plot_equilibrium_balance"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_equilibrium_balance">[docs]</a><span class="k">def</span> <span class="nf">plot_equilibrium_balance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="plot_equilibrium_balance">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_equilibrium_balance">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_equilibrium_balance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates a plot of the balance equations.</span>
 <span class="sd">    These should be as close to zero as possible over the entire grid.</span>
@@ -310,7 +330,10 @@
     <span class="k">return</span> <span class="n">EquilibriumBalance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="plot_continua"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_continua">[docs]</a><span class="k">def</span> <span class="nf">plot_continua</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="plot_continua">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_continua">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_continua</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plots the continua profiles.</span>
 
@@ -333,7 +356,10 @@
     <span class="k">return</span> <span class="n">p</span></div>
 
 
-<div class="viewcode-block" id="plot_matrices"><a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_matrices">[docs]</a><span class="k">def</span> <span class="nf">plot_matrices</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="plot_matrices">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/api/index.html#pylbo.plot_matrices">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_matrices</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plots the continua profiles.</span>
 
@@ -352,6 +378,7 @@
     <span class="n">ensure_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">MatrixFigure</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">p</span></div>
+
 </pre></div>
 
            </div>

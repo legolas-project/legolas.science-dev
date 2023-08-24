@@ -11,11 +11,11 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=16816911"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" /> 
@@ -84,7 +84,9 @@
 <span class="kn">from</span> <span class="nn">pylbo.visualisation.utils</span> <span class="kn">import</span> <span class="n">refresh_plot</span>
 
 
-<div class="viewcode-block" id="SpectrumFigure"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure">[docs]</a><span class="k">class</span> <span class="nc">SpectrumFigure</span><span class="p">(</span><span class="n">InteractiveFigureWindow</span><span class="p">):</span>
+<div class="viewcode-block" id="SpectrumFigure">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure">[docs]</a>
+<span class="k">class</span> <span class="nc">SpectrumFigure</span><span class="p">(</span><span class="n">InteractiveFigureWindow</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Class to handle the creation of a figure window dedicated to different types of</span>
 <span class="sd">    spectrum figures.</span>
@@ -138,7 +140,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">markersize</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="SpectrumFigure.draw"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.draw">[docs]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SpectrumFigure.draw">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.draw">[docs]</a>
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Called on plot refreshing, the super call clears the figure and then redraws</span>
 <span class="sd">        everything.</span>
@@ -146,8 +150,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">add_spectrum</span><span class="p">()</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span></div>
 
+
     <span class="nd">@refresh_plot</span>
-<div class="viewcode-block" id="SpectrumFigure.set_x_scaling"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.set_x_scaling">[docs]</a>    <span class="k">def</span> <span class="nf">set_x_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_scaling</span><span class="p">):</span>
+<div class="viewcode-block" id="SpectrumFigure.set_x_scaling">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.set_x_scaling">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_x_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_scaling</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the x scaling.</span>
 
@@ -158,8 +165,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x_scaling</span> <span class="o">=</span> <span class="n">x_scaling</span></div>
 
+
     <span class="nd">@refresh_plot</span>
-<div class="viewcode-block" id="SpectrumFigure.set_y_scaling"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.set_y_scaling">[docs]</a>    <span class="k">def</span> <span class="nf">set_y_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y_scaling</span><span class="p">):</span>
+<div class="viewcode-block" id="SpectrumFigure.set_y_scaling">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.set_y_scaling">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_y_scaling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y_scaling</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the y scaling.</span>
 
@@ -170,7 +180,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y_scaling</span> <span class="o">=</span> <span class="n">y_scaling</span></div>
 
-<div class="viewcode-block" id="SpectrumFigure._set_plot_properties"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure._set_plot_properties">[docs]</a>    <span class="k">def</span> <span class="nf">_set_plot_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SpectrumFigure._set_plot_properties">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure._set_plot_properties">[docs]</a>
+    <span class="k">def</span> <span class="nf">_set_plot_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">properties</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets all relevant plot properties.</span>
 
@@ -187,35 +200,58 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">plot_props</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">plot_props</span> <span class="o">=</span> <span class="n">plot_props</span></div>
 
-<div class="viewcode-block" id="SpectrumFigure.add_spectrum"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.add_spectrum">[docs]</a>    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SpectrumFigure.add_spectrum">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.add_spectrum">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="SpectrumFigure.add_continua"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.add_continua">[docs]</a>    <span class="k">def</span> <span class="nf">add_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interactive</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SpectrumFigure.add_continua">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.add_continua">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interactive</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="SpectrumFigure.add_eigenfunctions"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.add_eigenfunctions">[docs]</a>    <span class="k">def</span> <span class="nf">add_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SpectrumFigure.add_eigenfunctions">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.add_eigenfunctions">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_eigenfunctions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="SpectrumFigure.has_valid_continua"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.has_valid_continua">[docs]</a>    <span class="k">def</span> <span class="nf">has_valid_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+
+<div class="viewcode-block" id="SpectrumFigure.has_valid_continua">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.has_valid_continua">[docs]</a>
+    <span class="k">def</span> <span class="nf">has_valid_continua</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">continua</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;continua&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">continua</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
             <span class="k">return</span> <span class="nb">all</span><span class="p">([</span><span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">continua</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">continua</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="SpectrumFigure.c_handler"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.c_handler">[docs]</a>    <span class="k">def</span> <span class="nf">c_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SpectrumFigure.c_handler">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.c_handler">[docs]</a>
+    <span class="k">def</span> <span class="nf">c_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Property, returns the continua handler.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_handler</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="SpectrumFigure.ef_handler"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.ef_handler">[docs]</a>    <span class="k">def</span> <span class="nf">ef_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SpectrumFigure.ef_handler">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.ef_handler">[docs]</a>
+    <span class="k">def</span> <span class="nf">ef_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Property, returns the eigenfunction handler.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_handler</span></div>
 
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="SpectrumFigure.ef_ax"><a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.ef_ax">[docs]</a>    <span class="k">def</span> <span class="nf">ef_ax</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SpectrumFigure.ef_ax">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure.ef_ax">[docs]</a>
+    <span class="k">def</span> <span class="nf">ef_ax</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Property, returns the eigenfunction axes.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_ax</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ef_ax</span></div>
+</div>
+
 </pre></div>
 
            </div>
