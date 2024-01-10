@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_derived_ef_names &ndash; Legolas v. 2.1.0 - develop</title>
+    <title>mod_derived_ef_names &ndash; Legolas v. 2.1.1 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.1.0 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.1.1 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.9% of total for modules and submodules.">107 statements</a>
+    title=" 1.0% of total for modules and submodules.">111 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_derived_ef_names.f08"> Source File</a></li>
   </ul>
@@ -129,6 +129,7 @@
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-v_perp_name">v_perp_name</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-curl_v_para_name">curl_v_para_name</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-curl_v_perp_name">curl_v_perp_name</a>
+      <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-db1_name">dB1_name</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-state_vector~5">state_vector</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-can_get_pp">can_get_pp</a>
     </div>
@@ -154,6 +155,7 @@
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_get_curl_b_pp">can_get_curl_B_pp</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_get_v_pp">can_get_v_pp</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_get_curl_v_pp">can_get_curl_v_pp</a>
+      <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_get_db1">can_get_dB1</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_calculate_pp_quantities">can_calculate_pp_quantities</a>
     </div>
   </div>
@@ -172,10 +174,10 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
     <li><a href='../module/mod_settings.html'>mod_settings</a></li>
-    <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
     <li><a href='../module/mod_background.html'>mod_background</a></li>
+    <li><a href='../module/mod_get_indices.html'>mod_get_indices</a></li>
+    <li><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
   </ul>
       </li>
       </ul>
@@ -211,6 +213,7 @@
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-v_perp_name">v_perp_name</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-curl_v_para_name">curl_v_para_name</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-curl_v_perp_name">curl_v_perp_name</a>
+      <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-db1_name">dB1_name</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-state_vector~5">state_vector</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#variable-can_get_pp">can_get_pp</a>
     </div>
@@ -236,6 +239,7 @@
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_get_curl_b_pp">can_get_curl_B_pp</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_get_v_pp">can_get_v_pp</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_get_curl_v_pp">can_get_curl_v_pp</a>
+      <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_get_db1">can_get_dB1</a>
       <a class="list-group-item" href="../module/mod_derived_ef_names.html#proc-can_calculate_pp_quantities">can_calculate_pp_quantities</a>
     </div>
   </div>
@@ -349,6 +353,11 @@
   <td><span class="anchor" id="variable-curl_v_perp_name"></span>character(len=str_len_arr),</td>
 <td>public,</td>  <td>parameter</td><td>::</td>
   <td><strong>curl_v_perp_name</strong></td><td> =</td><td>"(curl v)_perp"</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-db1_name"></span>character(len=str_len_arr),</td>
+<td>public,</td>  <td>parameter</td><td>::</td>
+  <td><strong>dB1_name</strong></td><td> =</td><td>"dB1"</td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-state_vector~5"></span>character(len=:),</td>
@@ -562,6 +571,16 @@
   </div>
 
       <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-can_get_db1"></span><h3>private pure function <a href='../proc/can_get_db1.html'>can_get_dB1</a>()</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <em>None</em>
+<h4>Return Value <small>logical</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-can_calculate_pp_quantities"></span><h3>private function <a href='../proc/can_calculate_pp_quantities.html'>can_calculate_pp_quantities</a>(background)</h3></div>
   <div class="panel-body">
            
@@ -594,7 +613,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.1.0 - develop was developed by <br>&copy; 2023 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.1.1 - develop was developed by <br>&copy; 2024 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">
