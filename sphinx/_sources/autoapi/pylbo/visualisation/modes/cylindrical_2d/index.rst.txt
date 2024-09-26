@@ -1,26 +1,24 @@
-:py:mod:`pylbo.visualisation.modes.cylindrical_2d`
-==================================================
+pylbo.visualisation.modes.cylindrical_2d
+========================================
 
 .. py:module:: pylbo.visualisation.modes.cylindrical_2d
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.modes.cylindrical_2d.CylindricalSlicePlot2D
 
 
-
+Module Contents
+---------------
 
 .. py:class:: CylindricalSlicePlot2D(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int], show_ef_panel: bool, polar: bool, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D`
+
 
    
    Class for handling cylindrical 2D plots of the eigenmode solutions.
@@ -60,6 +58,10 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: _use_polar_axes
+
+
    .. py:method:: set_plot_arrays() -> None
 
 
@@ -79,6 +81,5 @@ Classes
 
 
    .. py:method:: _create_figure_layout(figsize: tuple[int, int]) -> tuple[matplotlib.figure.Figure, dict]
-
 
 

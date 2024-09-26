@@ -6,7 +6,7 @@
   <title>pylbo.visualisation.modes.mode_data &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
 
   
   <!--[if lt IE 9]>
@@ -16,7 +16,7 @@
         <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../../../../_static/documentation_options.js?v=16816911"></script>
-        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
         <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
@@ -133,19 +133,49 @@
         <span class="n">complex_factor</span><span class="p">:</span> <span class="nb">complex</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">add_background</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">use_real_part</span> <span class="o">=</span> <span class="n">use_real_part</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">complex_factor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_complex_factor</span><span class="p">(</span><span class="n">complex_factor</span><span class="p">)</span>
+<div class="viewcode-block" id="ModeVisualisationData.ds">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData.ds">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span></div>
+
+<div class="viewcode-block" id="ModeVisualisationData.use_real_part">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData.use_real_part">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_real_part</span> <span class="o">=</span> <span class="n">use_real_part</span></div>
+
+<div class="viewcode-block" id="ModeVisualisationData.complex_factor">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData.complex_factor">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">complex_factor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_complex_factor</span><span class="p">(</span><span class="n">complex_factor</span><span class="p">)</span></div>
+
         <span class="k">if</span> <span class="n">add_background</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ds</span><span class="o">.</span><span class="n">has_background</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">BackgroundNotPresent</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">datfile</span><span class="p">,</span> <span class="s2">&quot;add background to solution&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_background</span> <span class="o">=</span> <span class="n">add_background</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_print_bg_info</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="viewcode-block" id="ModeVisualisationData.add_background">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData.add_background">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_background</span> <span class="o">=</span> <span class="n">add_background</span></div>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ef_name</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">ef_name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">validate_ef_name</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ef_name</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ef_name_latex</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">ef_name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ef_name_latex</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_all_efs</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_eigenfunctions</span><span class="p">(</span><span class="n">ev_guesses</span><span class="o">=</span><span class="n">omega</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">omega</span> <span class="o">=</span> <span class="p">[</span><span class="n">all_efs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eigenvalue&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">all_efs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_all_efs</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">eigenfunction</span> <span class="o">=</span> <span class="p">[</span><span class="n">all_efs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ef_name</span><span class="p">)</span> <span class="k">for</span> <span class="n">all_efs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_all_efs</span><span class="p">]</span>
+<div class="viewcode-block" id="ModeVisualisationData._print_bg_info">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData._print_bg_info">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_print_bg_info</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="ModeVisualisationData._ef_name">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData._ef_name">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ef_name</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">ef_name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">validate_ef_name</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ef_name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModeVisualisationData._ef_name_latex">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData._ef_name_latex">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ef_name_latex</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">ef_name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ef_name_latex</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ModeVisualisationData._all_efs">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData._all_efs">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_all_efs</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_eigenfunctions</span><span class="p">(</span><span class="n">ev_guesses</span><span class="o">=</span><span class="n">omega</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ModeVisualisationData.omega">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData.omega">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">omega</span> <span class="o">=</span> <span class="p">[</span><span class="n">all_efs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eigenvalue&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">all_efs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_all_efs</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="ModeVisualisationData.eigenfunction">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/modes/mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData.eigenfunction">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eigenfunction</span> <span class="o">=</span> <span class="p">[</span><span class="n">all_efs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ef_name</span><span class="p">)</span> <span class="k">for</span> <span class="n">all_efs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_all_efs</span><span class="p">]</span></div>
+
 
     <span class="nd">@property</span>
 <div class="viewcode-block" id="ModeVisualisationData.k2">

@@ -1,30 +1,11 @@
-:py:mod:`pylbo.utilities.datfiles.istream_reader`
-=================================================
+pylbo.utilities.datfiles.istream_reader
+=======================================
 
 .. py:module:: pylbo.utilities.datfiles.istream_reader
 
 
-Module Contents
----------------
-
-
-Functions
-~~~~~~~~~
-
-.. autoapisummary::
-
-   pylbo.utilities.datfiles.istream_reader.requires_version
-   pylbo.utilities.datfiles.istream_reader.read_string_from_istream
-   pylbo.utilities.datfiles.istream_reader.read_int_from_istream
-   pylbo.utilities.datfiles.istream_reader.read_boolean_from_istream
-   pylbo.utilities.datfiles.istream_reader.read_float_from_istream
-   pylbo.utilities.datfiles.istream_reader.read_complex_from_istream
-   pylbo.utilities.datfiles.istream_reader.read_mixed_from_istream
-
-
-
 Attributes
-~~~~~~~~~~
+----------
 
 .. autoapisummary::
 
@@ -38,40 +19,40 @@ Attributes
    pylbo.utilities.datfiles.istream_reader.SIZE_COMPLEX
 
 
-.. py:data:: DTYPES
+Functions
+---------
 
-   
+.. autoapisummary::
+
+   pylbo.utilities.datfiles.istream_reader.requires_version
+   pylbo.utilities.datfiles.istream_reader.read_string_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_int_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_boolean_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_float_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_complex_from_istream
+   pylbo.utilities.datfiles.istream_reader.read_mixed_from_istream
+
+
+Module Contents
+---------------
+
+.. py:data:: DTYPES
 
 .. py:data:: NP_DTYPES
 
-   
-
 .. py:data:: BYTE_ORDERS
-
-   
 
 .. py:data:: SIZE_CHAR
 
-   
-
 .. py:data:: SIZE_INT
-
-   
 
 .. py:data:: SIZE_BOOL
 
-   
-
 .. py:data:: SIZE_DOUBLE
-
-   
 
 .. py:data:: SIZE_COMPLEX
 
-   
-
 .. py:function:: requires_version(version_needed, default=None)
-
 
 .. py:function:: read_string_from_istream(istream: BinaryIO, length: int, amount: int = 1, offset: int = None, byte_order: str = 'native') -> Union[str, list[str]]
 

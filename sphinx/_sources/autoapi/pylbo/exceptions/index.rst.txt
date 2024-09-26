@@ -1,7 +1,22 @@
-:py:mod:`pylbo.exceptions`
-==========================
+pylbo.exceptions
+================
 
 .. py:module:: pylbo.exceptions
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   pylbo.exceptions.LegolasException
+   pylbo.exceptions.InvalidLegolasFile
+   pylbo.exceptions.BackgroundNotPresent
+   pylbo.exceptions.EigenfunctionsNotPresent
+   pylbo.exceptions.MatricesNotPresent
+   pylbo.exceptions.EigenvectorsNotPresent
+   pylbo.exceptions.ResidualsNotPresent
+   pylbo.exceptions.ParfileGenerationError
 
 
 Module Contents
@@ -9,8 +24,8 @@ Module Contents
 
 .. py:exception:: LegolasException(message=None)
 
-
    Bases: :py:obj:`Exception`
+
 
    
    Exception superclass to handle Legolas exceptions.
@@ -37,8 +52,8 @@ Module Contents
 
 .. py:exception:: InvalidLegolasFile(file)
 
-
    Bases: :py:obj:`LegolasException`
+
 
    
    Handles trying to load invalid Legolas files.
@@ -63,10 +78,13 @@ Module Contents
    ..
        !! processed by numpydoc !!
 
+   .. py:attribute:: file
+
+
 .. py:exception:: BackgroundNotPresent(file, unable_to_get=None)
 
-
    Bases: :py:obj:`LegolasException`
+
 
    
    Handles trying to query for the background when this is not present in the datfile.
@@ -93,10 +111,16 @@ Module Contents
    ..
        !! processed by numpydoc !!
 
+   .. py:attribute:: file
+
+
+   .. py:attribute:: unable_to_do
+
+
 .. py:exception:: EigenfunctionsNotPresent(msg)
 
-
    Bases: :py:obj:`LegolasException`
+
 
    
    Handles trying to query for eigenfunctions when these
@@ -122,10 +146,13 @@ Module Contents
    ..
        !! processed by numpydoc !!
 
+   .. py:attribute:: msg
+
+
 .. py:exception:: MatricesNotPresent(file)
 
-
    Bases: :py:obj:`LegolasException`
+
 
    
    Handles trying to query for matrices when these
@@ -151,10 +178,13 @@ Module Contents
    ..
        !! processed by numpydoc !!
 
+   .. py:attribute:: file
+
+
 .. py:exception:: EigenvectorsNotPresent(file)
 
-
    Bases: :py:obj:`LegolasException`
+
 
    
    Handles trying to query for eigenvectors when
@@ -180,10 +210,13 @@ Module Contents
    ..
        !! processed by numpydoc !!
 
+   .. py:attribute:: file
+
+
 .. py:exception:: ResidualsNotPresent(file)
 
-
    Bases: :py:obj:`LegolasException`
+
 
    
    Handles trying to query for residuals when
@@ -209,10 +242,13 @@ Module Contents
    ..
        !! processed by numpydoc !!
 
+   .. py:attribute:: file
+
+
 .. py:exception:: ParfileGenerationError(file, nb_runs=None, key=None)
 
-
    Bases: :py:obj:`LegolasException`
+
 
    
    Gets thrown when something went wrong during parfile generation.
@@ -234,4 +270,13 @@ Module Contents
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: file
+
+
+   .. py:attribute:: nb_runs
+
+
+   .. py:attribute:: key
+
 

@@ -6,7 +6,7 @@
   <title>pylbo.exceptions &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
 
   
   <!--[if lt IE 9]>
@@ -16,7 +16,7 @@
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../../_static/documentation_options.js?v=16816911"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -105,7 +105,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+<div class="viewcode-block" id="InvalidLegolasFile.file">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.InvalidLegolasFile.file">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2"> is not a valid Legolas file&quot;</span></div>
@@ -127,8 +130,14 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">unable_to_get</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">unable_to_do</span> <span class="o">=</span> <span class="n">unable_to_get</span>
+<div class="viewcode-block" id="BackgroundNotPresent.file">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.BackgroundNotPresent.file">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span></div>
+
+<div class="viewcode-block" id="BackgroundNotPresent.unable_to_do">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.BackgroundNotPresent.unable_to_do">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unable_to_do</span> <span class="o">=</span> <span class="n">unable_to_get</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;No background present in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -152,7 +161,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+<div class="viewcode-block" id="EigenfunctionsNotPresent.msg">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.EigenfunctionsNotPresent.msg">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span></div>
@@ -173,7 +185,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+<div class="viewcode-block" id="MatricesNotPresent.file">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.MatricesNotPresent.file">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No matrices present in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span></div>
@@ -194,7 +209,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+<div class="viewcode-block" id="EigenvectorsNotPresent.file">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.EigenvectorsNotPresent.file">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No eigenvectors present in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span></div>
@@ -215,7 +233,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+<div class="viewcode-block" id="ResidualsNotPresent.file">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.ResidualsNotPresent.file">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No residuals present in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span></div>
@@ -230,9 +251,18 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">nb_runs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nb_runs</span> <span class="o">=</span> <span class="n">nb_runs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+<div class="viewcode-block" id="ParfileGenerationError.file">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.ParfileGenerationError.file">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span></div>
+
+<div class="viewcode-block" id="ParfileGenerationError.nb_runs">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.ParfileGenerationError.nb_runs">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nb_runs</span> <span class="o">=</span> <span class="n">nb_runs</span></div>
+
+<div class="viewcode-block" id="ParfileGenerationError.key">
+<a class="viewcode-back" href="../../autoapi/pylbo/exceptions/index.html#pylbo.exceptions.ParfileGenerationError.key">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span></div>
+
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">base_msg</span> <span class="o">=</span> <span class="s2">&quot;Inconsistency encountered during parfile generation! </span><span class="se">\n</span><span class="s2">&quot;</span>

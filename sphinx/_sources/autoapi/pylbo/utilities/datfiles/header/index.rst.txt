@@ -1,24 +1,21 @@
-:py:mod:`pylbo.utilities.datfiles.header`
-=========================================
+pylbo.utilities.datfiles.header
+===============================
 
 .. py:module:: pylbo.utilities.datfiles.header
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.utilities.datfiles.header.LegolasHeader
 
 
-
+Module Contents
+---------------
 
 .. py:class:: LegolasHeader(istream: BinaryIO, version: pylbo._version.VersionHandler)
-
 
    
    Baseclass for a Legolas header
@@ -40,6 +37,23 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: legolas_version
+
+
+   .. py:attribute:: data
+
+
+   .. py:attribute:: _str_len
+      :value: None
+
+
+
+   .. py:attribute:: _str_len_array
+      :value: None
+
+
+
    .. py:method:: _set_str_lengths(istream: BinaryIO) -> None
 
 
@@ -107,6 +121,5 @@ Classes
 
 
    .. py:method:: _get_matrices_offsets(istream: BinaryIO) -> dict
-
 
 

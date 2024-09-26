@@ -1,14 +1,11 @@
-:py:mod:`pylbo.testing`
-=======================
+pylbo.testing
+=============
 
 .. py:module:: pylbo.testing
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
@@ -19,9 +16,8 @@ Classes
    pylbo.testing.MockKeyEvent
 
 
-
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
@@ -29,17 +25,17 @@ Functions
    pylbo.testing.load_pickled_dataseries
 
 
+Module Contents
+---------------
 
 .. py:function:: pickle_dataseries_to_file(series, filepath)
 
-
 .. py:function:: load_pickled_dataseries(filepath)
-
 
 .. py:class:: FakeDataSet(datfile, seed=None)
 
-
    Bases: :py:obj:`pylbo.data_containers.LegolasDataSet`
+
 
    .. py:method:: _set_test_equilibria()
 
@@ -47,14 +43,38 @@ Functions
    .. py:method:: _set_test_eigenvalues()
 
 
-
 .. py:class:: MockMouseEvent(button=1, canvas=None, axes=None, x=None, y=None)
-
 
    Bases: :py:obj:`matplotlib.backend_bases.MouseEvent`
 
 
+   .. py:attribute:: inaxes
+
+
+   .. py:attribute:: button
+
+
+   .. py:attribute:: xdata
+
+
+   .. py:attribute:: ydata
+
+
 .. py:class:: MockArtist(ds, axes, figure)
+
+   .. py:attribute:: dataset
+
+
+   .. py:attribute:: axes
+
+
+   .. py:attribute:: figure
+
+
+   .. py:attribute:: _xdata
+
+
+   .. py:attribute:: _ydata
 
 
    .. py:method:: get_xdata()
@@ -63,15 +83,21 @@ Functions
    .. py:method:: get_ydata()
 
 
-
 .. py:class:: MockPickEvent(ds, mouse_x: float, mouse_y: float, button=1, axes=None, figure=None, ind: List = None)
-
 
    Bases: :py:obj:`matplotlib.backend_bases.PickEvent`
 
 
-.. py:class:: MockKeyEvent(key, figure=None)
+   .. py:attribute:: mouseevent
 
+
+   .. py:attribute:: artist
+
+
+   .. py:attribute:: ind
+
+
+.. py:class:: MockKeyEvent(key, figure=None)
 
    Bases: :py:obj:`matplotlib.backend_bases.KeyEvent`
 

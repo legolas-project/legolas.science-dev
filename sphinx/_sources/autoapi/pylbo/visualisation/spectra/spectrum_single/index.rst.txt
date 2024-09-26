@@ -1,26 +1,24 @@
-:py:mod:`pylbo.visualisation.spectra.spectrum_single`
-=====================================================
+pylbo.visualisation.spectra.spectrum_single
+===========================================
 
 .. py:module:: pylbo.visualisation.spectra.spectrum_single
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot
 
 
-
+Module Contents
+---------------
 
 .. py:class:: SingleSpectrumPlot(dataset, figsize, custom_figure, use_residuals, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure`
+
 
    
    Creates a plot of a single spectrum based on a given dataset.
@@ -86,6 +84,13 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: dataset
+
+
+   .. py:attribute:: _use_residuals
+
+
    .. py:method:: add_spectrum()
 
       
@@ -108,6 +113,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_continua(interactive=True)
 
@@ -137,6 +143,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: add_eigenfunctions()
 
       
@@ -159,6 +166,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: draw_resonances()
 
@@ -184,6 +192,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _get_colors() -> numpy.ndarray
 

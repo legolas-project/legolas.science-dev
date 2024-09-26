@@ -1,14 +1,11 @@
-:py:mod:`pylbo.visualisation.profiles`
-======================================
+pylbo.visualisation.profiles
+============================
 
 .. py:module:: pylbo.visualisation.profiles
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
@@ -17,12 +14,13 @@ Classes
    pylbo.visualisation.profiles.EquilibriumBalance
 
 
-
+Module Contents
+---------------
 
 .. py:class:: EquilibriumProfile(data, figsize, interactive, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.figure_window.InteractiveFigureWindow`
+
 
    
    Subclass responsible for drawing the equilibrium profiles.
@@ -44,6 +42,29 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: data
+
+
+   .. py:attribute:: kwargs
+
+
+   .. py:attribute:: ax
+
+
+   .. py:attribute:: ax2
+      :value: None
+
+
+
+   .. py:attribute:: leg_handle
+
+
+   .. py:attribute:: _figure_drawn
+      :value: True
+
+
+
    .. py:method:: draw()
 
       
@@ -70,8 +91,8 @@ Classes
 
 .. py:class:: ContinuumProfile(data, figsize, interactive, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.figure_window.InteractiveFigureWindow`
+
 
    
    Subclass responsible for drawing the continuum profiles.
@@ -93,6 +114,24 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: ax
+
+
+   .. py:attribute:: data
+
+
+   .. py:attribute:: kwargs
+
+
+   .. py:attribute:: handler
+
+
+   .. py:attribute:: _figure_drawn
+      :value: True
+
+
+
    .. py:method:: draw()
 
       
@@ -119,8 +158,8 @@ Classes
 
 .. py:class:: EquilibriumBalance(data, figsize, interactive, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.figure_window.InteractiveFigureWindow`
+
 
    
    Subclass responsible for plotting the equilibrium balance equations.
@@ -142,6 +181,27 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: data
+
+
+   .. py:attribute:: kwargs
+
+
+   .. py:attribute:: ax
+
+
+   .. py:attribute:: eq_balance
+
+
+   .. py:attribute:: legend_handler
+
+
+   .. py:attribute:: _figure_drawn
+      :value: True
+
+
+
    .. py:method:: draw()
 
       

@@ -1,23 +1,19 @@
-:py:mod:`pylbo.automation.runner`
-=================================
+pylbo.automation.runner
+=======================
 
 .. py:module:: pylbo.automation.runner
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.automation.runner.LegolasRunner
 
 
-
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
@@ -26,6 +22,8 @@ Functions
    pylbo.automation.runner._validate_parfiles
 
 
+Module Contents
+---------------
 
 .. py:function:: _validate_executable(executable)
 
@@ -119,7 +117,6 @@ Functions
 
 .. py:class:: LegolasRunner(parfiles, remove_parfiles, nb_cpus, executable=None)
 
-
    
    Handles running legolas.
 
@@ -152,8 +149,25 @@ Functions
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: parfiles
+
+
+   .. py:attribute:: parfile_dir
+
+
+   .. py:attribute:: executable
+
+
+   .. py:attribute:: nb_cpus
+
+
+   .. py:attribute:: remove_parfiles
+
+
    .. py:method:: _init_worker()
       :staticmethod:
+
 
       
       Worker initialisation for the multiprocessing module.
@@ -175,6 +189,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _activate_worker(parfile)
 
@@ -205,8 +220,10 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _terminate_workers()
       :staticmethod:
+
 
       
       Terminates the multiprocessing workers after a forced interruption.
@@ -231,6 +248,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: execute()
 

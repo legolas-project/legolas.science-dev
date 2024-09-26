@@ -1,14 +1,11 @@
-:py:mod:`pylbo.visualisation.figure_window`
-===========================================
+pylbo.visualisation.figure_window
+=================================
 
 .. py:module:: pylbo.visualisation.figure_window
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
@@ -16,10 +13,10 @@ Classes
    pylbo.visualisation.figure_window.InteractiveFigureWindow
 
 
-
+Module Contents
+---------------
 
 .. py:class:: FigureWindow(fig: matplotlib.figure.Figure)
-
 
    
    Class to handle the top-level creation of figure windows. Assigns unique figure
@@ -62,6 +59,24 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: figure_stack
+
+
+   .. py:attribute:: fig
+
+
+   .. py:attribute:: figsize
+
+
+   .. py:attribute:: figure_id
+
+
+   .. py:attribute:: _figure_drawn
+      :value: False
+
+
+
    .. py:property:: figure_ids
       :type: list[str]
 
@@ -86,9 +101,6 @@ Classes
       ..
           !! processed by numpydoc !!
 
-   .. py:attribute:: figure_stack
-
-      
 
    .. py:method:: create_default_figure(figlabel: str, figsize: tuple[int, int]) -> tuple[matplotlib.figure.Figure, matplotlib.axes.Axes]
 
@@ -120,6 +132,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _generate_figure_id(figlabel: str) -> str
 
       
@@ -148,6 +161,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: make_layout_tight() -> None
 
       
@@ -172,6 +186,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: add_to_stack() -> None
 
       
@@ -194,6 +209,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_subplot_axes(ax: matplotlib.axes.Axes, loc: str = 'right', share: str = None, apply_tight_layout: bool = True)
 
@@ -237,6 +253,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: draw() -> None
 
 
@@ -269,6 +286,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: show()
 
       
@@ -295,8 +313,8 @@ Classes
 
 .. py:class:: InteractiveFigureWindow(fig: matplotlib.figure.Figure)
 
-
    Bases: :py:obj:`FigureWindow`
+
 
    
    Subclass to handle interactivity in the figure windows.
@@ -318,6 +336,12 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: _mpl_callbacks
+      :value: []
+
+
+
    .. py:method:: redraw() -> None
 
 
@@ -344,6 +368,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: disconnect_callbacks() -> None
 
       
@@ -366,6 +391,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: make_legend_interactive(legendhandler: pylbo.visualisation.legend_handler.LegendHandler) -> None
 
@@ -391,6 +417,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_eigenfunction_interface(efhandler: pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface) -> None
 

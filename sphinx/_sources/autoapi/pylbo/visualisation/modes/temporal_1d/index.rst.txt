@@ -1,26 +1,24 @@
-:py:mod:`pylbo.visualisation.modes.temporal_1d`
-===============================================
+pylbo.visualisation.modes.temporal_1d
+=====================================
 
 .. py:module:: pylbo.visualisation.modes.temporal_1d
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.modes.temporal_1d.TemporalEvolutionPlot1D
 
 
-
+Module Contents
+---------------
 
 .. py:class:: TemporalEvolutionPlot1D(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: float, u3: float, time: numpy.ndarray, figsize: tuple[int, int], show_ef_panel: bool, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.modes.mode_figure.ModeFigure`
+
 
    
    Main class for temporal evolutions of the eigenfunction.
@@ -55,35 +53,28 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: _u1
+
+
+   .. py:attribute:: _u2
+
+
+   .. py:attribute:: _u3
+
+
+   .. py:attribute:: _time
+
+
+   .. py:attribute:: _kwargs
+
+
    .. py:method:: set_plot_arrays() -> None
 
-      
-      Sets the arrays used for plotting. This should implement setting of
-      :attr:`u1_data`, :attr:`u2_data`, :attr:`u3_data`, :attr:`t_data` and
-      :attr:`ef_data`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: draw_solution() -> None
 
 
    .. py:method:: get_view_ylabel() -> str
-
 
 

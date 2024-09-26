@@ -6,7 +6,7 @@
   <title>pylbo.automation.generator &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
 
   
   <!--[if lt IE 9]>
@@ -16,7 +16,7 @@
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../../../_static/documentation_options.js?v=16816911"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -239,16 +239,43 @@
         <span class="n">prefix_numbers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">nb_prefix_digits</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">parfile_dict</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">parfile_dict</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nb_runs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parfile_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;number_of_runs&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="ParfileGenerator.parfile_dict">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator.parfile_dict">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parfile_dict</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">parfile_dict</span><span class="p">)</span></div>
 
-        <span class="n">names</span> <span class="o">=</span> <span class="n">_ensure_nb_names_and_nb_runs_matches</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_runs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">basenames</span> <span class="o">=</span> <span class="n">_validate_basenames</span><span class="p">(</span><span class="n">transform_to_list</span><span class="p">(</span><span class="n">names</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span> <span class="o">=</span> <span class="n">_validate_output_dir</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">subdir</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_use_prefix</span> <span class="o">=</span> <span class="n">prefix_numbers</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_nb_prefix_digits</span> <span class="o">=</span> <span class="n">nb_prefix_digits</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">parfiles</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="viewcode-block" id="ParfileGenerator.nb_runs">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator.nb_runs">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nb_runs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parfile_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;number_of_runs&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ParfileGenerator.names">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator.names">[docs]</a>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">_ensure_nb_names_and_nb_runs_matches</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb_runs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ParfileGenerator.basenames">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator.basenames">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">basenames</span> <span class="o">=</span> <span class="n">_validate_basenames</span><span class="p">(</span><span class="n">transform_to_list</span><span class="p">(</span><span class="n">names</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="ParfileGenerator.output_dir">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator.output_dir">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span> <span class="o">=</span> <span class="n">_validate_output_dir</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">subdir</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ParfileGenerator._use_prefix">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator._use_prefix">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_use_prefix</span> <span class="o">=</span> <span class="n">prefix_numbers</span></div>
+
+<div class="viewcode-block" id="ParfileGenerator._nb_prefix_digits">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator._nb_prefix_digits">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nb_prefix_digits</span> <span class="o">=</span> <span class="n">nb_prefix_digits</span></div>
+
+<div class="viewcode-block" id="ParfileGenerator.parfiles">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator.parfiles">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parfiles</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+<div class="viewcode-block" id="ParfileGenerator.container">
+<a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator.container">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="o">=</span> <span class="p">{}</span></div>
+
 
 <div class="viewcode-block" id="ParfileGenerator._get_and_check_item">
 <a class="viewcode-back" href="../../../autoapi/pylbo/automation/generator/index.html#pylbo.automation.generator.ParfileGenerator._get_and_check_item">[docs]</a>

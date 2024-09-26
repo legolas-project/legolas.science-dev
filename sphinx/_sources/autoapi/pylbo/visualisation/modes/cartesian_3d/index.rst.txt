@@ -1,26 +1,24 @@
-:py:mod:`pylbo.visualisation.modes.cartesian_3d`
-================================================
+pylbo.visualisation.modes.cartesian_3d
+======================================
 
 .. py:module:: pylbo.visualisation.modes.cartesian_3d
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.modes.cartesian_3d.CartesianSlicePlot3D
 
 
-
+Module Contents
+---------------
 
 .. py:class:: CartesianSlicePlot3D(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: numpy.ndarray, u3: numpy.ndarray, time: float, slicing_axis: str, figsize: tuple[int, int], vmin: float = None, vmax: float = None, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D`
+
 
    
    Class for handling Cartesian 3D plots of the eigenmode solution.
@@ -60,6 +58,16 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: vmin
+
+
+   .. py:attribute:: vmax
+
+
+   .. py:attribute:: _view
+
+
    .. py:method:: _create_figure_layout(figsize: tuple[int, int]) -> tuple[matplotlib.figure.Figure, dict]
 
 
@@ -100,6 +108,5 @@ Classes
 
 
    .. py:method:: _set_t_txt(t)
-
 
 

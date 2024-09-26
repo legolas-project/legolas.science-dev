@@ -1,26 +1,24 @@
-:py:mod:`pylbo.visualisation.spectra.spectrum_figure`
-=====================================================
+pylbo.visualisation.spectra.spectrum_figure
+===========================================
 
 .. py:module:: pylbo.visualisation.spectra.spectrum_figure
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure
 
 
-
+Module Contents
+---------------
 
 .. py:class:: SpectrumFigure(custom_figure: tuple[matplotlib.figure.Figure, matplotlib.axes.Axes] = None, figlabel: str = None, figsize: tuple[int, int] = None)
 
-
    Bases: :py:obj:`pylbo.visualisation.figure_window.InteractiveFigureWindow`
+
 
    
    Class to handle the creation of a figure window dedicated to different types of
@@ -68,74 +66,69 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:property:: c_handler
 
-      
-      Property, returns the continua handler.
+   .. py:attribute:: ax
 
 
-
-
+   .. py:attribute:: x_scaling
+      :value: 1.0
 
 
 
+   .. py:attribute:: y_scaling
+      :value: 1.0
 
 
 
+   .. py:attribute:: _c_handler
+      :value: None
 
 
 
+   .. py:attribute:: _ef_handler
+      :value: None
 
 
 
-      ..
-          !! processed by numpydoc !!
-
-   .. py:property:: ef_handler
-
-      
-      Property, returns the eigenfunction handler.
+   .. py:attribute:: _ef_ax
+      :value: None
 
 
 
+   .. py:attribute:: _def_handler
+      :value: None
 
 
 
+   .. py:attribute:: _def_ax
+      :value: None
 
 
 
+   .. py:attribute:: plot_props
+      :value: None
 
 
 
+   .. py:attribute:: marker
+      :value: None
 
 
 
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:property:: ef_ax
-
-      
-      Property, returns the eigenfunction axes.
+   .. py:attribute:: color
+      :value: None
 
 
 
+   .. py:attribute:: markersize
+      :value: None
 
 
 
+   .. py:attribute:: alpha
+      :value: None
 
 
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: draw()
 
@@ -160,6 +153,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: set_x_scaling(x_scaling)
 
@@ -186,6 +180,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: set_y_scaling(y_scaling)
 
       
@@ -210,6 +205,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _set_plot_properties(properties)
 
@@ -237,19 +233,91 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: add_spectrum()
       :abstractmethod:
+
 
 
    .. py:method:: add_continua(interactive)
       :abstractmethod:
 
 
+
    .. py:method:: add_eigenfunctions()
       :abstractmethod:
 
 
+
    .. py:method:: has_valid_continua(data)
 
+
+   .. py:property:: c_handler
+      
+      Property, returns the continua handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:property:: ef_handler
+      
+      Property, returns the eigenfunction handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:property:: ef_ax
+      
+      Property, returns the eigenfunction axes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
 

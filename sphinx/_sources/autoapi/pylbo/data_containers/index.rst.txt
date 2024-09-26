@@ -1,14 +1,11 @@
-:py:mod:`pylbo.data_containers`
-===============================
+pylbo.data_containers
+=====================
 
 .. py:module:: pylbo.data_containers
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
@@ -17,9 +14,8 @@ Classes
    pylbo.data_containers.LegolasDataSeries
 
 
-
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
@@ -27,6 +23,8 @@ Functions
    pylbo.data_containers.ensure_dataseries
 
 
+Module Contents
+---------------
 
 .. py:function:: ensure_dataset(data: any) -> None
 
@@ -76,8 +74,8 @@ Functions
 
 .. py:class:: LegolasDataContainer
 
-
    Bases: :py:obj:`abc.ABC`
+
 
    
    Baseclass for a Legolas data container.
@@ -99,72 +97,90 @@ Functions
 
    ..
        !! processed by numpydoc !!
+
    .. py:method:: continua()
       :abstractmethod:
+
 
 
    .. py:method:: parameters()
       :abstractmethod:
 
 
+
    .. py:method:: has_efs()
       :abstractmethod:
+
 
 
    .. py:method:: ef_grid()
       :abstractmethod:
 
 
+
    .. py:method:: ef_names()
       :abstractmethod:
+
 
 
    .. py:method:: has_background()
       :abstractmethod:
 
 
+
    .. py:method:: has_derived_efs()
       :abstractmethod:
+
 
 
    .. py:method:: derived_ef_names()
       :abstractmethod:
 
 
+
    .. py:method:: has_ef_subset()
       :abstractmethod:
+
 
 
    .. py:method:: has_matrices()
       :abstractmethod:
 
 
+
    .. py:method:: has_eigenvectors()
       :abstractmethod:
+
 
 
    .. py:method:: has_residuals()
       :abstractmethod:
 
 
+
    .. py:method:: get_sound_speed(which_values=None)
       :abstractmethod:
+
 
 
    .. py:method:: get_alfven_speed(which_values=None)
       :abstractmethod:
 
 
+
    .. py:method:: get_tube_speed(which_values=None)
       :abstractmethod:
+
 
 
    .. py:method:: get_reynolds_nb(which_values=None)
       :abstractmethod:
 
 
+
    .. py:method:: get_magnetic_reynolds_nb(which_values=None)
       :abstractmethod:
+
 
 
    .. py:method:: get_k0_squared()
@@ -174,8 +190,8 @@ Functions
 
 .. py:class:: LegolasDataSet(datfile)
 
-
    Bases: :py:obj:`LegolasDataContainer`
+
 
    
    Main container for a single Legolas dataset.
@@ -307,8 +323,70 @@ Functions
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: datfile
+
+
+   .. py:attribute:: filereader
+
+
+   .. py:attribute:: header
+
+
+   .. py:attribute:: grid
+
+
+   .. py:attribute:: grid_gauss
+
+
+   .. py:attribute:: equilibria
+
+
+   .. py:attribute:: eigenvalues
+
+
+   .. py:attribute:: geometry
+
+
+   .. py:attribute:: x_start
+
+
+   .. py:attribute:: x_end
+
+
+   .. py:attribute:: gridpoints
+
+
+   .. py:attribute:: gauss_gridpoints
+
+
+   .. py:attribute:: ef_gridpoints
+
+
+   .. py:attribute:: gamma
+
+
+   .. py:attribute:: eq_type
+
+
+   .. py:attribute:: _parameters
+
+
+   .. py:attribute:: units
+
+
+   .. py:attribute:: cgs
+
+
+   .. py:attribute:: eq_names
+
+
+   .. py:attribute:: _continua
+
+
    .. py:property:: legolas_version
       :type: pylbo._version.VersionHandler
+
 
 
    .. py:property:: k2_str
@@ -335,6 +413,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: k3_str
       :type: str
 
@@ -358,6 +437,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: u1_str
       :type: str
@@ -383,6 +463,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: u2_str
       :type: str
 
@@ -406,6 +487,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: u3_str
       :type: str
@@ -431,6 +513,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: continua
       :type: dict
 
@@ -454,6 +537,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: parameters
       :type: dict
@@ -479,6 +563,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: has_background
       :type: bool
 
@@ -502,6 +587,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: has_efs
       :type: bool
@@ -527,6 +613,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: ef_grid
       :type: numpy.ndarray
 
@@ -550,6 +637,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: ef_names
       :type: numpy.ndarray
@@ -575,6 +663,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: has_derived_efs
       :type: bool
 
@@ -598,6 +687,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: derived_ef_names
       :type: numpy.ndarray
@@ -623,6 +713,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: has_ef_subset
       :type: bool
 
@@ -646,6 +737,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: has_matrices
       :type: bool
@@ -671,6 +763,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: has_eigenvectors
       :type: bool
 
@@ -694,6 +787,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: has_residuals
       :type: bool
@@ -719,6 +813,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: is_mhd
       :type: bool
 
@@ -743,6 +838,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _ensure_compatibility() -> None
 
       
@@ -766,6 +862,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_sound_speed(which_values=None) -> Union[float, numpy.ndarray]
 
@@ -797,6 +894,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_alfven_speed(which_values=None) -> Union[float, numpy.ndarray]
 
       
@@ -826,6 +924,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_tube_speed(which_values=None) -> Union[float, numpy.ndarray]
 
@@ -857,6 +956,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_reynolds_nb(which_values=None) -> Union[float, numpy.ndarray]
 
@@ -890,6 +990,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_magnetic_reynolds_nb(which_values=None) -> Union[float, numpy.ndarray]
 
       
@@ -922,6 +1023,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_k0_squared() -> float
 
       
@@ -945,6 +1047,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_matrix_B() -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
 
@@ -974,6 +1077,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_matrix_A() -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
 
       
@@ -1001,6 +1105,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_eigenvectors() -> numpy.ndarray
 
@@ -1030,6 +1135,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_residuals() -> numpy.ndarray
 
       
@@ -1056,6 +1162,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _get_eigenfunction_like(ev_guesses: numpy.ndarray, ev_idxs: numpy.ndarray, getter_func: Callable) -> numpy.ndarray
 
@@ -1088,6 +1195,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_eigenfunctions(ev_guesses=None, ev_idxs=None) -> numpy.ndarray
 
@@ -1125,6 +1233,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_nearest_eigenvalues(ev_guesses) -> tuple(np.ndarray, np.ndarray)
 
       
@@ -1156,6 +1265,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_eigenvalues_at_distance(ev_guesses, min_distance=0.0) -> tuple(np.ndarray, np.ndarray)
 
@@ -1191,6 +1301,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_omega_max(real=True, re_range=None)
 
@@ -1231,8 +1342,8 @@ Functions
 
 .. py:class:: LegolasDataSeries(datfiles)
 
-
    Bases: :py:obj:`LegolasDataContainer`
+
 
    
    Baseclass for a Legolas data container.
@@ -1254,6 +1365,13 @@ Functions
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: datasets
+
+
+   .. py:attribute:: geometry
+
+
    .. py:property:: continua
       :type: dict
 
@@ -1278,6 +1396,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: parameters
       :type: dict
@@ -1304,6 +1423,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: has_background
       :type: numpy.ndarray
 
@@ -1327,6 +1447,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: has_efs
       :type: numpy.ndarray
@@ -1352,6 +1473,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: ef_names
       :type: numpy.ndarray
 
@@ -1375,6 +1497,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: ef_grid
       :type: numpy.ndarray
@@ -1400,6 +1523,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: has_derived_efs
       :type: numpy.ndarray
 
@@ -1423,6 +1547,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: derived_ef_names
       :type: numpy.ndarray
@@ -1448,6 +1573,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: has_ef_subset
       :type: numpy.ndarray
 
@@ -1471,6 +1597,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:property:: has_matrices
       :type: numpy.ndarray
@@ -1496,6 +1623,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: has_eigenvectors
       :type: numpy.ndarray
 
@@ -1520,6 +1648,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:property:: has_residuals
       :type: numpy.ndarray
 
@@ -1543,6 +1672,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_sound_speed(which_values=None) -> numpy.ndarray
 
@@ -1574,6 +1704,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_alfven_speed(which_values=None) -> numpy.ndarray
 
       
@@ -1603,6 +1734,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_tube_speed(which_values=None) -> numpy.ndarray
 
@@ -1635,6 +1767,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_reynolds_nb(which_values=None) -> numpy.ndarray
 
       
@@ -1665,6 +1798,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_magnetic_reynolds_nb(which_values=None) -> numpy.ndarray
 
@@ -1697,6 +1831,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_k0_squared() -> numpy.ndarray
 
       
@@ -1722,6 +1857,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_omega_max(real=True)
 

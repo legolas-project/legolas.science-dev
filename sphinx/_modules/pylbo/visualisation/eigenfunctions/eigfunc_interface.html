@@ -6,7 +6,7 @@
   <title>pylbo.visualisation.eigenfunctions.eigfunc_interface &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
 
   
   <!--[if lt IE 9]>
@@ -16,7 +16,7 @@
         <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../../../../_static/documentation_options.js?v=16816911"></script>
-        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
         <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
@@ -134,27 +134,69 @@
     <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">spec_axis</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="n">axis</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span> <span class="o">=</span> <span class="n">spec_axis</span>
+<div class="viewcode-block" id="EigenfunctionInterface.data">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.data">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface.axis">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.axis">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="n">axis</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface.spec_axis">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.spec_axis">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec_axis</span> <span class="o">=</span> <span class="n">spec_axis</span></div>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_data_is_present</span><span class="p">()</span>
         <span class="c1"># holds the points that are currently selected in the form of a &quot;double&quot; dict:</span>
         <span class="c1"># {ds instance : {index : line2D instance}}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span> <span class="o">=</span> <span class="n">get_all_eigenfunction_names</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_retransform</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="viewcode-block" id="EigenfunctionInterface._selected_idxs">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._selected_idxs">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_selected_idxs</span> <span class="o">=</span> <span class="p">{}</span></div>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_transparent_data</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="viewcode-block" id="EigenfunctionInterface._use_real_part">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._use_real_part">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_use_real_part</span> <span class="o">=</span> <span class="kc">True</span></div>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ef_subset_artists</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="viewcode-block" id="EigenfunctionInterface._selected_name_idx">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._selected_name_idx">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_selected_name_idx</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface._function_names">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._function_names">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_function_names</span> <span class="o">=</span> <span class="n">get_all_eigenfunction_names</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface._retransform">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._retransform">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_retransform</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="EigenfunctionInterface._condition_to_make_transparent">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._condition_to_make_transparent">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_make_transparent</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface._transparent_data">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._transparent_data">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_transparent_data</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface._unmarked_alpha">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._unmarked_alpha">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_unmarked_alpha</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="EigenfunctionInterface._ef_subset_artists">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._ef_subset_artists">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ef_subset_artists</span> <span class="o">=</span> <span class="kc">None</span></div>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">_display_tooltip</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_resonances</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">savedir</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="viewcode-block" id="EigenfunctionInterface._draw_resonances">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._draw_resonances">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_draw_resonances</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="EigenfunctionInterface.savedir">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.savedir">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">savedir</span> <span class="o">=</span> <span class="kc">None</span></div>
+
 
 <div class="viewcode-block" id="EigenfunctionInterface._check_data_is_present">
 <a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/eigenfunctions/eigfunc_interface/index.html#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._check_data_is_present">[docs]</a>

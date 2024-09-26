@@ -6,7 +6,7 @@
   <title>pylbo.visualisation.legend_handler &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
 
   
   <!--[if lt IE 9]>
@@ -16,7 +16,7 @@
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../../../_static/documentation_options.js?v=16816911"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -138,22 +138,64 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interactive</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">alpha_point</span> <span class="o">=</span> <span class="mf">0.8</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">alpha_region</span> <span class="o">=</span> <span class="mf">0.2</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">alpha_hidden</span> <span class="o">=</span> <span class="mf">0.05</span>
+<div class="viewcode-block" id="LegendHandler.legend">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.legend">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">None</span></div>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;p&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">markersize</span> <span class="o">=</span> <span class="mi">64</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pickradius</span> <span class="o">=</span> <span class="mi">10</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">legend_properties</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="viewcode-block" id="LegendHandler.alpha_point">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.alpha_point">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha_point</span> <span class="o">=</span> <span class="mf">0.8</span></div>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="n">interactive</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">autoscale</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_drawn_items</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_legend_mapping</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_make_visible_by_default</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="viewcode-block" id="LegendHandler.alpha_region">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.alpha_region">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha_region</span> <span class="o">=</span> <span class="mf">0.2</span></div>
+
+<div class="viewcode-block" id="LegendHandler.alpha_hidden">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.alpha_hidden">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha_hidden</span> <span class="o">=</span> <span class="mf">0.05</span></div>
+
+
+<div class="viewcode-block" id="LegendHandler.marker">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.marker">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;p&quot;</span></div>
+
+<div class="viewcode-block" id="LegendHandler.markersize">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.markersize">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">markersize</span> <span class="o">=</span> <span class="mi">64</span></div>
+
+<div class="viewcode-block" id="LegendHandler.pickradius">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.pickradius">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pickradius</span> <span class="o">=</span> <span class="mi">10</span></div>
+
+<div class="viewcode-block" id="LegendHandler.linewidth">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.linewidth">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+<div class="viewcode-block" id="LegendHandler.legend_properties">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.legend_properties">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">legend_properties</span> <span class="o">=</span> <span class="p">{}</span></div>
+
+
+<div class="viewcode-block" id="LegendHandler.interactive">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.interactive">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="n">interactive</span></div>
+
+<div class="viewcode-block" id="LegendHandler.autoscale">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.autoscale">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">autoscale</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="LegendHandler._drawn_items">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler._drawn_items">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_drawn_items</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+<div class="viewcode-block" id="LegendHandler._legend_mapping">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler._legend_mapping">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_legend_mapping</span> <span class="o">=</span> <span class="p">{}</span></div>
+
+<div class="viewcode-block" id="LegendHandler._make_visible_by_default">
+<a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler._make_visible_by_default">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_make_visible_by_default</span> <span class="o">=</span> <span class="kc">False</span></div>
+
 
 <div class="viewcode-block" id="LegendHandler.on_legend_pick">
 <a class="viewcode-back" href="../../../autoapi/pylbo/visualisation/legend_handler/index.html#pylbo.visualisation.legend_handler.LegendHandler.on_legend_pick">[docs]</a>

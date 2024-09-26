@@ -1,26 +1,24 @@
-:py:mod:`pylbo.visualisation.spectra.spectrum_multi`
-====================================================
+pylbo.visualisation.spectra.spectrum_multi
+==========================================
 
 .. py:module:: pylbo.visualisation.spectra.spectrum_multi
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.spectra.spectrum_multi.MultiSpectrumPlot
 
 
-
+Module Contents
+---------------
 
 .. py:class:: MultiSpectrumPlot(dataseries, xdata, use_squared_omega, use_real_parts, figsize, custom_figure, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure`
+
 
    
    Subclass that draws the multispectra.
@@ -60,6 +58,33 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: dataseries
+
+
+   .. py:attribute:: use_squared_omega
+
+
+   .. py:attribute:: _w_pow
+      :value: 1
+
+
+
+   .. py:attribute:: use_real_parts
+
+
+   .. py:attribute:: xdata
+
+
+   .. py:attribute:: ydata
+
+
+   .. py:attribute:: x_scaling
+
+
+   .. py:attribute:: y_scaling
+
+
    .. py:method:: _validate_xdata(xdata)
 
       
@@ -90,6 +115,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _get_ydata()
 
       
@@ -118,6 +144,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: set_x_scaling(x_scaling)
 
       
@@ -142,6 +169,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: set_y_scaling(y_scaling)
 
@@ -168,6 +196,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: add_spectrum()
 
       
@@ -190,6 +219,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_continua(interactive=True)
 
@@ -215,6 +245,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_eigenfunctions()
 

@@ -1,23 +1,26 @@
-:py:mod:`pylbo.utilities.datfiles.file_reader`
-==============================================
+pylbo.utilities.datfiles.file_reader
+====================================
 
 .. py:module:: pylbo.utilities.datfiles.file_reader
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.utilities.datfiles.file_reader.LegolasFileReader
 
 
-
+Module Contents
+---------------
 
 .. py:class:: LegolasFileReader(datfile: os.PathLike, byte_order: str = 'native')
+
+   .. py:attribute:: _byte_order
+
+
+   .. py:attribute:: datfile
 
 
    .. py:method:: _read_legolas_version(istream: BinaryIO) -> pylbo._version.VersionHandler
@@ -63,6 +66,5 @@ Classes
 
 
    .. py:method:: _get_ef_index(header: pylbo.utilities.datfiles.header.LegolasHeader, ev_index: int) -> int
-
 
 

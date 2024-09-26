@@ -1,29 +1,27 @@
-:py:mod:`pylbo.visualisation.eigenfunctions.eigfunc_interface`
-==============================================================
+pylbo.visualisation.eigenfunctions.eigfunc_interface
+====================================================
 
 .. py:module:: pylbo.visualisation.eigenfunctions.eigfunc_interface
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface
 
 
-
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
    pylbo.visualisation.eigenfunctions.eigfunc_interface.get_artist_data
 
 
+Module Contents
+---------------
 
 .. py:function:: get_artist_data(artist: matplotlib.pyplot.Artist) -> tuple[numpy.ndarray, numpy.ndarray]
 
@@ -55,6 +53,65 @@ Functions
 
 .. py:class:: EigenfunctionInterface(data, axis, spec_axis)
 
+   .. py:attribute:: data
+
+
+   .. py:attribute:: axis
+
+
+   .. py:attribute:: spec_axis
+
+
+   .. py:attribute:: _selected_idxs
+
+
+   .. py:attribute:: _use_real_part
+      :value: True
+
+
+
+   .. py:attribute:: _selected_name_idx
+      :value: 0
+
+
+
+   .. py:attribute:: _function_names
+
+
+   .. py:attribute:: _retransform
+      :value: False
+
+
+
+   .. py:attribute:: _condition_to_make_transparent
+      :value: None
+
+
+
+   .. py:attribute:: _transparent_data
+      :value: False
+
+
+
+   .. py:attribute:: _unmarked_alpha
+      :value: None
+
+
+
+   .. py:attribute:: _ef_subset_artists
+      :value: None
+
+
+
+   .. py:attribute:: _draw_resonances
+      :value: False
+
+
+
+   .. py:attribute:: savedir
+      :value: None
+
+
 
    .. py:method:: _check_data_is_present()
 
@@ -79,6 +136,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _artist_has_valid_attributes(event)
 
@@ -110,6 +168,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _clear_figure_and_selection()
 
       
@@ -132,6 +191,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _switch_real_and_imaginary_part()
 
@@ -156,6 +216,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _select_next_function()
 
       
@@ -179,6 +240,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _select_previous_function()
 
       
@@ -201,6 +263,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _retransform_functions()
 
@@ -226,6 +289,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _print_selected_eigenvalues()
 
       
@@ -248,6 +312,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _save_eigenvalue_selection()
 
@@ -273,6 +338,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _save_selection_indices()
 
       
@@ -297,6 +363,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _print_nzeroes()
 
       
@@ -320,6 +387,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _get_label(ds, ev_idx, w)
 
@@ -354,8 +422,10 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _get_title()
       :abstractmethod:
+
 
       
       Creates the title of a given plot, has to be overridden in a subclass.
@@ -378,6 +448,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_selected_idxs() -> dict[pylbo.data_containers.LegolasDataContainer, dict[int, matplotlib.pyplot.Artist]]
 
 
@@ -386,6 +457,7 @@ Functions
 
    .. py:method:: update_plot()
       :abstractmethod:
+
 
       
       Updates the plot when an event is triggered, clears and then redraws
@@ -409,6 +481,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: on_point_pick(event)
 
@@ -435,6 +508,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: on_key_press(event)
 
       
@@ -459,6 +533,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: on_left_click(event)
 
@@ -485,6 +560,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: on_right_click(event)
 
       
@@ -509,6 +585,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _get_clicked_point_data(event)
 
@@ -539,6 +616,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _selected_point_has_eigenfunctions(ds, idx)
 
@@ -572,6 +650,7 @@ Functions
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _toggle_eigenfunction_subset_radius()
 
 
@@ -600,6 +679,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _display_tooltip()
 
@@ -634,6 +714,7 @@ Functions
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _show_resonances(ds, ev_idx, color)
 

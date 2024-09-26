@@ -1,26 +1,24 @@
-:py:mod:`pylbo.visualisation.spectra.spectrum_comparison`
-=========================================================
+pylbo.visualisation.spectra.spectrum_comparison
+===============================================
 
 .. py:module:: pylbo.visualisation.spectra.spectrum_comparison
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot
 
 
-
+Module Contents
+---------------
 
 .. py:class:: SpectrumComparisonPlot(ds1, ds2, figsize, custom_figure, lock_zoom, use_residuals, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure`
+
 
    
    Subclass to compare two spectra.
@@ -72,6 +70,21 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: share
+      :value: None
+
+
+
+   .. py:attribute:: ax2
+
+
+   .. py:attribute:: panel1
+
+
+   .. py:attribute:: panel2
+
+
    .. py:method:: set_x_scaling(x_scaling)
 
       
@@ -96,6 +109,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: set_y_scaling(y_scaling)
 
@@ -122,6 +136,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _use_custom_axes()
 
       
@@ -144,6 +159,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_spectrum() -> None
 
@@ -168,6 +184,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: add_eigenfunctions()
 
       
@@ -190,6 +207,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_continua(interactive=True)
 

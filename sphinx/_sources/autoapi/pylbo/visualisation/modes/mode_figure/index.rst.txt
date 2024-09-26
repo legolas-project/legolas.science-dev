@@ -1,26 +1,24 @@
-:py:mod:`pylbo.visualisation.modes.mode_figure`
-===============================================
+pylbo.visualisation.modes.mode_figure
+=====================================
 
 .. py:module:: pylbo.visualisation.modes.mode_figure
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.modes.mode_figure.ModeFigure
 
 
-
+Module Contents
+---------------
 
 .. py:class:: ModeFigure(figsize: tuple[int, int], data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, show_ef_panel: bool)
 
-
    Bases: :py:obj:`pylbo.visualisation.figure_window.FigureWindow`
+
 
    
    Main class to hold the figure, axes and colorbar for eigenmode visualisations.
@@ -130,55 +128,53 @@ Classes
 
    ..
        !! processed by numpydoc !!
-   .. py:property:: ax
-      :type: matplotlib.axes.Axes
 
-      
-      returns: Alias for the axes containing the eigenmode solution view.
-      :rtype: matplotlib.axes.Axes
+   .. py:attribute:: cbar
+      :value: None
 
 
 
+   .. py:attribute:: _cbar_hspace
+      :value: 0.01
 
 
 
+   .. py:attribute:: _show_ef_panel
+
+
+   .. py:attribute:: _annotate
+      :value: True
 
 
 
+   .. py:attribute:: axes
+
+
+   .. py:attribute:: cbar_ax
+
+
+   .. py:attribute:: data
+
+
+   .. py:attribute:: _view
+      :value: None
 
 
 
+   .. py:attribute:: ef_data
+      :value: []
 
 
 
-
-      ..
-          !! processed by numpydoc !!
-
-   .. py:property:: solutions
-      :type: numpy.ndarray
-
-      
-      returns: The solutions for the eigenmode
-      :rtype: np.ndarray
+   .. py:attribute:: solution_shape
+      :value: None
 
 
 
+   .. py:attribute:: _solutions
+      :value: 0
 
 
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: _check_if_number(val: float, attr_name: str) -> float
 
@@ -209,6 +205,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _check_if_array(array: numpy.ndarray, attr_name: str) -> numpy.ndarray
 
       
@@ -238,8 +235,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: set_plot_arrays() -> None
       :abstractmethod:
+
 
       
       Sets the arrays used for plotting. This should implement setting of
@@ -263,6 +262,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: calculate_mode_solution(efdata: dict, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], t: Union[float, numpy.ndarray]) -> numpy.ndarray
 
@@ -300,11 +300,65 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
+   .. py:property:: ax
+      :type: matplotlib.axes.Axes
+
+      
+      returns: Alias for the axes containing the eigenmode solution view.
+      :rtype: matplotlib.axes.Axes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:property:: solutions
+      :type: numpy.ndarray
+
+      
+      returns: The solutions for the eigenmode
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
    .. py:method:: draw() -> None
 
 
    .. py:method:: draw_solution() -> None
       :abstractmethod:
+
 
 
    .. py:method:: draw_textboxes() -> None
@@ -332,6 +386,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_axes_labels() -> None
 
@@ -363,6 +418,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_view_xlabel() -> str
 
@@ -399,6 +455,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: add_k2k3_txt(ax, **kwargs) -> None
 
       
@@ -424,6 +481,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_u2u3_txt(ax, **kwargs) -> None
 
@@ -451,6 +509,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: add_t_txt(ax, **kwargs) -> None
 
@@ -483,6 +542,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: create_animation(times: numpy.ndarray, filename: str, fps: float = 10, dpi: int = 200) -> None
 

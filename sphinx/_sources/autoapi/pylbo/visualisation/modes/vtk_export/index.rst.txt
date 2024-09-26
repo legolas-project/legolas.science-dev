@@ -1,14 +1,11 @@
-:py:mod:`pylbo.visualisation.modes.vtk_export`
-==============================================
+pylbo.visualisation.modes.vtk_export
+====================================
 
 .. py:module:: pylbo.visualisation.modes.vtk_export
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
@@ -17,10 +14,10 @@ Classes
    pylbo.visualisation.modes.vtk_export.VTKCylindricalData
 
 
-
+Module Contents
+---------------
 
 .. py:class:: VTKDataExporter(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u1: numpy.ndarray, u2: numpy.ndarray, u3: numpy.ndarray)
-
 
    
    Main class to prepare data for export to VTK files.
@@ -110,6 +107,35 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: data
+
+
+   .. py:attribute:: _vtk_dtype
+      :value: None
+
+
+
+   .. py:attribute:: _vtk_byte_order
+      :value: '>'
+
+
+
+   .. py:attribute:: _vtk_fmt
+      :value: None
+
+
+
+   .. py:attribute:: _pbar
+      :value: None
+
+
+
+   .. py:attribute:: dims
+      :value: None
+
+
+
    .. py:method:: _set_coordinate_data(u1: numpy.ndarray, u2: numpy.ndarray, u3: numpy.ndarray)
 
       
@@ -139,8 +165,10 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: get_coordinate_data() -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
       :abstractmethod:
+
 
       
       Returns the coordinate data. This should always return the data in a Cartesian
@@ -167,6 +195,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: broadcast_to_3d(array: numpy.ndarray) -> numpy.ndarray
 
@@ -195,6 +224,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: get_solution(name: str, time: float) -> numpy.ndarray
 
@@ -226,6 +256,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _log_info(msg: str) -> None
 
       
@@ -248,6 +279,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _validate_and_set_dtype(dtype: str) -> None
 
@@ -276,6 +308,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _write_vtk_header(vtkfile)
 
       
@@ -302,6 +335,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _write_vtk_coordinate_data(vtkfile)
 
       
@@ -326,6 +360,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _write_vtk_point_data_start(vtkfile)
 
@@ -352,6 +387,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _write_vtk_scalar_field(vtkfile, fieldname, fielddata)
 
@@ -383,6 +419,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _write_vtk_auxiliary_coordinates(vtkfile)
 
       
@@ -409,6 +446,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: export_to_vtk(filename: str, time: Union[float, numpy.ndarray], names: Union[str, list[str]] = None, bg_names: Union[str, list[str]] = None, dtype: str = 'float32', starting_index: int = 0) -> None
 
@@ -449,8 +487,8 @@ Classes
 
 .. py:class:: VTKCartesianData(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: numpy.ndarray, u3: numpy.ndarray)
 
-
    Bases: :py:obj:`VTKDataExporter`
+
 
    
    Main class to prepare data for export to VTK files.
@@ -540,6 +578,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
    .. py:method:: get_coordinate_data() -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
 
       
@@ -571,8 +610,8 @@ Classes
 
 .. py:class:: VTKCylindricalData(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: numpy.ndarray, u3: numpy.ndarray)
 
-
    Bases: :py:obj:`VTKDataExporter`
+
 
    
    Main class to prepare data for export to VTK files.
@@ -662,6 +701,7 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
    .. py:method:: get_coordinate_data() -> tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
 
       
@@ -689,6 +729,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _write_vtk_auxiliary_coordinates(vtkfile)
 

@@ -7,7 +7,7 @@
   <title>Pylbo source code documentation &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
 
   
   <!--[if lt IE 9]>
@@ -17,8 +17,9 @@
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=16816911"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -89,23 +90,43 @@ and are built after every commit.</p>
 <p class="caption" role="heading"><span class="caption-text">Package structure:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="autoapi/pylbo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/pylbo/index.html">pylbo</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/pylbo/index.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/automation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.automation</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/utilities/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.utilities</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/visualisation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.visualisation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/automation/index.html">pylbo.automation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/utilities/index.html">pylbo.utilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/visualisation/index.html">pylbo.visualisation</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/pylbo/index.html#submodules">Submodules</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/_version/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo._version</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/data_containers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.data_containers</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/deprecations/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.deprecations</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.exceptions</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/testing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pylbo.testing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/_version/index.html">pylbo._version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/data_containers/index.html">pylbo.data_containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/deprecations/index.html">pylbo.deprecations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/exceptions/index.html">pylbo.exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/testing/index.html">pylbo.testing</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/pylbo/index.html#functions">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="autoapi/pylbo/index.html#package-contents">Package Contents</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#functions">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.generate_parfiles"><code class="docutils literal notranslate"><span class="pre">generate_parfiles()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.run_legolas"><code class="docutils literal notranslate"><span class="pre">run_legolas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.load"><code class="docutils literal notranslate"><span class="pre">load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.load_logfile"><code class="docutils literal notranslate"><span class="pre">load_logfile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.load_series"><code class="docutils literal notranslate"><span class="pre">load_series()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.get_equilibrium_balance"><code class="docutils literal notranslate"><span class="pre">get_equilibrium_balance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.disable_logging"><code class="docutils literal notranslate"><span class="pre">disable_logging()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.set_loglevel"><code class="docutils literal notranslate"><span class="pre">set_loglevel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_continua"><code class="docutils literal notranslate"><span class="pre">plot_continua()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_equilibrium"><code class="docutils literal notranslate"><span class="pre">plot_equilibrium()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_equilibrium_balance"><code class="docutils literal notranslate"><span class="pre">plot_equilibrium_balance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_matrices"><code class="docutils literal notranslate"><span class="pre">plot_matrices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_merged_spectrum"><code class="docutils literal notranslate"><span class="pre">plot_merged_spectrum()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_spectrum"><code class="docutils literal notranslate"><span class="pre">plot_spectrum()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_spectrum_comparison"><code class="docutils literal notranslate"><span class="pre">plot_spectrum_comparison()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_spectrum_multi"><code class="docutils literal notranslate"><span class="pre">plot_spectrum_multi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_1d_temporal_evolution"><code class="docutils literal notranslate"><span class="pre">plot_1d_temporal_evolution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_2d_slice"><code class="docutils literal notranslate"><span class="pre">plot_2d_slice()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.plot_3d_slice"><code class="docutils literal notranslate"><span class="pre">plot_3d_slice()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/pylbo/index.html#pylbo.prepare_vtk_export"><code class="docutils literal notranslate"><span class="pre">prepare_vtk_export()</span></code></a></li>
 </ul>
 </li>
 </ul>

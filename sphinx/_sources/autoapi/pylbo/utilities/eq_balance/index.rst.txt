@@ -1,15 +1,11 @@
-:py:mod:`pylbo.utilities.eq_balance`
-====================================
+pylbo.utilities.eq_balance
+==========================
 
 .. py:module:: pylbo.utilities.eq_balance
 
 
-Module Contents
----------------
-
-
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
@@ -31,52 +27,38 @@ Functions
    pylbo.utilities.eq_balance._derivative_from_gradient
 
 
+Module Contents
+---------------
 
 .. py:function:: get_equilibrium_balance(ds: pylbo.data_containers.LegolasDataSet) -> dict
 
-
 .. py:function:: _needs_continuity(ds: pylbo.data_containers.LegolasDataSet) -> bool
-
 
 .. py:function:: _needs_force_balance_2(ds: pylbo.data_containers.LegolasDataSet) -> bool
 
-
 .. py:function:: _needs_force_balance_3(ds: pylbo.data_containers.LegolasDataSet) -> bool
-
 
 .. py:function:: _needs_induction_balance_1(ds: pylbo.data_containers.LegolasDataSet) -> bool
 
-
 .. py:function:: _needs_induction_balance_2(ds: pylbo.data_containers.LegolasDataSet) -> bool
-
 
 .. py:function:: _continuity_balance(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
 
-
 .. py:function:: _force_balance_1(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
-
 
 .. py:function:: _force_balance_2(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
 
-
 .. py:function:: _force_balance_3(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
-
 
 .. py:function:: _energy_balance(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
 
-
 .. py:function:: _induction_balance_1(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
-
 
 .. py:function:: _induction_balance_2(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
 
-
 .. py:function:: _get_conduction_prefactor(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
-
 
 .. py:function:: _get_conduction_prefactor_derivative(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
 
-
 .. py:function:: _derivative_from_gradient(fname: str, fname_prim: str, bg: dict, with_respect_to: numpy.ndarray) -> numpy.ndarray
-
 

@@ -1,26 +1,24 @@
-:py:mod:`pylbo.visualisation.modes.cartesian_2d`
-================================================
+pylbo.visualisation.modes.cartesian_2d
+======================================
 
 .. py:module:: pylbo.visualisation.modes.cartesian_2d
 
 
-Module Contents
----------------
-
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D
 
 
-
+Module Contents
+---------------
 
 .. py:class:: CartesianSlicePlot2D(data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int], show_ef_panel: bool, **kwargs)
 
-
    Bases: :py:obj:`pylbo.visualisation.modes.mode_figure.ModeFigure`
+
 
    
    Class for handling Cartesian 2D plots of the eigenmode solutions.
@@ -57,6 +55,51 @@ Classes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: slicing_axis
+
+
+   .. py:attribute:: update_colorbar
+      :value: True
+
+
+
+   .. py:attribute:: _u1
+
+
+   .. py:attribute:: _u2
+
+
+   .. py:attribute:: _u3
+
+
+   .. py:attribute:: _time
+
+
+   .. py:attribute:: _kwargs
+
+
+   .. py:attribute:: _use_contour_plot
+      :value: False
+
+
+
+   .. py:attribute:: _contour_levels
+      :value: None
+
+
+
+   .. py:attribute:: _contour_recipe
+      :value: None
+
+
+
+   .. py:attribute:: vmin
+
+
+   .. py:attribute:: vmax
+
+
    .. py:method:: _validate_slicing_axis(slicing_axis: str, allowed_axes: list[str]) -> str
 
       
@@ -86,6 +129,7 @@ Classes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: _validate_u2(u2: float, slicing_axis: str, axis: str) -> float
 
@@ -119,6 +163,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _validate_u3(u3: float, slicing_axis: str, axis: str) -> float
 
       
@@ -151,57 +196,12 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: set_plot_arrays() -> None
 
-      
-      Sets the arrays used for plotting. This should implement setting of
-      :attr:`u1_data`, :attr:`u2_data`, :attr:`u3_data`, :attr:`t_data` and
-      :attr:`ef_data`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: add_u2u3_txt(ax, **kwargs) -> None
 
-      
-      Creates a textbox on the figure with the value of the :math:`u_2-u_3`
-      coordinates.
-
-      :param ax: The axes to use for the textbox.
-      :type ax: ~matplotlib.axes.Axes
-      :param \*\*kwargs: Additional keyword arguments to pass to :meth:`add_axis_label`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: set_contours(levels=None, fill=False) -> None
 
@@ -230,6 +230,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: draw_solution() -> None
 
 
@@ -244,34 +245,6 @@ Classes
 
    .. py:method:: create_animation(times: numpy.ndarray, filename: str, fps: float = 10, dpi: int = 200) -> None
 
-      
-      Creates an animation of the eigenmode solution over a given time interval.
-
-      :param times: The times at which to create the animation.
-      :type times: np.ndarray
-      :param filename: The filename of the animation.
-      :type filename: str
-      :param fps: The frames per second of the animation.
-      :type fps: float
-      :param dpi: The resolution of the animation.
-      :type dpi: int
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ..
-          !! processed by numpydoc !!
 
    .. py:method:: _ensure_first_frame_is_drawn() -> None
 
@@ -306,6 +279,7 @@ Classes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: _update_view_clims(solution: numpy.ndarray) -> None
 
 
@@ -313,6 +287,5 @@ Classes
 
 
    .. py:method:: _update_contour_plot(updated_solution: numpy.ndarray) -> None
-
 
 

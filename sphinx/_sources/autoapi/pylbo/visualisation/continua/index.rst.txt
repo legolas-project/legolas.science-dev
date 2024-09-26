@@ -1,23 +1,35 @@
-:py:mod:`pylbo.visualisation.continua`
-======================================
+pylbo.visualisation.continua
+============================
 
 .. py:module:: pylbo.visualisation.continua
 
 
-Module Contents
----------------
+Attributes
+----------
+
+.. autoapisummary::
+
+   pylbo.visualisation.continua.SLOW_MIN
+   pylbo.visualisation.continua.SLOW_PLUS
+   pylbo.visualisation.continua.ALFVEN_MIN
+   pylbo.visualisation.continua.ALFVEN_PLUS
+   pylbo.visualisation.continua.THERMAL
+   pylbo.visualisation.continua.DOPPLER
+   pylbo.visualisation.continua.CONTINUA_NAMES
+   pylbo.visualisation.continua.CONTINUA_COLORS
+   pylbo.visualisation.continua._DEFAULT_ZERO_TOL
+
 
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.visualisation.continua.ContinuaHandler
 
 
-
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
@@ -40,84 +52,54 @@ Functions
    pylbo.visualisation.continua._log_assumed_thermal_continuum
 
 
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   pylbo.visualisation.continua.SLOW_MIN
-   pylbo.visualisation.continua.SLOW_PLUS
-   pylbo.visualisation.continua.ALFVEN_MIN
-   pylbo.visualisation.continua.ALFVEN_PLUS
-   pylbo.visualisation.continua.THERMAL
-   pylbo.visualisation.continua.DOPPLER
-   pylbo.visualisation.continua.CONTINUA_NAMES
-   pylbo.visualisation.continua.CONTINUA_COLORS
-   pylbo.visualisation.continua._DEFAULT_ZERO_TOL
-
+Module Contents
+---------------
 
 .. py:data:: SLOW_MIN
    :value: 'slow-'
 
-   
 
 .. py:data:: SLOW_PLUS
    :value: 'slow+'
 
-   
 
 .. py:data:: ALFVEN_MIN
    :value: 'alfven-'
 
-   
 
 .. py:data:: ALFVEN_PLUS
    :value: 'alfven+'
 
-   
 
 .. py:data:: THERMAL
    :value: 'thermal'
 
-   
 
 .. py:data:: DOPPLER
    :value: 'doppler'
 
-   
 
 .. py:data:: CONTINUA_NAMES
-
-   
 
 .. py:data:: CONTINUA_COLORS
    :value: ['red', 'red', 'cyan', 'cyan', 'green', 'grey']
 
-   
 
 .. py:data:: _DEFAULT_ZERO_TOL
    :value: 1e-12
 
-   
 
 .. py:function:: _is_zero(values: numpy.ndarray, zero_tol: float = _DEFAULT_ZERO_TOL) -> bool
 
-
 .. py:function:: _is_nonadiabatic(ds: pylbo.data_containers.LegolasDataSet) -> bool
-
 
 .. py:function:: _get_parallel_wave_vector(ds: pylbo.data_containers.LegolasDataSet) -> float
 
-
 .. py:function:: _get_squared_sound_speed(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
-
 
 .. py:function:: _get_squared_isothermal_sound_speed(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
 
-
 .. py:function:: _get_squared_Alfven_speed(ds: pylbo.data_containers.LegolasDataSet) -> numpy.ndarray
-
 
 .. py:function:: calculate_continua(ds: pylbo.data_containers.LegolasDataSet) -> dict
 
@@ -281,7 +263,6 @@ Attributes
 
 .. py:function:: _get_slow_and_thermal_continuum_coupled(ds: pylbo.data_containers.LegolasDataSet) -> Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
 
-
 .. py:function:: _solve_coupled_continuum_polynomial(coeff3: numpy.ndarray, coeff2: numpy.ndarray, coeff1: numpy.ndarray, coeff0: numpy.ndarray) -> Tuple[numpy.ndarray, numpy.ndarray, numpy.ndarray]
 
    
@@ -319,17 +300,14 @@ Attributes
 
 .. py:function:: _extract_solutions_from_roots(roots: numpy.ndarray, i: int = 0) -> Tuple(complex, complex, complex)
 
-
 .. py:function:: _log_slow_continuum_zero_warning(roots: numpy.ndarray, i: int)
-
 
 .. py:function:: _log_assumed_thermal_continuum(root: complex)
 
-
 .. py:class:: ContinuaHandler(interactive)
 
-
    Bases: :py:obj:`pylbo.visualisation.legend_handler.LegendHandler`
+
 
    
    Handler to draw continua regions on the plots and make them interactive.
@@ -359,8 +337,27 @@ Attributes
 
    ..
        !! processed by numpydoc !!
-   .. py:property:: continua_colors
 
+   .. py:attribute:: continua_names
+
+
+   .. py:attribute:: continua_latex
+
+
+   .. py:attribute:: _continua_colors
+
+
+   .. py:attribute:: marker
+      :value: '.'
+
+
+
+   .. py:attribute:: markersize
+      :value: 6
+
+
+
+   .. py:property:: continua_colors
       
       Returns the list of continua colors.
 

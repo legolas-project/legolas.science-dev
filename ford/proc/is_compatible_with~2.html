@@ -83,11 +83,11 @@
     data-placement="bottom" data-html="true"
     title=" 0.0% of total for procedures.">5 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_banded_matrix_hermitian.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_banded_matrix.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_banded_matrix_hermitian.f08.html'>mod_banded_matrix_hermitian.f08</a></li>
-     <li><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></li>
+     <li><a href='../sourcefile/mod_banded_matrix.f08.html'>mod_banded_matrix.f08</a></li>
+     <li><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
      <li class="active">is_compatible_with</li>
   </ol>
 </div>
@@ -116,26 +116,25 @@
     <h2>private pure function is_compatible_with(this, other)</h2>
     
 
-    <p>Checks if a Hermitian band matrix is compatible with another Hermitian band matrix.
+    <p>Checks if a banded matrix is compatibe with another banded matrix.
 This implies that the following attributes should be equal:
-  - number of rows/columns
-  - number of sub/superdiagonals
-  - storage of upper or lower triangular part
+  - dimensions of the original matrices
+  - number of superdiagonals and subdiagonals
   - dimensions of the banded matrices themselves
-Returns <tt>.true.</tt> if all criteria are satisfied, <tt>.false.</tt> otherwise.</p>
+Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.</code> otherwise.</p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~241"></span>class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-this~108"></span>class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td><p>type instance</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-other~2"></span>class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),</td>
+  <td><span class="anchor" id="variable-other~2"></span>type(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>other</strong></td><td><p>other banded matrix</p></td>

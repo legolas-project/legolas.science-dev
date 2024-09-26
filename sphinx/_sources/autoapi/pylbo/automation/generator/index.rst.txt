@@ -1,23 +1,27 @@
-:py:mod:`pylbo.automation.generator`
-====================================
+pylbo.automation.generator
+==========================
 
 .. py:module:: pylbo.automation.generator
 
 
-Module Contents
----------------
+Attributes
+----------
+
+.. autoapisummary::
+
+   pylbo.automation.generator.KEYS_EXPECTED_AS_LIST
+
 
 Classes
-~~~~~~~
+-------
 
 .. autoapisummary::
 
    pylbo.automation.generator.ParfileGenerator
 
 
-
 Functions
-~~~~~~~~~
+---------
 
 .. autoapisummary::
 
@@ -27,19 +31,12 @@ Functions
    pylbo.automation.generator._handle_expected_item_list
 
 
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   pylbo.automation.generator.KEYS_EXPECTED_AS_LIST
-
+Module Contents
+---------------
 
 .. py:data:: KEYS_EXPECTED_AS_LIST
    :value: ['basis_functions']
 
-   
 
 .. py:function:: _ensure_nb_names_and_nb_runs_matches(names: Union[str, list[str]], nb_runs: int) -> list[str]
 
@@ -134,9 +131,7 @@ Attributes
 
 .. py:function:: _handle_expected_item_list(item)
 
-
 .. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None, subdir=True, prefix_numbers=True, nb_prefix_digits=4)
-
 
    
    Handles parfile generation.
@@ -177,6 +172,36 @@ Attributes
 
    ..
        !! processed by numpydoc !!
+
+   .. py:attribute:: parfile_dict
+
+
+   .. py:attribute:: nb_runs
+
+
+   .. py:attribute:: names
+
+
+   .. py:attribute:: basenames
+
+
+   .. py:attribute:: output_dir
+
+
+   .. py:attribute:: _use_prefix
+
+
+   .. py:attribute:: _nb_prefix_digits
+
+
+   .. py:attribute:: parfiles
+      :value: []
+
+
+
+   .. py:attribute:: container
+
+
    .. py:method:: _get_and_check_item(namelist, name, allowed_dtypes)
 
       
@@ -213,6 +238,7 @@ Attributes
       ..
           !! processed by numpydoc !!
 
+
    .. py:method:: create_namelist_from_dict()
 
       
@@ -237,6 +263,7 @@ Attributes
 
       ..
           !! processed by numpydoc !!
+
 
    .. py:method:: generate_parfiles()
 

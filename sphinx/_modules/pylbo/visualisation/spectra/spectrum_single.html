@@ -6,7 +6,7 @@
   <title>pylbo.visualisation.spectra.spectrum_single &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
 
   
   <!--[if lt IE 9]>
@@ -16,7 +16,7 @@
         <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../../../../_static/documentation_options.js?v=16816911"></script>
-        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
         <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
@@ -120,10 +120,16 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">custom_figure</span><span class="o">=</span><span class="n">custom_figure</span><span class="p">,</span> <span class="n">figlabel</span><span class="o">=</span><span class="s2">&quot;single-spectrum&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span>
+<div class="viewcode-block" id="SingleSpectrumPlot.dataset">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot.dataset">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span></div>
+
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_set_plot_properties</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span> <span class="o">=</span> <span class="n">use_residuals</span>
+<div class="viewcode-block" id="SingleSpectrumPlot._use_residuals">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot._use_residuals">[docs]</a>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span> <span class="o">=</span> <span class="n">use_residuals</span></div>
+
         <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nonzero_w_idxs</span><span class="p">,)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">eigenvalues</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-12</span><span class="p">)</span>
 
 <div class="viewcode-block" id="SingleSpectrumPlot.add_spectrum">
@@ -139,10 +145,19 @@
             <span class="n">alpha</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">,</span>
             <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
             <span class="n">norm</span><span class="o">=</span><span class="n">mpl_colors</span><span class="o">.</span><span class="n">LogNorm</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="n">cmap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">plot_props</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;cmap&quot;</span><span class="p">,</span> <span class="s2">&quot;jet&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="SingleSpectrumPlot.marker">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot.marker">[docs]</a>
+            <span class="n">cmap</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">plot_props</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;cmap&quot;</span><span class="p">,</span> <span class="s2">&quot;jet&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span></div>
+
             <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">plot_props</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="c1"># set dataset associated with this line of points</span>
+<div class="viewcode-block" id="SingleSpectrumPlot.markersize">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot.markersize">[docs]</a>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="SingleSpectrumPlot.alpha">
+<a class="viewcode-back" href="../../../../autoapi/pylbo/visualisation/spectra/spectrum_single/index.html#pylbo.visualisation.spectra.spectrum_single.SingleSpectrumPlot.alpha">[docs]</a>
+        <span class="c1"># set dataset associated with this line of points</span></div>
+
         <span class="nb">setattr</span><span class="p">(</span><span class="n">spectrum_points</span><span class="p">,</span> <span class="s2">&quot;dataset&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
         <span class="n">add_pickradius_to_item</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="n">spectrum_points</span><span class="p">,</span> <span class="n">pickradius</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_residuals</span><span class="p">:</span>
