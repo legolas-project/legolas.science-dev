@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
@@ -6,22 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pylbo.testing &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=16816911"></script>
-        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=16816911"></script>
+      <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="pylbo.utilities" href="../utilities/index.html" />
     <link rel="prev" title="pylbo.exceptions" href="../exceptions/index.html" /> 
 </head>
 
@@ -36,9 +35,6 @@
           <a href="../../../index.html" class="icon icon-home">
             Pylbo
           </a>
-              <div class="version">
-                2.1.2 - develop
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -51,14 +47,14 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">pylbo</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../automation/index.html">pylbo.automation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html">pylbo.utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../visualisation/index.html">pylbo.visualisation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../_version/index.html">pylbo._version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../automation/index.html">pylbo.automation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../data_containers/index.html">pylbo.data_containers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../deprecations/index.html">pylbo.deprecations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exceptions/index.html">pylbo.exceptions</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">pylbo.testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/index.html">pylbo.utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../visualisation/index.html">pylbo.visualisation</a></li>
 </ul>
 </li>
 </ul>
@@ -98,7 +94,7 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.testing.FakeDataSet" title="pylbo.testing.FakeDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FakeDataSet</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Main container for a single Legolas dataset.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.testing.MockMouseEvent" title="pylbo.testing.MockMouseEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MockMouseEvent</span></code></a></p></td>
 <td><p></p></td>
@@ -132,121 +128,315 @@
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.testing.pickle_dataseries_to_file">
-<span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">pickle_dataseries_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#pickle_dataseries_to_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.pickle_dataseries_to_file" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">pickle_dataseries_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.pickle_dataseries_to_file" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.testing.load_pickled_dataseries">
-<span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">load_pickled_dataseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#load_pickled_dataseries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.load_pickled_dataseries" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">load_pickled_dataseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.load_pickled_dataseries" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.testing.FakeDataSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">FakeDataSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#FakeDataSet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.FakeDataSet" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">FakeDataSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.FakeDataSet" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pylbo.data_containers.LegolasDataSet</span></code></a></p>
+<p>Main container for a single Legolas dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>datfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><em>PathLike</em></a>) – Path to the datfile.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.header">
+<span class="sig-name descname"><span class="pre">header</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.header" title="Link to this definition"></a></dt>
+<dd><p>The datfile header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.grid">
+<span class="sig-name descname"><span class="pre">grid</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.grid" title="Link to this definition"></a></dt>
+<dd><p>The base grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.grid_gauss">
+<span class="sig-name descname"><span class="pre">grid_gauss</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.grid_gauss" title="Link to this definition"></a></dt>
+<dd><p>The Gaussian grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.equilibria">
+<span class="sig-name descname"><span class="pre">equilibria</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.equilibria" title="Link to this definition"></a></dt>
+<dd><p>Dictionary containing the equilibrium arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.eigenvalues">
+<span class="sig-name descname"><span class="pre">eigenvalues</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.eigenvalues" title="Link to this definition"></a></dt>
+<dd><p>Array containing the complex eigenvalues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.geometry">
+<span class="sig-name descname"><span class="pre">geometry</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.geometry" title="Link to this definition"></a></dt>
+<dd><p>The geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.scale_factor">
+<span class="sig-name descname"><span class="pre">scale_factor</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.scale_factor" title="Link to this definition"></a></dt>
+<dd><p>Array with the scale factor. One for Cartesian geometries, r for cylindrical.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.x_start">
+<span class="sig-name descname"><span class="pre">x_start</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.x_start" title="Link to this definition"></a></dt>
+<dd><p>Start of the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.x_end">
+<span class="sig-name descname"><span class="pre">x_end</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.x_end" title="Link to this definition"></a></dt>
+<dd><p>End of the grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.gridpoints">
+<span class="sig-name descname"><span class="pre">gridpoints</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.gridpoints" title="Link to this definition"></a></dt>
+<dd><p>The number of base gridpoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.gauss_gridpoints">
+<span class="sig-name descname"><span class="pre">gauss_gridpoints</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.gauss_gridpoints" title="Link to this definition"></a></dt>
+<dd><p>The number of Gaussian gridpoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.matrix_gridpoints">
+<span class="sig-name descname"><span class="pre">matrix_gridpoints</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.matrix_gridpoints" title="Link to this definition"></a></dt>
+<dd><p>The dimension of the matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.ef_gridpoints">
+<span class="sig-name descname"><span class="pre">ef_gridpoints</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.ef_gridpoints" title="Link to this definition"></a></dt>
+<dd><p>The number of eigenfunction gridpoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.gamma">
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.gamma" title="Link to this definition"></a></dt>
+<dd><p>The ratio of specific heats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.eq_type">
+<span class="sig-name descname"><span class="pre">eq_type</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.eq_type" title="Link to this definition"></a></dt>
+<dd><p>The type of equilibrium selected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.cgs">
+<span class="sig-name descname"><span class="pre">cgs</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.cgs" title="Link to this definition"></a></dt>
+<dd><p>If <cite>True</cite>, all units are in cgs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.units">
+<span class="sig-name descname"><span class="pre">units</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.units" title="Link to this definition"></a></dt>
+<dd><p>Dictionary containing the unit normalisations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.eq_names">
+<span class="sig-name descname"><span class="pre">eq_names</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.eq_names" title="Link to this definition"></a></dt>
+<dd><p>Array containing the names of the equilibrium arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.testing.FakeDataSet._set_test_equilibria">
-<span class="sig-name descname"><span class="pre">_set_test_equilibria</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#FakeDataSet._set_test_equilibria"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.FakeDataSet._set_test_equilibria" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_set_test_equilibria</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.FakeDataSet._set_test_equilibria" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.testing.FakeDataSet._set_test_eigenvalues">
-<span class="sig-name descname"><span class="pre">_set_test_eigenvalues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#FakeDataSet._set_test_eigenvalues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.FakeDataSet._set_test_eigenvalues" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_set_test_eigenvalues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.FakeDataSet._set_test_eigenvalues" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.testing.MockMouseEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">MockMouseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canvas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockMouseEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockMouseEvent" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.MouseEvent" title="(in Matplotlib v3.9.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.backend_bases.MouseEvent</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">MockMouseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canvas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.MockMouseEvent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.MouseEvent" title="(in Matplotlib v3.9.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.backend_bases.MouseEvent</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockMouseEvent.inaxes">
-<span class="sig-name descname"><span class="pre">inaxes</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockMouseEvent.inaxes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockMouseEvent.inaxes" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">inaxes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pylbo.testing.MockMouseEvent.inaxes" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockMouseEvent.button">
-<span class="sig-name descname"><span class="pre">button</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockMouseEvent.button"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockMouseEvent.button" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">button</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#pylbo.testing.MockMouseEvent.button" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockMouseEvent.xdata">
-<span class="sig-name descname"><span class="pre">xdata</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockMouseEvent.xdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockMouseEvent.xdata" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">xdata</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pylbo.testing.MockMouseEvent.xdata" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockMouseEvent.ydata">
-<span class="sig-name descname"><span class="pre">ydata</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockMouseEvent.ydata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockMouseEvent.ydata" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ydata</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pylbo.testing.MockMouseEvent.ydata" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.testing.MockArtist">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">MockArtist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockArtist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockArtist" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">MockArtist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.MockArtist" title="Link to this definition"></a></dt>
 <dd><dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockArtist.dataset">
-<span class="sig-name descname"><span class="pre">dataset</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockArtist.dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockArtist.dataset" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">dataset</span></span><a class="headerlink" href="#pylbo.testing.MockArtist.dataset" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockArtist.axes">
-<span class="sig-name descname"><span class="pre">axes</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockArtist.axes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockArtist.axes" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">axes</span></span><a class="headerlink" href="#pylbo.testing.MockArtist.axes" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockArtist.figure">
-<span class="sig-name descname"><span class="pre">figure</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockArtist.figure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockArtist.figure" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">figure</span></span><a class="headerlink" href="#pylbo.testing.MockArtist.figure" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockArtist._xdata">
-<span class="sig-name descname"><span class="pre">_xdata</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockArtist._xdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockArtist._xdata" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_xdata</span></span><a class="headerlink" href="#pylbo.testing.MockArtist._xdata" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockArtist._ydata">
-<span class="sig-name descname"><span class="pre">_ydata</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockArtist._ydata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockArtist._ydata" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_ydata</span></span><a class="headerlink" href="#pylbo.testing.MockArtist._ydata" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.testing.MockArtist.get_xdata">
-<span class="sig-name descname"><span class="pre">get_xdata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockArtist.get_xdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockArtist.get_xdata" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_xdata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.MockArtist.get_xdata" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.testing.MockArtist.get_ydata">
-<span class="sig-name descname"><span class="pre">get_ydata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockArtist.get_ydata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockArtist.get_ydata" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_ydata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.MockArtist.get_ydata" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.testing.MockPickEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">MockPickEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mouse_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mouse_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockPickEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockPickEvent" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.9.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.backend_bases.PickEvent</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pylbo.testing.MockPickEvent.mouseevent">
-<span class="sig-name descname"><span class="pre">mouseevent</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockPickEvent.mouseevent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockPickEvent.mouseevent" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pylbo.testing.MockPickEvent.artist">
-<span class="sig-name descname"><span class="pre">artist</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockPickEvent.artist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockPickEvent.artist" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">MockPickEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mouse_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mouse_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">button</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.MockPickEvent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.9.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.backend_bases.PickEvent</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.testing.MockPickEvent.ind">
-<span class="sig-name descname"><span class="pre">ind</span></span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockPickEvent.ind"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockPickEvent.ind" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ind</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pylbo.testing.MockPickEvent.ind" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.testing.MockKeyEvent">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">MockKeyEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/pylbo/testing.html#MockKeyEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.testing.MockKeyEvent" title="Link to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.KeyEvent" title="(in Matplotlib v3.9.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.backend_bases.KeyEvent</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">MockKeyEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.MockKeyEvent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.KeyEvent" title="(in Matplotlib v3.9.3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.backend_bases.KeyEvent</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -257,6 +447,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../exceptions/index.html" class="btn btn-neutral float-left" title="pylbo.exceptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../utilities/index.html" class="btn btn-neutral float-right" title="pylbo.utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

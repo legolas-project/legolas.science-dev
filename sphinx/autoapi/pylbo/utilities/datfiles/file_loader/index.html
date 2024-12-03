@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../../../../">
 <head>
@@ -6,19 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pylbo.utilities.datfiles.file_loader &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../../../_static/documentation_options.js?v=16816911"></script>
-        <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=16816911"></script>
+      <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -37,9 +35,6 @@
           <a href="../../../../../index.html" class="icon icon-home">
             Pylbo
           </a>
-              <div class="version">
-                2.1.2 - develop
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -52,7 +47,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">API Reference</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">pylbo</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../_version/index.html">pylbo._version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../automation/index.html">pylbo.automation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data_containers/index.html">pylbo.data_containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../deprecations/index.html">pylbo.deprecations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../exceptions/index.html">pylbo.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../testing/index.html">pylbo.testing</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../index.html">pylbo.utilities</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="../index.html">pylbo.utilities.datfiles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../debug/index.html">pylbo.utilities.debug</a></li>
@@ -62,11 +62,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../visualisation/index.html">pylbo.visualisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../_version/index.html">pylbo._version</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../data_containers/index.html">pylbo.data_containers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../deprecations/index.html">pylbo.deprecations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../exceptions/index.html">pylbo.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../testing/index.html">pylbo.testing</a></li>
 </ul>
 </li>
 </ul>
@@ -129,16 +124,16 @@
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.utilities.datfiles.file_loader._validate_file">
-<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">_validate_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/utilities/datfiles/file_loader.html#_validate_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader._validate_file" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">_validate_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader._validate_file" title="Link to this definition"></a></dt>
 <dd><p>Checks the file validity of a given logfile or datfile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.12)"><em>PathLike</em></a>) – The path to the datfile, either as a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> or
-<a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code></a> object.</p>
+<dd class="field-odd"><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><em>PathLike</em></a>) – The path to the datfile, either as a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> or
+<a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code></a> object.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError" title="(in Python v3.12)"><strong>FileNotFoundError</strong></a> – If the datfile can not be found.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError" title="(in Python v3.13)"><strong>FileNotFoundError</strong></a> – If the datfile can not be found.</p></li>
 <li><p><a class="reference internal" href="../../../exceptions/index.html#pylbo.exceptions.InvalidLegolasFile" title="pylbo.exceptions.InvalidLegolasFile"><strong>InvalidLegolasFile</strong></a> – If the datfile is not a valid Legolas output file.</p></li>
 </ul>
 </dd>
@@ -147,14 +142,14 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.utilities.datfiles.file_loader.load">
-<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/utilities/datfiles/file_loader.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.load" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.load" title="Link to this definition"></a></dt>
 <dd><p>Loads a single Legolas datfile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>datfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.12)"><em>PathLike</em></a>) – Path to the datfile.</p>
+<dd class="field-odd"><p><strong>datfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><em>PathLike</em></a>) – Path to the datfile.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If <cite>datfile</cite> is not a single file.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If <cite>datfile</cite> is not a single file.</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>ds</strong> – A dataset instance for the given datfile.</p>
@@ -167,15 +162,15 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.utilities.datfiles.file_loader.load_series">
-<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">load_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/utilities/datfiles/file_loader.html#load_series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.load_series" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">load_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfiles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.load_series" title="Link to this definition"></a></dt>
 <dd><p>Loads multiple Legolas datfiles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>datfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a>) – Paths to the datfiles that should be loaded, in list/array form. Every element
+<dd class="field-odd"><p><strong>datfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a>) – Paths to the datfiles that should be loaded, in list/array form. Every element
 should be a string or a ~os.PathLike object.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.12)"><strong>ValueError</strong></a> – If an empty list or array is supplied.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If an empty list or array is supplied.</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>series</strong> – A dataseries instance for the given datfiles.</p>
@@ -188,13 +183,13 @@ should be a string or a ~os.PathLike object.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.utilities.datfiles.file_loader.load_logfile">
-<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">load_logfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/utilities/datfiles/file_loader.html#load_logfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.load_logfile" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">load_logfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.load_logfile" title="Link to this definition"></a></dt>
 <dd><p>Reads a Legolas log file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>logfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.12)"><em>PathLike</em></a>) – The path to the logfile.</p></li>
-<li><p><strong>sort</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – If <cite>True</cite>, sorts the eigenvalues in the logfile. Sorting is done first
+<li><p><strong>logfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><em>PathLike</em></a>) – The path to the logfile.</p></li>
+<li><p><strong>sort</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – If <cite>True</cite>, sorts the eigenvalues in the logfile. Sorting is done first
 on the real part, then on the imaginary part.</p></li>
 </ul>
 </dd>
@@ -209,7 +204,7 @@ on the real part, then on the imaginary part.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.utilities.datfiles.file_loader.select_files">
-<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">select_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/pylbo/utilities/datfiles/file_loader.html#select_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.select_files" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">select_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.select_files" title="Link to this definition"></a></dt>
 <dd><p>Opens an interactive window to select files to open.
 Requires a visual interface.</p>
 <dl class="field-list simple">
@@ -217,7 +212,7 @@ Requires a visual interface.</p>
 <dd class="field-odd"><p><strong>files</strong> – A list containing the paths to the files selected.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)">list</a></p>
 </dd>
 </dl>
 </dd></dl>

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../../../">
 <head>
@@ -6,23 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pylbo.automation.runner &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=fd3f3429" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../../_static/documentation_options.js?v=16816911"></script>
-        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=16816911"></script>
+      <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="pylbo.utilities" href="../../utilities/index.html" />
+    <link rel="next" title="pylbo.data_containers" href="../../data_containers/index.html" />
     <link rel="prev" title="pylbo.automation.generator" href="../generator/index.html" /> 
 </head>
 
@@ -37,9 +35,6 @@
           <a href="../../../../index.html" class="icon icon-home">
             Pylbo
           </a>
-              <div class="version">
-                2.1.2 - develop
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -52,6 +47,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">API Reference</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../index.html">pylbo</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../_version/index.html">pylbo._version</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">pylbo.automation</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../api/index.html">pylbo.automation.api</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../defaults/index.html">pylbo.automation.defaults</a></li>
@@ -59,13 +55,12 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">pylbo.automation.runner</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../utilities/index.html">pylbo.utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../visualisation/index.html">pylbo.visualisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../_version/index.html">pylbo._version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../data_containers/index.html">pylbo.data_containers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../deprecations/index.html">pylbo.deprecations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../exceptions/index.html">pylbo.exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../testing/index.html">pylbo.testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../utilities/index.html">pylbo.utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../visualisation/index.html">pylbo.visualisation</a></li>
 </ul>
 </li>
 </ul>
@@ -131,133 +126,133 @@
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.automation.runner._validate_executable">
-<span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">_validate_executable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#_validate_executable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner._validate_executable" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">_validate_executable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.runner._validate_executable" title="Link to this definition"></a></dt>
 <dd><p>Validates the given executable, then returns it. If the argument passed is
 None, defaults to the executable in the legolas home directory.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>executable</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.12)"><em>PathLike</em></a>) – The path to the legolas executable to use.</p>
+<dd class="field-odd"><p><strong>executable</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><em>PathLike</em></a>) – The path to the legolas executable to use.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError" title="(in Python v3.12)"><strong>FileNotFoundError</strong></a> – If the executable was not found.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError" title="(in Python v3.13)"><strong>FileNotFoundError</strong></a> – If the executable was not found.</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>executable</strong> – The (resolved) path to the executable to use.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.12)"><em>PathLike</em></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><em>PathLike</em></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.automation.runner._validate_nb_cpus">
-<span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">_validate_nb_cpus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpus</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#_validate_nb_cpus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner._validate_nb_cpus" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">_validate_nb_cpus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpus</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.runner._validate_nb_cpus" title="Link to this definition"></a></dt>
 <dd><p>Validates the number of cpus passed to the multiprocessing pool.
 Defaults to the maximum available number if exceeded.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>cpus</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The number of cpus to use.</p>
+<dd class="field-odd"><p><strong>cpus</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The number of cpus to use.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>cpus</strong> – The number of cpus to use, limited to the maximum number available.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.automation.runner._validate_parfiles">
-<span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">_validate_parfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#_validate_parfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner._validate_parfiles" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">_validate_parfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.runner._validate_parfiles" title="Link to this definition"></a></dt>
 <dd><p>Validates a list of parfiles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>files</strong> (<em>(</em><em>list of</em><em>) </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><em>(</em><em>list of</em><em>) </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.12)"><em>PathLike</em></a>) – Paths to the parfiles.</p>
+<dd class="field-odd"><p><strong>files</strong> (<em>(</em><em>list of</em><em>) </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>(</em><em>list of</em><em>) </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><em>PathLike</em></a>) – Paths to the parfiles.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError" title="(in Python v3.12)"><strong>FileNotFoundError</strong></a> – If one of the parfiles is not found.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError" title="(in Python v3.13)"><strong>FileNotFoundError</strong></a> – If one of the parfiles is not found.</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>files_list</strong> – A list of resolved filepaths for the parfiles.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)">list</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)">list</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">LegolasRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_cpus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">executable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.automation.runner.</span></span><span class="sig-name descname"><span class="pre">LegolasRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_parfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_cpus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">executable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner" title="Link to this definition"></a></dt>
 <dd><p>Handles running legolas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a>) – A list or array containing the names or paths to the parfiles.</p></li>
-<li><p><strong>remove_parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – If <cite>True</cite>, removes the parfiles after running Legolas. This will also remove
+<li><p><strong>parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a>) – A list or array containing the names or paths to the parfiles.</p></li>
+<li><p><strong>remove_parfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – If <cite>True</cite>, removes the parfiles after running Legolas. This will also remove
 the containing folder if it turns out to be empty after the parfiles are
 removed. If there are other files still in the folder it remains untouched.</p></li>
-<li><p><strong>nb_cpus</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – The number of CPUs to use when running Legolas. If equal to 1 then
+<li><p><strong>nb_cpus</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The number of CPUs to use when running Legolas. If equal to 1 then
 parallelisation is disabled. Defaults to the maximum number of CPUs available
 if a number larger than the available number is specified.</p></li>
-<li><p><strong>executable</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.12)"><em>PathLike</em></a>) – The path to the legolas executable.</p></li>
+<li><p><strong>executable</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><em>PathLike</em></a>) – The path to the legolas executable.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner.parfiles">
-<span class="sig-name descname"><span class="pre">parfiles</span></span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner.parfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.parfiles" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parfiles</span></span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.parfiles" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner.parfile_dir">
-<span class="sig-name descname"><span class="pre">parfile_dir</span></span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner.parfile_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.parfile_dir" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parfile_dir</span></span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.parfile_dir" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner.executable">
-<span class="sig-name descname"><span class="pre">executable</span></span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner.executable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.executable" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">executable</span></span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.executable" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner.nb_cpus">
-<span class="sig-name descname"><span class="pre">nb_cpus</span></span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner.nb_cpus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.nb_cpus" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">nb_cpus</span></span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.nb_cpus" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner.remove_parfiles">
-<span class="sig-name descname"><span class="pre">remove_parfiles</span></span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner.remove_parfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.remove_parfiles" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">remove_parfiles</span></span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.remove_parfiles" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner._init_worker">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_init_worker</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner._init_worker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._init_worker" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_init_worker</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._init_worker" title="Link to this definition"></a></dt>
 <dd><p>Worker initialisation for the multiprocessing module.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner._activate_worker">
-<span class="sig-name descname"><span class="pre">_activate_worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner._activate_worker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._activate_worker" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_activate_worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._activate_worker" title="Link to this definition"></a></dt>
 <dd><p>Worker activation for the multiprocessing module.
 Calls the legolas executable as a subprocess with the parfile as argument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>parfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.12)"><em>PathLike</em></a>) – The path to the parfile</p>
+<dd class="field-odd"><p><strong>parfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><em>PathLike</em></a>) – The path to the parfile</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>call</strong> – A call to a subprocess to run legolas.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/subprocess.html#subprocess.call" title="(in Python v3.12)"><code class="xref py py-func docutils literal notranslate"><span class="pre">subprocess.call()</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/subprocess.html#subprocess.call" title="(in Python v3.13)"><code class="xref py py-func docutils literal notranslate"><span class="pre">subprocess.call()</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner._terminate_workers">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_terminate_workers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner._terminate_workers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._terminate_workers" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_terminate_workers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner._terminate_workers" title="Link to this definition"></a></dt>
 <dd><p>Terminates the multiprocessing workers after a forced interruption.
 Simply giving an interrupt terminates only the Python processes, but still
 keeps the Legolas calls running since those are subprocesses. This method first
@@ -266,7 +261,7 @@ terminates all child processes (legolas), then the parents (workers).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.automation.runner.LegolasRunner.execute">
-<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/pylbo/automation/runner.html#LegolasRunner.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.execute" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.runner.LegolasRunner.execute" title="Link to this definition"></a></dt>
 <dd><p>Executes the legolas executables and initialises the multiprocessing
 pool if requested.</p>
 </dd></dl>
@@ -281,7 +276,7 @@ pool if requested.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../generator/index.html" class="btn btn-neutral float-left" title="pylbo.automation.generator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../utilities/index.html" class="btn btn-neutral float-right" title="pylbo.utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../data_containers/index.html" class="btn btn-neutral float-right" title="pylbo.data_containers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
