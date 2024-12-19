@@ -1,0 +1,254 @@
+pylbo.gimli.equilibrium
+=======================
+
+.. py:module:: pylbo.gimli.equilibrium
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   pylbo.gimli.equilibrium.Variables
+   pylbo.gimli.equilibrium.Equilibrium
+
+
+Module Contents
+---------------
+
+.. py:class:: Variables
+
+   
+   Defines a set of variables and constants to be used in defining an Equilibrium
+   object.
+
+   .. attribute:: x, y, z
+
+      Coordinates.
+
+      :type: sympy symbols
+
+   .. attribute:: rho0, T0, B0sq
+
+      Density, temperature, and magnetic field squared for use in expressions
+      depending on these quantities.
+
+      :type: sympy symbols
+
+   .. attribute:: k2, k3
+
+      Wavenumbers.
+
+      :type: sympy symbols
+
+   .. attribute:: rhoc, Tc, B2c, B3c, v2c, v3c, pc
+
+      Constants typically used for amplitudes or uniform terms in their corresponding
+      equilibrium quantities.
+
+      :type: sympy symbols
+
+   .. attribute:: p1, p2, p3, p4, p5, p6, p7, p8
+
+      Additional free-use constants.
+
+      :type: sympy symbols
+
+   .. attribute:: alpha, beta, delta, theta, tau, lamda, nu
+
+      Additional free-use constants.
+
+      :type: sympy symbols
+
+   .. attribute:: r0, rc, rj, Bth0, V, j0, g
+
+      Additional constants, originally use in cylindrical coordinates.
+
+      :type: sympy symbols
+
+   .. attribute:: fkey
+
+      Dictionary translating LaTeX notation to Legolas variable names.
+
+      :type: dict
+
+   .. rubric:: Examples
+
+   >>> from pylbo.gimli import Variables
+   >>> var = Variables()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: fkey
+
+
+.. py:class:: Equilibrium(var, rho0, v02, v03, T0, B02=None, B03=None, resistivity=None, gravity=None, condpara=None, condperp=None, cooling=None, heating=None)
+
+   
+   "
+   Class containing all equilibrium expressions and initialisation functions.
+   This object is a required argument when generating user files with the Legolas and
+   Amrvac classes.
+
+   :param var: The Variables object containing the symbols to be used in the equilibrium
+               expressions.
+   :type var: :class:`Variables`
+   :param rho0: The equilibrium density expression.
+   :type rho0: sympy expression
+   :param v02: The equilibrium velocity expressions.
+   :type v02: sympy expressions
+   :param v03: The equilibrium velocity expressions.
+   :type v03: sympy expressions
+   :param T0: The equilibrium temperature expression.
+   :type T0: sympy expression
+   :param B02: The equilibrium magnetic field expressions.
+   :type B02: sympy expressions
+   :param B03: The equilibrium magnetic field expressions.
+   :type B03: sympy expressions
+   :param resistivity: The resistivity expression.
+   :type resistivity: sympy expression
+   :param gravity: The gravitational acceleration.
+   :type gravity: constant
+   :param condpara: The parallel conduction prescription.
+   :type condpara: sympy expression
+   :param condperp: The perpendicular conduction prescription.
+   :type condperp: sympy expression
+   :param cooling: The cooling prescription.
+   :type cooling: sympy expression
+   :param heating: The heating prescription.
+   :type heating: sympy expression
+
+   .. attribute:: variables
+
+      Variables object from which all expressions are constructed.
+
+      :type: Variables object
+
+   .. attribute:: rho0
+
+      The equilibrium density expression.
+
+      :type: sympy expression
+
+   .. attribute:: v02, v03
+
+      The equilibrium velocity expressions.
+
+      :type: sympy expressions
+
+   .. attribute:: T0
+
+      The equilibrium temperature expression.
+
+      :type: sympy expression
+
+   .. attribute:: B02, B03
+
+      The equilibrium magnetic field expressions.
+
+      :type: sympy expressions
+
+   .. rubric:: Examples
+
+   The example below defines a homogeneous hydrodynamic equilibrium with constant
+   density and temperature. Their values can be set later when passing this equilibrium
+   to the Legolas or Amrvac class along with a dictionary.
+
+   >>> from pylbo.gimli import Equilibrium, Variables
+   >>> var = Variables()
+   >>> eq = Equilibrium(var, rho0=var.rhoc, v02=0, v03=0, T0=var.Tc)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: variables
+
+
+   .. py:attribute:: rho0
+
+
+   .. py:attribute:: T0
+
+
+   .. py:attribute:: _dict_phys
+
+
+   .. py:method:: get_physics()
+
+      
+      Returns a dictionary containing the physics expressions and the dependencies to
+      check for.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: get_dependencies()
+
+      
+      Checks for dependencies on other equilibrium quantities.
+      Returns a dictionary with the replacement expressions for use in Fortran files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

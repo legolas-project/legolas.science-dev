@@ -1,0 +1,244 @@
+pylbo.gimli.amrvac
+==================
+
+.. py:module:: pylbo.gimli.amrvac
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   pylbo.gimli.amrvac.Amrvac
+
+
+Module Contents
+---------------
+
+.. py:class:: Amrvac(config)
+
+   
+   Class to prepare Legolas data for use in MPI-AMRVAC (https://amrvac.org).
+
+   :param config: The configuration dictionary detailing which Legolas file and selection of
+                  eigenmodes to use.
+   :type config: dict
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: config
+
+
+   .. py:method:: _validate_config()
+
+      
+      Validates the presence and value of `physics_type` in the configuration
+      dictionary.
+
+      :raises KeyError: If `physics_type` is missing.
+      :raises ValueError: If `physics_type` is invalid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _validate_datfile()
+
+      
+      Validates whether a valid Legolas data file was specified in the configuration.
+      Further checks whether all necessary parameters are present in the configuration
+      to prepare Legolas data for use with MPI-AMRVAC.
+
+      :raises AssertionError: If the length of `weights` is not equal to the number of eigenvalues or if
+          the elements of the weights do not add up to 1; if `ef_factor` does not have
+          modulus 1; if `norm_range` does not have length 2; if `norm_range`'s first
+          element is larger than the second.
+      :raises KeyError: If no datfile is specified; if no initial guess for the eigenvalue is
+          specified.
+      :raises TypeError: If `ev_guess` is not a single float/complex number or a list/NumPy array of
+          float/complex numbers; if `ev_time` for the eigenvalue is not a float or an
+          integer; if `weights` is not a list or NumPy array; if `ef_factor` is not a
+          list with length equal to the number of eigenvalues, or an integer, float,
+          or complex number; if `quantity` is not a string; if `percentage` is not a
+          float; if `norm_range` is not a NumPy array.
+      :raises ValueError: If `quantity` is not in the list of equilibrium quantities.
+      :raises Exception: If the datfile is invalid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _get_combined_perturbation(ef)
+
+      
+      Takes Legolas's perturbations of different eigenvalues and adds them up to a
+      single perturbation.
+
+      :param ef: The eigenfunction to combine.
+      :type ef: str
+
+      :returns: The combined perturbation.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _get_total_perturbation(ef_type)
+
+      
+      Combines the perturbations of different eigenvalues into a single perturbation.
+      Derives the pressure perturbation from the density and temperature
+      perturbations.
+
+      :param ef_type: The eigenfunction to calculate.
+      :type ef_type: str
+
+      :returns: The total perturbation.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _get_normalisation()
+
+      
+      Normalises the perturbation of the specified quantity by the maximum background
+      value.
+
+      :returns: The normalisation factor.
+      :rtype: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: prepare_legolas_data(loc=None)
+
+      
+      Prepares a file (.ldat) from the Legolas data for use with MPI-AMRVAC.
+
+      :param loc: Path to the directory where the .ldat file will be stored. Default is the
+                  current directory.
+      :type loc: str, ~os.PathLike
+
+      :raises ValueError: If the datfile is invalid.
+
+      .. rubric:: Examples
+
+      >>> from pylbo.gimli import Amrvac
+      >>> amrvac_config = {
+      >>>     "datfile": "./datfile.dat",
+      >>>     "physics_type": "mhd",
+      >>>     "ev_guess": [-0.1, 0.1],
+      >>>     "ev_time": 0,
+      >>>     "percentage": 0.01,
+      >>>     "quantity": "rho0"
+      >>> }
+      >>> amrvac = gimli.Amrvac(amrvac_config)
+      >>> amrvac.prepare_legolas_data()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

@@ -1,0 +1,671 @@
+pylbo.gimli
+===========
+
+.. py:module:: pylbo.gimli
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/pylbo/gimli/_version/index
+   /autoapi/pylbo/gimli/amrvac/index
+   /autoapi/pylbo/gimli/equilibrium/index
+   /autoapi/pylbo/gimli/legolas/index
+   /autoapi/pylbo/gimli/utils/index
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   pylbo.gimli.Equilibrium
+   pylbo.gimli.Variables
+   pylbo.gimli.Legolas
+   pylbo.gimli.Amrvac
+
+
+Package Contents
+----------------
+
+.. py:class:: Equilibrium(var, rho0, v02, v03, T0, B02=None, B03=None, resistivity=None, gravity=None, condpara=None, condperp=None, cooling=None, heating=None)
+
+   
+   "
+   Class containing all equilibrium expressions and initialisation functions.
+   This object is a required argument when generating user files with the Legolas and
+   Amrvac classes.
+
+   :param var: The Variables object containing the symbols to be used in the equilibrium
+               expressions.
+   :type var: :class:`Variables`
+   :param rho0: The equilibrium density expression.
+   :type rho0: sympy expression
+   :param v02: The equilibrium velocity expressions.
+   :type v02: sympy expressions
+   :param v03: The equilibrium velocity expressions.
+   :type v03: sympy expressions
+   :param T0: The equilibrium temperature expression.
+   :type T0: sympy expression
+   :param B02: The equilibrium magnetic field expressions.
+   :type B02: sympy expressions
+   :param B03: The equilibrium magnetic field expressions.
+   :type B03: sympy expressions
+   :param resistivity: The resistivity expression.
+   :type resistivity: sympy expression
+   :param gravity: The gravitational acceleration.
+   :type gravity: constant
+   :param condpara: The parallel conduction prescription.
+   :type condpara: sympy expression
+   :param condperp: The perpendicular conduction prescription.
+   :type condperp: sympy expression
+   :param cooling: The cooling prescription.
+   :type cooling: sympy expression
+   :param heating: The heating prescription.
+   :type heating: sympy expression
+
+   .. attribute:: variables
+
+      Variables object from which all expressions are constructed.
+
+      :type: Variables object
+
+   .. attribute:: rho0
+
+      The equilibrium density expression.
+
+      :type: sympy expression
+
+   .. attribute:: v02, v03
+
+      The equilibrium velocity expressions.
+
+      :type: sympy expressions
+
+   .. attribute:: T0
+
+      The equilibrium temperature expression.
+
+      :type: sympy expression
+
+   .. attribute:: B02, B03
+
+      The equilibrium magnetic field expressions.
+
+      :type: sympy expressions
+
+   .. rubric:: Examples
+
+   The example below defines a homogeneous hydrodynamic equilibrium with constant
+   density and temperature. Their values can be set later when passing this equilibrium
+   to the Legolas or Amrvac class along with a dictionary.
+
+   >>> from pylbo.gimli import Equilibrium, Variables
+   >>> var = Variables()
+   >>> eq = Equilibrium(var, rho0=var.rhoc, v02=0, v03=0, T0=var.Tc)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: variables
+
+
+   .. py:attribute:: rho0
+
+
+   .. py:attribute:: T0
+
+
+   .. py:attribute:: _dict_phys
+
+
+   .. py:method:: get_physics()
+
+      
+      Returns a dictionary containing the physics expressions and the dependencies to
+      check for.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: get_dependencies()
+
+      
+      Checks for dependencies on other equilibrium quantities.
+      Returns a dictionary with the replacement expressions for use in Fortran files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: Variables
+
+   
+   Defines a set of variables and constants to be used in defining an Equilibrium
+   object.
+
+   .. attribute:: x, y, z
+
+      Coordinates.
+
+      :type: sympy symbols
+
+   .. attribute:: rho0, T0, B0sq
+
+      Density, temperature, and magnetic field squared for use in expressions
+      depending on these quantities.
+
+      :type: sympy symbols
+
+   .. attribute:: k2, k3
+
+      Wavenumbers.
+
+      :type: sympy symbols
+
+   .. attribute:: rhoc, Tc, B2c, B3c, v2c, v3c, pc
+
+      Constants typically used for amplitudes or uniform terms in their corresponding
+      equilibrium quantities.
+
+      :type: sympy symbols
+
+   .. attribute:: p1, p2, p3, p4, p5, p6, p7, p8
+
+      Additional free-use constants.
+
+      :type: sympy symbols
+
+   .. attribute:: alpha, beta, delta, theta, tau, lamda, nu
+
+      Additional free-use constants.
+
+      :type: sympy symbols
+
+   .. attribute:: r0, rc, rj, Bth0, V, j0, g
+
+      Additional constants, originally use in cylindrical coordinates.
+
+      :type: sympy symbols
+
+   .. attribute:: fkey
+
+      Dictionary translating LaTeX notation to Legolas variable names.
+
+      :type: dict
+
+   .. rubric:: Examples
+
+   >>> from pylbo.gimli import Variables
+   >>> var = Variables()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: fkey
+
+
+.. py:class:: Legolas(equilibrium, config)
+
+   
+   Class for generating user-defined Legolas modules and parfiles.
+
+   :param equilibrium: The equilibrium object containing the user-defined equilibrium and physics
+                       functions.
+   :type equilibrium: Equilibrium
+   :param config: A dictionary containing the configuration for the Legolas run (both equilibrium
+                  parameter values and technical settings).
+   :type config: dict
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: equilibrium
+
+
+   .. py:attribute:: config
+
+
+   .. py:method:: _validate_config()
+
+      
+      Validates the validity of the configuration dictionary.
+
+      :raises KeyError: If the configuration dictionary is missing the `physics_type` key.
+      :raises ValueError: If `physics_type` is not "hd" or "mhd".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: user_module(filename='smod_user_defined', loc=None)
+
+      
+      Writes the user module for the Legolas run.
+
+      :param filename: The name of the user module file.
+      :type filename: str
+      :param loc: Path to the directory where the user module will be stored. Default is the
+                  current directory.
+      :type loc: str, ~os.PathLike
+
+      .. rubric:: Examples
+
+      The example below defines a homogeneous hydrodynamic equilibrium with constant
+      density and temperature. The values of the equilibrium parameters are set in the
+      configuration dictionary.
+
+      >>> from pylbo.gimli import Variables, Equilibrium, Legolas
+      >>> var = Variables()
+      >>> eq = Equilibrium(var, rho0=var.rhoc, v02=0, v03=0, T0=var.Tc)
+      >>> config = {
+      >>>     "geometry": "Cartesian",
+      >>>     "x_start": 0,
+      >>>     "x_end": 1,
+      >>>     "gridpoints": 51,
+      >>>     "parameters": {
+      >>>         "k2": 0.5,
+      >>>         "k3": 0,
+      >>>         "cte_rho0": 1,
+      >>>         "cte_T0": 1
+      >>>     },
+      >>>     "equilibrium_type": "user_defined",
+      >>>     "boundary_type": "wall_weak",
+      >>>     "physics_type": "mhd"
+      >>> }
+      >>> legolas = Legolas(eq, config)
+      >>> legolas.user_module()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: parfile(filename='legolas_config', make_dir=False)
+
+      
+      Writes the parameter file for the Legolas run.
+
+      :param filename: The name of the parameter file.
+      :type filename: str
+      :param make_dir: If `True`, creates a directory for the parameter file.
+      :type make_dir: bool
+
+      :returns: **parfiles** -- A list containing the paths to the parameter files.
+      :rtype: list
+
+      .. rubric:: Examples
+
+      The example below defines a homogeneous hydrodynamic equilibrium with constant
+      density and temperature. The values of the equilibrium parameters are set in the
+      configuration dictionary and written to the parameter file.
+
+      >>> from pylbo.gimli import Variables, Equilibrium, Legolas
+      >>> var = Variables()
+      >>> eq = Equilibrium(var, rho0=var.rhoc, v02=0, v03=0, T0=var.Tc)
+      >>> config = {
+      >>>     "geometry": "Cartesian",
+      >>>     "x_start": 0,
+      >>>     "x_end": 1,
+      >>>     "gridpoints": 51,
+      >>>     "parameters": {
+      >>>         "k2": 0.5,
+      >>>         "k3": 0,
+      >>>         "cte_rho0": 1,
+      >>>         "cte_T0": 1
+      >>>     },
+      >>>     "equilibrium_type": "user_defined",
+      >>>     "boundary_type": "wall_weak",
+      >>>     "physics_type": "mhd"
+      >>> }
+      >>> legolas = Legolas(eq, config)
+      >>> legolas.parfile()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: Amrvac(config)
+
+   
+   Class to prepare Legolas data for use in MPI-AMRVAC (https://amrvac.org).
+
+   :param config: The configuration dictionary detailing which Legolas file and selection of
+                  eigenmodes to use.
+   :type config: dict
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: config
+
+
+   .. py:method:: _validate_config()
+
+      
+      Validates the presence and value of `physics_type` in the configuration
+      dictionary.
+
+      :raises KeyError: If `physics_type` is missing.
+      :raises ValueError: If `physics_type` is invalid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _validate_datfile()
+
+      
+      Validates whether a valid Legolas data file was specified in the configuration.
+      Further checks whether all necessary parameters are present in the configuration
+      to prepare Legolas data for use with MPI-AMRVAC.
+
+      :raises AssertionError: If the length of `weights` is not equal to the number of eigenvalues or if
+          the elements of the weights do not add up to 1; if `ef_factor` does not have
+          modulus 1; if `norm_range` does not have length 2; if `norm_range`'s first
+          element is larger than the second.
+      :raises KeyError: If no datfile is specified; if no initial guess for the eigenvalue is
+          specified.
+      :raises TypeError: If `ev_guess` is not a single float/complex number or a list/NumPy array of
+          float/complex numbers; if `ev_time` for the eigenvalue is not a float or an
+          integer; if `weights` is not a list or NumPy array; if `ef_factor` is not a
+          list with length equal to the number of eigenvalues, or an integer, float,
+          or complex number; if `quantity` is not a string; if `percentage` is not a
+          float; if `norm_range` is not a NumPy array.
+      :raises ValueError: If `quantity` is not in the list of equilibrium quantities.
+      :raises Exception: If the datfile is invalid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _get_combined_perturbation(ef)
+
+      
+      Takes Legolas's perturbations of different eigenvalues and adds them up to a
+      single perturbation.
+
+      :param ef: The eigenfunction to combine.
+      :type ef: str
+
+      :returns: The combined perturbation.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _get_total_perturbation(ef_type)
+
+      
+      Combines the perturbations of different eigenvalues into a single perturbation.
+      Derives the pressure perturbation from the density and temperature
+      perturbations.
+
+      :param ef_type: The eigenfunction to calculate.
+      :type ef_type: str
+
+      :returns: The total perturbation.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _get_normalisation()
+
+      
+      Normalises the perturbation of the specified quantity by the maximum background
+      value.
+
+      :returns: The normalisation factor.
+      :rtype: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: prepare_legolas_data(loc=None)
+
+      
+      Prepares a file (.ldat) from the Legolas data for use with MPI-AMRVAC.
+
+      :param loc: Path to the directory where the .ldat file will be stored. Default is the
+                  current directory.
+      :type loc: str, ~os.PathLike
+
+      :raises ValueError: If the datfile is invalid.
+
+      .. rubric:: Examples
+
+      >>> from pylbo.gimli import Amrvac
+      >>> amrvac_config = {
+      >>>     "datfile": "./datfile.dat",
+      >>>     "physics_type": "mhd",
+      >>>     "ev_guess": [-0.1, 0.1],
+      >>>     "ev_time": 0,
+      >>>     "percentage": 0.01,
+      >>>     "quantity": "rho0"
+      >>> }
+      >>> amrvac = gimli.Amrvac(amrvac_config)
+      >>> amrvac.prepare_legolas_data()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

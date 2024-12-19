@@ -1,0 +1,191 @@
+pylbo.gimli.utils
+=================
+
+.. py:module:: pylbo.gimli.utils
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   pylbo.gimli.utils.validate_output_dir
+   pylbo.gimli.utils.is_symbol_dependent
+   pylbo.gimli.utils.is_sympy_number
+   pylbo.gimli.utils.get_equilibrium_parameters
+   pylbo.gimli.utils.create_file
+   pylbo.gimli.utils.write_pad
+
+
+Module Contents
+---------------
+
+.. py:function:: validate_output_dir(output_dir)
+
+   
+   Validates and returns the output directory for the parfiles.
+
+   :param output_dir: The output directory to store the parfiles in. If not given, defaults to
+                      the current working directory.
+   :type output_dir: str, ~os.PathLike
+
+   :raises NotADirectoryError: If the output directory is not found.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: is_symbol_dependent(symbols, expr)
+
+   
+   Checks whether an expression depends on any of the symbols in a given list.
+
+   :param symbols: The list of symbols to check for.
+   :type symbols: list
+   :param expr: The expression to check for the symbols in the list.
+   :type expr: sympy expression
+
+   :returns: **sdep** -- Whether the expression depends on any of the symbols.
+   :rtype: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: is_sympy_number(expr)
+
+   
+   Checks whether an expression is a number.
+
+   :param expr: The expression to check.
+   :type expr: sympy expression
+
+   :returns: Whether the expression is a number.
+   :rtype: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_equilibrium_parameters(param)
+
+   
+   Removes the wavenumbers from the equilibrium parameters.
+
+   :param param: The equilibrium parameters dictionary.
+   :type param: dict
+
+   :returns: The equilibrium parameters without the wavenumbers.
+   :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: create_file(filename)
+
+   
+   Creates a file with a given path (or asks whether to overwrite it if it
+   exists already).
+
+   :param filename: The file path.
+   :type filename: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: write_pad(file, string, level)
+
+   
+   Writes a string to a file with a given indentation level.
+
+   :param file: The file object to write to.
+   :type file: file object
+   :param string: The string to write.
+   :type string: str
+   :param level: The indentation level.
+   :type level: int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
