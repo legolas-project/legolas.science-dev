@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>initialise &ndash; Legolas v. 2.1.1 - develop</title>
+    <title>initialise &ndash; Legolas v. 2.2.1 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.1.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.2.1 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -83,11 +83,11 @@
     data-placement="bottom" data-html="true"
     title=" 0.1% of total for procedures.">9 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_base_efs.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_derived_efs.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_base_efs.f08.html'>mod_base_efs.f08</a></li>
-     <li><a href='../module/mod_base_efs.html'>mod_base_efs</a></li>
+     <li><a href='../sourcefile/mod_derived_efs.f08.html'>mod_derived_efs.f08</a></li>
+     <li><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></li>
      <li class="active">initialise</li>
   </ol>
 </div>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine initialise(this, sv_component, ef_grid_size, nb_efs)</h2>
+    <h2>private subroutine initialise(this, name, ef_grid_size, nb_efs)</h2>
     
 
 
@@ -122,16 +122,16 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~224"></span>class(<a href='../type/base_ef_t.html'>base_ef_t</a>),</td>
+  <td><span class="anchor" id="variable-this~114"></span>class(<a href='../type/derived_ef_t.html'>derived_ef_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-sv_component~2"></span>type(<a href='../type/sv_component_t.html'>sv_component_t</a>),</td>
-<td>intent(in),</td>
-  <td></td>  <td>target</td><td>::</td>
-  <td><strong>sv_component</strong></td><td></td>
+  <td><span class="anchor" id="variable-name~15"></span>character,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>name</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-ef_grid_size"></span>integer,</td>
@@ -176,7 +176,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.1.1 - develop was developed by <br>&copy; 2024 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.2.1 - develop was developed by <br>&copy; 2025 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

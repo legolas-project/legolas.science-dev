@@ -11,6 +11,7 @@ Classes
 
    pylbo.gimli.equilibrium.Variables
    pylbo.gimli.equilibrium.Equilibrium
+   pylbo.gimli.equilibrium.NumericalEquilibrium
 
 
 Module Contents
@@ -100,7 +101,6 @@ Module Contents
 .. py:class:: Equilibrium(var, rho0, v02, v03, T0, B02=None, B03=None, resistivity=None, gravity=None, condpara=None, condperp=None, cooling=None, heating=None)
 
    
-   "
    Class containing all equilibrium expressions and initialisation functions.
    This object is a required argument when generating user files with the Legolas and
    Amrvac classes.
@@ -233,6 +233,88 @@ Module Contents
       Checks for dependencies on other equilibrium quantities.
       Returns a dictionary with the replacement expressions for use in Fortran files.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: NumericalEquilibrium(arrays)
+
+   
+   Class to convert numerical arrays to a Legolas-readable format.
+
+   :param arrays: A dictionary linking key/header to a numerical array.
+                  Must contain "rho0" and "T0" and one of ("u1", "x", "r"). Optional arrays are
+                  "v01", "v02", "v03", "B01", "B02", "B03", and "grav".
+   :type arrays: dict
+
+   .. attribute:: arrays
+
+      Dictionary with specified arrays.
+
+      :type: dict
+
+   .. rubric:: Examples
+
+   The example below defines a homogeneous hydrodynamic equilibrium with constant
+   density and temperature.
+
+   >>> import numpy as np
+   >>> from pylbo.gimli import NumericalEquilibrium
+   >>> dictionary = {
+   >>>     "x" : np.linspace(0, 1, 100),
+   >>>     "rho0": 2 * np.ones(100),
+   >>>     "T0" : 0.5 * np.ones(100)
+   >>> }
+   >>> equil = NumericalEquilibrium(dictionary)
+   >>> equil.to_legolas_arrays(filename="homogeneous")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: arrays
+
+
+   .. py:method:: _validate()
+
+
+   .. py:method:: to_legolas_arrays(filename='arrays', loc='./')
+
+      
+      Prepares a numerical arrays file (.lar) for use with Legolas.
+
+      :param filename: Name of the .lar file. Default is 'arrays'.
+      :type filename: str, optional
+      :param loc: The location to save the .lar file. Default is the current directory.
+      :type loc: str, optional
 
 
 

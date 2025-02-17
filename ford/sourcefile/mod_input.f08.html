@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_input.f08 &ndash; Legolas v. 2.1.1 - develop</title>
+    <title>mod_input.f08 &ndash; Legolas v. 2.2.1 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.1.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.2.1 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.7% of total for source files.">308 statements</a>
+    title=" 2.6% of total for source files.">308 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_input.f08"> Source File</a></li>
   </ul>
@@ -476,7 +476,7 @@
 <a id="ln-326" name="ln-326" href="#ln-326"></a><span class="w">      </span><span class="n">k2</span><span class="p">,</span><span class="w"> </span><span class="n">k3</span><span class="p">,</span><span class="w"> </span><span class="n">cte_rho0</span><span class="p">,</span><span class="w"> </span><span class="n">cte_T0</span><span class="p">,</span><span class="w"> </span><span class="n">cte_B01</span><span class="p">,</span><span class="w"> </span><span class="n">cte_B02</span><span class="p">,</span><span class="w"> </span><span class="n">cte_B03</span><span class="p">,</span><span class="w"> </span><span class="n">cte_v02</span><span class="p">,</span><span class="w"> </span><span class="n">cte_v03</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
 <a id="ln-327" name="ln-327" href="#ln-327"></a><span class="w">      </span><span class="n">cte_p0</span><span class="p">,</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">p3</span><span class="p">,</span><span class="w"> </span><span class="n">p4</span><span class="p">,</span><span class="w"> </span><span class="n">p5</span><span class="p">,</span><span class="w"> </span><span class="n">p6</span><span class="p">,</span><span class="w"> </span><span class="n">p7</span><span class="p">,</span><span class="w"> </span><span class="n">p8</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
 <a id="ln-328" name="ln-328" href="#ln-328"></a><span class="w">      </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="n">tau</span><span class="p">,</span><span class="w"> </span><span class="n">lambda</span><span class="p">,</span><span class="w"> </span><span class="n">nu</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
-<a id="ln-329" name="ln-329" href="#ln-329"></a><span class="w">      </span><span class="n">r0</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">rj</span><span class="p">,</span><span class="w"> </span><span class="n">Bth0</span><span class="p">,</span><span class="w"> </span><span class="n">Bz0</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">j0</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">eq_bool</span>
+<a id="ln-329" name="ln-329" href="#ln-329"></a><span class="w">      </span><span class="n">r0</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">rj</span><span class="p">,</span><span class="w"> </span><span class="n">Bth0</span><span class="p">,</span><span class="w"> </span><span class="n">Bz0</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">j0</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">eq_bool</span><span class="p">,</span><span class="w"> </span><span class="n">input_file</span><span class="p">,</span><span class="w"> </span><span class="n">n_input</span>
 <a id="ln-330" name="ln-330" href="#ln-330"></a>
 <a id="ln-331" name="ln-331" href="#ln-331"></a><span class="w">    </span><span class="k">call </span><span class="n">init_equilibrium_params</span><span class="p">()</span>
 <a id="ln-332" name="ln-332" href="#ln-332"></a><span class="w">    </span><span class="k">read</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span><span class="w"> </span><span class="n">nml</span><span class="o">=</span><span class="n">paramlist</span><span class="p">,</span><span class="w"> </span><span class="n">iostat</span><span class="o">=</span><span class="n">iostat</span><span class="p">,</span><span class="w"> </span><span class="n">iomsg</span><span class="o">=</span><span class="n">iomsg</span><span class="p">)</span>
@@ -622,7 +622,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.1.1 - develop was developed by <br>&copy; 2024 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.2.1 - develop was developed by <br>&copy; 2025 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

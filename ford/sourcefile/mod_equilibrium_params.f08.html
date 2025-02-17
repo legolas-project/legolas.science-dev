@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_equilibrium_params.f08 &ndash; Legolas v. 2.1.1 - develop</title>
+    <title>mod_equilibrium_params.f08 &ndash; Legolas v. 2.2.1 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.1.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.2.1 - develop </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -81,7 +81,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for source files.">77 statements</a>
+    title=" 0.7% of total for source files.">81 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/mod_equilibrium_params.f08"> Source File</a></li>
   </ul>
@@ -158,7 +158,7 @@
 <a id="ln-8" name="ln-8" href="#ln-8"></a><span class="c">!!        We define all of these in one module so they allow for easy setting through</span>
 <a id="ln-9" name="ln-9" href="#ln-9"></a><span class="c">!!        the parfile, and hence allow for more flexible control in the submodules.</span>
 <a id="ln-10" name="ln-10" href="#ln-10"></a><span class="k">module </span><span class="n">mod_equilibrium_params</span>
-<a id="ln-11" name="ln-11" href="#ln-11"></a><span class="w">  </span><span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">dp</span>
+<a id="ln-11" name="ln-11" href="#ln-11"></a><span class="w">  </span><span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">dp</span><span class="p">,</span><span class="w"> </span><span class="n">str_len</span>
 <a id="ln-12" name="ln-12" href="#ln-12"></a><span class="w">  </span><span class="k">implicit none</span>
 <a id="ln-13" name="ln-13" href="#ln-13"></a>
 <a id="ln-14" name="ln-14" href="#ln-14"></a><span class="k">  public</span>
@@ -232,58 +232,64 @@
 <a id="ln-82" name="ln-82" href="#ln-82"></a><span class="w">  </span><span class="kt">real</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">g</span>
 <a id="ln-83" name="ln-83" href="#ln-83"></a><span class="w">  </span><span class="c">!&gt; general boolean for varied use, defaults to False</span>
 <a id="ln-84" name="ln-84" href="#ln-84"></a><span class="w">  </span><span class="kt">logical</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">eq_bool</span>
-<a id="ln-85" name="ln-85" href="#ln-85"></a>
-<a id="ln-86" name="ln-86" href="#ln-86"></a><span class="k">contains</span>
-<a id="ln-87" name="ln-87" href="#ln-87"></a>
-<a id="ln-88" name="ln-88" href="#ln-88"></a>
-<a id="ln-89" name="ln-89" href="#ln-89"></a><span class="w">  </span><span class="c">!&gt; Initialises all variables defined at module scope to NaN,</span>
-<a id="ln-90" name="ln-90" href="#ln-90"></a><span class="w">  </span><span class="c">!! including the wave numbers. This ensures that these have to</span>
-<a id="ln-91" name="ln-91" href="#ln-91"></a><span class="w">  </span><span class="c">!! be explicitly set.</span>
-<a id="ln-92" name="ln-92" href="#ln-92"></a><span class="w">  </span><span class="k">subroutine </span><span class="n">init_equilibrium_params</span><span class="p">()</span>
-<a id="ln-93" name="ln-93" href="#ln-93"></a><span class="w">    </span><span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-94" name="ln-94" href="#ln-94"></a>
-<a id="ln-95" name="ln-95" href="#ln-95"></a><span class="w">    </span><span class="n">k2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-96" name="ln-96" href="#ln-96"></a><span class="w">    </span><span class="n">k3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-97" name="ln-97" href="#ln-97"></a>
-<a id="ln-98" name="ln-98" href="#ln-98"></a><span class="w">    </span><span class="n">cte_rho0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-99" name="ln-99" href="#ln-99"></a><span class="w">    </span><span class="n">cte_T0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-100" name="ln-100" href="#ln-100"></a><span class="w">    </span><span class="n">cte_B01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-101" name="ln-101" href="#ln-101"></a><span class="w">    </span><span class="n">cte_B02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-102" name="ln-102" href="#ln-102"></a><span class="w">    </span><span class="n">cte_B03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-103" name="ln-103" href="#ln-103"></a><span class="w">    </span><span class="n">cte_v02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-104" name="ln-104" href="#ln-104"></a><span class="w">    </span><span class="n">cte_v03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-105" name="ln-105" href="#ln-105"></a><span class="w">    </span><span class="n">cte_p0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-106" name="ln-106" href="#ln-106"></a>
-<a id="ln-107" name="ln-107" href="#ln-107"></a><span class="w">    </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-108" name="ln-108" href="#ln-108"></a><span class="w">    </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-109" name="ln-109" href="#ln-109"></a><span class="w">    </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-110" name="ln-110" href="#ln-110"></a><span class="w">    </span><span class="n">p4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-111" name="ln-111" href="#ln-111"></a><span class="w">    </span><span class="n">p5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-112" name="ln-112" href="#ln-112"></a><span class="w">    </span><span class="n">p6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-113" name="ln-113" href="#ln-113"></a><span class="w">    </span><span class="n">p7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-114" name="ln-114" href="#ln-114"></a><span class="w">    </span><span class="n">p8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-115" name="ln-115" href="#ln-115"></a>
-<a id="ln-116" name="ln-116" href="#ln-116"></a><span class="w">    </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-117" name="ln-117" href="#ln-117"></a><span class="w">    </span><span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-118" name="ln-118" href="#ln-118"></a><span class="w">    </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-119" name="ln-119" href="#ln-119"></a><span class="w">    </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-120" name="ln-120" href="#ln-120"></a><span class="w">    </span><span class="n">tau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-121" name="ln-121" href="#ln-121"></a><span class="w">    </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-122" name="ln-122" href="#ln-122"></a><span class="w">    </span><span class="n">nu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-123" name="ln-123" href="#ln-123"></a>
-<a id="ln-124" name="ln-124" href="#ln-124"></a><span class="w">    </span><span class="n">r0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-125" name="ln-125" href="#ln-125"></a><span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-126" name="ln-126" href="#ln-126"></a><span class="w">    </span><span class="n">rj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-127" name="ln-127" href="#ln-127"></a><span class="w">    </span><span class="n">Bth0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-128" name="ln-128" href="#ln-128"></a><span class="w">    </span><span class="n">Bz0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-129" name="ln-129" href="#ln-129"></a><span class="w">    </span><span class="n">V</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-130" name="ln-130" href="#ln-130"></a><span class="w">    </span><span class="n">j0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-131" name="ln-131" href="#ln-131"></a><span class="w">    </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
-<a id="ln-132" name="ln-132" href="#ln-132"></a>
-<a id="ln-133" name="ln-133" href="#ln-133"></a><span class="w">    </span><span class="n">eq_bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
-<a id="ln-134" name="ln-134" href="#ln-134"></a><span class="w">  </span><span class="k">end subroutine </span><span class="n">init_equilibrium_params</span>
-<a id="ln-135" name="ln-135" href="#ln-135"></a>
-<a id="ln-136" name="ln-136" href="#ln-136"></a><span class="k">end module </span><span class="n">mod_equilibrium_params</span>
+<a id="ln-85" name="ln-85" href="#ln-85"></a><span class="w">  </span><span class="c">!&gt; path to the file containing numerical equilibrium data</span>
+<a id="ln-86" name="ln-86" href="#ln-86"></a><span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="n">str_len</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">input_file</span>
+<a id="ln-87" name="ln-87" href="#ln-87"></a><span class="w">  </span><span class="c">!&gt; number of points to use for equidistant sampling of imported numerical data</span>
+<a id="ln-88" name="ln-88" href="#ln-88"></a><span class="w">  </span><span class="kt">integer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">n_input</span>
+<a id="ln-89" name="ln-89" href="#ln-89"></a>
+<a id="ln-90" name="ln-90" href="#ln-90"></a><span class="k">contains</span>
+<a id="ln-91" name="ln-91" href="#ln-91"></a>
+<a id="ln-92" name="ln-92" href="#ln-92"></a>
+<a id="ln-93" name="ln-93" href="#ln-93"></a><span class="w">  </span><span class="c">!&gt; Initialises all variables defined at module scope to NaN,</span>
+<a id="ln-94" name="ln-94" href="#ln-94"></a><span class="w">  </span><span class="c">!! including the wave numbers. This ensures that these have to</span>
+<a id="ln-95" name="ln-95" href="#ln-95"></a><span class="w">  </span><span class="c">!! be explicitly set.</span>
+<a id="ln-96" name="ln-96" href="#ln-96"></a><span class="w">  </span><span class="k">subroutine </span><span class="n">init_equilibrium_params</span><span class="p">()</span>
+<a id="ln-97" name="ln-97" href="#ln-97"></a><span class="w">    </span><span class="k">use </span><span class="n">mod_global_variables</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-98" name="ln-98" href="#ln-98"></a>
+<a id="ln-99" name="ln-99" href="#ln-99"></a><span class="w">    </span><span class="n">k2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-100" name="ln-100" href="#ln-100"></a><span class="w">    </span><span class="n">k3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-101" name="ln-101" href="#ln-101"></a>
+<a id="ln-102" name="ln-102" href="#ln-102"></a><span class="w">    </span><span class="n">cte_rho0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-103" name="ln-103" href="#ln-103"></a><span class="w">    </span><span class="n">cte_T0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-104" name="ln-104" href="#ln-104"></a><span class="w">    </span><span class="n">cte_B01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-105" name="ln-105" href="#ln-105"></a><span class="w">    </span><span class="n">cte_B02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-106" name="ln-106" href="#ln-106"></a><span class="w">    </span><span class="n">cte_B03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-107" name="ln-107" href="#ln-107"></a><span class="w">    </span><span class="n">cte_v02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-108" name="ln-108" href="#ln-108"></a><span class="w">    </span><span class="n">cte_v03</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-109" name="ln-109" href="#ln-109"></a><span class="w">    </span><span class="n">cte_p0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-110" name="ln-110" href="#ln-110"></a>
+<a id="ln-111" name="ln-111" href="#ln-111"></a><span class="w">    </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-112" name="ln-112" href="#ln-112"></a><span class="w">    </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-113" name="ln-113" href="#ln-113"></a><span class="w">    </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-114" name="ln-114" href="#ln-114"></a><span class="w">    </span><span class="n">p4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-115" name="ln-115" href="#ln-115"></a><span class="w">    </span><span class="n">p5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-116" name="ln-116" href="#ln-116"></a><span class="w">    </span><span class="n">p6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-117" name="ln-117" href="#ln-117"></a><span class="w">    </span><span class="n">p7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-118" name="ln-118" href="#ln-118"></a><span class="w">    </span><span class="n">p8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-119" name="ln-119" href="#ln-119"></a>
+<a id="ln-120" name="ln-120" href="#ln-120"></a><span class="w">    </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-121" name="ln-121" href="#ln-121"></a><span class="w">    </span><span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-122" name="ln-122" href="#ln-122"></a><span class="w">    </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-123" name="ln-123" href="#ln-123"></a><span class="w">    </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-124" name="ln-124" href="#ln-124"></a><span class="w">    </span><span class="n">tau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-125" name="ln-125" href="#ln-125"></a><span class="w">    </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-126" name="ln-126" href="#ln-126"></a><span class="w">    </span><span class="n">nu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-127" name="ln-127" href="#ln-127"></a>
+<a id="ln-128" name="ln-128" href="#ln-128"></a><span class="w">    </span><span class="n">r0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-129" name="ln-129" href="#ln-129"></a><span class="w">    </span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-130" name="ln-130" href="#ln-130"></a><span class="w">    </span><span class="n">rj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-131" name="ln-131" href="#ln-131"></a><span class="w">    </span><span class="n">Bth0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-132" name="ln-132" href="#ln-132"></a><span class="w">    </span><span class="n">Bz0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-133" name="ln-133" href="#ln-133"></a><span class="w">    </span><span class="n">V</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-134" name="ln-134" href="#ln-134"></a><span class="w">    </span><span class="n">j0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-135" name="ln-135" href="#ln-135"></a><span class="w">    </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaN</span>
+<a id="ln-136" name="ln-136" href="#ln-136"></a>
+<a id="ln-137" name="ln-137" href="#ln-137"></a><span class="w">    </span><span class="n">eq_bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<a id="ln-138" name="ln-138" href="#ln-138"></a><span class="w">    </span><span class="n">input_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+<a id="ln-139" name="ln-139" href="#ln-139"></a><span class="w">    </span><span class="n">n_input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span>
+<a id="ln-140" name="ln-140" href="#ln-140"></a><span class="w">  </span><span class="k">end subroutine </span><span class="n">init_equilibrium_params</span>
+<a id="ln-141" name="ln-141" href="#ln-141"></a>
+<a id="ln-142" name="ln-142" href="#ln-142"></a><span class="k">end module </span><span class="n">mod_equilibrium_params</span>
 </pre></div>
 
     </section>
@@ -295,7 +301,7 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.1.1 - develop was developed by <br>&copy; 2024 
+        <div class="col-xs-6 col-md-6"><p>Legolas v. 2.2.1 - develop was developed by <br>&copy; 2025 
 </p>
         </div>
         <div class="col-xs-6 col-md-6">

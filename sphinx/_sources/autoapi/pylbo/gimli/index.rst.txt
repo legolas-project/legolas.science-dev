@@ -22,8 +22,9 @@ Classes
 
 .. autoapisummary::
 
-   pylbo.gimli.Equilibrium
    pylbo.gimli.Variables
+   pylbo.gimli.Equilibrium
+   pylbo.gimli.NumericalEquilibrium
    pylbo.gimli.Legolas
    pylbo.gimli.Amrvac
 
@@ -31,10 +32,90 @@ Classes
 Package Contents
 ----------------
 
+.. py:class:: Variables
+
+   
+   Defines a set of variables and constants to be used in defining an Equilibrium
+   object.
+
+   .. attribute:: x, y, z
+
+      Coordinates.
+
+      :type: sympy symbols
+
+   .. attribute:: rho0, T0, B0sq
+
+      Density, temperature, and magnetic field squared for use in expressions
+      depending on these quantities.
+
+      :type: sympy symbols
+
+   .. attribute:: k2, k3
+
+      Wavenumbers.
+
+      :type: sympy symbols
+
+   .. attribute:: rhoc, Tc, B2c, B3c, v2c, v3c, pc
+
+      Constants typically used for amplitudes or uniform terms in their corresponding
+      equilibrium quantities.
+
+      :type: sympy symbols
+
+   .. attribute:: p1, p2, p3, p4, p5, p6, p7, p8
+
+      Additional free-use constants.
+
+      :type: sympy symbols
+
+   .. attribute:: alpha, beta, delta, theta, tau, lamda, nu
+
+      Additional free-use constants.
+
+      :type: sympy symbols
+
+   .. attribute:: r0, rc, rj, Bth0, V, j0, g
+
+      Additional constants, originally use in cylindrical coordinates.
+
+      :type: sympy symbols
+
+   .. attribute:: fkey
+
+      Dictionary translating LaTeX notation to Legolas variable names.
+
+      :type: dict
+
+   .. rubric:: Examples
+
+   >>> from pylbo.gimli import Variables
+   >>> var = Variables()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: fkey
+
+
 .. py:class:: Equilibrium(var, rho0, v02, v03, T0, B02=None, B03=None, resistivity=None, gravity=None, condpara=None, condperp=None, cooling=None, heating=None)
 
    
-   "
    Class containing all equilibrium expressions and initialisation functions.
    This object is a required argument when generating user files with the Legolas and
    Amrvac classes.
@@ -186,66 +267,36 @@ Package Contents
           !! processed by numpydoc !!
 
 
-.. py:class:: Variables
+.. py:class:: NumericalEquilibrium(arrays)
 
    
-   Defines a set of variables and constants to be used in defining an Equilibrium
-   object.
+   Class to convert numerical arrays to a Legolas-readable format.
 
-   .. attribute:: x, y, z
+   :param arrays: A dictionary linking key/header to a numerical array.
+                  Must contain "rho0" and "T0" and one of ("u1", "x", "r"). Optional arrays are
+                  "v01", "v02", "v03", "B01", "B02", "B03", and "grav".
+   :type arrays: dict
 
-      Coordinates.
+   .. attribute:: arrays
 
-      :type: sympy symbols
-
-   .. attribute:: rho0, T0, B0sq
-
-      Density, temperature, and magnetic field squared for use in expressions
-      depending on these quantities.
-
-      :type: sympy symbols
-
-   .. attribute:: k2, k3
-
-      Wavenumbers.
-
-      :type: sympy symbols
-
-   .. attribute:: rhoc, Tc, B2c, B3c, v2c, v3c, pc
-
-      Constants typically used for amplitudes or uniform terms in their corresponding
-      equilibrium quantities.
-
-      :type: sympy symbols
-
-   .. attribute:: p1, p2, p3, p4, p5, p6, p7, p8
-
-      Additional free-use constants.
-
-      :type: sympy symbols
-
-   .. attribute:: alpha, beta, delta, theta, tau, lamda, nu
-
-      Additional free-use constants.
-
-      :type: sympy symbols
-
-   .. attribute:: r0, rc, rj, Bth0, V, j0, g
-
-      Additional constants, originally use in cylindrical coordinates.
-
-      :type: sympy symbols
-
-   .. attribute:: fkey
-
-      Dictionary translating LaTeX notation to Legolas variable names.
+      Dictionary with specified arrays.
 
       :type: dict
 
    .. rubric:: Examples
 
-   >>> from pylbo.gimli import Variables
-   >>> var = Variables()
+   The example below defines a homogeneous hydrodynamic equilibrium with constant
+   density and temperature.
+
+   >>> import numpy as np
+   >>> from pylbo.gimli import NumericalEquilibrium
+   >>> dictionary = {
+   >>>     "x" : np.linspace(0, 1, 100),
+   >>>     "rho0": 2 * np.ones(100),
+   >>>     "T0" : 0.5 * np.ones(100)
+   >>> }
+   >>> equil = NumericalEquilibrium(dictionary)
+   >>> equil.to_legolas_arrays(filename="homogeneous")
 
 
 
@@ -264,7 +315,38 @@ Package Contents
    ..
        !! processed by numpydoc !!
 
-   .. py:attribute:: fkey
+   .. py:attribute:: arrays
+
+
+   .. py:method:: _validate()
+
+
+   .. py:method:: to_legolas_arrays(filename='arrays', loc='./')
+
+      
+      Prepares a numerical arrays file (.lar) for use with Legolas.
+
+      :param filename: Name of the .lar file. Default is 'arrays'.
+      :type filename: str, optional
+      :param loc: The location to save the .lar file. Default is the current directory.
+      :type loc: str, optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
 
 .. py:class:: Legolas(equilibrium, config)

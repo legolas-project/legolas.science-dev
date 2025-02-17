@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pylbo.gimli &mdash; Pylbo develop documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
 
@@ -113,16 +113,19 @@
 <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.gimli.Equilibrium" title="pylbo.gimli.Equilibrium"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Equilibrium</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.gimli.Variables" title="pylbo.gimli.Variables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Variables</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.gimli.Variables" title="pylbo.gimli.Variables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Variables</span></code></a></p></td>
 <td><p>Defines a set of variables and constants to be used in defining an Equilibrium</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.gimli.Legolas" title="pylbo.gimli.Legolas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Legolas</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.gimli.Equilibrium" title="pylbo.gimli.Equilibrium"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Equilibrium</span></code></a></p></td>
+<td><p>Class containing all equilibrium expressions and initialisation functions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.gimli.NumericalEquilibrium" title="pylbo.gimli.NumericalEquilibrium"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumericalEquilibrium</span></code></a></p></td>
+<td><p>Class to convert numerical arrays to a Legolas-readable format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.gimli.Legolas" title="pylbo.gimli.Legolas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Legolas</span></code></a></p></td>
 <td><p>Class for generating user-defined Legolas modules and parfiles.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.gimli.Amrvac" title="pylbo.gimli.Amrvac"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Amrvac</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.gimli.Amrvac" title="pylbo.gimli.Amrvac"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Amrvac</span></code></a></p></td>
 <td><p>Class to prepare Legolas data for use in MPI-AMRVAC (<a class="reference external" href="https://amrvac.org">https://amrvac.org</a>).</p></td>
 </tr>
 </tbody>
@@ -130,133 +133,6 @@
 </section>
 <section id="package-contents">
 <h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.gimli.</span></span><span class="sig-name descname"><span class="pre">Equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v03</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B02</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B03</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resistivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gravity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condpara</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condperp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heating</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium" title="Link to this definition"></a></dt>
-<dd><p>”
-Class containing all equilibrium expressions and initialisation functions.
-This object is a required argument when generating user files with the Legolas and
-Amrvac classes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>var</strong> (<a class="reference internal" href="#pylbo.gimli.Variables" title="pylbo.gimli.Variables"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variables</span></code></a>) – The Variables object containing the symbols to be used in the equilibrium
-expressions.</p></li>
-<li><p><strong>rho0</strong> (<em>sympy expression</em>) – The equilibrium density expression.</p></li>
-<li><p><strong>v02</strong> (<em>sympy expressions</em>) – The equilibrium velocity expressions.</p></li>
-<li><p><strong>v03</strong> (<em>sympy expressions</em>) – The equilibrium velocity expressions.</p></li>
-<li><p><strong>T0</strong> (<em>sympy expression</em>) – The equilibrium temperature expression.</p></li>
-<li><p><strong>B02</strong> (<em>sympy expressions</em>) – The equilibrium magnetic field expressions.</p></li>
-<li><p><strong>B03</strong> (<em>sympy expressions</em>) – The equilibrium magnetic field expressions.</p></li>
-<li><p><strong>resistivity</strong> (<em>sympy expression</em>) – The resistivity expression.</p></li>
-<li><p><strong>gravity</strong> (<em>constant</em>) – The gravitational acceleration.</p></li>
-<li><p><strong>condpara</strong> (<em>sympy expression</em>) – The parallel conduction prescription.</p></li>
-<li><p><strong>condperp</strong> (<em>sympy expression</em>) – The perpendicular conduction prescription.</p></li>
-<li><p><strong>cooling</strong> (<em>sympy expression</em>) – The cooling prescription.</p></li>
-<li><p><strong>heating</strong> (<em>sympy expression</em>) – The heating prescription.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.variables">
-<span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium.variables" title="Link to this definition"></a></dt>
-<dd><p>Variables object from which all expressions are constructed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Variables object</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.rho0">
-<span class="sig-name descname"><span class="pre">rho0</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium.rho0" title="Link to this definition"></a></dt>
-<dd><p>The equilibrium density expression.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>sympy expression</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">v02,</span> <span class="pre">v03</span></span></dt>
-<dd><p>The equilibrium velocity expressions.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>sympy expressions</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.T0">
-<span class="sig-name descname"><span class="pre">T0</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium.T0" title="Link to this definition"></a></dt>
-<dd><p>The equilibrium temperature expression.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>sympy expression</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">B02,</span> <span class="pre">B03</span></span></dt>
-<dd><p>The equilibrium magnetic field expressions.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>sympy expressions</p>
-</dd>
-</dl>
-</dd></dl>
-
-<p class="rubric">Examples</p>
-<p>The example below defines a homogeneous hydrodynamic equilibrium with constant
-density and temperature. Their values can be set later when passing this equilibrium
-to the Legolas or Amrvac class along with a dictionary.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pylbo.gimli</span> <span class="kn">import</span> <span class="n">Equilibrium</span><span class="p">,</span> <span class="n">Variables</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">Variables</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span> <span class="o">=</span> <span class="n">Equilibrium</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">rho0</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">rhoc</span><span class="p">,</span> <span class="n">v02</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">v03</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">T0</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">Tc</span><span class="p">)</span>
-</pre></div>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">rho0</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">T0</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium._dict_phys">
-<span class="sig-name descname"><span class="pre">_dict_phys</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium._dict_phys" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.get_physics">
-<span class="sig-name descname"><span class="pre">get_physics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium.get_physics" title="Link to this definition"></a></dt>
-<dd><p>Returns a dictionary containing the physics expressions and the dependencies to
-check for.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.get_dependencies">
-<span class="sig-name descname"><span class="pre">get_dependencies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium.get_dependencies" title="Link to this definition"></a></dt>
-<dd><p>Checks for dependencies on other equilibrium quantities.
-Returns a dictionary with the replacement expressions for use in Fortran files.</p>
-</dd></dl>
-
-</dd></dl>
-
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.gimli.Variables">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.gimli.</span></span><span class="sig-name descname"><span class="pre">Variables</span></span><a class="headerlink" href="#pylbo.gimli.Variables" title="Link to this definition"></a></dt>
@@ -353,14 +229,202 @@ equilibrium quantities.</p>
 </dd></dl>
 
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pylbo.gimli</span> <span class="kn">import</span> <span class="n">Variables</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pylbo.gimli</span><span class="w"> </span><span class="kn">import</span> <span class="n">Variables</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">Variables</span><span class="p">()</span>
 </pre></div>
 </div>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id3">
-<span class="sig-name descname"><span class="pre">fkey</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">fkey</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.gimli.</span></span><span class="sig-name descname"><span class="pre">Equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v03</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B02</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B03</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resistivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gravity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condpara</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condperp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heating</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium" title="Link to this definition"></a></dt>
+<dd><p>Class containing all equilibrium expressions and initialisation functions.
+This object is a required argument when generating user files with the Legolas and
+Amrvac classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> (<a class="reference internal" href="#pylbo.gimli.Variables" title="pylbo.gimli.Variables"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variables</span></code></a>) – The Variables object containing the symbols to be used in the equilibrium
+expressions.</p></li>
+<li><p><strong>rho0</strong> (<em>sympy expression</em>) – The equilibrium density expression.</p></li>
+<li><p><strong>v02</strong> (<em>sympy expressions</em>) – The equilibrium velocity expressions.</p></li>
+<li><p><strong>v03</strong> (<em>sympy expressions</em>) – The equilibrium velocity expressions.</p></li>
+<li><p><strong>T0</strong> (<em>sympy expression</em>) – The equilibrium temperature expression.</p></li>
+<li><p><strong>B02</strong> (<em>sympy expressions</em>) – The equilibrium magnetic field expressions.</p></li>
+<li><p><strong>B03</strong> (<em>sympy expressions</em>) – The equilibrium magnetic field expressions.</p></li>
+<li><p><strong>resistivity</strong> (<em>sympy expression</em>) – The resistivity expression.</p></li>
+<li><p><strong>gravity</strong> (<em>constant</em>) – The gravitational acceleration.</p></li>
+<li><p><strong>condpara</strong> (<em>sympy expression</em>) – The parallel conduction prescription.</p></li>
+<li><p><strong>condperp</strong> (<em>sympy expression</em>) – The perpendicular conduction prescription.</p></li>
+<li><p><strong>cooling</strong> (<em>sympy expression</em>) – The cooling prescription.</p></li>
+<li><p><strong>heating</strong> (<em>sympy expression</em>) – The heating prescription.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.variables">
+<span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium.variables" title="Link to this definition"></a></dt>
+<dd><p>Variables object from which all expressions are constructed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Variables object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.rho0">
+<span class="sig-name descname"><span class="pre">rho0</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium.rho0" title="Link to this definition"></a></dt>
+<dd><p>The equilibrium density expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sympy expression</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">v02,</span> <span class="pre">v03</span></span></dt>
+<dd><p>The equilibrium velocity expressions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sympy expressions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.T0">
+<span class="sig-name descname"><span class="pre">T0</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium.T0" title="Link to this definition"></a></dt>
+<dd><p>The equilibrium temperature expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sympy expression</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">B02,</span> <span class="pre">B03</span></span></dt>
+<dd><p>The equilibrium magnetic field expressions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sympy expressions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<p>The example below defines a homogeneous hydrodynamic equilibrium with constant
+density and temperature. Their values can be set later when passing this equilibrium
+to the Legolas or Amrvac class along with a dictionary.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pylbo.gimli</span><span class="w"> </span><span class="kn">import</span> <span class="n">Equilibrium</span><span class="p">,</span> <span class="n">Variables</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">Variables</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span> <span class="o">=</span> <span class="n">Equilibrium</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">rho0</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">rhoc</span><span class="p">,</span> <span class="n">v02</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">v03</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">T0</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">Tc</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">rho0</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">T0</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium._dict_phys">
+<span class="sig-name descname"><span class="pre">_dict_phys</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium._dict_phys" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.get_physics">
+<span class="sig-name descname"><span class="pre">get_physics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium.get_physics" title="Link to this definition"></a></dt>
+<dd><p>Returns a dictionary containing the physics expressions and the dependencies to
+check for.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.get_dependencies">
+<span class="sig-name descname"><span class="pre">get_dependencies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium.get_dependencies" title="Link to this definition"></a></dt>
+<dd><p>Checks for dependencies on other equilibrium quantities.
+Returns a dictionary with the replacement expressions for use in Fortran files.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pylbo.gimli.NumericalEquilibrium">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.gimli.</span></span><span class="sig-name descname"><span class="pre">NumericalEquilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arrays</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.NumericalEquilibrium" title="Link to this definition"></a></dt>
+<dd><p>Class to convert numerical arrays to a Legolas-readable format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arrays</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – A dictionary linking key/header to a numerical array.
+Must contain “rho0” and “T0” and one of (“u1”, “x”, “r”). Optional arrays are
+“v01”, “v02”, “v03”, “B01”, “B02”, “B03”, and “grav”.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.NumericalEquilibrium.arrays">
+<span class="sig-name descname"><span class="pre">arrays</span></span><a class="headerlink" href="#pylbo.gimli.NumericalEquilibrium.arrays" title="Link to this definition"></a></dt>
+<dd><p>Dictionary with specified arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<p>The example below defines a homogeneous hydrodynamic equilibrium with constant
+density and temperature.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pylbo.gimli</span><span class="w"> </span><span class="kn">import</span> <span class="n">NumericalEquilibrium</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;x&quot;</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;rho0&quot;</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;T0&quot;</span> <span class="p">:</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">equil</span> <span class="o">=</span> <span class="n">NumericalEquilibrium</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">equil</span><span class="o">.</span><span class="n">to_legolas_arrays</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;homogeneous&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">arrays</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.NumericalEquilibrium._validate">
+<span class="sig-name descname"><span class="pre">_validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.NumericalEquilibrium._validate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.NumericalEquilibrium.to_legolas_arrays">
+<span class="sig-name descname"><span class="pre">to_legolas_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'arrays'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.NumericalEquilibrium.to_legolas_arrays" title="Link to this definition"></a></dt>
+<dd><p>Prepares a numerical arrays file (.lar) for use with Legolas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – Name of the .lar file. Default is ‘arrays’.</p></li>
+<li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – The location to save the .lar file. Default is the current directory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -419,7 +483,7 @@ current directory.</p></li>
 <p>The example below defines a homogeneous hydrodynamic equilibrium with constant
 density and temperature. The values of the equilibrium parameters are set in the
 configuration dictionary.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pylbo.gimli</span> <span class="kn">import</span> <span class="n">Variables</span><span class="p">,</span> <span class="n">Equilibrium</span><span class="p">,</span> <span class="n">Legolas</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pylbo.gimli</span><span class="w"> </span><span class="kn">import</span> <span class="n">Variables</span><span class="p">,</span> <span class="n">Equilibrium</span><span class="p">,</span> <span class="n">Legolas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">Variables</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span> <span class="o">=</span> <span class="n">Equilibrium</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">rho0</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">rhoc</span><span class="p">,</span> <span class="n">v02</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">v03</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">T0</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">Tc</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
@@ -465,7 +529,7 @@ configuration dictionary.</p>
 <p>The example below defines a homogeneous hydrodynamic equilibrium with constant
 density and temperature. The values of the equilibrium parameters are set in the
 configuration dictionary and written to the parameter file.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pylbo.gimli</span> <span class="kn">import</span> <span class="n">Variables</span><span class="p">,</span> <span class="n">Equilibrium</span><span class="p">,</span> <span class="n">Legolas</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pylbo.gimli</span><span class="w"> </span><span class="kn">import</span> <span class="n">Variables</span><span class="p">,</span> <span class="n">Equilibrium</span><span class="p">,</span> <span class="n">Legolas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">Variables</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span> <span class="o">=</span> <span class="n">Equilibrium</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">rho0</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">rhoc</span><span class="p">,</span> <span class="n">v02</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">v03</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">T0</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">Tc</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
@@ -615,7 +679,7 @@ current directory.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pylbo.gimli</span> <span class="kn">import</span> <span class="n">Amrvac</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pylbo.gimli</span><span class="w"> </span><span class="kn">import</span> <span class="n">Amrvac</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">amrvac_config</span> <span class="o">=</span> <span class="p">{</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;datfile&quot;</span><span class="p">:</span> <span class="s2">&quot;./datfile.dat&quot;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;physics_type&quot;</span><span class="p">:</span> <span class="s2">&quot;mhd&quot;</span><span class="p">,</span>
