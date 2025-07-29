@@ -8,7 +8,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>set_temperature_funcs &ndash; Legolas v. 2.2.1 - develop</title>
+    <title>get_second_numerical_derivative &ndash; Legolas v. 2.2.1 - develop</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>set_temperature_funcs
+    <h1>get_second_numerical_derivative
       <small>Subroutine</small>
     </h1>
     <div class="row">
@@ -81,14 +81,14 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">9 statements</a>
+    title=" 0.3% of total for procedures.">43 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_background.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_interpolation.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_background.f08.html'>mod_background.f08</a></li>
-     <li><a href='../module/mod_background.html'>mod_background</a></li>
-     <li class="active">set_temperature_funcs</li>
+     <li><a href='../sourcefile/mod_interpolation.f08.html'>mod_interpolation.f08</a></li>
+     <li><a href='../module/mod_interpolation.html'>mod_interpolation</a></li>
+     <li class="active">get_second_numerical_derivative</li>
   </ol>
 </div>
 </div>
@@ -113,37 +113,60 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine set_temperature_funcs(this, T0_func, dT0_func, ddT0_func)</h2>
-    
+    <h2>public subroutine get_second_numerical_derivative(x, y, dy, dxtol)</h2>
+        <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      <li class="list-group-item">
+  <ul class="list-inline">
+    <li><a href='../module/mod_check_values.html'>mod_check_values</a></li>
+    <li><a href='../module/mod_logging.html'>mod_logging</a></li>
+  </ul>
+      </li>
+      </ul>
+    </div>
 
+
+    <p>Calculates the second numerical derivative of a given array.
+A sixth-order accurate central difference stencil is used to calculate the
+derivative. Near the edges a sixth-order accurate forward and backward
+difference stencil is used for the left and right boundary, respectively.
+It is assumed that the x values are all equally spaced. If this is not the case,
+a polynomial interpolation on a uniform grid can be done and that one can be
+differentiated instead.</p>
+<p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Throws an error if <tt>x_values</tt> and <tt>y_values</tt> differ
+         in size. </p></div>
+<p>
 
     <h3>Arguments</h3>
       <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~15"></span>class(<a href='../type/background_t.html'>background_t</a>),</td>
-<td>intent(inout)</td>
+  <td><span class="anchor" id="variable-x~14"></span>real(kind=dp),</td>
+<td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>this</strong></td><td></td>
+  <td><strong>x</strong>(:)</td><td><p>x-values against which to differentiate</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-t0_func"></span>procedure(realdp)</td>
-<td></td>
+  <td><span class="anchor" id="variable-y~2"></span>real(kind=dp),</td>
+<td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>T0_func</strong></td><td></td>
+  <td><strong>y</strong>(:)</td><td><p>array of y-values, assuming <script type="math/tex">y(x)</script> relation</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-dt0_func"></span>procedure(realdp),</td>
-<td></td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>dT0_func</strong></td><td></td>
+  <td><span class="anchor" id="variable-dy~2"></span>real(kind=dp),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dy</strong>(size(y))</td><td><p>derivative of <script type="math/tex">y</script> with respect to <script type="math/tex">x</script>, same size as input arrays</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-ddt0_func"></span>procedure(realdp),</td>
-<td></td>
+  <td><span class="anchor" id="variable-dxtol~2"></span>real(kind=dp),</td>
+<td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>ddT0_func</strong></td><td></td>
+  <td><strong>dxtol</strong></td><td><p>optional tolerance for equally spaced arrays</p></td>
 </tr>
 </tbody>
 </table>
