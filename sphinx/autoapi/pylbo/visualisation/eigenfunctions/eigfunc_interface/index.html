@@ -9,13 +9,13 @@
   <title>pylbo.visualisation.eigenfunctions.eigfunc_interface &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
 
   
       <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../../_static/documentation_options.js?v=16816911"></script>
-      <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
@@ -133,7 +133,7 @@
 <dd><p>Returns the (x, y) coordinates of a given artist.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>artist</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/artist_api.html#matplotlib.artist.Artist" title="(in Matplotlib v3.10.3)"><em>Artist</em></a>) – The artist to get the data from.</p>
+<dd class="field-odd"><p><strong>artist</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/artist_api.html#matplotlib.artist.Artist" title="(in Matplotlib v3.10.5)"><em>Artist</em></a>) – The artist to get the data from.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The (x, y) coordinates of the artist.</p>
@@ -146,7 +146,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.eigenfunctions.eigfunc_interface.</span></span><span class="sig-name descname"><span class="pre">EigenfunctionInterface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.eigenfunctions.eigfunc_interface.</span></span><span class="sig-name descname"><span class="pre">EigenfunctionInterface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface" title="Link to this definition"></a></dt>
 <dd><dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.data">
 <span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.data" title="Link to this definition"></a></dt>
@@ -231,7 +231,7 @@ eigenfunctions, is overloaded in subclasses.</p>
 interface when clicking on legend items, for example.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.3)"><em>PickEvent</em></a>) – The pick event.</p>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.5)"><em>PickEvent</em></a>) – The pick event.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>True</cite> if all conditions are met and callbacks can be connected, <cite>False</cite>
@@ -325,7 +325,7 @@ name is prepended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_title">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_get_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_title" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_get_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface._get_title" title="Link to this definition"></a></dt>
 <dd><p>Creates the title of a given plot, has to be overridden in a subclass.</p>
 </dd></dl>
 
@@ -341,7 +341,7 @@ name is prepended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.update_plot">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.update_plot" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.visualisation.eigenfunctions.eigfunc_interface.EigenfunctionInterface.update_plot" title="Link to this definition"></a></dt>
 <dd><p>Updates the plot when an event is triggered, clears and then redraws
 the functions. Rescaling of the axes is done automatically.
 Has to be overridden in a subclass.</p>
@@ -353,7 +353,7 @@ Has to be overridden in a subclass.</p>
 <dd><p>Determines what happens when an eigenvalue is clicked.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.3)"><em>PickEvent</em></a>) – The pick event.</p>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.5)"><em>PickEvent</em></a>) – The pick event.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -364,7 +364,7 @@ Has to be overridden in a subclass.</p>
 <dd><p>Determines what happens when a key is pressed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.KeyEvent" title="(in Matplotlib v3.10.3)"><em>KeyEvent</em></a>) – The key event.</p>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.KeyEvent" title="(in Matplotlib v3.10.5)"><em>KeyEvent</em></a>) – The key event.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -375,7 +375,7 @@ Has to be overridden in a subclass.</p>
 <dd><p>Determines what happens when left-clicking an eigenvalue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.3)"><em>PickEvent</em></a>) – The pick event.</p>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.5)"><em>PickEvent</em></a>) – The pick event.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -386,7 +386,7 @@ Has to be overridden in a subclass.</p>
 <dd><p>Determines what happens when right-clicking an eigenvalue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.3)"><em>PickEvent</em></a>) – The pick event.</p>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.5)"><em>PickEvent</em></a>) – The pick event.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -398,7 +398,7 @@ Has to be overridden in a subclass.</p>
 coordinate of the eigenvalue nearest to the clicked point.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.3)"><em>PickEvent</em></a>) – The pick event.</p>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference external" href="https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent" title="(in Matplotlib v3.10.5)"><em>PickEvent</em></a>) – The pick event.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
