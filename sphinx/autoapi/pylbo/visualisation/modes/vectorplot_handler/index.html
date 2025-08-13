@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pylbo.visualisation.modes.vectorplot_handler &mdash; Pylbo develop documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=16816911"></script>
+      <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="pylbo.visualisation.modes.vtk_export" href="../vtk_export/index.html" />
+    <link rel="prev" title="pylbo.visualisation.modes.temporal_1d" href="../temporal_1d/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            Pylbo
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Package structure:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">pylbo</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../_version/index.html">pylbo._version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../automation/index.html">pylbo.automation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../data_containers/index.html">pylbo.data_containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../deprecations/index.html">pylbo.deprecations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../exceptions/index.html">pylbo.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../gimli/index.html">pylbo.gimli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../testing/index.html">pylbo.testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../utilities/index.html">pylbo.utilities</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">pylbo.visualisation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../api/index.html">pylbo.visualisation.api</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../continua/index.html">pylbo.visualisation.continua</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../eigenfunctions/index.html">pylbo.visualisation.eigenfunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../figure_window/index.html">pylbo.visualisation.figure_window</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../legend_handler/index.html">pylbo.visualisation.legend_handler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../matrices/index.html">pylbo.visualisation.matrices</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">pylbo.visualisation.modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../profiles/index.html">pylbo.visualisation.profiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../spectra/index.html">pylbo.visualisation.spectra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utils/index.html">pylbo.visualisation.utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Pylbo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">pylbo</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">pylbo.visualisation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">pylbo.visualisation.modes</a></li>
+      <li class="breadcrumb-item active">pylbo.visualisation.modes.vectorplot_handler</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/autoapi/pylbo/visualisation/modes/vectorplot_handler/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pylbo.visualisation.modes.vectorplot_handler">
+<span id="pylbo-visualisation-modes-vectorplot-handler"></span><h1>pylbo.visualisation.modes.vectorplot_handler<a class="headerlink" href="#module-pylbo.visualisation.modes.vectorplot_handler" title="Link to this heading"></a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler" title="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VectorplotHandler</span></code></a></p></td>
+<td><p>Main handler for vector-based fields (Streamlines and Quiver).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.modes.vectorplot_handler.</span></span><span class="sig-name descname"><span class="pre">VectorplotHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xgrid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordgrid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><span class="pre">numpy.ndarray</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../mode_data/index.html#pylbo.visualisation.modes.mode_data.ModeVisualisationData" title="pylbo.visualisation.modes.mode_data.ModeVisualisationData"><span class="pre">pylbo.visualisation.modes.mode_data.ModeVisualisationData</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.10.5)"><span class="pre">matplotlib.axes.Axes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_background</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler" title="Link to this definition"></a></dt>
+<dd><p>Main handler for vector-based fields (Streamlines and Quiver).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.xgrid">
+<span class="sig-name descname"><span class="pre">xgrid</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.xgrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.coordgrid">
+<span class="sig-name descname"><span class="pre">coordgrid</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.coordgrid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.field">
+<span class="sig-name descname"><span class="pre">field</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.ax">
+<span class="sig-name descname"><span class="pre">ax</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.ax" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.polar">
+<span class="sig-name descname"><span class="pre">polar</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.polar" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.add_background">
+<span class="sig-name descname"><span class="pre">add_background</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.add_background" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.coord_dict">
+<span class="sig-name descname"><span class="pre">coord_dict</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.coord_dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.streamlines">
+<span class="sig-name descname"><span class="pre">streamlines</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.streamlines" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.quivers">
+<span class="sig-name descname"><span class="pre">quivers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler.quivers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._kwargs">
+<span class="sig-name descname"><span class="pre">_kwargs</span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._kwargs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._draw_streamlines">
+<span class="sig-name descname"><span class="pre">_draw_streamlines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">matplotlib.streamplot.StreamplotSet</span></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._draw_streamlines" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._draw_quivers">
+<span class="sig-name descname"><span class="pre">_draw_quivers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.quiver.Quiver.html#matplotlib.quiver.Quiver" title="(in Matplotlib v3.10.5)"><span class="pre">matplotlib.quiver.Quiver</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._draw_quivers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._update_quivers">
+<span class="sig-name descname"><span class="pre">_update_quivers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._update_quivers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._clear_quivers">
+<span class="sig-name descname"><span class="pre">_clear_quivers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._clear_quivers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._clear_streamlines">
+<span class="sig-name descname"><span class="pre">_clear_streamlines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._clear_streamlines" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._set_slicing_axis">
+<span class="sig-name descname"><span class="pre">_set_slicing_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slicing_axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u2axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u3axis</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._set_slicing_axis" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._set_time">
+<span class="sig-name descname"><span class="pre">_set_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._set_time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._set_streamplot_arrays">
+<span class="sig-name descname"><span class="pre">_set_streamplot_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u3</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._set_streamplot_arrays" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._set_solutions">
+<span class="sig-name descname"><span class="pre">_set_solutions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><span class="pre">numpy.ndarray</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._set_solutions" title="Link to this definition"></a></dt>
+<dd><p>Returns the eigenmode solution for a given time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u2_data</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>np.ndarray</em><em>]</em>) – The u2 data from the Plot2d.</p></li>
+<li><p><strong>u3_data</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>np.ndarray</em><em>]</em>) – The u3 data from the Plot2d.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The eigenmode solution.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._transform_vectors">
+<span class="sig-name descname"><span class="pre">_transform_vectors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._transform_vectors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._get_field_names">
+<span class="sig-name descname"><span class="pre">_get_field_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._get_field_names" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._get_bg_names">
+<span class="sig-name descname"><span class="pre">_get_bg_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler._get_bg_names" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../temporal_1d/index.html" class="btn btn-neutral float-left" title="pylbo.visualisation.modes.temporal_1d" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../vtk_export/index.html" class="btn btn-neutral float-right" title="pylbo.visualisation.modes.vtk_export" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Niels Claes, Jordi De Jonghe and Rony Keppens (2020).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

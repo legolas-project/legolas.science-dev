@@ -265,7 +265,7 @@ Package Contents
    ..
        !! processed by numpydoc !!
 
-.. py:function:: load_series(datfiles)
+.. py:function:: load_series(datfiles, sorting_par=None)
 
    
    Loads multiple Legolas datfiles.
@@ -273,6 +273,8 @@ Package Contents
    :param datfiles: Paths to the datfiles that should be loaded, in list/array form. Every element
                     should be a string or a ~os.PathLike object.
    :type datfiles: list, numpy.ndarray
+   :param sorting_par: The parameter to sort the datfiles by.
+   :type sorting_par: str, optional
 
    :raises ValueError: If an empty list or array is supplied.
 
@@ -635,7 +637,7 @@ Package Contents
    ..
        !! processed by numpydoc !!
 
-.. py:function:: plot_1d_temporal_evolution(ds: pylbo.data_containers.LegolasDataSet, omega: Union[complex, list[complex], numpy.ndarray], ef_name: str, u2: float, u3: float, time: Union[list, numpy.ndarray], figsize: tuple[int, int] = None, add_background: bool = False, use_real_part: bool = True, complex_factor: complex = None, show_ef_panel: bool = True, **kwargs) -> pylbo.visualisation.modes.temporal_1d.TemporalEvolutionPlot1D
+.. py:function:: plot_1d_temporal_evolution(ds: Union[pylbo.data_containers.LegolasDataSet, pylbo.data_containers.LegolasDataSeries], omega: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]], ef_name: str, u2: float, u3: float, time: Union[list, numpy.ndarray], figsize: tuple[int, int] = None, add_background: bool = False, use_real_part: bool = True, complex_factor: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]] = None, show_ef_panel: bool = True, **kwargs) -> pylbo.visualisation.modes.temporal_1d.TemporalEvolutionPlot1D
 
    
    Plot the temporal evolution of a 1D eigenmode solution, i.e.
@@ -645,10 +647,11 @@ Package Contents
 
    for a particular set of coordinates :math:`(u_2, u_3)` over a time interval.
 
-   :param ds: The data set containing the eigenfunction.
-   :type ds: LegolasDataSet
-   :param omega: The (approximate) eigenvalue of the mode(s) to visualise.
-   :type omega: complex, list[complex], np.ndarray
+   :param ds: The data set/series containing the eigenfunctions, having the same equilibria.
+   :type ds: LegolasDataSet, LegolasDataSeries
+   :param omega: The (approximate) eigenvalue of the mode(s) to visualise. For multiple data
+                 series, length of omega and ds should match.
+   :type omega: complex, list[complex], np.ndarray, list[list[complex]], list[np.ndarray]
    :param ef_name: The name of the eigenfunction to visualise.
    :type ef_name: str
    :param u2: The y or :math:`\theta` coordinate of the eigenmode solution.
@@ -663,8 +666,10 @@ Package Contents
    :type add_background: bool
    :param use_real_part: Whether to use the real part of the eigenmode solution.
    :type use_real_part: bool
-   :param complex_factor: A complex factor to multiply the eigenmode solution with.
-   :type complex_factor: complex
+   :param complex_factor: list[np.ndarray]
+                          A complex factor to multiply the eigenmode solution with. For multiple data
+                          series, length of omega and ds should match.
+   :type complex_factor: complex, list[complex], np.ndarray, list[list[complex]],
    :param show_ef_panel: Whether to show the eigenfunction panel.
    :type show_ef_panel: bool
    :param kwargs: Additional keyword arguments to pass to :meth:`~matplotlib.pyplot.imshow`.
@@ -690,7 +695,7 @@ Package Contents
    ..
        !! processed by numpydoc !!
 
-.. py:function:: plot_2d_slice(ds: pylbo.data_containers.LegolasDataSet, omega: Union[complex, list[complex], numpy.ndarray], ef_name: str, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int] = None, add_background: bool = False, use_real_part: bool = True, complex_factor: complex = None, show_ef_panel: bool = True, polar: bool = False, **kwargs) -> pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D
+.. py:function:: plot_2d_slice(ds: Union[pylbo.data_containers.LegolasDataSet, pylbo.data_containers.LegolasDataSeries], omega: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]], ef_name: str, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int] = None, add_background: bool = False, use_real_part: bool = True, complex_factor: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]] = None, show_ef_panel: bool = True, polar: bool = False, **kwargs) -> pylbo.visualisation.modes.cartesian_2d.CartesianSlicePlot2D
 
    
    Plot a 2D spatial view of the eigenmode solution, i.e.
@@ -704,10 +709,11 @@ Package Contents
    `u2` and `u3` must be consistent with the slicing axis. For cylindrical geometries
    slices in both Cartesian and polar coordinates can be created.
 
-   :param ds: The data set containing the eigenfunction.
-   :type ds: LegolasDataSet
-   :param omega: The (approximate) eigenvalue of the mode(s) to visualise.
-   :type omega: complex, list[complex], np.ndarray
+   :param ds: The data set/series containing the eigenfunctions, having the same equilibria.
+   :type ds: LegolasDataSet, LegolasDataSeries
+   :param omega: The (approximate) eigenvalue of the mode(s) to visualise. For multiple
+                 data series, length of omega and ds should match.
+   :type omega: complex, list[complex], np.ndarray, list[list[complex]], list[np.ndarray]
    :param ef_name: The name of the eigenfunction to visualise.
    :type ef_name: str
    :param u2: The y or :math:`\theta` coordinate of the eigenmode solution.
@@ -724,8 +730,10 @@ Package Contents
    :type add_background: bool
    :param use_real_part: Whether to use the real part of the eigenmode solution.
    :type use_real_part: bool
-   :param complex_factor: A complex factor to multiply the eigenmode solution with.
-   :type complex_factor: complex
+   :param complex_factor: list[np.ndarray]
+                          A complex factor to multiply the eigenmode solution with. For multiple data
+                          series, length of omega and ds should match.
+   :type complex_factor: complex, list[complex], np.ndarray, list[list[complex]],
    :param show_ef_panel: Whether to show the eigenfunction panel.
    :type show_ef_panel: bool
    :param polar: Whether to use polar coordinates for the 2D view. Only used if the
@@ -754,7 +762,7 @@ Package Contents
    ..
        !! processed by numpydoc !!
 
-.. py:function:: plot_3d_slice(ds: pylbo.data_containers.LegolasDataSet, omega: Union[complex, list[complex], numpy.ndarray], ef_name: str, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int] = None, add_background: bool = False, use_real_part: bool = True, complex_factor: complex = None, **kwargs) -> pylbo.visualisation.modes.cartesian_3d.CartesianSlicePlot3D
+.. py:function:: plot_3d_slice(ds: Union[pylbo.data_containers.LegolasDataSet, pylbo.data_containers.LegolasDataSeries], omega: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]], ef_name: str, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], time: float, slicing_axis: str, figsize: tuple[int, int] = None, add_background: bool = False, use_real_part: bool = True, complex_factor: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]] = None, **kwargs) -> pylbo.visualisation.modes.cartesian_3d.CartesianSlicePlot3D
 
    
    Plot a 3D spatial view of the eigenmode solution, i.e.
@@ -765,10 +773,11 @@ Package Contents
    for a particular set of coordinates. Several 2D slices are superimposed on each
    other for every value of :math:`u_3`.
 
-   :param ds: The data set containing the eigenfunction.
-   :type ds: LegolasDataSet
-   :param omega: The (approximate) eigenvalue of the mode(s) to visualise.
-   :type omega: complex, list[complex], np.ndarray
+   :param ds: The data set/series containing the eigenfunctions, having the same equilibria.
+   :type ds: LegolasDataSet, LegolasDataSeries
+   :param omega: The (approximate) eigenvalue of the mode(s) to visualise. For multiple data
+                 series, length of omega and ds should match.
+   :type omega: complex, list[complex], np.ndarray, list[list[complex]], list[np.ndarray]
    :param ef_name: The name of the eigenfunction to visualise.
    :type ef_name: str
    :param u2: The y or :math:`\theta` coordinate of the eigenmode solution.
@@ -785,8 +794,10 @@ Package Contents
    :type add_background: bool
    :param use_real_part: Whether to use the real part of the eigenmode solution.
    :type use_real_part: bool
-   :param complex_factor: A complex factor to multiply the eigenmode solution with.
-   :type complex_factor: complex
+   :param complex_factor: list[np.ndarray]
+                          A complex factor to multiply the eigenmode solution with. For multiple data
+                          series, length of omega and ds should match.
+   :type complex_factor: complex, list[complex], np.ndarray, list[list[complex]],
    :param kwargs: Additional keyword arguments to pass to the plotting function.
    :type kwargs: dict
 
@@ -810,22 +821,27 @@ Package Contents
    ..
        !! processed by numpydoc !!
 
-.. py:function:: prepare_vtk_export(ds: pylbo.data_containers.LegolasDataSet, omega: Union[complex, list[complex], numpy.ndarray], u2: numpy.ndarray, u3: numpy.ndarray, use_real_part: bool = True, complex_factor: complex = None) -> Union[pylbo.visualisation.modes.vtk_export.VTKCartesianData, pylbo.visualisation.modes.vtk_export.VTKCylindricalData]
+.. py:function:: prepare_vtk_export(ds: Union[pylbo.data_containers.LegolasDataSet, pylbo.data_containers.LegolasDataSeries], omega: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]], u2: numpy.ndarray, u3: numpy.ndarray, use_real_part: bool = True, complex_factor: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]] = None) -> Union[pylbo.visualisation.modes.vtk_export.VTKCartesianData, pylbo.visualisation.modes.vtk_export.VTKCylindricalData]
 
    
    Prepares for a VTK file export of the eigenmode solution in three dimensions.
    Returns a :class:`VTKDataCube3D` object which can be used to generate VTK files.
 
-   :param ds: The data set containing the eigenfunction.
-   :type ds: LegolasDataSet
-   :param omega: The (approximate) eigenvalue of the mode(s) to visualise.
-   :type omega: complex, list[complex], np.ndarray
+   :param ds: The data set/series containing the eigenfunctions, having the same equilibria.
+   :type ds: LegolasDataSet, LegolasDataSeries
+   :param omega: The (approximate) eigenvalue of the mode(s) to visualise. For multiple data
+                 series, length of omega and ds should match.
+   :type omega: complex, list[complex], np.ndarray, list[list[complex]], list[np.ndarray]
    :param u2: The y or :math:`\theta` coordinates of the eigenmode solution.
    :type u2: np.ndarray
    :param u3: The z coordinates of the eigenmode solution.
    :type u3: np.ndarray
    :param use_real_part: Whether to use the real part of the eigenmode solution.
    :type use_real_part: bool
+   :param complex_factor: list[np.ndarray]
+                          A complex factor to multiply the eigenmode solution with. For multiple data
+                          series, length of omega and ds should match.
+   :type complex_factor: complex, list[complex], np.ndarray, list[list[complex]],
 
    :returns: Object that can be used to generate VTK files.
    :rtype: VTKCartesianData or VTKCylindricalData

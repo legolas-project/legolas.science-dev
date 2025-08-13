@@ -12,44 +12,84 @@ Classes
    pylbo.visualisation.modes.mode_data.ModeVisualisationData
 
 
+Functions
+---------
+
+.. autoapisummary::
+
+   pylbo.visualisation.modes.mode_data._handle_expected_input_value
+   pylbo.visualisation.modes.mode_data._check_grid_dataseries
+
+
 Module Contents
 ---------------
 
-.. py:class:: ModeVisualisationData(ds: pylbo.data_containers.LegolasDataSet, omega: list[complex], ef_name: str = None, use_real_part: bool = True, complex_factor: complex = None, add_background: bool = False)
+.. py:function:: _handle_expected_input_value(ds: pylbo.data_containers.LegolasDataSeries, value) -> list[list[complex]]
+
+.. py:function:: _check_grid_dataseries(ds: pylbo.data_containers.LegolasDataSeries) -> bool
+
+   
+   Check if all datasets in the dataseries have the same grid.
+
+   :param ds: The dataseries to check.
+   :type ds: ~pylbo.data_containers.LegolasDataSeries
+
+   :returns: True if all datasets have the same grid, False otherwise.
+   :rtype: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:class:: ModeVisualisationData(ds: Union[pylbo.data_containers.LegolasDataSet, pylbo.data_containers.LegolasDataSeries], omega: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]], ef_name: str = None, use_real_part: bool = True, complex_factor: Union[complex, list[complex], numpy.ndarray, list[list[complex]], list[numpy.ndarray]] = None, add_background: bool = False)
 
    
    Class that contains the data used for eigenmode visualisations.
 
-   :param ds: The dataset containing the eigenfunctions and modes to visualise.
-   :type ds: ~pylbo.data_containers.LegolasDataSet
+   :param ds: The data set/series containing the eigenfunctions, having the same
+              equilibria.
+   :type ds: ~pylbo.data_containers.LegolasDataSet/LegolasDataSeries
    :param omega: The (approximate) eigenvalue(s) of the mode(s) to visualise.
-   :type omega: list[complex]
+   :type omega: list[list[complex]]
    :param ef_name: The name of the eigenfunction to visualise.
    :type ef_name: str
    :param use_real_part: Whether to use the real part of the eigenmode solution.
    :type use_real_part: bool
    :param complex_factor: A complex factor to multiply the eigenmode solution with.
-   :type complex_factor: complex
+   :type complex_factor: list[list[complex]]
    :param add_background: Whether to add the equilibrium background to the eigenmode solution.
    :type add_background: bool
 
    .. attribute:: ds
 
-      The dataset containing the eigenfunctions and modes to visualise.
+      The dataseries containing the eigenfunctions and modes to visualise.
 
-      :type: ~pylbo.data_containers.LegolasDataSet
+      :type: ~pylbo.data_containers.LegolasDataSeries
 
    .. attribute:: omega
 
       The (approximate) eigenvalue(s) of the mode(s) to visualise.
 
-      :type: list[complex]
+      :type: list[list[complex]]
 
    .. attribute:: eigenfunction
 
       The eigenfunction of the mode(s) to visualise.
 
-      :type: list[np.ndarray]
+      :type: list[list[np.ndarray]]
 
    .. attribute:: use_real_part
 
@@ -59,9 +99,9 @@ Module Contents
 
    .. attribute:: complex_factor
 
-      The complex factor to multiply the eigenmode solution with.
+      The complex factors to multiply the eigenmode solution with.
 
-      :type: complex
+      :type: list[list[complex]]
 
    .. attribute:: add_background
 
@@ -89,13 +129,16 @@ Module Contents
    .. py:attribute:: ds
 
 
-   .. py:attribute:: use_real_part
-      :value: True
-
-
-
    .. py:attribute:: complex_factor
       :value: None
+
+
+
+   .. py:attribute:: ds_bg
+
+
+   .. py:attribute:: use_real_part
+      :value: True
 
 
 
@@ -123,9 +166,13 @@ Module Contents
 
 
    .. py:attribute:: omega
+      :value: []
+
 
 
    .. py:attribute:: eigenfunction
+      :value: []
+
 
 
    .. py:property:: k2
@@ -231,13 +278,13 @@ Module Contents
           !! processed by numpydoc !!
 
 
-   .. py:method:: _validate_complex_factor(complex_factor: complex) -> complex
+   .. py:method:: _validate_complex_factor(complex_factor: list[list[complex]]) -> list[list[complex]]
 
       
-      Validates the complex factor.
+      Validates the complex factors.
 
       :param complex_factor: The complex factor to validate.
-      :type complex_factor: complex
+      :type complex_factor: list[list[complex]]
 
       :returns: The complex factor if it is valid, otherwise 1.
       :rtype: complex
@@ -260,7 +307,7 @@ Module Contents
           !! processed by numpydoc !!
 
 
-   .. py:method:: get_mode_solution(ef: numpy.ndarray, omega: complex, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], t: Union[float, numpy.ndarray]) -> numpy.ndarray
+   .. py:method:: get_mode_solution(ef: numpy.ndarray, omega: complex, complex_factor: complex, u2: Union[float, numpy.ndarray], u3: Union[float, numpy.ndarray], t: Union[float, numpy.ndarray], k2: float, k3: float) -> numpy.ndarray
 
       
       Calculates the full eigenmode solution for given coordinates and time.
@@ -272,12 +319,18 @@ Module Contents
       :type ef: np.ndarray
       :param omega: The eigenvalue to use.
       :type omega: complex
+      :param complex_factor: The complex factor to multiply with.
+      :type complex_factor: complex,
       :param u2: The y coordinate(s) of the eigenmode solution.
       :type u2: Union[float, np.ndarray]
       :param u3: The z coordinate(s) of the eigenmode solution.
       :type u3: Union[float, np.ndarray]
       :param t: The time(s) of the eigenmode solution.
       :type t: Union[float, np.ndarray]
+      :param k2: The x2 wavenumber of the mode.
+      :type k2: float
+      :param k3: The x3 wavenumber of the mode.
+      :type k3: float
 
       :returns: The real or imaginary part of the eigenmode solution for the given
                 set of coordinate(s) and time(s).
@@ -372,7 +425,8 @@ Module Contents
                 name.
       :rtype: str
 
-      :raises ValueError: If the eigenfunction name is a magnetic vector potential component.
+      :raises ValueError: If the eigenfunction name is a magnetic vector potential component or
+          derived eigenfunction that is not the magnetic field.
 
 
 

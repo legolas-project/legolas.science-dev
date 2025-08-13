@@ -1,0 +1,141 @@
+pylbo.visualisation.modes.vectorplot_handler
+============================================
+
+.. py:module:: pylbo.visualisation.modes.vectorplot_handler
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler
+
+
+Module Contents
+---------------
+
+.. py:class:: VectorplotHandler(xgrid: numpy.ndarray, coordgrid: numpy.ndarray, field: str, data: pylbo.visualisation.modes.mode_data.ModeVisualisationData, axes: matplotlib.axes.Axes, add_background: bool, **kwargs)
+
+   
+   Main handler for vector-based fields (Streamlines and Quiver).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: xgrid
+
+
+   .. py:attribute:: coordgrid
+
+
+   .. py:attribute:: data
+
+
+   .. py:attribute:: field
+
+
+   .. py:attribute:: ax
+
+
+   .. py:attribute:: polar
+
+
+   .. py:attribute:: add_background
+
+
+   .. py:attribute:: coord_dict
+
+
+   .. py:attribute:: streamlines
+      :value: None
+
+
+
+   .. py:attribute:: quivers
+      :value: None
+
+
+
+   .. py:attribute:: _kwargs
+
+
+   .. py:method:: _draw_streamlines() -> matplotlib.streamplot.StreamplotSet
+
+
+   .. py:method:: _draw_quivers() -> matplotlib.quiver.Quiver
+
+
+   .. py:method:: _update_quivers() -> None
+
+
+   .. py:method:: _clear_quivers() -> None
+
+
+   .. py:method:: _clear_streamlines() -> None
+
+
+   .. py:method:: _set_slicing_axis(slicing_axis, u2axis, u3axis) -> None
+
+
+   .. py:method:: _set_time(time) -> None
+
+
+   .. py:method:: _set_streamplot_arrays(u2, u3) -> None
+
+
+   .. py:method:: _set_solutions() -> numpy.ndarray
+
+      
+      Returns the eigenmode solution for a given time.
+
+      :param u2_data: The u2 data from the Plot2d.
+      :type u2_data: Union[float, np.ndarray]
+      :param u3_data: The u3 data from the Plot2d.
+      :type u3_data: Union[float, np.ndarray]
+
+      :returns: The eigenmode solution.
+      :rtype: np.ndarray
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _transform_vectors() -> None
+
+
+   .. py:method:: _get_field_names() -> list
+
+
+   .. py:method:: _get_bg_names() -> list
+
+

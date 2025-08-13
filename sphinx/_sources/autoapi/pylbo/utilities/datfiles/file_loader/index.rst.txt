@@ -78,7 +78,7 @@ Module Contents
    ..
        !! processed by numpydoc !!
 
-.. py:function:: load_series(datfiles)
+.. py:function:: load_series(datfiles, sorting_par=None)
 
    
    Loads multiple Legolas datfiles.
@@ -86,6 +86,8 @@ Module Contents
    :param datfiles: Paths to the datfiles that should be loaded, in list/array form. Every element
                     should be a string or a ~os.PathLike object.
    :type datfiles: list, numpy.ndarray
+   :param sorting_par: The parameter to sort the datfiles by.
+   :type sorting_par: str, optional
 
    :raises ValueError: If an empty list or array is supplied.
 

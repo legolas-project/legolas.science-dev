@@ -94,10 +94,37 @@ Module Contents
 
 
 
+   .. py:attribute:: _view_dot
+      :value: None
+
+
+
+   .. py:attribute:: _has_streamlines
+      :value: False
+
+
+
+   .. py:attribute:: _has_quivers
+      :value: False
+
+
+
    .. py:attribute:: vmin
 
 
    .. py:attribute:: vmax
+
+
+   .. py:attribute:: xmin
+
+
+   .. py:attribute:: xmax
+
+
+   .. py:attribute:: coordmin
+
+
+   .. py:attribute:: coordmax
 
 
    .. py:method:: _validate_slicing_axis(slicing_axis: str, allowed_axes: list[str]) -> str
@@ -291,7 +318,7 @@ Module Contents
    .. py:method:: get_view_ylabel() -> str
 
 
-   .. py:method:: create_animation(times: numpy.ndarray, filename: str, fps: float = 10, dpi: int = 200) -> None
+   .. py:method:: create_animation(times: numpy.ndarray, filename: str, fps: float = 10, dpi: int = 200, draw_dots: bool = False, ndots: int = 20) -> None
 
       
       Creates an animation of the eigenmode solution over a given time interval.
@@ -329,6 +356,33 @@ Module Contents
    .. py:method:: _set_t_txt(t)
 
 
+   .. py:method:: _draw_comoving_dot(t, ndots)
+
+      
+      Overplots the data in an animation with dots that
+      are comoving with the flow.
+
+      :param t: The current time.
+      :type t: float
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
    .. py:method:: _update_view(updated_solution: numpy.ndarray) -> None
 
       
@@ -364,5 +418,29 @@ Module Contents
 
 
    .. py:method:: _update_contour_plot(updated_solution: numpy.ndarray) -> None
+
+
+   .. py:method:: add_streamlines(xgrid=None, coordgrid=None, field='v', add_background=True, **kwargs) -> None
+
+
+   .. py:method:: add_quivers(xgrid=None, coordgrid=None, field='v', add_background=True, **kwargs) -> None
+
+
+   .. py:method:: _add_streamplot(xgrid=None, coordgrid=None, field='v', add_background=True, **kwargs) -> None
+
+
+   .. py:method:: _add_quiverplot(xgrid=None, coordgrid=None, field='v', add_background=True, **kwargs) -> None
+
+
+   .. py:method:: _create_vectorplot(xgrid=None, coordgrid=None, field='v', add_background=True, **kwargs) -> pylbo.visualisation.modes.vectorplot_handler.VectorplotHandler
+
+
+   .. py:method:: _draw_vectorplot() -> None
+
+
+   .. py:method:: _update_streamplot() -> None
+
+
+   .. py:method:: _update_quiverplot() -> None
 
 

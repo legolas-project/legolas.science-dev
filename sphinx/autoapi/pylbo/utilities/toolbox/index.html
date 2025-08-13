@@ -139,8 +139,11 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.count_zeroes" title="pylbo.utilities.toolbox.count_zeroes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count_zeroes</span></code></a>(eigfuncs[, real])</p></td>
 <td><p>Counts the number of zeroes of an array of complex eigenfunctions by looking at</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.find_resonance_location" title="pylbo.utilities.toolbox.find_resonance_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_resonance_location</span></code></a>(continuum, grid, sigma)</p></td>
-<td><p>Finds the resonance location between sigma and the continuum. For example, if</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.find_resonance_location" title="pylbo.utilities.toolbox.find_resonance_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_resonance_location</span></code></a>(continuum, grid, omega)</p></td>
+<td><p>Finds the resonance location between omega and the continuum. For example, if</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.toolbox.is_custom_grid" title="pylbo.utilities.toolbox.is_custom_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_custom_grid</span></code></a>(grid)</p></td>
+<td><p>Checks if a given grid is a custom grid, i.e. not equidistant.</p></td>
 </tr>
 </tbody>
 </table>
@@ -380,11 +383,11 @@ If <cite>False</cite>, counts the number of zeroes of the imaginary part.</p></l
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.utilities.toolbox.find_resonance_location">
-<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">find_resonance_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">continuum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.toolbox.find_resonance_location" title="Link to this definition"></a></dt>
-<dd><p>Finds the resonance location between sigma and the continuum. For example, if
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">find_resonance_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">continuum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.toolbox.find_resonance_location" title="Link to this definition"></a></dt>
+<dd><p>Finds the resonance location between omega and the continuum. For example, if
 the continuum is given by [5, 6, 7, 8, 9, 10] and the grid is equal to
-[0, 1, 2, 3, 4, 5], then for a sigma = 9 the resonance location is 4. For a sigma
-equal to 8.5 the resonance location is 3.5. For a sigma outside of the continuum
+[0, 1, 2, 3, 4, 5], then for an omega = 9 the resonance location is 4. For an omega
+equal to 8.5 the resonance location is 3.5. For an omega outside of the continuum
 the resonance location is None. If the continuum array is not monotone, then
 the resonance location is interpolated between the first matched interval.</p>
 <dl class="field-list simple">
@@ -393,7 +396,7 @@ the resonance location is interpolated between the first matched interval.</p>
 <li><p><strong>continuum</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><em>numpy.ndarray</em></a><em>(</em><em>dtype=complex</em><em>)</em>) – Array containing the range of a specific continuum. Can be complex, but only
 the resonance with the real part is calculated.</p></li>
 <li><p><strong>grid</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><em>numpy.ndarray</em></a>) – The grid on which the continuum is defined.</p></li>
-<li><p><strong>sigma</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.13)"><em>complex</em></a>) – A given eigenvalue.</p></li>
+<li><p><strong>omega</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.13)"><em>complex</em></a>) – A given eigenvalue.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -402,6 +405,23 @@ Returns None if there is no resonance with the specified continuum.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None, np.ndarray(<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)">float</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.utilities.toolbox.is_custom_grid">
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.toolbox.</span></span><span class="sig-name descname"><span class="pre">is_custom_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.toolbox.is_custom_grid" title="Link to this definition"></a></dt>
+<dd><p>Checks if a given grid is a custom grid, i.e. not equidistant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>grid</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><em>numpy.ndarray</em></a>) – The grid to test.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>True</cite> if the grid is a custom grid, <cite>False</cite> otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)">bool</a></p>
 </dd>
 </dl>
 </dd></dl>

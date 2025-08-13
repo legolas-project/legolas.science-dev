@@ -109,7 +109,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.datfiles.file_loader.load" title="pylbo.utilities.datfiles.file_loader.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(datfile)</p></td>
 <td><p>Loads a single Legolas datfile.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.datfiles.file_loader.load_series" title="pylbo.utilities.datfiles.file_loader.load_series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_series</span></code></a>(datfiles)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.utilities.datfiles.file_loader.load_series" title="pylbo.utilities.datfiles.file_loader.load_series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_series</span></code></a>(datfiles[, sorting_par])</p></td>
 <td><p>Loads multiple Legolas datfiles.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.utilities.datfiles.file_loader.load_logfile" title="pylbo.utilities.datfiles.file_loader.load_logfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_logfile</span></code></a>(logfile[, sort])</p></td>
@@ -163,12 +163,15 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pylbo.utilities.datfiles.file_loader.load_series">
-<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">load_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfiles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.load_series" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.utilities.datfiles.file_loader.</span></span><span class="sig-name descname"><span class="pre">load_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorting_par</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.utilities.datfiles.file_loader.load_series" title="Link to this definition"></a></dt>
 <dd><p>Loads multiple Legolas datfiles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>datfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><em>numpy.ndarray</em></a>) – Paths to the datfiles that should be loaded, in list/array form. Every element
-should be a string or a ~os.PathLike object.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datfiles</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><em>numpy.ndarray</em></a>) – Paths to the datfiles that should be loaded, in list/array form. Every element
+should be a string or a ~os.PathLike object.</p></li>
+<li><p><strong>sorting_par</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – The parameter to sort the datfiles by.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If an empty list or array is supplied.</p>

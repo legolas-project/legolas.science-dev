@@ -171,6 +171,9 @@ Module Contents
 
 
 
+   .. py:attribute:: _multiple_wavenumbers
+
+
    .. py:attribute:: _solutions
       :value: 0
 
@@ -270,8 +273,9 @@ Module Contents
       Calculates the mode solution.
 
       :param efdata: The data for the eigenfunction. This should be a dictionary with the
-                     keys ``'ef'`` and ``'omega'``, with ``'ef'``containing the eigenfunction
-                     and ``'omega'`` the corresponding eigenvalue.
+                     keys ``'ef'``, ``'omega'`` and ``'factor'``, with ``'ef'``containing
+                     the eigenfunction, ``'omega'`` the corresponding eigenvalue and
+                     ``'factor'``the corresponding complex factor to be multiplied with.
       :type efdata: dict
       :param u2: The data for the :math:`u_2` coordinate.
       :type u2: Union[float, np.ndarray]

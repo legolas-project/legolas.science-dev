@@ -22,6 +22,7 @@ Functions
    pylbo.utilities.toolbox.solve_cubic_exact
    pylbo.utilities.toolbox.count_zeroes
    pylbo.utilities.toolbox.find_resonance_location
+   pylbo.utilities.toolbox.is_custom_grid
 
 
 Module Contents
@@ -376,13 +377,13 @@ Module Contents
    ..
        !! processed by numpydoc !!
 
-.. py:function:: find_resonance_location(continuum, grid, sigma)
+.. py:function:: find_resonance_location(continuum, grid, omega)
 
    
-   Finds the resonance location between sigma and the continuum. For example, if
+   Finds the resonance location between omega and the continuum. For example, if
    the continuum is given by [5, 6, 7, 8, 9, 10] and the grid is equal to
-   [0, 1, 2, 3, 4, 5], then for a sigma = 9 the resonance location is 4. For a sigma
-   equal to 8.5 the resonance location is 3.5. For a sigma outside of the continuum
+   [0, 1, 2, 3, 4, 5], then for an omega = 9 the resonance location is 4. For an omega
+   equal to 8.5 the resonance location is 3.5. For an omega outside of the continuum
    the resonance location is None. If the continuum array is not monotone, then
    the resonance location is interpolated between the first matched interval.
 
@@ -391,12 +392,40 @@ Module Contents
    :type continuum: numpy.ndarray(dtype=complex)
    :param grid: The grid on which the continuum is defined.
    :type grid: numpy.ndarray
-   :param sigma: A given eigenvalue.
-   :type sigma: complex
+   :param omega: A given eigenvalue.
+   :type omega: complex
 
    :returns: The position where there is resonance between the eigenmode and the continuum.
              Returns None if there is no resonance with the specified continuum.
    :rtype: None, np.ndarray(float)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: is_custom_grid(grid)
+
+   
+   Checks if a given grid is a custom grid, i.e. not equidistant.
+
+   :param grid: The grid to test.
+   :type grid: numpy.ndarray
+
+   :returns: `True` if the grid is a custom grid, `False` otherwise.
+   :rtype: bool
 
 
 

@@ -81,13 +81,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">15 statements</a>
+    title=" 0.1% of total for procedures.">13 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/mod_base_efs.f08"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/mod_eigenfunctions.f08"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/mod_base_efs.f08.html'>mod_base_efs.f08</a></li>
-     <li><a href='../module/mod_base_efs.html'>mod_base_efs</a></li>
+     <li><a href='../sourcefile/mod_eigenfunctions.f08.html'>mod_eigenfunctions.f08</a></li>
+     <li><a href='../module/mod_eigenfunctions.html'>mod_eigenfunctions</a></li>
      <li class="active">assemble</li>
   </ol>
 </div>
@@ -113,7 +113,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine assemble(this, settings, grid, idxs_to_assemble, right_eigenvectors)</h2>
+    <h2>private subroutine assemble(this, right_eigenvectors)</h2>
     
 
 
@@ -122,31 +122,13 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~81"></span>class(<a href='../type/base_ef_t.html'>base_ef_t</a>),</td>
+  <td><span class="anchor" id="variable-this~81"></span>class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-settings~112"></span>type(<a href='../type/settings_t.html'>settings_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>settings</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-grid~91"></span>type(<a href='../type/grid_t.html'>grid_t</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>grid</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-idxs_to_assemble~2"></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>idxs_to_assemble</strong>(:)</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-right_eigenvectors~3"></span>complex(kind=dp),</td>
+  <td><span class="anchor" id="variable-right_eigenvectors~2"></span>complex(kind=dp),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>right_eigenvectors</strong>(:,:)</td><td></td>
