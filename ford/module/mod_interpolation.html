@@ -187,8 +187,8 @@ Subroutines are loosely based on routines implemented in the
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
               </ul>
             </li>
         </ul>
@@ -230,7 +230,7 @@ Uses simple linear interpolation.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~173"></span>
+              <span class="anchor" id="variable-x~162"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -314,7 +314,9 @@ Uses simple linear interpolation.</p>
   <p>Interpolates a given set of tables (x, y(x)) into a smooth curve.
 Assumes that x_table is an array with a monotone increase in values.
 Interpolation is done using <tt>n_interp</tt> points, in general a second
-order polynomial approximation is used except near sharp jumps.</p><a href="../proc/interpolate_table.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+order polynomial approximation is used except near sharp jumps.
+!!! warning
+    Throws an error if <tt>x_table</tt> is not monotone.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -435,7 +437,7 @@ differentiated instead. The stencils are as follows:</p><a href="../proc/get_num
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~171"></span>
+              <span class="anchor" id="variable-x~160"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -526,7 +528,7 @@ differentiated instead.</p><a href="../proc/get_second_numerical_derivative.html
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~172"></span>
+              <span class="anchor" id="variable-x~161"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -607,7 +609,7 @@ differentiated instead.</p><a href="../proc/get_second_numerical_derivative.html
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

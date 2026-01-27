@@ -146,15 +146,15 @@
             <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-rho0~13">rho0</a>
             <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-t0~13">T0</a>
             <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-dt0~6">dT0</a>
-            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-v02~5">v02</a>
-            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-v03~4">v03</a>
+            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-v02~3">v02</a>
+            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-v03~3">v03</a>
             <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-dv03~3">dv03</a>
-            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-b02~10">B02</a>
-            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-db02~7">dB02</a>
-            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-b03~13">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-b02~12">B02</a>
+            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-db02~9">dB02</a>
+            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-b03~12">B03</a>
             <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-db03~6">dB03</a>
-            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-j0">J0</a>
-            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-j1">J1</a>
+            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-j0~2">J0</a>
+            <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-j1~2">J1</a>
             <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-dj0">DJ0</a>
             <a class="list-group-item" href="../module/smod_equil_suydam_cluster.html#proc-dj1">DJ1</a>
         </div>
@@ -192,22 +192,20 @@ is present, such that this gives rises to Suydam cluster modes.
 The geometry can be overriden using the parfile.</p>
 <p>This equilibrium is taken from
 <em>Nijboer, R. J., Holst, B., Poedts, S., &amp; Goedbloed, J. P. (1997).
- Calculating magnetohydrodynamic flow spectra. Computer physics communications, 106(1-2), 39-52</em>.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Default values are given by</p>
-<ul>
-<li><tt>k2</tt> = 1</li>
-<li><tt>k3</tt> = -1.2</li>
-<li><tt>cte_rho0</tt> = 1 : used to set the density value.</li>
-<li><tt>cte_p0</tt> = 0.05 : used to set the background pressure.</li>
-<li><tt>cte_v02</tt> = 0 : sets a constant flow <script type="math/tex">v_\theta</script>.</li>
-<li><tt>cte_v03</tt> = 0.14 : prefactor for flow profile <script type="math/tex">v_z</script>.</li>
-<li><tt>p1</tt> = 0.1 : constant that appears in magnetic field and pressure components.</li>
-<li><tt>alpha</tt> = 2 : used in the Bessel functions.</li>
-</ul>
-<p>and can all be changed in the parfile.</p>
-</div>
+ Calculating magnetohydrodynamic flow spectra. Computer physics communications, 106(1-2), 39-52</em>.
+!!! note
+    Default values are given by</p>
+<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>-1.2
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>density<span class="w"> </span>value.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_p0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.05<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>background<span class="w"> </span>pressure.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_v02<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>sets<span class="w"> </span>a<span class="w"> </span>constant<span class="w"> </span>flow<span class="w"> </span>\(v_\theta\).
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_v03<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.14<span class="w"> </span>:<span class="w"> </span>prefactor<span class="w"> </span>for<span class="w"> </span>flow<span class="w"> </span>profile<span class="w"> </span>\(v_z\).
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p1<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.1<span class="w"> </span>:<span class="w"> </span>constant<span class="w"> </span>that<span class="w"> </span>appears<span class="w"> </span>in<span class="w"> </span>magnetic<span class="w"> </span>field<span class="w"> </span>and<span class="w"> </span>pressure<span class="w"> </span>components.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>alpha<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>2<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>Bessel<span class="w"> </span>functions.
+
+and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
+</code></pre></div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -276,7 +274,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~40"></span>
+              <span class="anchor" id="variable-r~32"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -321,7 +319,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~41"></span>
+              <span class="anchor" id="variable-r~33"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -347,7 +345,7 @@ The geometry can be overriden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-v02~5"></span> <h3> function <a href='../proc/v02~5.html'>v02</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-v02~3"></span> <h3> function <a href='../proc/v02~3.html'>v02</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -365,7 +363,7 @@ The geometry can be overriden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-v03~4"></span> <h3> function <a href='../proc/v03~4.html'>v03</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-v03~3"></span> <h3> function <a href='../proc/v03~3.html'>v03</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -384,7 +382,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~42"></span>
+              <span class="anchor" id="variable-r~34"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -429,7 +427,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~43"></span>
+              <span class="anchor" id="variable-r~35"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -455,7 +453,7 @@ The geometry can be overriden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b02~10"></span> <h3> function <a href='../proc/b02~10.html'>B02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b02~12"></span> <h3> function <a href='../proc/b02~12.html'>B02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -474,7 +472,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~44"></span>
+              <span class="anchor" id="variable-r~36"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -500,7 +498,7 @@ The geometry can be overriden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db02~7"></span> <h3> function <a href='../proc/db02~7.html'>dB02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-db02~9"></span> <h3> function <a href='../proc/db02~9.html'>dB02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -519,7 +517,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~45"></span>
+              <span class="anchor" id="variable-r~37"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -545,7 +543,7 @@ The geometry can be overriden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~13"></span> <h3> function <a href='../proc/b03~13.html'>B03</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~12"></span> <h3> function <a href='../proc/b03~12.html'>B03</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -564,7 +562,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~46"></span>
+              <span class="anchor" id="variable-r~38"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -609,7 +607,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~47"></span>
+              <span class="anchor" id="variable-r~39"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -635,7 +633,7 @@ The geometry can be overriden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-j0"></span> <h3> function <a href='../proc/j0.html'>J0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-j0~2"></span> <h3> function <a href='../proc/j0~2.html'>J0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -654,7 +652,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~48"></span>
+              <span class="anchor" id="variable-r~40"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -680,7 +678,7 @@ The geometry can be overriden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-j1"></span> <h3> function <a href='../proc/j1.html'>J1</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-j1~2"></span> <h3> function <a href='../proc/j1~2.html'>J1</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -699,7 +697,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~49"></span>
+              <span class="anchor" id="variable-r~41"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -744,7 +742,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~50"></span>
+              <span class="anchor" id="variable-r~42"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -789,7 +787,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~51"></span>
+              <span class="anchor" id="variable-r~43"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -828,7 +826,7 @@ The geometry can be overriden using the parfile.</p>
 </h3></div>
     <div class="card-body">
           
-  <p>Sets the equilibrium</p>
+  
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -843,7 +841,7 @@ The geometry can be overriden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~40"></span>
+              <span class="anchor" id="variable-settings~127"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -858,7 +856,7 @@ The geometry can be overriden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~26"></span>
+              <span class="anchor" id="variable-grid~94"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -873,7 +871,7 @@ The geometry can be overriden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~33"></span>
+              <span class="anchor" id="variable-background~80"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -888,7 +886,7 @@ The geometry can be overriden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~25"></span>
+              <span class="anchor" id="variable-physics~54"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -920,7 +918,7 @@ The geometry can be overriden using the parfile.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

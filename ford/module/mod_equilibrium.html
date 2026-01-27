@@ -222,26 +222,24 @@ declarations of the module subroutines. Every equilibrium submodule
 extends this module, implementing one of the module subroutines declared here.
 All "main" equilibrium configurations are set in the submodules. The ones that
 depend on "main" arrays, like radiative cooling, are set here through calls to their
-respective modules.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note<p>All use statements specified here at the main module scope
-     are automatically accessible in every submodule that extends this one.</p>
-</p>
-</div>
+respective modules.
+!!! note
+    All use statements specified here at the main module scope
+    are automatically accessible in every submodule that extends this one.</p>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_physical_constants.html'>mod_physical_constants</a></li>
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
-                  <li class="list-inline-item"><a href='mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-                  <li class="list-inline-item"><a href='mod_physics.html'>mod_physics</a></li>
-                  <li class="list-inline-item"><a href='mod_background.html'>mod_background</a></li>
-                  <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
                   <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
+                  <li class="list-inline-item"><a href='mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
+                  <li class="list-inline-item"><a href='mod_background.html'>mod_background</a></li>
+                  <li class="list-inline-item"><a href='mod_physics.html'>mod_physics</a></li>
+                  <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
+                  <li class="list-inline-item"><a href='mod_physical_constants.html'>mod_physical_constants</a></li>
               </ul>
             </li>
         </ul>
@@ -364,7 +362,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~16"></span>
+              <span class="anchor" id="variable-settings~103"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -379,7 +377,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~2"></span>
+              <span class="anchor" id="variable-grid~70"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -394,7 +392,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~9"></span>
+              <span class="anchor" id="variable-background~56"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -409,7 +407,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics"></span>
+              <span class="anchor" id="variable-physics~30"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -461,7 +459,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~17"></span>
+              <span class="anchor" id="variable-settings~104"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -476,7 +474,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~3"></span>
+              <span class="anchor" id="variable-grid~71"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -491,7 +489,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~10"></span>
+              <span class="anchor" id="variable-background~57"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -506,7 +504,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~2"></span>
+              <span class="anchor" id="variable-physics~31"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -558,7 +556,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~18"></span>
+              <span class="anchor" id="variable-settings~105"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -573,7 +571,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~4"></span>
+              <span class="anchor" id="variable-grid~72"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -588,7 +586,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~11"></span>
+              <span class="anchor" id="variable-background~58"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -603,7 +601,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~3"></span>
+              <span class="anchor" id="variable-physics~32"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -655,7 +653,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~19"></span>
+              <span class="anchor" id="variable-settings~106"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -670,7 +668,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~5"></span>
+              <span class="anchor" id="variable-grid~73"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -685,7 +683,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~12"></span>
+              <span class="anchor" id="variable-background~59"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -700,7 +698,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~4"></span>
+              <span class="anchor" id="variable-physics~33"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -752,7 +750,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~20"></span>
+              <span class="anchor" id="variable-settings~107"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -767,7 +765,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~6"></span>
+              <span class="anchor" id="variable-grid~74"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -782,7 +780,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~13"></span>
+              <span class="anchor" id="variable-background~60"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -797,7 +795,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~5"></span>
+              <span class="anchor" id="variable-physics~34"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -849,7 +847,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~21"></span>
+              <span class="anchor" id="variable-settings~108"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -864,7 +862,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~7"></span>
+              <span class="anchor" id="variable-grid~75"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -879,7 +877,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~14"></span>
+              <span class="anchor" id="variable-background~61"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -894,7 +892,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~6"></span>
+              <span class="anchor" id="variable-physics~35"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -946,7 +944,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~22"></span>
+              <span class="anchor" id="variable-settings~109"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -961,7 +959,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~8"></span>
+              <span class="anchor" id="variable-grid~76"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -976,7 +974,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~15"></span>
+              <span class="anchor" id="variable-background~62"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -991,7 +989,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~7"></span>
+              <span class="anchor" id="variable-physics~36"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1043,7 +1041,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~23"></span>
+              <span class="anchor" id="variable-settings~110"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1058,7 +1056,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~9"></span>
+              <span class="anchor" id="variable-grid~77"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1073,7 +1071,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~16"></span>
+              <span class="anchor" id="variable-background~63"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1088,7 +1086,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~8"></span>
+              <span class="anchor" id="variable-physics~37"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1140,7 +1138,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~24"></span>
+              <span class="anchor" id="variable-settings~111"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1155,7 +1153,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~10"></span>
+              <span class="anchor" id="variable-grid~78"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1170,7 +1168,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~17"></span>
+              <span class="anchor" id="variable-background~64"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1185,7 +1183,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~9"></span>
+              <span class="anchor" id="variable-physics~38"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1237,7 +1235,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~25"></span>
+              <span class="anchor" id="variable-settings~112"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1252,7 +1250,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~11"></span>
+              <span class="anchor" id="variable-grid~79"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1267,7 +1265,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~18"></span>
+              <span class="anchor" id="variable-background~65"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1282,7 +1280,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~10"></span>
+              <span class="anchor" id="variable-physics~39"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1334,7 +1332,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~26"></span>
+              <span class="anchor" id="variable-settings~113"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1349,7 +1347,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~12"></span>
+              <span class="anchor" id="variable-grid~80"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1364,7 +1362,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~19"></span>
+              <span class="anchor" id="variable-background~66"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1379,7 +1377,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~11"></span>
+              <span class="anchor" id="variable-physics~40"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1431,7 +1429,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~27"></span>
+              <span class="anchor" id="variable-settings~114"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1446,7 +1444,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~13"></span>
+              <span class="anchor" id="variable-grid~81"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1461,7 +1459,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~20"></span>
+              <span class="anchor" id="variable-background~67"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1476,7 +1474,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~12"></span>
+              <span class="anchor" id="variable-physics~41"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1528,7 +1526,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~28"></span>
+              <span class="anchor" id="variable-settings~115"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1543,7 +1541,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~14"></span>
+              <span class="anchor" id="variable-grid~82"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1558,7 +1556,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~21"></span>
+              <span class="anchor" id="variable-background~68"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1573,7 +1571,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~13"></span>
+              <span class="anchor" id="variable-physics~42"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1625,7 +1623,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~29"></span>
+              <span class="anchor" id="variable-settings~116"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1640,7 +1638,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~15"></span>
+              <span class="anchor" id="variable-grid~83"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1655,7 +1653,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~22"></span>
+              <span class="anchor" id="variable-background~69"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1670,7 +1668,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~14"></span>
+              <span class="anchor" id="variable-physics~43"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1722,7 +1720,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~30"></span>
+              <span class="anchor" id="variable-settings~117"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1737,7 +1735,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~16"></span>
+              <span class="anchor" id="variable-grid~84"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1752,7 +1750,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~23"></span>
+              <span class="anchor" id="variable-background~70"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1767,7 +1765,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~15"></span>
+              <span class="anchor" id="variable-physics~44"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1819,7 +1817,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~31"></span>
+              <span class="anchor" id="variable-settings~118"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1834,7 +1832,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~17"></span>
+              <span class="anchor" id="variable-grid~85"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1849,7 +1847,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~24"></span>
+              <span class="anchor" id="variable-background~71"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1864,7 +1862,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~16"></span>
+              <span class="anchor" id="variable-physics~45"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1916,7 +1914,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~32"></span>
+              <span class="anchor" id="variable-settings~119"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1931,7 +1929,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~18"></span>
+              <span class="anchor" id="variable-grid~86"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1946,7 +1944,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~25"></span>
+              <span class="anchor" id="variable-background~72"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1961,7 +1959,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~17"></span>
+              <span class="anchor" id="variable-physics~46"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2013,7 +2011,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~33"></span>
+              <span class="anchor" id="variable-settings~120"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2028,7 +2026,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~19"></span>
+              <span class="anchor" id="variable-grid~87"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2043,7 +2041,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~26"></span>
+              <span class="anchor" id="variable-background~73"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2058,7 +2056,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~18"></span>
+              <span class="anchor" id="variable-physics~47"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2110,7 +2108,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~34"></span>
+              <span class="anchor" id="variable-settings~121"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2125,7 +2123,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~20"></span>
+              <span class="anchor" id="variable-grid~88"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2140,7 +2138,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~27"></span>
+              <span class="anchor" id="variable-background~74"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2155,7 +2153,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~19"></span>
+              <span class="anchor" id="variable-physics~48"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2207,7 +2205,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~35"></span>
+              <span class="anchor" id="variable-settings~122"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2222,7 +2220,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~21"></span>
+              <span class="anchor" id="variable-grid~89"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2237,7 +2235,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~28"></span>
+              <span class="anchor" id="variable-background~75"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2252,7 +2250,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~20"></span>
+              <span class="anchor" id="variable-physics~49"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2304,7 +2302,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~36"></span>
+              <span class="anchor" id="variable-settings~123"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2319,7 +2317,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~22"></span>
+              <span class="anchor" id="variable-grid~90"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2334,7 +2332,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~29"></span>
+              <span class="anchor" id="variable-background~76"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2349,7 +2347,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~21"></span>
+              <span class="anchor" id="variable-physics~50"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2401,7 +2399,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~37"></span>
+              <span class="anchor" id="variable-settings~124"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2416,7 +2414,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~23"></span>
+              <span class="anchor" id="variable-grid~91"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2431,7 +2429,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~30"></span>
+              <span class="anchor" id="variable-background~77"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2446,7 +2444,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~22"></span>
+              <span class="anchor" id="variable-physics~51"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2498,7 +2496,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~38"></span>
+              <span class="anchor" id="variable-settings~125"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2513,7 +2511,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~24"></span>
+              <span class="anchor" id="variable-grid~92"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2528,7 +2526,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~31"></span>
+              <span class="anchor" id="variable-background~78"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2543,7 +2541,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~23"></span>
+              <span class="anchor" id="variable-physics~52"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2595,7 +2593,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~39"></span>
+              <span class="anchor" id="variable-settings~126"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2610,7 +2608,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~25"></span>
+              <span class="anchor" id="variable-grid~93"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2625,7 +2623,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~32"></span>
+              <span class="anchor" id="variable-background~79"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2640,7 +2638,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~24"></span>
+              <span class="anchor" id="variable-physics~53"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2692,7 +2690,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~40"></span>
+              <span class="anchor" id="variable-settings~127"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2707,7 +2705,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~26"></span>
+              <span class="anchor" id="variable-grid~94"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2722,7 +2720,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~33"></span>
+              <span class="anchor" id="variable-background~80"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2737,7 +2735,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~25"></span>
+              <span class="anchor" id="variable-physics~54"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2789,7 +2787,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~41"></span>
+              <span class="anchor" id="variable-settings~128"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2804,7 +2802,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~27"></span>
+              <span class="anchor" id="variable-grid~95"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2819,7 +2817,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~34"></span>
+              <span class="anchor" id="variable-background~81"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2834,7 +2832,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~26"></span>
+              <span class="anchor" id="variable-physics~55"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2886,7 +2884,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~42"></span>
+              <span class="anchor" id="variable-settings~129"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2901,7 +2899,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~28"></span>
+              <span class="anchor" id="variable-grid~96"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2916,7 +2914,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~35"></span>
+              <span class="anchor" id="variable-background~82"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2931,7 +2929,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~27"></span>
+              <span class="anchor" id="variable-physics~56"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2983,7 +2981,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~43"></span>
+              <span class="anchor" id="variable-settings~130"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2998,7 +2996,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~29"></span>
+              <span class="anchor" id="variable-grid~97"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3013,7 +3011,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~36"></span>
+              <span class="anchor" id="variable-background~83"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3028,7 +3026,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~28"></span>
+              <span class="anchor" id="variable-physics~57"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3080,7 +3078,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~44"></span>
+              <span class="anchor" id="variable-settings~131"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3095,7 +3093,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~30"></span>
+              <span class="anchor" id="variable-grid~98"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3110,7 +3108,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~37"></span>
+              <span class="anchor" id="variable-background~84"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3125,7 +3123,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~29"></span>
+              <span class="anchor" id="variable-physics~58"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3177,7 +3175,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~45"></span>
+              <span class="anchor" id="variable-settings~132"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3192,7 +3190,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~31"></span>
+              <span class="anchor" id="variable-grid~99"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3207,7 +3205,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~38"></span>
+              <span class="anchor" id="variable-background~85"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3222,7 +3220,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~30"></span>
+              <span class="anchor" id="variable-physics~59"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3274,7 +3272,7 @@ respective modules.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~46"></span>
+              <span class="anchor" id="variable-settings~133"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3289,7 +3287,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~32"></span>
+              <span class="anchor" id="variable-grid~100"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3304,7 +3302,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~39"></span>
+              <span class="anchor" id="variable-background~86"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3319,7 +3317,7 @@ respective modules.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~31"></span>
+              <span class="anchor" id="variable-physics~60"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3355,7 +3353,11 @@ respective modules.</p>
           
   <p>Calls the routine to set the equilibrium pointer, then calls the correct
 submodule. Performs some sanity checks (negative values, NaNs etc.) when
-the equilibrium is set, then calls additional physics modules if needed.</p><a href="../proc/set_equilibrium.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+the equilibrium is set, then calls additional physics modules if needed.
+!!! warning
+    Throws appropriate errors if the equilibrium configuration is
+    not balanced, contains NaN or if density/temperature contains
+    negative values.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -3370,7 +3372,7 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~47"></span>
+              <span class="anchor" id="variable-settings~134"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3385,7 +3387,7 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~33"></span>
+              <span class="anchor" id="variable-grid~101"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3400,7 +3402,7 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~40"></span>
+              <span class="anchor" id="variable-background~87"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3415,7 +3417,7 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~32"></span>
+              <span class="anchor" id="variable-physics~61"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3441,7 +3443,9 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
     <div class="card-body">
           
   <p>Selects the submodule based on the specified equilibrium
-in the parfile. Works on a case-select basis.</p><a href="../proc/set_equilibrium_pointer.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+in the parfile. Works on a case-select basis.
+!!! warning
+    Throws an error if the equilibrium type is not recognised.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -3456,7 +3460,7 @@ in the parfile. Works on a case-select basis.</p><a href="../proc/set_equilibriu
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~48"></span>
+              <span class="anchor" id="variable-settings~135"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -3492,7 +3496,7 @@ in the parfile. Works on a case-select basis.</p><a href="../proc/set_equilibriu
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pylbo.visualisation.spectra.spectrum_comparison &mdash; Pylbo develop documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
 
   
       <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../../_static/documentation_options.js?v=16816911"></script>
-      <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -118,7 +118,7 @@
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.spectra.spectrum_comparison.</span></span><span class="sig-name descname"><span class="pre">SpectrumComparisonPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_residuals</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pylbo.visualisation.spectra.spectrum_comparison.</span></span><span class="sig-name descname"><span class="pre">SpectrumComparisonPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_residuals</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="../spectrum_figure/index.html#pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure" title="pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pylbo.visualisation.spectra.spectrum_figure.SpectrumFigure</span></code></a></p>
 <p>Subclass to compare two spectra.</p>
 <dl class="field-list simple">
@@ -126,10 +126,10 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ds1</strong> (<a class="reference internal" href="../../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – First dataset, will be placed on the left side.</p></li>
 <li><p><strong>ds2</strong> (<a class="reference internal" href="../../../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><em>LegolasDataSet</em></a>) – Second dataset for comparison, will be placed on the right side.</p></li>
-<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><em>tuple</em></a>) – Figure size used when creating a window, analogous to matplotlib.</p></li>
-<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><em>tuple</em></a>) – The custom figure to use in the form (fig, axes).</p></li>
-<li><p><strong>lock_zoom</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – If <cite>True</cite>, locks the zoom for both spectrum plots.</p></li>
-<li><p><strong>use_residuals</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – If <cite>True</cite>, colors the spectrum points based on the residuals.</p></li>
+<li><p><strong>figsize</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><em>tuple</em></a>) – Figure size used when creating a window, analogous to matplotlib.</p></li>
+<li><p><strong>custom_figure</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><em>tuple</em></a>) – The custom figure to use in the form (fig, axes).</p></li>
+<li><p><strong>lock_zoom</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If <cite>True</cite>, locks the zoom for both spectrum plots.</p></li>
+<li><p><strong>use_residuals</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – If <cite>True</cite>, colors the spectrum points based on the residuals.</p></li>
 </ul>
 </dd>
 </dl>
@@ -139,7 +139,7 @@
 <dd><p>The (top)right axes object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.10.5)"><em>Axes</em></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="(in Matplotlib v3.10.8)"><em>Axes</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -187,7 +187,7 @@
 <dd><p>Overloads parent method, calls x scaling setter for each panel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>x_scaling</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.13)"><em>complex</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><em>numpy.ndarray</em></a>) – The scaling to apply to the x-axis</p>
+<dd class="field-odd"><p><strong>x_scaling</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.14)"><em>complex</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><em>numpy.ndarray</em></a>) – The scaling to apply to the x-axis</p>
 </dd>
 </dl>
 </dd></dl>
@@ -198,7 +198,7 @@
 <dd><p>Overloads parent method, calls y scaling setter for each panel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>y_scaling</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.13)"><em>complex</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.3)"><em>numpy.ndarray</em></a>) – The scaling to apply to the y-axis</p>
+<dd class="field-odd"><p><strong>y_scaling</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.14)"><em>complex</em></a><em>, </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)"><em>numpy.ndarray</em></a>) – The scaling to apply to the y-axis</p>
 </dd>
 </dl>
 </dd></dl>
@@ -211,7 +211,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_spectrum">
-<span class="sig-name descname"><span class="pre">add_spectrum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_spectrum" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_spectrum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.visualisation.spectra.spectrum_comparison.SpectrumComparisonPlot.add_spectrum" title="Link to this definition"></a></dt>
 <dd><p>Adds the spectra for both datasets</p>
 </dd></dl>
 

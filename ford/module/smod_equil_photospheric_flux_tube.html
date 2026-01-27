@@ -133,10 +133,10 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#variable-rho_e~2">rho_e</a>
-            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#variable-p_e~2">p_e</a>
-            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#variable-b_0~2">B_0</a>
-            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#variable-b_e~2">B_e</a>
+            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#variable-rho_e">rho_e</a>
+            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#variable-p_e">p_e</a>
+            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#variable-b_0">B_0</a>
+            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#variable-b_e">B_e</a>
         </div>
       </div>
     </div>
@@ -157,9 +157,9 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#proc-rho0~8">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#proc-t0~8">T0</a>
-            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#proc-b03~8">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#proc-rho0~17">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#proc-t0~17">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_photospheric_flux_tube.html#proc-b03~15">B03</a>
         </div>
       </div>
     </div>
@@ -198,23 +198,19 @@ More specifically the equilibrium is defined as
 in the parfile, and is cylindrical by default for <script type="math/tex"> r \in [0, 10] </script>.</p>
 <p>This equilibrium is taken from chapter 6, fig. 6.5 in
 <em>Roberts, Bernard (2019). MHD Waves in the Solar Atmosphere.
-Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774">DOI</a>.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>For best results, it is recommended to enable mesh accumulation.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-</div>
-<p>Default values are given by</p>
-<ul>
-<li><tt>k2</tt> = 0</li>
-<li><tt>k3</tt> = 2</li>
-<li><tt>cte_rho0</tt> = 1 : density value for the inner tube.</li>
-<li><tt>cte_p0</tt> = 1 : pressure value for the inner tube.</li>
-<li><tt>r0</tt> = 1 : radius of the inner tube.</li>
-</ul>
-<p>and can all be changed in the parfile.</p>
-</div>
+Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774">DOI</a>.
+!!! note
+    For best results, it is recommended to enable mesh accumulation.
+!!! note
+    Default values are given by</p>
+<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>2
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>density<span class="w"> </span>value<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>inner<span class="w"> </span>tube.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_p0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>pressure<span class="w"> </span>value<span class="w"> </span>for<span class="w"> </span>the<span class="w"> </span>inner<span class="w"> </span>tube.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>r0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>radius<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>inner<span class="w"> </span>tube.
+
+and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
+</code></pre></div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -252,7 +248,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-rho_e~2"></span>
+              <span class="anchor" id="variable-rho_e"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -269,7 +265,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-p_e~2"></span>
+              <span class="anchor" id="variable-p_e"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -286,7 +282,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-b_0~2"></span>
+              <span class="anchor" id="variable-b_0"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -303,7 +299,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-b_e~2"></span>
+              <span class="anchor" id="variable-b_e"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -331,7 +327,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~8"></span> <h3> function <a href='../proc/rho0~8.html'>rho0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~17"></span> <h3> function <a href='../proc/rho0~17.html'>rho0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -350,7 +346,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~31"></span>
+              <span class="anchor" id="variable-r~59"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -376,7 +372,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~8"></span> <h3> function <a href='../proc/t0~8.html'>T0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~17"></span> <h3> function <a href='../proc/t0~17.html'>T0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -395,7 +391,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~32"></span>
+              <span class="anchor" id="variable-r~60"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -421,7 +417,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~8"></span> <h3> function <a href='../proc/b03~8.html'>B03</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~15"></span> <h3> function <a href='../proc/b03~15.html'>B03</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -440,7 +436,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~33"></span>
+              <span class="anchor" id="variable-r~61"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -494,7 +490,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~31"></span>
+              <span class="anchor" id="variable-settings~118"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -509,7 +505,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~17"></span>
+              <span class="anchor" id="variable-grid~85"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -524,7 +520,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~24"></span>
+              <span class="anchor" id="variable-background~71"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -539,7 +535,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~16"></span>
+              <span class="anchor" id="variable-physics~45"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -571,7 +567,7 @@ Cambridge University Press.</em> <a href="https://doi.org/10.1017/9781108613774"
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

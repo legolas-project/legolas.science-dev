@@ -143,14 +143,14 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-rho0~23">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-t0~23">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-rho0~22">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-t0~22">T0</a>
             <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-b02~16">B02</a>
-            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-db02~12">dB02</a>
+            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-db02~13">dB02</a>
             <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-ddb02~4">ddB02</a>
-            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-b03~20">B03</a>
-            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-db03~11">dB03</a>
-            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-ddb03~4">ddB03</a>
+            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-b03~18">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-db03~9">dB03</a>
+            <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-ddb03~3">ddB03</a>
             <a class="list-group-item" href="../module/smod_equil_resistive_tearing.html#proc-b0~4">B0</a>
         </div>
       </div>
@@ -187,20 +187,18 @@ resistivity value. Parameters are taken in such a way as to allow for
 resistive tearing modes. The geometry can be overridden using the parfile.</p>
 <p>This equilibrium is taken from section 14.3, p. 551 in
 <em>Goedbloed, H., Keppens, R., &amp; Poedts, S. (2019). Magnetohydrodynamics of Laboratory
- and Astrophysical Plasmas. Cambridge University Press.</em> <a href="http://doi.org/10.1017/9781316403679">DOI</a>.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Default values are given by</p>
-<ul>
-<li><tt>k2</tt> = 0.49</li>
-<li><tt>k3</tt> = 0</li>
-<li><tt>cte_rho0</tt> = 1 : used to set the density value.</li>
-<li><tt>alpha</tt> = 4.73884 : parameter in the magnetic field prescription.</li>
-<li><tt>beta</tt> = 0.25 : used to constrain the temperature value.</li>
-<li>fixed resistivity value of 0.0001</li>
-</ul>
-<p>and can all be changed in the parfile.</p>
-</div>
+ and Astrophysical Plasmas. Cambridge University Press.</em> <a href="http://doi.org/10.1017/9781316403679">DOI</a>.
+!!! note
+    Default values are given by</p>
+<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.49
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>density<span class="w"> </span>value.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>alpha<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>4.73884<span class="w"> </span>:<span class="w"> </span>parameter<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>magnetic<span class="w"> </span>field<span class="w"> </span>prescription.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>beta<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.25<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>constrain<span class="w"> </span>the<span class="w"> </span>temperature<span class="w"> </span>value.
+-<span class="w"> </span>fixed<span class="w"> </span>resistivity<span class="w"> </span>value<span class="w"> </span>of<span class="w"> </span>0.0001
+
+and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
+</code></pre></div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -232,7 +230,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~23"></span> <h3> function <a href='../proc/rho0~23.html'>rho0</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~22"></span> <h3> function <a href='../proc/rho0~22.html'>rho0</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -250,7 +248,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~23"></span> <h3> function <a href='../proc/t0~23.html'>T0</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~22"></span> <h3> function <a href='../proc/t0~22.html'>T0</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -269,7 +267,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~138"></span>
+              <span class="anchor" id="variable-x~127"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -314,7 +312,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~139"></span>
+              <span class="anchor" id="variable-x~128"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -340,7 +338,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db02~12"></span> <h3> function <a href='../proc/db02~12.html'>dB02</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-db02~13"></span> <h3> function <a href='../proc/db02~13.html'>dB02</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -359,7 +357,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~140"></span>
+              <span class="anchor" id="variable-x~129"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -404,7 +402,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~141"></span>
+              <span class="anchor" id="variable-x~130"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -430,7 +428,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~20"></span> <h3> function <a href='../proc/b03~20.html'>B03</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~18"></span> <h3> function <a href='../proc/b03~18.html'>B03</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -449,7 +447,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~142"></span>
+              <span class="anchor" id="variable-x~131"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -475,7 +473,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db03~11"></span> <h3> function <a href='../proc/db03~11.html'>dB03</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-db03~9"></span> <h3> function <a href='../proc/db03~9.html'>dB03</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -494,7 +492,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~143"></span>
+              <span class="anchor" id="variable-x~132"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -520,7 +518,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-ddb03~4"></span> <h3> function <a href='../proc/ddb03~4.html'>ddB03</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-ddb03~3"></span> <h3> function <a href='../proc/ddb03~3.html'>ddB03</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -539,7 +537,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~144"></span>
+              <span class="anchor" id="variable-x~133"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -584,7 +582,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~145"></span>
+              <span class="anchor" id="variable-x~134"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -638,7 +636,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~33"></span>
+              <span class="anchor" id="variable-settings~120"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -653,7 +651,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~19"></span>
+              <span class="anchor" id="variable-grid~87"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -668,7 +666,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~26"></span>
+              <span class="anchor" id="variable-background~73"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -683,7 +681,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~18"></span>
+              <span class="anchor" id="variable-physics~47"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -715,7 +713,7 @@ resistive tearing modes. The geometry can be overridden using the parfile.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

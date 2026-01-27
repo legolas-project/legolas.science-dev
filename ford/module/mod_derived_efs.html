@@ -213,9 +213,9 @@
       </a>
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mod_derived_efs.html#proc-initialise~6">initialise</a>
-            <a class="list-group-item" href="../module/mod_derived_efs.html#proc-assemble~3">assemble</a>
-            <a class="list-group-item" href="../module/mod_derived_efs.html#proc-delete~22">delete</a>
+            <a class="list-group-item" href="../module/mod_derived_efs.html#proc-initialise">initialise</a>
+            <a class="list-group-item" href="../module/mod_derived_efs.html#proc-assemble">assemble</a>
+            <a class="list-group-item" href="../module/mod_derived_efs.html#proc-delete~11">delete</a>
             <a class="list-group-item" href="../module/mod_derived_efs.html#proc-set_function_pointer">set_function_pointer</a>
             <a class="list-group-item" href="../module/mod_derived_efs.html#proc-set_equilibrium_arrays_on_ef_grid">set_equilibrium_arrays_on_ef_grid</a>
             <a class="list-group-item" href="../module/mod_derived_efs.html#proc-deallocate_derived_ef_module_variables">deallocate_derived_ef_module_variables</a>
@@ -244,17 +244,17 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_derived_ef_names.html'>mod_derived_ef_names</a></li>
-                  <li class="list-inline-item"><a href='mod_get_indices.html'>mod_get_indices</a></li>
-                  <li class="list-inline-item"><a href='mod_state_vector.html'>mod_state_vector</a></li>
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
-                  <li class="list-inline-item"><a href='mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-                  <li class="list-inline-item"><a href='mod_background.html'>mod_background</a></li>
-                  <li class="list-inline-item"><a href='mod_state_vector_component.html'>mod_state_vector_component</a></li>
-                  <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
-                  <li class="list-inline-item"><a href='mod_ef_assembly.html'>mod_ef_assembly</a></li>
                   <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
+                  <li class="list-inline-item"><a href='mod_state_vector.html'>mod_state_vector</a></li>
+                  <li class="list-inline-item"><a href='mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
+                  <li class="list-inline-item"><a href='mod_get_indices.html'>mod_get_indices</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
+                  <li class="list-inline-item"><a href='mod_background.html'>mod_background</a></li>
+                  <li class="list-inline-item"><a href='mod_derived_ef_names.html'>mod_derived_ef_names</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
+                  <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
+                  <li class="list-inline-item"><a href='mod_state_vector_component.html'>mod_state_vector_component</a></li>
+                  <li class="list-inline-item"><a href='mod_ef_assembly.html'>mod_ef_assembly</a></li>
               </ul>
             </li>
         </ul>
@@ -381,7 +381,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~118"></span>
+              <span class="anchor" id="variable-settings~40"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -396,7 +396,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~67"></span>
+              <span class="anchor" id="variable-grid~25"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -411,7 +411,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~4"></span>
+              <span class="anchor" id="variable-eigenvector"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -468,7 +468,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-name~14"></span>
+              <span class="anchor" id="variable-name~7"></span>
               character(len=str_len_arr),
             </td>
               <td>public</td>
@@ -485,7 +485,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-quantities~2"></span>
+              <span class="anchor" id="variable-quantities"></span>
               complex(kind=dp),
             </td>
               <td>public,</td>
@@ -528,17 +528,17 @@
           <tbody>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/derived_ef_t.html#boundprocedure-initialise~6'>initialise</a></strong></td>
+  <strong><a href='../type/derived_ef_t.html#boundprocedure-initialise'>initialise</a></strong></td>
                   <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/derived_ef_t.html#boundprocedure-assemble~3'>assemble</a></strong></td>
+  <strong><a href='../type/derived_ef_t.html#boundprocedure-assemble'>assemble</a></strong></td>
                   <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/derived_ef_t.html#boundprocedure-delete~22'>delete</a></strong></td>
+  <strong><a href='../type/derived_ef_t.html#boundprocedure-delete~11'>delete</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -576,7 +576,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~120"></span>
+              <span class="anchor" id="variable-settings~42"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -591,7 +591,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~69"></span>
+              <span class="anchor" id="variable-grid~27"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -606,7 +606,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~5"></span>
+              <span class="anchor" id="variable-eigenvector~2"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -651,7 +651,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~121"></span>
+              <span class="anchor" id="variable-settings~43"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -666,7 +666,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~70"></span>
+              <span class="anchor" id="variable-grid~28"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -681,7 +681,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~6"></span>
+              <span class="anchor" id="variable-eigenvector~3"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -726,7 +726,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~122"></span>
+              <span class="anchor" id="variable-settings~44"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -741,7 +741,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~71"></span>
+              <span class="anchor" id="variable-grid~29"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -756,7 +756,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~7"></span>
+              <span class="anchor" id="variable-eigenvector~4"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -801,7 +801,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~123"></span>
+              <span class="anchor" id="variable-settings~45"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -816,7 +816,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~72"></span>
+              <span class="anchor" id="variable-grid~30"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -831,7 +831,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~8"></span>
+              <span class="anchor" id="variable-eigenvector~5"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -876,7 +876,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~124"></span>
+              <span class="anchor" id="variable-settings~46"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -891,7 +891,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~73"></span>
+              <span class="anchor" id="variable-grid~31"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -906,7 +906,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~9"></span>
+              <span class="anchor" id="variable-eigenvector~6"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -951,7 +951,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~125"></span>
+              <span class="anchor" id="variable-settings~47"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -966,7 +966,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~74"></span>
+              <span class="anchor" id="variable-grid~32"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -981,7 +981,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~10"></span>
+              <span class="anchor" id="variable-eigenvector~7"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1026,7 +1026,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~126"></span>
+              <span class="anchor" id="variable-settings~48"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1041,7 +1041,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~75"></span>
+              <span class="anchor" id="variable-grid~33"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1056,7 +1056,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~11"></span>
+              <span class="anchor" id="variable-eigenvector~8"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1101,7 +1101,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~127"></span>
+              <span class="anchor" id="variable-settings~49"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1116,7 +1116,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~76"></span>
+              <span class="anchor" id="variable-grid~34"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1131,7 +1131,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~12"></span>
+              <span class="anchor" id="variable-eigenvector~9"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1176,7 +1176,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~128"></span>
+              <span class="anchor" id="variable-settings~50"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1191,7 +1191,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~77"></span>
+              <span class="anchor" id="variable-grid~35"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1206,7 +1206,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~13"></span>
+              <span class="anchor" id="variable-eigenvector~10"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1251,7 +1251,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~129"></span>
+              <span class="anchor" id="variable-settings~51"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1266,7 +1266,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~78"></span>
+              <span class="anchor" id="variable-grid~36"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1281,7 +1281,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~14"></span>
+              <span class="anchor" id="variable-eigenvector~11"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1326,7 +1326,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~130"></span>
+              <span class="anchor" id="variable-settings~52"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1341,7 +1341,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~79"></span>
+              <span class="anchor" id="variable-grid~37"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1356,7 +1356,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~15"></span>
+              <span class="anchor" id="variable-eigenvector~12"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1401,7 +1401,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~131"></span>
+              <span class="anchor" id="variable-settings~53"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1416,7 +1416,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~80"></span>
+              <span class="anchor" id="variable-grid~38"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1431,7 +1431,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~16"></span>
+              <span class="anchor" id="variable-eigenvector~13"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1476,7 +1476,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~132"></span>
+              <span class="anchor" id="variable-settings~54"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1491,7 +1491,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~81"></span>
+              <span class="anchor" id="variable-grid~39"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1506,7 +1506,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~17"></span>
+              <span class="anchor" id="variable-eigenvector~14"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1551,7 +1551,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~133"></span>
+              <span class="anchor" id="variable-settings~55"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1566,7 +1566,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~82"></span>
+              <span class="anchor" id="variable-grid~40"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1581,7 +1581,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~18"></span>
+              <span class="anchor" id="variable-eigenvector~15"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1626,7 +1626,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~134"></span>
+              <span class="anchor" id="variable-settings~56"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1641,7 +1641,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~83"></span>
+              <span class="anchor" id="variable-grid~41"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1656,7 +1656,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~19"></span>
+              <span class="anchor" id="variable-eigenvector~16"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1701,7 +1701,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~135"></span>
+              <span class="anchor" id="variable-settings~57"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1716,7 +1716,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~84"></span>
+              <span class="anchor" id="variable-grid~42"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1731,7 +1731,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~20"></span>
+              <span class="anchor" id="variable-eigenvector~17"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1776,7 +1776,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~136"></span>
+              <span class="anchor" id="variable-settings~58"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1791,7 +1791,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~85"></span>
+              <span class="anchor" id="variable-grid~43"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1806,7 +1806,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~21"></span>
+              <span class="anchor" id="variable-eigenvector~18"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1851,7 +1851,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~137"></span>
+              <span class="anchor" id="variable-settings~59"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1866,7 +1866,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~86"></span>
+              <span class="anchor" id="variable-grid~44"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1881,7 +1881,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~22"></span>
+              <span class="anchor" id="variable-eigenvector~19"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -1926,7 +1926,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~138"></span>
+              <span class="anchor" id="variable-settings~60"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1941,7 +1941,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~87"></span>
+              <span class="anchor" id="variable-grid~45"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -1956,7 +1956,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~23"></span>
+              <span class="anchor" id="variable-eigenvector~20"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -2001,7 +2001,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~139"></span>
+              <span class="anchor" id="variable-settings~61"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2016,7 +2016,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~88"></span>
+              <span class="anchor" id="variable-grid~46"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2031,7 +2031,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~24"></span>
+              <span class="anchor" id="variable-eigenvector~21"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -2076,7 +2076,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~140"></span>
+              <span class="anchor" id="variable-settings~62"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2091,7 +2091,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~89"></span>
+              <span class="anchor" id="variable-grid~47"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2106,7 +2106,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~25"></span>
+              <span class="anchor" id="variable-eigenvector~22"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -2151,7 +2151,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-sv_component~4"></span>
+              <span class="anchor" id="variable-sv_component"></span>
               type(<a href='../type/sv_component_t.html'>sv_component_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2166,7 +2166,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~141"></span>
+              <span class="anchor" id="variable-settings~63"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2181,7 +2181,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~90"></span>
+              <span class="anchor" id="variable-grid~48"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2196,7 +2196,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvector~26"></span>
+              <span class="anchor" id="variable-eigenvector~23"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -2211,7 +2211,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-diff_order~2"></span>
+              <span class="anchor" id="variable-diff_order"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -2256,7 +2256,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-array~13"></span>
+              <span class="anchor" id="variable-array~2"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -2271,7 +2271,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~92"></span>
+              <span class="anchor" id="variable-grid~50"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2302,7 +2302,7 @@
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-initialise~6"></span> <h3>private  subroutine <a href='../proc/initialise~6.html'>initialise</a>(this, name, ef_grid_size, nb_efs)  
+    <div class="card-header codesum"><span class="anchor" id="proc-initialise"></span> <h3>private  subroutine <a href='../proc/initialise.html'>initialise</a>(this, name, ef_grid_size, nb_efs)  
 </h3></div>
     <div class="card-body">
           
@@ -2321,7 +2321,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~209"></span>
+              <span class="anchor" id="variable-this~78"></span>
               class(<a href='../type/derived_ef_t.html'>derived_ef_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2336,7 +2336,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-name~15"></span>
+              <span class="anchor" id="variable-name~8"></span>
               character(len=str_len_arr),
             </td>
 <td>intent(in)</td>
@@ -2351,7 +2351,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ef_grid_size~2"></span>
+              <span class="anchor" id="variable-ef_grid_size"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2366,7 +2366,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nb_efs~3"></span>
+              <span class="anchor" id="variable-nb_efs"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2387,7 +2387,7 @@
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-assemble~3"></span> <h3>private  subroutine <a href='../proc/assemble~3.html'>assemble</a>(this, settings, grid, background, idxs_to_assemble, right_eigenvectors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-assemble"></span> <h3>private  subroutine <a href='../proc/assemble.html'>assemble</a>(this, settings, grid, background, idxs_to_assemble, right_eigenvectors)  
 </h3></div>
     <div class="card-body">
           
@@ -2406,7 +2406,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~210"></span>
+              <span class="anchor" id="variable-this~79"></span>
               class(<a href='../type/derived_ef_t.html'>derived_ef_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2421,7 +2421,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~119"></span>
+              <span class="anchor" id="variable-settings~41"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2436,7 +2436,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~68"></span>
+              <span class="anchor" id="variable-grid~26"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2451,7 +2451,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~75"></span>
+              <span class="anchor" id="variable-background~30"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2466,7 +2466,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-idxs_to_assemble~2"></span>
+              <span class="anchor" id="variable-idxs_to_assemble"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -2481,7 +2481,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right_eigenvectors~3"></span>
+              <span class="anchor" id="variable-right_eigenvectors"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -2502,7 +2502,7 @@
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-delete~22"></span> <h3>private pure subroutine <a href='../proc/delete~22.html'>delete</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-delete~11"></span> <h3>private pure subroutine <a href='../proc/delete~11.html'>delete</a>(this)  
 </h3></div>
     <div class="card-body">
           
@@ -2521,7 +2521,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~211"></span>
+              <span class="anchor" id="variable-this~80"></span>
               class(<a href='../type/derived_ef_t.html'>derived_ef_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2561,7 +2561,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~212"></span>
+              <span class="anchor" id="variable-this~81"></span>
               class(<a href='../type/derived_ef_t.html'>derived_ef_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2601,7 +2601,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~76"></span>
+              <span class="anchor" id="variable-background~31"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2616,7 +2616,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~91"></span>
+              <span class="anchor" id="variable-grid~49"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -2665,7 +2665,7 @@
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

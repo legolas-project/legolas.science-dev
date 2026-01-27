@@ -201,10 +201,10 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
                   <li class="list-inline-item"><a href='mod_matrix_node.html'>mod_matrix_node</a></li>
-                  <li class="list-inline-item"><a href='mod_matrix_row.html'>mod_matrix_row</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
+                  <li class="list-inline-item"><a href='mod_matrix_row.html'>mod_matrix_row</a></li>
               </ul>
             </li>
         </ul>
@@ -483,7 +483,7 @@ smaller than the dimension of the matrix. Returns <code>.false.</code> otherwise
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix~14"></span>
+              <span class="anchor" id="variable-matrix~17"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -498,7 +498,7 @@ smaller than the dimension of the matrix. Returns <code>.false.</code> otherwise
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-index"></span>
+              <span class="anchor" id="variable-index~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -546,7 +546,7 @@ values, so when a node at (row, column) is not found this function returns
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~270"></span>
+              <span class="anchor" id="variable-this~241"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -621,7 +621,7 @@ values, so when a node at (row, column) is not found this function returns
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~271"></span>
+              <span class="anchor" id="variable-this~242"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -666,7 +666,7 @@ values, so when a node at (row, column) is not found this function returns
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~272"></span>
+              <span class="anchor" id="variable-this~243"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -698,7 +698,10 @@ values, so when a node at (row, column) is not found this function returns
           
   <p>Dedicated function to copy a matrix structure into a new matrix structure.
 The datastructure contains pointers, such that simply setting
-matrix1 = matrix2 may result in pointer target losses (and wrong results).</p><a href="../proc/copy.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+matrix1 = matrix2 may result in pointer target losses (and wrong results).
+!!! note
+    We should not overload the generic assignment(=) with this function,
+    as it may clash with the constructor.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -765,7 +768,7 @@ on the row and column indices.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~268"></span>
+              <span class="anchor" id="variable-this~239"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -850,7 +853,7 @@ on the row and column indices.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~269"></span>
+              <span class="anchor" id="variable-this~240"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -905,7 +908,7 @@ on the row and column indices.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~273"></span>
+              <span class="anchor" id="variable-this~244"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -920,7 +923,7 @@ on the row and column indices.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ku~3"></span>
+              <span class="anchor" id="variable-ku~6"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -935,7 +938,7 @@ on the row and column indices.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-kl~3"></span>
+              <span class="anchor" id="variable-kl~6"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -976,7 +979,7 @@ deallocates the various nodes in the rows.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~274"></span>
+              <span class="anchor" id="variable-this~245"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1012,7 +1015,7 @@ deallocates the various nodes in the rows.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

@@ -140,13 +140,13 @@
             <a class="list-group-item" href="../type/arpack_t.html#variable-evpdim">evpdim</a>
             <a class="list-group-item" href="../type/arpack_t.html#variable-which">which</a>
             <a class="list-group-item" href="../type/arpack_t.html#variable-nev">nev</a>
-            <a class="list-group-item" href="../type/arpack_t.html#variable-tolerance~3">tolerance</a>
+            <a class="list-group-item" href="../type/arpack_t.html#variable-tolerance">tolerance</a>
             <a class="list-group-item" href="../type/arpack_t.html#variable-residual">residual</a>
-            <a class="list-group-item" href="../type/arpack_t.html#variable-ncv~3">ncv</a>
+            <a class="list-group-item" href="../type/arpack_t.html#variable-ncv">ncv</a>
             <a class="list-group-item" href="../type/arpack_t.html#variable-iparam">iparam</a>
             <a class="list-group-item" href="../type/arpack_t.html#variable-lworkl">lworkl</a>
-            <a class="list-group-item" href="../type/arpack_t.html#variable-info~5">info</a>
-            <a class="list-group-item" href="../type/arpack_t.html#variable-maxiter~4">maxiter</a>
+            <a class="list-group-item" href="../type/arpack_t.html#variable-info~3">info</a>
+            <a class="list-group-item" href="../type/arpack_t.html#variable-maxiter">maxiter</a>
         </div>
       </div>
     </div>
@@ -326,7 +326,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-tolerance~3"></span>
+              <span class="anchor" id="variable-tolerance"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -360,7 +360,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ncv~3"></span>
+              <span class="anchor" id="variable-ncv"></span>
               integer,
             </td>
               <td>private</td>
@@ -411,7 +411,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-info~5"></span>
+              <span class="anchor" id="variable-info~3"></span>
               integer,
             </td>
               <td>public</td>
@@ -428,7 +428,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-maxiter~4"></span>
+              <span class="anchor" id="variable-maxiter"></span>
               integer,
             </td>
               <td>private</td>
@@ -1599,7 +1599,9 @@ value ncv = 2 * nev (see arpack docs).</p>
     
 
   <p>Sets the maximum number of iterations that ARPACK is allowed to take, defaults
-to max(100, 10 * k) with k the number of eigenvalues.</p><a href="../proc/set_maxiter.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+to max(100, 10 * k) with k the number of eigenvalues.
+!!! warning
+    Throws a warning if <tt>maxiter</tt> is smaller than 10*N.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1665,7 +1667,7 @@ to max(100, 10 * k) with k the number of eigenvalues.</p><a href="../proc/set_ma
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

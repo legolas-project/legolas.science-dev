@@ -161,11 +161,9 @@
 <p><code>tic()</code> starts the wall clock timer. The subroutines records the wall clock
 time at execution of this command. Use <code>toc(message)</code> to log the elapsed time
 since the last call of <code>tic()</code>.</p>
-<div class="alert alert-warning">
-<p class="alert-title h4">Warning</p>
-<p>As <code>tic()</code> and <code>toc(message)</code> rely on a module variable, they are
-not thread safe.</p>
-</div>
+<p>!!! warning
+    As <code>tic()</code> and <code>toc(message)</code> rely on a module variable, they are
+    not thread safe.</p>
 <p><code>tic(start_time)</code> writes the value of the wall clock time at execution
 of this command to <strong>start_time</strong>. Calling this command, shall not
 change the module variable associated with calling <code>tic()</code>.</p>
@@ -225,7 +223,7 @@ written to a module variable.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

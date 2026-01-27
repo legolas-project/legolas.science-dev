@@ -160,16 +160,12 @@
     <p>Subroutine to end a wall clock timer.</p>
 <p><code>toc(message)</code> logs the elapsed wall clock time in seconds since the
 most recent call to <code>tic()</code> along with <strong>message</strong> as a debug message.</p>
-<div class="alert alert-warning">
-<p class="alert-title h4">Warning</p>
-<p>As <code>tic()</code> and <code>toc(message)</code> rely on a module variable, they are
-not thread safe.</p>
-</div>
-<div class="alert alert-warning">
-<p class="alert-title h4">Warning</p>
-<p>If <code>toc(message)</code> is called without first calling <code>tic()</code> the result
-will be meaningless.</p>
-</div>
+<p>!!! warning
+    As <code>tic()</code> and <code>toc(message)</code> rely on a module variable, they are
+    not thread safe.</p>
+<p>!!! warning
+    If <code>toc(message)</code> is called without first calling <code>tic()</code> the result
+    will be meaningless.</p>
 <p><code>toc(message, start_time)</code> logs the elapsed wall clock time in seconds since
 the call of <code>tic(start_time)</code>, along with <strong>message</strong>.</p>
 
@@ -258,7 +254,7 @@ the module variable is used.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

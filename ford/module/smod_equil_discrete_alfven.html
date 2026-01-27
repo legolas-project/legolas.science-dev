@@ -133,7 +133,7 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#variable-x_end~5">x_end</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#variable-x_end~6">x_end</a>
         </div>
       </div>
     </div>
@@ -154,13 +154,13 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-rho0~24">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-drho0~13">drho0</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-t0~24">T0</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-dt0~9">dT0</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-b02~17">B02</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-db02~13">dB02</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-b03~21">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-rho0~21">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-drho0~10">drho0</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-t0~21">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-dt0~10">dT0</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-b02~15">B02</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-db02~12">dB02</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-b03~17">B03</a>
             <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-p0~4">p0</a>
             <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-dp0~2">dp0</a>
         </div>
@@ -200,25 +200,23 @@ in which discrete Alfvén waves are present. The geometry can be overridden in t
 <em>Keppens, Rony, Ronald AM Van Der Linden, and Marcel Goossens.
 "Non-adiabatic discrete Alfven waves in coronal loops and prominences.",
 Solar physics 144.2 (1993): 267-281</em>.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Default values are given by</p>
-<ul>
-<li><tt>k2</tt> = 1</li>
-<li><tt>k3</tt> = 0.05</li>
-<li><tt>j0</tt> = 0.125 : used to set the current.</li>
-<li><tt>delta</tt> = 0.2 : used in the density profile.</li>
-<li>cooling_curve = 'rosner'</li>
-<li>parallel thermal conduction, no perpendicular conduction</li>
-</ul>
-<p>and normalisations given by</p>
-<ul>
-<li><tt>unit_density</tt> = 1.5e-15 gcm-3</li>
-<li><tt>unit_magneticfield</tt> = 50 Gauss</li>
-<li><tt>unit_length</tt> = 1e10 cm</li>
-</ul>
-<p>and can all be changed in the parfile.</p>
-</div>
+<p>!!! note
+    Default values are given by</p>
+<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.05
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>j0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.125<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>current.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>delta<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.2<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>density<span class="w"> </span>profile.
+-<span class="w"> </span>cooling_curve<span class="w"> </span>=<span class="w"> </span>&#39;rosner&#39;
+-<span class="w"> </span>parallel<span class="w"> </span>thermal<span class="w"> </span>conduction,<span class="w"> </span>no<span class="w"> </span>perpendicular<span class="w"> </span>conduction
+
+and<span class="w"> </span>normalisations<span class="w"> </span>given<span class="w"> </span>by
+
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>unit_density<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1.5e-15<span class="w"> </span>gcm-3
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>unit_magneticfield<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>50<span class="w"> </span>Gauss
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>unit_length<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1e10<span class="w"> </span>cm
+
+and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
+</code></pre></div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -256,7 +254,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x_end~5"></span>
+              <span class="anchor" id="variable-x_end~6"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -284,7 +282,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~24"></span> <h3> function <a href='../proc/rho0~24.html'>rho0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~21"></span> <h3> function <a href='../proc/rho0~21.html'>rho0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -303,7 +301,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~57"></span>
+              <span class="anchor" id="variable-r~71"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -329,7 +327,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-drho0~13"></span> <h3> function <a href='../proc/drho0~13.html'>drho0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-drho0~10"></span> <h3> function <a href='../proc/drho0~10.html'>drho0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -348,7 +346,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~58"></span>
+              <span class="anchor" id="variable-r~72"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -374,7 +372,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~24"></span> <h3> function <a href='../proc/t0~24.html'>T0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~21"></span> <h3> function <a href='../proc/t0~21.html'>T0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -393,7 +391,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~59"></span>
+              <span class="anchor" id="variable-r~73"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -419,7 +417,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dt0~9"></span> <h3> function <a href='../proc/dt0~9.html'>dT0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-dt0~10"></span> <h3> function <a href='../proc/dt0~10.html'>dT0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -438,7 +436,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~60"></span>
+              <span class="anchor" id="variable-r~74"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -464,7 +462,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b02~17"></span> <h3> function <a href='../proc/b02~17.html'>B02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b02~15"></span> <h3> function <a href='../proc/b02~15.html'>B02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -483,7 +481,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~61"></span>
+              <span class="anchor" id="variable-r~75"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -509,7 +507,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db02~13"></span> <h3> function <a href='../proc/db02~13.html'>dB02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-db02~12"></span> <h3> function <a href='../proc/db02~12.html'>dB02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -528,7 +526,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~62"></span>
+              <span class="anchor" id="variable-r~76"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -554,7 +552,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~21"></span> <h3> function <a href='../proc/b03~21.html'>B03</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~17"></span> <h3> function <a href='../proc/b03~17.html'>B03</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -591,7 +589,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~63"></span>
+              <span class="anchor" id="variable-r~77"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -636,7 +634,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~64"></span>
+              <span class="anchor" id="variable-r~78"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -690,7 +688,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~19"></span>
+              <span class="anchor" id="variable-settings~106"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -705,7 +703,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~5"></span>
+              <span class="anchor" id="variable-grid~73"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -720,7 +718,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~12"></span>
+              <span class="anchor" id="variable-background~59"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -735,7 +733,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~4"></span>
+              <span class="anchor" id="variable-physics~33"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -767,7 +765,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

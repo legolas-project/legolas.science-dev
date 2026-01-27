@@ -135,7 +135,7 @@
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#variable-a21">a21</a>
             <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#variable-a22">a22</a>
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#variable-a3">a3</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#variable-a3~5">a3</a>
             <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#variable-b21">b21</a>
             <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#variable-b22">b22</a>
             <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#variable-b3">b3</a>
@@ -159,15 +159,15 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-rho0~10">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-t0~10">T0</a>
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-dt0~4">dT0</a>
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-v02~4">v02</a>
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-dv02~4">dv02</a>
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-v03~3">v03</a>
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-b02~7">B02</a>
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-db02~5">dB02</a>
-            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-b03~10">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-rho0~25">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-t0~25">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-dt0~12">dT0</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-v02~10">v02</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-dv02~9">dv02</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-v03~7">v03</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-b02~19">B02</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-db02~16">dB02</a>
+            <a class="list-group-item" href="../module/smod_equil_rotating_plasma_cylinder.html#proc-b03~21">B03</a>
         </div>
       </div>
     </div>
@@ -202,24 +202,22 @@
 rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
 <p>This equilibrium is taken from
 <em>Nijboer, R. J., Holst, B., Poedts, S., &amp; Goedbloed, J. P. (1997).
- Calculating magnetohydrodynamic flow spectra. Computer physics communications, 106(1-2), 39-52</em>.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Default values are given by</p>
-<ul>
-<li><tt>k2</tt> = 1</li>
-<li><tt>k3</tt> = 0</li>
-<li><tt>cte_rho0</tt> = 1 : used to set the density value.</li>
-<li><tt>cte_p0</tt> = 0.1 : used to set the pressure.</li>
-<li><tt>p1</tt> = 8 : sets the constant a21.</li>
-<li><tt>p2</tt> = 0 : sets the constant a22.</li>
-<li><tt>p3</tt> = 0 : sets the constant a3.</li>
-<li><tt>p4</tt> = 1 : sets the constant b21.</li>
-<li><tt>p5</tt> = 0 : sets the constant b22.</li>
-<li><tt>p6</tt> = 0 : sets the constant b3.</li>
-</ul>
-<p>and can all be changed in the parfile.</p>
-</div>
+ Calculating magnetohydrodynamic flow spectra. Computer physics communications, 106(1-2), 39-52</em>.
+!!! note
+    Default values are given by</p>
+<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>density<span class="w"> </span>value.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_p0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>pressure.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p1<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>8<span class="w"> </span>:<span class="w"> </span>sets<span class="w"> </span>the<span class="w"> </span>constant<span class="w"> </span>a21.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>sets<span class="w"> </span>the<span class="w"> </span>constant<span class="w"> </span>a22.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>sets<span class="w"> </span>the<span class="w"> </span>constant<span class="w"> </span>a3.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p4<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>sets<span class="w"> </span>the<span class="w"> </span>constant<span class="w"> </span>b21.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p5<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>sets<span class="w"> </span>the<span class="w"> </span>constant<span class="w"> </span>b22.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p6<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>sets<span class="w"> </span>the<span class="w"> </span>constant<span class="w"> </span>b3.
+
+and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
+</code></pre></div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -291,7 +289,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-a3"></span>
+              <span class="anchor" id="variable-a3~5"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -370,7 +368,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~10"></span> <h3> function <a href='../proc/rho0~10.html'>rho0</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~25"></span> <h3> function <a href='../proc/rho0~25.html'>rho0</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -388,7 +386,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~10"></span> <h3> function <a href='../proc/t0~10.html'>T0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~25"></span> <h3> function <a href='../proc/t0~25.html'>T0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -407,7 +405,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~34"></span>
+              <span class="anchor" id="variable-r~84"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -433,7 +431,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dt0~4"></span> <h3> function <a href='../proc/dt0~4.html'>dT0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-dt0~12"></span> <h3> function <a href='../proc/dt0~12.html'>dT0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -452,7 +450,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~35"></span>
+              <span class="anchor" id="variable-r~85"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -478,7 +476,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-v02~4"></span> <h3> function <a href='../proc/v02~4.html'>v02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-v02~10"></span> <h3> function <a href='../proc/v02~10.html'>v02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -497,7 +495,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~36"></span>
+              <span class="anchor" id="variable-r~86"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -523,7 +521,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dv02~4"></span> <h3> function <a href='../proc/dv02~4.html'>dv02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-dv02~9"></span> <h3> function <a href='../proc/dv02~9.html'>dv02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -542,7 +540,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~37"></span>
+              <span class="anchor" id="variable-r~87"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -568,7 +566,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-v03~3"></span> <h3> function <a href='../proc/v03~3.html'>v03</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-v03~7"></span> <h3> function <a href='../proc/v03~7.html'>v03</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -586,7 +584,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b02~7"></span> <h3> function <a href='../proc/b02~7.html'>B02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b02~19"></span> <h3> function <a href='../proc/b02~19.html'>B02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -605,7 +603,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~38"></span>
+              <span class="anchor" id="variable-r~88"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -631,7 +629,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db02~5"></span> <h3> function <a href='../proc/db02~5.html'>dB02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-db02~16"></span> <h3> function <a href='../proc/db02~16.html'>dB02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -650,7 +648,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~39"></span>
+              <span class="anchor" id="variable-r~89"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -676,7 +674,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~10"></span> <h3> function <a href='../proc/b03~10.html'>B03</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~21"></span> <h3> function <a href='../proc/b03~21.html'>B03</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -722,7 +720,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~36"></span>
+              <span class="anchor" id="variable-settings~123"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -737,7 +735,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~22"></span>
+              <span class="anchor" id="variable-grid~90"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -752,7 +750,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~29"></span>
+              <span class="anchor" id="variable-background~76"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -767,7 +765,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~21"></span>
+              <span class="anchor" id="variable-physics~50"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -799,7 +797,7 @@ rotating plasma cylinder. The geometry can be overridden using the parfile.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

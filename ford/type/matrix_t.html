@@ -745,7 +745,10 @@ values, so when a node at (row, column) is not found this function returns
 
   <p>Dedicated function to copy a matrix structure into a new matrix structure.
 The datastructure contains pointers, such that simply setting
-matrix1 = matrix2 may result in pointer target losses (and wrong results).</p><a href="../proc/copy.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+matrix1 = matrix2 may result in pointer target losses (and wrong results).
+!!! note
+    We should not overload the generic assignment(=) with this function,
+    as it may clash with the constructor.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -856,7 +859,7 @@ deallocates the various nodes in the rows.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

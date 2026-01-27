@@ -155,7 +155,7 @@
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-new_hermitian_banded_matrix">new_hermitian_banded_matrix</a>
-            <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-get_element~2">get_element</a>
+            <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-get_element~3">get_element</a>
             <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-get_total_nb_elements~2">get_total_nb_elements</a>
             <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-uplo_is_valid">uplo_is_valid</a>
             <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-is_within_band~2">is_within_band</a>
@@ -200,8 +200,8 @@ http://www.netlib.org/lapack/lug/node124.html.</p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
               </ul>
             </li>
         </ul>
@@ -260,7 +260,7 @@ http://www.netlib.org/lapack/lug/node124.html.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-uplo~3"></span>
+              <span class="anchor" id="variable-uplo"></span>
               character(len=1),
             </td>
               <td>public</td>
@@ -277,7 +277,7 @@ http://www.netlib.org/lapack/lug/node124.html.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-kd~2"></span>
+              <span class="anchor" id="variable-kd"></span>
               integer,
             </td>
               <td>public</td>
@@ -320,7 +320,7 @@ http://www.netlib.org/lapack/lug/node124.html.</p>
           <tbody>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/hermitian_banded_matrix_t.html#boundprocedure-get_element~2'>get_element</a></strong></td>
+  <strong><a href='../type/hermitian_banded_matrix_t.html#boundprocedure-get_element~4'>get_element</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -390,7 +390,7 @@ initialise all to zero</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-diags~4"></span>
+              <span class="anchor" id="variable-diags~3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -405,7 +405,7 @@ initialise all to zero</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-uplo~4"></span>
+              <span class="anchor" id="variable-uplo~2"></span>
               character(len=1),
             </td>
 <td>intent(in)</td>
@@ -431,7 +431,7 @@ initialise all to zero</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_element~2"></span> <h3>private pure function <a href='../proc/get_element~2.html'>get_element</a>(this, row, col) result(element)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_element~3"></span> <h3>private pure function <a href='../proc/get_element~3.html'>get_element</a>(this, row, col) result(element)  
 </h3></div>
     <div class="card-body">
           
@@ -453,7 +453,7 @@ $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~131"></span>
+              <span class="anchor" id="variable-this~149"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -468,7 +468,7 @@ $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~4"></span>
+              <span class="anchor" id="variable-row~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -528,7 +528,7 @@ $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~134"></span>
+              <span class="anchor" id="variable-this~152"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -573,7 +573,7 @@ $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-uplo~5"></span>
+              <span class="anchor" id="variable-uplo~3"></span>
               character(len=1),
             </td>
 <td>intent(in)</td>
@@ -623,7 +623,7 @@ with $kd$ the number of sub/superdiagonals and $n$ the number of rows/columns.</
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix~8"></span>
+              <span class="anchor" id="variable-matrix~11"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -638,7 +638,7 @@ with $kd$ the number of sub/superdiagonals and $n$ the number of rows/columns.</
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~6"></span>
+              <span class="anchor" id="variable-row~7"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -704,7 +704,7 @@ Returns <tt>.true.</tt> if all criteria are satisfied, <tt>.false.</tt> otherwis
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~135"></span>
+              <span class="anchor" id="variable-this~153"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -772,7 +772,7 @@ falls outside of the banded structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~132"></span>
+              <span class="anchor" id="variable-this~150"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -787,7 +787,7 @@ falls outside of the banded structure.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~5"></span>
+              <span class="anchor" id="variable-row~6"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -857,7 +857,7 @@ falls outside of the banded structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~133"></span>
+              <span class="anchor" id="variable-this~151"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -893,7 +893,7 @@ falls outside of the banded structure.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

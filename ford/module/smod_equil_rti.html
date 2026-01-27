@@ -167,27 +167,25 @@
 This equilibrium is a specific case of the flow driven instabilities.</p>
 <p>This equilibrium is taken from section 13.2, p. 487 (case a) in
 <em>Goedbloed, H., Keppens, R., &amp; Poedts, S. (2019). Magnetohydrodynamics of Laboratory
- and Astrophysical Plasmas. Cambridge University Press.</em> <a href="http://doi.org/10.1017/9781316403679">DOI</a>.</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Default values are given by</p>
-<ul>
-<li><tt>k2</tt> = 0</li>
-<li><tt>k3</tt> = 1</li>
-<li><tt>cte_rho0</tt> = 1 : used in the density profile.</li>
-<li><tt>cte_p0</tt> = 1000 : used in the pressure profile, must be large so T0 &gt; 0.</li>
-<li><tt>delta</tt> = -5 : used in the density profile.</li>
-<li><tt>g</tt> = 15 : gravitational constant.</li>
-<li><tt>alpha</tt> = 0 : magnetic shear.</li>
-<li><tt>theta</tt> = 0.35<script type="math/tex">\pi</script> : angle used in the velocity profile.</li>
-<li><tt>p1</tt> = 0.2 : <script type="math/tex">v_0</script>, used in the velocity profile.</li>
-<li><tt>p2</tt> = 0.6 : <script type="math/tex">v_1</script>, used in the velocity profile.</li>
-<li><tt>p3</tt> = 0 : <script type="math/tex">v_2</script>, used in the velocity profile.</li>
-<li><tt>p4</tt> = -0.35<script type="math/tex">\pi</script> : <script type="math/tex">\phi_0</script>, used in the magnetic field profile.</li>
-<li><tt>tau</tt> = 0 : used in the velocity profile.</li>
-</ul>
-<p>and can all be changed in the parfile.</p>
-</div>
+ and Astrophysical Plasmas. Cambridge University Press.</em> <a href="http://doi.org/10.1017/9781316403679">DOI</a>.
+!!! note
+    Default values are given by</p>
+<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>density<span class="w"> </span>profile.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_p0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1000<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>pressure<span class="w"> </span>profile,<span class="w"> </span>must<span class="w"> </span>be<span class="w"> </span>large<span class="w"> </span>so<span class="w"> </span>T0<span class="w"> </span>&gt;<span class="w"> </span>0.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>delta<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>-5<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>density<span class="w"> </span>profile.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>g<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>15<span class="w"> </span>:<span class="w"> </span>gravitational<span class="w"> </span>constant.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>alpha<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>magnetic<span class="w"> </span>shear.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>theta<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.35\(\pi\)<span class="w"> </span>:<span class="w"> </span>angle<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>velocity<span class="w"> </span>profile.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p1<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.2<span class="w"> </span>:<span class="w"> </span>\(v_0\),<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>velocity<span class="w"> </span>profile.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.6<span class="w"> </span>:<span class="w"> </span>\(v_1\),<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>velocity<span class="w"> </span>profile.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>\(v_2\),<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>velocity<span class="w"> </span>profile.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p4<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>-0.35\(\pi\)<span class="w"> </span>:<span class="w"> </span>\(\phi_0\),<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>magnetic<span class="w"> </span>field<span class="w"> </span>profile.
+-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>tau<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>velocity<span class="w"> </span>profile.
+
+and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
+</code></pre></div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -238,7 +236,7 @@ This equilibrium is a specific case of the flow driven instabilities.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~37"></span>
+              <span class="anchor" id="variable-settings~124"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -253,7 +251,7 @@ This equilibrium is a specific case of the flow driven instabilities.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~23"></span>
+              <span class="anchor" id="variable-grid~91"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -268,7 +266,7 @@ This equilibrium is a specific case of the flow driven instabilities.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~30"></span>
+              <span class="anchor" id="variable-background~77"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -283,7 +281,7 @@ This equilibrium is a specific case of the flow driven instabilities.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~22"></span>
+              <span class="anchor" id="variable-physics~51"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -315,7 +313,7 @@ This equilibrium is a specific case of the flow driven instabilities.</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

@@ -103,7 +103,10 @@ Contains subroutines to retrieve the equilibrium arrays from a file specified in
 <!---->			   <tr class="active">
                  <td><a href='../module/mod_assert.html'>mod_assert</a></td>
                  <td><a href='../sourcefile/mod_assert.f08.html'>mod_assert.f08</a></td>
-                 <td><p>Module defining the assertion routine used by <a href="../sourcefile/assert.fpp.html">assert.fpp</a>.</p><a href="../module/mod_assert.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+                 <td><p>Module defining the assertion routine used by <a href="../sourcefile/assert.fpp.html">assert.fpp</a>.
+!!! note
+    See <a href="../sourcefile/assert.fpp.html">assert.fpp</a> for usage of the <code>assert</code> macro. The
+    subroutine in this module should not be used directly.</p></td>
                </tr>
 <!--active-->			   <tr class="">
                  <td><a href='../module/mod_atmosphere_curves.html'>mod_atmosphere_curves</a></td>
@@ -289,13 +292,18 @@ declarations of the module subroutines. Every equilibrium submodule
 extends this module, implementing one of the module subroutines declared here.
 All "main" equilibrium configurations are set in the submodules. The ones that
 depend on "main" arrays, like radiative cooling, are set here through calls to their
-respective modules.</p><a href="../module/mod_equilibrium.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+respective modules.
+!!! note
+    All use statements specified here at the main module scope
+    are automatically accessible in every submodule that extends this one.</p></td>
                </tr>
                   			   <tr class="active submod">
                  <td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_equil_adiabatic_homo.html'>smod_equil_adiabatic_homo</a></td>
                  <td><a href='../sourcefile/smod_equil_adiabatic_homo.f08.html'>smod_equil_adiabatic_homo.f08</a></td>
                  <td><p>This submodule defines a simple, adiabatic homogeneous medium in Cartesian
-geometry. The geometry can be overridden using the parfile.</p><a href="../module/smod_equil_adiabatic_homo.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+geometry. The geometry can be overridden using the parfile.
+!!! note
+    Default values are given by</p><a href="../module/smod_equil_adiabatic_homo.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
                </tr>
 			   <tr class="active submod">
                  <td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_equil_constant_current.html'>smod_equil_constant_current</a></td>
@@ -317,7 +325,9 @@ in the parfile, and is cylindrical by default for <script type="math/tex"> r \in
                  <td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_equil_couette_flow.html'>smod_equil_couette_flow</a></td>
                  <td><a href='../sourcefile/smod_equil_couette_flow.f08.html'>smod_equil_couette_flow.f08</a></td>
                  <td><p>This submodule defines a steady plane Couette flow in a Cartesian geometry
-with flow and viscosity.</p><a href="../module/smod_equil_couette_flow.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+with flow and viscosity.
+!!! note
+    Default values are given by</p><a href="../module/smod_equil_couette_flow.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
                </tr>
 			   <tr class="active submod">
                  <td>&nbsp;&nbsp;&nbsp;<a href='../module/smod_equil_discrete_alfven.html'>smod_equil_discrete_alfven</a></td>
@@ -530,7 +540,11 @@ more information.</p></td>
 All parameters used in the equilibrium submodules are defined here
 for convenience, including the wave numbers <script type="math/tex">k_2</script> and <script type="math/tex">k_3</script>.
 All of these values are NaN initially, such that variables that are
-not properly set propagate their value and are easy to spot in follow-up checks.</p><a href="../module/mod_equilibrium_params.html" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+not properly set propagate their value and are easy to spot in follow-up checks.
+!!! note 
+    Variables that are not used remain equal to NaN throughout program execution.
+    We define all of these in one module so they allow for easy setting through
+    the parfile, and hence allow for more flexible control in the submodules.</p></td>
                </tr>
 <!---->			   <tr class="active">
                  <td><a href='../module/mod_equilibrium_settings.html'>mod_equilibrium_settings</a></td>
@@ -984,7 +998,7 @@ This means:</p><a href="../module/mod_version.html" class="pull-right"><emph>Rea
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">

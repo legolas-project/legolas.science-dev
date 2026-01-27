@@ -171,9 +171,9 @@ TODO more docs</p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_transform_matrix.html'>mod_transform_matrix</a></li>
                   <li class="list-inline-item"><a href='mod_check_values.html'>mod_check_values</a></li>
                   <li class="list-inline-item"><a href='mod_banded_matrix.html'>mod_banded_matrix</a></li>
+                  <li class="list-inline-item"><a href='mod_transform_matrix.html'>mod_transform_matrix</a></li>
                   <li class="list-inline-item"><a href='mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></li>
               </ul>
             </li>
@@ -208,7 +208,10 @@ TODO more docs</p>
 </h3></div>
     <div class="card-body">
           
-  <p>Solves for one eigenvalue using inverse iteration.</p><a href="../proc/inverse_iteration.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Solves for one eigenvalue using inverse iteration.
+!!! warning
+    Throws an error if <tt>matrix_A</tt> or <tt>matrix_B</tt>
+    is not a square matrix.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -223,7 +226,7 @@ TODO more docs</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_a~8"></span>
+              <span class="anchor" id="variable-matrix_a~10"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -238,7 +241,7 @@ TODO more docs</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_b~8"></span>
+              <span class="anchor" id="variable-matrix_b~10"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -253,7 +256,7 @@ TODO more docs</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~91"></span>
+              <span class="anchor" id="variable-settings~96"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -268,7 +271,7 @@ TODO more docs</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-omega~5"></span>
+              <span class="anchor" id="variable-omega~8"></span>
               complex(kind=dp),
             </td>
 <td>intent(out)</td>
@@ -283,7 +286,7 @@ TODO more docs</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-vr~5"></span>
+              <span class="anchor" id="variable-vr~7"></span>
               complex(kind=dp),
             </td>
 <td>intent(out)</td>
@@ -315,7 +318,7 @@ TODO more docs</p>
           <div class="col">
             <p>
               Legolas v. 2.2.1 - develop
-              &copy; 2025 
+              &copy; 2026 
 </p>
           </div>
           <div class="col">
