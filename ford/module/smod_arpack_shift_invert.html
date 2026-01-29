@@ -173,8 +173,8 @@ finding <script type="math/tex">k</script> eigenvalues of the shifted problem th
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_banded_matrix.html'>mod_banded_matrix</a></li>
                   <li class="list-inline-item"><a href='mod_transform_matrix.html'>mod_transform_matrix</a></li>
+                  <li class="list-inline-item"><a href='mod_banded_matrix.html'>mod_banded_matrix</a></li>
                   <li class="list-inline-item"><a href='mod_banded_operations.html'>mod_banded_operations</a></li>
               </ul>
             </li>
@@ -210,16 +210,7 @@ finding <script type="math/tex">k</script> eigenvalues of the shifted problem th
 </h3></div>
     <div class="card-body">
           
-  <p>Implementation of the ARPACK shift-invert solver
-!!! note
-    In applying shift-invert we made the transformation <script type="math/tex">C = inv[B]*A</script> and
-    solved the standard eigenvalue problem <script type="math/tex">CX = \nu X</script> instead since B isn't
-    always Hermitian (e.g. if we include Hall).
-    According to the ARPACK documentation, section 3.2.2, this
-    implies that we must manually transform the eigenvalues <script type="math/tex">\nu_j</script> from <script type="math/tex">C</script>
-    to the eigenvalues <script type="math/tex">\omega_j</script> from the original system. This uses the relation
-    <script type="math/tex; mode=display"> \omega_j = \sigma + \frac{1}{\nu_j} </script>
-</p>
+  <p>Implementation of the ARPACK shift-invert solver</p><a href="../proc/solve_arpack_shift_invert.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -249,7 +240,7 @@ finding <script type="math/tex">k</script> eigenvalues of the shifted problem th
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_a~3"></span>
+              <span class="anchor" id="variable-matrix_a~6"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -264,7 +255,7 @@ finding <script type="math/tex">k</script> eigenvalues of the shifted problem th
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_b~3"></span>
+              <span class="anchor" id="variable-matrix_b~6"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -279,7 +270,7 @@ finding <script type="math/tex">k</script> eigenvalues of the shifted problem th
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~78"></span>
+              <span class="anchor" id="variable-settings~120"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -294,7 +285,7 @@ finding <script type="math/tex">k</script> eigenvalues of the shifted problem th
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-omega~2"></span>
+              <span class="anchor" id="variable-omega~4"></span>
               complex(kind=dp),
             </td>
 <td>intent(out)</td>

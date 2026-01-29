@@ -92,20 +92,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.0% of total for procedures.">4 statements</a>
+                 title=" 0.1% of total for procedures.">11 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/mod_matrix_element_node.f08"> Source File</a>
+              <a href="../src/mod_banded_matrix.f08"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/mod_matrix_element_node.f08.html'>mod_matrix_element_node.f08</a></li>
-                <li class="breadcrumb-item"><a href='../module/mod_matrix_element_node.html'>mod_matrix_element_node</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_banded_matrix.f08.html'>mod_banded_matrix.f08</a></li>
+                <li class="breadcrumb-item"><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
             <li class="breadcrumb-item active" aria-current="page">get_element</li>
           </ol>
         </nav>
@@ -153,13 +153,16 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private pure function get_element(this)  
+    <h2>private pure function get_element(this, row, col) result(element)  
 </h2>
     
 
+    <p>Retrieves the element at position (row, col) of the original matrix.
+See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
+at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
 
     <h3>Type Bound</h3>
-    <p><a href='../type/matrix_element_node_t.html'>matrix_element_node_t</a></p>
+    <p><a href='../type/banded_matrix_t.html'>banded_matrix_t</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -174,8 +177,8 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~64"></span>
-              class(<a href='../type/matrix_element_node_t.html'>matrix_element_node_t</a>),
+              <span class="anchor" id="variable-this~51"></span>
+              class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -184,7 +187,37 @@
             <td>::</td>
             <td><strong>this</strong></td>
             <td>
-                
+                <p>type instance</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-row~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>row</strong></td>
+            <td>
+                <p>the row index of the original position</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-col~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>col</strong></td>
+            <td>
+                <p>the column index of the original position</p>
             </td>
         </tr>
     </tbody>
@@ -192,11 +225,11 @@
 
       <h3>Return Value
         <small>
-          <span class="anchor" id="variable-get_element~3"></span>
+          <span class="anchor" id="variable-element~7"></span>
           complex(kind=dp)
         </small>
       </h3>
-      
+      <p>the element at original position (row, col)</p>
     <br>
 
 

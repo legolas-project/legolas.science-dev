@@ -138,8 +138,8 @@
             <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#variable-a~2">A</a>
             <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#variable-b~2">B</a>
             <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#variable-tstart~2">Tstart</a>
-            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#variable-x_start~4">x_start</a>
-            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#variable-x_end~4">x_end</a>
+            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#variable-x_start~6">x_start</a>
+            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#variable-x_end~7">x_end</a>
         </div>
       </div>
     </div>
@@ -160,12 +160,12 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-rho0~18">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-t0~18">T0</a>
-            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-dt0~9">dT0</a>
-            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-v02~7">v02</a>
-            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-dv02~6">dv02</a>
-            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-ddv02~3">ddv02</a>
+            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-rho0~27">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-t0~27">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-dt0~12">dT0</a>
+            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-v02~10">v02</a>
+            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-dv02~9">dv02</a>
+            <a class="list-group-item" href="../module/smod_equil_taylor_couette.html#proc-ddv02~4">ddv02</a>
         </div>
       </div>
     </div>
@@ -203,16 +203,18 @@ where a fluid is confined between two (rotating) coaxial cylinders
 <em>Gebhardt, Thomas and Grossman, Siegfried.
 "The Taylor-Couette eigenvalue problem with independently rotating cylinders.",
 Z. Phys. B 90, 475--490 (1993)</em>.</p>
-<p>!!! note
-    Default values are given by</p>
-<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>density<span class="w"> </span>(constant)
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>alpha<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>rotational<span class="w"> </span>speed<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>inner<span class="w"> </span>cylinder
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>beta<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>2<span class="w"> </span>:<span class="w"> </span>rotational<span class="w"> </span>speed<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>outer<span class="w"> </span>cylinder
-
-and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
-</code></pre></div>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>Default values are given by</p>
+<ul>
+<li><tt>k2</tt> = 0</li>
+<li><tt>k3</tt> = 1</li>
+<li><tt>cte_rho0</tt> = 1 : density (constant)</li>
+<li><tt>alpha</tt> = 1 : rotational speed of the inner cylinder</li>
+<li><tt>beta</tt> = 2 : rotational speed of the outer cylinder</li>
+</ul>
+<p>and can all be changed in the parfile.</p>
+</p>
+</div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -335,7 +337,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x_start~4"></span>
+              <span class="anchor" id="variable-x_start~6"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -352,7 +354,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x_end~4"></span>
+              <span class="anchor" id="variable-x_end~7"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -380,7 +382,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~18"></span> <h3> function <a href='../proc/rho0~18.html'>rho0</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~27"></span> <h3> function <a href='../proc/rho0~27.html'>rho0</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -398,7 +400,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~18"></span> <h3> function <a href='../proc/t0~18.html'>T0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~27"></span> <h3> function <a href='../proc/t0~27.html'>T0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -417,7 +419,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~62"></span>
+              <span class="anchor" id="variable-r~82"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -443,7 +445,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dt0~9"></span> <h3> function <a href='../proc/dt0~9.html'>dT0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-dt0~12"></span> <h3> function <a href='../proc/dt0~12.html'>dT0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -462,7 +464,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~63"></span>
+              <span class="anchor" id="variable-r~83"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -488,7 +490,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-v02~7"></span> <h3> function <a href='../proc/v02~7.html'>v02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-v02~10"></span> <h3> function <a href='../proc/v02~10.html'>v02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -507,7 +509,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~64"></span>
+              <span class="anchor" id="variable-r~84"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -533,7 +535,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dv02~6"></span> <h3> function <a href='../proc/dv02~6.html'>dv02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-dv02~9"></span> <h3> function <a href='../proc/dv02~9.html'>dv02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -552,7 +554,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~65"></span>
+              <span class="anchor" id="variable-r~85"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -578,7 +580,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-ddv02~3"></span> <h3> function <a href='../proc/ddv02~3.html'>ddv02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-ddv02~4"></span> <h3> function <a href='../proc/ddv02~4.html'>ddv02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -597,7 +599,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~66"></span>
+              <span class="anchor" id="variable-r~86"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -651,7 +653,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~129"></span>
+              <span class="anchor" id="variable-settings~63"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -666,7 +668,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~96"></span>
+              <span class="anchor" id="variable-grid~35"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -681,7 +683,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~82"></span>
+              <span class="anchor" id="variable-background~39"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -696,7 +698,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~56"></span>
+              <span class="anchor" id="variable-physics~30"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>

@@ -154,12 +154,12 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-rho0~7">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-drho0~4">drho0</a>
-            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-t0~7">T0</a>
-            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-b02~7">B02</a>
-            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-b03~7">B03</a>
-            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-g0~2">g0</a>
+            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-rho0~9">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-drho0~6">drho0</a>
+            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-t0~9">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-b02~6">B02</a>
+            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-b03~8">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_isothermal_atmosphere.html#proc-g0~4">g0</a>
         </div>
       </div>
     </div>
@@ -199,22 +199,25 @@ The geometry is fixed to Cartesian, boundaries can be overridden using the parfi
 <p>This equilibrium is taken from
 <em>Nye, A., &amp; Thomas, J. (1976). Solar magneto-atmospheric waves. I. An exact solution
 for a horizontal magnetic field. The Astrophysical Journal, 204.</em>
-<a href="http://articles.adsabs.harvard.edu/pdf/1976ApJ...204..573N"><em>573-581</em></a>.
-!!! note
-    Default values are given by</p>
-<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>2
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>density<span class="w"> </span>prefactor.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_B02<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.25<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>By-component
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_B03<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.25<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>Bz-component
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_T0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>temperature<span class="w"> </span>(isothermal).
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>g<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>5<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>gravity<span class="w"> </span>constant.
-
-and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
-</code></pre></div>
-
-<p>!!! warning
-    This equilibrium has no regression test yet!</p>
+<a href="http://articles.adsabs.harvard.edu/pdf/1976ApJ...204..573N"><em>573-581</em></a>.</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>Default values are given by</p>
+<ul>
+<li><tt>k2</tt> = 0</li>
+<li><tt>k3</tt> = 2</li>
+<li><tt>cte_rho0</tt> = 1 : used as a density prefactor.</li>
+<li><tt>cte_B02</tt> = 0.25 : used to set the By-component</li>
+<li><tt>cte_B03</tt> = 0.25 : used to set the Bz-component</li>
+<li><tt>cte_T0</tt> = 1 : used to set the temperature (isothermal).</li>
+<li><tt>g</tt> = 5 : used to set the gravity constant.</li>
+</ul>
+<p>and can all be changed in the parfile.</p>
+</p>
+</div>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning<p>This equilibrium has no regression test yet!</p>
+</p>
+</div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -280,7 +283,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~7"></span> <h3> function <a href='../proc/rho0~7.html'>rho0</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~9"></span> <h3> function <a href='../proc/rho0~9.html'>rho0</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -299,7 +302,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~47"></span>
+              <span class="anchor" id="variable-x~63"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -325,7 +328,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-drho0~4"></span> <h3> function <a href='../proc/drho0~4.html'>drho0</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-drho0~6"></span> <h3> function <a href='../proc/drho0~6.html'>drho0</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -344,7 +347,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~48"></span>
+              <span class="anchor" id="variable-x~64"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -370,7 +373,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~7"></span> <h3> function <a href='../proc/t0~7.html'>T0</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~9"></span> <h3> function <a href='../proc/t0~9.html'>T0</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -388,7 +391,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b02~7"></span> <h3> function <a href='../proc/b02~7.html'>B02</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-b02~6"></span> <h3> function <a href='../proc/b02~6.html'>B02</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -406,7 +409,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~7"></span> <h3> function <a href='../proc/b03~7.html'>B03</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~8"></span> <h3> function <a href='../proc/b03~8.html'>B03</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -424,7 +427,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-g0~2"></span> <h3> function <a href='../proc/g0~2.html'>g0</a>(x, settings, background)  
+    <div class="card-header codesum"><span class="anchor" id="proc-g0~4"></span> <h3> function <a href='../proc/g0~4.html'>g0</a>(x, settings, background)  
 </h3></div>
     <div class="card-body">
           
@@ -443,7 +446,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~49"></span>
+              <span class="anchor" id="variable-x~65"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -458,7 +461,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~14"></span>
+              <span class="anchor" id="variable-settings~35"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -473,7 +476,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~12"></span>
+              <span class="anchor" id="variable-background~11"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(in)</td>
@@ -527,7 +530,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~113"></span>
+              <span class="anchor" id="variable-settings~47"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -542,7 +545,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~80"></span>
+              <span class="anchor" id="variable-grid~19"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -557,7 +560,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~66"></span>
+              <span class="anchor" id="variable-background~23"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -572,7 +575,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~40"></span>
+              <span class="anchor" id="variable-physics~14"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>

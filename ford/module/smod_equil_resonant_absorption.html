@@ -159,11 +159,11 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_resonant_absorption.html#proc-rho0~5">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_resonant_absorption.html#proc-drho0~3">drho0</a>
-            <a class="list-group-item" href="../module/smod_equil_resonant_absorption.html#proc-t0~5">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_resonant_absorption.html#proc-rho0~7">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_resonant_absorption.html#proc-drho0~5">drho0</a>
+            <a class="list-group-item" href="../module/smod_equil_resonant_absorption.html#proc-t0~7">T0</a>
             <a class="list-group-item" href="../module/smod_equil_resonant_absorption.html#proc-b02~5">B02</a>
-            <a class="list-group-item" href="../module/smod_equil_resonant_absorption.html#proc-b03~5">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_resonant_absorption.html#proc-b03~6">B03</a>
         </div>
       </div>
     </div>
@@ -202,21 +202,24 @@ can be overridden in the parfile.</p>
 <p>This equilibrium is taken from
 <em>Van Doorsselaere, T., &amp; Poedts, S. (2007).
  Modifications to the resistive MHD spectrum due to changes in the equilibrium.
- Plasma Physics and Controlled Fusion, 49(3), 261</em>.
-!!! note
-    Default values are given by</p>
-<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.05
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p1<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.9<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>left<span class="w"> </span>density<span class="w"> </span>value.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>p2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>right<span class="w"> </span>density<span class="w"> </span>value.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>r0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.2<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>width<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>interface.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_B02<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>By<span class="w"> </span>value.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_B03<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>Bz<span class="w"> </span>value.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_T0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>temperature.<span class="w"> </span>Zero<span class="w"> </span>by<span class="w"> </span>default.
--<span class="w"> </span>fixed<span class="w"> </span>eta<span class="w"> </span>value<span class="w"> </span>of<span class="w"> </span>\(10^{-3.2}\)
-
-and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
-</code></pre></div>
+ Plasma Physics and Controlled Fusion, 49(3), 261</em>.</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>Default values are given by</p>
+<ul>
+<li><tt>k2</tt> = 1</li>
+<li><tt>k3</tt> = 0.05</li>
+<li><tt>p1</tt> = 0.9 : used to set the left density value.</li>
+<li><tt>p2</tt> = 0.1 : used to set the right density value.</li>
+<li><tt>r0</tt> = 0.2 : used to set the width of the interface.</li>
+<li><tt>cte_B02</tt> = 0 : used to set the By value.</li>
+<li><tt>cte_B03</tt> = 1 : used to set the Bz value.</li>
+<li><tt>cte_T0</tt> = 0 : used to set the temperature. Zero by default.</li>
+<li>fixed eta value of <script type="math/tex">10^{-3.2}</script>
+</li>
+</ul>
+<p>and can all be changed in the parfile.</p>
+</p>
+</div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -367,7 +370,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~5"></span> <h3> function <a href='../proc/rho0~5.html'>rho0</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~7"></span> <h3> function <a href='../proc/rho0~7.html'>rho0</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -386,7 +389,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~36"></span>
+              <span class="anchor" id="variable-x~58"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -412,7 +415,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-drho0~3"></span> <h3> function <a href='../proc/drho0~3.html'>drho0</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-drho0~5"></span> <h3> function <a href='../proc/drho0~5.html'>drho0</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -431,7 +434,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~37"></span>
+              <span class="anchor" id="variable-x~59"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -457,7 +460,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~5"></span> <h3> function <a href='../proc/t0~5.html'>T0</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~7"></span> <h3> function <a href='../proc/t0~7.html'>T0</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -493,7 +496,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~5"></span> <h3> function <a href='../proc/b03~5.html'>B03</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~6"></span> <h3> function <a href='../proc/b03~6.html'>B03</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -539,7 +542,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~122"></span>
+              <span class="anchor" id="variable-settings~56"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -554,7 +557,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~89"></span>
+              <span class="anchor" id="variable-grid~28"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -569,7 +572,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~75"></span>
+              <span class="anchor" id="variable-background~32"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -584,7 +587,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~49"></span>
+              <span class="anchor" id="variable-physics~23"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>

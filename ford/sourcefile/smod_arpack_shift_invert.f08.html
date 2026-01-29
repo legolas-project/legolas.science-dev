@@ -319,7 +319,7 @@
 <a id="ln-146" name="ln-146" href="#ln-146"></a><span class="w">    </span><span class="k">call </span><span class="n">logger</span><span class="p">%</span><span class="n">debug</span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span>
 <a id="ln-147" name="ln-147" href="#ln-147"></a><span class="w">      </span><span class="s2">&quot;performing eigenvalue backtransformation to original problem (nu -&gt; omega)&quot;</span><span class="w"> </span><span class="p">&amp;</span>
 <a id="ln-148" name="ln-148" href="#ln-148"></a><span class="w">    </span><span class="p">)</span>
-<a id="ln-149" name="ln-149" href="#ln-149"></a><span class="w">    </span><span class="c">!&gt; !!! note</span>
+<a id="ln-149" name="ln-149" href="#ln-149"></a><span class="w">    </span><span class="c">!&gt; @note</span>
 <a id="ln-150" name="ln-150" href="#ln-150"></a><span class="w">    </span><span class="c">!!     In applying shift-invert we made the transformation \(C = inv[B]*A\) and</span>
 <a id="ln-151" name="ln-151" href="#ln-151"></a><span class="w">    </span><span class="c">!!     solved the standard eigenvalue problem \(CX = \nu X\) instead since B isn&#39;t</span>
 <a id="ln-152" name="ln-152" href="#ln-152"></a><span class="w">    </span><span class="c">!!     always Hermitian (e.g. if we include Hall).</span>
@@ -327,13 +327,14 @@
 <a id="ln-154" name="ln-154" href="#ln-154"></a><span class="w">    </span><span class="c">!!     implies that we must manually transform the eigenvalues \(\nu_j\) from \(C\)</span>
 <a id="ln-155" name="ln-155" href="#ln-155"></a><span class="w">    </span><span class="c">!!     to the eigenvalues \(\omega_j\) from the original system. This uses the relation</span>
 <a id="ln-156" name="ln-156" href="#ln-156"></a><span class="w">    </span><span class="c">!!     $$ \omega_j = \sigma + \frac{1}{\nu_j} $$</span>
-<a id="ln-157" name="ln-157" href="#ln-157"></a><span class="w">    </span><span class="n">omega</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0d0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">omega</span><span class="p">)</span>
-<a id="ln-158" name="ln-158" href="#ln-158"></a>
-<a id="ln-159" name="ln-159" href="#ln-159"></a><span class="w">    </span><span class="k">call </span><span class="n">arpack_cfg</span><span class="p">%</span><span class="n">parse_zneupd_info</span><span class="p">()</span>
-<a id="ln-160" name="ln-160" href="#ln-160"></a><span class="w">    </span><span class="k">call </span><span class="n">arpack_cfg</span><span class="p">%</span><span class="n">parse_finished_stats</span><span class="p">()</span>
-<a id="ln-161" name="ln-161" href="#ln-161"></a><span class="w">  </span><span class="k">end procedure </span><span class="n">solve_arpack_shift_invert</span>
-<a id="ln-162" name="ln-162" href="#ln-162"></a>
-<a id="ln-163" name="ln-163" href="#ln-163"></a><span class="k">end submodule </span><span class="n">smod_arpack_shift_invert</span>
+<a id="ln-157" name="ln-157" href="#ln-157"></a><span class="w">    </span><span class="c">!! @endnote</span>
+<a id="ln-158" name="ln-158" href="#ln-158"></a><span class="w">    </span><span class="n">omega</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0d0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">omega</span><span class="p">)</span>
+<a id="ln-159" name="ln-159" href="#ln-159"></a>
+<a id="ln-160" name="ln-160" href="#ln-160"></a><span class="w">    </span><span class="k">call </span><span class="n">arpack_cfg</span><span class="p">%</span><span class="n">parse_zneupd_info</span><span class="p">()</span>
+<a id="ln-161" name="ln-161" href="#ln-161"></a><span class="w">    </span><span class="k">call </span><span class="n">arpack_cfg</span><span class="p">%</span><span class="n">parse_finished_stats</span><span class="p">()</span>
+<a id="ln-162" name="ln-162" href="#ln-162"></a><span class="w">  </span><span class="k">end procedure </span><span class="n">solve_arpack_shift_invert</span>
+<a id="ln-163" name="ln-163" href="#ln-163"></a>
+<a id="ln-164" name="ln-164" href="#ln-164"></a><span class="k">end submodule </span><span class="n">smod_arpack_shift_invert</span>
 </pre></div>
 
       </section>

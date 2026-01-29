@@ -161,9 +161,11 @@
 <p><code>tic()</code> starts the wall clock timer. The subroutines records the wall clock
 time at execution of this command. Use <code>toc(message)</code> to log the elapsed time
 since the last call of <code>tic()</code>.</p>
-<p>!!! warning
-    As <code>tic()</code> and <code>toc(message)</code> rely on a module variable, they are
-    not thread safe.</p>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning<p>As <code>tic()</code> and <code>toc(message)</code> rely on a module variable, they are
+not thread safe.</p>
+</p>
+</div>
 <p><code>tic(start_time)</code> writes the value of the wall clock time at execution
 of this command to <strong>start_time</strong>. Calling this command, shall not
 change the module variable associated with calling <code>tic()</code>.</p>

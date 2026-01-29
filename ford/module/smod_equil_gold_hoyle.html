@@ -143,11 +143,11 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-rho0~23">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-t0~23">T0</a>
-            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-b02~17">B02</a>
-            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-db02~14">dB02</a>
-            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-b03~19">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-rho0~20">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-t0~20">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-b02~14">B02</a>
+            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-db02~11">dB02</a>
+            <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-b03~17">B03</a>
             <a class="list-group-item" href="../module/smod_equil_gold_hoyle.html#proc-db03~10">dB03</a>
         </div>
       </div>
@@ -186,36 +186,40 @@ The geometry can be overridden in the parfile.</p>
 <p>This equilibrium is taken from
 <em>Van der Linden, R. A. M., Goossens, M. (1991).
 "The thermal continuum in coronal loops: instability criteria and the influence of
- perpendicular thermal conduction." Solar physics, 134.2, 247-273.</em>
-!!! note
-    Default values are given by</p>
-<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_T0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>temperature.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>density
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>alpha<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>20<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>magnetic<span class="w"> </span>field<span class="w"> </span>components
--<span class="w"> </span>cooling_curve<span class="w"> </span>=<span class="w"> </span>&#39;rosner&#39;
--<span class="w"> </span>parallel<span class="w"> </span>thermal<span class="w"> </span>conduction,<span class="w"> </span>no<span class="w"> </span>perpendicular<span class="w"> </span>conduction
-
-and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
-</code></pre></div>
-
-<p>!!! note
-    To reproduce the three profiles of the original paper you can supply
-    one of the following normalisations:</p>
-<div class="codehilite"><pre><span></span><code>-<span class="w"> </span>cold<span class="w"> </span>plasma:<span class="w"> </span><span class="nt">&lt;tt&gt;</span>unit_magneticfield<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>10<span class="w"> </span>Gauss,
-<span class="w">               </span><span class="nt">&lt;tt&gt;</span>unit_density<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1.6726e-15<span class="w"> </span>g/cm3,
-<span class="w">               </span><span class="nt">&lt;tt&gt;</span>unit_length<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1.0e10<span class="w"> </span>cm,
-<span class="w">               </span>corresponding<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>temperature<span class="w"> </span>of<span class="w"> </span>5.7e4<span class="w"> </span>K.
--<span class="w"> </span>cool<span class="w"> </span>plasma:<span class="w"> </span><span class="nt">&lt;tt&gt;</span>unit_magneticfield<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>22.5<span class="w"> </span>Gauss,
-<span class="w">               </span><span class="nt">&lt;tt&gt;</span>unit_density<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1.6726e-15<span class="w"> </span>g/cm3,
-<span class="w">               </span><span class="nt">&lt;tt&gt;</span>unit_length<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1.0e10<span class="w"> </span>cm,
-<span class="w">               </span>corresponding<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>temperature<span class="w"> </span>of<span class="w"> </span>2.9e5<span class="w"> </span>K<span class="w"> </span>(default).
--<span class="w"> </span>hot<span class="w"> </span>plasma:<span class="w">  </span><span class="nt">&lt;tt&gt;</span>unit_magneticfield<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>67<span class="w"> </span>Gauss,
-<span class="w">               </span><span class="nt">&lt;tt&gt;</span>unit_density<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1.6726e-15<span class="w"> </span>g/cm3,
-<span class="w">               </span><span class="nt">&lt;tt&gt;</span>unit_length<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1.0e11<span class="w"> </span>cm,
-<span class="w">               </span>corresponding<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>temperature<span class="w"> </span>of<span class="w"> </span>2.6e6<span class="w"> </span>K.
-</code></pre></div>
+ perpendicular thermal conduction." Solar physics, 134.2, 247-273.</em></p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>Default values are given by</p>
+<ul>
+<li><tt>k2</tt> = 1</li>
+<li><tt>k3</tt> = 1</li>
+<li><tt>cte_T0</tt> = 1 : used to set the temperature.</li>
+<li><tt>cte_rho0</tt> = 1 : used to set the density</li>
+<li><tt>alpha</tt> = 20 : used in the magnetic field components</li>
+<li>cooling_curve = 'rosner'</li>
+<li>parallel thermal conduction, no perpendicular conduction</li>
+</ul>
+<p>and can all be changed in the parfile.</p>
+</p>
+</div>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>To reproduce the three profiles of the original paper you can supply
+one of the following normalisations:</p>
+<ul>
+<li>cold plasma: <tt>unit_magneticfield</tt> = 10 Gauss,
+               <tt>unit_density</tt> = 1.6726e-15 g/cm3,
+               <tt>unit_length</tt> = 1.0e10 cm,
+               corresponding to a temperature of 5.7e4 K.</li>
+<li>cool plasma: <tt>unit_magneticfield</tt> = 22.5 Gauss,
+               <tt>unit_density</tt> = 1.6726e-15 g/cm3,
+               <tt>unit_length</tt> = 1.0e10 cm,
+               corresponding to a temperature of 2.9e5 K (default).</li>
+<li>hot plasma:  <tt>unit_magneticfield</tt> = 67 Gauss,
+               <tt>unit_density</tt> = 1.6726e-15 g/cm3,
+               <tt>unit_length</tt> = 1.0e11 cm,
+               corresponding to a temperature of 2.6e6 K.</li>
+</ul>
+</p>
+</div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -247,7 +251,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~23"></span> <h3> function <a href='../proc/rho0~23.html'>rho0</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~20"></span> <h3> function <a href='../proc/rho0~20.html'>rho0</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -265,7 +269,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~23"></span> <h3> function <a href='../proc/t0~23.html'>T0</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~20"></span> <h3> function <a href='../proc/t0~20.html'>T0</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -283,7 +287,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b02~17"></span> <h3> function <a href='../proc/b02~17.html'>B02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b02~14"></span> <h3> function <a href='../proc/b02~14.html'>B02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -302,7 +306,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~80"></span>
+              <span class="anchor" id="variable-r~57"></span>
               real(kind=dp)
             </td>
 <td></td>
@@ -328,7 +332,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db02~14"></span> <h3> function <a href='../proc/db02~14.html'>dB02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-db02~11"></span> <h3> function <a href='../proc/db02~11.html'>dB02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -347,7 +351,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~81"></span>
+              <span class="anchor" id="variable-r~58"></span>
               real(kind=dp)
             </td>
 <td></td>
@@ -373,7 +377,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~19"></span> <h3> function <a href='../proc/b03~19.html'>B03</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~17"></span> <h3> function <a href='../proc/b03~17.html'>B03</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -392,7 +396,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~82"></span>
+              <span class="anchor" id="variable-r~59"></span>
               real(kind=dp)
             </td>
 <td></td>
@@ -437,7 +441,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~83"></span>
+              <span class="anchor" id="variable-r~60"></span>
               real(kind=dp)
             </td>
 <td></td>
@@ -491,7 +495,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~108"></span>
+              <span class="anchor" id="variable-settings~42"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -506,7 +510,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~75"></span>
+              <span class="anchor" id="variable-grid~14"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -521,7 +525,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~61"></span>
+              <span class="anchor" id="variable-background~18"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -536,7 +540,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~35"></span>
+              <span class="anchor" id="variable-physics~9"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>

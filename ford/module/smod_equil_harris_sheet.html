@@ -143,15 +143,15 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-rho0~6">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-t0~6">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-rho0~10">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-t0~10">T0</a>
             <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-dt0~4">dT0</a>
-            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-b02~6">B02</a>
+            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-b02~7">B02</a>
             <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-db02~5">dB02</a>
-            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-ddb02~2">ddB02</a>
-            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-b03~6">B03</a>
-            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-db03~4">dB03</a>
-            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-ddb03~2">ddB03</a>
+            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-ddb02~3">ddB02</a>
+            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-b03~9">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-db03~5">dB03</a>
+            <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-ddb03~3">ddB03</a>
             <a class="list-group-item" href="../module/smod_equil_harris_sheet.html#proc-b0~2">B0</a>
         </div>
       </div>
@@ -187,20 +187,22 @@
 by a Harris sheet.</p>
 <p>This equilibrium is taken from Shi et al. (2020), Oblique tearing mode
 instability: guide field and Hall effect. <em>The Astrophysical Journal</em>, 902:142.
-<a href="https://doi.org/10.3847/1538-4357/abb6fa">DOI</a>.
-!!! note
-    Default values are given by</p>
-<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0.12
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_T0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_B02<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_B03<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>guide<span class="w"> </span>field<span class="w"> </span>parameter.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>alpha<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>width<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>sheet.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>eq_bool<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>False<span class="w"> </span>:<span class="w"> </span>if<span class="w"> </span>True,<span class="w"> </span>an<span class="w"> </span>alternative<span class="w"> </span>force-free<span class="w"> </span>Harris<span class="w"> </span>sheet<span class="w"> </span>is<span class="w"> </span>used.
-
-and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
-</code></pre></div>
+<a href="https://doi.org/10.3847/1538-4357/abb6fa">DOI</a>.</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>Default values are given by</p>
+<ul>
+<li><tt>k2</tt> = 0.12</li>
+<li><tt>k3</tt> = 0</li>
+<li><tt>cte_rho0</tt> = 1</li>
+<li><tt>cte_T0</tt> = 1</li>
+<li><tt>cte_B02</tt> = 1</li>
+<li><tt>cte_B03</tt> = 0 : guide field parameter.</li>
+<li><tt>alpha</tt> = 1 : used to set the width of the current sheet.</li>
+<li><tt>eq_bool</tt> = False : if True, an alternative force-free Harris sheet is used.</li>
+</ul>
+<p>and can all be changed in the parfile.</p>
+</p>
+</div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -232,7 +234,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~6"></span> <h3> function <a href='../proc/rho0~6.html'>rho0</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~10"></span> <h3> function <a href='../proc/rho0~10.html'>rho0</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -250,7 +252,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~6"></span> <h3> function <a href='../proc/t0~6.html'>T0</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~10"></span> <h3> function <a href='../proc/t0~10.html'>T0</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -269,7 +271,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~38"></span>
+              <span class="anchor" id="variable-x~67"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -314,7 +316,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~39"></span>
+              <span class="anchor" id="variable-x~68"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -340,7 +342,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b02~6"></span> <h3> function <a href='../proc/b02~6.html'>B02</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b02~7"></span> <h3> function <a href='../proc/b02~7.html'>B02</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -359,7 +361,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~40"></span>
+              <span class="anchor" id="variable-x~69"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -404,7 +406,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~41"></span>
+              <span class="anchor" id="variable-x~70"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -430,7 +432,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-ddb02~2"></span> <h3> function <a href='../proc/ddb02~2.html'>ddB02</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-ddb02~3"></span> <h3> function <a href='../proc/ddb02~3.html'>ddB02</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -449,7 +451,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~42"></span>
+              <span class="anchor" id="variable-x~71"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -475,7 +477,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~6"></span> <h3> function <a href='../proc/b03~6.html'>B03</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~9"></span> <h3> function <a href='../proc/b03~9.html'>B03</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -494,7 +496,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~43"></span>
+              <span class="anchor" id="variable-x~72"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -520,7 +522,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db03~4"></span> <h3> function <a href='../proc/db03~4.html'>dB03</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-db03~5"></span> <h3> function <a href='../proc/db03~5.html'>dB03</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -539,7 +541,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~44"></span>
+              <span class="anchor" id="variable-x~73"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -565,7 +567,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-ddb03~2"></span> <h3> function <a href='../proc/ddb03~2.html'>ddB03</a>(x)  
+    <div class="card-header codesum"><span class="anchor" id="proc-ddb03~3"></span> <h3> function <a href='../proc/ddb03~3.html'>ddB03</a>(x)  
 </h3></div>
     <div class="card-body">
           
@@ -584,7 +586,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~45"></span>
+              <span class="anchor" id="variable-x~74"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -629,7 +631,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~46"></span>
+              <span class="anchor" id="variable-x~75"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -683,7 +685,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~130"></span>
+              <span class="anchor" id="variable-settings~64"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -698,7 +700,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~97"></span>
+              <span class="anchor" id="variable-grid~36"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -713,7 +715,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~83"></span>
+              <span class="anchor" id="variable-background~40"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -728,7 +730,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~57"></span>
+              <span class="anchor" id="variable-physics~31"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>

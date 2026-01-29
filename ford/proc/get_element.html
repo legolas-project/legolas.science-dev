@@ -92,20 +92,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.1% of total for procedures.">11 statements</a>
+                 title=" 0.2% of total for procedures.">23 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/mod_banded_matrix.f08"> Source File</a>
+              <a href="../src/mod_banded_matrix_hermitian.f08"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/mod_banded_matrix.f08.html'>mod_banded_matrix.f08</a></li>
-                <li class="breadcrumb-item"><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_banded_matrix_hermitian.f08.html'>mod_banded_matrix_hermitian.f08</a></li>
+                <li class="breadcrumb-item"><a href='../module/mod_banded_matrix_hermitian.html'>mod_banded_matrix_hermitian</a></li>
             <li class="breadcrumb-item active" aria-current="page">get_element</li>
           </ol>
         </nav>
@@ -159,10 +159,11 @@
 
     <p>Retrieves the element at position (row, col) of the original matrix.
 See the LAPACK documentation, element $a_{ij}$ of the original matrix is stored
-at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
+at position $(kd + 1 + i - j, j)$ if <code>uplo = "U"</code> and at position
+$(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
 
     <h3>Type Bound</h3>
-    <p><a href='../type/banded_matrix_t.html'>banded_matrix_t</a></p>
+    <p><a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -177,8 +178,8 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this"></span>
-              class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
+              <span class="anchor" id="variable-this~43"></span>
+              class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -225,11 +226,11 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
 
       <h3>Return Value
         <small>
-          <span class="anchor" id="variable-element"></span>
+          <span class="anchor" id="variable-element~5"></span>
           complex(kind=dp)
         </small>
       </h3>
-      <p>the element at original position (row, col)</p>
+      <p>the element at the original position (row, col)</p>
     <br>
 
 

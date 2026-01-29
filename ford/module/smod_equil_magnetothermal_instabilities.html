@@ -143,12 +143,12 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-p0">p0</a>
-            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-rho0~9">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-drho0~5">drho0</a>
-            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-t0~9">T0</a>
-            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-b02~9">B02</a>
-            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-db02~6">dB02</a>
+            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-p0~4">p0</a>
+            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-rho0~15">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-drho0~8">drho0</a>
+            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-t0~15">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-b02~10">B02</a>
+            <a class="list-group-item" href="../module/smod_equil_magnetothermal_instabilities.html#proc-db02~8">dB02</a>
         </div>
       </div>
     </div>
@@ -184,28 +184,31 @@ in a cylindrical geometry. The geometry can be overridden in the parfile.</p>
 <p>This equilibrium is taken from
 <em>Van der Linden, R. A. M., Goossens, M., &amp; Hood, A. W. (1992).
  The relevance of the ballooning approximation for magnetic, thermal,
- and coalesced magnetothermal instabilities. Solar physics, 140(2), 317-342</em>.
-!!! note
-    Default values are given by</p>
-<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_T0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>set<span class="w"> </span>the<span class="w"> </span>temperature.
--<span class="w"> </span>cooling_curve<span class="w"> </span>=<span class="w"> </span>&#39;rosner&#39;
--<span class="w"> </span>parallel<span class="w"> </span>thermal<span class="w"> </span>conduction,<span class="w"> </span>no<span class="w"> </span>perpendicular<span class="w"> </span>conduction
-
-and<span class="w"> </span>normalisations<span class="w"> </span>given<span class="w"> </span>by
-
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>unit_temperature<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>2.6e6<span class="w"> </span>K
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>unit_magneticfield<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>10<span class="w"> </span>Gauss
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>unit_length<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1e8<span class="w"> </span>cm
-
-and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
-</code></pre></div>
-
-<p>!!! note
-    The default setup handles <em>CASE I</em> in the original paper. For <em>CASE II</em>,
-    you can set k2 = 10. To reproduce the thermal continuum plot,
-    set <tt>unit_length</tt> = 2.44e9 cm in <em>CASE I</em>.</p>
+ and coalesced magnetothermal instabilities. Solar physics, 140(2), 317-342</em>.</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>Default values are given by</p>
+<ul>
+<li><tt>k2</tt> = 0</li>
+<li><tt>k3</tt> = 1</li>
+<li><tt>cte_T0</tt> = 1 : used to set the temperature.</li>
+<li>cooling_curve = 'rosner'</li>
+<li>parallel thermal conduction, no perpendicular conduction</li>
+</ul>
+<p>and normalisations given by</p>
+<ul>
+<li><tt>unit_temperature</tt> = 2.6e6 K</li>
+<li><tt>unit_magneticfield</tt> = 10 Gauss</li>
+<li><tt>unit_length</tt> = 1e8 cm</li>
+</ul>
+<p>and can all be changed in the parfile.</p>
+</p>
+</div>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>The default setup handles <em>CASE I</em> in the original paper. For <em>CASE II</em>,
+you can set k2 = 10. To reproduce the thermal continuum plot,
+set <tt>unit_length</tt> = 2.44e9 cm in <em>CASE I</em>.</p>
+</p>
+</div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -237,7 +240,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-p0"></span> <h3> function <a href='../proc/p0.html'>p0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-p0~4"></span> <h3> function <a href='../proc/p0~4.html'>p0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -256,7 +259,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~22"></span>
+              <span class="anchor" id="variable-r~37"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -282,7 +285,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~9"></span> <h3> function <a href='../proc/rho0~9.html'>rho0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~15"></span> <h3> function <a href='../proc/rho0~15.html'>rho0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -301,7 +304,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~23"></span>
+              <span class="anchor" id="variable-r~38"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -327,7 +330,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-drho0~5"></span> <h3> function <a href='../proc/drho0~5.html'>drho0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-drho0~8"></span> <h3> function <a href='../proc/drho0~8.html'>drho0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -346,7 +349,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~24"></span>
+              <span class="anchor" id="variable-r~39"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -372,7 +375,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~9"></span> <h3> function <a href='../proc/t0~9.html'>T0</a>()  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~15"></span> <h3> function <a href='../proc/t0~15.html'>T0</a>()  
 </h3></div>
     <div class="card-body">
           
@@ -390,7 +393,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b02~9"></span> <h3> function <a href='../proc/b02~9.html'>B02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-b02~10"></span> <h3> function <a href='../proc/b02~10.html'>B02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -409,7 +412,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~25"></span>
+              <span class="anchor" id="variable-r~40"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -435,7 +438,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db02~6"></span> <h3> function <a href='../proc/db02~6.html'>dB02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-db02~8"></span> <h3> function <a href='../proc/db02~8.html'>dB02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -454,7 +457,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~26"></span>
+              <span class="anchor" id="variable-r~41"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -508,7 +511,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~116"></span>
+              <span class="anchor" id="variable-settings~50"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -523,7 +526,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~83"></span>
+              <span class="anchor" id="variable-grid~22"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -538,7 +541,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~69"></span>
+              <span class="anchor" id="variable-background~26"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -553,7 +556,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~43"></span>
+              <span class="anchor" id="variable-physics~17"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>

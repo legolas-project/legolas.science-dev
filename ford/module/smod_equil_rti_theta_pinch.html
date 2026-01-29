@@ -133,7 +133,7 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#variable-width~3">width</a>
+            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#variable-width~4">width</a>
             <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#variable-b_inf">B_inf</a>
             <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#variable-bigo">bigO</a>
         </div>
@@ -158,13 +158,13 @@
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-fx">fx</a>
             <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-dfx">dfx</a>
-            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-rho0~14">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-drho0~8">drho0</a>
-            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-t0~14">T0</a>
-            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-v02~4">v02</a>
-            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-dv02~3">dv02</a>
-            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-b03~13">B03</a>
-            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-db03~7">dB03</a>
+            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-rho0~17">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-drho0~9">drho0</a>
+            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-t0~17">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-v02~7">v02</a>
+            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-dv02~6">dv02</a>
+            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-b03~15">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_rti_theta_pinch.html#proc-db03~8">dB03</a>
         </div>
       </div>
     </div>
@@ -208,18 +208,20 @@ II. Internal modes." Physics of Plasmas 25.3 (2018): 032110</em>.
 and also appears in section 13.4, figs. 13.11 to 13.15 in
 <em>Goedbloed, H., Keppens, R., &amp; Poedts, S. (2019). Magnetohydrodynamics of Laboratory
 and Astrophysical Plasmas. Cambridge University Press.</em>
-<a href="http://doi.org/10.1017/9781316403679">DOI</a>.
-!!! note
-    Default values are given by</p>
-<div class="codehilite"><pre><span></span><code>-<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k2<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>k3<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>so<span class="w"> </span>HD<span class="w"> </span>RTI
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>cte_rho0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1<span class="w"> </span>:<span class="w"> </span>maximum<span class="w"> </span>density<span class="w"> </span>value.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>alpha<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>2<span class="w"> </span>:<span class="w"> </span>represents<span class="w"> </span>the<span class="w"> </span>stretching<span class="w"> </span>parameter.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>delta<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>1/6<span class="w"> </span>:<span class="w"> </span>represents<span class="w"> </span>the<span class="w"> </span>magnetic<span class="w"> </span>field<span class="w"> </span>deviation<span class="w"> </span>parameter.
--<span class="w"> </span><span class="nt">&lt;tt&gt;</span>r0<span class="nt">&lt;/tt&gt;</span><span class="w"> </span>=<span class="w"> </span>0<span class="w"> </span>:<span class="w"> </span>represents<span class="w"> </span>the<span class="w"> </span>normalised<span class="w"> </span>radius<span class="w"> </span>\(x_0\)<span class="w"> </span>at<span class="w"> </span>maximum<span class="w"> </span>density.
-
-and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>parfile.
-</code></pre></div>
+<a href="http://doi.org/10.1017/9781316403679">DOI</a>.</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>Default values are given by</p>
+<ul>
+<li><tt>k2</tt> = 1</li>
+<li><tt>k3</tt> = 0 : so HD RTI</li>
+<li><tt>cte_rho0</tt> = 1 : maximum density value.</li>
+<li><tt>alpha</tt> = 2 : represents the stretching parameter.</li>
+<li><tt>delta</tt> = 1/6 : represents the magnetic field deviation parameter.</li>
+<li><tt>r0</tt> = 0 : represents the normalised radius <script type="math/tex">x_0</script> at maximum density.</li>
+</ul>
+<p>and can all be changed in the parfile.</p>
+</p>
+</div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -257,7 +259,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-width~3"></span>
+              <span class="anchor" id="variable-width~4"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -338,7 +340,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~44"></span>
+              <span class="anchor" id="variable-r~42"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -383,6 +385,96 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
+              <span class="anchor" id="variable-r~43"></span>
+              real(kind=dp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~17"></span> <h3> function <a href='../proc/rho0~17.html'>rho0</a>(r)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~44"></span>
+              real(kind=dp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-drho0~9"></span> <h3> function <a href='../proc/drho0~9.html'>drho0</a>(r)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
               <span class="anchor" id="variable-r~45"></span>
               real(kind=dp),
             </td>
@@ -409,7 +501,25 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~14"></span> <h3> function <a href='../proc/rho0~14.html'>rho0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~17"></span> <h3> function <a href='../proc/t0~17.html'>T0</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-v02~7"></span> <h3> function <a href='../proc/v02~7.html'>v02</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -454,7 +564,25 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-drho0~8"></span> <h3> function <a href='../proc/drho0~8.html'>drho0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-dv02~6"></span> <h3> function <a href='../proc/dv02~6.html'>dv02</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~15"></span> <h3> function <a href='../proc/b03~15.html'>B03</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -499,25 +627,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~14"></span> <h3> function <a href='../proc/t0~14.html'>T0</a>()  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-    <em>None</em>
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-v02~4"></span> <h3> function <a href='../proc/v02~4.html'>v02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-db03~8"></span> <h3> function <a href='../proc/db03~8.html'>dB03</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -537,114 +647,6 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         <tr>
             <td>
               <span class="anchor" id="variable-r~48"></span>
-              real(kind=dp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>r</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dv02~3"></span> <h3> function <a href='../proc/dv02~3.html'>dv02</a>()  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-    <em>None</em>
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~13"></span> <h3> function <a href='../proc/b03~13.html'>B03</a>(r)  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-r~49"></span>
-              real(kind=dp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>r</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db03~7"></span> <h3> function <a href='../proc/db03~7.html'>dB03</a>(r)  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-r~50"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -698,7 +700,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~126"></span>
+              <span class="anchor" id="variable-settings~60"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -713,7 +715,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~93"></span>
+              <span class="anchor" id="variable-grid~32"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -728,7 +730,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~79"></span>
+              <span class="anchor" id="variable-background~36"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -743,7 +745,7 @@ and<span class="w"> </span>can<span class="w"> </span>all<span class="w"> </span
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~53"></span>
+              <span class="anchor" id="variable-physics~27"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>

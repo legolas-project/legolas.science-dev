@@ -143,7 +143,7 @@
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-cte_v02">cte_v02</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-cte_v03">cte_v03</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-cte_p0">cte_p0</a>
-            <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-p1">p1</a>
+            <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-p1~2">p1</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-p2">p2</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-p3">p3</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-p4">p4</a>
@@ -151,9 +151,9 @@
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-p6">p6</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-p7">p7</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-p8">p8</a>
-            <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-alpha~2">alpha</a>
-            <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-beta~2">beta</a>
-            <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-delta">delta</a>
+            <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-alpha~3">alpha</a>
+            <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-beta">beta</a>
+            <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-delta~2">delta</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-theta">theta</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-tau">tau</a>
             <a class="list-group-item" href="../module/mod_equilibrium_params.html#variable-lambda">lambda</a>
@@ -213,11 +213,13 @@
 All parameters used in the equilibrium submodules are defined here
 for convenience, including the wave numbers <script type="math/tex">k_2</script> and <script type="math/tex">k_3</script>.
 All of these values are NaN initially, such that variables that are
-not properly set propagate their value and are easy to spot in follow-up checks.
-!!! note 
-    Variables that are not used remain equal to NaN throughout program execution.
-    We define all of these in one module so they allow for easy setting through
-    the parfile, and hence allow for more flexible control in the submodules.</p>
+not properly set propagate their value and are easy to spot in follow-up checks.</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note<p>Variables that are not used remain equal to NaN throughout program execution.
+We define all of these in one module so they allow for easy setting through
+the parfile, and hence allow for more flexible control in the submodules.</p>
+</p>
+</div>
 <br>          <div class="card mb-4">
       <h3 class="card-header card-title bg-light">Uses</h3>
       <div class="card-body">
@@ -419,7 +421,7 @@ not properly set propagate their value and are easy to spot in follow-up checks.
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-p1"></span>
+              <span class="anchor" id="variable-p1~2"></span>
               real(kind=dp),
             </td>
               <td>public</td>
@@ -555,7 +557,7 @@ not properly set propagate their value and are easy to spot in follow-up checks.
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-alpha~2"></span>
+              <span class="anchor" id="variable-alpha~3"></span>
               real(kind=dp),
             </td>
               <td>public</td>
@@ -572,7 +574,7 @@ not properly set propagate their value and are easy to spot in follow-up checks.
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-beta~2"></span>
+              <span class="anchor" id="variable-beta"></span>
               real(kind=dp),
             </td>
               <td>public</td>
@@ -589,7 +591,7 @@ not properly set propagate their value and are easy to spot in follow-up checks.
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-delta"></span>
+              <span class="anchor" id="variable-delta~2"></span>
               real(kind=dp),
             </td>
               <td>public</td>

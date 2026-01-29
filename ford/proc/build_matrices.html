@@ -161,11 +161,11 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
-                  <li class="list-inline-item"><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></li>
-                  <li class="list-inline-item"><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
                   <li class="list-inline-item"><a href='../module/mod_boundary_manager.html'>mod_boundary_manager</a></li>
                   <li class="list-inline-item"><a href='../module/mod_build_quadblock.html'>mod_build_quadblock</a></li>
+                  <li class="list-inline-item"><a href='../module/mod_global_variables.html'>mod_global_variables</a></li>
+                  <li class="list-inline-item"><a href='../module/mod_matrix_structure.html'>mod_matrix_structure</a></li>
+                  <li class="list-inline-item"><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></li>
               </ul>
             </li>
         </ul>
@@ -173,11 +173,13 @@
     </div>
 
 
-    <p>!!! note
-    The quadblock is shifted along the main (tri)diagonal.
-    We add <code>dim_subblock</code> instead of <code>dim_quadblock</code> to the indices,
-    due to overlapping of the bottom-right part of the quadblock with the
-    top-left part of the next grid interval.</p>
+    <div class="alert alert-info">
+<p class="alert-title h4">Note<p>The quadblock is shifted along the main (tri)diagonal.
+We add <code>dim_subblock</code> instead of <code>dim_quadblock</code> to the indices,
+due to overlapping of the bottom-right part of the quadblock with the
+top-left part of the next grid interval.</p>
+</p>
+</div>
 
 
     <h3>Arguments</h3>
@@ -193,7 +195,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_b"></span>
+              <span class="anchor" id="variable-matrix_b~7"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -208,7 +210,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_a"></span>
+              <span class="anchor" id="variable-matrix_a~7"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -223,7 +225,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~27"></span>
+              <span class="anchor" id="variable-settings~130"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -238,7 +240,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~21"></span>
+              <span class="anchor" id="variable-grid~92"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -253,7 +255,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~24"></span>
+              <span class="anchor" id="variable-background~75"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(in)</td>
@@ -268,7 +270,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~18"></span>
+              <span class="anchor" id="variable-physics~52"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(in)</td>

@@ -161,9 +161,11 @@
 <p><code>cputic()</code> starts the CPU timer. The subroutines records the processor time
 at execution of this command. Use <code>cputoc(message)</code> to log the elapsed time
 since the last call of <code>cputic()</code>.</p>
-<p>!!! warning
-    As <code>cputic()</code> and <code>cputoc(message)</code> rely on a module variable, they
-    are not thread safe.</p>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning<p>As <code>cputic()</code> and <code>cputoc(message)</code> rely on a module variable, they
+are not thread safe.</p>
+</p>
+</div>
 <p><code>cputic(start_time)</code> writes the value of the processor time at execution
 of this command to <strong>start_time</strong>. Calling this command, shall not change
 the module variable associated with calling <code>cputic()</code>.</p>

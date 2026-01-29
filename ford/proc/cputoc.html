@@ -160,12 +160,16 @@
     <p>Subroutine to end a CPU timer.</p>
 <p><code>cputoc(message)</code> logs the elapsed CPU time in seconds since the most recent
 call to <code>cputic()</code> along with <strong>message</strong> as a debug message.</p>
-<p>!!! warning
-    As <code>cputic()</code> and <code>cputoc(message)</code> rely on a module variable, they
-    are not thread safe.</p>
-<p>!!! warning
-    If <code>cputoc(message)</code> is called without first calling <code>cputic()</code> the
-    result will be meaningless.</p>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning<p>As <code>cputic()</code> and <code>cputoc(message)</code> rely on a module variable, they
+are not thread safe.</p>
+</p>
+</div>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning<p>If <code>cputoc(message)</code> is called without first calling <code>cputic()</code> the
+result will be meaningless.</p>
+</p>
+</div>
 <p><code>cputoc(message, start_time)</code> logs the elapsed CPU time in seconds since the
 call of <code>cputic(start_time)</code>, along with <strong>message</strong>.</p>
 
