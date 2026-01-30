@@ -135,10 +135,10 @@
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../type/banded_matrix_t.html#variable-m">m</a>
-            <a class="list-group-item" href="../type/banded_matrix_t.html#variable-n~2">n</a>
-            <a class="list-group-item" href="../type/banded_matrix_t.html#variable-kl">kl</a>
-            <a class="list-group-item" href="../type/banded_matrix_t.html#variable-ku">ku</a>
-            <a class="list-group-item" href="../type/banded_matrix_t.html#variable-ab~2">AB</a>
+            <a class="list-group-item" href="../type/banded_matrix_t.html#variable-n">n</a>
+            <a class="list-group-item" href="../type/banded_matrix_t.html#variable-kl~3">kl</a>
+            <a class="list-group-item" href="../type/banded_matrix_t.html#variable-ku~3">ku</a>
+            <a class="list-group-item" href="../type/banded_matrix_t.html#variable-ab">AB</a>
         </div>
       </div>
     </div>
@@ -165,12 +165,12 @@
       </a>
       <div id="boundprocs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-get_element~2">get_element</a>
-            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-set_element~2">set_element</a>
-            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-get_total_nb_elements~3">get_total_nb_elements</a>
+            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-get_element">get_element</a>
+            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-set_element">set_element</a>
+            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-get_total_nb_elements~2">get_total_nb_elements</a>
             <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-get_total_nb_nonzero_elements">get_total_nb_nonzero_elements</a>
-            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-is_compatible_with~3">is_compatible_with</a>
-            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-destroy~2">destroy</a>
+            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-is_compatible_with">is_compatible_with</a>
+            <a class="list-group-item" href="../type/banded_matrix_t.html#boundprocedure-destroy">destroy</a>
         </div>
       </div>
     </div>
@@ -220,7 +220,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-n~2"></span>
+              <span class="anchor" id="variable-n"></span>
               integer,
             </td>
               <td>public</td>
@@ -237,7 +237,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-kl"></span>
+              <span class="anchor" id="variable-kl~3"></span>
               integer,
             </td>
               <td>public</td>
@@ -254,7 +254,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ku"></span>
+              <span class="anchor" id="variable-ku~3"></span>
               integer,
             </td>
               <td>public</td>
@@ -271,7 +271,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ab~2"></span>
+              <span class="anchor" id="variable-ab"></span>
               complex(kind=dp),
             </td>
               <td>public,</td>
@@ -299,7 +299,7 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-get_element~2"></span>
+      <span class="anchor" id="boundprocedure-get_element"></span>
       <h3>
           procedure, public ::
   <strong>get_element</strong>
@@ -309,7 +309,7 @@
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private pure function <a href='../proc/get_element~2.html'>get_element</a>(this, row, col) result(element)  
+    private pure function <a href='../proc/get_element.html'>get_element</a>(this, row, col) result(element)  
 </h3>
     
 
@@ -390,7 +390,7 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-set_element~2"></span>
+      <span class="anchor" id="boundprocedure-set_element"></span>
       <h3>
           procedure, public ::
   <strong>set_element</strong>
@@ -400,7 +400,7 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private pure subroutine <a href='../proc/set_element~2.html'>set_element</a>(this, row, col, element)  
+    private pure subroutine <a href='../proc/set_element.html'>set_element</a>(this, row, col, element)  
 </h3>
     
 
@@ -492,7 +492,7 @@ falls outside of the banded structure.</p>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-get_total_nb_elements~3"></span>
+      <span class="anchor" id="boundprocedure-get_total_nb_elements~2"></span>
       <h3>
           procedure, public ::
   <strong>get_total_nb_elements</strong>
@@ -610,7 +610,7 @@ falls outside of the banded structure.</p>
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-is_compatible_with~3"></span>
+      <span class="anchor" id="boundprocedure-is_compatible_with"></span>
       <h3>
           procedure, public ::
   <strong>is_compatible_with</strong>
@@ -620,7 +620,7 @@ falls outside of the banded structure.</p>
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private pure function <a href='../proc/is_compatible_with~2.html'>is_compatible_with</a>(this, other)  
+    private pure function <a href='../proc/is_compatible_with.html'>is_compatible_with</a>(this, other)  
 </h3>
     
 
@@ -689,7 +689,7 @@ Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-destroy~2"></span>
+      <span class="anchor" id="boundprocedure-destroy"></span>
       <h3>
           procedure, public ::
   <strong>destroy</strong>
@@ -699,7 +699,7 @@ Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private pure subroutine <a href='../proc/destroy~2.html'>destroy</a>(this)  
+    private pure subroutine <a href='../proc/destroy.html'>destroy</a>(this)  
 </h3>
     
 

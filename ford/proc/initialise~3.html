@@ -92,20 +92,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.1% of total for procedures.">16 statements</a>
+                 title=" 0.1% of total for procedures.">9 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/mod_radiative_cooling.f08"> Source File</a>
+              <a href="../src/mod_derived_efs.f08"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/mod_radiative_cooling.f08.html'>mod_radiative_cooling.f08</a></li>
-                <li class="breadcrumb-item"><a href='../module/mod_radiative_cooling.html'>mod_radiative_cooling</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_derived_efs.f08.html'>mod_derived_efs.f08</a></li>
+                <li class="breadcrumb-item"><a href='../module/mod_derived_efs.html'>mod_derived_efs</a></li>
             <li class="breadcrumb-item active" aria-current="page">initialise</li>
           </ol>
         </nav>
@@ -153,25 +153,13 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private  subroutine initialise(this)  
+    <h2>private  subroutine initialise(this, name, ef_grid_size, nb_efs)  
 </h2>
-        <div class="card mb-4">
-      <h3 class="card-header card-title bg-light">Uses</h3>
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <ul class="list-inline">
-                  <li class="list-inline-item"><a href='../module/mod_cooling_curves.html'>mod_cooling_curves</a></li>
-              </ul>
-            </li>
-        </ul>
-      </div>
-    </div>
-
+    
 
 
     <h3>Type Bound</h3>
-    <p><a href='../type/cooling_t.html'>cooling_t</a></p>
+    <p><a href='../type/derived_ef_t.html'>derived_ef_t</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -186,8 +174,8 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~123"></span>
-              class(<a href='../type/cooling_t.html'>cooling_t</a>),
+              <span class="anchor" id="variable-this~200"></span>
+              class(<a href='../type/derived_ef_t.html'>derived_ef_t</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -195,6 +183,51 @@
             </td>
             <td>::</td>
             <td><strong>this</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~8"></span>
+              character(len=str_len_arr),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ef_grid_size~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ef_grid_size</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nb_efs~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nb_efs</strong></td>
             <td>
                 
             </td>
