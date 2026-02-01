@@ -187,12 +187,12 @@ correct solver based on parfile settings.</p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
-                  <li class="list-inline-item"><a href='mod_check_values.html'>mod_check_values</a></li>
                   <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
-                  <li class="list-inline-item"><a href='mod_transform_matrix.html'>mod_transform_matrix</a></li>
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
+                  <li class="list-inline-item"><a href='mod_check_values.html'>mod_check_values</a></li>
+                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
                   <li class="list-inline-item"><a href='mod_matrix_structure.html'>mod_matrix_structure</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
+                  <li class="list-inline-item"><a href='mod_transform_matrix.html'>mod_transform_matrix</a></li>
               </ul>
             </li>
         </ul>
@@ -255,7 +255,7 @@ correct solver based on parfile settings.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_a~7"></span>
+              <span class="anchor" id="variable-matrix_a"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -270,7 +270,7 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_b~7"></span>
+              <span class="anchor" id="variable-matrix_b"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -285,7 +285,231 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~50"></span>
+              <span class="anchor" id="variable-settings~68"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                <p>settings object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-omega~3"></span>
+              complex(kind=dp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>omega</strong>(:)</td>
+            <td>
+                <p>array with eigenvalues</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vr"></span>
+              complex(kind=dp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vr</strong>(:,:)</td>
+            <td>
+                <p>array with right eigenvectors</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-qr_cholesky"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different solution methods implemented in submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine qr_cholesky(matrix_A, matrix_B, settings, omega, vr)  
+    <a href="../proc/qr_cholesky.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-matrix_a~2"></span>
+              type(<a href='../type/matrix_t.html'>matrix_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>matrix_A</strong></td>
+            <td>
+                <p>matrix A</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-matrix_b~2"></span>
+              type(<a href='../type/matrix_t.html'>matrix_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>matrix_B</strong></td>
+            <td>
+                <p>matrix B</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~69"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                <p>settings object</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-omega~4"></span>
+              complex(kind=dp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>omega</strong>(:)</td>
+            <td>
+                <p>array with eigenvalues</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vr~2"></span>
+              complex(kind=dp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vr</strong>(:,:)</td>
+            <td>
+                <p>array with right eigenvectors</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-qz_direct"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different solution methods implemented in submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine qz_direct(matrix_A, matrix_B, settings, omega, vr)  
+    <a href="../proc/qz_direct.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-matrix_a~3"></span>
+              type(<a href='../type/matrix_t.html'>matrix_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>matrix_A</strong></td>
+            <td>
+                <p>matrix A</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-matrix_b~3"></span>
+              type(<a href='../type/matrix_t.html'>matrix_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>matrix_B</strong></td>
+            <td>
+                <p>matrix B</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~70"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -338,230 +562,6 @@ correct solver based on parfile settings.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-qr_cholesky"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different solution methods implemented in submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine qr_cholesky(matrix_A, matrix_B, settings, omega, vr)  
-    <a href="../proc/qr_cholesky.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-matrix_a~8"></span>
-              type(<a href='../type/matrix_t.html'>matrix_t</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>matrix_A</strong></td>
-            <td>
-                <p>matrix A</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-matrix_b~8"></span>
-              type(<a href='../type/matrix_t.html'>matrix_t</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>matrix_B</strong></td>
-            <td>
-                <p>matrix B</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~51"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                <p>settings object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-omega~6"></span>
-              complex(kind=dp),
-            </td>
-<td>intent(out)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>omega</strong>(:)</td>
-            <td>
-                <p>array with eigenvalues</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-vr~4"></span>
-              complex(kind=dp),
-            </td>
-<td>intent(out)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>vr</strong>(:,:)</td>
-            <td>
-                <p>array with right eigenvectors</p>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-qz_direct"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different solution methods implemented in submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine qz_direct(matrix_A, matrix_B, settings, omega, vr)  
-    <a href="../proc/qz_direct.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-matrix_a~9"></span>
-              type(<a href='../type/matrix_t.html'>matrix_t</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>matrix_A</strong></td>
-            <td>
-                <p>matrix A</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-matrix_b~9"></span>
-              type(<a href='../type/matrix_t.html'>matrix_t</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>matrix_B</strong></td>
-            <td>
-                <p>matrix B</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~52"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                <p>settings object</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-omega~7"></span>
-              complex(kind=dp),
-            </td>
-<td>intent(out)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>omega</strong>(:)</td>
-            <td>
-                <p>array with eigenvalues</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-vr~5"></span>
-              complex(kind=dp),
-            </td>
-<td>intent(out)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>vr</strong>(:,:)</td>
-            <td>
-                <p>array with right eigenvectors</p>
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
       <span class="anchor" id="interface-arnoldi"></span>
       <h3>        interface
       </h3>
@@ -591,7 +591,7 @@ correct solver based on parfile settings.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_a~10"></span>
+              <span class="anchor" id="variable-matrix_a~4"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -606,7 +606,7 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_b~10"></span>
+              <span class="anchor" id="variable-matrix_b~4"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -621,7 +621,7 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~53"></span>
+              <span class="anchor" id="variable-settings~71"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -636,7 +636,7 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-omega~8"></span>
+              <span class="anchor" id="variable-omega~6"></span>
               complex(kind=dp),
             </td>
 <td>intent(out)</td>
@@ -651,7 +651,7 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-vr~6"></span>
+              <span class="anchor" id="variable-vr~4"></span>
               complex(kind=dp),
             </td>
 <td>intent(out)</td>
@@ -703,7 +703,7 @@ correct solver based on parfile settings.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_a~11"></span>
+              <span class="anchor" id="variable-matrix_a~5"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -718,7 +718,7 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_b~11"></span>
+              <span class="anchor" id="variable-matrix_b~5"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -733,7 +733,7 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~54"></span>
+              <span class="anchor" id="variable-settings~72"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -748,7 +748,7 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-omega~9"></span>
+              <span class="anchor" id="variable-omega~7"></span>
               complex(kind=dp),
             </td>
 <td>intent(out)</td>
@@ -763,7 +763,7 @@ correct solver based on parfile settings.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-vr~7"></span>
+              <span class="anchor" id="variable-vr~5"></span>
               complex(kind=dp),
             </td>
 <td>intent(out)</td>
@@ -813,7 +813,7 @@ passed in the parfile, different solvers are called.</p><a href="../proc/solve_e
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_a~12"></span>
+              <span class="anchor" id="variable-matrix_a~6"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -828,7 +828,7 @@ passed in the parfile, different solvers are called.</p><a href="../proc/solve_e
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_b~12"></span>
+              <span class="anchor" id="variable-matrix_b~6"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -843,7 +843,7 @@ passed in the parfile, different solvers are called.</p><a href="../proc/solve_e
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~55"></span>
+              <span class="anchor" id="variable-settings~73"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -858,7 +858,7 @@ passed in the parfile, different solvers are called.</p><a href="../proc/solve_e
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-omega~10"></span>
+              <span class="anchor" id="variable-omega~8"></span>
               complex(kind=dp),
             </td>
 <td>intent(out)</td>
@@ -873,7 +873,7 @@ passed in the parfile, different solvers are called.</p><a href="../proc/solve_e
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-vr~8"></span>
+              <span class="anchor" id="variable-vr~6"></span>
               complex(kind=dp),
             </td>
 <td>intent(out)</td>

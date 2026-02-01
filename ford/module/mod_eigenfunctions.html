@@ -168,8 +168,8 @@
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-initialise">initialise</a>
-            <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-assemble">assemble</a>
-            <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-delete~10">delete</a>
+            <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-assemble~2">assemble</a>
+            <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-delete~5">delete</a>
             <a class="list-group-item" href="../module/mod_eigenfunctions.html#proc-select_eigenfunctions_to_save">select_eigenfunctions_to_save</a>
         </div>
       </div>
@@ -197,11 +197,11 @@
             <li class="list-group-item">
               <ul class="list-inline">
                   <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
-                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
                   <li class="list-inline-item"><a href='mod_derived_efs.html'>mod_derived_efs</a></li>
-                  <li class="list-inline-item"><a href='mod_background.html'>mod_background</a></li>
+                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
                   <li class="list-inline-item"><a href='mod_base_efs.html'>mod_base_efs</a></li>
                   <li class="list-inline-item"><a href='mod_derived_ef_names.html'>mod_derived_ef_names</a></li>
+                  <li class="list-inline-item"><a href='mod_background.html'>mod_background</a></li>
                   <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
               </ul>
             </li>
@@ -244,7 +244,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~46"></span>
+              <span class="anchor" id="variable-settings~17"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
               <td>private,</td>
@@ -261,7 +261,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~17"></span>
+              <span class="anchor" id="variable-grid~12"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
               <td>private,</td>
@@ -278,7 +278,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~21"></span>
+              <span class="anchor" id="variable-background~15"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
               <td>private,</td>
@@ -377,12 +377,12 @@
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/eigenfunctions_t.html#boundprocedure-assemble'>assemble</a></strong></td>
+  <strong><a href='../type/eigenfunctions_t.html#boundprocedure-assemble~2'>assemble</a></strong></td>
                   <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/eigenfunctions_t.html#boundprocedure-delete~10'>delete</a></strong></td>
+  <strong><a href='../type/eigenfunctions_t.html#boundprocedure-delete~5'>delete</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -420,7 +420,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~47"></span>
+              <span class="anchor" id="variable-settings~18"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout),</td>
@@ -435,7 +435,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~18"></span>
+              <span class="anchor" id="variable-grid~13"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in),</td>
@@ -450,7 +450,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~22"></span>
+              <span class="anchor" id="variable-background~16"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(in),</td>
@@ -495,7 +495,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-eigenvalue~2"></span>
+              <span class="anchor" id="variable-eigenvalue"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -510,7 +510,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-radius~2"></span>
+              <span class="anchor" id="variable-radius"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -525,7 +525,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-center~2"></span>
+              <span class="anchor" id="variable-center"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -575,7 +575,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~90"></span>
+              <span class="anchor" id="variable-this~29"></span>
               class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -590,7 +590,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-omega~3"></span>
+              <span class="anchor" id="variable-omega"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -611,7 +611,7 @@
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-assemble"></span> <h3>private  subroutine <a href='../proc/assemble.html'>assemble</a>(this, right_eigenvectors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-assemble~2"></span> <h3>private  subroutine <a href='../proc/assemble~2.html'>assemble</a>(this, right_eigenvectors)  
 </h3></div>
     <div class="card-body">
           
@@ -630,7 +630,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~91"></span>
+              <span class="anchor" id="variable-this~30"></span>
               class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -666,7 +666,7 @@
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-delete~10"></span> <h3>private pure subroutine <a href='../proc/delete~10.html'>delete</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-delete~5"></span> <h3>private pure subroutine <a href='../proc/delete~5.html'>delete</a>(this)  
 </h3></div>
     <div class="card-body">
           
@@ -685,7 +685,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~92"></span>
+              <span class="anchor" id="variable-this~31"></span>
               class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -725,7 +725,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~93"></span>
+              <span class="anchor" id="variable-this~32"></span>
               class(<a href='../type/eigenfunctions_t.html'>eigenfunctions_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -740,7 +740,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-omega~4"></span>
+              <span class="anchor" id="variable-omega~2"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>

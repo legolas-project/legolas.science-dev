@@ -92,20 +92,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.0% of total for procedures.">5 statements</a>
+                 title=" 0.1% of total for procedures.">11 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/mod_banded_matrix.f08"> Source File</a>
+              <a href="../src/mod_state_vector.f08"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/mod_banded_matrix.f08.html'>mod_banded_matrix.f08</a></li>
-                <li class="breadcrumb-item"><a href='../module/mod_banded_matrix.html'>mod_banded_matrix</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_state_vector.f08.html'>mod_state_vector.f08</a></li>
+                <li class="breadcrumb-item"><a href='../module/mod_state_vector.html'>mod_state_vector</a></li>
             <li class="breadcrumb-item active" aria-current="page">is_compatible_with</li>
           </ol>
         </nav>
@@ -153,19 +153,13 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private pure function is_compatible_with(this, other)  
+    <h2>private  function is_compatible_with(this, splines)  
 </h2>
     
 
-    <p>Checks if a banded matrix is compatibe with another banded matrix.
-This implies that the following attributes should be equal:
-  - dimensions of the original matrices
-  - number of superdiagonals and subdiagonals
-  - dimensions of the banded matrices themselves
-Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.</code> otherwise.</p>
 
     <h3>Type Bound</h3>
-    <p><a href='../type/banded_matrix_t.html'>banded_matrix_t</a></p>
+    <p><a href='../type/state_vector_t.html'>state_vector_t</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -180,8 +174,8 @@ Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~62"></span>
-              class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
+              <span class="anchor" id="variable-this~10"></span>
+              class(<a href='../type/state_vector_t.html'>state_vector_t</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -190,22 +184,22 @@ Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.
             <td>::</td>
             <td><strong>this</strong></td>
             <td>
-                <p>type instance</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-other"></span>
-              type(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
+              <span class="anchor" id="variable-splines~2"></span>
+              character(len=*),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
               
             </td>
             <td>::</td>
-            <td><strong>other</strong></td>
+            <td><strong>splines</strong>(:)</td>
             <td>
-                <p>other banded matrix</p>
+                
             </td>
         </tr>
     </tbody>
