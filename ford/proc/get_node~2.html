@@ -97,15 +97,15 @@
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/mod_matrix_elements.f08"> Source File</a>
+              <a href="../src/mod_matrix_row.f08"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/mod_matrix_elements.f08.html'>mod_matrix_elements.f08</a></li>
-                <li class="breadcrumb-item"><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_matrix_row.f08.html'>mod_matrix_row.f08</a></li>
+                <li class="breadcrumb-item"><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></li>
             <li class="breadcrumb-item active" aria-current="page">get_node</li>
           </ol>
         </nav>
@@ -153,13 +153,16 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private  function get_node(this, inode) result(node)  
+    <h2>private  function get_node(this, column) result(node)  
 </h2>
     
 
+    <p>Returns a pointer to the node corresponding to the given column.
+Returns a nullified pointer if no node containing the given column index
+was found.</p>
 
     <h3>Type Bound</h3>
-    <p><a href='../type/matrix_elements_t.html'>matrix_elements_t</a></p>
+    <p><a href='../type/row_t.html'>row_t</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -174,8 +177,8 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~145"></span>
-              class(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),
+              <span class="anchor" id="variable-this~121"></span>
+              class(<a href='../type/row_t.html'>row_t</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -184,12 +187,12 @@
             <td>::</td>
             <td><strong>this</strong></td>
             <td>
-                
+                <p>type instance</p>
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-inode~3"></span>
+              <span class="anchor" id="variable-column~8"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -197,9 +200,9 @@
               
             </td>
             <td>::</td>
-            <td><strong>inode</strong></td>
+            <td><strong>column</strong></td>
             <td>
-                
+                <p>column index</p>
             </td>
         </tr>
     </tbody>
@@ -207,11 +210,11 @@
 
       <h3>Return Value
         <small>
-          <span class="anchor" id="variable-node~7"></span>
-          type(<a href='../type/matrix_element_node_t.html'>matrix_element_node_t</a>), pointer
+          <span class="anchor" id="variable-node~6"></span>
+          type(<a href='../type/node_t.html'>node_t</a>), pointer
         </small>
       </h3>
-      
+      <p>the node with a column value that matches column</p>
     <br>
 
 

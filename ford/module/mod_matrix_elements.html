@@ -155,7 +155,7 @@
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-new_matrix_elements">new_matrix_elements</a>
-            <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-get_node~2">get_node</a>
+            <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-get_node">get_node</a>
             <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-get_elements">get_elements</a>
             <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-get_positions">get_positions</a>
             <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-get_nb_elements">get_nb_elements</a>
@@ -174,9 +174,9 @@
       </a>
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-add_node~2">add_node</a>
+            <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-add_node">add_node</a>
             <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-increment_nb_elements">increment_nb_elements</a>
-            <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-delete~12">delete</a>
+            <a class="list-group-item" href="../module/mod_matrix_elements.html#proc-delete~10">delete</a>
         </div>
       </div>
     </div>
@@ -202,13 +202,13 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
+                  <li class="list-inline-item"><a href='mod_basis_functions.html'>mod_basis_functions</a></li>
                   <li class="list-inline-item"><a href='mod_get_indices.html'>mod_get_indices</a></li>
-                  <li class="list-inline-item"><a href='mod_state_vector.html'>mod_state_vector</a></li>
+                  <li class="list-inline-item"><a href='mod_state_vector_component.html'>mod_state_vector_component</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
                   <li class="list-inline-item"><a href='mod_matrix_element_node.html'>mod_matrix_element_node</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
-                  <li class="list-inline-item"><a href='mod_state_vector_component.html'>mod_state_vector_component</a></li>
-                  <li class="list-inline-item"><a href='mod_basis_functions.html'>mod_basis_functions</a></li>
+                  <li class="list-inline-item"><a href='mod_state_vector.html'>mod_state_vector</a></li>
               </ul>
             </li>
         </ul>
@@ -250,7 +250,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-nb_elements~2"></span>
+              <span class="anchor" id="variable-nb_elements"></span>
               integer,
             </td>
               <td>private</td>
@@ -267,7 +267,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-head~2"></span>
+              <span class="anchor" id="variable-head"></span>
               type(<a href='../type/matrix_element_node_t.html'>matrix_element_node_t</a>),
             </td>
               <td>private,</td>
@@ -284,7 +284,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-tail~2"></span>
+              <span class="anchor" id="variable-tail"></span>
               type(<a href='../type/matrix_element_node_t.html'>matrix_element_node_t</a>),
             </td>
               <td>private,</td>
@@ -327,12 +327,12 @@
           <tbody>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/matrix_elements_t.html#boundprocedure-add'>add</a></strong> => <a href='/home/runner/work/legolas/legolas/docs/ford/proc/add_node~2.html'>add_node</a></td>
+  <strong><a href='../type/matrix_elements_t.html#boundprocedure-add'>add</a></strong> => <a href='/home/runner/work/legolas/legolas/docs/ford/proc/add_node.html'>add_node</a></td>
                   <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/matrix_elements_t.html#boundprocedure-get_node~2'>get_node</a></strong></td>
+  <strong><a href='../type/matrix_elements_t.html#boundprocedure-get_node'>get_node</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -352,7 +352,7 @@
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/matrix_elements_t.html#boundprocedure-delete~12'>delete</a></strong></td>
+  <strong><a href='../type/matrix_elements_t.html#boundprocedure-delete~10'>delete</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -416,7 +416,7 @@
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_node~2"></span> <h3>private  function <a href='../proc/get_node~2.html'>get_node</a>(this, inode) result(node)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_node"></span> <h3>private  function <a href='../proc/get_node.html'>get_node</a>(this, inode) result(node)  
 </h3></div>
     <div class="card-body">
           
@@ -435,7 +435,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~145"></span>
+              <span class="anchor" id="variable-this~112"></span>
               class(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),
             </td>
 <td>intent(in)</td>
@@ -450,7 +450,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-inode~3"></span>
+              <span class="anchor" id="variable-inode~4"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -495,7 +495,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~146"></span>
+              <span class="anchor" id="variable-this~113"></span>
               class(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),
             </td>
 <td>intent(in)</td>
@@ -540,7 +540,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~147"></span>
+              <span class="anchor" id="variable-this~114"></span>
               class(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),
             </td>
 <td>intent(in)</td>
@@ -585,7 +585,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~148"></span>
+              <span class="anchor" id="variable-this~115"></span>
               class(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),
             </td>
 <td>intent(in)</td>
@@ -630,7 +630,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-element~17"></span>
+              <span class="anchor" id="variable-element~16"></span>
               class(*),
             </td>
 <td>intent(in)</td>
@@ -675,7 +675,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-position~2"></span>
+              <span class="anchor" id="variable-position~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -720,7 +720,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-element~18"></span>
+              <span class="anchor" id="variable-element~17"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -795,7 +795,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-element~19"></span>
+              <span class="anchor" id="variable-element~18"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -856,7 +856,7 @@
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-add_node~2"></span> <h3>private  subroutine <a href='../proc/add_node~2.html'>add_node</a>(this, element, sv_comp1, sv_comp2, s1do, s2do)  
+    <div class="card-header codesum"><span class="anchor" id="proc-add_node"></span> <h3>private  subroutine <a href='../proc/add_node.html'>add_node</a>(this, element, sv_comp1, sv_comp2, s1do, s2do)  
 </h3></div>
     <div class="card-body">
           
@@ -875,7 +875,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~144"></span>
+              <span class="anchor" id="variable-this~111"></span>
               class(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -890,7 +890,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-element~16"></span>
+              <span class="anchor" id="variable-element~15"></span>
               class(*),
             </td>
 <td>intent(in)</td>
@@ -990,7 +990,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~149"></span>
+              <span class="anchor" id="variable-this~116"></span>
               class(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -1011,7 +1011,7 @@
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-delete~12"></span> <h3>private pure subroutine <a href='../proc/delete~12.html'>delete</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-delete~10"></span> <h3>private pure subroutine <a href='../proc/delete~10.html'>delete</a>(this)  
 </h3></div>
     <div class="card-body">
           
@@ -1030,7 +1030,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~150"></span>
+              <span class="anchor" id="variable-this~117"></span>
               class(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),
             </td>
 <td>intent(inout)</td>

@@ -92,20 +92,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.1% of total for procedures.">10 statements</a>
+                 title=" 0.2% of total for procedures.">27 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/mod_matrix_row.f08"> Source File</a>
+              <a href="../src/mod_matrix_elements.f08"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/mod_matrix_row.f08.html'>mod_matrix_row.f08</a></li>
-                <li class="breadcrumb-item"><a href='../module/mod_matrix_row.html'>mod_matrix_row</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_matrix_elements.f08.html'>mod_matrix_elements.f08</a></li>
+                <li class="breadcrumb-item"><a href='../module/mod_matrix_elements.html'>mod_matrix_elements</a></li>
             <li class="breadcrumb-item active" aria-current="page">add_node</li>
           </ol>
         </nav>
@@ -153,14 +153,13 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private  subroutine add_node(this, column, element)  
+    <h2>private  subroutine add_node(this, element, sv_comp1, sv_comp2, s1do, s2do)  
 </h2>
     
 
-    <p>Adds a new node to the linked list with a given column index and value.</p>
 
     <h3>Type Bound</h3>
-    <p><a href='../type/row_t.html'>row_t</a></p>
+    <p><a href='../type/matrix_elements_t.html'>matrix_elements_t</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -175,8 +174,8 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~57"></span>
-              class(<a href='../type/row_t.html'>row_t</a>),
+              <span class="anchor" id="variable-this~111"></span>
+              class(<a href='../type/matrix_elements_t.html'>matrix_elements_t</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -185,27 +184,12 @@
             <td>::</td>
             <td><strong>this</strong></td>
             <td>
-                <p>type instance</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-column~3"></span>
-              integer,
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>column</strong></td>
-            <td>
-                <p>column position of the element</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-element~10"></span>
+              <span class="anchor" id="variable-element~15"></span>
               class(*),
             </td>
 <td>intent(in)</td>
@@ -215,7 +199,67 @@
             <td>::</td>
             <td><strong>element</strong></td>
             <td>
-                <p>the element to be added</p>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sv_comp1"></span>
+              type(<a href='../type/sv_component_t.html'>sv_component_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sv_comp1</strong></td>
+            <td>
+                <p>first state vector component</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sv_comp2"></span>
+              type(<a href='../type/sv_component_t.html'>sv_component_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sv_comp2</strong></td>
+            <td>
+                <p>second state vector component</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s1do"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s1do</strong></td>
+            <td>
+                <p>spline 1 derivative order, 1 = first derivative, 2 = second derivative, etc.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s2do"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s2do</strong></td>
+            <td>
+                <p>spline 2 derivative order, 1 = first derivative, 2 = second derivative, etc.</p>
             </td>
         </tr>
     </tbody>
