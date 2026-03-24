@@ -53,6 +53,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../deprecations/index.html">pylbo.deprecations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../exceptions/index.html">pylbo.exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../gimli/index.html">pylbo.gimli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ivp_solution/index.html">pylbo.ivp_solution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../testing/index.html">pylbo.testing</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../index.html">pylbo.utilities</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="../index.html">pylbo.utilities.datfiles</a></li>
@@ -249,6 +250,13 @@
 <dt class="sig sig-object py" id="pylbo.utilities.datfiles.header.LegolasHeader._get_matrices_offsets">
 <span class="sig-name descname"><span class="pre">_get_matrices_offsets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">istream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BinaryIO</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#pylbo.utilities.datfiles.header.LegolasHeader._get_matrices_offsets" title="Link to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.utilities.datfiles.header.LegolasHeader._get_iv_snapshots_offsets">
+<span class="sig-name descname"><span class="pre">_get_iv_snapshots_offsets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">istream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BinaryIO</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#pylbo.utilities.datfiles.header.LegolasHeader._get_iv_snapshots_offsets" title="Link to this definition"></a></dt>
+<dd><p>Attempt to read the IV snapshot metadata (if present).
+Return dict of offsets and metadata. If not present, return empty dict.</p>
+</dd></dl>
 
 </dd></dl>
 

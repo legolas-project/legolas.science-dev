@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="pylbo.utilities" href="../utilities/index.html" />
-    <link rel="prev" title="pylbo.gimli.utils" href="../gimli/utils/index.html" /> 
+    <link rel="prev" title="pylbo.ivp_solution" href="../ivp_solution/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,6 +53,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../deprecations/index.html">pylbo.deprecations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exceptions/index.html">pylbo.exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gimli/index.html">pylbo.gimli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ivp_solution/index.html">pylbo.ivp_solution</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">pylbo.testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/index.html">pylbo.utilities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/index.html">pylbo.visualisation</a></li>
@@ -95,7 +96,7 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.testing.FakeDataSet" title="pylbo.testing.FakeDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FakeDataSet</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Main container for a single Legolas dataset.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.testing.MockMouseEvent" title="pylbo.testing.MockMouseEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MockMouseEvent</span></code></a></p></td>
 <td><p></p></td>
@@ -141,6 +142,210 @@
 <dt class="sig sig-object py" id="pylbo.testing.FakeDataSet">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pylbo.testing.</span></span><span class="sig-name descname"><span class="pre">FakeDataSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.FakeDataSet" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="../data_containers/index.html#pylbo.data_containers.LegolasDataSet" title="pylbo.data_containers.LegolasDataSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pylbo.data_containers.LegolasDataSet</span></code></a></p>
+<p>Main container for a single Legolas dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>datfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Path to the datfile.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.header">
+<span class="sig-name descname"><span class="pre">header</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.header" title="Link to this definition"></a></dt>
+<dd><p>The datfile header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.grid">
+<span class="sig-name descname"><span class="pre">grid</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.grid" title="Link to this definition"></a></dt>
+<dd><p>The base grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.grid_gauss">
+<span class="sig-name descname"><span class="pre">grid_gauss</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.grid_gauss" title="Link to this definition"></a></dt>
+<dd><p>The Gaussian grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.equilibria">
+<span class="sig-name descname"><span class="pre">equilibria</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.equilibria" title="Link to this definition"></a></dt>
+<dd><p>Dictionary containing the equilibrium arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.eigenvalues">
+<span class="sig-name descname"><span class="pre">eigenvalues</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.eigenvalues" title="Link to this definition"></a></dt>
+<dd><p>Array containing the complex eigenvalues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.geometry">
+<span class="sig-name descname"><span class="pre">geometry</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.geometry" title="Link to this definition"></a></dt>
+<dd><p>The geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.scale_factor">
+<span class="sig-name descname"><span class="pre">scale_factor</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.scale_factor" title="Link to this definition"></a></dt>
+<dd><p>Array with the scale factor. One for Cartesian geometries, r for cylindrical.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.x_start">
+<span class="sig-name descname"><span class="pre">x_start</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.x_start" title="Link to this definition"></a></dt>
+<dd><p>Start of the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.x_end">
+<span class="sig-name descname"><span class="pre">x_end</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.x_end" title="Link to this definition"></a></dt>
+<dd><p>End of the grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.gridpoints">
+<span class="sig-name descname"><span class="pre">gridpoints</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.gridpoints" title="Link to this definition"></a></dt>
+<dd><p>The number of base gridpoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.gauss_gridpoints">
+<span class="sig-name descname"><span class="pre">gauss_gridpoints</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.gauss_gridpoints" title="Link to this definition"></a></dt>
+<dd><p>The number of Gaussian gridpoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.matrix_gridpoints">
+<span class="sig-name descname"><span class="pre">matrix_gridpoints</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.matrix_gridpoints" title="Link to this definition"></a></dt>
+<dd><p>The dimension of the matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.ef_gridpoints">
+<span class="sig-name descname"><span class="pre">ef_gridpoints</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.ef_gridpoints" title="Link to this definition"></a></dt>
+<dd><p>The number of eigenfunction gridpoints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.gamma">
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.gamma" title="Link to this definition"></a></dt>
+<dd><p>The ratio of specific heats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.eq_type">
+<span class="sig-name descname"><span class="pre">eq_type</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.eq_type" title="Link to this definition"></a></dt>
+<dd><p>The type of equilibrium selected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.cgs">
+<span class="sig-name descname"><span class="pre">cgs</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.cgs" title="Link to this definition"></a></dt>
+<dd><p>If <cite>True</cite>, all units are in cgs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.units">
+<span class="sig-name descname"><span class="pre">units</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.units" title="Link to this definition"></a></dt>
+<dd><p>Dictionary containing the unit normalisations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.testing.FakeDataSet.eq_names">
+<span class="sig-name descname"><span class="pre">eq_names</span></span><a class="headerlink" href="#pylbo.testing.FakeDataSet.eq_names" title="Link to this definition"></a></dt>
+<dd><p>Array containing the names of the equilibrium arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4)">numpy.ndarray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.testing.FakeDataSet._set_test_equilibria">
 <span class="sig-name descname"><span class="pre">_set_test_equilibria</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.testing.FakeDataSet._set_test_equilibria" title="Link to this definition"></a></dt>
@@ -243,7 +448,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../gimli/utils/index.html" class="btn btn-neutral float-left" title="pylbo.gimli.utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ivp_solution/index.html" class="btn btn-neutral float-left" title="pylbo.ivp_solution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../utilities/index.html" class="btn btn-neutral float-right" title="pylbo.utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

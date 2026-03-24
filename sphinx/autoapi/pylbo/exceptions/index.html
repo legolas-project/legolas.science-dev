@@ -53,6 +53,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../deprecations/index.html">pylbo.deprecations</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">pylbo.exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gimli/index.html">pylbo.gimli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ivp_solution/index.html">pylbo.ivp_solution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../testing/index.html">pylbo.testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/index.html">pylbo.utilities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/index.html">pylbo.visualisation</a></li>
@@ -117,6 +118,9 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.exceptions.ParfileGenerationError" title="pylbo.exceptions.ParfileGenerationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParfileGenerationError</span></code></a></p></td>
 <td><p>Gets thrown when something went wrong during parfile generation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.exceptions.IVSnapshotsNotPresent" title="pylbo.exceptions.IVSnapshotsNotPresent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IVSnapshotsNotPresent</span></code></a></p></td>
+<td><p>Handles trying to query for initial value snapshots when</p></td>
 </tr>
 </tbody>
 </table>
@@ -267,6 +271,19 @@ these are not present in the datfile.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.exceptions.ParfileGenerationError.key">
 <span class="sig-name descname"><span class="pre">key</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pylbo.exceptions.ParfileGenerationError.key" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pylbo.exceptions.IVSnapshotsNotPresent">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pylbo.exceptions.</span></span><span class="sig-name descname"><span class="pre">IVSnapshotsNotPresent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.exceptions.IVSnapshotsNotPresent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pylbo.exceptions.LegolasException" title="pylbo.exceptions.LegolasException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LegolasException</span></code></a></p>
+<p>Handles trying to query for initial value snapshots when
+these are not present in the datfile.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.exceptions.IVSnapshotsNotPresent.file">
+<span class="sig-name descname"><span class="pre">file</span></span><a class="headerlink" href="#pylbo.exceptions.IVSnapshotsNotPresent.file" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>

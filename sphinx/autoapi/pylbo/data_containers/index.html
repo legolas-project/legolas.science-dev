@@ -54,6 +54,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../deprecations/index.html">pylbo.deprecations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../exceptions/index.html">pylbo.exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gimli/index.html">pylbo.gimli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ivp_solution/index.html">pylbo.ivp_solution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../testing/index.html">pylbo.testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/index.html">pylbo.utilities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../visualisation/index.html">pylbo.visualisation</a></li>
@@ -671,6 +672,11 @@ a <a class="reference internal" href="#pylbo.data_containers.LegolasDataSeries" 
 <dd><p>Checks if the dataset is MHD.</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.has_iv_snapshots">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">has_iv_snapshots</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.has_iv_snapshots" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet._ensure_compatibility">
 <span class="sig-name descname"><span class="pre">_ensure_compatibility</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet._ensure_compatibility" title="Link to this definition"></a></dt>
@@ -972,6 +978,13 @@ Defaults to None, which means all eigenvalues are considered.</p></li>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.14)">complex</a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.data_containers.LegolasDataSet.get_iv_snapshots">
+<span class="sig-name descname"><span class="pre">get_iv_snapshots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../ivp_solution/index.html#pylbo.ivp_solution.IVPSolution" title="pylbo.ivp_solution.IVPSolution"><span class="pre">pylbo.ivp_solution.IVPSolution</span></a></span></span><a class="headerlink" href="#pylbo.data_containers.LegolasDataSet.get_iv_snapshots" title="Link to this definition"></a></dt>
+<dd><p>Return a structured IVPSolution object containing the times and
+the snapshot data for each component.</p>
 </dd></dl>
 
 </dd></dl>

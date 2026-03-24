@@ -17,6 +17,7 @@ Exceptions
    pylbo.exceptions.EigenvectorsNotPresent
    pylbo.exceptions.ResidualsNotPresent
    pylbo.exceptions.ParfileGenerationError
+   pylbo.exceptions.IVSnapshotsNotPresent
 
 
 Module Contents
@@ -284,5 +285,35 @@ Module Contents
    .. py:attribute:: key
       :value: None
 
+
+
+.. py:exception:: IVSnapshotsNotPresent(file)
+
+   Bases: :py:obj:`LegolasException`
+
+
+   
+   Handles trying to query for initial value snapshots when
+   these are not present in the datfile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: file
 
 

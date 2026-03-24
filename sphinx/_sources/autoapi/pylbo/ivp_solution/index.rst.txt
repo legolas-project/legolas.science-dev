@@ -1,0 +1,243 @@
+pylbo.ivp_solution
+==================
+
+.. py:module:: pylbo.ivp_solution
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   pylbo.ivp_solution.IVPSolution
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   pylbo.ivp_solution._fmt
+
+
+Module Contents
+---------------
+
+.. py:function:: _fmt(x, pos)
+
+.. py:class:: IVPSolution(times, data, component_names=None, x_domain=None, units=None)
+
+   
+   Container for IVP snapshot data returned by Legolas.
+
+   :param times: Physical times at each snapshot, shape ``(n_snap,)``.
+   :type times: np.ndarray
+   :param data: Snapshot data, shape ``(n_snap, n_comp, n_points)``.
+   :type data: np.ndarray
+   :param component_names: Map from integer index to component name, e.g. ``{0: "rho", 1: "v1"}``.
+   :type component_names: dict, optional
+   :param x_domain: Spatial coordinates, shape ``(n_points,)``.
+   :type x_domain: np.ndarray, optional
+   :param units: Unit normalisations from the Legolas datfile header.
+   :type units: dict, optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: times
+
+
+   .. py:attribute:: data
+
+
+   .. py:attribute:: component_names
+
+
+   .. py:attribute:: x_domain
+      :value: None
+
+
+
+   .. py:attribute:: units
+      :value: None
+
+
+
+   .. py:method:: _scale_component_array(component, comp_array)
+
+      
+      Returns ``comp_array`` scaled to physical (cgs) units.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _scale_time_array(times)
+
+
+   .. py:method:: _scale_x_domain(x_vals)
+
+
+   .. py:method:: _get_component_index(component)
+
+
+   .. py:method:: get_component(component)
+
+      
+      Returns the ``(n_snap, n_points)`` array for the requested component.
+
+      :param component: Component index or name (e.g. ``"rho"``).
+      :type component: int or str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: plot_space_time_heatmap(component, ax=None, cmap='plasma', time_range=None, **imshow_kwargs)
+
+      
+      Plot a space-time heatmap for the given component.
+
+      :param component: Which component to plot.
+      :type component: int or str
+      :param ax: Axes to plot on; created if not provided.
+      :type ax: ~matplotlib.axes.Axes, optional
+      :param cmap: Colormap passed to ``imshow``.
+      :type cmap: str
+      :param time_range: ``(t_min, t_max)`` to restrict the plotted time window.
+      :type time_range: tuple, optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: plot_spatial_slices(component, snap_indices, ax=None, **plot_kwargs)
+
+      
+      Plot the spatial profile of a component at selected snapshot indices.
+
+      :param component: Which component to plot.
+      :type component: int or str
+      :param snap_indices: Snapshot indices to plot, in ``[0, n_snap-1]``.
+      :type snap_indices: list of int
+      :param ax: Axes to plot on; created if not provided.
+      :type ax: ~matplotlib.axes.Axes, optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: plot_growth_vs_time(component, mode='centre', centre_idx=None, region=None, logy=True, tau=None, ax=None, data_kw=None, fit_kw=None)
+
+      
+      Plot perturbation amplitude vs. time, with an optional analytic
+      exp(t/tau) overlay for comparison against eigenvalue growth rates.
+
+      :param component: Which component to track.
+      :type component: str or int
+      :param mode: How to reduce the spatial data to a scalar amplitude.
+      :type mode: {"centre", "max", "integral"}
+      :param centre_idx: Spatial index for ``mode="centre"``; defaults to the midpoint.
+      :type centre_idx: int, optional
+      :param region: Spatial slice for ``mode="max"`` or ``"integral"``.
+      :type region: tuple (i_min, i_max), optional
+      :param logy: Use a semilog-y axis.
+      :type logy: bool
+      :param tau: Analytic e-folding time [s]. Positive => growth, negative => decay.
+      :type tau: float, optional
+      :param ax: Axes to plot on; created if not provided.
+      :type ax: ~matplotlib.axes.Axes, optional
+      :param data_kw: Extra kwargs forwarded to the data and fit ``plot`` calls.
+      :type data_kw: dict, optional
+      :param fit_kw: Extra kwargs forwarded to the data and fit ``plot`` calls.
+      :type fit_kw: dict, optional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_equilibrium &ndash; Legolas v. 2.2.1 - develop</title>
+    <title>mod_equilibrium &ndash; Legolas v. 2.3.0 - develop</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -44,7 +44,7 @@
     <div class="container-fluid mb-sm-4 mb-xl-2">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.2.1 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.3.0 - develop </a>
           <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
                   aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon">
@@ -92,7 +92,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 2.4% of total for modules and submodules.">283 statements</a>
+                 title=" 2.6% of total for modules and submodules.">325 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -181,6 +181,7 @@
             <a class="list-group-item" href="../module/mod_equilibrium.html#interface-harris_sheet_eq">harris_sheet_eq</a>
             <a class="list-group-item" href="../module/mod_equilibrium.html#interface-tc_pinch_eq">tc_pinch_eq</a>
             <a class="list-group-item" href="../module/mod_equilibrium.html#interface-numerical_eq">numerical_eq</a>
+            <a class="list-group-item" href="../module/mod_equilibrium.html#interface-ivp_demo_eq">ivp_demo_eq</a>
             <a class="list-group-item" href="../module/mod_equilibrium.html#interface-user_defined_eq">user_defined_eq</a>
         </div>
       </div>
@@ -234,13 +235,14 @@ are automatically accessible in every submodule that extends this one.</p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
+                  <li class="list-inline-item"><a href='mod_physics.html'>mod_physics</a></li>
+                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
+                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
                   <li class="list-inline-item"><a href='mod_physical_constants.html'>mod_physical_constants</a></li>
+                  <li class="list-inline-item"><a href='mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
                   <li class="list-inline-item"><a href='mod_background.html'>mod_background</a></li>
                   <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
-                  <li class="list-inline-item"><a href='mod_equilibrium_params.html'>mod_equilibrium_params</a></li>
-                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
-                  <li class="list-inline-item"><a href='mod_physics.html'>mod_physics</a></li>
-                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
+                  <li class="list-inline-item"><a href='mod_iv_initial_conditions.html'>mod_iv_initial_conditions</a></li>
                   <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
               </ul>
             </li>
@@ -268,6 +270,7 @@ are automatically accessible in every submodule that extends this one.</p>
                   <li class="list-inline-item"><a href='smod_equil_interchange_modes.html'>smod_equil_interchange_modes</a></li>
                   <li class="list-inline-item"><a href='smod_equil_internal_kink_instability.html'>smod_equil_internal_kink_instability</a></li>
                   <li class="list-inline-item"><a href='smod_equil_isothermal_atmosphere.html'>smod_equil_isothermal_atmosphere</a></li>
+                  <li class="list-inline-item"><a href='smod_equil_ivp_demo.html'>smod_equil_ivp_demo</a></li>
                   <li class="list-inline-item"><a href='smod_equil_kelvin_helmholtz_cd.html'>smod_equil_kelvin_helmholtz_cd</a></li>
                   <li class="list-inline-item"><a href='smod_equil_khi.html'>smod_equil_KHI</a></li>
                   <li class="list-inline-item"><a href='smod_equil_magnetothermal_instabilities.html'>smod_equil_magnetothermal_instabilities</a></li>
@@ -345,2530 +348,8 @@ are automatically accessible in every submodule that extends this one.</p>
     <ul class="list-group">
         <li class="list-group-item">
               <h3>
-    private module subroutine adiabatic_homo_eq(settings, grid, background, physics)  
+    private module subroutine adiabatic_homo_eq(settings, grid, background, physics, iv_initial_conditions)  
     <a href="../proc/adiabatic_homo_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~13"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~13"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~14"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~6"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-constant_current_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine constant_current_eq(settings, grid, background, physics)  
-    <a href="../proc/constant_current_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~14"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~14"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~15"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~7"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-coronal_flux_tube_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine coronal_flux_tube_eq(settings, grid, background, physics)  
-    <a href="../proc/coronal_flux_tube_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~15"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~15"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~16"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~8"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-discrete_alfven_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine discrete_alfven_eq(settings, grid, background, physics)  
-    <a href="../proc/discrete_alfven_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~16"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~16"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~17"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~9"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-flow_driven_instabilities_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine flow_driven_instabilities_eq(settings, grid, background, physics)  
-    <a href="../proc/flow_driven_instabilities_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~17"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~17"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~18"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~10"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-gold_hoyle_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine gold_hoyle_eq(settings, grid, background, physics)  
-    <a href="../proc/gold_hoyle_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~18"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~18"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~19"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~11"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-gravito_acoustic_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine gravito_acoustic_eq(settings, grid, background, physics)  
-    <a href="../proc/gravito_acoustic_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~19"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~19"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~20"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~12"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-gravito_mhd_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine gravito_mhd_eq(settings, grid, background, physics)  
-    <a href="../proc/gravito_mhd_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~20"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~20"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~21"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~13"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-interchange_modes_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine interchange_modes_eq(settings, grid, background, physics)  
-    <a href="../proc/interchange_modes_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~21"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~21"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~22"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~14"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-internal_kink_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine internal_kink_eq(settings, grid, background, physics)  
-    <a href="../proc/internal_kink_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~22"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~22"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~23"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~15"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-isothermal_atmosphere_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine isothermal_atmosphere_eq(settings, grid, background, physics)  
-    <a href="../proc/isothermal_atmosphere_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~23"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~23"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~24"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~16"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-khi_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine KHI_eq(settings, grid, background, physics)  
-    <a href="../proc/khi_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~24"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~24"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~25"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~17"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-kh_cd_instability_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine kh_cd_instability_eq(settings, grid, background, physics)  
-    <a href="../proc/kh_cd_instability_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~25"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~25"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~26"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~18"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-magnetothermal_instability_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine magnetothermal_instability_eq(settings, grid, background, physics)  
-    <a href="../proc/magnetothermal_instability_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~26"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~26"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~27"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~19"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-mri_accretion_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine MRI_accretion_eq(settings, grid, background, physics)  
-    <a href="../proc/mri_accretion_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~27"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~27"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~28"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~20"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-photospheric_flux_tube_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine photospheric_flux_tube_eq(settings, grid, background, physics)  
-    <a href="../proc/photospheric_flux_tube_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~28"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~28"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~29"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~21"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-resistive_homo_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine resistive_homo_eq(settings, grid, background, physics)  
-    <a href="../proc/resistive_homo_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~29"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~29"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~30"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~22"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-resistive_tearing_modes_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine resistive_tearing_modes_eq(settings, grid, background, physics)  
-    <a href="../proc/resistive_tearing_modes_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~30"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~30"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~31"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~23"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-resistive_tearing_modes_flow_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine resistive_tearing_modes_flow_eq(settings, grid, background, physics)  
-    <a href="../proc/resistive_tearing_modes_flow_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~31"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~31"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~32"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~24"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-resonant_absorption_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine resonant_absorption_eq(settings, grid, background, physics)  
-    <a href="../proc/resonant_absorption_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~32"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~32"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~33"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~25"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-rotating_plasma_cyl_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine rotating_plasma_cyl_eq(settings, grid, background, physics)  
-    <a href="../proc/rotating_plasma_cyl_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~33"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~33"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~34"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~26"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-rti_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine RTI_eq(settings, grid, background, physics)  
-    <a href="../proc/rti_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~34"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~34"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~35"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~27"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-rti_khi_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine RTI_KHI_eq(settings, grid, background, physics)  
-    <a href="../proc/rti_khi_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~35"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~35"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~36"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~28"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-rti_theta_pinch_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine RTI_theta_pinch_eq(settings, grid, background, physics)  
-    <a href="../proc/rti_theta_pinch_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~36"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~36"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~37"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~29"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-suydam_cluster_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine suydam_cluster_eq(settings, grid, background, physics)  
-    <a href="../proc/suydam_cluster_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~37"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~37"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~38"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~30"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-couette_flow_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine couette_flow_eq(settings, grid, background, physics)  
-    <a href="../proc/couette_flow_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-
-    </h3>
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-settings~38"></span>
-              type(<a href='../type/settings_t.html'>settings_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>settings</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-grid~38"></span>
-              type(<a href='../type/grid_t.html'>grid_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>grid</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-background~39"></span>
-              type(<a href='../type/background_t.html'>background_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>background</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-physics~31"></span>
-              type(<a href='../type/physics_t.html'>physics_t</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>physics</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-              <div class="card">
-    <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-taylor_couette_eq"></span>
-      <h3>        interface
-      </h3>
-    </div>
-      <div class="card-body">
-        <p>interface to the different equilibrium submodules</p>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-              <h3>
-    private module subroutine taylor_couette_eq(settings, grid, background, physics)  
-    <a href="../proc/taylor_couette_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 
     </h3>
   
@@ -2901,7 +382,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~39"></span>
+              <span class="anchor" id="variable-grid~17"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2916,7 +397,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~40"></span>
+              <span class="anchor" id="variable-background~23"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2931,7 +412,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~32"></span>
+              <span class="anchor" id="variable-physics~14"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -2940,6 +421,21 @@ are automatically accessible in every submodule that extends this one.</p>
             </td>
             <td>::</td>
             <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~2"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
             <td>
                 
             </td>
@@ -2954,7 +450,7 @@ are automatically accessible in every submodule that extends this one.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-harris_sheet_eq"></span>
+      <span class="anchor" id="interface-constant_current_eq"></span>
       <h3>        interface
       </h3>
     </div>
@@ -2964,8 +460,8 @@ are automatically accessible in every submodule that extends this one.</p>
     <ul class="list-group">
         <li class="list-group-item">
               <h3>
-    private module subroutine harris_sheet_eq(settings, grid, background, physics)  
-    <a href="../proc/harris_sheet_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    private module subroutine constant_current_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/constant_current_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 
     </h3>
   
@@ -2998,7 +494,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~40"></span>
+              <span class="anchor" id="variable-grid~18"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3013,7 +509,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~41"></span>
+              <span class="anchor" id="variable-background~24"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3028,7 +524,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~33"></span>
+              <span class="anchor" id="variable-physics~15"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3037,6 +533,21 @@ are automatically accessible in every submodule that extends this one.</p>
             </td>
             <td>::</td>
             <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~3"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
             <td>
                 
             </td>
@@ -3051,7 +562,7 @@ are automatically accessible in every submodule that extends this one.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-tc_pinch_eq"></span>
+      <span class="anchor" id="interface-coronal_flux_tube_eq"></span>
       <h3>        interface
       </h3>
     </div>
@@ -3061,8 +572,8 @@ are automatically accessible in every submodule that extends this one.</p>
     <ul class="list-group">
         <li class="list-group-item">
               <h3>
-    private module subroutine tc_pinch_eq(settings, grid, background, physics)  
-    <a href="../proc/tc_pinch_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    private module subroutine coronal_flux_tube_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/coronal_flux_tube_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 
     </h3>
   
@@ -3095,7 +606,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~41"></span>
+              <span class="anchor" id="variable-grid~19"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3110,7 +621,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~42"></span>
+              <span class="anchor" id="variable-background~25"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3125,7 +636,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~34"></span>
+              <span class="anchor" id="variable-physics~16"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3134,6 +645,21 @@ are automatically accessible in every submodule that extends this one.</p>
             </td>
             <td>::</td>
             <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~4"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
             <td>
                 
             </td>
@@ -3148,7 +674,7 @@ are automatically accessible in every submodule that extends this one.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-numerical_eq"></span>
+      <span class="anchor" id="interface-discrete_alfven_eq"></span>
       <h3>        interface
       </h3>
     </div>
@@ -3158,8 +684,8 @@ are automatically accessible in every submodule that extends this one.</p>
     <ul class="list-group">
         <li class="list-group-item">
               <h3>
-    private module subroutine numerical_eq(settings, grid, background, physics)  
-    <a href="../proc/numerical_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    private module subroutine discrete_alfven_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/discrete_alfven_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 
     </h3>
   
@@ -3192,7 +718,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~42"></span>
+              <span class="anchor" id="variable-grid~20"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3207,7 +733,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~43"></span>
+              <span class="anchor" id="variable-background~26"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3222,7 +748,7 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~35"></span>
+              <span class="anchor" id="variable-physics~17"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3231,6 +757,21 @@ are automatically accessible in every submodule that extends this one.</p>
             </td>
             <td>::</td>
             <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~5"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
             <td>
                 
             </td>
@@ -3245,7 +786,7 @@ are automatically accessible in every submodule that extends this one.</p>
 
               <div class="card">
     <div class="card-header bg-light codesum">
-      <span class="anchor" id="interface-user_defined_eq"></span>
+      <span class="anchor" id="interface-flow_driven_instabilities_eq"></span>
       <h3>        interface
       </h3>
     </div>
@@ -3255,8 +796,8 @@ are automatically accessible in every submodule that extends this one.</p>
     <ul class="list-group">
         <li class="list-group-item">
               <h3>
-    private module subroutine user_defined_eq(settings, grid, background, physics)  
-    <a href="../proc/user_defined_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    private module subroutine flow_driven_instabilities_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/flow_driven_instabilities_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 
     </h3>
   
@@ -3289,7 +830,1911 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~43"></span>
+              <span class="anchor" id="variable-grid~21"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~27"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~18"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~6"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-gold_hoyle_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine gold_hoyle_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/gold_hoyle_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~44"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~22"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~28"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~19"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~7"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-gravito_acoustic_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine gravito_acoustic_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/gravito_acoustic_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~45"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~23"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~29"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~20"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~8"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-gravito_mhd_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine gravito_mhd_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/gravito_mhd_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~46"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~24"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~30"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~21"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~9"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-interchange_modes_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine interchange_modes_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/interchange_modes_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~47"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~25"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~31"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~22"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~10"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-internal_kink_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine internal_kink_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/internal_kink_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~48"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~26"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~32"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~23"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~11"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-isothermal_atmosphere_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine isothermal_atmosphere_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/isothermal_atmosphere_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~49"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~27"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~33"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~24"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~12"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-khi_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine KHI_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/khi_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~50"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~28"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~34"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~25"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~13"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-kh_cd_instability_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine kh_cd_instability_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/kh_cd_instability_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~51"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~29"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~35"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~26"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~14"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-magnetothermal_instability_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine magnetothermal_instability_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/magnetothermal_instability_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~52"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~30"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~36"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~27"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~15"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-mri_accretion_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine MRI_accretion_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/mri_accretion_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~53"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~31"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~37"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~28"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~16"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-photospheric_flux_tube_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine photospheric_flux_tube_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/photospheric_flux_tube_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~54"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~32"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~38"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~29"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~17"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-resistive_homo_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine resistive_homo_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/resistive_homo_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~55"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~33"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~39"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~30"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~18"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-resistive_tearing_modes_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine resistive_tearing_modes_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/resistive_tearing_modes_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~56"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~34"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~40"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~31"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~19"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-resistive_tearing_modes_flow_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine resistive_tearing_modes_flow_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/resistive_tearing_modes_flow_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~57"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~35"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~41"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~32"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~20"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-resonant_absorption_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine resonant_absorption_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/resonant_absorption_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~58"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~36"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~42"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~33"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~21"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-rotating_plasma_cyl_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine rotating_plasma_cyl_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/rotating_plasma_cyl_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~59"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~37"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~43"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~34"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~22"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-rti_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine RTI_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/rti_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~60"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~38"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3319,6 +2764,118 @@ are automatically accessible in every submodule that extends this one.</p>
         </tr>
         <tr>
             <td>
+              <span class="anchor" id="variable-physics~35"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~23"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-rti_khi_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine RTI_KHI_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/rti_khi_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~61"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~39"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~45"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
               <span class="anchor" id="variable-physics~36"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
@@ -3328,6 +2885,1029 @@ are automatically accessible in every submodule that extends this one.</p>
             </td>
             <td>::</td>
             <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~24"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-rti_theta_pinch_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine RTI_theta_pinch_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/rti_theta_pinch_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~62"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~40"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~46"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~37"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~25"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-suydam_cluster_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine suydam_cluster_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/suydam_cluster_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~63"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~41"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~47"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~38"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~26"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-couette_flow_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine couette_flow_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/couette_flow_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~64"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~42"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~48"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~39"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~27"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-taylor_couette_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine taylor_couette_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/taylor_couette_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~65"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~43"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~49"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~40"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~28"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-harris_sheet_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine harris_sheet_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/harris_sheet_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~66"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~44"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~50"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~41"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~29"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-tc_pinch_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine tc_pinch_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/tc_pinch_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~67"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~45"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~51"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~42"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~30"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-numerical_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine numerical_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/numerical_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~68"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~46"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~52"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~43"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~31"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-ivp_demo_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine ivp_demo_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/ivp_demo_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~69"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~47"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~53"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~44"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~32"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+              <div class="card">
+    <div class="card-header bg-light codesum">
+      <span class="anchor" id="interface-user_defined_eq"></span>
+      <h3>        interface
+      </h3>
+    </div>
+      <div class="card-body">
+        <p>interface to the different equilibrium submodules</p>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+              <h3>
+    private module subroutine user_defined_eq(settings, grid, background, physics, iv_initial_conditions)  
+    <a href="../proc/user_defined_eq.html"><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+
+    </h3>
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-settings~70"></span>
+              type(<a href='../type/settings_t.html'>settings_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>settings</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid~48"></span>
+              type(<a href='../type/grid_t.html'>grid_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-background~54"></span>
+              type(<a href='../type/background_t.html'>background_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>background</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-physics~45"></span>
+              type(<a href='../type/physics_t.html'>physics_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>physics</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~33"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
             <td>
                 
             </td>
@@ -3349,7 +3929,7 @@ are automatically accessible in every submodule that extends this one.</p>
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set_equilibrium"></span> <h3>public  subroutine <a href='../proc/set_equilibrium.html'>set_equilibrium</a>(settings, grid, background, physics)  
+    <div class="card-header codesum"><span class="anchor" id="proc-set_equilibrium"></span> <h3>public  subroutine <a href='../proc/set_equilibrium.html'>set_equilibrium</a>(settings, grid, background, physics, iv_initial_conditions)  
 </h3></div>
     <div class="card-body">
           
@@ -3370,7 +3950,7 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~44"></span>
+              <span class="anchor" id="variable-settings~71"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3385,7 +3965,7 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~44"></span>
+              <span class="anchor" id="variable-grid~49"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3400,7 +3980,7 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~45"></span>
+              <span class="anchor" id="variable-background~55"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3415,7 +3995,7 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~37"></span>
+              <span class="anchor" id="variable-physics~46"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -3424,6 +4004,21 @@ the equilibrium is set, then calls additional physics modules if needed.</p><a h
             </td>
             <td>::</td>
             <td><strong>physics</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iv_initial_conditions~34"></span>
+              type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iv_initial_conditions</strong></td>
             <td>
 
             </td>
@@ -3456,7 +4051,7 @@ in the parfile. Works on a case-select basis.</p><a href="../proc/set_equilibriu
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~45"></span>
+              <span class="anchor" id="variable-settings~72"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -3491,7 +4086,7 @@ in the parfile. Works on a case-select basis.</p><a href="../proc/set_equilibriu
         <div class="row justify-content-between">
           <div class="col">
             <p>
-              Legolas v. 2.2.1 - develop
+              Legolas v. 2.3.0 - develop
               &copy; 2026 
 </p>
           </div>
