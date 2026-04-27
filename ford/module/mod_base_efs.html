@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>mod_base_efs &ndash; Legolas v. 2.3.0 - develop</title>
+    <title>mod_base_efs &ndash; Legolas v. 2.3.1 - develop</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -44,7 +44,7 @@
     <div class="container-fluid mb-sm-4 mb-xl-2">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="../index.html">Legolas v. 2.3.0 - develop </a>
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.3.1 - develop </a>
           <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
                   aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon">
@@ -155,9 +155,9 @@
       </a>
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mod_base_efs.html#proc-initialise~3">initialise</a>
+            <a class="list-group-item" href="../module/mod_base_efs.html#proc-initialise~2">initialise</a>
             <a class="list-group-item" href="../module/mod_base_efs.html#proc-assemble~2">assemble</a>
-            <a class="list-group-item" href="../module/mod_base_efs.html#proc-delete~17">delete</a>
+            <a class="list-group-item" href="../module/mod_base_efs.html#proc-delete~13">delete</a>
         </div>
       </div>
     </div>
@@ -183,12 +183,12 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
+                  <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
                   <li class="list-inline-item"><a href='mod_get_indices.html'>mod_get_indices</a></li>
                   <li class="list-inline-item"><a href='mod_state_vector_component.html'>mod_state_vector_component</a></li>
                   <li class="list-inline-item"><a href='mod_ef_assembly.html'>mod_ef_assembly</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
                   <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
-                  <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
               </ul>
             </li>
         </ul>
@@ -247,7 +247,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-name~12"></span>
+              <span class="anchor" id="variable-name~15"></span>
               character(len=str_len_arr),
             </td>
               <td>public</td>
@@ -264,7 +264,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-quantities"></span>
+              <span class="anchor" id="variable-quantities~2"></span>
               complex(kind=dp),
             </td>
               <td>public,</td>
@@ -290,7 +290,7 @@
           <tbody>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/base_ef_t.html#boundprocedure-initialise~3'>initialise</a></strong></td>
+  <strong><a href='../type/base_ef_t.html#boundprocedure-initialise~2'>initialise</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -300,7 +300,7 @@
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/base_ef_t.html#boundprocedure-delete~17'>delete</a></strong></td>
+  <strong><a href='../type/base_ef_t.html#boundprocedure-delete~13'>delete</a></strong></td>
                   <td></td>
               </tr>
           </tbody>
@@ -315,7 +315,7 @@
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-initialise~3"></span> <h3>private  subroutine <a href='../proc/initialise~3.html'>initialise</a>(this, sv_component, ef_grid_size, nb_efs)  
+    <div class="card-header codesum"><span class="anchor" id="proc-initialise~2"></span> <h3>private  subroutine <a href='../proc/initialise~2.html'>initialise</a>(this, sv_component, ef_grid_size, nb_efs)  
 </h3></div>
     <div class="card-body">
           
@@ -334,7 +334,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~185"></span>
+              <span class="anchor" id="variable-this~131"></span>
               class(<a href='../type/base_ef_t.html'>base_ef_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -364,7 +364,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ef_grid_size"></span>
+              <span class="anchor" id="variable-ef_grid_size~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -379,7 +379,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nb_efs"></span>
+              <span class="anchor" id="variable-nb_efs~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -419,7 +419,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~186"></span>
+              <span class="anchor" id="variable-this~132"></span>
               class(<a href='../type/base_ef_t.html'>base_ef_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -434,7 +434,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~75"></span>
+              <span class="anchor" id="variable-settings~68"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -449,7 +449,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~51"></span>
+              <span class="anchor" id="variable-grid~58"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -464,7 +464,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-idxs_to_assemble"></span>
+              <span class="anchor" id="variable-idxs_to_assemble~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -479,7 +479,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-right_eigenvectors~2"></span>
+              <span class="anchor" id="variable-right_eigenvectors~3"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -500,7 +500,7 @@
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-delete~17"></span> <h3>private pure subroutine <a href='../proc/delete~17.html'>delete</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-delete~13"></span> <h3>private pure subroutine <a href='../proc/delete~13.html'>delete</a>(this)  
 </h3></div>
     <div class="card-body">
           
@@ -519,7 +519,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~187"></span>
+              <span class="anchor" id="variable-this~133"></span>
               class(<a href='../type/base_ef_t.html'>base_ef_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -554,7 +554,7 @@
         <div class="row justify-content-between">
           <div class="col">
             <p>
-              Legolas v. 2.3.0 - develop
+              Legolas v. 2.3.1 - develop
               &copy; 2026 
 </p>
           </div>
