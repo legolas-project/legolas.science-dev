@@ -158,7 +158,7 @@
             <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-is_valid_element">is_valid_element</a>
             <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-is_valid_index">is_valid_index</a>
             <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_complex_element">get_complex_element</a>
-            <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_total_nb_elements~3">get_total_nb_elements</a>
+            <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_total_nb_elements~2">get_total_nb_elements</a>
             <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-get_label">get_label</a>
             <a class="list-group-item" href="../module/mod_matrix_structure.html#proc-copy">copy</a>
         </div>
@@ -202,8 +202,8 @@
             <li class="list-group-item">
               <ul class="list-inline">
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
-                  <li class="list-inline-item"><a href='mod_matrix_row.html'>mod_matrix_row</a></li>
                   <li class="list-inline-item"><a href='mod_matrix_node.html'>mod_matrix_node</a></li>
+                  <li class="list-inline-item"><a href='mod_matrix_row.html'>mod_matrix_row</a></li>
                   <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
               </ul>
             </li>
@@ -263,7 +263,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-rows~4"></span>
+              <span class="anchor" id="variable-rows~3"></span>
               type(<a href='../type/row_t.html'>row_t</a>),
             </td>
               <td>public,</td>
@@ -321,7 +321,7 @@
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/matrix_t.html#boundprocedure-get_total_nb_elements~5'>get_total_nb_elements</a></strong></td>
+  <strong><a href='../type/matrix_t.html#boundprocedure-get_total_nb_elements~3'>get_total_nb_elements</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -436,7 +436,7 @@ Returns <code>.true.</code> if the element is of type real or complex, <code>.fa
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-element~20"></span>
+              <span class="anchor" id="variable-element~7"></span>
               class(*),
             </td>
 <td>intent(in)</td>
@@ -483,7 +483,7 @@ smaller than the dimension of the matrix. Returns <code>.false.</code> otherwise
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix~17"></span>
+              <span class="anchor" id="variable-matrix~12"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -498,7 +498,7 @@ smaller than the dimension of the matrix. Returns <code>.false.</code> otherwise
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-index~2"></span>
+              <span class="anchor" id="variable-index"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -546,7 +546,7 @@ values, so when a node at (row, column) is not found this function returns
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~236"></span>
+              <span class="anchor" id="variable-this~161"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -561,7 +561,7 @@ values, so when a node at (row, column) is not found this function returns
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~9"></span>
+              <span class="anchor" id="variable-row~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -576,7 +576,7 @@ values, so when a node at (row, column) is not found this function returns
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-column~9"></span>
+              <span class="anchor" id="variable-column~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -602,7 +602,7 @@ values, so when a node at (row, column) is not found this function returns
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_total_nb_elements~3"></span> <h3>private pure function <a href='../proc/get_total_nb_elements~3.html'>get_total_nb_elements</a>(this) result(total_nb_elements)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_total_nb_elements~2"></span> <h3>private pure function <a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a>(this) result(total_nb_elements)  
 </h3></div>
     <div class="card-body">
           
@@ -621,7 +621,7 @@ values, so when a node at (row, column) is not found this function returns
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~237"></span>
+              <span class="anchor" id="variable-this~162"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -666,7 +666,7 @@ values, so when a node at (row, column) is not found this function returns
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~238"></span>
+              <span class="anchor" id="variable-this~163"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -765,7 +765,7 @@ on the row and column indices.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~234"></span>
+              <span class="anchor" id="variable-this~159"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -780,7 +780,7 @@ on the row and column indices.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~8"></span>
+              <span class="anchor" id="variable-row~4"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -795,7 +795,7 @@ on the row and column indices.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-column~8"></span>
+              <span class="anchor" id="variable-column"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -810,7 +810,7 @@ on the row and column indices.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-element~19"></span>
+              <span class="anchor" id="variable-element~6"></span>
               class(*),
             </td>
 <td>intent(in)</td>
@@ -850,7 +850,7 @@ on the row and column indices.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~235"></span>
+              <span class="anchor" id="variable-this~160"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -905,7 +905,7 @@ on the row and column indices.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~239"></span>
+              <span class="anchor" id="variable-this~164"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -920,7 +920,7 @@ on the row and column indices.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ku~6"></span>
+              <span class="anchor" id="variable-ku~5"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -935,7 +935,7 @@ on the row and column indices.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-kl~6"></span>
+              <span class="anchor" id="variable-kl~5"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -976,7 +976,7 @@ deallocates the various nodes in the rows.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~240"></span>
+              <span class="anchor" id="variable-this~165"></span>
               class(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(inout)</td>

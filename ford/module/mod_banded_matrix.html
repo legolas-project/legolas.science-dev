@@ -155,10 +155,10 @@
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-new_banded_matrix">new_banded_matrix</a>
-            <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-get_element~2">get_element</a>
-            <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-get_total_nb_elements~2">get_total_nb_elements</a>
+            <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-get_element">get_element</a>
+            <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-get_total_nb_elements">get_total_nb_elements</a>
             <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-get_total_nb_nonzero_elements">get_total_nb_nonzero_elements</a>
-            <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-is_within_band~2">is_within_band</a>
+            <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-is_within_band">is_within_band</a>
             <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-is_compatible_with~2">is_compatible_with</a>
             <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-dimensions_are_valid">dimensions_are_valid</a>
         </div>
@@ -172,7 +172,7 @@
       </a>
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-set_element~2">set_element</a>
+            <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-set_element">set_element</a>
             <a class="list-group-item" href="../module/mod_banded_matrix.html#proc-destroy~2">destroy</a>
         </div>
       </div>
@@ -260,7 +260,7 @@ as explained in the LAPACK guide http://www.netlib.org/lapack/lug/node124.html.<
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-n~2"></span>
+              <span class="anchor" id="variable-n"></span>
               integer,
             </td>
               <td>public</td>
@@ -277,7 +277,7 @@ as explained in the LAPACK guide http://www.netlib.org/lapack/lug/node124.html.<
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-kl~2"></span>
+              <span class="anchor" id="variable-kl~3"></span>
               integer,
             </td>
               <td>public</td>
@@ -294,7 +294,7 @@ as explained in the LAPACK guide http://www.netlib.org/lapack/lug/node124.html.<
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ku~2"></span>
+              <span class="anchor" id="variable-ku~3"></span>
               integer,
             </td>
               <td>public</td>
@@ -311,7 +311,7 @@ as explained in the LAPACK guide http://www.netlib.org/lapack/lug/node124.html.<
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ab~2"></span>
+              <span class="anchor" id="variable-ab"></span>
               complex(kind=dp),
             </td>
               <td>public,</td>
@@ -337,17 +337,17 @@ as explained in the LAPACK guide http://www.netlib.org/lapack/lug/node124.html.<
           <tbody>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/banded_matrix_t.html#boundprocedure-get_element~2'>get_element</a></strong></td>
+  <strong><a href='../type/banded_matrix_t.html#boundprocedure-get_element'>get_element</a></strong></td>
                   <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/banded_matrix_t.html#boundprocedure-set_element~2'>set_element</a></strong></td>
+  <strong><a href='../type/banded_matrix_t.html#boundprocedure-set_element'>set_element</a></strong></td>
                   <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/banded_matrix_t.html#boundprocedure-get_total_nb_elements~3'>get_total_nb_elements</a></strong></td>
+  <strong><a href='../type/banded_matrix_t.html#boundprocedure-get_total_nb_elements'>get_total_nb_elements</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -396,7 +396,7 @@ subdiagonals and superdiagonals. Allocates and initialises the datatype.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-rows~2"></span>
+              <span class="anchor" id="variable-rows"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -426,7 +426,7 @@ subdiagonals and superdiagonals. Allocates and initialises the datatype.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-subdiags~3"></span>
+              <span class="anchor" id="variable-subdiags~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -441,7 +441,7 @@ subdiagonals and superdiagonals. Allocates and initialises the datatype.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-superdiags~3"></span>
+              <span class="anchor" id="variable-superdiags~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -467,7 +467,7 @@ subdiagonals and superdiagonals. Allocates and initialises the datatype.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_element~2"></span> <h3>private pure function <a href='../proc/get_element~2.html'>get_element</a>(this, row, col) result(element)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_element"></span> <h3>private pure function <a href='../proc/get_element.html'>get_element</a>(this, row, col) result(element)  
 </h3></div>
     <div class="card-body">
           
@@ -488,7 +488,7 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~67"></span>
+              <span class="anchor" id="variable-this~109"></span>
               class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -503,7 +503,7 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~5"></span>
+              <span class="anchor" id="variable-row"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -518,7 +518,7 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-col~4"></span>
+              <span class="anchor" id="variable-col"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -544,7 +544,7 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_total_nb_elements~2"></span> <h3>private pure function <a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_total_nb_elements"></span> <h3>private pure function <a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a>(this)  
 </h3></div>
     <div class="card-body">
           
@@ -563,7 +563,7 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~70"></span>
+              <span class="anchor" id="variable-this~112"></span>
               class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -608,7 +608,7 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~71"></span>
+              <span class="anchor" id="variable-this~113"></span>
               class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -634,7 +634,7 @@ at position $(ku + 1 + i - j, j)$ (with $ku$ the number of superdiagonals).</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-is_within_band~2"></span> <h3>private pure function <a href='../proc/is_within_band~2.html'>is_within_band</a>(matrix, row, col)  
+    <div class="card-header codesum"><span class="anchor" id="proc-is_within_band"></span> <h3>private pure function <a href='../proc/is_within_band.html'>is_within_band</a>(matrix, row, col)  
 </h3></div>
     <div class="card-body">
           
@@ -655,7 +655,7 @@ with $ku$ the number of superdiagonals and $kl$ the number of subdiagonals.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix~15"></span>
+              <span class="anchor" id="variable-matrix~6"></span>
               type(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -670,7 +670,7 @@ with $ku$ the number of superdiagonals and $kl$ the number of subdiagonals.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~7"></span>
+              <span class="anchor" id="variable-row~3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -685,7 +685,7 @@ with $ku$ the number of superdiagonals and $kl$ the number of subdiagonals.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-col~6"></span>
+              <span class="anchor" id="variable-col~3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -735,7 +735,7 @@ Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~72"></span>
+              <span class="anchor" id="variable-this~114"></span>
               class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -750,7 +750,7 @@ Returns <code>.true.</code> if these three criteria are satisfied, <code>.false.
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-other~2"></span>
+              <span class="anchor" id="variable-other"></span>
               type(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -796,7 +796,7 @@ square matrices. Returns <code>.true.</code> if <code>rows</code> equals <code>c
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-rows~3"></span>
+              <span class="anchor" id="variable-rows~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -842,7 +842,7 @@ square matrices. Returns <code>.true.</code> if <code>rows</code> equals <code>c
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set_element~2"></span> <h3>private pure subroutine <a href='../proc/set_element~2.html'>set_element</a>(this, row, col, element)  
+    <div class="card-header codesum"><span class="anchor" id="proc-set_element"></span> <h3>private pure subroutine <a href='../proc/set_element.html'>set_element</a>(this, row, col, element)  
 </h3></div>
     <div class="card-body">
           
@@ -864,7 +864,7 @@ falls outside of the banded structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~68"></span>
+              <span class="anchor" id="variable-this~110"></span>
               class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -879,7 +879,7 @@ falls outside of the banded structure.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~6"></span>
+              <span class="anchor" id="variable-row~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -894,7 +894,7 @@ falls outside of the banded structure.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-col~5"></span>
+              <span class="anchor" id="variable-col~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -909,7 +909,7 @@ falls outside of the banded structure.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-element~12"></span>
+              <span class="anchor" id="variable-element~2"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -949,7 +949,7 @@ falls outside of the banded structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~69"></span>
+              <span class="anchor" id="variable-this~111"></span>
               class(<a href='../type/banded_matrix_t.html'>banded_matrix_t</a>),
             </td>
 <td>intent(inout)</td>
