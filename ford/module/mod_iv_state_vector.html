@@ -92,7 +92,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 1.5% of total for modules and submodules.">182 statements</a>
+                 title=" 1.4% of total for modules and submodules.">182 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -214,15 +214,15 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
+                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
+                  <li class="list-inline-item"><a href='mod_iv_globals.html'>mod_iv_globals</a></li>
                   <li class="list-inline-item"><a href='mod_state_vector_names.html'>mod_state_vector_names</a></li>
                   <li class="list-inline-item"><a href='mod_state_vector.html'>mod_state_vector</a></li>
+                  <li class="list-inline-item"><a href='mod_iv_state_vector_component.html'>mod_iv_state_vector_component</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
                   <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
-                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
                   <li class="list-inline-item"><a href='mod_iv_initial_conditions.html'>mod_iv_initial_conditions</a></li>
-                  <li class="list-inline-item"><a href='mod_iv_state_vector_component.html'>mod_iv_state_vector_component</a></li>
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
-                  <li class="list-inline-item"><a href='mod_iv_globals.html'>mod_iv_globals</a></li>
               </ul>
             </li>
         </ul>
@@ -417,7 +417,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-ptr~2"></span>
+              <span class="anchor" id="variable-ptr~3"></span>
               class(<a href='../type/iv_sv_component_t.html'>iv_sv_component_t</a>),
             </td>
               <td>public,</td>
@@ -483,7 +483,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-components~2"></span>
+              <span class="anchor" id="variable-components~4"></span>
               class(<a href='../type/iv_comp_ptr_t.html'>iv_comp_ptr_t</a>),
             </td>
               <td>public,</td>
@@ -500,7 +500,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-is_initialised~2"></span>
+              <span class="anchor" id="variable-is_initialised~3"></span>
               logical,
             </td>
               <td>public</td>
@@ -551,7 +551,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x0~9"></span>
+              <span class="anchor" id="variable-x0~12"></span>
               complex(kind=dp),
             </td>
               <td>public,</td>
@@ -675,7 +675,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self"></span>
+              <span class="anchor" id="variable-self~6"></span>
               class(<a href='../type/iv_state_vector_t.html'>iv_state_vector_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -690,7 +690,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics_type~2"></span>
+              <span class="anchor" id="variable-physics_type~3"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -745,7 +745,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~2"></span>
+              <span class="anchor" id="variable-self~7"></span>
               class(<a href='../type/iv_state_vector_t.html'>iv_state_vector_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -760,7 +760,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-n~2"></span>
+              <span class="anchor" id="variable-n~4"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -815,7 +815,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~3"></span>
+              <span class="anchor" id="variable-self~8"></span>
               class(<a href='../type/iv_state_vector_t.html'>iv_state_vector_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -830,7 +830,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~43"></span>
+              <span class="anchor" id="variable-settings~85"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -845,7 +845,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~32"></span>
+              <span class="anchor" id="variable-grid~34"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in)</td>
@@ -886,7 +886,7 @@ block-format array x0. This is the inverse of assemble_iv_array.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~4"></span>
+              <span class="anchor" id="variable-self~9"></span>
               class(<a href='../type/iv_state_vector_t.html'>iv_state_vector_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -901,7 +901,7 @@ block-format array x0. This is the inverse of assemble_iv_array.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-n~3"></span>
+              <span class="anchor" id="variable-n~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -911,7 +911,7 @@ block-format array x0. This is the inverse of assemble_iv_array.</p>
             <td>::</td>
             <td><strong>N</strong></td>
             <td>
-<a href="../proc/disassemble_iv_array.html#variable-n~3" class="pull-right"><emph>Read more&hellip;</emph></a>
+<a href="../proc/disassemble_iv_array.html#variable-n~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
     </tbody>

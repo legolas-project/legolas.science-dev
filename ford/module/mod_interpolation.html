@@ -92,7 +92,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 1.5% of total for modules and submodules.">194 statements</a>
+                 title=" 1.6% of total for modules and submodules.">203 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -207,7 +207,7 @@ Subroutines are loosely based on routines implemented in the
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-lookup_table_value"></span> <h3>public  function <a href='../proc/lookup_table_value.html'>lookup_table_value</a>(x, x_values, y_values, allow_outside) result(y_found)  
+    <div class="card-header codesum"><span class="anchor" id="proc-lookup_table_value"></span> <h3>public  function <a href='../proc/lookup_table_value.html'>lookup_table_value</a>(x, x_values, y_values, allow_outside, outside_value) result(y_found)  
 </h3></div>
     <div class="card-body">
           
@@ -230,7 +230,7 @@ Uses simple linear interpolation.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~46"></span>
+              <span class="anchor" id="variable-x~115"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -288,6 +288,21 @@ Uses simple linear interpolation.</p>
 <p>flag to allow for lookups outside of the array</p>
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-outside_value"></span>
+              real(kind=dp),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>outside_value</strong></td>
+            <td>
+<p>specified value outside instead of zeroth order extrapolation</p>
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -329,7 +344,7 @@ order polynomial approximation is used except near sharp jumps.</p><a href="../p
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-n_interp~2"></span>
+              <span class="anchor" id="variable-n_interp"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -435,7 +450,7 @@ differentiated instead. The stencils are as follows:</p><a href="../proc/get_num
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~44"></span>
+              <span class="anchor" id="variable-x~113"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -526,7 +541,7 @@ differentiated instead.</p><a href="../proc/get_second_numerical_derivative.html
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~45"></span>
+              <span class="anchor" id="variable-x~114"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
