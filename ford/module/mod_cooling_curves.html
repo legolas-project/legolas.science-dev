@@ -92,7 +92,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 1.6% of total for modules and submodules.">206 statements</a>
+                 title=" 1.7% of total for modules and submodules.">215 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -158,9 +158,9 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_index">get_rosner_index</a>
-            <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_lambdat">get_rosner_lambdaT</a>
-            <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_dlambdadt">get_rosner_dlambdadT</a>
+            <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_index">get_Rosner_index</a>
+            <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_lambdat">get_Rosner_lambdaT</a>
+            <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_rosner_dlambdadt">get_Rosner_dlambdadT</a>
             <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_interpolated_lambdat">get_interpolated_lambdaT</a>
             <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-get_interpolated_dlambdadt">get_interpolated_dlambdadT</a>
             <a class="list-group-item" href="../module/mod_cooling_curves.html#proc-is_valid_cooling_curve">is_valid_cooling_curve</a>
@@ -203,13 +203,13 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
-                  <li class="list-inline-item"><a href='mod_data_rosner.html'>mod_data_rosner</a></li>
-                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
-                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
-                  <li class="list-inline-item"><a href='mod_interpolation.html'>mod_interpolation</a></li>
-                  <li class="list-inline-item"><a href='mod_cooling_curve_names.html'>mod_cooling_curve_names</a></li>
                   <li class="list-inline-item"><a href='mod_background.html'>mod_background</a></li>
+                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
+                  <li class="list-inline-item"><a href='mod_cooling_curve_names.html'>mod_cooling_curve_names</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
+                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
+                  <li class="list-inline-item"><a href='mod_radloss_tables.html'>mod_radloss_tables</a></li>
+                  <li class="list-inline-item"><a href='mod_interpolation.html'>mod_interpolation</a></li>
               </ul>
             </li>
         </ul>
@@ -330,7 +330,7 @@
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_rosner_index"></span> <h3>private pure function <a href='../proc/get_rosner_index.html'>get_rosner_index</a>(logT0)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_rosner_index"></span> <h3>private pure function <a href='../proc/get_rosner_index.html'>get_Rosner_index</a>(logT0)  
 </h3></div>
     <div class="card-body">
           
@@ -375,7 +375,7 @@
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_rosner_lambdat"></span> <h3>public  function <a href='../proc/get_rosner_lambdat.html'>get_rosner_lambdaT</a>(x, settings, background)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_rosner_lambdat"></span> <h3>public  function <a href='../proc/get_rosner_lambdat.html'>get_Rosner_lambdaT</a>(x, settings, background)  
 </h3></div>
     <div class="card-body">
           
@@ -394,7 +394,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~149"></span>
+              <span class="anchor" id="variable-x~163"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -409,7 +409,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~146"></span>
+              <span class="anchor" id="variable-settings~160"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -424,7 +424,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~84"></span>
+              <span class="anchor" id="variable-background~87"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(in)</td>
@@ -450,7 +450,7 @@
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_rosner_dlambdadt"></span> <h3>public  function <a href='../proc/get_rosner_dlambdadt.html'>get_rosner_dlambdadT</a>(x, settings, background)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_rosner_dlambdadt"></span> <h3>public  function <a href='../proc/get_rosner_dlambdadt.html'>get_Rosner_dlambdadT</a>(x, settings, background)  
 </h3></div>
     <div class="card-body">
           
@@ -469,7 +469,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~150"></span>
+              <span class="anchor" id="variable-x~164"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -484,7 +484,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~147"></span>
+              <span class="anchor" id="variable-settings~161"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -499,7 +499,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~85"></span>
+              <span class="anchor" id="variable-background~88"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(in)</td>
@@ -544,7 +544,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~151"></span>
+              <span class="anchor" id="variable-x~165"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -559,7 +559,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~148"></span>
+              <span class="anchor" id="variable-settings~162"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -574,7 +574,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~86"></span>
+              <span class="anchor" id="variable-background~89"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(in)</td>
@@ -619,7 +619,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~152"></span>
+              <span class="anchor" id="variable-x~166"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -634,7 +634,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~149"></span>
+              <span class="anchor" id="variable-settings~163"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -649,7 +649,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~87"></span>
+              <span class="anchor" id="variable-background~90"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(in)</td>
@@ -694,7 +694,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-name~14"></span>
+              <span class="anchor" id="variable-name~19"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -747,7 +747,7 @@ T grid in log scale, so we get log10(lambda(T)) and log10(T) values.</p><a href=
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~145"></span>
+              <span class="anchor" id="variable-settings~159"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -787,7 +787,7 @@ T grid in log scale, so we get log10(lambda(T)) and log10(T) values.</p><a href=
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-name~15"></span>
+              <span class="anchor" id="variable-name~20"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>

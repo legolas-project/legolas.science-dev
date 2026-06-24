@@ -156,7 +156,7 @@
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-new_hermitian_banded_matrix">new_hermitian_banded_matrix</a>
             <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-get_element">get_element</a>
-            <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-get_total_nb_elements~2">get_total_nb_elements</a>
+            <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-get_total_nb_elements">get_total_nb_elements</a>
             <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-uplo_is_valid">uplo_is_valid</a>
             <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-is_within_band">is_within_band</a>
             <a class="list-group-item" href="../module/mod_banded_matrix_hermitian.html#proc-is_compatible_with~2">is_compatible_with</a>
@@ -200,8 +200,8 @@ http://www.netlib.org/lapack/lug/node124.html.</p>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
                   <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
+                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
               </ul>
             </li>
         </ul>
@@ -330,7 +330,7 @@ http://www.netlib.org/lapack/lug/node124.html.</p>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/hermitian_banded_matrix_t.html#boundprocedure-get_total_nb_elements~2'>get_total_nb_elements</a></strong></td>
+  <strong><a href='../type/hermitian_banded_matrix_t.html#boundprocedure-get_total_nb_elements'>get_total_nb_elements</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -375,7 +375,7 @@ initialise all to zero</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-rows~2"></span>
+              <span class="anchor" id="variable-rows"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -453,7 +453,7 @@ $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~91"></span>
+              <span class="anchor" id="variable-this~37"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -468,7 +468,7 @@ $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~3"></span>
+              <span class="anchor" id="variable-row"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -509,7 +509,7 @@ $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_total_nb_elements~2"></span> <h3>private pure function <a href='../proc/get_total_nb_elements~2.html'>get_total_nb_elements</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_total_nb_elements"></span> <h3>private pure function <a href='../proc/get_total_nb_elements.html'>get_total_nb_elements</a>(this)  
 </h3></div>
     <div class="card-body">
           
@@ -528,7 +528,7 @@ $(1 + i - j, j)$ if <code>uplo = "L"</code> in the banded storage.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~94"></span>
+              <span class="anchor" id="variable-this~40"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -623,7 +623,7 @@ with $kd$ the number of sub/superdiagonals and $n$ the number of rows/columns.</
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix~7"></span>
+              <span class="anchor" id="variable-matrix~2"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -638,7 +638,7 @@ with $kd$ the number of sub/superdiagonals and $n$ the number of rows/columns.</
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~5"></span>
+              <span class="anchor" id="variable-row~3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -704,7 +704,7 @@ Returns <tt>.true.</tt> if all criteria are satisfied, <tt>.false.</tt> otherwis
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~95"></span>
+              <span class="anchor" id="variable-this~41"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -772,7 +772,7 @@ falls outside of the banded structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~92"></span>
+              <span class="anchor" id="variable-this~38"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -787,7 +787,7 @@ falls outside of the banded structure.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-row~4"></span>
+              <span class="anchor" id="variable-row~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -817,7 +817,7 @@ falls outside of the banded structure.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-element~5"></span>
+              <span class="anchor" id="variable-element~2"></span>
               complex(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -857,7 +857,7 @@ falls outside of the banded structure.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~93"></span>
+              <span class="anchor" id="variable-this~39"></span>
               class(<a href='../type/hermitian_banded_matrix_t.html'>hermitian_banded_matrix_t</a>),
             </td>
 <td>intent(inout)</td>

@@ -1,0 +1,724 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Legolas is a novel finite-element based code that allows for realistic MHD spectroscopy of one-dimensional plasmas.">
+    <meta name="author" content="" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>mod_radloss_tables &ndash; Legolas v. 2.3.1 - develop</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Legolas v. 2.3.1 - develop </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/namelists.html">Namelists</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../program/legolas.html">Program</a>
+                </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>mod_radloss_tables
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for modules and submodules.">31 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_radloss_tables.f08"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_radloss_tables.f08.html'>mod_radloss_tables.f08</a></li>
+            <li class="breadcrumb-item active" aria-current="page">mod_radloss_tables</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-n_rosner">n_Rosner</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logt_rosner">logT_Rosner</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logxi_rosner">logxi_Rosner</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-alpha_rosner">alpha_Rosner</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-n_dm">n_DM</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-n_mlsolar1">n_MLsolar1</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-n_spex">n_SPEX</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-n_spex_enh_dm">n_SPEX_enh_DM</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-n_jccorona">n_JCcorona</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-n_dm_2">n_DM_2</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-n_colgan">n_Colgan</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logt_jccorona">logT_JCcorona</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logt_dm">logT_DM</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logt_mlsolar1">logT_MLsolar1</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logt_spex">logT_SPEX</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logt_spex_enh_dm">logT_SPEX_enh_DM</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logt_dm_2">logT_DM_2</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logt_colgan">logT_Colgan</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logl_jccorona">logL_JCcorona</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logl_dm">logL_DM</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logl_mlsolar1">logL_MLsolar1</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logl_spex">logL_SPEX</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logl_spex_enh_dm">logL_SPEX_enh_DM</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logl_dm_2">logL_DM_2</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-logl_colgan">logL_Colgan</a>
+            <a class="list-group-item" href="../module/mod_radloss_tables.html#variable-l_spex_enh">L_SPEX_enh</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <div class="alert alert-info">
+<p class="alert-title h4">Note<p>data for the piecewise analytical cooling curve by Rosner, Tucker and Vaiana
+(1978), extended by Priest (1982).</p>
+</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>Original values for xi in the Rosner curve are given in SI,
+these here are scaled to cgs.
+<script type="math/tex"> 1 Wm^{-3} = 10^{-13} erg/(s*cm^3) </script>, and since these are in a log10 scale
+that means a -13 difference.</p>
+</div>
+<p>log10 temperature/luminosity values from Colgan et al. (2008)</p>
+</div>
+<p>log10 temperature/luminosity values from Dalgarno and McCray (1978)
+log10 temperature/luminosity values from Melemma and Lundqvist (2002), solar metallicity
+log10 temperature/luminosity values from Schure et al. (2009)
+log10 temperature/luminosity values to enhance the SPEX curve with Dalgarno and McCray (1978)
+luminosity values to enhance the SPEX curve</p>
+<p>log10 temperature/luminosity values from Dalgarno and McCray (1978) for low temperatures (DM_2)
+log10 temperature/luminosity values from Colgan (2008)</p>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      
+      <br>
+
+
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n_rosner"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>n_Rosner</strong></td>
+<td> =</td>
+                <td>9</td>
+            <td>
+                <p>All values in these tables are identical to those in MPI-AMRVAC version 3.3.
+Differences with the MPI-AMRVAC cooling table can be checked by running
+'python check_curves_amrvac.py' in the 'src/physics/cooling_curves' directory.
+Piecewise analytical curve:</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logt_rosner"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logT_Rosner</strong>(n_Rosner+1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logxi_rosner"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logxi_Rosner</strong>(n_Rosner)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alpha_rosner"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>alpha_Rosner</strong>(n_Rosner)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n_dm"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>n_DM</strong></td>
+<td> =</td>
+                <td>71</td>
+            <td>
+                <p>Interpolation tables:</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n_mlsolar1"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>n_MLsolar1</strong></td>
+<td> =</td>
+                <td>71</td>
+            <td>
+                <p>Interpolation tables:</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n_spex"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>n_SPEX</strong></td>
+<td> =</td>
+                <td>110</td>
+            <td>
+                <p>Interpolation tables:</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n_spex_enh_dm"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>n_SPEX_enh_DM</strong></td>
+<td> =</td>
+                <td>76</td>
+            <td>
+                <p>Interpolation tables:</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n_jccorona"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>n_JCcorona</strong></td>
+<td> =</td>
+                <td>45</td>
+            <td>
+                <p>Interpolation tables:</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n_dm_2"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>n_DM_2</strong></td>
+<td> =</td>
+                <td>76</td>
+            <td>
+                <p>Interpolation tables:</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n_colgan"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>n_Colgan</strong></td>
+<td> =</td>
+                <td>55</td>
+            <td>
+                <p>Interpolation tables:</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logt_jccorona"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logT_JCcorona</strong>(n_JCcorona)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logt_dm"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logT_DM</strong>(n_DM)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logt_mlsolar1"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logT_MLsolar1</strong>(n_MLsolar1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logt_spex"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logT_SPEX</strong>(n_SPEX)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logt_spex_enh_dm"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logT_SPEX_enh_DM</strong>(n_SPEX_enh_DM)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logt_dm_2"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logT_DM_2</strong>(n_DM_2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logt_colgan"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logT_Colgan</strong>(n_Colgan)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logl_jccorona"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logL_JCcorona</strong>(n_JCcorona)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logl_dm"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logL_DM</strong>(n_DM)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logl_mlsolar1"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logL_MLsolar1</strong>(n_MLsolar1)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logl_spex"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logL_SPEX</strong>(n_SPEX)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logl_spex_enh_dm"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logL_SPEX_enh_DM</strong>(n_SPEX_enh_DM)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logl_dm_2"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logL_DM_2</strong>(n_DM_2)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-logl_colgan"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>logL_Colgan</strong>(n_Colgan)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-l_spex_enh"></span>
+              real(kind=dp),
+            </td>
+              <td>protected</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>L_SPEX_enh</strong>(n_SPEX)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              Legolas v. 2.3.1 - develop
+              &copy; 2026 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

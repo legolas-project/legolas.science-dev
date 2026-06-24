@@ -166,7 +166,7 @@
       </a>
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mod_iv_module.html#proc-initialise~4">initialise</a>
+            <a class="list-group-item" href="../module/mod_iv_module.html#proc-initialise~7">initialise</a>
             <a class="list-group-item" href="../module/mod_iv_module.html#proc-solve_ivp">solve_ivp</a>
             <a class="list-group-item" href="../module/mod_iv_module.html#proc-postprocess_snapshot">postprocess_snapshot</a>
         </div>
@@ -194,14 +194,14 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
-                  <li class="list-inline-item"><a href='mod_iv_state_vector.html'>mod_iv_state_vector</a></li>
-                  <li class="list-inline-item"><a href='mod_iv_solver.html'>mod_iv_solver</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
-                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
+                  <li class="list-inline-item"><a href='mod_iv_solver.html'>mod_iv_solver</a></li>
                   <li class="list-inline-item"><a href='mod_iv_initial_conditions.html'>mod_iv_initial_conditions</a></li>
-                  <li class="list-inline-item"><a href='mod_matrix_structure.html'>mod_matrix_structure</a></li>
                   <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
+                  <li class="list-inline-item"><a href='mod_iv_state_vector.html'>mod_iv_state_vector</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
+                  <li class="list-inline-item"><a href='mod_matrix_structure.html'>mod_matrix_structure</a></li>
+                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
               </ul>
             </li>
         </ul>
@@ -243,7 +243,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-is_initialised~2"></span>
+              <span class="anchor" id="variable-is_initialised~5"></span>
               logical,
             </td>
               <td>private</td>
@@ -260,7 +260,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~131"></span>
+              <span class="anchor" id="variable-settings~165"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
               <td>private,</td>
@@ -277,7 +277,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~105"></span>
+              <span class="anchor" id="variable-grid~110"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
               <td>private,</td>
@@ -311,7 +311,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iv_initial_conditions~34"></span>
+              <span class="anchor" id="variable-iv_initial_conditions~35"></span>
               type(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
             </td>
               <td>private,</td>
@@ -345,7 +345,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-snapshots"></span>
+              <span class="anchor" id="variable-snapshots~2"></span>
               complex(kind=dp),
             </td>
               <td>public,</td>
@@ -362,7 +362,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-snap_times"></span>
+              <span class="anchor" id="variable-snap_times~2"></span>
               real(kind=dp),
             </td>
               <td>public,</td>
@@ -388,7 +388,7 @@
           <tbody>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/iv_module_t.html#boundprocedure-initialise~4'>initialise</a></strong></td>
+  <strong><a href='../type/iv_module_t.html#boundprocedure-initialise~7'>initialise</a></strong></td>
                   <td></td>
               </tr>
               <tr>
@@ -431,7 +431,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~132"></span>
+              <span class="anchor" id="variable-settings~166"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(in),</td>
@@ -446,7 +446,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~106"></span>
+              <span class="anchor" id="variable-grid~111"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(in),</td>
@@ -477,7 +477,7 @@
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-initialise~4"></span> <h3>private  subroutine <a href='../proc/initialise~4.html'>initialise</a>(self, initial_conditions)  
+    <div class="card-header codesum"><span class="anchor" id="proc-initialise~7"></span> <h3>private  subroutine <a href='../proc/initialise~7.html'>initialise</a>(self, initial_conditions)  
 </h3></div>
     <div class="card-body">
           
@@ -496,7 +496,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~11"></span>
+              <span class="anchor" id="variable-self~18"></span>
               class(<a href='../type/iv_module_t.html'>iv_module_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -511,7 +511,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-initial_conditions"></span>
+              <span class="anchor" id="variable-initial_conditions~2"></span>
               class(<a href='../type/initial_conditions_t.html'>initial_conditions_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -551,7 +551,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~12"></span>
+              <span class="anchor" id="variable-self~19"></span>
               class(<a href='../type/iv_module_t.html'>iv_module_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -566,7 +566,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_a~14"></span>
+              <span class="anchor" id="variable-matrix_a~16"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -581,7 +581,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-matrix_b~14"></span>
+              <span class="anchor" id="variable-matrix_b~16"></span>
               type(<a href='../type/matrix_t.html'>matrix_t</a>),
             </td>
 <td>intent(in)</td>
@@ -622,7 +622,7 @@ Reassemble the profile and sotre in each component</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~13"></span>
+              <span class="anchor" id="variable-self~20"></span>
               class(<a href='../type/iv_module_t.html'>iv_module_t</a>),
             </td>
 <td>intent(inout)</td>

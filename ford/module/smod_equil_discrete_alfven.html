@@ -133,7 +133,7 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#variable-x_end~2">x_end</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#variable-x_end">x_end</a>
         </div>
       </div>
     </div>
@@ -154,13 +154,13 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-rho0~4">rho0</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-drho0">drho0</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-t0~4">T0</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-dt0">dT0</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-rho0~3">rho0</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-drho0~2">drho0</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-t0~3">T0</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-dt0~2">dT0</a>
             <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-b02~3">B02</a>
             <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-db02~3">dB02</a>
-            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-b03~4">B03</a>
+            <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-b03~3">B03</a>
             <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-p0">p0</a>
             <a class="list-group-item" href="../module/smod_equil_discrete_alfven.html#proc-dp0">dp0</a>
         </div>
@@ -207,7 +207,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
 <li><tt>k3</tt> = 0.05</li>
 <li><tt>j0</tt> = 0.125 : used to set the current.</li>
 <li><tt>delta</tt> = 0.2 : used in the density profile.</li>
-<li>cooling_curve = 'rosner'</li>
+<li>cooling_curve = 'Rosner'</li>
 <li>parallel thermal conduction, no perpendicular conduction</li>
 </ul>
 <p>and normalisations given by</p>
@@ -257,7 +257,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x_end~2"></span>
+              <span class="anchor" id="variable-x_end"></span>
               real(kind=dp),
             </td>
               <td>private</td>
@@ -285,232 +285,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-rho0~4"></span> <h3> function <a href='../proc/rho0~4.html'>rho0</a>(r)  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-r~8"></span>
-              real(kind=dp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>r</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-drho0"></span> <h3> function <a href='../proc/drho0.html'>drho0</a>(r)  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-r~9"></span>
-              real(kind=dp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>r</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-t0~4"></span> <h3> function <a href='../proc/t0~4.html'>T0</a>(r)  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-r~10"></span>
-              real(kind=dp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>r</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dt0"></span> <h3> function <a href='../proc/dt0.html'>dT0</a>(r)  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-r~11"></span>
-              real(kind=dp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>r</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b02~3"></span> <h3> function <a href='../proc/b02~3.html'>B02</a>(r)  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-r~12"></span>
-              real(kind=dp),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>r</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-db02~3"></span> <h3> function <a href='../proc/db02~3.html'>dB02</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-rho0~3"></span> <h3> function <a href='../proc/rho0~3.html'>rho0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -555,25 +330,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-b03~4"></span> <h3> function <a href='../proc/b03~4.html'>B03</a>()  
-</h3></div>
-    <div class="card-body">
-          
-  
-
-  <h4>Arguments</h4>
-    <em>None</em>
-    <h4>
-    Return Value
-    <small>real(kind=dp)</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-p0"></span> <h3> function <a href='../proc/p0.html'>p0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-drho0~2"></span> <h3> function <a href='../proc/drho0~2.html'>drho0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -618,7 +375,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dp0"></span> <h3> function <a href='../proc/dp0.html'>dp0</a>(r)  
+    <div class="card-header codesum"><span class="anchor" id="proc-t0~3"></span> <h3> function <a href='../proc/t0~3.html'>T0</a>(r)  
 </h3></div>
     <div class="card-body">
           
@@ -638,6 +395,249 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
         <tr>
             <td>
               <span class="anchor" id="variable-r~15"></span>
+              real(kind=dp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-dt0~2"></span> <h3> function <a href='../proc/dt0~2.html'>dT0</a>(r)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~16"></span>
+              real(kind=dp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-b02~3"></span> <h3> function <a href='../proc/b02~3.html'>B02</a>(r)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~17"></span>
+              real(kind=dp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-db02~3"></span> <h3> function <a href='../proc/db02~3.html'>dB02</a>(r)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~18"></span>
+              real(kind=dp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-b03~3"></span> <h3> function <a href='../proc/b03~3.html'>B03</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-p0"></span> <h3> function <a href='../proc/p0.html'>p0</a>(r)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~19"></span>
+              real(kind=dp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=dp)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-dp0"></span> <h3> function <a href='../proc/dp0.html'>dp0</a>(r)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~20"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -691,7 +691,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~18"></span>
+              <span class="anchor" id="variable-settings~70"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -706,7 +706,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~16"></span>
+              <span class="anchor" id="variable-grid~39"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -721,7 +721,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~15"></span>
+              <span class="anchor" id="variable-background~14"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -736,7 +736,7 @@ Solar physics 144.2 (1993): 267-281</em>.</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-physics~12"></span>
+              <span class="anchor" id="variable-physics~7"></span>
               type(<a href='../type/physics_t.html'>physics_t</a>),
             </td>
 <td>intent(inout)</td>
