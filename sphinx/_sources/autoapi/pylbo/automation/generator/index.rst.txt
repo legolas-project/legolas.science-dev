@@ -35,7 +35,7 @@ Module Contents
 ---------------
 
 .. py:data:: KEYS_EXPECTED_AS_LIST
-   :value: ['basis_functions']
+   :value: ['basis_functions', 'w_convert_factor', 'w_write', 'writelevel', 'writespshift', 'flux_scheme',...
 
 
 .. py:function:: _ensure_nb_names_and_nb_runs_matches(names: Union[str, list[str]], nb_runs: int) -> list[str]
@@ -131,7 +131,7 @@ Module Contents
 
 .. py:function:: _handle_expected_item_list(item)
 
-.. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None, subdir=True, prefix_numbers=True, nb_prefix_digits=4)
+.. py:class:: ParfileGenerator(parfile_dict, basename=None, output_dir=None, subdir=True, prefix_numbers=True, nb_prefix_digits=4, code='legolas')
 
    
    Handles parfile generation.
@@ -155,6 +155,8 @@ Module Contents
    :param nb_prefix_digits: Number of digits to prepend to the `basename` if `prefix_numbers` is `True`.
                             Defaults to 4.
    :type nb_prefix_digits: int
+   :param code: Code for which to generate a parfile. Defaults to 'legolas'.
+   :type code: str
 
 
 
@@ -201,6 +203,11 @@ Module Contents
 
 
    .. py:attribute:: container
+
+
+   .. py:attribute:: code
+      :value: ''
+
 
 
    .. py:method:: _get_and_check_item(namelist, name, allowed_dtypes)

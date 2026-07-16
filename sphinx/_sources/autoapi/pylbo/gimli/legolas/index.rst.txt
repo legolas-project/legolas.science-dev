@@ -19,6 +19,7 @@ Functions
 
    pylbo.gimli.legolas.write_physics_calls
    pylbo.gimli.legolas.fortran_function
+   pylbo.gimli.legolas.write_grid_functions
    pylbo.gimli.legolas.write_equilibrium_functions
    pylbo.gimli.legolas.write_physics_functions
 
@@ -71,6 +72,33 @@ Module Contents
    :type constant: bool
    :param level: The indentation level.
    :type level: int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: write_grid_functions(file, equilibrium)
+
+   
+   Writes the Legolas grid spacing function, if present, to the user module.
+
+   :param file: The file object to write to.
+   :type file: file
+   :param equilibrium: The equilibrium object containing the user-defined grid function.
+   :type equilibrium: Equilibrium
 
 
 
@@ -204,6 +232,56 @@ Module Contents
           !! processed by numpydoc !!
 
 
+   .. py:method:: _compare_heatcool()
+
+      
+      Compares the presence of 'heatcool' in the equilibrium with the radiative
+      cooling settings in the config. 'heatcool' overrides config settings, but if
+      'heatcool' is not present, config settings are added to the equilibrium.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: _check_resistivity()
+
+      
+      Makes sure that resistivity is enabled if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
    .. py:method:: user_module(filename='smod_user_defined', loc=None)
 
       
@@ -260,7 +338,7 @@ Module Contents
           !! processed by numpydoc !!
 
 
-   .. py:method:: parfile(filename='legolas_config', make_dir=False)
+   .. py:method:: parfile(filename='legolas_config', loc=None)
 
       
       Writes the parameter file for the Legolas run.

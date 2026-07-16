@@ -157,10 +157,22 @@ depending on these quantities.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.equilibrium.Variables.gamma">
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#pylbo.gimli.equilibrium.Variables.gamma" title="Link to this definition"></a></dt>
+<dd><p>Adiabatic index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sympy symbol</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">rhoc,</span> <span class="pre">Tc,</span> <span class="pre">B2c,</span> <span class="pre">B3c,</span> <span class="pre">v2c,</span> <span class="pre">v3c,</span> <span class="pre">pc</span></span></dt>
 <dd><p>Constants typically used for amplitudes or uniform terms in their corresponding
-equilibrium quantities.</p>
+equilibrium quantities. The corresponding Legolas variable names are cte_rho0,
+cte_T0, cte_B02, cte_B03, cte_v02, cte_v03, and cte_p0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>sympy symbols</p>
@@ -181,8 +193,10 @@ equilibrium quantities.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">alpha,</span> <span class="pre">beta,</span> <span class="pre">delta,</span> <span class="pre">theta,</span> <span class="pre">tau,</span> <span class="pre">lamda,</span> <span class="pre">nu</span></span></dt>
-<dd><p>Additional free-use constants.</p>
+<span class="sig-name descname"><span class="pre">alpha,</span> <span class="pre">beta,</span> <span class="pre">delta,</span> <span class="pre">theta,</span> <span class="pre">tau,</span> <span class="pre">lam,</span> <span class="pre">nu</span></span></dt>
+<dd><p>Additional free-use constants. (Note that ‘lam’ is used instead of ‘lambda’ to
+avoid conflict with the reserved keyword. The corresponding Legolas variable
+name is ‘lambda’.)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>sympy symbols</p>
@@ -192,8 +206,8 @@ equilibrium quantities.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">r0,</span> <span class="pre">rc,</span> <span class="pre">rj,</span> <span class="pre">Bth0,</span> <span class="pre">V,</span> <span class="pre">j0,</span> <span class="pre">g</span></span></dt>
-<dd><p>Additional constants, originally use in cylindrical coordinates.</p>
+<span class="sig-name descname"><span class="pre">r0,</span> <span class="pre">rc,</span> <span class="pre">rj,</span> <span class="pre">Bth0,</span> <span class="pre">Bz0,</span> <span class="pre">V,</span> <span class="pre">j0,</span> <span class="pre">g</span></span></dt>
+<dd><p>Additional constants, originally used in cylindrical coordinates.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>sympy symbols</p>
@@ -219,14 +233,19 @@ equilibrium quantities.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">fkey</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">fkey</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.gimli.equilibrium.Equilibrium">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pylbo.gimli.equilibrium.</span></span><span class="sig-name descname"><span class="pre">Equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v03</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B02</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B03</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resistivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gravity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condpara</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condperp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heating</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pylbo.gimli.equilibrium.</span></span><span class="sig-name descname"><span class="pre">Equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v03</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B02</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B03</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resistivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gravity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condpara</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condperp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heating</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legolas_grid_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heatcool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium" title="Link to this definition"></a></dt>
 <dd><p>Class containing all equilibrium expressions and initialisation functions.
 This object is a required argument when generating user files with the Legolas and
 Amrvac classes.</p>
@@ -247,6 +266,7 @@ expressions.</p></li>
 <li><p><strong>condperp</strong> (<em>sympy expression</em>) – The perpendicular conduction prescription.</p></li>
 <li><p><strong>cooling</strong> (<em>sympy expression</em>) – The cooling prescription.</p></li>
 <li><p><strong>heating</strong> (<em>sympy expression</em>) – The heating prescription.</p></li>
+<li><p><strong>heatcool</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Parameters for cooling and heating, including ‘force_thermal_balance’.</p></li>
 </ul>
 </dd>
 </dl>
@@ -315,23 +335,38 @@ to the Legolas or Amrvac class along with a dictionary.</p>
 </pre></div>
 </div>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">rho0</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id3">
-<span class="sig-name descname"><span class="pre">T0</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rho0</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">T0</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.equilibrium.Equilibrium.heatcool">
+<span class="sig-name descname"><span class="pre">heatcool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium.heatcool" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.equilibrium.Equilibrium.grid_spacing">
+<span class="sig-name descname"><span class="pre">grid_spacing</span></span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium.grid_spacing" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.gimli.equilibrium.Equilibrium._dict_phys">
 <span class="sig-name descname"><span class="pre">_dict_phys</span></span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium._dict_phys" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.equilibrium.Equilibrium._validate_equil">
+<span class="sig-name descname"><span class="pre">_validate_equil</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium._validate_equil" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -346,6 +381,37 @@ check for.</p>
 <span class="sig-name descname"><span class="pre">get_dependencies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium.get_dependencies" title="Link to this definition"></a></dt>
 <dd><p>Checks for dependencies on other equilibrium quantities.
 Returns a dictionary with the replacement expressions for use in Fortran files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.equilibrium.Equilibrium.get_current">
+<span class="sig-name descname"><span class="pre">get_current</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium.get_current" title="Link to this definition"></a></dt>
+<dd><p>Determines the current density of the equilibrium magnetic field.
+:param geometry: Either ‘Cartesian’ or ‘cylindrical’.
+:type geometry: str
+:param dim: Dimension of the desired setup (currently 2 or 3).
+:type dim: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.equilibrium.Equilibrium.add_current">
+<span class="sig-name descname"><span class="pre">add_current</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium.add_current" title="Link to this definition"></a></dt>
+<dd><p>Adds the current density of the equilibrium magnetic field to the Equilibrium
+object as attributes J02 and J03.
+:param geometry: Either ‘Cartesian’ or ‘cylindrical’.
+:type geometry: str
+:param dim: Dimension of the desired setup (currently 2 or 3).
+:type dim: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.equilibrium.Equilibrium.Bfield_forcefree">
+<span class="sig-name descname"><span class="pre">Bfield_forcefree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.equilibrium.Equilibrium.Bfield_forcefree" title="Link to this definition"></a></dt>
+<dd><p>Determines whether the equilibrium magnetic field is force-free.
+:param geometry: Either ‘Cartesian’ or ‘cylindrical’.
+:type geometry: str
+:param dim: Dimension of the desired setup (currently 2 or 3).
+:type dim: int</p>
 </dd></dl>
 
 </dd></dl>
@@ -387,8 +453,8 @@ density and temperature.</p>
 </pre></div>
 </div>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id4">
-<span class="sig-name descname"><span class="pre">arrays</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">arrays</span></span><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

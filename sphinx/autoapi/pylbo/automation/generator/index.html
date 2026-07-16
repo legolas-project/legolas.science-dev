@@ -141,7 +141,7 @@
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="pylbo.automation.generator.KEYS_EXPECTED_AS_LIST">
-<span class="sig-prename descclassname"><span class="pre">pylbo.automation.generator.</span></span><span class="sig-name descname"><span class="pre">KEYS_EXPECTED_AS_LIST</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['basis_functions']</span></span><a class="headerlink" href="#pylbo.automation.generator.KEYS_EXPECTED_AS_LIST" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">pylbo.automation.generator.</span></span><span class="sig-name descname"><span class="pre">KEYS_EXPECTED_AS_LIST</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['basis_functions',</span> <span class="pre">'w_convert_factor',</span> <span class="pre">'w_write',</span> <span class="pre">'writelevel',</span> <span class="pre">'writespshift',</span> <span class="pre">'flux_scheme',...</span></span><a class="headerlink" href="#pylbo.automation.generator.KEYS_EXPECTED_AS_LIST" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -212,7 +212,7 @@ the current working directory.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.automation.generator.ParfileGenerator">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pylbo.automation.generator.</span></span><span class="sig-name descname"><span class="pre">ParfileGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfile_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix_numbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_prefix_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.generator.ParfileGenerator" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pylbo.automation.generator.</span></span><span class="sig-name descname"><span class="pre">ParfileGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parfile_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix_numbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_prefix_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'legolas'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.automation.generator.ParfileGenerator" title="Link to this definition"></a></dt>
 <dd><p>Handles parfile generation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -232,6 +232,7 @@ working directory if not specified.</p></li>
 The number of digits is specified by <cite>nb_prefix_digits</cite>.</p></li>
 <li><p><strong>nb_prefix_digits</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Number of digits to prepend to the <cite>basename</cite> if <cite>prefix_numbers</cite> is <cite>True</cite>.
 Defaults to 4.</p></li>
+<li><p><strong>code</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Code for which to generate a parfile. Defaults to ‘legolas’.</p></li>
 </ul>
 </dd>
 </dl>
@@ -273,6 +274,11 @@ Defaults to 4.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.automation.generator.ParfileGenerator.container">
 <span class="sig-name descname"><span class="pre">container</span></span><a class="headerlink" href="#pylbo.automation.generator.ParfileGenerator.container" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.automation.generator.ParfileGenerator.code">
+<span class="sig-name descname"><span class="pre">code</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#pylbo.automation.generator.ParfileGenerator.code" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

@@ -1469,6 +1469,9 @@ Module Contents
    .. py:attribute:: geometry
 
 
+   .. py:attribute:: units
+
+
    .. py:property:: continua
       :type: dict
 
@@ -1968,7 +1971,7 @@ Module Contents
           !! processed by numpydoc !!
 
 
-   .. py:method:: get_omega_max(real=True)
+   .. py:method:: get_omega_max(real=True, re_range=None)
 
       
       Calculates the maximum of the real or imaginary part of the spectrum for
@@ -1977,6 +1980,9 @@ Module Contents
       :param real: Returns the largest real part if True (default option),
                    returns the largest imaginary part if False.
       :type real: bool
+      :param re_range: The range on the real axis to calculate the maximum eigenvalue.
+                       Defaults to None, which means all eigenvalues are considered.
+      :type re_range: tuple(float, float)
 
       :returns: **omega_max** -- A Numpy array of same length as the number of datasets, containing tuples
                 of the eigenvalue that has the largest real or imaginary part.

@@ -174,10 +174,22 @@ depending on these quantities.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.Variables.gamma">
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#pylbo.gimli.Variables.gamma" title="Link to this definition"></a></dt>
+<dd><p>Adiabatic index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sympy symbol</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">rhoc,</span> <span class="pre">Tc,</span> <span class="pre">B2c,</span> <span class="pre">B3c,</span> <span class="pre">v2c,</span> <span class="pre">v3c,</span> <span class="pre">pc</span></span></dt>
 <dd><p>Constants typically used for amplitudes or uniform terms in their corresponding
-equilibrium quantities.</p>
+equilibrium quantities. The corresponding Legolas variable names are cte_rho0,
+cte_T0, cte_B02, cte_B03, cte_v02, cte_v03, and cte_p0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>sympy symbols</p>
@@ -198,8 +210,10 @@ equilibrium quantities.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">alpha,</span> <span class="pre">beta,</span> <span class="pre">delta,</span> <span class="pre">theta,</span> <span class="pre">tau,</span> <span class="pre">lamda,</span> <span class="pre">nu</span></span></dt>
-<dd><p>Additional free-use constants.</p>
+<span class="sig-name descname"><span class="pre">alpha,</span> <span class="pre">beta,</span> <span class="pre">delta,</span> <span class="pre">theta,</span> <span class="pre">tau,</span> <span class="pre">lam,</span> <span class="pre">nu</span></span></dt>
+<dd><p>Additional free-use constants. (Note that ‘lam’ is used instead of ‘lambda’ to
+avoid conflict with the reserved keyword. The corresponding Legolas variable
+name is ‘lambda’.)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>sympy symbols</p>
@@ -209,8 +223,8 @@ equilibrium quantities.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">r0,</span> <span class="pre">rc,</span> <span class="pre">rj,</span> <span class="pre">Bth0,</span> <span class="pre">V,</span> <span class="pre">j0,</span> <span class="pre">g</span></span></dt>
-<dd><p>Additional constants, originally use in cylindrical coordinates.</p>
+<span class="sig-name descname"><span class="pre">r0,</span> <span class="pre">rc,</span> <span class="pre">rj,</span> <span class="pre">Bth0,</span> <span class="pre">Bz0,</span> <span class="pre">V,</span> <span class="pre">j0,</span> <span class="pre">g</span></span></dt>
+<dd><p>Additional constants, originally used in cylindrical coordinates.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>sympy symbols</p>
@@ -236,14 +250,19 @@ equilibrium quantities.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">fkey</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">fkey</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="pylbo.gimli.Equilibrium">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pylbo.gimli.</span></span><span class="sig-name descname"><span class="pre">Equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v03</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B02</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B03</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resistivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gravity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condpara</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condperp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heating</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pylbo.gimli.</span></span><span class="sig-name descname"><span class="pre">Equilibrium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v03</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B02</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B03</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resistivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gravity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condpara</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condperp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heating</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legolas_grid_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heatcool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium" title="Link to this definition"></a></dt>
 <dd><p>Class containing all equilibrium expressions and initialisation functions.
 This object is a required argument when generating user files with the Legolas and
 Amrvac classes.</p>
@@ -264,6 +283,7 @@ expressions.</p></li>
 <li><p><strong>condperp</strong> (<em>sympy expression</em>) – The perpendicular conduction prescription.</p></li>
 <li><p><strong>cooling</strong> (<em>sympy expression</em>) – The cooling prescription.</p></li>
 <li><p><strong>heating</strong> (<em>sympy expression</em>) – The heating prescription.</p></li>
+<li><p><strong>heatcool</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Parameters for cooling and heating, including ‘force_thermal_balance’.</p></li>
 </ul>
 </dd>
 </dl>
@@ -332,23 +352,38 @@ to the Legolas or Amrvac class along with a dictionary.</p>
 </pre></div>
 </div>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">rho0</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="id3">
-<span class="sig-name descname"><span class="pre">T0</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rho0</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">T0</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.heatcool">
+<span class="sig-name descname"><span class="pre">heatcool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium.heatcool" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.grid_spacing">
+<span class="sig-name descname"><span class="pre">grid_spacing</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium.grid_spacing" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pylbo.gimli.Equilibrium._dict_phys">
 <span class="sig-name descname"><span class="pre">_dict_phys</span></span><a class="headerlink" href="#pylbo.gimli.Equilibrium._dict_phys" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium._validate_equil">
+<span class="sig-name descname"><span class="pre">_validate_equil</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium._validate_equil" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -363,6 +398,37 @@ check for.</p>
 <span class="sig-name descname"><span class="pre">get_dependencies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium.get_dependencies" title="Link to this definition"></a></dt>
 <dd><p>Checks for dependencies on other equilibrium quantities.
 Returns a dictionary with the replacement expressions for use in Fortran files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.get_current">
+<span class="sig-name descname"><span class="pre">get_current</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium.get_current" title="Link to this definition"></a></dt>
+<dd><p>Determines the current density of the equilibrium magnetic field.
+:param geometry: Either ‘Cartesian’ or ‘cylindrical’.
+:type geometry: str
+:param dim: Dimension of the desired setup (currently 2 or 3).
+:type dim: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.add_current">
+<span class="sig-name descname"><span class="pre">add_current</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium.add_current" title="Link to this definition"></a></dt>
+<dd><p>Adds the current density of the equilibrium magnetic field to the Equilibrium
+object as attributes J02 and J03.
+:param geometry: Either ‘Cartesian’ or ‘cylindrical’.
+:type geometry: str
+:param dim: Dimension of the desired setup (currently 2 or 3).
+:type dim: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Equilibrium.Bfield_forcefree">
+<span class="sig-name descname"><span class="pre">Bfield_forcefree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Equilibrium.Bfield_forcefree" title="Link to this definition"></a></dt>
+<dd><p>Determines whether the equilibrium magnetic field is force-free.
+:param geometry: Either ‘Cartesian’ or ‘cylindrical’.
+:type geometry: str
+:param dim: Dimension of the desired setup (currently 2 or 3).
+:type dim: int</p>
 </dd></dl>
 
 </dd></dl>
@@ -404,8 +470,8 @@ density and temperature.</p>
 </pre></div>
 </div>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="id4">
-<span class="sig-name descname"><span class="pre">arrays</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">arrays</span></span><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -468,6 +534,20 @@ parameter values and technical settings).</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Legolas._compare_heatcool">
+<span class="sig-name descname"><span class="pre">_compare_heatcool</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Legolas._compare_heatcool" title="Link to this definition"></a></dt>
+<dd><p>Compares the presence of ‘heatcool’ in the equilibrium with the radiative
+cooling settings in the config. ‘heatcool’ overrides config settings, but if
+‘heatcool’ is not present, config settings are added to the equilibrium.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Legolas._check_resistivity">
+<span class="sig-name descname"><span class="pre">_check_resistivity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Legolas._check_resistivity" title="Link to this definition"></a></dt>
+<dd><p>Makes sure that resistivity is enabled if needed.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pylbo.gimli.Legolas.user_module">
 <span class="sig-name descname"><span class="pre">user_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'smod_user_defined'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Legolas.user_module" title="Link to this definition"></a></dt>
 <dd><p>Writes the user module for the Legolas run.</p>
@@ -510,7 +590,7 @@ configuration dictionary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.gimli.Legolas.parfile">
-<span class="sig-name descname"><span class="pre">parfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'legolas_config'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Legolas.parfile" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'legolas_config'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Legolas.parfile" title="Link to this definition"></a></dt>
 <dd><p>Writes the parameter file for the Legolas run.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -562,8 +642,8 @@ configuration dictionary and written to the parameter file.</p>
 <dd><p>Class to prepare Legolas data for use in MPI-AMRVAC (<a class="reference external" href="https://amrvac.org">https://amrvac.org</a>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – The configuration dictionary detailing which Legolas file and selection of
-eigenmodes to use.</p>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – The configuration dictionary detailing everything needed for the desired
+functionalities.</p>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -602,11 +682,10 @@ element is larger than the second.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.14)"><strong>KeyError</strong></a> – If no datfile is specified; if no initial guess for the eigenvalue is
 specified.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.14)"><strong>TypeError</strong></a> – If <cite>ev_guess</cite> is not a single float/complex number or a list/NumPy array of
-float/complex numbers; if <cite>ev_time</cite> for the eigenvalue is not a float or an
-integer; if <cite>weights</cite> is not a list or NumPy array; if <cite>ef_factor</cite> is not a
-list with length equal to the number of eigenvalues, or an integer, float,
-or complex number; if <cite>quantity</cite> is not a string; if <cite>percentage</cite> is not a
-float; if <cite>norm_range</cite> is not a NumPy array.</p></li>
+float/complex numbers; if <cite>weights</cite> is not a list or NumPy array; if
+<cite>ef_factor</cite> is not a list with length equal to the number of eigenvalues, or
+an integer, float, or complex number; if <cite>quantity</cite> is not a string; if
+<cite>percentage</cite> is not a float; if <cite>norm_range</cite> is not a NumPy array.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If <cite>quantity</cite> is not in the list of equilibrium quantities.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.14)"><strong>Exception</strong></a> – If the datfile is invalid.</p></li>
 </ul>
@@ -615,8 +694,20 @@ float; if <cite>norm_range</cite> is not a NumPy array.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Amrvac._validate_config_for_mod_usr">
+<span class="sig-name descname"><span class="pre">_validate_config_for_mod_usr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._validate_config_for_mod_usr" title="Link to this definition"></a></dt>
+<dd><p>Validates whether the configuration dictionary contains all the arguments to
+generate a mod_usr.t file for use with MPI-AMRVAC.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Amrvac._validate_simulation_dict">
+<span class="sig-name descname"><span class="pre">_validate_simulation_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._validate_simulation_dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pylbo.gimli.Amrvac._get_combined_perturbation">
-<span class="sig-name descname"><span class="pre">_get_combined_perturbation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ef</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._get_combined_perturbation" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_get_combined_perturbation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._get_combined_perturbation" title="Link to this definition"></a></dt>
 <dd><p>Takes Legolas’s perturbations of different eigenvalues and adds them up to a
 single perturbation.</p>
 <dl class="field-list simple">
@@ -634,7 +725,7 @@ single perturbation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.gimli.Amrvac._get_total_perturbation">
-<span class="sig-name descname"><span class="pre">_get_total_perturbation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ef_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._get_total_perturbation" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_get_total_perturbation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ef_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._get_total_perturbation" title="Link to this definition"></a></dt>
 <dd><p>Combines the perturbations of different eigenvalues into a single perturbation.
 Derives the pressure perturbation from the density and temperature
 perturbations.</p>
@@ -652,8 +743,13 @@ perturbations.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pylbo.gimli.Amrvac._get_normalisation">
-<span class="sig-name descname"><span class="pre">_get_normalisation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._get_normalisation" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="pylbo.gimli.Amrvac._integrate_energy_term">
+<span class="sig-name descname"><span class="pre">_integrate_energy_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._integrate_energy_term" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Amrvac._get_ef_normalisation">
+<span class="sig-name descname"><span class="pre">_get_ef_normalisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._get_ef_normalisation" title="Link to this definition"></a></dt>
 <dd><p>Normalises the perturbation of the specified quantity by the maximum background
 value.</p>
 <dl class="field-list simple">
@@ -667,13 +763,49 @@ value.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Amrvac._get_energy_normalisation">
+<span class="sig-name descname"><span class="pre">_get_energy_normalisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._get_energy_normalisation" title="Link to this definition"></a></dt>
+<dd><p>Normalises the perturbation eigenfunctions by the energy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The normalisation factor.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Amrvac._get_normalisation">
+<span class="sig-name descname"><span class="pre">_get_normalisation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._get_normalisation" title="Link to this definition"></a></dt>
+<dd><p>Selects which procedure to follow for the normalisation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The normalisation factor.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Amrvac._check_physical_perturbation">
+<span class="sig-name descname"><span class="pre">_check_physical_perturbation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ef_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pert</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac._check_physical_perturbation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pylbo.gimli.Amrvac.prepare_legolas_data">
-<span class="sig-name descname"><span class="pre">prepare_legolas_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac.prepare_legolas_data" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">prepare_legolas_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac.prepare_legolas_data" title="Link to this definition"></a></dt>
 <dd><p>Prepares a file (.ldat) from the Legolas data for use with MPI-AMRVAC.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Path to the directory where the .ldat file will be stored. Default is the
-current directory.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the .ldat file</p></li>
+<li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Path to the directory where the .ldat file will be stored. Default is the
+current directory.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If the datfile is invalid.</p>
@@ -685,7 +817,6 @@ current directory.</p>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;datfile&quot;</span><span class="p">:</span> <span class="s2">&quot;./datfile.dat&quot;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;physics_type&quot;</span><span class="p">:</span> <span class="s2">&quot;mhd&quot;</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;ev_guess&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;ev_time&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;percentage&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="s2">&quot;rho0&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
@@ -693,6 +824,55 @@ current directory.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">amrvac</span><span class="o">.</span><span class="n">prepare_legolas_data</span><span class="p">()</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Amrvac.user_module">
+<span class="sig-name descname"><span class="pre">user_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mod_usr'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac.user_module" title="Link to this definition"></a></dt>
+<dd><p>Writes the user module for MPI-AMRVAC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the user module file, defaults to mod_usr</p></li>
+<li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Path to the directory where the user module will be stored. Default is the
+current directory.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.Amrvac.parfile">
+<span class="sig-name descname"><span class="pre">parfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">basename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'amrvac_config'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix_numbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_prefix_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.Amrvac.parfile" title="Link to this definition"></a></dt>
+<dd><p>Generates parfiles based on the <cite>parfile</cite> dictionary.
+The separate namelists do not have to be taken into account, and a normal
+dictionary should be supplied where the keys correspond to the namelist
+items that are required. Typechecking is done automatically during parfile
+generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>basename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The basename for the parfile, the <cite>.par</cite> suffix is added automatically and
+is not needed. If multiple parfiles are generated, these
+will be prepended by a 4-digit number (e.g. 0003myparfile.par).
+If not provided, the basename will default to <cite>amrvac_config</cite>.</p></li>
+<li><p><strong>output_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Output directory where the parfiles are saved, defaults to the current
+working directory if not specified. A subdirectory called <cite>parfiles</cite> will be
+created in which the parfiles will be saved.</p></li>
+<li><p><strong>subdir</strong> (<em>boolean</em>) – If <cite>True</cite> (default), creates a subdirectory <cite>parfiles</cite> in the output folder.</p></li>
+<li><p><strong>prefix_numbers</strong> (<em>boolean</em>) – If <cite>True</cite> prepends the <cite>basename</cite> by a n-digit number (e.g.
+xxxxmyparfile.par). The number of digits is specified by <cite>nb_prefix_digits</cite>.</p></li>
+<li><p><strong>nb_prefix_digits</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Number of digits to prepend to the <cite>basename</cite> if <cite>prefix_numbers</cite> is <cite>True</cite>.
+Defaults to 4.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>parfiles</strong> – A list with the paths to the parfiles that were generated.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

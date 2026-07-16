@@ -119,10 +119,13 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pylbo.gimli.legolas.fortran_function" title="pylbo.gimli.legolas.fortran_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fortran_function</span></code></a>(file, expr, varname, translation[, ...])</p></td>
 <td><p>Writes a sympy expression to the user module as a Fortran function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.gimli.legolas.write_equilibrium_functions" title="pylbo.gimli.legolas.write_equilibrium_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_equilibrium_functions</span></code></a>(file, equilibrium)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.gimli.legolas.write_grid_functions" title="pylbo.gimli.legolas.write_grid_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_grid_functions</span></code></a>(file, equilibrium)</p></td>
+<td><p>Writes the Legolas grid spacing function, if present, to the user module.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.gimli.legolas.write_equilibrium_functions" title="pylbo.gimli.legolas.write_equilibrium_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_equilibrium_functions</span></code></a>(file, equilibrium)</p></td>
 <td><p>Iterates over all Legolas equilibrium quantities and writes them to the user module.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pylbo.gimli.legolas.write_physics_functions" title="pylbo.gimli.legolas.write_physics_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_physics_functions</span></code></a>(file, equilibrium)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pylbo.gimli.legolas.write_physics_functions" title="pylbo.gimli.legolas.write_physics_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_physics_functions</span></code></a>(file, equilibrium)</p></td>
 <td><p>Iterates over all Legolas physics expressions and writes them to the user module.</p></td>
 </tr>
 </tbody>
@@ -158,6 +161,20 @@ functions.</p></li>
 <li><p><strong>translation</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – A dictionary containing any substitution rules for sympy to Fortran expressions.</p></li>
 <li><p><strong>constant</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Set to <cite>True</cite> if the function is a constant.</p></li>
 <li><p><strong>level</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – The indentation level.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pylbo.gimli.legolas.write_grid_functions">
+<span class="sig-prename descclassname"><span class="pre">pylbo.gimli.legolas.</span></span><span class="sig-name descname"><span class="pre">write_grid_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equilibrium</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.legolas.write_grid_functions" title="Link to this definition"></a></dt>
+<dd><p>Writes the Legolas grid spacing function, if present, to the user module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> (<a class="reference internal" href="../../exceptions/index.html#pylbo.exceptions.InvalidLegolasFile.file" title="pylbo.exceptions.InvalidLegolasFile.file"><em>file</em></a>) – The file object to write to.</p></li>
+<li><p><strong>equilibrium</strong> (<a class="reference internal" href="../equilibrium/index.html#pylbo.gimli.equilibrium.Equilibrium" title="pylbo.gimli.equilibrium.Equilibrium"><em>Equilibrium</em></a>) – The equilibrium object containing the user-defined grid function.</p></li>
 </ul>
 </dd>
 </dl>
@@ -230,6 +247,20 @@ parameter values and technical settings).</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.legolas.Legolas._compare_heatcool">
+<span class="sig-name descname"><span class="pre">_compare_heatcool</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.legolas.Legolas._compare_heatcool" title="Link to this definition"></a></dt>
+<dd><p>Compares the presence of ‘heatcool’ in the equilibrium with the radiative
+cooling settings in the config. ‘heatcool’ overrides config settings, but if
+‘heatcool’ is not present, config settings are added to the equilibrium.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pylbo.gimli.legolas.Legolas._check_resistivity">
+<span class="sig-name descname"><span class="pre">_check_resistivity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.legolas.Legolas._check_resistivity" title="Link to this definition"></a></dt>
+<dd><p>Makes sure that resistivity is enabled if needed.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pylbo.gimli.legolas.Legolas.user_module">
 <span class="sig-name descname"><span class="pre">user_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'smod_user_defined'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.legolas.Legolas.user_module" title="Link to this definition"></a></dt>
 <dd><p>Writes the user module for the Legolas run.</p>
@@ -272,7 +303,7 @@ configuration dictionary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pylbo.gimli.legolas.Legolas.parfile">
-<span class="sig-name descname"><span class="pre">parfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'legolas_config'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.legolas.Legolas.parfile" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'legolas_config'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pylbo.gimli.legolas.Legolas.parfile" title="Link to this definition"></a></dt>
 <dd><p>Writes the parameter file for the Legolas run.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

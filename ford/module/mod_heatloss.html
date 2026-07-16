@@ -133,11 +133,11 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mod_heatloss.html#variable-settings~66">settings</a>
-            <a class="list-group-item" href="../module/mod_heatloss.html#variable-background~10">background</a>
-            <a class="list-group-item" href="../module/mod_heatloss.html#variable-cooling~2">cooling</a>
-            <a class="list-group-item" href="../module/mod_heatloss.html#variable-conduction~4">conduction</a>
-            <a class="list-group-item" href="../module/mod_heatloss.html#variable-grid~35">grid</a>
+            <a class="list-group-item" href="../module/mod_heatloss.html#variable-settings~77">settings</a>
+            <a class="list-group-item" href="../module/mod_heatloss.html#variable-background~54">background</a>
+            <a class="list-group-item" href="../module/mod_heatloss.html#variable-cooling">cooling</a>
+            <a class="list-group-item" href="../module/mod_heatloss.html#variable-conduction~2">conduction</a>
+            <a class="list-group-item" href="../module/mod_heatloss.html#variable-grid~54">grid</a>
             <a class="list-group-item" href="../module/mod_heatloss.html#variable-msg_heatloss_balance">msg_heatloss_balance</a>
         </div>
       </div>
@@ -190,7 +190,7 @@
             <a class="list-group-item" href="../module/mod_heatloss.html#proc-set_module_pointers">set_module_pointers</a>
             <a class="list-group-item" href="../module/mod_heatloss.html#proc-check_if_thermal_balance_needs_enforcing">check_if_thermal_balance_needs_enforcing</a>
             <a class="list-group-item" href="../module/mod_heatloss.html#proc-log_usr_h_func_warning">log_usr_H_func_warning</a>
-            <a class="list-group-item" href="../module/mod_heatloss.html#proc-delete~12">delete</a>
+            <a class="list-group-item" href="../module/mod_heatloss.html#proc-delete~13">delete</a>
         </div>
       </div>
     </div>
@@ -217,13 +217,13 @@
             <li class="list-group-item">
               <ul class="list-inline">
                   <li class="list-inline-item"><a href='mod_background.html'>mod_background</a></li>
+                  <li class="list-inline-item"><a href='mod_thermal_conduction.html'>mod_thermal_conduction</a></li>
+                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
+                  <li class="list-inline-item"><a href='mod_radiative_cooling.html'>mod_radiative_cooling</a></li>
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
                   <li class="list-inline-item"><a href='mod_heating.html'>mod_heating</a></li>
                   <li class="list-inline-item"><a href='mod_grid.html'>mod_grid</a></li>
-                  <li class="list-inline-item"><a href='mod_radiative_cooling.html'>mod_radiative_cooling</a></li>
-                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
-                  <li class="list-inline-item"><a href='mod_thermal_conduction.html'>mod_thermal_conduction</a></li>
-                  <li class="list-inline-item"><a href='mod_settings.html'>mod_settings</a></li>
               </ul>
             </li>
         </ul>
@@ -248,7 +248,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-settings~66"></span>
+              <span class="anchor" id="variable-settings~77"></span>
               type(<a href='../type/settings_t.html'>settings_t</a>),
             </td>
               <td>private,</td>
@@ -265,7 +265,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-background~10"></span>
+              <span class="anchor" id="variable-background~54"></span>
               type(<a href='../type/background_t.html'>background_t</a>),
             </td>
               <td>private,</td>
@@ -282,7 +282,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-cooling~2"></span>
+              <span class="anchor" id="variable-cooling"></span>
               type(<a href='../type/cooling_t.html'>cooling_t</a>),
             </td>
               <td>private,</td>
@@ -299,7 +299,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-conduction~4"></span>
+              <span class="anchor" id="variable-conduction~2"></span>
               type(<a href='../type/conduction_t.html'>conduction_t</a>),
             </td>
               <td>private,</td>
@@ -316,7 +316,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-grid~35"></span>
+              <span class="anchor" id="variable-grid~54"></span>
               type(<a href='../type/grid_t.html'>grid_t</a>),
             </td>
               <td>private,</td>
@@ -384,7 +384,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-cooling~3"></span>
+              <span class="anchor" id="variable-cooling~2"></span>
               type(<a href='../type/cooling_t.html'>cooling_t</a>),
             </td>
               <td>public</td>
@@ -401,7 +401,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-heating~5"></span>
+              <span class="anchor" id="variable-heating~3"></span>
               type(<a href='../type/heating_t.html'>heating_t</a>),
             </td>
               <td>public</td>
@@ -447,7 +447,7 @@ parameter
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/heatloss_t.html#boundprocedure-delete~12'>delete</a></strong></td>
+  <strong><a href='../type/heatloss_t.html#boundprocedure-delete~13'>delete</a></strong></td>
                   <td></td>
               </tr>
           </tbody>
@@ -540,7 +540,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~127"></span>
+              <span class="anchor" id="variable-this~109"></span>
               class(<a href='../type/heatloss_t.html'>heatloss_t</a>),
             </td>
 <td>intent(in)</td>
@@ -555,7 +555,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~44"></span>
+              <span class="anchor" id="variable-x~75"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -600,7 +600,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~128"></span>
+              <span class="anchor" id="variable-this~110"></span>
               class(<a href='../type/heatloss_t.html'>heatloss_t</a>),
             </td>
 <td>intent(in)</td>
@@ -615,7 +615,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~45"></span>
+              <span class="anchor" id="variable-x~76"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -660,7 +660,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~129"></span>
+              <span class="anchor" id="variable-this~111"></span>
               class(<a href='../type/heatloss_t.html'>heatloss_t</a>),
             </td>
 <td>intent(in)</td>
@@ -675,7 +675,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~46"></span>
+              <span class="anchor" id="variable-x~77"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -720,7 +720,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-x~47"></span>
+              <span class="anchor" id="variable-x~78"></span>
               real(kind=dp),
             </td>
 <td>intent(in)</td>
@@ -858,7 +858,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~130"></span>
+              <span class="anchor" id="variable-this~112"></span>
               class(<a href='../type/heatloss_t.html'>heatloss_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -922,7 +922,7 @@ parameter
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-delete~12"></span> <h3>private  subroutine <a href='../proc/delete~12.html'>delete</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-delete~13"></span> <h3>private  subroutine <a href='../proc/delete~13.html'>delete</a>(this)  
 </h3></div>
     <div class="card-body">
           
@@ -941,7 +941,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~131"></span>
+              <span class="anchor" id="variable-this~113"></span>
               class(<a href='../type/heatloss_t.html'>heatloss_t</a>),
             </td>
 <td>intent(inout)</td>
