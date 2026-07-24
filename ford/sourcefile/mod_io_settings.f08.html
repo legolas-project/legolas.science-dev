@@ -92,7 +92,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.7% of total for source files.">84 statements</a>
+                 title=" 0.7% of total for source files.">83 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -200,7 +200,7 @@
 <a id="ln-27" name="ln-27" href="#ln-27"></a><span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_output_folder</span>
 <a id="ln-28" name="ln-28" href="#ln-28"></a><span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_output_folder</span>
 <a id="ln-29" name="ln-29" href="#ln-29"></a><span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">should_compute_eigenvectors</span>
-<a id="ln-30" name="ln-30" href="#ln-30"></a><span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_all_io_to_false</span>
+<a id="ln-30" name="ln-30" href="#ln-30"></a><span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">disable_evp_output</span>
 <a id="ln-31" name="ln-31" href="#ln-31"></a><span class="w">    </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">delete</span>
 <a id="ln-32" name="ln-32" href="#ln-32"></a><span class="w">  </span><span class="k">end type </span><span class="n">io_settings_t</span>
 <a id="ln-33" name="ln-33" href="#ln-33"></a>
@@ -268,23 +268,22 @@
 <a id="ln-95" name="ln-95" href="#ln-95"></a><span class="w">  </span><span class="k">end function </span><span class="n">should_compute_eigenvectors</span>
 <a id="ln-96" name="ln-96" href="#ln-96"></a>
 <a id="ln-97" name="ln-97" href="#ln-97"></a>
-<a id="ln-98" name="ln-98" href="#ln-98"></a><span class="w">  </span><span class="k">pure subroutine </span><span class="n">set_all_io_to_false</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
+<a id="ln-98" name="ln-98" href="#ln-98"></a><span class="w">  </span><span class="k">pure subroutine </span><span class="n">disable_evp_output</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
 <a id="ln-99" name="ln-99" href="#ln-99"></a><span class="w">    </span><span class="k">class</span><span class="p">(</span><span class="n">io_settings_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
 <a id="ln-100" name="ln-100" href="#ln-100"></a><span class="w">    </span><span class="n">this</span><span class="p">%</span><span class="n">write_eigenvectors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <a id="ln-101" name="ln-101" href="#ln-101"></a><span class="w">    </span><span class="n">this</span><span class="p">%</span><span class="n">write_residuals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <a id="ln-102" name="ln-102" href="#ln-102"></a><span class="w">    </span><span class="n">this</span><span class="p">%</span><span class="n">write_eigenfunctions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
 <a id="ln-103" name="ln-103" href="#ln-103"></a><span class="w">    </span><span class="n">this</span><span class="p">%</span><span class="n">write_derived_eigenfunctions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
-<a id="ln-104" name="ln-104" href="#ln-104"></a><span class="w">    </span><span class="n">this</span><span class="p">%</span><span class="n">write_iv_snapshots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
-<a id="ln-105" name="ln-105" href="#ln-105"></a><span class="w">  </span><span class="k">end subroutine </span><span class="n">set_all_io_to_false</span>
+<a id="ln-104" name="ln-104" href="#ln-104"></a><span class="w">  </span><span class="k">end subroutine </span><span class="n">disable_evp_output</span>
+<a id="ln-105" name="ln-105" href="#ln-105"></a>
 <a id="ln-106" name="ln-106" href="#ln-106"></a>
-<a id="ln-107" name="ln-107" href="#ln-107"></a>
-<a id="ln-108" name="ln-108" href="#ln-108"></a><span class="w">  </span><span class="k">pure subroutine </span><span class="n">delete</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
-<a id="ln-109" name="ln-109" href="#ln-109"></a><span class="w">    </span><span class="k">class</span><span class="p">(</span><span class="n">io_settings_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
-<a id="ln-110" name="ln-110" href="#ln-110"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">basename_datfile</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">basename_datfile</span><span class="p">)</span>
-<a id="ln-111" name="ln-111" href="#ln-111"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">output_folder</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">output_folder</span><span class="p">)</span>
-<a id="ln-112" name="ln-112" href="#ln-112"></a><span class="w">  </span><span class="k">end subroutine </span><span class="n">delete</span>
-<a id="ln-113" name="ln-113" href="#ln-113"></a>
-<a id="ln-114" name="ln-114" href="#ln-114"></a><span class="k">end module </span><span class="n">mod_io_settings</span>
+<a id="ln-107" name="ln-107" href="#ln-107"></a><span class="w">  </span><span class="k">pure subroutine </span><span class="n">delete</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
+<a id="ln-108" name="ln-108" href="#ln-108"></a><span class="w">    </span><span class="k">class</span><span class="p">(</span><span class="n">io_settings_t</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
+<a id="ln-109" name="ln-109" href="#ln-109"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">basename_datfile</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">basename_datfile</span><span class="p">)</span>
+<a id="ln-110" name="ln-110" href="#ln-110"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">output_folder</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">output_folder</span><span class="p">)</span>
+<a id="ln-111" name="ln-111" href="#ln-111"></a><span class="w">  </span><span class="k">end subroutine </span><span class="n">delete</span>
+<a id="ln-112" name="ln-112" href="#ln-112"></a>
+<a id="ln-113" name="ln-113" href="#ln-113"></a><span class="k">end module </span><span class="n">mod_io_settings</span>
 </pre></div>
 
       </section>

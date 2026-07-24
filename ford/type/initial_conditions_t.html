@@ -92,7 +92,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="<p> 1.7% of total for derived types.</p>Including implementation: 53 statements,  1.5% of total for derived types.">13 statements</a>
+                 title="<p> 2.5% of total for derived types.</p>Including implementation: 83 statements,  2.4% of total for derived types.">19 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -134,11 +134,14 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/initial_conditions_t.html#variable-density~2">density</a>
+            <a class="list-group-item" href="../type/initial_conditions_t.html#variable-density">density</a>
             <a class="list-group-item" href="../type/initial_conditions_t.html#variable-velocity_1">velocity_1</a>
             <a class="list-group-item" href="../type/initial_conditions_t.html#variable-velocity_2">velocity_2</a>
             <a class="list-group-item" href="../type/initial_conditions_t.html#variable-velocity_3">velocity_3</a>
-            <a class="list-group-item" href="../type/initial_conditions_t.html#variable-temperature~2">temperature</a>
+            <a class="list-group-item" href="../type/initial_conditions_t.html#variable-temperature">temperature</a>
+            <a class="list-group-item" href="../type/initial_conditions_t.html#variable-magnetic_1">magnetic_1</a>
+            <a class="list-group-item" href="../type/initial_conditions_t.html#variable-magnetic_2">magnetic_2</a>
+            <a class="list-group-item" href="../type/initial_conditions_t.html#variable-magnetic_3">magnetic_3</a>
         </div>
       </div>
     </div>
@@ -170,6 +173,9 @@
             <a class="list-group-item" href="../type/initial_conditions_t.html#boundprocedure-set_ic_velocity_2_funcs">set_ic_velocity_2_funcs</a>
             <a class="list-group-item" href="../type/initial_conditions_t.html#boundprocedure-set_ic_velocity_3_funcs">set_ic_velocity_3_funcs</a>
             <a class="list-group-item" href="../type/initial_conditions_t.html#boundprocedure-set_ic_temperature_funcs">set_ic_temperature_funcs</a>
+            <a class="list-group-item" href="../type/initial_conditions_t.html#boundprocedure-set_ic_a1_funcs">set_ic_a1_funcs</a>
+            <a class="list-group-item" href="../type/initial_conditions_t.html#boundprocedure-set_ic_a2_funcs">set_ic_a2_funcs</a>
+            <a class="list-group-item" href="../type/initial_conditions_t.html#boundprocedure-set_ic_a3_funcs">set_ic_a3_funcs</a>
         </div>
       </div>
     </div>
@@ -202,7 +208,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-density~2"></span>
+              <span class="anchor" id="variable-density"></span>
               type(<a href='ic_density_t.html'>ic_density_t</a>),
             </td>
               <td>public</td>
@@ -270,7 +276,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-temperature~2"></span>
+              <span class="anchor" id="variable-temperature"></span>
               type(<a href='ic_temperature_t.html'>ic_temperature_t</a>),
             </td>
               <td>public</td>
@@ -279,6 +285,57 @@
             </td>
             <td>::</td>
             <td><strong>temperature</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-magnetic_1"></span>
+              type(<a href='ic_magnetic_t.html'>ic_magnetic_t</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>magnetic_1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-magnetic_2"></span>
+              type(<a href='ic_magnetic_t.html'>ic_magnetic_t</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>magnetic_2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-magnetic_3"></span>
+              type(<a href='ic_magnetic_t.html'>ic_magnetic_t</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>magnetic_3</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -702,6 +759,258 @@
             </td>
             <td>::</td>
             <td><strong>dT_func</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+      </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-set_ic_a1_funcs"></span>
+      <h3>
+          procedure, public ::
+  <strong>set_ic_a1_funcs</strong>
+        
+      </h3>
+    </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
+    private  subroutine <a href='../proc/set_ic_a1_funcs.html'>set_ic_a1_funcs</a>(self, a1_func, da1_func)  
+</h3>
+    
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>self</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              procedure(<a href='../interface/profile_fcn.html'>profile_fcn</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>a1_func</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              procedure(<a href='../interface/profile_fcn.html'>profile_fcn</a>),
+            </td>
+<td></td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>da1_func</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+      </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-set_ic_a2_funcs"></span>
+      <h3>
+          procedure, public ::
+  <strong>set_ic_a2_funcs</strong>
+        
+      </h3>
+    </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
+    private  subroutine <a href='../proc/set_ic_a2_funcs.html'>set_ic_a2_funcs</a>(self, a2_func, da2_func)  
+</h3>
+    
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>self</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              procedure(<a href='../interface/profile_fcn.html'>profile_fcn</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>a2_func</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              procedure(<a href='../interface/profile_fcn.html'>profile_fcn</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>da2_func</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+      </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-set_ic_a3_funcs"></span>
+      <h3>
+          procedure, public ::
+  <strong>set_ic_a3_funcs</strong>
+        
+      </h3>
+    </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
+    private  subroutine <a href='../proc/set_ic_a3_funcs.html'>set_ic_a3_funcs</a>(self, a3_func, da3_func)  
+</h3>
+    
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='initial_conditions_t.html'>initial_conditions_t</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>self</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              procedure(<a href='../interface/profile_fcn.html'>profile_fcn</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>a3_func</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              procedure(<a href='../interface/profile_fcn.html'>profile_fcn</a>)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>da3_func</strong></td>
             <td>
 
             </td>
