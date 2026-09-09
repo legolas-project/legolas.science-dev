@@ -229,7 +229,7 @@
 <a id="ln-39" name="ln-39" href="#ln-39"></a>
 <a id="ln-40" name="ln-40" href="#ln-40"></a><span class="k">use </span><span class="n">mod_assert</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">assert_macro_mod_assert_assert</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">assert</span>
 <a id="ln-41" name="ln-41" href="#ln-41"></a><span class="cp">#if defined(__GFORTRAN__)</span>
-<a id="ln-42" name="ln-42" href="#ln-42"></a><span class="cp">#define assert(cond) call assert_macro_mod_assert_assert(cond, &quot;cond&quot;, __FILE__, __LINE__)</span>
+<a id="ln-42" name="ln-42" href="#ln-42"></a><span class="cp">#define assert(cond) call assert_macro_mod_assert_assert(cond, "cond", __FILE__, __LINE__)</span>
 <a id="ln-43" name="ln-43" href="#ln-43"></a><span class="cp">#else</span>
 <a id="ln-44" name="ln-44" href="#ln-44"></a><span class="cp">#define assert(cond) call assert_macro_mod_assert_assert(cond, #cond, __FILE__, __LINE__)</span>
 <a id="ln-45" name="ln-45" href="#ln-45"></a><span class="cp">#endif</span>

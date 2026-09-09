@@ -174,7 +174,7 @@
         <div class="hl codehilite"><pre><span></span><a id="ln-1" name="ln-1" href="#ln-1"></a><span class="w">  </span><span class="c">! =============================================================================</span>
 <a id="ln-2" name="ln-2" href="#ln-2"></a><span class="c">!&gt; This submodule defines flow driven instabilities in a Cartesian geometry.</span>
 <a id="ln-3" name="ln-3" href="#ln-3"></a><span class="c">!! This equilibrium can not be called explicitly from the parfile, but rather acts</span>
-<a id="ln-4" name="ln-4" href="#ln-4"></a><span class="c">!! as a &quot;parent setup&quot; for the Rayleigh-Taylor and Kelvin-Helmholtz submodules which</span>
+<a id="ln-4" name="ln-4" href="#ln-4"></a><span class="c">!! as a "parent setup" for the Rayleigh-Taylor and Kelvin-Helmholtz submodules which</span>
 <a id="ln-5" name="ln-5" href="#ln-5"></a><span class="c">!! use this specific kind of equilibrium but with different parameters.</span>
 <a id="ln-6" name="ln-6" href="#ln-6"></a><span class="c">!! This submodule is called within its implicit children.</span>
 <a id="ln-7" name="ln-7" href="#ln-7"></a><span class="c">!!</span>
@@ -191,7 +191,7 @@
 <a id="ln-18" name="ln-18" href="#ln-18"></a><span class="k">contains</span>
 <a id="ln-19" name="ln-19" href="#ln-19"></a>
 <a id="ln-20" name="ln-20" href="#ln-20"></a><span class="k">  module procedure </span><span class="n">flow_driven_instabilities_eq</span>
-<a id="ln-21" name="ln-21" href="#ln-21"></a><span class="w">    </span><span class="k">call </span><span class="n">settings</span><span class="p">%</span><span class="n">grid</span><span class="p">%</span><span class="n">set_geometry</span><span class="p">(</span><span class="s2">&quot;Cartesian&quot;</span><span class="p">)</span>
+<a id="ln-21" name="ln-21" href="#ln-21"></a><span class="w">    </span><span class="k">call </span><span class="n">settings</span><span class="p">%</span><span class="n">grid</span><span class="p">%</span><span class="n">set_geometry</span><span class="p">(</span><span class="s2">"Cartesian"</span><span class="p">)</span>
 <a id="ln-22" name="ln-22" href="#ln-22"></a><span class="w">    </span><span class="k">call </span><span class="n">settings</span><span class="p">%</span><span class="n">grid</span><span class="p">%</span><span class="n">set_grid_boundaries</span><span class="p">(</span><span class="mf">0.0_dp</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0_dp</span><span class="p">)</span>
 <a id="ln-23" name="ln-23" href="#ln-23"></a><span class="w">    </span><span class="k">call </span><span class="n">settings</span><span class="p">%</span><span class="n">physics</span><span class="p">%</span><span class="n">enable_flow</span><span class="p">()</span>
 <a id="ln-24" name="ln-24" href="#ln-24"></a><span class="w">    </span><span class="n">v0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span>

@@ -159,14 +159,14 @@ passed immediately to <a class="reference internal" href="../../index.html#pylbo
 current working directory.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pylbo</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="s2">&quot;Cartesian&quot;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;x_start&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;x_end&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;equilibrium_type&quot;</span><span class="p">:</span> <span class="s2">&quot;resistive_homo&quot;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;gridpoints&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;write_eigenfunctions&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;basename_datfile&quot;</span><span class="p">:</span> <span class="s2">&quot;my_run&quot;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;output_folder&quot;</span><span class="p">:</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"geometry"</span><span class="p">:</span> <span class="s2">"Cartesian"</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"x_start"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"x_end"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"equilibrium_type"</span><span class="p">:</span> <span class="s2">"resistive_homo"</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"gridpoints"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"write_eigenfunctions"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"basename_datfile"</span><span class="p">:</span> <span class="s2">"my_run"</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"output_folder"</span><span class="p">:</span> <span class="s2">"output"</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">parfile</span> <span class="o">=</span> <span class="n">pylbo</span><span class="o">.</span><span class="n">generate_parfiles</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </pre></div>
@@ -177,17 +177,17 @@ gridpoints, the second one will have <cite>x_end = 2.0</cite> and 150 gridpoints
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pylbo</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="s2">&quot;Cartesian&quot;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;x_start&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;x_end&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;number_of_runs&quot;</span><span class="p">:</span> <span class="mi">10</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;equilibrium_type&quot;</span><span class="p">:</span> <span class="s2">&quot;resistive_homo&quot;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;gridpoints&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;write_eigenfunctions&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;basename_datfile&quot;</span><span class="p">:</span> <span class="s2">&quot;my_run&quot;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">&quot;output_folder&quot;</span><span class="p">:</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"geometry"</span><span class="p">:</span> <span class="s2">"Cartesian"</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"x_start"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"x_end"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"number_of_runs"</span><span class="p">:</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"equilibrium_type"</span><span class="p">:</span> <span class="s2">"resistive_homo"</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"gridpoints"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"write_eigenfunctions"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"basename_datfile"</span><span class="p">:</span> <span class="s2">"my_run"</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="s2">"output_folder"</span><span class="p">:</span> <span class="s2">"output"</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">parfile_list</span> <span class="o">=</span> <span class="n">pylbo</span><span class="o">.</span><span class="n">generate_parfiles</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;my_parfiles&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parfile_list</span> <span class="o">=</span> <span class="n">pylbo</span><span class="o">.</span><span class="n">generate_parfiles</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">"my_parfiles"</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -227,8 +227,8 @@ and avoid numbers like 3, 5 and 7.</p>
 executable from the current directory, on 4 CPU’s.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pylbo</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;parfiles&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.dat&quot;</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pylbo</span><span class="o">.</span><span class="n">run_legolas</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">nb_cpus</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;legolas&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">"parfiles"</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"*.dat"</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pylbo</span><span class="o">.</span><span class="n">run_legolas</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">nb_cpus</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="s2">"legolas"</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
