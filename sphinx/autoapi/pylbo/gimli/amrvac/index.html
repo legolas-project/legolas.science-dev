@@ -144,8 +144,8 @@ plus the current if needed (if not, this part of the array is zero).</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>file</strong> (<a class="reference internal" href="../../exceptions/index.html#pylbo.exceptions.InvalidLegolasFile.file" title="pylbo.exceptions.InvalidLegolasFile.file"><em>file</em></a>) – The file object to write to.</p></li>
 <li><p><strong>eq</strong> (<a class="reference internal" href="../equilibrium/index.html#pylbo.gimli.equilibrium.Equilibrium" title="pylbo.gimli.equilibrium.Equilibrium"><em>Equilibrium</em></a>) – The equilibrium object containing the user-defined equilibria.</p></li>
-<li><p><strong>to_fetch_total</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – The list of equilibrium functions to write to the file.</p></li>
-<li><p><strong>to_fetch_split</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – The list of split equilibrium functions to write to the file.</p></li>
+<li><p><strong>to_fetch_total</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – The list of equilibrium functions to write to the file.</p></li>
+<li><p><strong>to_fetch_split</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – The list of split equilibrium functions to write to the file.</p></li>
 </ul>
 </dd>
 </dl>
@@ -177,7 +177,7 @@ plus the current if needed (if not, this part of the array is zero).</p>
 <dd><p>Class to prepare Legolas data for use in MPI-AMRVAC (<a class="reference external" href="https://amrvac.org">https://amrvac.org</a>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – The configuration dictionary detailing everything needed for the desired
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – The configuration dictionary detailing everything needed for the desired
 functionalities.</p>
 </dd>
 </dl>
@@ -194,8 +194,8 @@ dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.14)"><strong>KeyError</strong></a> – If <cite>physics_type</cite> is missing.</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If <cite>physics_type</cite> is invalid.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#KeyError" title="(in Python v3.14)"><strong>KeyError</strong></a> – If <cite>physics_type</cite> is missing.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If <cite>physics_type</cite> is invalid.</p></li>
 </ul>
 </dd>
 </dl>
@@ -210,19 +210,19 @@ to prepare Legolas data for use with MPI-AMRVAC.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#AssertionError" title="(in Python v3.14)"><strong>AssertionError</strong></a> – If the length of <cite>weights</cite> is not equal to the number of eigenvalues or if
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#AssertionError" title="(in Python v3.14)"><strong>AssertionError</strong></a> – If the length of <cite>weights</cite> is not equal to the number of eigenvalues or if
 the elements of the weights do not add up to 1; if <cite>ef_factor</cite> does not have
 modulus 1; if <cite>norm_range</cite> does not have length 2; if <cite>norm_range</cite>’s first
 element is larger than the second.</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.14)"><strong>KeyError</strong></a> – If no datfile is specified; if no initial guess for the eigenvalue is
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#KeyError" title="(in Python v3.14)"><strong>KeyError</strong></a> – If no datfile is specified; if no initial guess for the eigenvalue is
 specified.</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.14)"><strong>TypeError</strong></a> – If <cite>ev_guess</cite> is not a single float/complex number or a list/NumPy array of
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#TypeError" title="(in Python v3.14)"><strong>TypeError</strong></a> – If <cite>ev_guess</cite> is not a single float/complex number or a list/NumPy array of
 float/complex numbers; if <cite>weights</cite> is not a list or NumPy array; if
 <cite>ef_factor</cite> is not a list with length equal to the number of eigenvalues, or
 an integer, float, or complex number; if <cite>quantity</cite> is not a string; if
 <cite>percentage</cite> is not a float; if <cite>norm_range</cite> is not a NumPy array.</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If <cite>quantity</cite> is not in the list of equilibrium quantities.</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.14)"><strong>Exception</strong></a> – If the datfile is invalid.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If <cite>quantity</cite> is not in the list of equilibrium quantities.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#Exception" title="(in Python v3.14)"><strong>Exception</strong></a> – If the datfile is invalid.</p></li>
 </ul>
 </dd>
 </dl>
@@ -247,7 +247,7 @@ generate a mod_usr.t file for use with MPI-AMRVAC.</p>
 single perturbation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ef</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The eigenfunction to combine.</p>
+<dd class="field-odd"><p><strong>ef</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The eigenfunction to combine.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The combined perturbation.</p>
@@ -266,7 +266,7 @@ Derives the pressure perturbation from the density and temperature
 perturbations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ef_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The eigenfunction to calculate.</p>
+<dd class="field-odd"><p><strong>ef_type</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The eigenfunction to calculate.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The total perturbation.</p>
@@ -292,7 +292,7 @@ value.</p>
 <dd class="field-odd"><p>The normalisation factor.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -306,7 +306,7 @@ value.</p>
 <dd class="field-odd"><p>The normalisation factor.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -320,7 +320,7 @@ value.</p>
 <dd class="field-odd"><p>The normalisation factor.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -337,13 +337,13 @@ value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the .ldat file</p></li>
-<li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Path to the directory where the .ldat file will be stored. Default is the
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the .ldat file</p></li>
+<li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Path to the directory where the .ldat file will be stored. Default is the
 current directory.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If the datfile is invalid.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If the datfile is invalid.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -368,8 +368,8 @@ current directory.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the user module file, defaults to mod_usr</p></li>
-<li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Path to the directory where the user module will be stored. Default is the
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the user module file, defaults to mod_usr</p></li>
+<li><p><strong>loc</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Path to the directory where the user module will be stored. Default is the
 current directory.</p></li>
 </ul>
 </dd>
@@ -387,17 +387,17 @@ generation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>basename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The basename for the parfile, the <cite>.par</cite> suffix is added automatically and
+<li><p><strong>basename</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The basename for the parfile, the <cite>.par</cite> suffix is added automatically and
 is not needed. If multiple parfiles are generated, these
 will be prepended by a 4-digit number (e.g. 0003myparfile.par).
 If not provided, the basename will default to <cite>amrvac_config</cite>.</p></li>
-<li><p><strong>output_dir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Output directory where the parfiles are saved, defaults to the current
+<li><p><strong>output_dir</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.14)"><em>PathLike</em></a>) – Output directory where the parfiles are saved, defaults to the current
 working directory if not specified. A subdirectory called <cite>parfiles</cite> will be
 created in which the parfiles will be saved.</p></li>
 <li><p><strong>subdir</strong> (<em>boolean</em>) – If <cite>True</cite> (default), creates a subdirectory <cite>parfiles</cite> in the output folder.</p></li>
 <li><p><strong>prefix_numbers</strong> (<em>boolean</em>) – If <cite>True</cite> prepends the <cite>basename</cite> by a n-digit number (e.g.
 xxxxmyparfile.par). The number of digits is specified by <cite>nb_prefix_digits</cite>.</p></li>
-<li><p><strong>nb_prefix_digits</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Number of digits to prepend to the <cite>basename</cite> if <cite>prefix_numbers</cite> is <cite>True</cite>.
+<li><p><strong>nb_prefix_digits</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Number of digits to prepend to the <cite>basename</cite> if <cite>prefix_numbers</cite> is <cite>True</cite>.
 Defaults to 4.</p></li>
 </ul>
 </dd>
@@ -405,7 +405,7 @@ Defaults to 4.</p></li>
 <dd class="field-even"><p><strong>parfiles</strong> – A list with the paths to the parfiles that were generated.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
 </dd>
 </dl>
 </dd></dl>
