@@ -92,7 +92,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.3% of total for modules and submodules.">41 statements</a>
+                 title=" 0.6% of total for modules and submodules.">71 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -168,7 +168,8 @@
       </a>
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/mod_iv_settings.html#proc-set_n_snapshots">set_n_snapshots</a>
+            <a class="list-group-item" href="../module/mod_iv_settings.html#proc-set_stride_from_n_snapshots">set_stride_from_n_snapshots</a>
+            <a class="list-group-item" href="../module/mod_iv_settings.html#proc-validate">validate</a>
         </div>
       </div>
     </div>
@@ -194,6 +195,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
+                  <li class="list-inline-item"><a href='mod_logging.html'>mod_logging</a></li>
                   <li class="list-inline-item"><a href='mod_global_variables.html'>mod_global_variables</a></li>
               </ul>
             </li>
@@ -253,23 +255,6 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-n_snapshots"></span>
-              integer,
-            </td>
-              <td>private</td>
-            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>n_snapshots</strong></td>
-                <td></td>
-                <td></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
               <span class="anchor" id="variable-snapshot_stride"></span>
               integer,
             </td>
@@ -287,7 +272,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-t_end~2"></span>
+              <span class="anchor" id="variable-t_end"></span>
               real(kind=dp),
             </td>
               <td>public</td>
@@ -321,7 +306,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-alpha~2"></span>
+              <span class="anchor" id="variable-alpha~4"></span>
               real(kind=dp),
             </td>
               <td>public</td>
@@ -352,12 +337,17 @@
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/iv_settings_t.html#boundprocedure-set_n_snapshots'>set_n_snapshots</a></strong></td>
+  <strong><a href='../type/iv_settings_t.html#boundprocedure-get_n_snapshots'>get_n_snapshots</a></strong></td>
                   <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/iv_settings_t.html#boundprocedure-get_n_snapshots'>get_n_snapshots</a></strong></td>
+  <strong><a href='../type/iv_settings_t.html#boundprocedure-set_stride_from_n_snapshots'>set_stride_from_n_snapshots</a></strong></td>
+                  <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/iv_settings_t.html#boundprocedure-validate'>validate</a></strong></td>
                   <td></td>
               </tr>
           </tbody>
@@ -408,7 +398,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~4"></span>
+              <span class="anchor" id="variable-self~5"></span>
               class(<a href='../type/iv_settings_t.html'>iv_settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -438,7 +428,8 @@
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Number of stored snapshots: the initial condition, every
+<code>snapshot_stride</code>-th step before the last one, and the final step.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -453,7 +444,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~5"></span>
+              <span class="anchor" id="variable-self~6"></span>
               class(<a href='../type/iv_settings_t.html'>iv_settings_t</a>),
             </td>
 <td>intent(in)</td>
@@ -484,11 +475,12 @@
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set_n_snapshots"></span> <h3>private  subroutine <a href='../proc/set_n_snapshots.html'>set_n_snapshots</a>(self, n_snaps)  
+    <div class="card-header codesum"><span class="anchor" id="proc-set_stride_from_n_snapshots"></span> <h3>private  subroutine <a href='../proc/set_stride_from_n_snapshots.html'>set_stride_from_n_snapshots</a>(self, n_snaps)  
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Sets the snapshot stride such that at most <code>n_snaps</code> snapshots are stored
+(including the initial condition and the final step).</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -503,7 +495,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-self~6"></span>
+              <span class="anchor" id="variable-self~7"></span>
               class(<a href='../type/iv_settings_t.html'>iv_settings_t</a>),
             </td>
 <td>intent(inout)</td>
@@ -527,6 +519,46 @@
             </td>
             <td>::</td>
             <td><strong>n_snaps</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-validate"></span> <h3>private  subroutine <a href='../proc/validate.html'>validate</a>(self)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Checks the IV settings for consistency, raises an error if invalid.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-self~8"></span>
+              class(<a href='../type/iv_settings_t.html'>iv_settings_t</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>self</strong></td>
             <td>
 
             </td>
